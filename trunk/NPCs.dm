@@ -1,78 +1,79 @@
 mob/npc/Banker//the new banker!
-	name = "(NPC)Banker"
+	name = "Banqueiro"
 	icon = 'Banker.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999
 	verb
-		Deposit()
+		Depositar()
 			set src in oview(3)
-			set category = "Bank"
-			var/heh = input("You have [usr.Yen] yen. How much do you wish to deposit?","Deposit") as num
+			set category = "Banco"
+			var/heh = input("Você tem [usr.Yen] Yen. Quanto você pretende depositar?","Depósito") as num
 			if (heh < 0)
-				alert("Don't try cheating me!","Bank Keeper")
+				alert("Não tente me enganar!","Guardar no banco")
 				return()
 			if (heh > usr.Yen)
-				alert("You don't have that much yen!", "Deposit")
+				alert("Você não tem muitos Yen!", "Depósito")
 				return()
 
-			usr << "You deposit [heh] gold."
+			usr << "Você depositou [heh] Yen."
 			usr.Yen -= heh
 			usr.goldinbank += heh
 			return()
 
-		Withdraw()
+		Retirar()
 			set src in oview(3)
-			set category = "Bank"
-			var/heh = input("You have [usr.goldinbank] gold in the bank. How much do you wish to withdraw?","Withdraw") as num
+			set category = "Banco"
+			var/heh = input("Você tem [usr.goldinbank] Yen no banco. Quanto você deseja retirar?","Pegar") as num
 			if (heh < 0)
-				alert("You can't withdraw less then 1 yen!","Bank Keeper")
+				alert("Você não pode retirar menos de 1 Yen!","Guardar no banco")
 				return()
 			if (heh > usr.goldinbank)
-				alert("You don't have that much yen in the bank!", "Bank Keeper")
+				alert("Você não tem muitos Yen!", "Guardar no banco")
 				return()
 			if(usr.Yen>=100000)
-				alert("You already have as much Yen as you can carry.")
+				alert("Você não pode carregar mais Yen.")
 				return
-			usr << "You withdraw [heh] gold."
+			usr << "Você retirou [heh] Yen."
 			usr.Yen += heh
 			usr.goldinbank -= heh
 			return()
 
 		CheckBalance()
 			set src in oview(3)
-			set category = "Bank"
-			set name = "Check Balance"
-			usr << "You have [usr.goldinbank] yen in the bank."
+			set category = "Banco"
+			set name = "Checar conta"
+			usr << "Você tem [usr.goldinbank] Yen no banco."
 mob/npc/Vet
-	name = "(NPC)Vet"
+	name = "Veterinário"
 	icon = 'Banker.dmi'
 	PK = 0
 	health = 999999999999999999999999999999999999
 	verb
-		Heal()
+		Curar()
 			set src in oview(3)
-			set category = "Dog"
+			set category = "Cachorro"
 			if(usr.Yen <= 1999)
-				usr<<"You need 2000 Yen to heal your dog!"
+				usr << "você precisa de 2000 Yen para curar seu cachorro!"
 			else
 				for(var/mob/pet/P in usr.contents)
 					if(P.owner==usr&&usr.hasdog)
 						usr.Yen-=2000
 						P.health = P.maxhealth
 						P.overlays=null
-						usr<<"All done"
+						usr << "Tudo feito"
 						return
 					else
-						usr<<"You don't own a dog OR It needs to be picked up."
+						usr << "Você não é dono de um cachorro OU Ele precisa ser apanhado."
 						return
-		DogRanAway()
+		CachorroFujiu()
 			set src in oview(3)
-			set category = "Dog"
+			set name = "Cachorro fujiu"
+			set category = "Cachorro"
 			for(var/mob/pet/P in world)
 				if(P.owner==usr)
 					del(P)
 			usr.hasdog=0
-			usr<<"Go get a new pet."
+			usr << "Vai criar um novo animal de estimação."
 
 mob
 	var/tmp
@@ -109,12 +110,12 @@ mob
 						if(P.Kaiten)
 							del(src)
 						if(P.drunk&&P.NonClan)
-							view()<<"[M] dodges [src]'s attack"
+							view()<<"[M] atacou [src]'s atacou"
 							sleep(13)
 							src.firing=0
 							return
 						P.health -= Damage
-						view() << "The [src] attacks [M] for [Damage]!"
+						view() << "O [src] atacou [M] e tirou [Damage]!"
 						P.Death(src)
 						sleep(10)
 						src.firing=0
@@ -134,12 +135,12 @@ mob
 							if(P.Kaiten)
 								del(src)
 							if(P.drunk&&P.NonClan)
-								view()<<"[M] dodges [src]'s attack"
+								view()<<"[M] dodges [src]'s atacou"
 								sleep(13)
 								src.firing=0
 								return
 							P.health -= Damage // Takes the players health
-							view() << "<font size=1>The [src] attacks [M] for [Damage]!"
+							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
 							P.Death(src)
 						sleep(5)
 						src.firing=0
@@ -162,12 +163,12 @@ mob
 							if(P.Kaiten)
 								del(src)
 							if(P.drunk&&P.NonClan)
-								view()<<"[M] dodges [src]'s attack"
+								view()<<"[M] dodges [src]'s atacou"
 								sleep(13)
 								src.firing=0
 								return
 							P.health -= Damage // Takes the players health
-							view() << "<font size=1>The [src] attacks [M] for [Damage]!"
+							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
 							P.Death(src)
 						sleep(5)
 						src.firing=0
@@ -196,15 +197,15 @@ obj
 
 mob/npc
 	Merchant2
-		name = "(NPC)Ninja Weapon Sales Person"
+		name = "Loja de armas ninja"
 		icon = 'Banker.dmi'
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb/Buy()
 			set src in oview(3)
-			switch(input("What would you like to buy today??")in list("Shuriken - 200","Hyourougan - 500","Kunai - 400","Exploding Tag - 1000","Windmill - 50000","Trikunai - 50000","Nothing"))
+			switch(input("O que você gostaria de comprar hoje?")in list("Shuriken - 200","Hyourougan - 500","Kunai - 400","Exploding Tag - 1000","Windmill - 50000","Trikunai - 50000","Nada"))
 				if("Shuriken - 200")
-					var/give = input("How many Shuriken do you wish to buy?")as num
+					var/give = input("Quantas Shurikens você deseja comprar?")as num
 					if(usr.Shurcounter<=99)
 						if(usr.Yen >= give*200&&give>0)
 							usr.Yen -= give*200
@@ -220,11 +221,11 @@ mob/npc
 									O.ammount+=give
 									O.name= "[O.name] ([O.ammount])"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					else
-						usr<<"Your only surpose to have 100 at one time."
+						usr<<"Você só pode carregar 100 de uma vez."
 				if("Kunai - 400")
-					var/give = input("How many Kunai do you wish to buy?")as num
+					var/give = input("Quantas Kunai você deseja comprar?")as num
 					if(usr.Kucounter<=99)
 						if(usr.Yen >= give*400&&give>0)
 							usr.Yen -= give*400
@@ -240,11 +241,11 @@ mob/npc
 									O.ammount+=give
 									O.name= "[O.name] ([O.ammount])"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					else
-						usr<<"Your only surpose to have 100 at one time."
+						usr<<"Você só pode carregar 100 de uma vez."
 				if("Exploding Tag - 1000")
-					var/give = input("How many Exploding Tags do you wish to buy?")as num
+					var/give = input("Quantas Exploding Tags você deseja comprar?")as num
 					if(Tagcounter<=9)
 						if(usr.Yen >= give*1000&&give>0)
 							usr.Yen -= give*1000
@@ -261,9 +262,9 @@ mob/npc
 									O.ammount+=give
 									O.name= "[O.name] ([O.ammount])"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					else
-						usr<<"Your only surpose to have 10 at one time."
+						usr<<"Você só pode carregar 100 de uma vez."
 				if("Windmill - 50000")
 					if(usr.windmills<=1)
 						if(usr.Yen >= 50000)
@@ -272,9 +273,9 @@ mob/npc
 							var/obj/Windmill/R = new/obj/Windmill
 							R.loc = usr
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					else
-						usr<<"You can only carry 2 at a time."
+						usr<<"Você só pode carregar 2 de uma vez."
 				if("Trikunai - 50000")
 					if(usr.trikunai<=1)
 						if(usr.Yen >= 50000)
@@ -283,11 +284,11 @@ mob/npc
 							var/obj/Trikunai/R = new/obj/Trikunai
 							R.loc = usr
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					else
-						usr<<"You can only carry 2 at a time."
+						usr<<"Você só pode carregar 2 de uma vez."
 				if("Hyourougan - 500")
-					var/give = input("How many pill do you wish to buy?")as num
+					var/give = input("Quantas Pílulas você deseja comprar?")as num
 					if(usr.Kucounter<=99)
 						if(usr.Yen >= give*500&&give>0)
 							usr.Yen -= give*500
@@ -303,43 +304,47 @@ mob/npc
 									O.ammount+=give
 									O.name= "[O.name] ([O.ammount])"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					else
-						usr<<"Your only surpose to have 10 at one time."
-				if("Nothing")
+						usr<<"Você só pode carregar 10 de uma vez."
+				if("Nada")
+					usr<<"Volte sempre."
 					return
 mob/npc
 	Food_Vender
-		name = "(NPC)Chef"
+		name = "Chef de cozinha"
 		icon = 'Banker.dmi'
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
 			Buy()
 				set src in oview(3)
-				switch(input("What would you like to buy today??")in list("Ramen - 350","Vegetable Soup - 320","Sake - 1500","Nothing"))
+				switch(input("O que você gostaria de comprar hoje?")in list("Ramen - 350","Vegetable Soup - 320","Sake - 1500","Nada"))
 					if("Ramen - 350")
 						if(usr.Yen >= 350)
 							usr.Yen -= 350
 							var/obj/Ramen/R = new/obj/Ramen
 							R.loc = usr
+							usr<<"Você comprou um Ramen."
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Vegetable Soup - 320")
 						if(usr.Yen >= 320)
 							usr.Yen -= 320
 							var/obj/Soup/S = new/obj/Soup
 							S.loc = usr
+							usr<<"Você comprou uma Vegetable Soup"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Sake - 1500")
 						if(usr.Yen >= 1500)
 							usr.Yen -= 1500
 							var/obj/Sake/L = new/obj/Sake
 							L.loc = usr
+							usr<<"Você comprou um Sake"
 						else
-							usr<<"Not enough money!"
-					if("Nothing")
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Nada")
 						return
 mob/npc
 	Merchant
@@ -356,209 +361,236 @@ mob/npc
 						var/obj/BigHat/B = new/obj/BigHat
 						B.loc = usr
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Bandages - 5000")
 					if(usr.Yen >= 5000)
 						usr.Yen -= 5000
 						var/obj/Bandages/B = new/obj/Bandages
 						B.loc = usr
+						usr<<"Você comprou uma Bandages"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Weights - 7000")
 					if(usr.Yen >= 7000)
 						usr.Yen -= 7000
 						var/obj/Weights/B = new/obj/Weights
 						B.loc = usr
+						usr<<"Você comprou um Weights"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Sasuke Shirt - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/SasukeShirt/B = new/obj/SasukeShirt
 						B.loc = usr
+						usr<<"Você comprou um Sasuke Shirt"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Kankuoru Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/Kankuorusuit/B = new/obj/Kankuorusuit
 						B.loc = usr
+						usr<<"Você comprou um Kankuoro Suit"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Sasuke Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/SasukeSuit/B = new/obj/SasukeSuit
 						B.loc = usr
+						usr<<"Você comprou uma Sasuke Suit"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Kabuto Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/KabutoSuit/B = new/obj/KabutoSuit
 						B.loc = usr
+						usr<<"Você comprou uma Kabuto Suit"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Nara Shirt - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/NaraS/B = new/obj/NaraS
 						B.loc = usr
+						usr<<"Você comprou uma Nara Shirt"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Choji Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/ChojiS/B = new/obj/ChojiS
 						B.loc = usr
+						usr<<"Você comprou uma Choji Suit"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Naruto Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/Narutosuit/B = new/obj/Narutosuit
 						B.loc = usr
+						usr<<"Você comprou uma Naruto Suit"
 					else
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Neiji Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/Narutosuit/B = new/obj/Neijisuit
 						B.loc = usr
+						usr<<"Você comprou uma Neiji Suit"
 					else
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("RockLee Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/RockLeesuit/B = new/obj/RockLeesuit
 						B.loc = usr
+						usr<<"Você comprou uma RockLee Suit"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Zabuza Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/Zabuzasuit/B = new/obj/Zabuzasuit
 						B.loc = usr
+						usr<<"Você comprou uma Zabuza Suit"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Haku Suit - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/HakuS/B = new/obj/HakuS
 						B.loc = usr
+						usr<<"Você comprou uma Haku Suit"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Pants - 600")
 					if(usr.Yen >= 600)
 						usr.Yen -= 600
 						var/obj/Pants/B = new/obj/Pants
 						B.loc = usr
+						usr<<"Você comprou uma Pants"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Shirt - 1000")
 					if(usr.Yen >= 1000)
 						usr.Yen -= 1000
 						var/obj/Shirt/B = new/obj/Shirt
 						B.loc = usr
+						usr<<"Você comprou uma Shirt"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Shades - 390")
 					if(usr.Yen >= 390)
 						usr.Yen -= 390
 						var/obj/Shades/B = new/obj/Shades
 						B.loc = usr
+						usr<<"Você comprou uma Shades"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Shino Coat - 1000")
 					if(usr.Yen >= 1000)
 						usr.Yen -= 1000
 						var/obj/ShinoS/B = new/obj/ShinoS
 						B.loc = usr
+						usr<<"Você comprou uma Shino Coat"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Kiba Sweater - 2000")
 					if(usr.Yen >= 2000)
 						usr.Yen -= 2000
 						var/obj/KibaS/B = new/obj/KibaS
 						B.loc = usr
+						usr<<"Você comprou uma Kiba Sweater"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Shoes - 150")
 					if(usr.Yen >= 150)
 						usr.Yen -= 150
 						var/obj/Shoes/B = new/obj/Shoes
 						B.loc = usr
+						usr<<"Você comprou uma Shoes"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Sandles - 150")
 					if(usr.Yen >= 150)
 						usr.Yen -= 150
 						var/obj/Sandles/B = new/obj/Sandles
 						B.loc = usr
+						usr<<"Você comprou uma Sandles"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Markings - 4500")
 					if(usr.Yen >= 4500)
 						usr.Yen -= 4500
 						var/obj/Markings/B = new/obj/Markings
 						B.loc = usr
+						usr<<"Você comprou uma Markings"
 					else
-						usr<<"Not enough money!"
-				if("Nothing")
+						usr<<"Você não tem dinheiro o suficiente!"
+				if("Nada")
 					return
 
 mob/npc
 	Merchant3
-		name = "(NPC)Sword Sales person"
+		name = "Vendedor de espadas"
 		icon = 'salesmen.dmi'
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb/Buy()
 			set src in oview(3)
-			switch(input("What would you like to buy today??")in list("Zabuza Sword - 100000","Mondai Sword - 100000","Kisame Sword - 100000","Nothing"))
+			switch(input("O que você deseja comprar hoje?")in list("Zabuza Sword - 100000","Mondai Sword - 100000","Kisame Sword - 100000","Nada"))
 				if("Zabuza Sword - 100000")
 					if(usr.Yen >= 100000)
 						usr.Yen -= 100000
 						var/obj/Zabuzasword/B = new/obj/Zabuzasword
 						B.loc = usr
+						usr<<"Você comprou uma Zabuza Sword"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Mondai Sword - 100000")
 					if(usr.Yen >= 100000)
 						usr.Yen -= 100000
 						var/obj/Mondaisword/B = new/obj/Mondaisword
 						B.loc = usr
+						usr<<"Você comprou uma Mondai Sword"
 					else
-						usr<<"Not enough money!"
+						usr<<"Você não tem dinheiro o suficiente!"
 				if("Kisame Sword - 100000")
 					if(usr.Yen >= 100000)
 						usr.Yen -= 100000
 						var/obj/Kisamesword/B = new/obj/Kisamesword
 						B.loc = usr
+						usr<<"Você comprou uma Kisame Sword"
 					else
-						usr<<"Not enough money!"
-				if("Nothing")
+						usr<<"Você não tem dinheiro o suficiente!"
+				if("Nada")
 					return
 
 
 mob/npc
 	tailor
+		//name = "Cabeleleiro"
 		icon = 'Haircuter.dmi'
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
 			Talk()
 				set src in oview(2)
-				set category ="Hair-cut"
-				switch(input("Would you like me to work magic to that ragged hair??", text) in list ("Yes","No"))
+				set category ="Corte de cabelo"
+				switch(input("Would you like me to work magic to that ragged hair??", text) in list ("Sim","Não"))
 					if("Yes")
 						usr.overlays-=usr.hair
-						switch(input("Male or Female?", text)in list ("Male","Female"))
-							if("Male")
-								switch(input("Which hair style would you like?", text) in list ("Naruto","Sasuke","Gaara","Shikamaru","Kakashi","Kabuto","Rock Lee","Itachi","Neiji","Kimimaro","Yondaime","Orochimaru","Jiraiya","Bald"))
+						switch(input("Masculino ou Feminino?", text)in list ("Masculino","Feminino"))
+							if("Masculino")
+								switch(input("Qual estilo de cabolo você mais gosta?", text) in list ("Naruto","Sasuke","Gaara","Shikamaru","Kakashi","Kabuto","Rock Lee","Itachi","Neiji","Kimimaro","Yondaime","Orochimaru","Jiraiya","Bald"))
 									if("Jiraiya")
 										usr.hair = "Jiraiya"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'jiraiyaH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -569,9 +601,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Kabuto")
 										usr.hair = "Kabuto"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'KabutoH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -582,9 +614,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Orochimaru")
 										usr.hair = "Orochimaru"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'OrochimaruH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -595,9 +627,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Kimimaro")
 										usr.hair = "Kimimaro"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'KimimaroH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -608,9 +640,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Yondaime")
 										usr.hair = "Yondaime"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'YondaimeH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -623,9 +655,9 @@ mob/npc
 										usr.hair = "Bald"
 									if("Naruto")
 										usr.hair = "Naruto"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'narutoH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -636,9 +668,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Neiji")
 										usr.hair = "Neiji"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'neijih.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -649,9 +681,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Itachi")
 										usr.hair = "Itachi"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'itachiH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -662,9 +694,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Gaara")
 										usr.hair = "Gaara"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'gaaraH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -675,9 +707,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Kakashi")
 										usr.hair = "Kakashi"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'KakashiH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -688,9 +720,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Sasuke")
 										usr.hair = "Sasuke Hair"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'SasukeH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -701,9 +733,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Rock Lee")
 										usr.hair = "Lee Hair"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'leeH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -715,13 +747,13 @@ mob/npc
 
 
 
-							if("Female")
-								switch(input("Which hair style would you like?", text) in list ("Sakura","Hinata","Ino","Temari","Bald"))
+							if("Feminino")
+								switch(input("Which hair style would you like?", text) in list ("Sakura","Hinata","Ino","Temari","Careca"))
 									if("Temari")
 										usr.hair = "Temari Hair"
-										var/hairred = input("How much red do you want in your hair?") as num
-										var/hairblue = input("How much blue do you want in your hair?") as num
-										var/hairgreen = input("How much green do you want in your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'temariH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -732,9 +764,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Sakura")
 										usr.hair = "Sakura Hair"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'SakuraH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -745,9 +777,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Ino")
 										usr.hair = "Ino"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'inoH.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -758,9 +790,9 @@ mob/npc
 										usr.overlays += usr.hair
 									if("Hinata")
 										usr.hair = "Hinata"
-										var/hairred = input("How much red do you want to put into your hair?") as num
-										var/hairblue = input("How much blue do you want to put into your hair?") as num
-										var/hairgreen = input("How much green do you want to put into your hair?") as num
+										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
 										var/hairover = 'Hinata Hair.dmi'
 										hairover += rgb(hairred,hairgreen,hairblue)
 										usr.rhair = hairred
@@ -769,7 +801,7 @@ mob/npc
 										usr.Ohair = hairover
 										usr.hair = usr.Ohair
 										usr.overlays += usr.hair
-									if("Bald")
+									if("Careca")
 										usr.hair = "Bald"
 mob
 	proc
@@ -796,14 +828,14 @@ mob
 	proc
 		MONATTACK(mob/M in get_step(src,src.dir))
 			if(M.drunk&&M.NonClan)
-				view(M)<<"[M] dodges [src]'s attack."
+				view(M)<<"[M] dodges [src]'s atacou."
 				return
 			if(src.orochimaru&&src.canattack)
 				if(!M.bit)
 					var/damage = round(src.tai/1.6)
 					if(damage <= 1)
 						damage = 1
-						view() << "[src] attacks [M] for [damage]!"
+						view() << "[src] atacou [M] e tirou [damage]!"
 						M.health -= damage
 						if(M.health <= 0)
 							src.killlist = ""
@@ -811,7 +843,7 @@ mob
 						if(istype(M,/mob/enemy))
 							M.killlist += src.name
 					else
-						view() << "[src] attacks [M] for [damage]!"
+						view() << "[src] atacou [M] e tirou [damage]!"
 						M.health -= damage
 						if(M.health <= 0)
 							src.killlist = ""
@@ -821,7 +853,7 @@ mob
 				else
 					if(M.CS==1&&!src.GOTCS)
 						src.canattack=1
-						view(src)<<"Orochimaru: You are interesting."
+						view(src)<<"Orochimaru: Você está interessado?."
 						sleep(10)
 						view(src)<<"Orochimaru: I will give you the gift the curse mark."
 						sleep(10)
@@ -830,7 +862,7 @@ mob
 						M.firing=1
 						M.GettingCurseSeal()
 						sleep(40)
-						view(M)<<"Orochimaru: you will find me to get more powerfull, good bye [M]"
+						view(M)<<"Orochimaru: Você deve me procurar quando for mais forte, Até mais [M]"
 						del(src)
 						sleep(40)
 						M.inmission=0
@@ -846,14 +878,14 @@ mob
 					var/damage = round(usr.tai)
 					if(damage <= 1)
 						damage = 1
-						M <<"You reflect [src]'s attack causing them to hurt themselfs."
+						M <<"Você refletiu o ataque de [src]'s causing them to hurt themselfs."
 						src.health -= damage
 						if(src.health <= 0)
 							src.killlist = ""
 							src.Death(M)
 						return
 					else
-						M <<"You reflect [src]'s attack causing them to hurt themselfs."
+						M <<"Você refletiu o ataque de [src]'s attack causing them to hurt themselfs."
 						src.health -= damage
 						if(src.health <= 0)
 							src.killlist = ""
@@ -866,7 +898,7 @@ mob
 						var/damage = round(src.tai)
 						if(damage <= 1)
 							damage = 1
-							view() << "[src] attacks [M] for [damage]!"
+							view() << "[src] atacou [M] e tirou [damage]!"
 							M.health -= damage
 							if(M.health <= 0)
 								src.killlist = ""
@@ -874,7 +906,7 @@ mob
 							if(istype(M,/mob/enemy))
 								M.killlist += src.name
 						else
-							view() << "[src] attacks [M] for [damage]!"
+							view() << "[src] atacou [M] e tirou [damage]!"
 							M.health -= damage
 							if(M.health <= 0)
 								src.killlist = ""
@@ -887,7 +919,7 @@ mob
 							var/damage = round(src.tai)
 							if(damage <= 1)
 								damage = 1
-								view() << "[src] attacks [M] for [damage]!"
+								view() << "[src] atacou [M] e tirou [damage]!"
 								M.health -= damage
 								src.chakra -= 2
 								if(M.health <= 0)
@@ -896,7 +928,7 @@ mob
 								if(istype(M,/mob/enemy))
 									M.killlist += src.name
 							else
-								view() << "[src] attacks [M] for [damage]!"
+								view() << "[src] atacou [M] e tirou [damage]!"
 								M.health -= damage
 								src.chakra -= 2
 								if(M.health <= 0)
@@ -1391,7 +1423,7 @@ mob
 mob
 	enemy//..attack
 		Leafvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do Vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Leaf/Grass"
 			Village="Leaf"
@@ -1405,7 +1437,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Grassvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Leaf/Grass"
 			Village="Grass"
@@ -1419,7 +1451,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Mistvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Snow/Mist/Rain/Water"
 			Village="Mist"
@@ -1433,7 +1465,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Snowvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Snow/Mist/Rain/Water"
 			Village="Snow"
@@ -1447,7 +1479,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Rainvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Snow/Mist/Rain/Water"
 			Village="Rain"
@@ -1461,7 +1493,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Waterfallvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Snow/Mist/Rain/Water"
 			Village="Waterfall"
@@ -1475,7 +1507,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Cloudvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Rock/Sand/Cloud"
 			Village="Cloud"
@@ -1489,7 +1521,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Rockvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Rock/Sand/Cloud"
 			Village="Rock"
@@ -1503,7 +1535,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Sandvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Rock/Sand/Cloud"
 			Village="Sand"
@@ -1517,7 +1549,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Soundvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Sound/Star"
 			Village="Sound"
@@ -1531,7 +1563,7 @@ mob
 			shurikenskill=10000
 			NPC=1
 		Starvillageshinobi
-			name= "(NPC)Village Shinobi"
+			name= "Shinobi do vilarejo"
 			icon = 'Guards.dmi'
 			icon_state="Guard Sound/Star"
 			Village="Star"
@@ -1592,7 +1624,7 @@ mob
 			shurikenskill=1000
 			NPC=1
 		orochimaru
-			name= "(NPC)Orochimaru"
+			name= "Orochimaru"
 			icon = 'orochimaru.dmi'
 			orochimaru = 1
 			Tekken = 1
@@ -1604,7 +1636,7 @@ mob
 			shurikenskill=5000
 			NPC=1
 		DosuKinuta
-			name= "(NPC)Dosu Kinuta"
+			name= "Dosu Kinuta"
 			icon = 'Dosu Kinuta.dmi'
 			weaknin = 1
 			Tekken = 1
@@ -1630,116 +1662,130 @@ mob
 			return..()
 mob/npc
 	Summon_Vender
-		name = "(NPC)Summon Seller"
+		name = "Vendedor de pergaminhos de summon"
 		icon = 'Banker.dmi'
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
 			Buy()
 				set src in oview(3)
-				switch(input("What scroll would you like to buy today??")in list("Snake Summon - 100k","Slug Summon - 100k","Frog Summon - 100k","Puppet Summon - 50k","Nothing"))
+				switch(input("Qual pergaminho você deseja comprar hoje?")in list("Snake Summon - 100k","Slug Summon - 100k","Frog Summon - 100k","Puppet Summon - 50k","Nada"))
 					if("Snake Summon - 100k")
 						if(usr.Yen >= 100000)
 							usr.Yen -= 100000
 							usr.contents += new /obj/Big_Snake_Scroll
+							usr<<"Você comprou um pergaminho de Snake Summon"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Slug Summon - 100k")
 						if(usr.Yen >= 100000)
 							usr.Yen -= 100000
 							usr.contents += new /obj/Slug_Summoning_Scroll
+							usr<<"Você comprou um pergaminho de Slug Summon"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Frog Summon - 100k")
 						if(usr.Yen >= 100000)
 							usr.Yen -= 100000
 							usr.contents += new /obj/Frog_Summoning_Scroll
+							usr<<"Você comprou um pergaminho de Frog Summon"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Puppet Summon - 50k")
 						if(usr.Yen >= 50000)
 							usr.Yen -= 50000
 							usr.contents += new /obj/Doll_Summoning_Scroll
+							usr<<"Você comprou um pergaminho de Puppet Summon"
 						else
-							usr<<"Not enough money!"
-					if("Nothing")
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Nada")
 						return
 mob/npc
 	Scroll_Vender
-		name = "(NPC)Scroll Seller"
+		name = "Vendedor de pergaminhos de jutsus"
 		icon = 'Banker.dmi'
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
 			Buy()
 				set src in oview(3)
-				switch(input("What scroll would you like to buy today??")in list("Kaze Dangan No Jutsu - 50k","Kage Bunshin No Jutsu - 5k","Renkuudan No Jutsu - 60k","Daitoppa No Jutsu - 50k","Doton Doryo Dango - 40k","Doton Doryuuheki - 50k","Raikyuu No Jutsu - 40k","Rairyuu No Tatsumaki - 40k","Katon Goukakyuu - 40k","Katon Housenka no jutsu - 40k","Nothing"))
+				switch(input("Qual pergaminho você deseja comprar hoje?")in list("Kaze Dangan No Jutsu - 50k","Kage Bunshin No Jutsu - 5k","Renkuudan No Jutsu - 60k","Daitoppa No Jutsu - 50k","Doton Doryo Dango - 40k","Doton Doryuuheki - 50k","Raikyuu No Jutsu - 40k","Rairyuu No Tatsumaki - 40k","Katon Goukakyuu - 40k","Katon Housenka no jutsu - 40k","Nada"))
 					if("Kaze Dangan No Jutsu - 50k")
 						if(usr.Yen >= 50000)
 							usr.Yen -= 50000
 							usr.contents += new /obj/Scroll_Fuuton1
+							usr<<"Você comprou um pergaminho de Kaze Dangan No Jutsu"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Renkuudan No Jutsu - 60k")
 						if(usr.Yen >= 60000)
 							usr.Yen -= 60000
 							usr.contents += new /obj/Scroll_Fuuton2
+							usr<<"Você comprou um pergaminho de Renkuudan No Jutsu"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Daitoppa No Jutsu - 50k")
 						if(usr.Yen >= 50000)
 							usr.Yen -= 50000
 							usr.contents += new /obj/Scroll_Fuuton3
+							usr<<"Você comprou um pergaminho de Daitoppa No Jutsu"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Doton Doryo Dango - 40k")
 						if(usr.Yen >= 40000)
 							usr.Yen -= 40000
 							usr.contents += new /obj/Scroll_Doton1
+							usr<<"Você comprou um pergaminho de Doton Doryo Dango"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Doton Doryuuheki - 50k")
 						if(usr.Yen >= 50000)
 							usr.Yen -= 50000
 							usr.contents += new /obj/Scroll_Doton2
+							usr<<"Você comprou um pergaminho de Doton Doryuuheki"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Raikyuu No Jutsu - 40k")
 						if(usr.Yen >= 40000)
 							usr.Yen -= 40000
 							usr.contents += new /obj/Scroll_Rai1
+							usr<<"Você comprou um pergaminho de Raikyuu No Jutsu"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Rairyuu No Tatsumaki - 40k")
 						if(usr.Yen >= 40000)
 							usr.Yen -= 40000
 							usr.contents += new /obj/Scroll_Rai2
+							usr<<"Você comprou um poergaminho de Rairyuu No Tatsumaki"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Katon Goukakyuu - 40k")
 						if(usr.Yen >= 40000)
 							usr.Yen -= 40000
 							usr.contents += new /obj/Scroll_Katon1
+							usr<<"Você comprou um pergaminho de Katon Goukakyuu"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Katon Housenka no jutsu - 40k")
 						if(usr.Yen >= 40000)
 							usr.Yen -= 40000
 							usr.contents += new /obj/Scroll_Katon2
+							usr<<"Você comprou um pergaminho de Katon Housenka no jutsu"
 						else
-							usr<<"Not enough money!"
+							usr<<"Você não tem dinheiro o suficiente!"
 					if("Kage Bunshin No Jutsu - 5k")
 						if(usr.Yen >= 5000)
 							usr.Yen -= 5000
 							usr.contents += new /obj/KagebunshinS
+							usr<<"Você comprou um pergaminho de Kage Bunshin No Jutsu"
 						else
-							usr<<"Not enough money!"
-					if("Nothing")
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Nada")
 						return
 mob/var/talkedto=0
 mob/var/itachitalked=0
 mob/npc/Naruto
-	name = "(NPC)Naruto"
+	name = "Naruto"
 	icon = 'npcs.dmi'
 	icon_state = "Naruto"
 	PK = 0
@@ -1825,7 +1871,7 @@ mob/npc/Sakura
 						usr.dogs=1
 
 mob/npc/Sasuke
-	name = "(NPC)Sasuke"
+	name = "Sasuke"
 	icon = 'npcs.dmi'
 	icon_state = "Sasuke"
 	PK = 0
@@ -1863,7 +1909,7 @@ mob/npc/Sasuke
 
 
 mob/npc/Haku
-	name = "(NPC)Haku"
+	name = "Haku"
 	icon = 'haku.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
@@ -1908,7 +1954,7 @@ mob/npc/Haku
 
 
 mob/npc/Choji
-	name = "(NPC)Choji"
+	name = "Choji"
 	icon = 'Choji.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
@@ -1947,7 +1993,7 @@ mob/npc/Choji
 				if("Forget it")
 					usr<<"Ohh ok do you have some food?"
 mob/npc/Nara
-	name = "(NPC)Shikamaru"
+	name = "Shikamaru"
 	icon = 'Nara.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
@@ -1993,7 +2039,7 @@ mob/npc/Nara
 					usr<<"What a drag"
 
 mob/npc/Kamizuri
-	name = "(NPC)Bee Keeper"
+	name = "Bee Keeper"
 	icon = 'BeeArmor.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999
@@ -2049,14 +2095,14 @@ mob/npc/Kamizuri
 					usr<<"Bee gone!"
 
 mob/npc/Kabuto
-	name = "(NPC)Kubuto"
+	name = "Kabuto"
 	icon = 'Kabuto.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999
 	verb
 		Talk()
 			set src in oview(1)
-			set category = "Kubuto"
+			set category = "Kabuto"
 			switch(input("What do you want I'm working on my cards.",text) in list ("Can you heal me?","INFO Cards","I'm a Medic too!","Forget it"))
 				if("I'm a Medic too!")
 					if(usr.Medical == 1)
@@ -2114,7 +2160,7 @@ mob/npc/Kabuto
 					usr<<"Ok then back to my cards."
 
 mob/npc/Kaguya
-	name = "(NPC)Kimimaro"
+	name = "Kimimaro"
 	icon = 'Kaguya.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
@@ -2174,7 +2220,7 @@ mob/npc/Kaguya
 					return
 
 mob/npc/Kiba
-	name = "(NPC)Kiba"
+	name = "Kiba"
 	icon = 'Kiba.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
@@ -2222,7 +2268,7 @@ mob/npc/Kiba
 					usr<<"Forgoten"
 					return
 mob/npc/Lee
-	name = "(NPC)Lee"
+	name = "Rock Lee"
 	icon = 'npcs.dmi'
 	icon_state ="Lee"
 	PK = 0
@@ -2288,7 +2334,7 @@ mob/npc/Neiji
 						return
 
 mob/npc/Kakashi
-	name = "(NPC)Kakashi"
+	name = "Kakashi"
 	icon = 'npcs.dmi'
 	icon_state = "Kakashi"
 	PK = 0
@@ -2310,7 +2356,7 @@ mob/npc/Kakashi
 					usr<<"You are even more foolish then I thought."
 
 mob/npc/Jiraiya
-	name = "(NPC)Jiraiya"
+	name = "Jiraiya"
 	icon = 'npcs.dmi'
 	icon_state = "Jiraiya"
 	PK = 0
@@ -2412,7 +2458,7 @@ mob/npc/Jiraiya
 					else
 						usr<<"You do not have Cursed Seal."
 mob/npc/Gaara
-	name = "(NPC)Gaara"
+	name = "Gaara"
 	icon = 'npcs.dmi'
 	icon_state = "Gaara"
 	PK = 0
@@ -2490,7 +2536,7 @@ mob/npc/Gaara
 					usr<<"Lair leave now before I kill you."
 
 mob/npc/Gai
-	name = "(NPC)Gai"
+	name = "Gai"
 	icon = 'Guy.dmi'
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
@@ -2539,7 +2585,7 @@ mob/npc/Gai
 					usr.health-=1000
 
 mob/npc/Tenten
-	name = "(NPC)Tenten"
+	name = "Tenten"
 	icon = 'tenten.dmi'
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
@@ -2589,7 +2635,7 @@ mob/npc/Tenten
 
 
 mob/npc/Zabuza
-	name = "(NPC)Zabuza"
+	name = "Zabuza"
 	icon = 'npcs.dmi'
 	icon_state = "Zabuza"
 	PK = 0
@@ -2612,7 +2658,7 @@ mob/npc/Zabuza
 					usr.monkey=1
 
 mob/npc/Shino
-	name = "(NPC)Shino"
+	name = "Shino"
 	icon = 'npcs.dmi'
 	icon_state = "Shino"
 	PK = 0
@@ -2676,7 +2722,7 @@ mob/npc/Shino
 						usr<<"Liar leave the Aburame house now!"
 
 mob/npc/Itachi
-	name = "(NPC)Itachi"
+	name = "Itachi"
 	icon = 'npcs.dmi'
 	icon_state = "Itachi"
 	PK = 0
@@ -2700,7 +2746,7 @@ mob/npc/Itachi
 					usr<<"You have learned the Bird sign."
 
 mob/npc/Squads
-	name="(NPC)Jounin Squad assignments."
+	name="Jounin Squad assignments."
 	icon='Banker.dmi'
 	PK = 0
 	health=999999999999999999999999999999999999999999999
@@ -2726,7 +2772,7 @@ mob/npc/Squads
 					usr<<"If you feel you are not ready it is best."
 
 mob/npc/Genin
-	name="(NPC)Iruka"
+	name="Iruka"
 	icon='Iruka.dmi'
 	PK = 0
 	health=999999999999999999999999999999999999999999999
@@ -2748,7 +2794,7 @@ mob/npc/Genin
 					usr<<"Ok then."
 
 mob/npc/Anko
-	name="(NPC)Anko"
+	name="Anko"
 	icon='Anko.dmi'
 	PK = 0
 	health=999999999999999999999999999999999999999999999
@@ -2773,7 +2819,7 @@ mob/npc/Anko
 
 
 mob/npc/Pawn
-	name = "(NPC)Pawn Shop"
+	name = "Pawn Shop"
 	icon = 'Banker.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999
@@ -2792,7 +2838,7 @@ mob/npc/Pawn
 
 					del(varPackItem)
 mob/npc/Baby
-	name = "(NPC)Baby"
+	name = "Baby"
 	icon = 'npcs.dmi'
 	icon_state = "Baby"
 	PK = 0
