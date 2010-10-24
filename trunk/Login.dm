@@ -22,10 +22,10 @@ turf/START
 		usr.loc = locate(52,37,30)
 		var/name = input("","Name") as text|null
 		if(length(name) < 2)
-			alert("Your name must be longer than 2 letters!")
+			alert("Seu nome tem que ter mais de 2 (duas) letras!")
 			return
 		if(length(name) > 20)
-			alert("Your name can not be longer then 20 letters!")
+			alert("Seu nome não pode ter mais de 20 (vinte) letras!")
 			return
 		usr.name="[html_encode(name)]"
 		usr.loc = locate(94,94,20)
@@ -47,9 +47,9 @@ client
 turf/Finished
 	density=1
 	Click()
-		switch(input("What genger are you?", "Face Icon",text) in list("Male","Female","Other"))
-			if("Male")
-				switch(input("What icon do you want to use?", "Icon Choose") in list ("Naruto","Sasuke","Itachi","Kankuro","Lee","Kimimaro","Neiji","Kakashi","Gaara","Zabuza","Haku","Shino","Choji","Kiba","Shikamaru","Jiraiya","Iruka","Orochimaru","Gai","Kubuto","Kimimaro","Akahosh","Obito","Asuma","Sasori","Sai","4th"))
+		switch(input("O genger é você?", "Ícone da face",text) in list("Masculino","Feminino","Outro"))
+			if("Masculino")
+				switch(input("Qual ícone você quer usar?", "Escolha o ícone") in list ("Naruto","Sasuke","Itachi","Kankuro","Lee","Kimimaro","Neiji","Kakashi","Gaara","Zabuza","Haku","Shino","Choji","Kiba","Shikamaru","Jiraiya","Iruka","Orochimaru","Gai","Kubuto","Kimimaro","Akahosh","Obito","Asuma","Sasori","Sai","4th"))
 					if("Sai")
 						usr.faceicon = 'saiF.bmp'
 					if("Itachi")
@@ -101,8 +101,8 @@ turf/Finished
 					if("Asuma")
 						usr.faceicon = 'asumaF.bmp'
 
-			if("Female")
-				switch(input("What icon do you want to use?", "Icon Choose") in list ("Sakura","Hinata","Ino","Tenten","Anko","Aoi","Tsunade","Temari","Tayuya"))
+			if("Feminino")
+				switch(input("Qual ícone você deseja usar?", "Escolha o ícone") in list ("Sakura","Hinata","Ino","Tenten","Anko","Aoi","Tsunade","Temari","Tayuya"))
 					if("Tayuya")
 						usr.faceicon = 'tayuyaF.bmp'
 					if("Sakura")
@@ -122,7 +122,7 @@ turf/Finished
 					if("Temari")
 						usr.faceicon = 'TemariF.bmp'
 
-			if("Other")
+			if("Outro")
 				usr.faceicon = 'kingenmaF.bmp'
 
 		if(usr.villageselected&&usr.baseselected)
@@ -143,69 +143,69 @@ turf/Finished
 				return
 
 		else
-			usr<<"You must choose a village and a base icon!"
+			usr<<"Você deve escolher uma aldeia e um ícone de base!"
 turf/Skincolorselect
 	density=1
 	Click()
 		usr.baseselected=0
-		switch(input("What genger are you?", text) in list ("Male","Female"))
-			if("Male")
-				switch(input("Choose a skin color", text) in list ("Pale","Tan","Vamp","Black","Red","Blue","Yellow"))
-					if("Pale")
+		switch(input("O genger é você?", text) in list ("Masculino","Feminino"))
+			if("Masculino")
+				switch(input("Escolha uma cor de skin", text) in list ("Pele","Bronzeada","Vampiro","Preta","Vermelha","Azul","Amarela"))
+					if("Pele")
 						usr.icon='Base white.dmi'
 						usr.Oicon='Base white.dmi'
 						usr.baseselected=1
-					if("Tan")
+					if("Bronzeada")
 						usr.icon='BaseT.dmi'
 						usr.Oicon='BaseT.dmi'
 						usr.baseselected=1
-					if("Vamp")
+					if("Vampiro")
 						usr.icon='BaseVamp.dmi'
 						usr.Oicon='BaseVamp.dmi'
 						usr.baseselected=1
-					if("Black")
+					if("Preta")
 						usr.icon='BaseBlack.dmi'
 						usr.Oicon='BaseBlack.dmi'
 						usr.baseselected=1
-					if("Red")
+					if("Vermelha")
 						usr.icon='BaseRed.dmi'
 						usr.Oicon='BaseRed.dmi'
 						usr.baseselected=1
-					if("Blue")
+					if("Azul")
 						usr.icon='BaseBlue.dmi'
 						usr.Oicon='BaseBlue.dmi'
 						usr.baseselected=1
-					if("Yellow")
+					if("Amarela")
 						usr.icon='BaseYellow.dmi'
 						usr.Oicon='BaseYellow.dmi'
 						usr.baseselected=1
-			if("Female")
-				switch(input("Choose a skin color", text) in list ("Pale","Tan","Vamp","Black","Red","Blue","Yellow"))
-					if("Pale")
+			if("Feminino")
+				switch(input("Escolha um cor de skin", text) in list ("Pele","Bronzeada","Vampiro","Preta","Vermelha","Azul","Amarela"))
+					if("Pele")
 						usr.icon='Female white.dmi'
 						usr.Oicon='Female white.dmi'
 						usr.baseselected=1
-					if("Tan")
+					if("Bronzeada")
 						usr.icon='FemaleT.dmi'
 						usr.Oicon='FemaleT.dmi'
 						usr.baseselected=1
-					if("Vamp")
+					if("Vampiro")
 						usr.icon='FemaleVamp.dmi'
 						usr.Oicon='FemaleVamp.dmi'
 						usr.baseselected=1
-					if("Black")
+					if("Preta")
 						usr.icon='FemaleBlack.dmi'
 						usr.Oicon='FemaleBlack.dmi'
 						usr.baseselected=1
-					if("Red")
+					if("Vermelha")
 						usr.icon='FemaleRed.dmi'
 						usr.Oicon='FemaleRed.dmi'
 						usr.baseselected=1
-					if("Blue")
+					if("Azul")
 						usr.icon='FemaleBlue.dmi'
 						usr.Oicon='FemaleBlue.dmi'
 						usr.baseselected=1
-					if("Yellow")
+					if("Amarela")
 						usr.icon='FemaleYellow.dmi'
 						usr.Oicon='FemaleYellow.dmi'
 						usr.baseselected=1
@@ -219,15 +219,15 @@ mob
 	proc
 		DeleteChar()
 			if(fexists("players/[src.key].sav"))
-				var/sure=alert(src,"Are you sure you want to delete your character?","Confirmation","No","Yes")
-				if(sure=="Yes")
+				var/sure=alert(src,"Você tem certeza que deseja deletar seu personagem?","Confirmação","Não","Sim")
+				if(sure=="Sim")
 					sleep(0)
 					fdel("players/[src.key].sav")
-					src << "Character Deleted"
+					src << "Personagem deletado"
 				else
-					src << "Canceled deleting '[src.key].sav'"
+					src << "Deletação cancelada '[src.key].sav'"
 			else
-				src << "You do not have a character saved on this server."
+				src << "Você não tem uma conta nesse server."
 mob/var
 	hairselected=0
 	villageselected=0
@@ -248,9 +248,9 @@ turf/Villageselect
 		usr.snowS=0
 		usr.missingS=0
 		usr.villageselected=0
-		alert("Remember that each village has their own unique Jutsus.")
-		switch(input("Which Village would you like to be born in?", text) in list ("Leaf","Sand","Sound","Grass","Rain","Cloud","Mist","Rock","Waterfall","Snow"))
-			if("Leaf")
+		alert("Lembre-se que cada aldeia tem seus próprios Jutsus exclusivos.")
+		switch(input("Gostaria de nascer em qual vilarejo?", text) in list ("Folha","Areia","Som","Grama","Chuva","Névoa","Pedra","Cachoeira","Neve"))
+			if("Folha")
 				usr.leafS=1
 				usr.mistS=0
 				usr.soundS=0
@@ -264,7 +264,7 @@ turf/Villageselect
 				usr.villageselected=1
 				usr.Village="Leaf"
 				usr.waterfallS=0
-			if("Sand")
+			if("Areia")
 				usr.leafS=0
 				usr.mistS=0
 				usr.sandS=1
@@ -278,7 +278,7 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Sand"
-			if("Sound")
+			if("Som")
 				usr.leafS=0
 				usr.mistS=0
 				usr.sandS=0
@@ -292,7 +292,7 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Sound"
-			if("Rain")
+			if("Chuva")
 				usr.leafS=0
 				usr.mistS=0
 				usr.soundS=0
@@ -306,7 +306,7 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Rain"
-			if("Grass")
+			if("Grama")
 				usr.leafS=0
 				usr.mistS=0
 				usr.soundS=0
@@ -320,7 +320,7 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Grass"
-			if("Rock")
+			if("Pedra")
 				usr.leafS=0
 				usr.mistS=0
 				usr.soundS=0
@@ -334,21 +334,21 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Rock"
-			if("Cloud")
-				usr.leafS=0
-				usr.mistS=0
-				usr.soundS=0
-				usr.earthS=0
-				usr.sandS=0
-				usr.rainS=0
-				usr.waterfallS=0
-				usr.grassS=0
-				usr.lightningS=1
-				usr.snowS=0
-				usr.missingS=0
-				usr.villageselected=1
-				usr.Village="Cloud"
-			if("Mist")
+			//if("Cloud")
+				//usr.leafS=0
+				//usr.mistS=0
+				//usr.soundS=0
+				//usr.earthS=0
+				//usr.sandS=0
+				//usr.rainS=0
+				//usr.waterfallS=0
+				//usr.grassS=0
+				//usr.lightningS=1
+				//usr.snowS=0
+				//usr.missingS=0
+				//usr.villageselected=1
+				//usr.Village="Cloud"
+			if("Névoa")
 				usr.leafS=0
 				usr.mistS=1
 				usr.sandS=0
@@ -362,7 +362,7 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Mist"
-			if("Waterfall")
+			if("Cachoeira")
 				usr.leafS=0
 				usr.mistS=0
 				usr.waterfallS=1
@@ -376,7 +376,7 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Waterfall"
-			if("Snow")
+			if("Neve")
 				usr.leafS=0
 				usr.mistS=0
 				usr.waterfallS=0
@@ -398,14 +398,14 @@ turf/Hairselect
 	Click()
 		usr.overlays=null
 		usr.hairselected=0
-		switch(input("Male or Female?", text)in list ("Male","Female"))
-			if("Male")
-				switch(input("Which hair style would you like?", text) in list ("Naruto","Sasuke","Gaara","Shikamaru","Kakashi","Kabuto","Rock Lee","Itachi","Neiji","Kimimaro","Yondaime","Orochimaru","Jiraiya","Bald"))
+		switch(input("Masculino ou Feminino?", text)in list ("Masculino","Feminino"))
+			if("Masculino")
+				switch(input("Qual estilo de cabelo você deseja?", text) in list ("Naruto","Sasuke","Gaara","Shikamaru","Kakashi","Kabuto","Rock Lee","Itachi","Neiji","Kimimaro","Yondaime","Orochimaru","Jiraiya","Careca"))
 					if("Jiraiya")
 						usr.hair = "Jiraiya"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'jiraiyaH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -417,9 +417,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Kabuto")
 						usr.hair = "Kabuto"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'KabutoH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -431,9 +431,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Orochimaru")
 						usr.hair = "Orochimaru"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'OrochimaruH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -445,9 +445,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Kimimaro")
 						usr.hair = "Kimimaro"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'KimimaroH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -459,9 +459,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Yondaime")
 						usr.hair = "Yondaime"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'YondaimeH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -471,14 +471,14 @@ turf/Hairselect
 						usr.hair = usr.Ohair
 						usr.overlays += usr.hair
 						usr.hairselected=1
-					if("Bald")
+					if("Careca")
 						usr.hair = "Bald"
 						usr.hairselected=1
 					if("Naruto")
 						usr.hair = "Naruto"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'narutoH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -490,9 +490,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Neiji")
 						usr.hair = "Neiji"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'neijih.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -504,9 +504,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Itachi")
 						usr.hair = "Itachi"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'itachiH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -518,9 +518,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Gaara")
 						usr.hair = "Gaara"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'gaaraH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -532,9 +532,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Kakashi")
 						usr.hair = "Kakashi"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'KakashiH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -546,9 +546,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Sasuke")
 						usr.hair = "Sasuke Hair"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'SasukeH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -560,9 +560,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Rock Lee")
 						usr.hair = "Lee Hair"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'leeH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -573,13 +573,13 @@ turf/Hairselect
 						usr.overlays += usr.hair
 						usr.hairselected=1
 
-			if("Female")
+			if("Feminino")
 				switch(input("Which hair style would you like?", text) in list ("Sakura","Hinata","Ino","Bald"))
 					if("Sakura")
 						usr.hair = "Sakura Hair"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'SakuraH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -591,9 +591,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Ino")
 						usr.hair = "Ino"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'inoH.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -605,9 +605,9 @@ turf/Hairselect
 						usr.hairselected=1
 					if("Hinata")
 						usr.hair = "Hinata"
-						var/hairred = input("How much red do you want to put into your hair?") as num
-						var/hairblue = input("How much blue do you want to put into your hair?") as num
-						var/hairgreen = input("How much green do you want to put into your hair?") as num
+						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+						var/hairblue = input("Quanto de azul você gostaria no seu cabelo?") as num
+						var/hairgreen = input("Quanto de verde você gostaria no seu cabelo?") as num
 						var/hairover = 'Hinata Hair.dmi'
 						hairover += rgb(hairred,hairgreen,hairblue)
 						usr.rhair = hairred
@@ -626,10 +626,10 @@ turf/UZUMAKI
 	Click()
 		if(usr.clany)
 			return
-		switch(input("Are you sure you would like to be Uzumaki?", "Uzumaki") in list ("No","No","Yes","No","No"))
-			if("Yes")
+		switch(input("Tem certeza que você gostaria de ser Uzumaki?", "Uzumaki") in list ("Não","Sim"))
+			if("Sim")
 				usr.clany = 1
-				usr<<"You are now a Clone specialist!"
+				usr<<"Agora você é um especialista em Clone!"
 				usr.NonClan=0
 				usr.Realplayer = 1
 				usr.human = 1
@@ -650,7 +650,7 @@ turf/UZUMAKI
 				usr.bit=0
 				usr.Kyuubi=1
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 
@@ -659,10 +659,10 @@ turf/SPIDERCLAN
 	Click()
 		if(usr.clany)
 			return
-		switch(input("Are you sure you would like to be Spider Mutant?", "SpiderClan") in list ("No","No","Yes","No","No"))
-			if("Yes")
+		switch(input("Tem certeza que você gostaria de ser Spider Mutant?", "SpiderClan") in list ("Não","Sim"))
+			if("Sim")
 				usr.clany = 1
-				usr<<"You are now a creation of Orochimaru's power!"
+				usr<<"Você é agora uma criação do poder de Orochimaru!"
 				usr.NonClan=0
 				usr.Realplayer = 1
 				usr.human = 0
@@ -684,7 +684,7 @@ turf/SPIDERCLAN
 				usr.bit=0
 				usr.Kyuubi=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 
@@ -693,10 +693,10 @@ turf/TENTEN
 	Click()
 		if(usr.clany)
 			return
-		switch(input("Are you sure you would like to be Tenten?", "Tenten") in list ("No","No","Yes","No","No"))
-			if("Yes")
+		switch(input("Tem certeza que você gostaria de ser Tenten?", "Tenten") in list ("Não","Sim"))
+			if("Sim")
 				usr.clany = 1
-				usr<<"You are now a Throwing specialist!"
+				usr<<"Você é agora um especialista em arremessos!"
 				usr.NonClan=0
 				usr.Realplayer = 1
 				usr.human = 1
@@ -714,7 +714,7 @@ turf/TENTEN
 				usr.Uzumaki=0
 				usr.Tenten=1
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 turf/LEE
@@ -722,10 +722,10 @@ turf/LEE
 	Click()
 		if(usr.clany)
 			return
-		switch(input("Are you sure you would like to be Lee?", "Lee") in list ("No","No","Yes","No","No"))
-			if("Yes")
+		switch(input("Tem certeza que você gostaria de ser Lee?", "Lee") in list ("Não","Sim"))
+			if("Sim")
 				usr.clany = 1
-				usr<<"You are now a Taijutsu specialist!"
+				usr<<"Você é agora um especialista em Taijutsu!"
 				usr.NonClan=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -743,7 +743,7 @@ turf/LEE
 				usr.Tenten=0
 				usr.Uzumaki=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 turf/GAARA
@@ -751,9 +751,9 @@ turf/GAARA
 	Click()
 		if(usr.clany)
 			return
-		switch(input("Are you sure you would like to be Gaara?", "Gaara") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You can now manipulate sand!"
+		switch(input("Tem certeza que você gostaria de ser Gaara?", "Gaara") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Agora você pode manipular areia!"
 				usr.Gaaraclan=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -777,7 +777,7 @@ turf/GAARA
 				var/obj/Gourd/B = new/obj/Gourd
 				B.loc = usr
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany=0
 				return
 turf/MEDIC
@@ -785,9 +785,9 @@ turf/MEDIC
 	Click()
 		if(usr.clany)
 			return
-		switch(input("Are you sure you would like to be a Medic?", "Medic") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You are now a Medical jutsu specialist!"
+		switch(input("Tem certeza que você gostaria de ser um médico?", "Medic") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Agora você é um especialista em jutsu médico!"
 				usr.NonClan=0
 				usr.Realplayer = 1
 				usr.human = 1
@@ -805,7 +805,7 @@ turf/MEDIC
 				usr.Tenten=0
 				usr.Uzumaki=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany=0
 				return
 
@@ -815,9 +815,9 @@ turf/KAMIZURI
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Kamizuri?", "Kamizuri") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Kamizuri clan"
+		switch(input("Tem certeza que você gostaria de ser Kamizuri?", "Kamizuri") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Kamizuri!"
 				usr.Kamizuri= 1
 				usr.Aburame=0
 				usr.Realplayer = 1
@@ -837,7 +837,7 @@ turf/KAMIZURI
 				usr.Tenten=0
 				usr.Uzumaki=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 turf/UCHIHA
@@ -846,9 +846,9 @@ turf/UCHIHA
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Uchiha?", "Uchiha") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Uchiha clan!"
+		switch(input("Tem certeza que você gostaria de ser Uchiha?", "Uchiha") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Uchiha!"
 				usr.Uchiha=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -866,7 +866,7 @@ turf/UCHIHA
 				usr.Tenten=0
 				usr.Uzumaki=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 turf/choosescreen
@@ -880,9 +880,9 @@ turf/KAGUYA
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Kaguya?", "Kaguya") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Kaguya clan!"
+		switch(input("Tem certeza que você gostaria de ser Kaguya?", "Kaguya") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Kaguya!"
 				usr.Kaguya=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -900,7 +900,7 @@ turf/KAGUYA
 				usr.Tenten=0
 				usr.Uzumaki=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 
@@ -912,9 +912,9 @@ turf/Hyuuga
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Hyuuga?", "Hyuuga") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Hyuuga clan!"
+		switch(input("Tem certeza que você gostaria de ser Hyuuga?", "Hyuuga") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Hyuuga!"
 				usr.Hyuuga=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -932,7 +932,7 @@ turf/Hyuuga
 				usr.Tenten=0
 				usr.Uzumaki=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 mob/var
@@ -944,9 +944,9 @@ turf/Lee
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Lee Non-Clan?", "Lee") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Rock Lee Non-Clan!"
+		switch(input("Tem certeza que você gostaria de ser RockLee Non-Clan?", "Lee") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o RockLee Non-Clan!"
 				usr.NonClan=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -964,7 +964,7 @@ turf/Lee
 				usr.Akimichi = 0
 				usr.Tenten=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 
@@ -974,9 +974,9 @@ turf/Akimichi
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Akimichi?", "Akimichi") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Akimichi clan!"
+		switch(input("Tem certeza que você gostaria de ser Akimichi?", "Akimichi") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Akimichi!"
 				usr.Akimichi=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -994,7 +994,7 @@ turf/Akimichi
 				usr.Aburame=0
 				usr.Tenten=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 
@@ -1004,9 +1004,9 @@ turf/Aburame
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Aburame?", "Aburame") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Aburame clan"
+		switch(input("Tem certeza que você gostaria de ser Aburame?", "Aburame") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Aburame!"
 				usr.Aburame=1
 				usr.Realplayer = 1
 				usr.Konchuu = 10
@@ -1026,7 +1026,7 @@ turf/Aburame
 				usr.Uchiha=0
 				usr.Tenten=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 
@@ -1036,9 +1036,9 @@ turf/Inuzuka
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Inuzuka?", "Inuzuka") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Inuzuka clan!"
+		switch(input("Tem certeza que você gostaria de ser Inuzuka?", "Inuzuka") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Inuzuka!"
 				usr.Inuzuka=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -1056,7 +1056,7 @@ turf/Inuzuka
 				usr.Akimichi = 0
 				usr.Tenten=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 
@@ -1066,9 +1066,9 @@ turf/Nara
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Nara?", "Nara") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You have chosen the Nara clan!"
+		switch(input("Tem certeza que você gostaria de ser Nara?", "Nara") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Nara!"
 				usr.Nara=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -1086,7 +1086,7 @@ turf/Nara
 				usr.Akimichi = 0
 				usr.Tenten=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return
 mob/var/tmp
@@ -1097,9 +1097,9 @@ turf/Haku
 		if(usr.clany)
 			return
 		usr.clany = 1
-		switch(input("Are you sure you would like to be Haku?", "Haku") in list ("No","No","Yes","No","No"))
-			if("Yes")
-				usr<<"You now have inherited the bloodline of Haku!"
+		switch(input("Tem certeza que você gostaria de ser Haku?", "Haku") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você agora herdou a linhagem de Haku!"
 				usr.Haku=1
 				usr.Realplayer = 1
 				usr.human = 1
@@ -1118,6 +1118,6 @@ turf/Haku
 				usr.Aburame=0
 				usr.Tenten=0
 				usr.loc = locate(94,7,20)
-			if("No")
+			if("Não")
 				usr.clany = 0
 				return

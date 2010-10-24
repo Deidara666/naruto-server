@@ -6,9 +6,6 @@
 // END_INTERNALS
 // BEGIN_FILE_DIR
 #define FILE_DIR .
-#define FILE_DIR "players"
-#define FILE_DIR "PNG"
-#define FILE_DIR "sounds"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
