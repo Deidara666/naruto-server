@@ -209,6 +209,7 @@ mob/npc
 					if(usr.Shurcounter<=99)
 						if(usr.Yen >= give*200&&give>0)
 							usr.Yen -= give*200
+							usr << "Você comprou [give] shuriken."
 							for(var/obj/Shuriken/O in usr.contents)
 								Shurcounter+=1
 							if(Shurcounter<=0)
@@ -221,7 +222,8 @@ mob/npc
 									O.ammount+=give
 									O.name= "[O.name] ([O.ammount])"
 						else
-							usr<<"Você não tem dinheiro o suficiente!"
+							if(usr.Yen <= 199)
+								usr<<"Você não tem dinheiro o suficiente!"
 					else
 						usr<<"Você só pode carregar 100 de uma vez."
 				if("Kunai - 400")
@@ -241,7 +243,8 @@ mob/npc
 									O.ammount+=give
 									O.name= "[O.name] ([O.ammount])"
 						else
-							usr<<"Você não tem dinheiro o suficiente!"
+							if(usr.Yen <= 399)
+								usr<<"Você não tem dinheiro o suficiente!"
 					else
 						usr<<"Você só pode carregar 100 de uma vez."
 				if("Exploding Tag - 1000")
@@ -262,7 +265,8 @@ mob/npc
 									O.ammount+=give
 									O.name= "[O.name] ([O.ammount])"
 						else
-							usr<<"Você não tem dinheiro o suficiente!"
+							if(usr.Yen <= 999)
+								usr<<"Você não tem dinheiro o suficiente!"
 					else
 						usr<<"Você só pode carregar 100 de uma vez."
 				if("Windmill - 50000")
@@ -284,7 +288,8 @@ mob/npc
 							var/obj/Trikunai/R = new/obj/Trikunai
 							R.loc = usr
 						else
-							usr<<"Você não tem dinheiro o suficiente!"
+							if(usr.Yen <= 49999)
+								usr<<"Você não tem dinheiro o suficiente!"
 					else
 						usr<<"Você só pode carregar 2 de uma vez."
 				if("Hyourougan - 500")
@@ -304,7 +309,8 @@ mob/npc
 									O.ammount+=give
 									O.name= "[O.name] ([O.ammount])"
 						else
-							usr<<"Você não tem dinheiro o suficiente!"
+							if(usr.Yen <= 499)
+								usr<<"Você não tem dinheiro o suficiente!"
 					else
 						usr<<"Você só pode carregar 10 de uma vez."
 				if("Nada")

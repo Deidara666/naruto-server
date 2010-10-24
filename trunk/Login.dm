@@ -20,7 +20,7 @@ turf/START
 	layer = 999
 	Click()
 		usr.loc = locate(52,37,30)
-		var/name = input("","Name") as text|null
+		var/name = input("","Nome") as text|null
 		if(length(name) < 2)
 			alert("Seu nome tem que ter mais de 2 (duas) letras!")
 			return
@@ -47,7 +47,7 @@ client
 turf/Finished
 	density=1
 	Click()
-		switch(input("O genger é você?", "Ícone da face",text) in list("Masculino","Feminino","Outro"))
+		switch(input("Qual seu gênero?", "Ícone da face",text) in list("Masculino","Feminino","Outro"))
 			if("Masculino")
 				switch(input("Qual ícone você quer usar?", "Escolha o ícone") in list ("Naruto","Sasuke","Itachi","Kankuro","Lee","Kimimaro","Neiji","Kakashi","Gaara","Zabuza","Haku","Shino","Choji","Kiba","Shikamaru","Jiraiya","Iruka","Orochimaru","Gai","Kubuto","Kimimaro","Akahosh","Obito","Asuma","Sasori","Sai","4th"))
 					if("Sai")
@@ -148,7 +148,7 @@ turf/Skincolorselect
 	density=1
 	Click()
 		usr.baseselected=0
-		switch(input("O genger é você?", text) in list ("Masculino","Feminino"))
+		switch(input("Qual seu gênero?", text) in list ("Masculino","Feminino"))
 			if("Masculino")
 				switch(input("Escolha uma cor de skin", text) in list ("Pele","Bronzeada","Vampiro","Preta","Vermelha","Azul","Amarela"))
 					if("Pele")
