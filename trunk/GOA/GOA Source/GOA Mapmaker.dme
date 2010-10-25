@@ -1,0 +1,43 @@
+// DM Environment file for NarutoLOAS.dme.
+// All manual changes should be made outside the BEGIN_ and END_ blocks.
+// New source code should be placed in .dm files: choose File/New --> Code File.
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+
+// BEGIN_INCLUDE
+#include "GOA.dmf"
+#include "code\_libs\ListSort\_listsort.dm"
+#include "code\_libs\ListSort\heapsort.dm"
+#include "code\_libs\ListSort\quicksort.dm"
+#include "code\_libs\pif_MapLoader\+Documentation.dm"
+#include "code\_libs\pif_MapLoader\+Implementation.dm"
+#include "code\_libs\pif_MapLoader\Backwards Interface.dm"
+#include "code\_libs\pif_MapLoader\Development Procedures.dm"
+#include "code\_libs\pif_MapLoader\dynamic_map.dm"
+#include "code\_libs\pif_MapLoader\Map Loading.dm"
+#include "code\_libs\pif_MapLoader\Map Saving.dm"
+#include "code\_libs\pif_MapLoader\Space Searching.dm"
+#include "code\_shared\interiors.dm"
+#include "code\_shared\items.dm"
+#include "code\_shared\map.dm"
+#include "code\_shared\map_grid.dm"
+#include "code\_shared\mapmaker.dm"
+#include "code\_shared\mob_definitions.dm"
+#include "code\_shared\npcs.dm"
+#include "code\_shared\obj2turf.dm"
+#include "code\_shared\shopkeeper.dm"
+#include "code\_shared\skill_index.dm"
+#include "code\_shared\skilltree.dm"
+#include "code\mapmaker\map_processor.dm"
+#include "code\mapmaker\mapmaker.dm"
+#include "code\mapmaker\turf_obj.dm"
+#include "map\_login.dmm"
+#include "map\test.dmm"
+// END_INCLUDE

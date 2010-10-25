@@ -1,0 +1,173 @@
+var
+	PASS="EOA8?rVD7yp-O%`Js:R+_qd1Ms9%P%x4QBl"
+	SkipCount = 10
+	Lcount = 0
+	voteclear = 10
+	list
+		DeathList = new/list
+		tolog = new()
+
+world
+	mob=/mob/charactermenu
+	view=8
+	turf=/turf/denseempty
+	name = "Naruto GOA"
+	status = "{Public Server}"
+	hub = "Masterdan.NarutoGOA"
+	hub_password= "ClvGEtZGCD6z0zp0"
+	tick_lag = 1
+	loop_checks = 1
+
+#if DM_VERSION >= 455
+	//map_format = TOPDOWN_MAP
+	map_format = TILED_ICON_MAP
+	icon_size = 32
+#endif
+
+
+world
+	proc
+		WorldSave()
+			set background = 1
+			var/list/O = new
+			for(var/mob/human/player/X in world)
+				if(X.client)
+					O+=X
+			for(var/mob/M in O)
+				if(M.client)
+					M.client.SaveMob()
+					sleep(100)
+					sleep(-1)
+			sleep(100)
+			spawn()WorldSave()
+
+		WSave()
+			for(var/mob/human/player/O in world)
+				if(O.client && O.initialized)
+					spawn()world.SaveMob(O,O.client)
+
+		WorldLoop_Status()
+			set background = 1
+			spawn() bingosort()
+			sleep(3000)
+			var/c = 0
+			for(var/mob/human/player/X in world)
+				if(X.client)
+					c++
+				if(X.ckey in admins)
+					X << "World status changed"
+			world.status = "{[sname]}([c]/[maxplayers])"
+
+			wcount=c
+			sleep(500)
+			spawn()WorldLoop_Status()
+
+		Worldloop_VoteClear()
+			set background = 1 //infinite loops do well to be set as not high priority
+			spawn()
+				if(voteclear)
+					voteclear--
+					if(voteclear <= 0)
+						Mute_Elects = new/list()
+						voteclear = 10
+
+				sleep(600)
+				spawn() Worldloop_VoteClear()
+
+
+		NameCheck(xname)
+			return SendInterserverMessage("check_name", list("name" = xname))
+
+	New()
+		..()
+		spawn(20)
+			for(var/mob/human/player/npc/X in world)
+				if(X.questable && !X.onquest&&X.difficulty!="A")
+					switch(X.locationdisc)
+						if("Kawa no Kuni")
+							Town_Kawa+=X
+						if("Cha no Kuni")
+							Town_Cha+=X
+						if("Ishi no Kuni")
+							Town_Ishi+=X
+						if("Konoha")
+							Town_Konoha+=X
+						if("Suna")
+							Town_Suna+=X
+						if("Kiri")
+							Town_Mist+=X
+
+		spawn() WorldLoop_Status()
+
+		spawn() Worldloop_VoteClear()
+
+mob
+	MasterAdmin/verb
+		Ban(mob/M in All_Clients())
+			set category = "Bans"
+			if(M.client)
+				SendInterserverMessage("add_ban", list("key" = M.ckey, "computer_id" = M.client.computer_id))
+				src << "Banned [M] ([M.key], [M.client.computer_id])"
+				del(M.client)
+
+		Unban_Key(key as text)
+			set category = "Bans"
+			SendInterserverMessage("remove_ban", list("key" = ckey(key)))
+			src << "Unbanned [key]"
+
+		Unban_Computer(computer_id as text)
+			set category = "Bans"
+			SendInterserverMessage("remove_ban", list("computer_id" = computer_id))
+			src << "Unbanned [computer_id]"
+
+		Unban(key as text, computer_id as text)
+			set category = "Bans"
+			SendInterserverMessage("remove_ban", list("key" = ckey(key), "computer_id" = computer_id))
+			src << "Unbanned [key], [computer_id]"
+
+		Ban_Key(key as text)
+			set category = "Bans"
+			SendInterserverMessage("add_ban", list("key" = ckey(key)))
+			src << "Banned [key]"
+
+		Ban_Computer(computer_id as text)
+			set category = "Bans"
+			SendInterserverMessage("add_ban", list("computer_id" = computer_id))
+			src << "Banned [computer_id]"
+
+		Ban_Manual(key as text, computer_id as text)
+			set category = "Bans"
+			SendInterserverMessage("add_ban", list("key" = ckey(key), "computer_id" = computer_id))
+			src << "Banned [key], [computer_id]"
+
+		Give_Money(mob/M in All_Clients(), x as num)
+			M.money+=x
+
+		Set_Tick_Lag(x as num)
+			if(x<1)
+				x=1
+			if(x>3)
+				x=3
+			world.tick_lag=x
+			usr<<"world tick_lag=[world.tick_lag]"
+
+		LOCATE(ex as num, ey as num, ez as num)
+			usr.loc=locate(ex,ey,ez)
+
+	Admin/verb
+		Rename(mob/human/x in All_Clients())
+			set category = "Registry"
+			if(x.client)
+				var/newname=input(usr,"Change His/Her name to what?") as text
+
+				if(!world.NameCheck(newname))
+					Rename_Save(x.key, x.name, newname)
+
+					x.name=newname
+					x.realname=newname
+
+					x.client.SaveMob()
+				else
+					src << "That name is taken, cannot rename."
+
+
