@@ -1,2 +1,0 @@
-Masterdan role=coder
-Destroy role=coder
