@@ -1800,58 +1800,58 @@ mob/npc/Naruto
 		Talk()
 			set src in oview(1)
 			set category ="Naruto"
-			switch(input("Hey will you do me a favor? I'll show you the Tiger sign it's really cool.") in list ("Yes","No","I'm Uzumaki too!","Get Lost"))
-				if("Yes")
+			switch(input("Ei você vai me fazer um favor? Eu vou te mostrar o sinal Tiger é muito legal.") in list ("Sim","Não","Eu sou Uzumaki tambem!","Get Lost"))
+				if("Sim")
 					if(usr.tiger==2)
-						usr<<"Wow you really really did it? Thanks watch closely now."
-						usr<<"You have learned how to do the Tiger sign"
+						usr<<"Uau você realmente fez isso? Thanks watch closely now."
+						usr<<"Você aprendeu como fazer o sinal Tiger"
 						usr.Otiger=1
 					if(usr.dogs==1)
-						usr<<"What really? How mean. Fine tell her I won't write another one but don't think it's because she sent you see if I show you any more hand signs."
+						usr<<"O que realmente? Como dizer. Fine tell her I won't write another one but don't think it's because she sent you see if I show you any more hand signs."
 						usr.dogs=2
 					else
-						usr<<"Really thanks! Take this note to Sakura for me. I'll show you a hand sign when you return."
+						usr<<"Muito Obrigado!  Tome esta nota para Sakura para mim. Vou mostrar-lhe um sinal da mão quando você voltar."
 						usr.tiger=1
-				if("No")
-					usr<<"Fine then I didn't really need your help any ways."
-				if("I'm Uzumaki too!")
+				if("Não")
+					usr<<"Bem, então eu realmente não preciso de sua ajuda todas as maneiras"
+				if("Eu sou Uzumaki tambem!")
 					if(usr.Uzumaki == 1)
-						usr<<"Hello fellow Uzumaki, welcome to our house."
+						usr<<"Olá colega Uzumaki, bem-vindo à nossa casa."
 						if(usr.rank == "Student")
 							return
 						if(usr.Uzumaki&&usr.Mgen >=250)
-							usr << "<B><font color = blue>You Learned Oiroke No Jutsu!!"
+							usr << "<B><font color = blue>Você aprendeu Oiroke No Jutsu!!"
 							usr.verbs += new /mob/jutsu/verb/Sexy()
 						else
-							usr<<"You need 250 Gen to learn Oiroke No Jutsu."
+							usr<<"Você precisa de 250 Gen para aprender Oiroke No Jutsu."
 						if(usr.Uzumaki&&usr.shurikenskill >=250)
-							usr << "<B><font color = blue>You Learned Kage Shuriken!!"
+							usr << "<B><font color = blue>Você aprendeu Kage Shuriken!!"
 							usr.verbs += new /mob/shurikenmove/verb/KageShuriken()
 						else
-							usr<<"You need 250 Shuriken Skill to learn Kage Shuriken."
+							usr<<"Você precisa de 250 Shuriken Skill para aprender Kage Shuriken."
 						if(usr.Uzumaki&&usr.kunaiskill >=250)
-							usr << "<B><font color = blue>You Learned Kage Kunai!!"
+							usr << "<B><font color = blue>Você aprendeu Kage Kunai!!"
 							usr.verbs += new /mob/shurikenmove/verb/KageKunai()
 						else
-							usr<<"You need 250 Kunai Skill to learn Kage Kunai."
+							usr<<"Você precisa de 250 Kunai Skill para aprender Kage Kunai."
 						if(usr.Uzumaki&&usr.Mnin >=500)
-							usr << "<B><font color = blue>You learned Tajuu Kage Bunshin No Jutsu!!"
+							usr << "<B><font color = blue>Você aprendeu Tajuu Kage Bunshin No Jutsu!!"
 							usr.verbs += new /obj/bunshins/TajuuKageBunshinNoJutsu/verb/TajuuKageBunshinNoJutsu()
 						else
-							usr<<"You need 500 Nin to learn Tajuu Kage Bunshin No Jutsu."
+							usr<<"Você precisa de 500 Nin para aprender Tajuu Kage Bunshin No Jutsu."
 						if(usr.Uzumaki&&usr.Mnin>=1000)
-							usr << "<B><font color = blue>You learned Nisen Rendan!!"
+							usr << "<B><font color = blue>Você aprendeu Nisen Rendan!!"
 							usr.verbs += new /mob/jutsu/verb/NisenRendan()
 						else
-							usr<<"You need 1000 Nin to learn Nisen Rendan."
+							usr<<"Você precisa de 1000 Nin para aprender Nisen Rendan."
 						if(usr.Uzumaki&&usr.Mnin>=5000)
-							usr << "<B><font color = blue>You learned Frog Summons!!"
+							usr << "<B><font color = blue>Você aprendeu Frog Summons!!"
 							usr.contents += new /obj/Frog_Summoning_Scroll
 						else
-							usr<<"You need 5000 Nin to learn Frog Summons."
+							usr<<"Você precisa de 5000 Nin para aprender Frog Summons."
 
 					else
-						usr<<"Lier leave the Uzumaki house NOW!"
+						usr<<"Mentiroso, saia da casa Uzumaki AGORA!"
 
 mob/npc/Sakura
 	name = "(NPC)Sakura"
@@ -1863,17 +1863,17 @@ mob/npc/Sakura
 		Talk()
 			set src in oview(1)
 			set category = "Sakura"
-			switch(input("Hello how may I help you?") in list ("Can you show me a hand sign now?","Nevermind"))
-				if("Can you show me a hand sign now?")
+			switch(input("Olá, como posso ajudá-lo?") in list ("Você pode me mostrar um sinal da mão agora?","Nevermind"))
+				if("Você pode me mostrar um sinal da mão agora?")
 					if(usr.dogs==2)
-						usr<<"Thank you I hope this time he listens. Sasuke is the only one for me, though your kinda cute too. Ok pay attention."
-						usr<<"You have learned how to do the Dog sign"
+						usr<<"Obrigado, espero que desta vez ele escute. Sasuke é o único para mim, embora você seja bonitinho também. Ok, preste atenção."
+						usr<<"Você aprendeu como fazer o sinal Dog"
 						usr.Odog=1
 					if(usr.tiger==1)
-						usr<<"What you have a letter for me? Thank you."
+						usr<<"Você tem uma carta para mim? Obrigada."
 						usr.tiger=2
 					else
-						usr<<"Take this letter back to Naruto and tell him never to even think about writeing another one and then I'll show the dog sign."
+						usr<<"Leve esta carta de volta para Naruto e diga-lhe para nunca mais sequer pensar em escrever outra e então eu vou mostrar o sinal Dog."
 						usr.dogs=1
 
 mob/npc/Sasuke
@@ -1886,32 +1886,32 @@ mob/npc/Sasuke
 		Talk()
 			set src in oview(1)
 			set category = "Sasuke"
-			switch(input("What? Can't you see I'm busy training? Let me guess you want to learn a jutsu hand sign right?",text) in list ("Yes","No","I'm Uchiha too!","Forget it"))
-				if("Yes")
+			switch(input("O quê? Você não vê que estou ocupado treinando? Deixe-me adivinhar, você quer aprender um certo sinal de jutsu mão?",text) in list ("Sim","Não","Eu sou Uchiha tambem!","Esqueça"))
+				if("Sim")
 					if(usr.dragon == 2)
-						usr<<"It's about time I was almost out. Now watch I don't have time to waste showing you this twice."
-						usr<<"You have learned how to do the Dragon sign"
+						usr<<"Está na hora, eu estava quase no fim. Agora veja, eu não tenho tempo a perder mostrando isso duas vezes."
+						usr<<"Você aprendeu como fazer o sinal Dragon"
 						usr.Odragon=1
 					else
-						usr<<"I thought so. I'm running low on shurikens and I left some at the shop. Just grab them for me and bring them too me and I'll show you the Dragon sign."
+						usr<<"Eu pensei assim. Estou com pouca shurikens e deixei algumas na loja. Basta pega-las para mim e trazê-las para mim e eu vou lhe mostrar o signal Dragon."
 						usr.dragon=1
-				if("No")
-					usr<<"Then stop bothering me your interrupting my training."
-				if("I'm Uchiha too!")
+				if("Não")
+					usr<<"Então pare de me incomodar, você está interrompendo meu treinamento"
+				if("Eu sou Uchiha tambem!")
 					if(usr.Uchiha == 1)
-						usr<<"Hello fellow Uchiha, welcome to our house."
+						usr<<"Olá colega Uchiha, bem-vindo à nossa casa."
 						if(usr.Uchiha&&usr.Mnin >=200&&usr.Mgen >= 100)
-							usr << "<B><font color = blue>Your sharingan has activated!!"
+							usr << "<B><font color = blue>Seu sharingan foi ativado!!"
 							usr.verbs += new /mob/uchiha/verb/Sharingan()
 						else
-							usr<<"You need 200 Nin&Gen to activate Sharingan."
+							usr<<"Você precisa de 200 Nin&Gen to activate Sharingan."
 						if(usr.Uchiha&&usr.Mnin >=1000&&usr.Mgen>=700&&usr.kills>=150&&usr.Suses>=100)
 							usr << "<B><font color = blue>You learned Mangekyou Sharingan!"
 							usr.verbs += new /mob/uchiha/verb/MangekyouPrep()
 						else
-							usr<<"You need 1000 all stats and 150 kills along with 100 Uses to activate Mangekyou."
+							usr<<"Você precisa 1000 de todos stats e 150 mortes, juntamente com 100 Uses to activate Mangekyou."
 					else
-						usr<<"Lier leave the Uchiha house NOW!"
+						usr<<"Mentiroso, saia da casa Uchiha AGORA!"
 
 
 mob/npc/Haku
@@ -1923,39 +1923,39 @@ mob/npc/Haku
 		Talk()
 			set src in oview(1)
 			set category = "Haku"
-			switch(input("Hello *smiles* are you from my clan?",text) in list ("Yes","Forget it"))
-				if("Yes")
+			switch(input("Olá, você é do meu clan?",text) in list ("Sim","Esqueça"))
+				if("Sim")
 					if(usr.Haku == 1)
-						usr<<"Hello fellow clan memeber, welcome to our house."
+						usr<<"Olá colega membro do clan, bem-vindo à nossa casa."
 						if(usr.Haku&&usr.Mnin >=250&&usr.Mtai>=250)
-							usr << "<B><font color = blue>You have learned Sensatsu Suishou!"
+							usr << "<B><font color = blue>Você aprendeu Sensatsu Suishou!"
 							usr.verbs += new /mob/haku/verb/SensatsuSuishou()
 						else
-							usr<<"You need 250 Nin&Tai to learn Sensatsu Suishou."
+							usr<<"Você precisa de 250 Nin & Tai para aprender Sensatsu Suishou."
 						if(usr.Haku&&usr.Mnin >=500)
-							usr<<"<b><font color=blue> You have learned Kage Needle No Jutsu!"
+							usr<<"<b><font color=blue> Você aprendeu Kage Needle No Jutsu!"
 							usr.verbs += new /mob/needle/verb/Needle_Jutsu()
 						else
-							usr<<"You need 500 Nin to learn Kage Needle No Jutsu."
+							usr<<"Você precisa de 500 Nin para aprender Kage Needle No Jutsu."
 						if(usr.Haku&&usr.Mnin >=750)
-							usr << "<B><font color = blue>You learned Makyou Hyoushou!"
+							usr << "<B><font color = blue>Você aprendeu Makyou Hyoushou!"
 							usr.verbs += new /mob/haku/verb/MakyouHyoushou()
 						else
-							usr<<"You need 750 Nin to learn Mirrors."
+							usr<<"Você precisa de 750 Nin para aprender Mirrors."
 						if(usr.Haku&&usr.Mnin>=500)
-							usr<<"<b><font color=blue> You have learned Ice Armor!"
+							usr<<"<b><font color=blue> Você aprendeu Ice Armor!"
 							usr.verbs += new /mob/ice/verb/IceArmor()
 						else
-							usr<<"You need 500 Nin to learn Ice Armor."
+							usr<<"Você precisa de 500 Nin tpara aprender Ice Armor."
 						if(usr.Haku&&usr.Mgen >=1000&&usr.Mnin>=1000)
-							usr<<"<b><font color=blue>You have learned Teleport!"
+							usr<<"<b><font color=blue>Você aprendeu Teleport!"
 							usr.verbs += new /mob/nara/verb/kageteleport()
 						else
-							usr<<"You need 1000 Nin&Gen to learn Teleport."
+							usr<<"Você precisa de  1000 Nin & Gen para aprender Teleport."
 					else
-						usr<<"Lier leave my house NOW!"
-				if("Forget it")
-					usr<<"Ohh ok do you have a dream?"
+						usr<<"Mentiroso, sai sa minha casa AGORA!"
+				if("Esqueça")
+					usr<<"Ohh ok, você tem um sonho?"
 
 
 
@@ -1968,36 +1968,36 @@ mob/npc/Choji
 		Talk()
 			set src in oview(1)
 			set category = "Choji"
-			switch(input("Hello this is the Akimichi house",text) in list ("I'm Akimichi too!","Forget it"))
-				if("I'm Akimichi too!")
+			switch(input("Olá, essa é a casa Akimichi",text) in list ("Eu sou Akimichi tambem!","Esqueça"))
+				if("Eu sou Akimichi tambem!")
 					if(usr.Akimichi == 1)
-						usr<<"Hello, welcome to our house."
+						usr<<"Olá, bem-vindo à nossa casa."
 						if(usr.Akimichi&&usr.Mtai >=250)
-							usr << "<B><font color = blue>You learned Nikudan Sensha!!"
+							usr << "<B><font color = blue>Você aprendeu Nikudan Sensha!!"
 							usr.verbs += new /mob/Akimichi/verb/NikudanSensha()
 						else
-							usr<<"You need 250 Tai to learn Nikudan Sensha."
+							usr<<"Você precisa de 250 Tai para aprender Nikudan Sensha."
 						if(usr.Akimichi&&usr.Mnin >=500)
-							usr << "<B><font color = blue>You learned Baika No Jutsu!"
+							usr << "<B><font color = blue>Você aprendeu Baika No Jutsu!"
 							usr.verbs += new /mob/Akimichi/verb/BaikaNoJutsu()
 						else
-							usr<<"You need 500 Nin to learn Baika No Jutsu."
+							usr<<"Você precisa de 500 Nin para aprender Baika No Jutsu."
 						if(usr.Akimichi&&usr.Mtai >=1000)
-							usr << "<B><font color = blue>You learned Nikudan Hari Sensha!"
+							usr << "<B><font color = blue>Você aprendeu Nikudan Hari Sensha!"
 							usr.verbs += new /mob/Akimichi/verb/NikudanHariSensha()
 						else
-							usr<<"You need 1000 tai to learn Nikudan Hari Sensha."
+							usr<<"Você precisa de 1000 Tai para aprender Nikudan Hari Sensha."
 						if(usr.Akimichi&&usr.Mnin >=750&&usr.calories>=750&&usr.Mtai>=750)
-							usr << "<B><font color = blue>You learned Babun Baika No Jutsu!"
+							usr << "<B><font color = blue>Você aprendeu Babun Baika No Jutsu!"
 							usr.verbs += new /mob/Akimichi/verb/BabunBaikaNoJutsu()
 						else
-							usr<<"You need 750 Tai&Nin&Calories to learn Babun Baika No Jutsu."
+							usr<<"Você precisa de 750 Tai, Nin & Calories para aprender Babun Baika No Jutsu."
 
 					else
-						usr<<"Lier leave the Akimichi house NOW!"
+						usr<<"Mentiroso, saia da casa Akimichi AGORA!"
 						return
-				if("Forget it")
-					usr<<"Ohh ok do you have some food?"
+				if("Esqueça")
+					usr<<"Ohh ok, você tem alguma comida?"
 mob/npc/Nara
 	name = "Shikamaru"
 	icon = 'Nara.dmi'
@@ -2007,42 +2007,42 @@ mob/npc/Nara
 		Talk()
 			set src in oview(1)
 			set category = "Shikamaru"
-			switch(input("How boring this is, this is the Nara house",text) in list ("I'm Nara too!","Forget it"))
-				if("I'm Nara too!")
+			switch(input("Como isso é chato, essa é a casa dos Nara",text) in list ("Eu sou Nara tambem!","Esqueça"))
+				if("Eu sou Nara tambem!")
 					if(usr.Nara == 1)
-						usr<<"Hello, welcome to our house."
+						usr<<"Olá, bem-vindo à nossa casa."
 						if(usr.Nara&&usr.Mgen >=500)
-							usr << "<B><font color = blue>You learned Kage Shibari No Jutsu!"
+							usr << "<B><font color = blue>Você aprendeu Kage Shibari No Jutsu!"
 							usr.verbs += new /mob/nara/verb/kageshibari()
 							usr.verbs += new /mob/nara/verb/ExtendShadow()
 							usr.verbs += new /mob/nara/verb/RetractShadow()
 						else
-							usr<<"You need 500 Gen to learn Kage Shibari No Jutsu."
+							usr<<"Você precisa de 500 Gen para aprender Kage Shibari No Jutsu."
 						if(usr.Nara&&usr.Mgen >=500&&usr.Mnin>=500)
-							usr << "<B><font color = blue>You learned Kage Kubi Shibaru!"
+							usr << "<B><font color = blue>Você aprendeu Kage Kubi Shibaru!"
 							usr.verbs += new /mob/nara/verb/KageKubiShibaru()
 						else
-							usr<<"You need 500 Nin&Gen to learn Kage Kubi Shibaru."
+							usr<<"Você precisa de 500 Nin & Gen para aprender Kage Kubi Shibaru."
 						if(usr.Nara&&usr.Mgen >=750&&usr.Mnin>=750)
-							usr<<"<b><font color=blue>You have learned Kage Blinding No Jutsu!"
+							usr<<"<b><font color=blue>Você aprendeu learned Kage Blinding No Jutsu!"
 							usr.verbs += new /mob/nara/verb/kageblind()
 						else
-							usr<<"You need 750 Nin&Gen to learn Kage Blinding No Jutsu."
+							usr<<"Você precisa de 750 Nin & Gen para aprender Kage Blinding No Jutsu."
 						if(usr.Nara&&usr.Mgen >=1000&&usr.Mnin>=1000)
-							usr<<"<b><font color=blue>You have learned Teleport!"
+							usr<<"<b><font color=blue>Você aprendeu learned Teleport!"
 							usr.verbs += new /mob/nara/verb/kageteleport()
 						else
-							usr<<"You need 1000 Nin&Gen to learn Teleport."
+							usr<<"Você precisa de 1000 Nin & Gen para aprender Teleport."
 						if(usr.Nara&&usr.Mnin>=5000)
-							usr<<"<b><font color=blue>You learned Shadow No Jutsu"
+							usr<<"<b><font color=blue>Você aprendeu Shadow No Jutsu"
 							usr.verbs += new /mob/nara/verb/ShadowNoJutsu()
 						else
-							usr<<"You need 5000 Nin to learn Shadow No Jutsu."
+							usr<<"Você precisa de 5000 Nin para aprender Shadow No Jutsu."
 					else
-						usr<<"Lier leave the Nara house NOW!"
+						usr<<"Mentiroso, sai da casa Nara AGORA!"
 						return
-				if("Forget it")
-					usr<<"What a drag"
+				if("Esqueça")
+					usr<<"Que arrasto"
 
 mob/npc/Kamizuri
 	name = "Bee Keeper"
