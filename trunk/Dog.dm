@@ -35,7 +35,7 @@ mob
 					var/Damage = P.tai
 					M.health -= Damage
 					Death(M)
-					view() << "[src] attacks [M] for [Damage]!"
+					view() << "[src] atacou [M] e tirou [Damage]!"
 					src.fighting = 1
 					sleep(5)
 					src.fighting = 0
@@ -43,12 +43,12 @@ mob
 mob/inuzuka
 	verb
 		Tame(mob/pet/P in oview(1))
-			set category = "Dog"
+			set category = "Cachorro"
 			if(P.cansave)
-				usr<<"You can't tame players"
+				usr<<"Você não pode dominar os jogadores"
 				return
 			if(istype(P,/mob/npc))
-				usr<<"You can't tame NPCs"
+				usr<<"Você não pode dominar os NPC's"
 				return
 			if(!usr.hasdog)
 				if(usr.Clan == "Inuzuka")
@@ -61,20 +61,20 @@ mob/inuzuka
 						usr.hasdog=1
 						usr.dog = P
 						P.named = 1
-						P.name = input("Please select a name for your new dog.") as text
+						P.name = input("Por favor escolha um nome para seu novo cachorro.") as text
 						usr.dogname=P.name
 						usr.dogtai=P.tai
 						usr.dogmaxhealth=P.maxhealth
 						usr.verbs += typesof(/mob/dogstuff/verb)
 						usr.SaveK()
 					else
-						usr<<"This dog already belongs to someone."
+						usr<<"Este cachorro já pertence a alguém."
 						return
 				else
-					usr<<"Only members of the Inuzuka clan are able to tame dogs."
+					usr<<"Somente membros do clã Inuzuka podem dominar um cachorro."
 					return
 			else
-				usr<<"You already have a dog."
+				usr<<"Você já tem um cachorro."
 				return
 
 mob/var
@@ -88,41 +88,41 @@ mob/var
 mob/dogstuff
 	verb
 		Pickup()
-			set category = "Dog"
+			set category = "Cachorro"
 			for(var/mob/pet/P in oview(1,P))
 				if(P.owner == usr)
 					P.loc = usr
 					P.Frozen =1
 					P.owner = usr
 				else
-					usr<<"This dog does not belong to you."
+					usr<<"Este cachorro não pertence a você."
 
 		Drop()
-			set category = "Dog"
+			set category = "Cachorro"
 			for(var/mob/pet/P in src.contents)
 				if(P.health <= 1)
 					P.loc=locate(usr.x,usr.y-1,usr.z)
 					P.Frozen = 0
 					P.owner = usr
 				else
-					usr<<"Your dog is hurt and cannot be dropped.."
+					usr<<"Seu cachorro está machucado e não pode ser descartado."
 					return
 		Aggressive()
-			set category = "Dog"
+			set category = "Cachorro"
 			for(var/mob/pet/P in oview())
 				if(P.owner == usr&&P.Wfight == 0)
 					P.Wfight = 1
-					usr<<"Your dog will now attack anything it bumps into."
+					usr<<"Seu cachorro agora irá atacar qualquer coisa que esbarra nele."
 					return
 				else if(P.owner == usr&&P.Wfight == 1)
-					usr<<"Your dog will no longer attack anything."
+					usr<<"Seu cachorro vai deixar de atacar qualquer coisa que esbarrar nele."
 					P.Wfight = 0
 					return
 				else
-					usr<<"This is not your dog!"
+					usr<<"Este não é seu cachorro!"
 					return
 		Sit(var/mob/pet/P in oview(1))
-			set category = "Dog"
+			set category = "Cachorro"
 			if(P.owner==usr&&P.sit == 0)
 				P.Frozen=1
 				walk(src,0)
@@ -130,10 +130,10 @@ mob/dogstuff
 				P.Frozen=0
 				walk(src,0)
 			else
-				usr<<"This is not your dog."
+				usr<<"Este não é seu cachorro."
 				return
 		Come()
-			set category = "Dog"
+			set category = "Cachorro"
 			for(var/mob/pet/P in view())
 				if(P.owner==usr)
 					P.Frozen=0

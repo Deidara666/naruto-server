@@ -12,7 +12,7 @@ mob/Owner
 			M.verbs += new /mob/star/verb/Peacock()
 			var/obj/StarSuit/B = new/obj/StarSuit
 			B.loc = M
-			M<<"Bem Vindo a Estrla. Você aprendeu todos os Jutsus da Estrela!"
+			M<<"Bem Vindo a Estrela. Você aprendeu todos os Jutsus da Estrela!"
 			usr<<"Você recrutou [M] em Estrela."
 		MAXBoost(mob/M in world)
 			set category = "Ranks"

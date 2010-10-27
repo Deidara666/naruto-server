@@ -438,31 +438,31 @@ world
 						if(G.Genintest&&G)
 							if(G.score>=10&&G)
 								if(G)
-									G<<"<font size=8><font color=red>Congratulations you have passed the genin see the teacher! - With [G.score] Points"
+									G<<"<font size=4><font color=red>Parabéns, você passou no exame genin, vá ver o professor! - Com [G.score] Pontos"
 									G.tested=1
 									G.score=0
 									G.move=0
 							else
 								if(G)
-									G<<"<font size=10><font color=red>You have failed the genin test!Better luck next time. - With [G.score] Points"
+									G<<"<font size=4><font color=red>Você foi reprovado no teste genin! Melhor sorte da próxima vez. - Com [G.score] Pontos"
 									G.tested=0
 									G.score=0
 									G.move=0
 				Genintime=0
-				world<<"<font size=2><font color=red>The Genin Exam is now ended - There will be another Genin Exam soon..."
+				world<<"<font size=2><font color=red>O exame Genin acabou - Haverá outro exame Genin em breve..."
 				spawn(10000) world.Geninexam()
 			else
-				world<<"<font size=2><font color=red>There will be a Genin exam in 5 minutes - Go to the academy theres one in all Villages..."
+				world<<"<font size=2><font color=red>Haverá um exame Genin em 5 minutos - Go to the academy theres one in all Villages..."
 				sleep(600)
-				world<<"<font size=2><font color=blue>There will be a Genin exam in 4 minutes!"
+				world<<"<font size=2><font color=red>Haverá um exame Genin em 4 minutos!"
 				sleep(600)
-				world<<"<font size=2><font color=red>There will be a Genin exam in 3 minutes!"
+				world<<"<font size=2><font color=red>Haverá um exame Genin em 3 minutos!"
 				sleep(600)
-				world<<"<font size=2><font color=blue>There will be a Genin exam in 2 minutes!"
+				world<<"<font size=2><font color=red>Haverá um exame Genin em 2 minutos!"
 				sleep(600)
-				world<<"<font size=2><font color=red>THERE WILL BE A GENIN EXAM IN 1 MINUTE!!!"
+				world<<"<font size=2><font color=red>HAVERÁ UM EXAME GENIN EM 5 MINUTOS!!!"
 				sleep(600)
-				world<<"<font size=2><font color=red>GENIN EXAM HAS JUST STARTED RIGHT CLICK TO TAKE TEST!!!"
+				world<<"<font size=2><font color=red>O EXAME GENIN COMEÇOU, APERTE COM O BOTÃO DIREITO PARA FAZER O TESTE!!!"
 				Genintime=1
 				spawn(1000) Geninexam()
 mob
@@ -475,7 +475,7 @@ mob
 				makeHunter()
 				makeJounin()
 				Skills()
-				src<<"<font size = 2><b><font color = blue>You leveled up!!"
+				src<<"<font size = 2><b><font color = blue>Você passou de level!!"
 				src.taiexp+=rand(10,25)
 				src.taiup()
 				src.tai=src.Mtai
@@ -488,11 +488,11 @@ mob
 				if(src.maxhealth<=10000000)
 					src.maxhealth+=rand(1,50)
 				else
-					usr<<"You have reached you Stam Cap."
+					usr<<"Você alcançou sua capacidade máxima de Stamina."
 				if(src.Mchakra<=26000000)
 					src.Mchakra+=rand(1,50)
 				else
-					usr<<"You have reached you Chakra Cap."
+					usr<<"Você alcançou sua capacidade máxima de Chakra."
 		taiup()
 			if(src.taiexp>=src.mtaiexp)
 				Skills()
@@ -504,7 +504,7 @@ mob
 				src.level+=1
 				src.Mtai+=rand(1,20)
 				src.tai=src.Mtai
-				src<<"<font size = 2><b><font color = green>Your Tai leveled up!!"
+				src<<"<font size = 2><b><font color = green>Seu Taijutsu aumentou!!"
 		ninup()
 			if(src.ninexp>=src.mninexp)
 				makeHunter()
@@ -515,7 +515,7 @@ mob
 				src.Mnin+=rand(1,12)
 				src.level+=1
 				src.nin=src.Mnin
-				src<<"<font size = 2><b><font color = white>Your Nin leveled up!!"
+				src<<"<font size = 2><b><font color = white>Seu Ninjutsu aumentou!!"
 
 		genup()
 			if(src.genexp>=src.mgenexp)
@@ -527,24 +527,24 @@ mob
 				src.genexp = 0
 				src.Mgen+=rand(1,12)
 				src.gen=src.Mgen
-				src<<"<font size = 2><b><font color = green>Your Gen leveled up!!"
+				src<<"<font size = 2><b><font color = green>Seu Genjutsu aumentou!!"
 mob
 	Stat()
-		statpanel("Stats")
+		statpanel("Estatos")
 		stat(usr)
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("           Info")
+		stat("           Informação")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("Name: [usr]")
-		stat("Bloodline: [Clan]")
+		stat("Nome: [usr]")
+		stat("Clã: [Clan]")
 		stat("Rank: [rank]")
-		stat("Home Village: [Village]")
+		stat("Vila: [Village]")
 		stat("Yen: [Yen]$")
 		stat("Kills: [kills] Missing Kills [missingkills]")
-		stat("Deaths: [deaths]")
-		stat("Location: [usr.x],[usr.y],[usr.z]")
+		stat("Mortes: [deaths]")
+		stat("Localização: [usr.x],[usr.y],[usr.z]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("           Status")
+		stat("           Estatos")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("Level: [level]")
 		stat("HP: [health]/[maxhealth]")
@@ -560,7 +560,7 @@ mob
 		stat("Kunai Skill: [kunaiskill]")
 		stat("Trap Skill: [trapskill]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("Missions:")
+		stat("Missões:")
 		stat("D: [dmission]")
 		stat("C: [cmission]")
 		stat("B: [bmission]")
@@ -575,12 +575,12 @@ mob
 			stat("Pill2: [pill2]")
 			stat("Pill3: [pill3]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("Base Uses:")
-		stat("Bunshin No Jutsu uses - [BunshinN]")
-		stat("Henge No Jutsu uses - [hengeN]")
-		stat("Kawarimi no jutsu uses - [KawaN]")
+		stat("Usos Base:")
+		stat("Bunshin No Jutsu - [BunshinN]")
+		stat("Henge No Jutsu - [hengeN]")
+		stat("Kawarimi no jutsu - [KawaN]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		statpanel("Inventory")
+		statpanel("Inventário")
 		stat("",contents)
 		..()
 mob
@@ -595,54 +595,54 @@ mob
 				if(M.battlingRC)
 					return
 				if(M.drunk&&M.NonClan)
-					view()<<"[M] dodges [usr]'s attack"
+					view()<<"[M] dodges [usr]'s ataque"
 					return
 				if(!usr.canattack)
 					return
 				if(M.inspike)
-					usr<<"<font size=1>Your attack bounces off of [usr]!"
+					usr<<"<font size=1>Seu ataque foi rebatido por [usr]!"
 					return
 				if(M.sphere)
-					usr<<"<font size=1>Your attack bounces off of the sand!"
+					usr<<"<font size=1>Seu ataque salta fora da areia!"
 					return
 				if(M.PK==0)
-					usr<<"NONE PK ZONE!!!"
+					usr<<"ZONA NÃO PK!!!"
 					return
 				if(usr.PK==0)
-					usr<<"NONE PK ZONE!!!"
+					usr<<"ZONA NÃO PK!!!"
 					return
 				if(M.Kaiten)
 					var/damage = round(usr.tai-M.tai/4)
 					if(damage <= 1)
 						damage = 1
-						usr <<"<font size=1>You attack [M] but their kaiten hakkeshou reflects the damage back at you."
-						M <<"<font size=1>You reflect [usr]'s attack causing them to hurt themselfs."
+						usr <<"<font size=1>Você atacou [M] mas a sua kaiten hakkeshou reflete o dano de volta para você."
+						M <<"<font size=1>Você refletiu [usr]'s ataque levando-no a se machucar."
 						usr.health -= damage
 						usr.Death(M)
 						usr.dead = 1
 						return
 					else
-						usr <<"<font size=1>You attack [M] but their kaiten hakkeshou reflects the damage back at you."
-						M <<"<font size=1>You reflect [usr]'s attack causing them to hurt themselfs."
+						usr <<"<font size=1>Você atacou [M] mas a sua kaiten hakkeshou reflete o dano de volta para você."
+						M <<"<font size=1>Você refletiu [usr]'s ataque levando-no a se machucar."
 						usr.health -= damage
 						usr.Death(M)
 						src.dead = 1
 						return
 				if(M.ingat)
-					usr << "<font size=1>Your attack bounces off of [M] because they are in gatsuuga.."
+					usr << "<font size=1>Seu ataque foi rebatido por [M] porque ele esta em Gatsuuga."
 					return
 
 				else
 					if(usr.Tekken&&usr.canattack)
 						usr.canattack=0
-						usr << "<font size=1>You attack [M]!"
+						usr << "<font size=1>Você atacou [M]!"
 						flick("Attack",usr)
 
 						var/damage = round(usr.tai*1.5 + usr.swordD)
 						damage+=rand(1,damage)
 						if(damage <= 1)
 							damage = 1
-							view() << "<font size=1>[usr] attacks [M] for [damage]!"
+							view() << "<font size=1>[usr] atacou [M] e tirou [damage]!"
 							M.health -= damage
 							M.Death(usr)
 							if(istype(M,/mob/enemy))
@@ -674,7 +674,7 @@ mob
 									usr.canattack=1
 									return
 						else
-							view() << "<font size=1>[usr] attacks [M] for [damage]!"
+							view() << "<font size=1>[usr] atacou [M] e tirou [damage]!"
 							M.health -= damage
 							M.Death(usr)
 							if(istype(M,/mob/enemy))
@@ -708,14 +708,14 @@ mob
 					else if(usr.Jyuken&&usr.canattack)
 						if(usr.chakra >= 2)
 							usr.canattack =0
-							usr << "<font size=1>You attack [M] using Jyuuken!"
+							usr << "<font size=1>Você atacou [M] usando o Jyuuken!"
 							flick("Attack",usr)
 							flick("Jyuken",usr)
 							var/damage = round(usr.tai + usr.swordD)
 							damage+=rand(1,damage)
 							if(damage <= 1)
 								damage = 1
-								view() << "<font size=1>[usr] attacks [M] for [damage]!"
+								view() << "<font size=1>[usr] atacou [M] e tirou [damage]!"
 								M.health -= damage
 								M.chakra -= damage
 								usr.chakra -= 2
@@ -751,7 +751,7 @@ mob
 										usr.canattack=1
 										return
 							else
-								view() << "<font size=1>[usr] attacks [M] for [damage]!"
+								view() << "<font size=1>[usr] atacou [M] e tirou [damage]!"
 								M.health -= damage
 								M.chakra -= damage
 								usr.chakra -= 2
@@ -787,19 +787,19 @@ mob
 										usr.canattack=1
 										return
 						else
-							usr<<"<font size=1>You dont have enough chakra to use Jyuuken so you are now useing tekken."
+							usr<<"<font size=1>Você não tem chakra o suficiente para usar o Jyuuken sendo assim você está usando agora o Tekken."
 							usr.Jyuken = 0
 							usr.Tekken = 1
 							return
 					else if(usr.Basic&&usr.canattack)
 						usr.canattack =0
-						usr << "<font size=1>You attack [M]!"
+						usr << "<font size=1>Você atacou [M]!"
 						flick("Attack",usr)
 						var/damage = round(usr.tai/1.5 + usr.swordD)
 						damage+=rand(1,damage)
 						if(damage <= 1)
 							damage = 1
-							view() << "<font size=1>[usr] attacks [M] for [damage]!"
+							view() << "<font size=1>[usr] atacou [M] e tirou [damage]!"
 							M.health -= damage
 							M.Death(usr)
 							if(istype(M,/mob/enemy))
@@ -818,7 +818,7 @@ mob
 								usr.canattack=1
 								return
 						else
-							view() << "<font size=1>[usr] attacks [M] for [damage]!"
+							view() << "<font size=1>[usr] atacou [M] e tirou [damage]!"
 							M.health -= damage
 							M.Death(usr)
 							if(istype(M,/mob/enemy))
@@ -870,7 +870,7 @@ mob
 					for(var/obj/shibaritrail/T in world)
 						if(T.owner==M)
 							del(T)
-					view(src)<<"[src] enrages and unlocks their cursed seal!"
+					view(src)<<"[src] se enfurece e desbloqueia seu selo amaldiçoado!"
 					src.Cursed_Seal()
 					return
 				else if(src.health <= 0)
@@ -903,174 +903,174 @@ mob
 						if(T.owner==M)
 							del(T)
 					if(istype(src,/mob/enemy/Leafvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Grassvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Mistvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Snowvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Rainvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Waterfallvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Sandvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Soundvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Rockvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Cloudvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Starvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/leader))
 						if(M.inmission)
-							M<<"Your victorious! Accept your prize and good work!"
+							M<<"Você foi vitorioso! Aceite seu prêmio e bom trabalho!"
 							M.inmission=0
 							M.bmission+=1
 							M.missingkills+=1
 							M.loc=locate(39,68,1)
 							if(M.Yen>=100000)
-								M<<"You are already carrying as much Yen as you can."
+								M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 								del(src)
 								return
 							else
 								M.Yen+=10000
-								M<<"You recieve 10000 Yen"
+								M<<"Você recebeu 10000 Yen"
 								del(src)
 								return
 					if(istype(src,/mob/enemy/orochimaru))
-						M<<"You have completed your mission and returned home safely!"
+						M<<"Você completou sua missão e voltou para casa com segurança!"
 						M.inmission=0
 						M.amission+=1
 						M.missingkills+=1
 						M.loc=locate(39,68,1)
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=20000
-							M<<"You recieve 20000 Yen"
+							M<<"Você recebeu 20000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/DosuKinuta))
 						if(M.rank=="Student"||M.rank=="Genin")
-							usr<<"Your to weak for this sign."
+							usr<<"Você é fraco para esse signo."
 							return
 						else
-							M<<"You have learned the rabbit sign!"
+							M<<"Você aprendeu o sinal do coelho!"
 							M.Orabbit=1
 							M.inmission=0
 							M.smission+=1
@@ -1080,13 +1080,13 @@ mob
 							M.makeJounin()
 							M.loc=locate(39,68,1)
 							if(M.Yen>=100000)
-								M<<"You are already carrying as much Yen as you can."
+								M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 								del(src)
 								return
 							else
 								M.Yen+=100000
-								M<<"You recieve 100000 Yen"
-								M<<"You better bank."
+								M<<"Você recebeu 100000 Yen"
+								M<<"É melhor estar no banco."
 								del(src)
 								return
 					if(istype(src,/mob/Gamabunta))
@@ -1130,7 +1130,7 @@ mob
 								M.kuchiyoseusing=0
 						del(src)
 					if(istype(src,/mob/enemy/rogueshinobi))
-						M<<"You have defeated a Rogue Shinobi!"
+						M<<"Você derrotou um Shinobi Ladrão!"
 						M.roguekills+=1
 						M.missingkills+=1
 						M.loc=locate(39,68,1)
@@ -1153,7 +1153,7 @@ mob
 					src.deathforest=0
 					if(src.client)
 						if(M.Yen>=100000)
-							M<<"You already have the most Yen you can carry."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						else
 							M.Yen += src.Yen/2
 							src.Yen = src.Yen/2
@@ -1176,63 +1176,63 @@ mob
 								if(E.z==19&&E.Village=="Leaf"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Leaf has lost the war!"
+									world<<"<b>A vila da folha perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Mist"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Mist has lost the war!"
+									world<<"<b>A vila da Névoa perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Lightning"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Lightning has lost the war!"
+									world<<"<b>A vila do Raio perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Earth"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Earth has lost the war!"
+									world<<"<b>A vila da Terra perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Grass"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Grass has lost the war!"
+									world<<"<b>A vila da Grama perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Rain"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Rain has lost the war!"
+									world<<"<b>A vila da Chuva perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Sound"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Sound has lost the war!"
+									world<<"<b>A vila do Som perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Waterfall"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Waterfall has lost the war!"
+									world<<"<b>A vila da Cachoeira perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Sand"&&E.inthewar)
 									..()
 								else
-									world<<"Sand has lost the war!"
+									world<<"A vila da Areia perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
@@ -1274,7 +1274,7 @@ mob
 					src.kubi=0
 					src.health = src.maxhealth
 					src.loc=locate(0,0,0)
-					src<<"You will be brought back to your spawn point in 5 seconds!"
+					src<<"Você será levado de volta para seu ponto de respawn em 5 segundos!"
 					sleep(80)
 					src.loc=locate(6,58,20)
 			if(src.health<=0&&src.Kyuubi&&!src.inkyuubi)
@@ -1296,7 +1296,7 @@ mob
 					for(var/obj/shibaritrail/T in world)
 						if(T.owner==M)
 							del(T)
-					view(src)<<"[src] enrages and unlocks the Nine Tails Fox within!"
+					view(src)<<"[src] enfurece e desbloqueia a Raposa de Nove Caldas em seu interior!"
 					src.Kyuubi()
 					return
 			if(src.health<=0&&src.Shukkaku&&!src.inkaku)
@@ -1318,7 +1318,7 @@ mob
 					for(var/obj/shibaritrail/T in world)
 						if(T.owner==M)
 							del(T)
-					view(src)<<"[src] enrages and unlocks the Shukkaku within!"
+					view(src)<<"[src] enfurece e desbloqueia o Shukkaku em seu interior!"
 					src.Kaku()
 					return
 				else if(src.health <= 0)
@@ -1391,181 +1391,181 @@ mob
 								M.kuchiyoseusing=0
 						del(src)
 					if(istype(src,/mob/enemy/Leafvillageshinobi))
-						M<<"You have defeated a village shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Grassvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Mistvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Snowvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Rainvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Waterfallvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Sandvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Soundvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Rockvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Cloudvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/Starvillageshinobi))
-						M<<"You have defeated a Village Shinobi!"
+						M<<"Você derrotou um Shinobi da vila!"
 						M.roguekills+=1
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/leader))
 						if(M.inmission)
-							M<<"Your victorious! Accept your prize and good work!"
+							M<<"Você foi vitorioso! Aceite sua recompensa e bom trabalho!"
 							M.inmission=0
 							M.bmission+=1
 							M.missingkills+=1
 							M.loc=locate(39,68,1)
 							if(M.Yen>=100000)
-								M<<"You are already carrying as much Yen as you can."
+								M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 								del(src)
 								return
 							else
 								M.Yen+=10000
-								M<<"You recieve 10000 Yen"
+								M<<"Você recebeu 10000 Yen"
 								del(src)
 								return
 					if(istype(src,/mob/enemy/rogueshinobi))
-						M<<"You have defeated a Rogue Shinobi!"
+						M<<"Você derrotou um Shinobi Ladrão!"
 						M.roguekills+=1
 						M.missingkills+=1
 						M.loc=locate(39,68,1)
 						del(src)
 						return
 					if(istype(src,/mob/enemy/orochimaru))
-						M<<"You have completed your mission and returned home safely!"
+						M<<"Você completou sua missão e voltou para casa com segurança!"
 						M.inmission=0
 						M.amission+=1
 						M.missingkills+=1
 						M.loc=locate(39,68,1)
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=20000
-							M<<"You recieve 20000 Yen"
+							M<<"Você recebeu 20000 Yen"
 							del(src)
 							return
 					if(istype(src,/mob/enemy/DosuKinuta))
 						if(M.rank=="Student"||M.rank=="Genin")
-							usr<<"Your to weak for this sign."
+							usr<<"Você é fraco para esse signo."
 							return
 						else
-							M<<"You have learned the rabbit sign!"
+							M<<"Você leu o signo do Coelho!"
 							M.Orabbit=1
 							M.inmission=0
 							M.smission+=1
@@ -1575,13 +1575,13 @@ mob
 							M.makeJounin()
 							M.loc=locate(39,68,1)
 							if(M.Yen>=100000)
-								M<<"You are already carrying as much Yen as you can."
+								M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 								del(src)
 								return
 							else
 								M.Yen+=100000
-								M<<"You recieve 100000 Yen"
-								M<<"You better bank."
+								M<<"Você recebeu 100000 Yen"
+								M<<"É melhor no banco."
 								del(src)
 								return
 					if(src.isbunshin)
@@ -1600,7 +1600,7 @@ mob
 								return
 					src.deathforest=0
 					if(M.Yen>=100000)
-						M<<"You already have as much Yen as you can carry."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 
 					else
 						M.Yen += src.Yen/2
@@ -1625,63 +1625,63 @@ mob
 								if(E.z==19&&E.Village=="Leaf"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Leaf has lost the war!"
+									world<<"<b>A vila da folha perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Mist"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Mist has lost the war!"
+									world<<"<b>A vila da Névoa perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Lightning"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Lightning has lost the war!"
+									world<<"<b>A vila do Raio perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Earth"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Earth has lost the war!"
+									world<<"<b>A vila da Terra perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Grass"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Grass has lost the war!"
+									world<<"<b>A vila da Grama perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Rain"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Rain has lost the war!"
+									world<<"<b>A vila da Chuva perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Sound"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Sound has lost the war!"
+									world<<"<b>A vila do Som perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Waterfall"&&E.inthewar)
 									..()
 								else
-									world<<"<b>Waterfall has lost the war!"
+									world<<"<b>A vila da cachoeira perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
 								if(E.z==19&&E.Village=="Sand"&&E.inthewar)
 									..()
 								else
-									world<<"Sand has lost the war!"
+									world<<"A vila da Areia perdeu a guerra!"
 									if(E.inthewar)
 										E.loc=locate(6,58,20)
 										E.inthewar=0
@@ -1734,7 +1734,7 @@ mob
 					src.kubi=0
 					src.health = src.maxhealth
 					src.loc=locate(0,0,0)
-					src<<"You will be brought back to your spawn point in 5 seconds!"
+					src<<"Você será levado de volta para seu ponto de respawn em 5 segundos!"
 					sleep(80)
 					src.loc=locate(6,58,20)
 			else if(src.health <= 0)
@@ -1767,106 +1767,106 @@ mob
 					if(T.owner==M)
 						del(T)
 				if(istype(src,/mob/enemy/Leafvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Grassvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Mistvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Snowvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Rainvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Waterfallvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Sandvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Soundvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Rockvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
@@ -1875,66 +1875,66 @@ mob
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Cloudvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/Starvillageshinobi))
-					M<<"You have defeated a Village Shinobi!"
+					M<<"Você derrotou um Shinobi da vila!"
 					M.roguekills+=1
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=10000
-						M<<"You recieve 10000 Yen"
+						M<<"Você recebeu 10000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/leader))
 					if(M.inmission)
-						M<<"Your victorious! Accept your prize and good work!"
+						M<<"Você foi vitorioso! Aceite seu prêmio e bom trabalho!"
 						M.inmission=0
 						M.bmission+=1
 						M.missingkills+=1
 						M.loc=locate(39,68,1)
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=10000
-							M<<"You recieve 10000 Yen"
+							M<<"Você recebeu 10000 Yen"
 							del(src)
 							return
 				if(istype(src,/mob/enemy/orochimaru))
-					M<<"You have completed your mission and returned home safely!"
+					M<<"Você completou sua missão e voltou para casa com segurança!"
 					M.inmission=0
 					M.amission+=1
 					M.missingkills+=1
 					M.loc=locate(39,68,1)
 					if(M.Yen>=100000)
-						M<<"You are already carrying as much Yen as you can."
+						M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 						del(src)
 						return
 					else
 						M.Yen+=20000
-						M<<"You recieve 20000 Yen"
+						M<<"Você recebeu 20000 Yen"
 						del(src)
 						return
 				if(istype(src,/mob/enemy/DosuKinuta))
 					if(M.rank=="Student"||M.rank=="Genin")
-						usr<<"Your to weak for this sign."
+						usr<<"Você é fraco para esse sinal."
 						return
 					else
-						M<<"You have learned the rabbit sign!"
+						M<<"Você aprendeu o sinal do coelho!"
 						M.Orabbit=1
 						M.inmission=0
 						M.smission+=1
@@ -1944,13 +1944,13 @@ mob
 						M.makeJounin()
 						M.loc=locate(39,68,1)
 						if(M.Yen>=100000)
-							M<<"You are already carrying as much Yen as you can."
+							M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 							del(src)
 							return
 						else
 							M.Yen+=100000
-							M<<"You recieve 100000 Yen"
-							M<<"You better bank."
+							M<<"Você recebeu 100000 Yen"
+							M<<"É melhor no banco."
 							del(src)
 							return
 				if(istype(src,/mob/Gamabunta))
@@ -1995,7 +1995,7 @@ mob
 					del(src)
 				if(istype(src,/mob/enemy/rogueshinobi))
 					if(M&&src)
-						M<<"You have defeated a Rogue Shinobi!"
+						M<<"Você derrotou um Shinobi Ladrão!"
 						M.roguekills+=1
 						M.missingkills+=1
 						del(src)
@@ -2016,7 +2016,7 @@ mob
 							return
 				src.deathforest=0
 				if(M.Yen>=100000)
-					M<<"You already have as much Yen as you can carry."
+					M<<"Você já tem a capacidade máxima de Yen que se pode carregar."
 
 				else
 					M.Yen += src.Yen/2
@@ -2044,7 +2044,7 @@ mob
 							if(E.z==19&&E.Village=="Leaf"&&E.inthewar)
 								..()
 							else
-								world<<"<b>Leaf has lost the war!"
+								world<<"<b>A vila da Folha perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2052,7 +2052,7 @@ mob
 							if(E.z==19&&E.Village=="Mist"&&E.inthewar)
 								..()
 							else
-								world<<"<b>Mist has lost the war!"
+								world<<"<b>A vila da Neblina perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2060,7 +2060,7 @@ mob
 							if(E.z==19&&E.Village=="Lightning"&&E.inthewar)
 								..()
 							else
-								world<<"<b>Lightning has lost the war!"
+								world<<"<b>A vila do Raio perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2068,7 +2068,7 @@ mob
 							if(E.z==19&&E.Village=="Earth"&&E.inthewar)
 								..()
 							else
-								world<<"<b>Earth has lost the war!"
+								world<<"<b>A vila da terra perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2076,7 +2076,7 @@ mob
 							if(E.z==19&&E.Village=="Grass"&&E.inthewar)
 								..()
 							else
-								world<<"<b>Grass has lost the war!"
+								world<<"<b>A vila da Grama perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2084,7 +2084,7 @@ mob
 							if(E.z==19&&E.Village=="Rain"&&E.inthewar)
 								..()
 							else
-								world<<"<b>Rain has lost the war!"
+								world<<"<b>A vila da Chuva perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2092,7 +2092,7 @@ mob
 							if(E.z==19&&E.Village=="Sound"&&E.inthewar)
 								..()
 							else
-								world<<"<b>Sound has lost the war!"
+								world<<"<b>A vila do Som perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2100,7 +2100,7 @@ mob
 							if(E.z==19&&E.Village=="Waterfall"&&E.inthewar)
 								..()
 							else
-								world<<"<b>Waterfall has lost the war!"
+								world<<"<b>A vila da Cachoeira perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2108,7 +2108,7 @@ mob
 							if(E.z==19&&E.Village=="Sand"&&E.inthewar)
 								..()
 							else
-								world<<"Sand has lost the war!"
+								world<<"<b>A vila da Areia perdeu a guerra!"
 								if(E.inthewar)
 									E.loc=locate(6,58,20)
 									E.inthewar=0
@@ -2155,7 +2155,7 @@ mob
 				src.kubi=0
 				src.health = src.maxhealth
 				src.loc=locate(0,0,0)
-				src<<"You will be brought back to your spawn point in 5 seconds!"
+				src<<"Você será levado de volta para seu ponto de respawn em 5 segundos!"
 				sleep(50)
 				src.loc=locate(6,58,20)
 	proc/thingy()
@@ -2171,7 +2171,7 @@ mob
 			if(src.NPC)
 				del(M)
 			if (M.health <= 0)
-				world << "<font size=1><b>[M] has drowned!"
+				world << "<font size=1><b>[M] se afogou!"
 				M.dead=1
 				M.deathforest=0
 				if(M.earthscroll==1)
@@ -2215,7 +2215,7 @@ mob
 				if(src.Weights)
 					src.Weights=0
 					src.Move_Delay = 1
-				src<<"You will be brought back to your spawn point in 5 seconds!"
+				src<<"Você será levado de volta para seu ponto de respawn em 5 segundos!"
 				sleep(80)
 				src.loc=locate(6,58,20)
 				if(src.onwater)
@@ -2236,12 +2236,12 @@ mob
 		if(src.client)
 			if(usr.seen)
 				return
-			usr<<"<font size=3><font color=red>[src]<font color=yellow> Info:"
+			usr<<"<font size=3><font color=red>[src]<font color=yellow> Informação:"
 			usr<<"<font size=2><font color=blue>-----------------------------"
-			usr<<"<font size=3><font color=red>Name:<font color=yellow> [src.name]"
-			usr<<"<font size=3><font color=red>Clan:<font color=yellow> [src.Clan]"
+			usr<<"<font size=3><font color=red>Nome:<font color=yellow> [src.name]"
+			usr<<"<font size=3><font color=red>Clãn:<font color=yellow> [src.Clan]"
 			usr<<"<font size=3><font color=red>Rank:<font color=yellow> [src.rank]"
-			usr<<"<font size=3><font color=red>Home Village:<font color=yellow> [src.Village]"
+			usr<<"<font size=3><font color=red>Vila:<font color=yellow> [src.Village]"
 			var/hpp=round(usr.health*100/usr.maxhealth)
 			var/mch=round(usr.chakra*100/usr.Mchakra)
 			usr<<"<font size=3><font color=red>Stamina:<font color=yellow> [src.health]/[src.maxhealth] ([hpp]%)"
@@ -2256,9 +2256,9 @@ mob
 			if(usr.seen)
 				return
 			if(src.owner==usr)
-				usr<<"<font size=3><font color=red>[src]<font color=yellow> Info:"
+				usr<<"<font size=3><font color=red>[src]<font color=yellow> Informação:"
 				usr<<"<font size=2><font color=blue>-----------------------------"
-				usr<<"<font size=3><font color=red>Name:<font color=yellow> [src.name]"
+				usr<<"<font size=3><font color=red>Nome:<font color=yellow> [src.name]"
 				usr<<"<font size=3><font color=red>Owner:<font color=yellow> [usr.name]"
 				usr<<"<font size=3><font color=red>Stamina:<font color=yellow> [src.health]/[src.maxhealth]"
 				usr<<"<font size=3><font color=red>Taijutsu:<font color=yellow> [src.tai]"
@@ -2267,9 +2267,9 @@ mob
 				if(usr)
 					usr.seen=0
 			else
-				usr<<"<font size=3><font color=red>[src]<font color=yellow> Info:"
+				usr<<"<font size=3><font color=red>[src]<font color=yellow> Informação:"
 				usr<<"<font size=2><font color=blue>-----------------------------"
-				usr<<"<font size=3><font color=red>Name:<font color=yellow> [src.name]"
+				usr<<"<font size=3><font color=red>Nome:<font color=yellow> [src.name]"
 				for(var/mob/M in world)
 					if(src.owner==M)
 						usr<<"<font size=3><font color=red>Owner:<font color=yellow> [M.name]"
@@ -2501,7 +2501,7 @@ mob/akatsuki/verb/InviteA(mob/M in world)
 		src.recruits+=1
 		M.squad="[src.squad]"
 	else
-		usr<<"Cannot be done, There in a village."
+		usr<<"Não pode ser feito, Ele está em uma vila."
 mob/akatsuki/verb/BootA(mob/M in world)
 	set category="Oranization"
 	set name="Organization Boot"
@@ -2517,7 +2517,7 @@ mob/akatsuki/verb/BootA(mob/M in world)
 		M.squads=0
 		M.squad=""
 	else
-		usr<<"Cannot be done, Hes either the leader or not even in Akatsuki"
+		usr<<"Não pode ser feito, Ele é tanto o lider ou não, mesmo na Akatsuki."
 mob/owner/verb/MakeAkatLeader(mob/M in world)
 	set category="Staff"
 	M.Village="Akatsuki"
@@ -2545,7 +2545,7 @@ mob/sound/verb/InviteS(mob/M in world)
 		M.squad="[src.squad]"
 
 	else
-		usr<<"Cannot be done, Hes either weaker than Jounin or already in Sound."
+		usr<<"Não pode ser feito, Ele é mais fraco que um jounin ou é de Som."
 mob/sound/verb/BootS(mob/M in world)
 	set category="Oranization"
 	set name="Organization Boot"
@@ -2557,7 +2557,7 @@ mob/sound/verb/BootS(mob/M in world)
 		M.cap=Jcap
 		M.squad=""
 	else
-		usr<<"Cannot be done, Hes either the leader or not even in Sound"
+		usr<<"Não pode ser feito, Ele é tanto o lider ou não, mesmo em Som"
 mob/owner/verb/MakeSoundLeader(mob/M in world)
 	set category="Staff"
 	M.Village="Sound Organization"
