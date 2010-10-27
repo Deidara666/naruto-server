@@ -11,7 +11,7 @@ obj
 			Pick()
 				set src in oview(1)
 				var/place = src.loc
-				usr<<"<font face=verdana>You picked up a [src]"
+				usr<<"<font face=verdana>Você pegou uma [src]"
 				usr.picked += 1
 				src.loc = usr
 				spawn(600)
@@ -25,10 +25,10 @@ obj
 			Get()
 				set src in oview(1)
 				if(usr.gotscroll)
-					usr<<"You already have it!"
+					usr<<"Você já tem isso!"
 					return
 				var/place = src.loc
-				usr<<"<font face=verdana>You picked up the [src]"
+				usr<<"<font face=verdana>Você pegou o [src]"
 				usr.gotscroll = 1
 				src.loc = usr
 				spawn(600)
@@ -46,15 +46,15 @@ mob/MissionJounin
 			switch(input("Que tipo de missão você quer fazer ?", text) in list ("D","C","B","A","S"))
 				if("D")
 					if(usr.rank == "Student")
-						usr<<"You must be atleast a genin to do a D rank mission."
+						usr<<"Você deve ser pelo menos um genin para fazer uma missão rank D."
 						return
 					else
 						if(usr.picked <= 0)
 							usr.picked = 0
-							usr<<"<b><font face=verdana>There a lot of troublesome weeds lingering around tripping people walking by, Please pick as many as you can and you'll be rewarded for how many you pick."
+							usr<<"<b><font face=verdana>Há uma grande quantidade de ervas amareladas em torno da vila. Recolha o máximo que puder e será recompensado."
 						else
 							if(usr.Yen>=100000)
-								alert("You already have as much Yen as you can carry.")
+								alert("Você já tem o maximo de Yen que pode carregar.")
 								return
 							else
 								usr.Yen += usr.picked * 5
