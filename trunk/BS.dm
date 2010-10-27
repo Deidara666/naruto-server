@@ -438,13 +438,13 @@ world
 						if(G.Genintest&&G)
 							if(G.score>=10&&G)
 								if(G)
-									G<<"<font size=4><font color=red>Parabéns, você passou no exame genin, vá ver o professor! - Com [G.score] Pontos"
+									G<<"<font size=4><font color=red>Parabéns, você passou no exame genin com [G.score] Pontos, vá ver o professor!"
 									G.tested=1
 									G.score=0
 									G.move=0
 							else
 								if(G)
-									G<<"<font size=4><font color=red>Você foi reprovado no teste genin! Melhor sorte da próxima vez. - Com [G.score] Pontos"
+									G<<"<font size=4><font color=red>Você foi reprovado no teste genin com [G.score] Pontos! Melhor sorte da próxima vez."
 									G.tested=0
 									G.score=0
 									G.move=0
@@ -460,7 +460,7 @@ world
 				sleep(600)
 				world<<"<font size=2><font color=red>Haverá um exame Genin em 2 minutos!"
 				sleep(600)
-				world<<"<font size=2><font color=red>HAVERÁ UM EXAME GENIN EM 5 MINUTOS!!!"
+				world<<"<font size=2><font color=red>HAVERÁ UM EXAME GENIN EM 1 MINUTO!!!"
 				sleep(600)
 				world<<"<font size=2><font color=red>O EXAME GENIN COMEÇOU, APERTE COM O BOTÃO DIREITO PARA FAZER O TESTE!!!"
 				Genintime=1
@@ -530,7 +530,7 @@ mob
 				src<<"<font size = 2><b><font color = green>Seu Genjutsu aumentou!!"
 mob
 	Stat()
-		statpanel("Estatos")
+		statpanel("Estatus")
 		stat(usr)
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("           Informação")
@@ -544,7 +544,7 @@ mob
 		stat("Mortes: [deaths]")
 		stat("Localização: [usr.x],[usr.y],[usr.z]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("           Estatos")
+		stat("           Estatus")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("Level: [level]")
 		stat("HP: [health]/[maxhealth]")
