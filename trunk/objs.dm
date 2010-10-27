@@ -30,13 +30,13 @@ obj
 						usr<<"You can now climb the mountain..."
 						usr.Frozen=0
 					if(usr.onwater&&usr.Frozen)
-						usr<<"You can now walk on water..."
+						usr<<"Você pode andar sobre a agua..."
 						usr.Frozen=0
 				else
 					src.worn = 1
 					usr.Savedspeed = usr.Move_Delay
 					usr.overlays += 'Weights.dmi'
-					usr << "You wear the [src.name]."
+					usr << "você usa o [src.name]."
 					usr.Weights = 1
 			Drop()
 				if(src.worn)
@@ -48,7 +48,7 @@ obj
 
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up [src]"
+				usr<<"vocÊ pegou [src]"
 
 
 
@@ -72,7 +72,7 @@ obj
 				else
 					src:worn = 0
 					usr.overlays -= 'Cloths.dmi'
-					usr << "You remove the [src.name]."
+					usr << "Você removeu [src.name]."
 					src.suffix = ""
 					usr.overlays -= 'Cloths.dmi'
 			Drop()

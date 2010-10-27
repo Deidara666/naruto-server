@@ -43,7 +43,7 @@ mob/MissionJounin
 		Talk()
 			set src in oview(3)
 			set category ="Mission"
-			switch(input("Which Level Mission are you certified for?", text) in list ("D","C","B","A","S"))
+			switch(input("Que tipo de missão você quer fazer ?", text) in list ("D","C","B","A","S"))
 				if("D")
 					if(usr.rank == "Student")
 						usr<<"You must be atleast a genin to do a D rank mission."
