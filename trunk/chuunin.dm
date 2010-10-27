@@ -186,22 +186,22 @@ mob/owner
 			set category = "Staff"
 			set name = "Chuunin Examination"
 			if(!Chuunintime)
-				usr<<"You will be teleported to the Chuunin host room when it starts"
-				world<<"<font size=3><font color=red>There will be a Chuunin exam in 5 minutes - Go to the Chuunin room theres one in all Villages..."
+				usr<<"Você será teletransportado para a sala do Exame Chuunin quando começar!"
+				world<<"<font size=3><font color=red>Haverá um exame Chuunin em 5 minutos - Vá para a sala Chuunin de sua vila RAPIDOO..."
 				sleep(500)
-				world<<"<font size=3><font color=red>There will be a Chuunin exam in 4 minutes..."
+				world<<"<font size=3><font color=red>Haverá um exame Chuunin em 4 minutos ..."
 				sleep(500)
-				world<<"<font size=3><font color=red>There will be a Chuunin exam in 3 minutes..."
+				world<<"<font size=3><font color=red>Haverá um exame Chuunin em 3 minutos ..."
 				sleep(500)
-				world<<"<font size=3><font color=red>There will be a Chuunin exam in 2 minutes..."
+				world<<"<font size=3><font color=red>Haverá um exame Chuunin em 2 minutos ..."
 				sleep(500)
-				world<<"<font size=3><font color=red>There will be a Chuunin exam in 1 minute..."
+				world<<"<font size=3><font color=red>Haverá um exame Chuunin em 1 minutos ..."
 				sleep(500)
-				world<<"<font size=3><font color=red>Chuunin exam has now started..."
+				world<<"<font size=3><font color=red>O exame Chuunin já começou ..."
 				Chuunintime=1
 				usr.loc=locate(52,40,13)
 			else
-				world<<"Chuunin Exam Part one over"
+				world<<"A primeira parte do exame chunin acabou!"
 				Chuunintime=0
 mob/var/tmp
 	testing=0
@@ -218,58 +218,58 @@ obj/GT2
 			if(Chuunintime&&usr.cantest)
 				usr.testing=1
 				usr.cantest=0
-				switch(input("When you throw a Shuriken, Which way will it spin?","Shuriken Spin",) in list("Clockwise","Counter-Clockwise","Depends Lefty/Righty","No Spin"))
-					if("Depends Lefty/Righty")
+				switch(input("Quando você joga uma Shuriken, para qual lado ela gira?","A shuriken gira:",) in list("Sentido horário","Sentido anti-horário","Depende esquerda ou direita","Não gira"))
+					if("Depende esquerda ou direita")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("What kind of tool is used with Kugutsu No Jutsu?","Kugutsu Tool",) in list("Kunai","Shuriken","Explosive Note","Puppet"))
-					if("Puppet")
+				switch(input("Que tipo de ferramenta é usada com Kugutsu no Jutsu? "," Ferramenta de Kugutsu:",) in list("Kunai","Shuriken","Tarja explosiva","Marionete"))
+					if("Marionete")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("What is the name of the sword that Zabuza's yields?","Sword",) in list("Raijin","Zanbato","Kubikiri Houcho","No Name"))
-					if("Zanbato")
+				switch(input("Sakura aprende jutsus médicos com qual Sannin Lendário?") in list("Tsunade","Kurenai","Ino","InoJiraya","Orochimaru"))
+					if("Tsunade")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("What is Choji Akimichi's age in Part 1?") in list("10-11","12-13","12.5","13","13.5"))
-					if("12-13")
+				switch(input("Qual nome do owner desse jogo??") in list("Rafael Sanches","Cesar","Igor","Mateus","Rafael Alves"))
+					if("Rafael Sanches")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("What are the clan abilities of the Akimichi clan?") in list("Precise Target Hitters","Increase Body Size","Freeze The Enemy","Mind Transfer"))
-					if("Increase Body Size")
+				switch(input("Qual o objetivo de Sasuke ao escolher ficar com orochimaru ao invez de continuar em Konoha?") in list("Obter poder para derrotar Naruto","Obter poder para derrotar o Hokage","Obter poder para derrotar Uchiha Itachi","Obter poder para derrotar Gaara do Deserto"))
+					if("Obter poder para derrotar Uchiha Itachi")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("Who does Hinata like?") in list("Hiashi","Neji","Sasuke","Naruto","Hanabi"))
+				switch(input("De quem Hinta gosta?") in list("Hiashi","Neji","Sasuke","Naruto","Hanabi"))
 					if("Naruto")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("What does Hokage stand for?","Hokage",) in list("Fire Emperor","Head Ruler","Fire Shadow","Head Honcho","Fire Guardian"))
-					if("Fire Shadow")
+				switch(input("O exame chunin tem quantas partes?",) in list("1","2","3","4","5"))
+					if("3")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("What can the shinobi in Byakugan do?") in list("See people among Bunshins","Sight of Opponents Chakra flow","Eyes pop out","Strength","Agility"))
-					if("Sight of Opponents Chakra flow")
+				switch(input("O pai de Maria tem 05 filhas. A lalá, a lelé, a lili, a loló e a ................. ") in list("Lulú","Lulá","Tania","Lucia","Maria"))
+					if("Maria")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("What is the name of the demon within Gaara?") in list("Desert Demon","Kyuubi","Sabakyuu","Shukaku"))
-					if("Shukaku")
+				switch(input("Sasuke NPC esta em qual vila deste jogo?") in list("Grama","Konoha","Chuva","Neve"))
+					if("Grama")
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("What are the Kaguya clan known for?") in list("Katon Goukakyuu No Jutsu","Hakke","Tsuuga","5 Dances","Their size"))
-					if("5 Dances")
+				switch(input("Você está numa cela onde existem duas portas, cada uma vigiada por um guarda. Existe uma porta que dá para a liberdade, e outra para a morte. Você deve escolher uma porta. Poderá fazer uma pergunta a um dos dois guardas que vigiam as portas. Um dos guardas fala a verdade, e o outro mente e você não sabe quem é o mentiroso e quem fala a verdade. Que pergunta você faria?") in list("Segundo o outro guarda, Qual a porta que da para a liberdade? e saio pela outra porta.","Segundo o outro guarda, Qual a porta que da para a liberdade? e saio pela porta do guarda que respondeu.","Você é o mentiroso? independente da resposta saio pela outra porta"))
+					if("Segundo o outro guarda, Qual a porta que da para a liberdade? e saio pela outra porta.")
 						usr.points+= 1
 					else
 						usr.points += 0
-				switch(input("What is/are the main accessory(ies) of a Ninja?","Accessory",) in list("Kunai","Shuriken","Their Villages Forehead Protector","All of the Above"))
-					if("All of the Above")
+				switch(input("Qual é o principal acessório de um ninja?","Acessório:",) in list("Kunai","Shuriken","Sua bandana da vila","Todos os itens a cima"))
+					if("Todos os itens a cima")
 						usr.points += 1
 				if(usr.points>=9&&Chuunintime)
 					usr.testing=0
@@ -280,18 +280,18 @@ obj/GT2
 						usr.heavenscroll=1
 						var/obj/heavenscroll/B = new/obj/heavenscroll
 						B.loc = usr
-						usr<<"You have been given a Heaven Scroll. DO NOT ENTER THE TOWER WITHOUT BOTH SCROLLS OR YOU FORFIT!!!"
-						usr<<"You have passed the first part of the exam! Good luck in the Forest of Death."
-						usr<<"There are 16 gates and 1 tower in the middle of the map. You must kill someone who has the scroll you need. Then make your way to the tower doors as fast as possbile."
-						usr<<"Even if you have both scrolls and die before makeing it to the tower you FAIL!"
+						usr<<"Você ganhou o pergaminho do céu. NÃO ENTRE NA TORRE sem os dois pergaminhos ou volte para a luta!"
+						usr<<"Você passou na primeira parte do exame! Boa sorte na Floresta da Morte. MUASHAUHSAU..."
+						usr<<"Há 16 portões e uma torre no meio do mapa. Você tem que matar alguém que tem o livro que você precisa. Então faça seu caminho até as portas da torre tão rápido quanto possivel."
+						usr<<"Mesmo se você tiver dois pergaminhos e morrer antes de chegar na torre você perde! =( "
 					if(usr.random==2)
 						usr.earthscroll=1
 						var/obj/earthscroll/B = new/obj/earthscroll
 						B.loc = usr
-						usr<<"You have been given a Earth Scroll. DO NOT ENTER THE TOWER WITHOUT BOTH SCROLLS OR YOU FORFIT!!!"
-						usr<<"You have passed the first part of the exam! Good luck in the Forest of Death."
-						usr<<"There are 16 gates and 1 tower in the middle of the map. You must kill someone who has the scroll you need. Then make your way to the tower doors as fast as possbile."
-						usr<<"Even if you have both scrolls and die before makeing it to the tower you FAIL!"
+						usr<<"Você ganhou o pergaminho da terra. NÃO ENTRE NA TORRE sem os dois pergaminhos ou volte para a luta!"
+						usr<<"Você passou na primeira parte do exame! Boa sorte na Floresta da Morte. MUASHAUHSAU..."
+						usr<<"Há 16 portões e uma torre no meio do mapa. Você tem que matar alguém que tem o livro que você precisa. Então faça seu caminho até as portas da torre tão rápido quanto possivel."
+						usr<<"Mesmo se você tiver dois pergaminhos e morrer antes de chegar na torre você perde! =( "
 					usr.PK=1
 					usr.random=rand(1,16)
 					if(usr.random==1)
@@ -343,10 +343,10 @@ obj/GT2
 						usr.loc=locate(1,79,30)
 						return
 				else
-					usr<<"You have failed, Try again next time."
+					usr<<"O instrutor Darcksombra deixou sua mente muito confusa e você não conseguiu. Tente novamente na próxima."
 					return
 			else
-				usr<<"You must wait for the Exam to start."
+				usr<<"Você deve aguardar o instrutor falar já seu apressado!! ¬¬' "
 				return
 
 
@@ -359,10 +359,10 @@ obj
 			Get()
 				set src in oview(1)
 				if(usr.earthscroll >= 1)
-					usr<<"You already have this scroll"
+					usr<<"Você já tem esse pergaminho"
 				else
 					src.loc = usr
-					usr<<"You picked up a [src]"
+					usr<<"Você pegou um [src]"
 					usr.earthscroll = 1
 			Drop()
 				src.loc=locate(usr.x,usr.y-1,usr.z)
@@ -378,10 +378,10 @@ obj
 			Get()
 				set src in oview(1)
 				if(usr.heavenscroll >= 1)
-					usr<<"You already have this scroll"
+					usr<<"Você já tem esse pergaminho"
 				else
 					src.loc = usr
-					usr<<"You picked up a [src]"
+					usr<<"Você pegou um [src]"
 					usr.heavenscroll = 1
 			Drop()
 				src.loc=locate(usr.x,usr.y-1,usr.z)
