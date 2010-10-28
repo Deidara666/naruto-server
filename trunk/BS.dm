@@ -204,6 +204,7 @@ mob/var
 	taidef=5
 	resting=0
 	level=1
+	levelanterior=0
 
 	ChakraC = 50
 	ChidoriU = 0
@@ -468,23 +469,13 @@ world
 mob
 	proc
 		Levelup()
-			if(src.exp>=src.max_exp)
+			src.exp+=25
+			if(src.exp>=src.level*100)
+				src.max_exp=0
 				src.level+=1
-				src.exp = 0
-				src.max_exp+=rand(1,50)
-				makeHunter()
-				makeJounin()
-				Skills()
+				src.levelanterior+=1
+				src.max_exp+=100
 				src<<"<font size = 2><b><font color = blue>Você passou de level!!"
-				src.taiexp+=rand(10,25)
-				src.taiup()
-				src.tai=src.Mtai
-				src.ninexp+=rand(10,25)
-				src.ninup()
-				src.nin=src.Mnin
-				src.genexp+=rand(10,25)
-				src.gen=src.Mgen
-				src.genup()
 				if(src.maxhealth<=10000000)
 					src.maxhealth+=rand(1,50)
 				else
@@ -493,41 +484,36 @@ mob
 					src.Mchakra+=rand(1,50)
 				else
 					usr<<"Você alcançou sua capacidade máxima de Chakra."
+			makeHunter()
+			makeJounin()
+			Skills()
+
 		taiup()
-			if(src.taiexp>=src.mtaiexp)
-				Skills()
-				makeHunter()
-				makeJounin()
-				src.mtaiexp += rand(1,25)
-				src.tailvl+=1
-				src.taiexp = 0
-				src.level+=1
-				src.Mtai+=rand(1,20)
-				src.tai=src.Mtai
-				src<<"<font size = 2><b><font color = green>Seu Taijutsu aumentou!!"
+			Skills()
+			makeHunter()
+			makeJounin()
+			Levelup()
+			src.Mtai+=rand(6,10)
+			src.tai=src.Mtai
+			src<<"<font size = 2><b><font color = green>Seu Taijutsu aumentou!!"
+
 		ninup()
-			if(src.ninexp>=src.mninexp)
-				makeHunter()
-				Skills()
-				makeJounin()
-				src.mninexp += rand(1,25)
-				src.ninexp = 0
-				src.Mnin+=rand(1,12)
-				src.level+=1
-				src.nin=src.Mnin
-				src<<"<font size = 2><b><font color = white>Seu Ninjutsu aumentou!!"
+			Skills()
+			makeHunter()
+			makeJounin()
+			Levelup()
+			src.Mnin+=rand(6,10)
+			src.nin=src.Mnin
+			src<<"<font size = 2><b><font color = white>Seu Ninjutsu aumentou!!"
 
 		genup()
-			if(src.genexp>=src.mgenexp)
-				makeHunter()
-				Skills()
-				makeJounin()
-				src.mgenexp += rand(1,25)
-				src.level+=1
-				src.genexp = 0
-				src.Mgen+=rand(1,12)
-				src.gen=src.Mgen
-				src<<"<font size = 2><b><font color = green>Seu Genjutsu aumentou!!"
+			Skills()
+			makeHunter()
+			makeJounin()
+			Levelup()
+			src.Mgen+=rand(6,10)
+			src.gen=src.Mgen
+			src<<"<font size = 2><b><font color = green>Seu Genjutsu aumentou!!"
 mob
 	Stat()
 		statpanel("Estatus")
@@ -2581,4 +2567,3 @@ mob/owner/verb/StripOrganization(mob/M in world)
 		del(S)
 	for(var/obj/SOSuit/S in M.contents)
 		del(S)
-

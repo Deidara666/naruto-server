@@ -35,65 +35,7 @@ obj
 					return
 
 				if(!usr.doing&&usr.health >= 1)
-					usr.random = rand(103)
-					if(usr.random == 100)
-						usr.taiexp += rand(3000,8700)
-						usr<<"You kick the log."
-						usr.taiup()
-						usr.makeJounin()
-						usr.makeHunter()
-						usr.Skills()
-					if(usr.random == 200)
-						usr.taiexp += rand(8000,1100)
-						usr<<"You punch the log."
-						usr.taiup()
-						usr.makeJounin()
-						usr.Skills()
-						usr.makeHunter()
-					else
-						usr.exp += rand(10000,30000)
-						usr.Levelup()
-						usr.health -= 5
-						usr.doing = 1
-						usr.Skills()
-						usr.makeJounin()
-						usr.makeHunter()
-						if(usr)
-							usr.doing = 0
-						else
-							return
-
-
-				if(!usr.doing&&usr.health >= 5&&usr.Weights)
-					usr.random = rand(103)
-					if(usr.random == 100)
-						usr.taiexp += rand(10000,43000)
-						usr<<"You kick the log."
-						usr.taiup()
-						usr.makeJounin()
-						usr.makeHunter()
-						usr.Skills()
-					if(usr.random == 2)
-						usr.taiexp += rand(10000,40000)
-						usr<<"You punch the log."
-						usr.taiup()
-						usr.makeJounin()
-						usr.Skills()
-						usr.makeHunter()
-					else
-						usr.exp += rand(13000,30000)
-						usr.Levelup()
-						usr.health -= 10
-						usr.doing = 1
-						usr.Skills()
-						usr.makeJounin()
-						usr.makeHunter()
-						if(usr)
-							usr.doing = 0
-						else
-							return
-
-
+					spawn(20) usr.taiup()
 
 obj
 	Log2
