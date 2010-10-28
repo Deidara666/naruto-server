@@ -35,7 +35,7 @@ obj
 					return
 
 				if(!usr.doing&&usr.health >= 1)
-<<<<<<< .mine
+//<<<<<<< .mine
 					usr.random = rand(103)
 					if(usr.random == 100)
 						usr.taiexp += rand(3000,8700)
@@ -63,11 +63,9 @@ obj
 							usr.doing = 0
 						else
 							return
-=======
-					spawn(20) usr.taiup()
->>>>>>> .r31
 
-<<<<<<< .mine
+					spawn(20) usr.taiup()
+
 
 				if(!usr.doing&&usr.health >= 5&&usr.Weights)
 					usr.random = rand(103)
@@ -98,10 +96,6 @@ obj
 						else
 							return
 
-
-
-=======
->>>>>>> .r31
 obj
 	Log2
 		icon = 'trainlog.dmi'
