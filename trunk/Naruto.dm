@@ -22,21 +22,86 @@ obj
 				set category = "Training"
 				set src in oview(1)
 				if (usr.resting)
-					usr<<"Cant train when your resting"
+					usr<<"Não é possível treinar quando está em descanso."
 					return
 				if (usr.meditating)
-					usr<<"Cant train when your meditating"
+					usr<<"Você não pode treinar quando está meditando."
 					return
 				if(usr.health<5)
-					usr<<"Cant train, too tired - Rest."
+					usr<<"Você não pode treinar , está muito cansado , dê Rest."
 					return
 				if(usr.Mcap)
-					usr<<"You have reached you Tai cap, step away from the log."
+					usr<<"Você chegou até a Capacidade Máxima de Taijutsu."
 					return
 
 				if(!usr.doing&&usr.health >= 1)
+<<<<<<< .mine
+					usr.random = rand(103)
+					if(usr.random == 100)
+						usr.taiexp += rand(3000,8700)
+						usr<<"Você chuta o Log"
+						usr.taiup()
+						usr.makeJounin()
+						usr.makeHunter()
+						usr.Skills()
+					if(usr.random == 200)
+						usr.taiexp += rand(8000,1100)
+						usr<<"Você soca o Log"
+						usr.taiup()
+						usr.makeJounin()
+						usr.Skills()
+						usr.makeHunter()
+					else
+						usr.exp += rand(10000,30000)
+						usr.Levelup()
+						usr.health -= 5
+						usr.doing = 1
+						usr.Skills()
+						usr.makeJounin()
+						usr.makeHunter()
+						if(usr)
+							usr.doing = 0
+						else
+							return
+=======
 					spawn(20) usr.taiup()
+>>>>>>> .r31
 
+<<<<<<< .mine
+
+				if(!usr.doing&&usr.health >= 5&&usr.Weights)
+					usr.random = rand(103)
+					if(usr.random == 100)
+						usr.taiexp += rand(10000,43000)
+						usr<<"Você chuta o Log"
+						usr.taiup()
+						usr.makeJounin()
+						usr.makeHunter()
+						usr.Skills()
+					if(usr.random == 2)
+						usr.taiexp += rand(10000,40000)
+						usr<<"Você soca o Log"
+						usr.taiup()
+						usr.makeJounin()
+						usr.Skills()
+						usr.makeHunter()
+					else
+						usr.exp += rand(13000,30000)
+						usr.Levelup()
+						usr.health -= 10
+						usr.doing = 1
+						usr.Skills()
+						usr.makeJounin()
+						usr.makeHunter()
+						if(usr)
+							usr.doing = 0
+						else
+							return
+
+
+
+=======
+>>>>>>> .r31
 obj
 	Log2
 		icon = 'trainlog.dmi'
@@ -47,26 +112,26 @@ obj
 				set category = "Training"
 				set src in oview(1)
 				if (usr.resting)
-					usr<<"Cant train when your resting"
+					usr<<"Não é possível treinar quando está em descanso."
 					return
 				if (usr.meditating)
-					usr<<"Cant train when your meditating"
+					usr<<"Você não pode treinar quando está meditando."
 					return
 				if(usr.health<5)
-					usr<<"You need rest"
+					usr<<"Você precisa Descansar."
 					return
 				if(!usr.doing&&usr.health >= 1)
 					usr.random = rand(10000,30000)
 					if(usr.random == 1000)
 						usr.taiexp += rand(100000,400000)
-						usr<<"You kick the log."
+						usr<<"Você chuta o Log."
 						usr.taiup()
 						usr.makeJounin()
 						usr.makeHunter()
 						usr.Skills()
 					if(usr.random == 200)
 						usr.taiexp += rand(100000,350000)
-						usr<<"You punch the log."
+						usr<<"Você soca o Log."
 						usr.taiup()
 						usr.makeJounin()
 						usr.Skills()
@@ -89,14 +154,14 @@ obj
 					usr.random = rand(1000,30000)
 					if(usr.random == 1000)
 						usr.taiexp += rand(100000,500000)
-						usr<<"You kick the log."
+						usr<<"Você chuta o Log."
 						usr.taiup()
 						usr.makeJounin()
 						usr.makeHunter()
 						usr.Skills()
 					if(usr.random == 2000)
 						usr.taiexp += rand(100000,400000)
-						usr<<"You punch the log."
+						usr<<"Você soca o Log."
 						usr.taiup()
 						usr.makeJounin()
 						usr.Skills()
@@ -129,16 +194,16 @@ mob
 				if(src.Weights)
 					usr.Move_Delay=10
 					if(src.health<2)
-						src<<"You cannot move because you are too tired!!!"
+						src<<"Você não pode se mover, porque você está muito cansado!"
 						src.Frozen=1
 						return
 					src.health -= 2
 					src.Skills()
 					if(src.maxhealth<=50000000000000000)
-						src<<"Your stamina increased!"
+						src<<"Sua estamina aumentou! ="
 						src.maxhealth += rand(1,5)
 					else
-						usr<<"You have reached your Stam cap."
+						usr<<"Você chegou a Capacidade Maxima de Estamina."
 					if(src.health <= 0)
 						src.Death(src)
 						src.dead=1
@@ -159,7 +224,7 @@ mob
 				if(src.rank == "Student")
 					return
 				if(src.Mtai >=50)
-					src << "<B><font color = blue>You learned Sennen Goroshi!"
+					src << "<B><font color = blue>Você aprendeu o Sennen Goroshi!"
 					src.verbs += new /mob/pain/verb/SennenGoroshi()
 					src.L8 = 1
 			else ..()
@@ -185,7 +250,7 @@ mob
 				src.yco = src.y
 				src.zco = src.z
 				Write(F)
-				src << "<font color=Blue><b>Your game has been saved!"
+				src << "<font color=Blue><b>O seu jogo foi Salvo!"
 
 
 mob
@@ -199,7 +264,7 @@ mob
 				usr.yco = usr.y
 				usr.zco = usr.z
 				Write(F)
-				spawn(10) usr << "<font color=Green><b>Your game has been saved!"
+				spawn(10) usr << "<font color=Green><b>O seu jogo foi Salvo!"
 mob
 	proc
 		LoadPlayer()

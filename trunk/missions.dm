@@ -64,42 +64,42 @@ mob/MissionJounin
 									del(W)
 				if("C")
 					if(usr.rank == "Student")
-						usr<<"You must be atleast a Genin to do a C rank mission."
+						usr<<"Você deve ser pelo menos um Genin fazer uma missão rank C."
 					else
 						if(usr.gotscroll <= 0)
 							usr.gotscroll = 0
-							usr<<"<b><font face=verdana>There is a stolen scroll located in the Hidden Village of Snow, Defeat the guards and bring the scroll back in one piece for a reward."
+							usr<<"<b><font face=verdana>Há um pergaminho localizado na Vila Oculta da Neve,  derrote os guardas eo traga para mim que havera uma recompensa .."
 						else
 							if(usr.Yen>=100000)
-								alert("You already have as much Yen as you can carry.")
+								alert("Você ja tem o maximo de Yen que pode carregar.")
 								return
 							else
 								usr.Yen += 1300
-								usr<<"<b><font face=verdana>Good job, I will now send the scroll back to lord Hokage."
+								usr<<"<b><font face=verdana>Bom trabalho, agora vou enviar o pergaminho para o Senhor Hokage."
 								usr.gotscroll = 0
 								usr.cmission+=1
 								for(var/obj/Hidden_Scroll/HS in usr.contents)
 									del(HS)
 				if("B")
 					if(usr.rank == "Student"||usr.rank=="Genin")
-						usr<<"This mission is only for Chuunin or higher"
+						usr<<"Esta missão é apenas para Chuunin ou superior."
 						return
 					else if(usr.roguekills<=0)
 						switch(input("You will embark on your mission, Sure you wish to leave so soon?", text) in list ("Yes","No"))
 							if("Yes")
-								usr<<"Objective: Rogue Ninja have been terrizing the village, Please seek out and eliminate them."
+								usr<<"Objetivo:O Ninja Patife saiu de nossa aldeia, por favor, buscar e eliminá-los."
 								return
 							else
 								return
 					else
 						if(usr.Yen>=100000)
-							alert("You already have as much Yen as you can carry.")
+							alert("Você ja tem o maximo de Yen que pode carregar.")
 							return
 						else
-							usr<<"Lord Hokage is pleased with your performance, Good work."
+							usr<<"Senhor Hokage está satisfeito com seu desempenho, um bom trabalho."
 							usr.bmission+=1
 							if(usr.Yen>=100000)
-								usr<<"You are already carrying as much Yen as you can."
+								usr<<"Você ja tem o maximo de Yen que pode carregar."
 								return
 							else
 								usr.Yen+=usr.roguekills*2000
@@ -107,18 +107,18 @@ mob/MissionJounin
 								return
 				if("A")
 					if(usr.rank == "Student"||usr.rank=="Genin")
-						usr<<"This mission is only for Chuunin or higher"
+						usr<<"Esta missão é apenas para Chuunin ou superior."
 						return
 					else if(usr.Mnin >=400&&usr.Mgen>=400&&usr.Mtai>=400)
 						switch(input("You will embark on your mission, Sure you wish to leave so soon?", text) in list ("Yes","No"))
 							if("Yes")
 								usr.loc=locate(3,4,11)
 								usr.inmission=1
-								usr<<"Objective: Find Orochimaru and retrieve information!."
+								usr<<"Objectivo: encontrar e recuperar informações que Orochimaru conseguiu! "
 								usr.verbs += new /mob/mission/verb/Escape()
 								sleep(6000)
 								if(usr&&usr.inmission)
-									usr<<"Sorry, You have run out of time,Please return and try again next time!"
+									usr<<"Lamentamos, mas você correu fora do tempo, por favor, volte e tente novamente na próxima vez!"
 									usr.inmission=0
 									usr.loc=locate(6,58,20)
 									usr.verbs -= new /mob/mission/verb/Escape()
@@ -129,18 +129,18 @@ mob/MissionJounin
 								return
 				if("S")
 					if(usr.rank == "Student"||usr.rank=="Genin"||usr.rank=="Chuunin")
-						usr<<"This mission is only for Jounin or higher"
+						usr<<"Esta missão é apenas para Jounin ou superior."
 						return
 					else if(usr.Mnin >=750&&usr.Mgen>=750&&usr.Mtai>=750)
 						switch(input("You will embark on your mission, Sure you wish to leave so soon?", text) in list ("Yes","No"))
 							if("Yes")
 								usr.loc=locate(64,39,21)
 								usr.inmission=1
-								usr<<"Objective: Defeat Dosu Kinuta."
+								usr<<"Objetivo: Derrote Dosu Kinuta, um ninja do som."
 								usr.verbs += new /mob/mission/verb/Escape()
 								sleep(6000)
 								if(usr&&usr.inmission)
-									usr<<"Sorry, You have run out of time,Please return and try again next time!"
+									usr<<"Lamentamos, mas você correu fora do tempo, por favor, volte e tente novamente na próxima vez!"
 									usr.inmission=0
 									usr.loc=locate(6,58,20)
 									usr.verbs -= new /mob/mission/verb/Escape()
@@ -150,7 +150,7 @@ mob/MissionJounin
 							else
 								return
 					else
-						usr<<"You aren't qualified for this mission. Need to train some more."
+						usr<<"Você não está qualificado(a) para esta missão, precisa treinar mais um pouco."
 						return
 
 mob/mission/verb/Escape()
