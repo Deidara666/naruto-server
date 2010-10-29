@@ -1052,21 +1052,21 @@ mob
 				usr<< "[src] You turn on OOC."
 				usr.OOCC = 1
 
-mob
-    verb
-   		MusicStop()
-			set name = "Parar Música"
-			set category = "Commands"
-			view(src) << sound(null)
-			view(src) << "[src.name] parou a música!"
+//mob
+//    verb
+//   		MusicStop()
+//			set name = "Parar Música"
+//			set category = "Commands"
+//			view(src) << sound(null)
+//			view(src) << "[src.name] parou a música!"
 
-mob
-    verb
-		MusicPlay(S as sound)
-			set name = "Tocar Música"
-			set category = "Host"
-			view(src) << sound(S,0)
-			view(src) << "[src.name] execuções [S] para nós!"
+//mob
+//    verb
+//		MusicPlay(S as sound)
+//			set name = "Tocar Música"
+//			set category = "Host"
+//			view(src) << sound(S,0)
+//			view(src) << "[src.name] execuções [S] para nós!"
 
 mob
 	verb

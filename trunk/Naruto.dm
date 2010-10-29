@@ -35,7 +35,7 @@ obj
 					return
 
 				if(!usr.doing&&usr.health >= 1)
-//<<<<<<< .mine
+
 					usr.random = rand(103)
 					if(usr.random == 100)
 						usr.taiexp += rand(3000,8700)
