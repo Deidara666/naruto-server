@@ -504,7 +504,7 @@ mob
 			Levelup()
 			src.Mnin+=rand(6,10)
 			src.nin=src.Mnin
-			src<<"<font size = 2><b><font color = white>Seu Ninjutsu aumentou!!"
+			src<<"<font size = 2><b><font color = white>Seu Ninjutsu aumentou!"
 
 		genup()
 			Skills()
@@ -513,16 +513,16 @@ mob
 			Levelup()
 			src.Mgen+=rand(6,10)
 			src.gen=src.Mgen
-			src<<"<font size = 2><b><font color = green>Seu Genjutsu aumentou!!"
+			src<<"<font size = 2><b><font color = green>Seu Genjutsu aumentou!"
 mob
 	Stat()
-		statpanel("Estatus")
+		statpanel("Status")
 		stat(usr)
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("           Informação")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("Nome: [usr]")
-		stat("Clã: [Clan]")
+		stat("Cla : [Clan]")
 		stat("Rank: [rank]")
 		stat("Vila: [Village]")
 		stat("Yen: [Yen]$")
@@ -546,7 +546,7 @@ mob
 		stat("Kunai Skill: [kunaiskill]")
 		stat("Trap Skill: [trapskill]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("Missões:")
+		stat("Missoes:")
 		stat("D: [dmission]")
 		stat("C: [cmission]")
 		stat("B: [bmission]")
@@ -561,7 +561,7 @@ mob
 			stat("Pill2: [pill2]")
 			stat("Pill3: [pill3]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("Usos Base:")
+		stat("Jutsus Bases:")
 		stat("Bunshin No Jutsu - [BunshinN]")
 		stat("Henge No Jutsu - [hengeN]")
 		stat("Kawarimi no jutsu - [KawaN]")
