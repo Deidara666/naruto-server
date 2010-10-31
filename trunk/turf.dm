@@ -244,6 +244,17 @@ turf
 					M.loc = locate(73,22,4)
 			else
 				if(istype(A,/obj/)) del(A)
+
+	Gofloresta2//usr.loc = locate(x,y,4)
+		icon = 'Gofloresta2.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(1,1,36)
+
 	StarTrainingRoomE//usr.loc = locate(x,y,4)
 		icon = 'StarTrainingRoom.dmi'
 		icon_state = "TrainingRoom"
