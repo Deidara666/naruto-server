@@ -2239,35 +2239,35 @@ mob/npc/Kiba
 					if(usr.Inuzuka == 1)
 						usr<<"Hello."
 						if(usr.Mtai >=50&&usr.Clan=="Inuzuka")
-							usr << "<B><font color = blue>You learned how to Tame Dogs!"
+							usr << "<B><font color = blue>Você aprendeu como se usa o Tame Dogs!"
 							usr.verbs += new /mob/inuzuka/verb/Tame()
 						else
-							usr<<"Hit a log noob."
+							usr<<"Hit o Log."
 						if(usr.Inuzuka&&usr.Mtai >=500)
-							usr << "<B><font color = blue>You learned Tsuuga!!"
+							usr << "<B><font color = blue>Você aprendeu o Tsuuga!!"
 							usr.verbs += new /mob/Inuzuka/verb/Gatsuuga()
 						else
-							usr<<"You need 500 Tai to learn Tsuuga."
+							usr<<"Você precisa de 500 Tai para aprender o Tsuuga."
 						if(usr.Inuzuka&&usr.Mnin >=250)
-							usr << "<B><font color = blue>You learned Juujin Bunshin!!"
+							usr << "<B><font color = blue>Você aprendeu o Juujin Bunshin!!"
 							usr.verbs += new /mob/Inuzuka/verb/JuujinBunshin()
 						else
-							usr<<"You need 250 Tai to learn Juujin Bunshin."
+							usr<<"Você precisa de 250 Tai para aprender o Juujin Bunshin."
 						if(usr.Inuzuka&&usr.Mtai >=1000&&usr.Mnin >= 1000)
-							usr << "<B><font color = blue>You learned Soutourou!!"
+							usr << "<B><font color = blue>Você aprendeu o Soutourou!!"
 							usr.verbs += new /mob/Inuzuka/verb/Soutourou()
 						else
-							usr<<"You need 1000 Nin&Tai to learn Soutourou."
+							usr<<"Você precisa de 1000 Nin&Tai para aprender o Soutourou."
 						if(usr.Inuzuka&&usr.Mtai >=750&&usr.Mnin >= 750)
-							usr << "<B><font color = blue>You learned Garouga!!"
+							usr << "<B><font color = blue>Você aprendeu o Garouga!!"
 							usr.verbs += new /mob/Inuzuka/verb/Garouga()
 						else
-							usr<<"You need 750 Nin&Tai to learn Garouga."
+							usr<<"Você precisa de 750 Nin&Tai para aprender o Garouga."
 						if(usr.Inuzuka&&usr.Mtai >=800)
-							usr << "<B><font color = blue>You learned Gatsuuga!"
+							usr << "<B><font color = blue>Você aprendeu o Gatsuuga!"
 							usr.verbs += new /mob/Inuzuka/verb/Gatsuuga1()
 						else
-							usr<<"You need 800 Tai to learn Gatsuuga."
+							usr<<"Você precisa de 800 Tai para aprender o Gatsuuga."
 					else
 						usr<<"Lier leave the Inuzuka house NOW!"
 				if("Forget it")
@@ -2331,10 +2331,10 @@ mob/npc/Neiji
 							usr.knowJ = 1
 							usr.verbs += new /mob/hyuuga/verb/HakkeKuusho()
 						if(usr.Hyuuga&&usr.Mtai >=250&&usr.Mnin >= 250)
-							usr << "<B><font color = blue>Your byakugan has activated!!"
+							usr << "<B><font color = blue>Seu Byakugan foi ativado!!"
 							usr.verbs += new /mob/hyuuga/verb/Byakugan()
 						else
-							usr<<"You need 250 Nin&Tai to activate your Byakugan."
+							usr<<"Você precisa de 250 Nin&Tai para ativar seu Byakugan."
 					else
 						usr<<"Lier leave the Hyuuga house NOW!"
 						return
@@ -2485,40 +2485,40 @@ mob/npc/Gaara
 					if(usr.Gaaraclan)
 						usr<<"Really."
 						if(usr.Gaaraclan&&usr.Mnin >=100)
-							usr << "<B><font color = blue>You learned Suna Shuriken No Jutsu!"
+							usr << "<B><font color = blue>Você aprendeu o Suna Shuriken No Jutsu!"
 							usr.verbs += new /mob/gaara/verb/SunaShuriken()
 						else
-							usr<<"Hit a log noob."
+							usr<<"Hit o Log"
 						if(usr.Gaaraclan&&usr.Mnin >=100&&usr.KawaN >= 30)
-							usr << "<B><font color = blue>You learned Suna Shushin No Jutsu!!"
+							usr << "<B><font color = blue>Você aprendeu o Suna Shushin No Jutsu!!"
 							usr.verbs += new /mob/gaara/verb/SunaShushinNoJutsu()
 						else
-							usr<<"You need 100 Nin & 30 Kawa uses to learn Suna Shushin No Jutsu."
+							usr<<"Você precisa de 100 Nin & 30 Kawa uses para aprender o Suna Shushin No Jutsu."
 						if(usr.Gaaraclan&&usr.Mnin >=300)
-							usr << "<B><font color = blue>You learned Sand Sphere!"
+							usr << "<B><font color = blue>Você aprendeu o Sand Sphere!"
 							usr.verbs += new /mob/gaara/verb/SandSphere()
 						else
-							usr<<"You need 300 Nin to learn Sand Sphere."
+							usr<<"Você precisa de 300 Nin para aprender o Sand Sphere."
 						if(usr.Gaaraclan&&usr.Mnin >=200)
-							usr << "<B><font color = blue>You learned Suna Bunshin No Jutsu!"
+							usr << "<B><font color = blue>Você aprendeu o Suna Bunshin No Jutsu!"
 							usr.verbs += new /obj/bunshins/SunaBunshinnojutsu/verb/SunaBunshinNoJutsu()
 						else
-							usr<<"You need 200 Nin to learn Suna Bunshin No Jutsu."
+							usr<<"Você precisa de 200 Nin para aprender o Suna Bunshin No Jutsu."
 						if(usr.Gaaraclan&&usr.Mnin >=750&&usr.Mchakra>=10000)
 							usr << "<B><font color = blue>You learned Sabaku Kyuu!"
 							usr.verbs += new /mob/gaara/verb/SabakuKyuu()
 						else
-							usr<<"You need 750 Nin & 10000 Chakra to learn Sabaku Kyuu."
+							usr<<"Você precisa de 750 Nin & 10000 de Chakra para aprender o Sabaku Kyuu."
 						if(usr.Gaaraclan&&usr.Mnin >=1000&&usr.Mchakra>=11000)
-							usr << "<B><font color = blue>You learned Sabaku Kyuu!"
+							usr << "<B><font color = blue>Você Aprendeu o Sabaku Kyuu!"
 							usr.verbs += new /mob/gaara/verb/SabakuSousou()
 						else
-							usr<<"You need 1000 Nin & 11000 Chakra to learn Sabaku Kyuu Finish."
+							usr<<"Você precisa de 1000 Nin & 11000 de Chakra para aprender o Sabaku Kyuu Finish."
 						if(usr.Gaaraclan&&usr.Mgen>=500)
 							usr << "<B><font color = blue>You learned Sand Armor!"
 							usr.verbs += new /mob/gaara/verb/SandArmor()
 						else
-							usr<<"You need 500 Gen to learn Sand Armor."
+							usr<<"Você precisa de 500 Gen para aprender a Sand Armor."
 				if("Unlock My Demon")
 					if(usr.rank=="Student"||usr.rank=="Genin")
 						usr<<"You must be a Chuunin or higher."
