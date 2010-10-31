@@ -246,7 +246,9 @@ turf
 				if(istype(A,/obj/)) del(A)
 
 	Gofloresta2//usr.loc = locate(x,y,4)
-//		icon = 'Gofloresta2.dmi'
+
+		icon = 'Gofloresta2.dmi'
+
 		icon_state = "openwall"
 		density = 0
 		Enter(A)

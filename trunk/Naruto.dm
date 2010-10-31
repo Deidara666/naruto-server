@@ -349,11 +349,11 @@ mob
 			src.density = 1
 			src.overlays -= 'Flight.dmi'
 			src.overlays -= 'wings.dmi'
-			src.verbs -= new /mob/tag/verb/Explode
-			src.verbs -= new /mob/tag/verb/Explode
-			src.verbs -= new /mob/tag/verb/Explode
-			src.verbs -= new /mob/tag/verb/Explode
-			src.verbs -= new /mob/tag/verb/Explode
+			src.verbs -= new /mob/tag/verb/Explodir
+			src.verbs -= new /mob/tag/verb/Explodir
+			src.verbs -= new /mob/tag/verb/Explodir
+			src.verbs -= new /mob/tag/verb/Explodir
+			src.verbs -= new /mob/tag/verb/Explodir
 			src.stop = 0
 			src.dead=0
 			src.resting = 0

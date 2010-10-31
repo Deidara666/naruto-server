@@ -18,7 +18,7 @@ obj
 		worn = 0
 		price = 5000
 		verb
-			Wear()
+			Usar()
 
 				if(src.worn)
 					src.worn = 0
@@ -38,13 +38,13 @@ obj
 					usr.overlays += 'Weights.dmi'
 					usr << "você usa o [src.name]."
 					usr.Weights = 1
-			Drop()
+			Soltar()
 				if(src.worn)
 					usr << "Não enquanto isto está sendo usado."
 				if(!src.worn)
 					src.loc=locate(usr.x,usr.y-1,usr.z)
 					usr.SaveK()
-			Get()
+			Pegar()
 
 				set src in oview(1)
 				src.loc = usr
@@ -300,15 +300,88 @@ obj
 				usr<<"Você pegou uma tigela de [src]"
 obj
 	akimichipill1
-		name = "Pilula Akimichi 1"
+		name = "Pilula Akimichi Amarela"
 		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
 		icon_state="akimichipill1"
 		verb
-			Eat()
+			Comer()
 				if(usr.pill1 >= 1)
 					return
 				else
-					usr<<"Você comeu a pilula amarela"
+					usr<<"Você comeu a pilula amarela e se sente mais forte do que nunca."
+					usr.maxhealth += 1000
+					usr.health += 1000
+					usr.Mchakra += 1000
+					usr.chakra += 1000
+					usr.nin += 1000
+					usr.gen += 1000
+					usr.tai += 1000
+					usr.calories += 2
+					usr.pill1 += 1
+			PararEfeito()
+				usr<<"Você cancelou os efeitos da pilula."
+				if(usr.pill1 >= 1)
+					usr.maxhealth -= 1000
+					usr.health -= 1000
+					usr.Mchakra -= 1000
+					usr.nin -= 1000
+					usr.gen -= 1000
+					usr.tai -= 1000
+					usr.pill1 -= 1
+			Olhar()
+				usr<<"Esta é uma pilula especial feita pelos membros do clã Akimichi."
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+obj
+	akimichipill2
+		name = "Pilula Akimichi Verde"
+		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
+		icon_state="akimichipill2"
+		verb
+			Comer()
+				if(usr.pill2 >= 1)
+					return
+				else
+					usr<<"Você comeu a pilula verde e se sente mais forte do que nunca."
+					usr.maxhealth += 5000
+					usr.health += 5000
+					usr.Mchakra += 5000
+					usr.chakra += 5000
+					usr.nin += 5000
+					usr.gen += 5000
+					usr.tai += 5000
+					usr.calories += 2
+					usr.pill2 += 1
+			PararEfeito()
+				usr<<"Você cancelou os efeitos da pilula."
+				if(usr.pill2 >= 1)
+					usr.maxhealth -= 5000
+					usr.health -= 5000
+					usr.Mchakra -= 5000
+					usr.chakra -= 5000
+					usr.nin -= 5000
+					usr.gen -= 5000
+					usr.tai -= 5000
+					usr.pill2 -= 1
+			Olhar()
+				usr<<"Esta é uma pilula especial feita pelos membros do clã Akimichi."
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+obj
+	akimichipill3
+		name = "Pilula Akimichi Vermelha"
+		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
+		icon_state="akimichipill3"
+		verb
+			Comer()
+				if(usr.pill3 >= 1)
+					return
+				else
+					usr<<"Você comeu a pilula vermelha e se sente mais forte do que nunca."
 					usr.maxhealth += 10000
 					usr.health += 10000
 					usr.Mchakra += 10000
@@ -317,99 +390,26 @@ obj
 					usr.gen += 10000
 					usr.tai += 10000
 					usr.calories += 2
-					usr.pill1 += 1
-			StopUsingEffect()
-				usr<<"You stop using effect of pill"
-				if(usr.pill1 >= 1)
+					usr.pill3 += 1
+					usr.overlays += 'Butterfly.dmi'//temp icon
+			PararEfeito()
+				usr<<"Você parou os efeitos da pilula e sente uma terrivel dor no estômago."
+				if(usr.pill3 >= 1)
 					usr.maxhealth -= 10000
 					usr.health -= 10000
 					usr.Mchakra -= 10000
+					usr.chakra -= 10000
 					usr.nin -= 10000
 					usr.gen -= 10000
 					usr.tai -= 10000
-					usr.pill1 -= 1
+					usr.pill3 -= 1
+					usr.overlays -= 'Butterfly.dmi'
 			Olhar()
-				usr<<"This is a special pill which can have only akimichi clan members."
+				usr<<"Esta é uma pilula especial feita pelos membros do clã Akimichi."
 			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"Você pegou um [src]"
-obj
-	akimichipill2
-		name = "Pilula Akimichi 2"
-		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
-		icon_state="akimichipill2"
-		verb
-			Eat()
-				if(usr.pill2 >= 1)
-					return
-				else
-					usr<<"Você comeu a pilula verde"
-					usr.maxhealth += 100000
-					usr.health += 100000
-					usr.Mchakra += 100000
-					usr.chakra += 100000
-					usr.nin += 100000
-					usr.gen += 100000
-					usr.tai += 100000
-					usr.calories += 2
-					usr.pill2 += 1
-			StopUsingEffect()
-				usr<<"You stop using effect of pill"
-				if(usr.pill2 >= 1)
-					usr.maxhealth -= 100000
-					usr.health -= 100000
-					usr.Mchakra -= 100000
-					usr.chakra -= 100000
-					usr.nin -= 100000
-					usr.gen -= 100000
-					usr.tai -= 100000
-					usr.pill2 -= 1
-			Look()
-				usr<<"This is a special pill which can have only akimichi clan members."
-			Get()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"You picked up [src]"
-obj
-	akimichipill3
-		name = "akimichipill3"
-		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
-		icon_state="akimichipill3"
-		verb
-			Eat()
-				if(usr.pill3 >= 1)
-					return
-				else
-					usr<<"You eat akimichi red pill and you feel what you become more powerfull than ever"
-					usr.maxhealth += 1000000
-					usr.health += 1000000
-					usr.Mchakra += 1000000
-					usr.chakra += 1000000
-					usr.nin += 1000000
-					usr.gen += 1000000
-					usr.tai += 1000000
-					usr.calories += 2
-					usr.pill3 += 1
-					usr.overlays += 'Butterfly.dmi'//temp icon
-			StopUsingEffect()
-				usr<<"You stop using effect of pill and you feel extremally pain in your stomach"
-				if(usr.pill3 >= 1)
-					usr.maxhealth -= 1000000
-					usr.health -= 1000000
-					usr.Mchakra -= 1000000
-					usr.chakra -= 1000000
-					usr.nin -= 1000000
-					usr.gen -= 1000000
-					usr.tai -= 1000000
-					usr.pill3 -= 1
-					usr.overlays -= 'Butterfly.dmi'
-			Look()
-				usr<<"This is a special pill which can have only akimichi clan members."
-			Get()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"You picked up [src]"
+				usr<<"Você pegou uma [src]"
 mob/var/tmp/drunk=0
 obj
 	Sake
@@ -417,83 +417,83 @@ obj
 		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
 		icon_state="sake"
 		verb
-			Drink()
+			Beber()
 				if(usr.health < usr.maxhealth)
-					usr<<"You drink some Sake"
+					usr<<"Você bebeu um drink de Sake."
 					usr.health += 50
 					usr.drunk=1
-					usr<<"You begin to feel relaxed and dazed"
+					usr<<"Você começa a se sentir relaxado e confuso."
 					sleep(350)
-					usr<<"The Sake wears off"
+					usr<<"O efeito do Sake acabou."
 					usr.drunk=0
 					del(src)
 				else
-					usr<<"You drink some Sake"
-					usr<<"You begin to feel relaxed and dazed"
+					usr<<"Você bebeu um drink de Sake."
+					usr<<"Você começa a se sentir relaxado e confuso."
 					usr.drunk=1
 					sleep(350)
 					usr.drunk=0
-					usr<<"The Sake wears off"
+					usr<<"O efeito do Sake acabou."
 					del(src)
-			Look()
-				usr<<"This is a bottle of Sake."
-			Drop()
+			Olhar()
+				usr<<"Isto é uma garrafa de Sake."
+			Soltar()
 				src.loc=locate(usr.x,usr.y-1,usr.z)
 				usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a bottle of [src]"
+				usr<<"Você pegou uma garrafa de [src]"
 obj
 	Soup
-		name = "Vegetable Soup"
+		name = "Sopa de Legumes"
 		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
 		icon_state="veggies"
 		verb
-			Eat()
+			Comer()
 				if(usr.health < usr.maxhealth)
-					usr<<"You eat some Vegetable Soup"
+					usr<<"Você comeu a Sopa de Legumes."
 					usr.health += 1000
 					usr.calories += 1000
 					del(src)
 				else
-					usr<<"You eat some Vegetable Soup"
+					usr<<"Você comeu a Sopa de Legumes."
 					usr.calories += 1500
 					del(src)
-			Look()
-				usr<<"This is a Bowl of Vegetable Soup."
-			Drop()
+			Olhar()
+				usr<<"Esta é uma tigela de sopa de vegetais."
+			Soltar()
 				src.loc=locate(usr.x,usr.y-1,usr.z)
 				usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a bowl of [src]"
+				usr<<"Você pegou uma tigela de [src]"
 obj
 	pill
-		name = "Hyourougan"
+		name = "Pilula Hyourougan"
 		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
 		icon_state="Ninja pill"
 		verb
-			Eat()
-				usr<<"You eat pill"
+			Comer()
+				usr<<"Você comeu a pilula"
 				usr.health += 10000
 				usr.calories += 4
 				usr.chakra += 10000
 				del(src)
-			Look()
-				usr<<"This is a special ninja pill."
-			Drop()
+			Olhar()
+				usr<<"Esta é uma pilula ninja especial."
+			Soltar()
 				src.loc=locate(usr.x,usr.y-1,usr.z)
 				usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up [src]"
+				usr<<"Você pegou uma [src]"
 
 obj
 	ShinoS
-		name = "Coat"
+		name = "Casaco"
 		icon = 'ShinoS.dmi'
 		worn = 0
 		price = 750
@@ -502,25 +502,25 @@ obj
 				if(src.worn == 1)
 					src:worn = 0
 					usr.overlays -= 'ShinoS.dmi'//temp icon
-					usr << "You remove the [src.name]."
+					usr << "Você removeu o [src.name]."
 					src.suffix = ""
 				else
 					src:worn = 1
 					usr.overlays += 'ShinoS.dmi'
-					usr << "You wear the [src.name]."
+					usr << "Você usou o [src.name]."
 					src.suffix = "Equipped"
 			Look()
-				usr<<"This is coat."
+				usr<<"Isto é um Casaco."
 			Drop()
 				if(src:worn == 1)
-					usr << "Not while its being worn."
+					usr << "Não enquanto isto está sendo usado."
 				if(src:worn == 0)
 					src.loc=locate(usr.x,usr.y-1,usr.z)
 					usr.SaveK()
 			Get()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a [src]"
+				usr<<"Você pegou um [src]"
 
 obj/var/tmp/tagset=0
 obj/var/tmp/counter=0
@@ -538,34 +538,34 @@ obj
 			CheckAmount()
 				src.name= "[oname] ([src.ammount])"
 		verb
-			Look()
-				usr<<"This is an Exploding Tag."
-			Drop()
+			Olhar()
+				usr<<"Isto é uma Exploding Tag."
+			Soltar()
 				for(var/obj/ExplodingTag/O in usr.contents)
 					if(O.ammount<=0)
 						del(src)
 					else
-						var/drop = input("How many Exploding Tags do you wish to drop?")as num
+						var/drop = input("Quantas Exploding Tag você deseja soltar ?")as num
 						if(src.ammount>drop)
-							usr<<"You don't have that many to drop."
+							usr<<"Você não pode jogar mais do que tem."
 						if(drop<=0)
-							usr<<"You cannot do that."
+							usr<<"Você não pode fazer isso."
 						if(src.ammount>=drop)
 							src.ammount-=drop
 							var/obj/ExplodingTag/B = new/obj/ExplodingTag
 							B.loc=locate(usr.x,usr.y-1,usr.z)
 							B.ammount=drop
-							view(usr)<<"[usr] drops [drop] Exploding Tags."
+							view(usr)<<"[usr] jogou fora [drop] Exploding Tags."
 							if(src.ammount<=0)
 								del(src)
 				usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
 				if(src.tagset)
-					usr<<"Its been Set already"
+					usr<<"Esta já foi armada."
 					return
 				else
-					usr<<"You picked up an [src]"
+					usr<<"Você pegou uma [src]"
 					var/counter=0
 					for(var/obj/ExplodingTag/O in usr.contents)
 						counter+=1
@@ -576,15 +576,15 @@ obj
 							O.ammount+=src.ammount
 							O.name= "[O.name] ([O.ammount])"
 							del(src)
-			SetTag(mob/M in view(3))
+			DefinirTag(mob/M in view(3))
 				if(usr.firing)
-					usr<<"You can't do this right now"
+					usr<<"Você não pode fazer isso agora."
 					return
 				if(M.PK==0)
-					usr<<"NONPK"
+					usr<<"ZONA NÃO PK."
 					return
 				if(usr.tagset>=5)
-					usr<<"You can only set 5 tags at a time."
+					usr<<"Você pode armar apenas 5 Exploding Tag de uma vez."
 					return
 				if(!src.tagset)
 					var/obj/ExplodingTag/B = new/obj/ExplodingTag
@@ -594,7 +594,7 @@ obj
 					B.tagset=1
 					usr.tagset+=1
 					B.icon_state="fire"
-					usr.verbs+= new /mob/tag/verb/Explode
+					usr.verbs+= new /mob/tag/verb/Explodir
 					for(var/obj/ExplodingTag/O in usr.contents)
 						O.ammount-=1
 						if(O.ammount<=0)
@@ -604,7 +604,7 @@ obj
 
 					usr.random=rand(1,3)
 					if(usr.random==3)
-						usr<<"Your Trap skill increases!"
+						usr<<"Sua abilidade em armadilhas aumentou!"
 						usr.Mtrapskill+=1
 						usr.trapskill=usr.Mtrapskill
 
@@ -616,21 +616,21 @@ obj
 
 mob/tag
 	verb
-		Explode(mob/M in view(5))
+		Explodir(mob/M in view(5))
 			set category = "Exploding Tag"
 			for(var/obj/ExplodingTag/T in view(10))
 				if(M.PK==0)
-					usr<<"NONPK"
+					usr<<"ZONA NÃO PK."
 					return
 				if(T.Gowner==usr&&T.tagset)
 					flick("explode",T)
-					view(T)<<"[usr]'s Tag explodes!"
+					view(T)<<"[usr]'s Tag explodiu!"
 					usr.tagset-=1
 					var/damage=usr.trapskill*3
 					sleep(5)
 					del(T)
-					M<<"You have been hit by [usr]'s exploding tag for [damage] damage!"
-					usr<<"You hit [M] with your exploding tag for [damage] damage!"
+					M<<"Você foi atingido por [usr]'s Exploding Tag e levou [damage] de dano!"
+					usr<<"Você acertou [M] com sua Exploding Tag e tirou [damage] de dano!"
 					M.health-=damage
 					usr.tagset-=0
 					if(M.health<=0)
@@ -641,11 +641,11 @@ mob/tag
 						del(B)
 					usr.random=rand(1,3)
 					if(usr.random==3)
-						usr<<"Your Trap skill increases!"
+						usr<<"Você aumentou sua abilidade em armadilha!"
 						usr.Mtrapskill+=2
 						usr.trapskill=usr.Mtrapskill
-			usr.verbs-= new /mob/tag/verb/Explode
-			usr.verbs-= new /mob/tag/verb/Explode
+			usr.verbs-= new /mob/tag/verb/Explodir
+			usr.verbs-= new /mob/tag/verb/Explodir
 
 
 
@@ -666,30 +666,30 @@ obj
 			CheckAmount()
 				src.name= "[oname] ([src.ammount])"
 		verb
-			Look()
-				usr<<"This is a standard Shuriken."
-			Drop()
+			Olhar()
+				usr<<"Isto é uma Shuriken comum."
+			Soltar()
 				for(var/obj/Shuriken/O in usr.contents)
 					if(O.ammount<=0)
 						del(src)
 					else
-						var/drop = input("How many Shuriken do you wish to drop?")as num
+						var/drop = input("Quantas Shurikens deseja jogar fora ?")as num
 						if(src.ammount>drop)
-							usr<<"You don't have that many to drop."
+							usr<<"Você não tem tudo isso."
 						if(drop<=0)
-							usr<<"You cannot do that."
+							usr<<"Você não pode fazer isso."
 						if(src.ammount>=drop)
 							src.ammount-=drop
 							var/obj/Shuriken/B = new/obj/Shuriken
 							B.loc=locate(usr.x,usr.y-1,usr.z)
 							B.ammount=drop
-							view(usr)<<"[usr] drops [drop] Shuriken."
+							view(usr)<<"[usr] jogou fora [drop] Shuriken."
 							if(src.ammount<=0)
 								del(src)
 				usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
-				usr<<"You picked up [src]"
+				usr<<"Você pegou uma [src]"
 				for(var/obj/Shuriken/O in usr.contents)
 					counter+=1
 				if(counter<=0)
@@ -699,13 +699,13 @@ obj
 						O.ammount+=src.ammount
 						O.name= "[O.name] ([O.ammount])"
 						del(src)
-			Throw()
+			Tacar()
 				if(usr.firing)
 					return
 				if(usr.weaponthrow)
 					return
 				if(usr.PK==0)
-					usr<<"NONPK ZONE!"
+					usr<<"ZONA NÃO PK !!!"
 					return
 				var/obj/Shuriken/L = new()
 				L.loc=usr.loc

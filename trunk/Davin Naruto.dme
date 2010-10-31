@@ -6,21 +6,8 @@
 // END_INTERNALS
 // BEGIN_FILE_DIR
 #define FILE_DIR .
-#define FILE_DIR ".svn"
-#define FILE_DIR ".svn/prop-base"
-#define FILE_DIR ".svn/text-base"
-#define FILE_DIR "players"
-#define FILE_DIR "players/.svn"
-#define FILE_DIR "players/.svn/prop-base"
-#define FILE_DIR "players/.svn/text-base"
 #define FILE_DIR "PNG"
-#define FILE_DIR "PNG/.svn"
-#define FILE_DIR "PNG/.svn/prop-base"
-#define FILE_DIR "PNG/.svn/text-base"
 #define FILE_DIR "sounds"
-#define FILE_DIR "sounds/.svn"
-#define FILE_DIR "sounds/.svn/prop-base"
-#define FILE_DIR "sounds/.svn/text-base"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES

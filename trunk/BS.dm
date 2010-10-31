@@ -2329,11 +2329,11 @@ turf
 					usr.density = 1
 					usr.overlays -= 'wings.dmi'
 					usr.overlays -= 'wings.dmi'
-					usr.verbs -= new /mob/tag/verb/Explode
-					usr.verbs -= new /mob/tag/verb/Explode
-					usr.verbs -= new /mob/tag/verb/Explode
-					usr.verbs -= new /mob/tag/verb/Explode
-					usr.verbs -= new /mob/tag/verb/Explode
+					usr.verbs -= new /mob/tag/verb/Explodir
+					usr.verbs -= new /mob/tag/verb/Explodir
+					usr.verbs -= new /mob/tag/verb/Explodir
+					usr.verbs -= new /mob/tag/verb/Explodir
+					usr.verbs -= new /mob/tag/verb/Explodir
 					usr.stop = 0
 					usr.dead=0
 					usr.resting = 0
