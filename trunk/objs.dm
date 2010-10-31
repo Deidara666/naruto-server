@@ -25,9 +25,9 @@ obj
 					usr.overlays -= 'Weights.dmi'//temp icon
 					usr.Move_Delay = usr.Savedspeed
 					usr.Weights = 0
-					usr << "You remove the [src.name]."
+					usr << "Você removeu o [src.name]."
 					if(usr.Mountain&&usr.Frozen)
-						usr<<"You can now climb the mountain..."
+						usr<<"Agora você não pode escalar a montanha..."
 						usr.Frozen=0
 					if(usr.onwater&&usr.Frozen)
 						usr<<"Você pode andar sobre a agua..."
@@ -40,7 +40,7 @@ obj
 					usr.Weights = 1
 			Drop()
 				if(src.worn)
-					usr << "Not while its being worn."
+					usr << "Não enquanto isto está sendo usado."
 				if(!src.worn)
 					src.loc=locate(usr.x,usr.y-1,usr.z)
 					usr.SaveK()
@@ -48,7 +48,7 @@ obj
 
 				set src in oview(1)
 				src.loc = usr
-				usr<<"vocÊ pegou [src]"
+				usr<<"Você pegou [src]"
 
 
 
@@ -57,17 +57,17 @@ obj
 
 obj
 	Shoes
-		name = "Shoes"
+		name = "Sapato"
 		icon = 'Cloths.dmi'//dont have a base icon so cant make weights icon!lol
 		price = 100
 		worn = 0
 		verb
-			Wear()
+			Usar()
 
 				if(!src.worn)
 					src.worn=1
 					usr.overlays += 'Cloths.dmi'
-					usr << "You wear the [src.name]."
+					usr << "Você usa o [src.name]."
 					src.suffix = "Equipped"
 				else
 					src:worn = 0
@@ -75,41 +75,41 @@ obj
 					usr << "Você removeu [src.name]."
 					src.suffix = ""
 					usr.overlays -= 'Cloths.dmi'
-			Drop()
+			Soltar()
 
 				if(src:worn == 1)
-					usr << "Not while its being worn."
+					usr << "Não enquanto isto está sendo usado."
 				if(src:worn == 0)
 					src.loc=locate(usr.x,usr.y-1,usr.z)
 					usr.SaveK()
-			Get()
+			Pegar()
 
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up some [src]"
+				usr<<"Você pegou um [src]"
 
 
 mob/var/shirtI
 obj
 	Shirt
-		name = "Shirt"
+		name = "Camisa"
 		icon = 'shirt.dmi'//dont have a base icon so cant make weights icon!lol
 		price = 750
 		worn = 0
 		verb
-			Wear()
+			Usar()
 
 				if(src.worn == 1)
 					src:worn = 0
 					usr.overlays -= 'shirt.dmi'//temp icon
-					usr << "You remove the [src.name]."
+					usr << "Você removeu a [src.name]."
 					src.suffix = ""
 					usr.overlays-= usr.shirtI
 				else
 					src:worn = 1
-					var/shirtred = input("How much red do you want?") as num
-					var/shirtblue = input("How much blue do you want?") as num
-					var/shirtgreen = input("How much green do you want?") as num
+					var/shirtred = input("Quanto de vermelho você deseja ?") as num
+					var/shirtblue = input("Quanto de azul você deseja ?") as num
+					var/shirtgreen = input("Quanto de verde você deseja ?") as num
 					usr.shirtI = 'shirt.dmi'
 					usr.shirtI += rgb(shirtred,shirtgreen,shirtblue)
 					usr.rshirt = shirtred
@@ -117,70 +117,70 @@ obj
 					usr.bshirt = shirtblue
 					usr.overlays += usr.shirtI
 					usr.SI = usr.shirtI
-					usr << "You wear the [src.name]."
+					usr << "Você equipou a [src.name]."
 					src.suffix = "Equipped"
-			Drop()
+			Soltar()
 
 				if(src:worn == 1)
-					usr << "Not while its being worn."
+					usr << "Não enquanto isto está sendo usado."
 				if(src:worn == 0)
 					src.loc=locate(usr.x,usr.y-1,usr.z)
 					usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up some [src]"
+				usr<<"Você pegou uma [src]"
 
 obj
 	SasukeShirt
-		name = "Sasuke Shirt"
+		name = "Camisa do Sasuke"
 		icon = 'SasukeShirt.dmi'//dont have a base icon so cant make weights icon!lol
 		price = 250
 		worn = 0
 		verb
-			Wear()
+			Usar()
 				if(src.worn == 1)
 					src:worn = 0
 					usr.overlays -= 'SasukeShirt.dmi'//temp icon
-					usr << "You remove the [src.name]."
+					usr << "Você removeu a [src.name]."
 					src.suffix = ""
 				else
 					src:worn = 1
 					usr.overlays += 'SasukeShirt.dmi'
-					usr << "You wear the [src.name]."
+					usr << "Você equipou a [src.name]."
 					src.suffix = "Equipped"
-			Look()
-				usr<<"This is a shirt."
-			Drop()
+			Olhar()
+				usr<<"Isto é uma camisa."
+			Soltar()
 				if(src:worn == 1)
-					usr << "Not while its being worn."
+					usr << "Não enquanto isto está sendo usado."
 				if(src:worn == 0)
 					src.loc=locate(usr.x,usr.y-1,usr.z)
 					usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a [src]"
+				usr<<"Você pegou uma [src]"
 
 obj
 	Pants
-		name = "Pants"
+		name = "Calça"
 		icon = 'pants.dmi'//dont have a base icon so cant make weights icon!lol
 		price = 250
 		worn = 0
 		verb
-			Wear()
+			Usar()
 				if(src.worn == 1)
 					src:worn = 0
 					usr.overlays -= 'pants.dmi'//temp icon
-					usr << "You remove the [src.name]."
+					usr << "Você removeu a [src.name]."
 					src.suffix = ""
 					usr.overlays -= usr.Picon
 				else
 					src:worn = 1
-					var/pantsred = input("How much red do you want?") as num
-					var/pantsblue = input("How much blue do you want?") as num
-					var/pantsgreen = input("How much green do you want?") as num
+					var/pantsred = input("Quanto de vermelho você deseja ?") as num
+					var/pantsblue = input("Quanto de azul você deseja ?") as num
+					var/pantsgreen = input("Quanto de verde você deseja ?") as num
 					var/pantsI = 'pants.dmi'
 					pantsI += rgb(pantsred,pantsgreen,pantsblue)
 					usr.rpants = pantsred
@@ -188,24 +188,24 @@ obj
 					usr.bpants = pantsblue
 					usr.overlays += pantsI
 					usr.Picon = pantsI
-					usr << "You wear the [src.name]."
+					usr << "Você equipou a [src.name]."
 					src.suffix = "Equipped"
-			Look()
-				usr<<"This is a shirt."
-			Drop()
+			Olhar()
+				usr<<"Isto é uma calça."
+			Soltar()
 				if(src:worn == 1)
-					usr << "Not while its being worn."
+					usr << "Não enquanto isto está sendo usado."
 				if(src:worn == 0)
 					src.loc=locate(usr.x,usr.y-1,usr.z)
 					usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up some [src]"
+				usr<<"Você pegou uma [src]"
 
 obj
 	Shades
-		name = "Shades"
+		name = "Oculos"
 		icon = 'shades.dmi'//dont have a base icon so cant make weights icon!lol
 		worn = 0
 		price = 158
@@ -214,25 +214,25 @@ obj
 				if(src.worn == 1)
 					src:worn = 0
 					usr.overlays -= 'shades.dmi'//temp icon
-					usr << "You remove the [src.name]."
+					usr << "Você removeu o [src.name]."
 					src.suffix = ""
 				else
 					src:worn = 1
 					usr.overlays += 'shades.dmi'
-					usr << "You wear the [src.name]."
+					usr << "Você equipou o [src.name]."
 					src.suffix = "Equipped"
 			Look()
-				usr<<"This is a official vest given to chuunins."
+				usr<<"Este é um oculos oficial dado aos chunins."
 			Drop()
 				if(src:worn == 1)
-					usr << "Not while its being worn."
+					usr << "Não enquanto isto está sendo usado."
 				if(src:worn == 0)
 					src.loc=locate(usr.x,usr.y-1,usr.z)
 					usr.SaveK()
 			Get()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a [src]"
+				usr<<"Você pegou um [src]"
 
 
 
@@ -251,21 +251,21 @@ obj
 		worn = 0
 		price = 158
 		verb
-			Learn()
+			Ler()
 				if(usr.learntK == 0)
 					if(usr.rank == "Student")
 						return
 					if(usr.BunshinN<200)
-						usr<<"Sorry you can´t learn it yet you need to use Bunshin No Jutsu 200 times first..."
+						usr<<"Sinto muito, você precisa ter mais de 200 usos do Bunshin No Jutsu."
 						return
 					if(usr.BunshinN>=200)
-						usr << "<I><B><font face = courier><font color = blue>You learned Kage Bunshin No Jutsu!";usr.verbs += new /obj/bunshins/KageBunshinnojutsu/verb/KageBunshinNoJutsu()
+						usr << "<I><B><font face = courier><font color = blue>Você leu Kage Bunshin No Jutsu!";usr.verbs += new /obj/bunshins/KageBunshinnojutsu/verb/KageBunshinNoJutsu()
 						usr:learntK = 1
 				else ..()
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a [src]"
+				usr<<"Você pegou um [src]"
 
 
 
@@ -279,28 +279,28 @@ obj
 		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
 		icon_state="ramen"
 		verb
-			Eat()
+			Comer()
 				if(usr.health < usr.maxhealth)
-					usr<<"You eat some Ramen"
+					usr<<"Você come alguns Ramen."
 					usr.health += 1000
 					usr.calories += 2000
 					del(src)
 				else
-					usr<<"You eat some Ramen"
+					usr<<"Você come alguns Ramen."
 					usr.calories += 2500
 					del(src)
-			Look()
-				usr<<"This is a Bowl of Ramen."
-			Drop()
+			Olhar()
+				usr<<"Esta é uma tigela de Ramen."
+			Soltar()
 				src.loc=locate(usr.x,usr.y-1,usr.z)
 				usr.SaveK()
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a bowl of [src]"
+				usr<<"Você pegou uma tigela de [src]"
 obj
 	akimichipill1
-		name = "akimichipill1"
+		name = "Pilula Akimichi 1"
 		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
 		icon_state="akimichipill1"
 		verb
@@ -308,7 +308,7 @@ obj
 				if(usr.pill1 >= 1)
 					return
 				else
-					usr<<"You eat akimichi yellow pill"
+					usr<<"Você comeu a pilula amarela"
 					usr.maxhealth += 10000
 					usr.health += 10000
 					usr.Mchakra += 10000
@@ -328,15 +328,15 @@ obj
 					usr.gen -= 10000
 					usr.tai -= 10000
 					usr.pill1 -= 1
-			Look()
+			Olhar()
 				usr<<"This is a special pill which can have only akimichi clan members."
-			Get()
+			Pegar()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up [src]"
+				usr<<"Você pegou um [src]"
 obj
 	akimichipill2
-		name = "akimichipill2"
+		name = "Pilula Akimichi 2"
 		icon = 'things.dmi'//dont have a base icon so cant make weights icon!lol
 		icon_state="akimichipill2"
 		verb
@@ -344,7 +344,7 @@ obj
 				if(usr.pill2 >= 1)
 					return
 				else
-					usr<<"You eat akimichi green pill"
+					usr<<"Você comeu a pilula verde"
 					usr.maxhealth += 100000
 					usr.health += 100000
 					usr.Mchakra += 100000
