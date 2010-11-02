@@ -205,6 +205,8 @@ mob/var
 	resting=0
 	level=1
 	levelanterior=0
+	treinolog=1
+	explog=0
 
 	ChakraC = 50
 	ChidoriU = 0
@@ -468,6 +470,28 @@ world
 				spawn(1000) Geninexam()
 mob
 	proc
+		Treinolog()
+			if(usr.treinolog==0)
+				if(usr.resting)
+					usr<<"Não é possível treinar quando está em descanso."
+					return
+				if(usr.meditating)
+					usr<<"Você não pode treinar quando está meditando."
+				if(usr.health<5)
+					usr<<"Você não pode treinar , está muito cansado , dê Rest."
+					return
+				if(usr.Mcap)
+					usr<<"Você chegou até a Capacidade Máxima de Taijutsu."
+					return
+				if(!usr.doing&&usr.health >= 1)
+					makeJounin()
+					makeHunter()
+					Skills()
+					usr.Frozen = 1
+					usr<<"Você bate no log"
+					spawn(60) taiup()
+					spawn(60) Treinolog()
+
 		Levelup()
 			src.exp+=25
 			if(src.exp>=src.level*100)
@@ -475,7 +499,7 @@ mob
 				src.level+=1
 				src.levelanterior+=1
 				src.max_exp+=100
-				src<<"<font size = 2><b><font color = blue>Você passou de level!!"
+				src<<"<font size = 2><b><font color = blue>Você passou de level !"
 				if(src.maxhealth<=10000000)
 					src.maxhealth+=rand(1,50)
 				else
@@ -495,7 +519,8 @@ mob
 			Levelup()
 			src.Mtai+=rand(6,10)
 			src.tai=src.Mtai
-			src<<"<font size = 2><b><font color = green>Seu Taijutsu aumentou!!"
+			usr<<"Você bate no Log."
+			src<<"<font size = 2><b><font color = green>Seu Taijutsu aumentou !"
 
 		ninup()
 			Skills()
@@ -504,7 +529,7 @@ mob
 			Levelup()
 			src.Mnin+=rand(6,10)
 			src.nin=src.Mnin
-			src<<"<font size = 2><b><font color = white>Seu Ninjutsu aumentou!"
+			src<<"<font size = 2><b><font color = white>Seu Ninjutsu aumentou !"
 
 		genup()
 			Skills()
@@ -513,7 +538,7 @@ mob
 			Levelup()
 			src.Mgen+=rand(6,10)
 			src.gen=src.Mgen
-			src<<"<font size = 2><b><font color = green>Seu Genjutsu aumentou!"
+			src<<"<font size = 2><b><font color = green>Seu Genjutsu aumentou !"
 mob
 	Stat()
 		statpanel("Status")
@@ -530,10 +555,11 @@ mob
 		stat("Mortes: [deaths]")
 		stat("Localização: [usr.x],[usr.y],[usr.z]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("           Estatus")
+		stat("           Status")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("Level: [level]")
 		stat("HP: [health]/[maxhealth]")
+		//stat("Experiência: [exp]/[level*100]"
 		stat("Chakra: [chakra]/[Mchakra]")
 		var/ttexp=round(src.taiexp*100/src.mtaiexp)
 		var/nnexp=round(src.ninexp*100/src.mninexp)
@@ -542,9 +568,9 @@ mob
 		stat("Ninjutsu: [nin] ([nnexp]%)")
 		stat("Genjutsu: [gen] ([ggexp]%)")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("Shuriken Skill: [shurikenskill]")
-		stat("Kunai Skill: [kunaiskill]")
-		stat("Trap Skill: [trapskill]")
+		stat("Abilidade com Shuriken   : [shurikenskill]")
+		stat("Abilidade com Kunai        : [kunaiskill]")
+		stat("Abilidade com Armadilhas: [trapskill]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("Missoes:")
 		stat("D: [dmission]")
@@ -556,15 +582,15 @@ mob
 		if(src.Aburame)
 			stat("Konchuu: [Konchuu]")
 		if(src.Akimichi)
-			stat("Calories: [calories]")
-			stat("Pill1: [pill1]")
-			stat("Pill2: [pill2]")
-			stat("Pill3: [pill3]")
+			stat("Calorias: [calories]")
+			stat("Pilula amarela  : [pill1]")
+			stat("Pilula verde     : [pill2]")
+			stat("Pilula vermelha: [pill3]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("Jutsus Bases:")
-		stat("Bunshin No Jutsu - [BunshinN]")
-		stat("Henge No Jutsu - [hengeN]")
-		stat("Kawarimi no jutsu - [KawaN]")
+		stat("Bunshin No Jutsu : [BunshinN]")
+		stat("Henge No Jutsu   : [hengeN]")
+		stat("Kawarimi no jutsu  : [KawaN]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		statpanel("Inventário")
 		stat("",contents)

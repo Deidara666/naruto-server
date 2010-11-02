@@ -21,80 +21,41 @@ obj
 				set name = "Log Train"
 				set category = "Training"
 				set src in oview(1)
-				if (usr.resting)
-					usr<<"Não é possível treinar quando está em descanso."
-					return
-				if (usr.meditating)
-					usr<<"Você não pode treinar quando está meditando."
-					return
-				if(usr.health<5)
-					usr<<"Você não pode treinar , está muito cansado , dê Rest."
-					return
-				if(usr.Mcap)
-					usr<<"Você chegou até a Capacidade Máxima de Taijutsu."
-					return
-
-				if(!usr.doing&&usr.health >= 1)
-
-					usr.random = rand(103)
-					if(usr.random == 100)
-						usr.taiexp += rand(3000,8700)
-						usr<<"Você chuta o Log"
-						usr.taiup()
-						usr.makeJounin()
-						usr.makeHunter()
-						usr.Skills()
-					if(usr.random == 200)
-						usr.taiexp += rand(8000,1100)
-						usr<<"Você soca o Log"
-						usr.taiup()
-						usr.makeJounin()
-						usr.Skills()
-						usr.makeHunter()
-					else
-						usr.exp += rand(10000,30000)
-						usr.Levelup()
-						usr.health -= 5
-						usr.doing = 1
-						usr.Skills()
-						usr.makeJounin()
-						usr.makeHunter()
-						if(usr)
-							usr.doing = 0
-						else
-							return
-
-					spawn(20) usr.taiup()
+				if(usr.treinolog==1)
+					usr.treinolog=0
+					usr.Treinolog()
+				else
+					usr.Frozen=0
+					usr<<"Você parou de bater no Log"
+					usr.treinolog=1
 
 
-				if(!usr.doing&&usr.health >= 5&&usr.Weights)
-					usr.random = rand(103)
-					if(usr.random == 100)
-						usr.taiexp += rand(10000,43000)
-						usr<<"Você chuta o Log"
-						usr.taiup()
-						usr.makeJounin()
-						usr.makeHunter()
-						usr.Skills()
-					if(usr.random == 2)
-						usr.taiexp += rand(10000,40000)
-						usr<<"Você soca o Log"
-						usr.taiup()
-						usr.makeJounin()
-						usr.Skills()
-						usr.makeHunter()
-					else
-						usr.exp += rand(13000,30000)
-						usr.Levelup()
-						usr.health -= 10
-						usr.doing = 1
-						usr.Skills()
-						usr.makeJounin()
-						usr.makeHunter()
-						if(usr)
-							usr.doing = 0
-						else
-							return
+
+		//verb
+		//	Punch()
+		//
+		//
+		//		if (usr.resting)
+		//			usr<<"Não é possível treinar quando está em descanso."
+		//			return
+		//		if (usr.meditating)
+		//			usr<<"Você não pode treinar quando está meditando."
+		//			return
+		//		if(usr.health<5)
+		//			usr<<"Você não pode treinar , está muito cansado , dê Rest."
+		//			return
+		//		if(usr.Mcap)
+		//			usr<<"Você chegou até a Capacidade Máxima de Taijutsu."
+		//			return
+		//		if(!usr.doing&&usr.health >= 1)
+		//			usr.taiexp += rand(3000,8700)
+		//			usr<<"Você bate no Log."
+		//			usr.makeJounin()
+		//			usr.makeHunter()
+		//			usr.Skills()
+		//			usr.Frozen = 1
+		//			spawn(30) usr.taiup()
+		//			usr.Frozen = 1
 
 obj
 	Log2
