@@ -16,9 +16,10 @@ obj
 	Log
 		icon = 'trainlog.dmi'
 		density = 1
+		name="Tronco"
 		verb
 			Punch()
-				set name = "Log Train"
+				set name = "Treinar no Tronco"
 				set category = "Training"
 				set src in oview(1)
 				if(usr.treinolog==1)
@@ -33,110 +34,34 @@ obj
 						usr<<"Você tem que esperar para voltar a treinar"
 						spawn(120) usr.treinolog=1
 
-
-
-		//verb
-		//	Punch()
-		//
-		//
-		//		if (usr.resting)
-		//			usr<<"Não é possível treinar quando está em descanso."
-		//			return
-		//		if (usr.meditating)
-		//			usr<<"Você não pode treinar quando está meditando."
-		//			return
-		//		if(usr.health<5)
-		//			usr<<"Você não pode treinar , está muito cansado , dê Rest."
-		//			return
-		//		if(usr.Mcap)
-		//			usr<<"Você chegou até a Capacidade Máxima de Taijutsu."
-		//			return
-		//		if(!usr.doing&&usr.health >= 1)
-		//			usr.taiexp += rand(3000,8700)
-		//			usr<<"Você bate no Log."
-		//			usr.makeJounin()
-		//			usr.makeHunter()
-		//			usr.Skills()
-		//			usr.Frozen = 1
-		//			spawn(30) usr.taiup()
-		//			usr.Frozen = 1
-
 obj
 	Log2
 		icon = 'trainlog.dmi'
 		density = 1
+		name="Tronco Chunin +"
 		verb
 			Punch()
-				set name = "Log Train"
+				set name = "Treinar no Tronco"
 				set category = "Training"
 				set src in oview(1)
-				if (usr.resting)
-					usr<<"Não é possível treinar quando está em descanso."
-					return
-				if (usr.meditating)
-					usr<<"Você não pode treinar quando está meditando."
-					return
-				if(usr.health<5)
-					usr<<"Você precisa Descansar."
-					return
-				if(!usr.doing&&usr.health >= 1)
-					usr.random = rand(10000,30000)
-					if(usr.random == 1000)
-						usr.taiexp += rand(100000,400000)
-						usr<<"Você chuta o Log."
-						usr.taiup()
-						usr.makeJounin()
-						usr.makeHunter()
-						usr.Skills()
-					if(usr.random == 200)
-						usr.taiexp += rand(100000,350000)
-						usr<<"Você soca o Log."
-						usr.taiup()
-						usr.makeJounin()
-						usr.Skills()
-						usr.makeHunter()
+				if(usr.rank=="Student")
+					usr<<"Você precisa ser Chunin ou mais para treinar nesse Log."
+				else
+					if(usr.rank=="Guenin")
+						usr<<"Você precisa ser Chunin ou mais para treinar nesse Log."
 					else
-						usr.exp += rand(100000,300000)
-						usr.Levelup()
-						usr.health -= 5
-						usr.doing = 1
-						usr.Skills()
-						usr.makeJounin()
-						usr.makeHunter()
-						if(usr)
-							usr.doing = 0
+						if(usr.treinolog==1)
+							usr.treinolog=0
+							usr.Treinolog()
 						else
-							return
+							if(usr.treinolog==0)
+								usr.Frozen=0
+								usr<<"Você parou de bater no Log"
+								usr.treinolog=3
+							else
+								usr<<"Você tem que esperar para voltar a treinar"
+								spawn(120) usr.treinolog=1
 
-
-				if(!usr.doing&&usr.health >= 5&&usr.Weights)
-					usr.random = rand(1000,30000)
-					if(usr.random == 1000)
-						usr.taiexp += rand(100000,500000)
-						usr<<"Você chuta o Log."
-						usr.taiup()
-						usr.makeJounin()
-						usr.makeHunter()
-						usr.Skills()
-					if(usr.random == 2000)
-						usr.taiexp += rand(100000,400000)
-						usr<<"Você soca o Log."
-						usr.taiup()
-						usr.makeJounin()
-						usr.Skills()
-						usr.makeHunter()
-					else
-						usr.exp += rand(130000,300000)
-						usr.Levelup()
-						usr.health -= 10
-						usr.doing = 1
-						usr.Skills()
-						usr.makeJounin()
-						usr.makeHunter()
-						if(usr)
-							usr.doing = 0
-						else
-							return
 
 mob
 	Move()
