@@ -25,9 +25,13 @@ obj
 					usr.treinolog=0
 					usr.Treinolog()
 				else
-					usr.Frozen=0
-					usr<<"Você parou de bater no Log"
-					usr.treinolog=1
+					if(usr.treinolog==0)
+						usr.Frozen=0
+						usr<<"Você parou de bater no Log"
+						usr.treinolog=3
+					else
+						usr<<"Você tem que esperar para voltar a treinar"
+						spawn(120) usr.treinolog=1
 
 
 

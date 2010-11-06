@@ -455,7 +455,7 @@ world
 				world<<"<font size=2><font color=red>O exame Genin acabou - Haverá outro exame Genin em breve..."
 				spawn(10000) world.Geninexam()
 			else
-				world<<"<font size=2><font color=red>Haverá um exame Genin em 5 minutos - Go to the academy theres one in all Villages..."
+				world<<"<font size=2><font color=red>Haverá um exame Genin em 5 minutos - Vá para a academia da sua vila..."
 				sleep(600)
 				world<<"<font size=2><font color=red>Haverá um exame Genin em 4 minutos!"
 				sleep(600)
@@ -463,7 +463,7 @@ world
 				sleep(600)
 				world<<"<font size=2><font color=red>Haverá um exame Genin em 2 minutos!"
 				sleep(600)
-				world<<"<font size=2><font color=red>HAVERÁ UM EXAME GENIN EM 1 MINUTO!!!"
+				world<<"<font size=2><font color=red>HAVERÁ UM EXAME GENIN EM 1 MINUTO !!!"
 				sleep(600)
 				world<<"<font size=2><font color=red>O EXAME GENIN COMEÇOU, APERTE COM O BOTÃO DIREITO PARA FAZER O TESTE!!!"
 				Genintime=1
@@ -488,14 +488,14 @@ mob
 					makeHunter()
 					Skills()
 					usr.Frozen = 1
-					usr<<"Você bate no log"
+					spawn(15) usr<<"Você bate no log"
 					spawn(60) taiup()
 					spawn(60) Treinolog()
 
 		Levelup()
 			src.exp+=25
 			if(src.exp>=src.level*100)
-				src.max_exp=0
+				src.exp=0
 				src.level+=1
 				src.levelanterior+=1
 				src.max_exp+=100
@@ -519,7 +519,6 @@ mob
 			Levelup()
 			src.Mtai+=rand(6,10)
 			src.tai=src.Mtai
-			usr<<"Você bate no Log."
 			src<<"<font size = 2><b><font color = green>Seu Taijutsu aumentou !"
 
 		ninup()
