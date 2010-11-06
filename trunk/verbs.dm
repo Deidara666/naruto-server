@@ -1060,7 +1060,7 @@ mob/verb/PararMusica()
 
 mob/verb/TocarMusica(S as sound)
 			set name = "Tocar Música"
-			set category = "Host"
+			set category = "Commands"
 			usr << sound(S,0)
 			usr << "[usr.name] está escutando [S]!"
 
