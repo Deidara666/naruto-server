@@ -488,7 +488,7 @@ mob
 					makeHunter()
 					Skills()
 					usr.Frozen = 1
-					spawn(15) usr<<"Você bate no log"
+					spawn(15) usr<<"Você bate no Tronco"
 					spawn(60) taiup()
 					spawn(60) Treinolog()
 

@@ -28,7 +28,7 @@ obj
 				else
 					if(usr.treinolog==0)
 						usr.Frozen=0
-						usr<<"Você parou de bater no Log"
+						usr<<"Você parou de bater no Tronco"
 						usr.treinolog=3
 					else
 						usr<<"Você tem que esperar para voltar a treinar"
@@ -45,10 +45,10 @@ obj
 				set category = "Training"
 				set src in oview(1)
 				if(usr.rank=="Student")
-					usr<<"Você precisa ser Chunin ou mais para treinar nesse Log."
+					usr<<"Você precisa ser Chunin ou mais para treinar nesse Tronco."
 				else
 					if(usr.rank=="Guenin")
-						usr<<"Você precisa ser Chunin ou mais para treinar nesse Log."
+						usr<<"Você precisa ser Chunin ou mais para treinar nesse Tronco."
 					else
 						if(usr.treinolog==1)
 							usr.treinolog=0
@@ -56,7 +56,7 @@ obj
 						else
 							if(usr.treinolog==0)
 								usr.Frozen=0
-								usr<<"Você parou de bater no Log"
+								usr<<"Você parou de bater no Tronco"
 								usr.treinolog=3
 							else
 								usr<<"Você tem que esperar para voltar a treinar"

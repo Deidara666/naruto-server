@@ -158,14 +158,14 @@ proc
 mob
 	verb
 		Waterwalk()
-			set category="Training"
-			set name = "Water Walk"
+			set category="Treino"
+			set name = "Andar sobre a água"
 			if(usr.waterwalk==0||usr.waterwalk==null)
 				usr.waterwalk=1
-				usr<<"You are now able to walk on water"
+				usr<<"Agora você pode andar sobre a água."
 			else
 				usr.waterwalk=0
-				usr<<"You are now incapable of walking on water"
+				usr<<"Agora você não pode andar sobre a água."
 mob/verb/Help()
 
 	set name ="HELP"
@@ -1045,11 +1045,11 @@ mob
 	verb
 		OOC_OnOff()
 			if(usr.OOCC==1)
-				usr<< "[src] You turn off OOC."
+				usr<< "[src] Você desligou o OOC."
 				usr.OOCC = 0
 
 			else
-				usr<< "[src] You turn on OOC."
+				usr<< "[src] Você ligou o OOC."
 				usr.OOCC = 1
 
 mob/verb/PararMusica()
@@ -1138,30 +1138,30 @@ mob
 	verb
 		Power_up()
 			set category = "NinJutsu"
-			set name = "POWER-UP"
+			set name = "Usar Força oculta"
 			if(usr.rank =="Student")
-				usr<<"You must be Genin or higher to use this option."
+				usr<<"Você precisa ser Guenin ou mais para usar este jutsu."
 				return
 			if(usr.Kyuubi==1)
 				if(usr.Kyuubi==1)
 					usr.Kyuubi()
 					return
 			else
-				usr<<"You do not have 9tails."
+				usr<<"Você não tem a raposa de 9 caldas."
 
 			if(usr.bit==1)
 				if(usr.bit==1)
 					usr.Cursed_Seal()
 					return
 			else
-				usr<<"You do not have Curse Seal."
+				usr<<"Você não tem o selo amaldiçoado."
 
 			if(usr.Shukkaku==1)
 				if(usr.Shukkaku==1)
 					usr.Kaku()
 					return
 			else
-				usr<<"You do not have Shukkaku."
+				usr<<"Você não tem o Shukkaku."
 
 mob
 	verb
