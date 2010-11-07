@@ -193,11 +193,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(11,42,2)
@@ -222,11 +222,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(9,87,15)
@@ -265,7 +265,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(13,2,32)
@@ -353,11 +353,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(8,89,18)
@@ -382,11 +382,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(92,87,28)
@@ -414,11 +414,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(9,2,2)
@@ -444,11 +444,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(40,2,2)
@@ -474,11 +474,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(34,87,18)
@@ -504,11 +504,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(63,87,28)
@@ -534,11 +534,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(9,65,18)
@@ -564,11 +564,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(37,66,18)
@@ -594,11 +594,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(10,87,10)
@@ -623,11 +623,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(29,2,10)
@@ -652,11 +652,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(38,43,18)
@@ -682,11 +682,11 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.rank=="Student")
-					M<<"Only Genin or higher are welcome here."
+					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
 					M.loc = locate(50,87,2)
@@ -727,7 +727,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -741,7 +741,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -887,7 +887,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -943,7 +943,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(2,46,23)
@@ -957,7 +957,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(50,3,12)
@@ -981,7 +981,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(33,2,23)
@@ -995,7 +995,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(98,29,12)
@@ -1018,7 +1018,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(98,93,12)
@@ -1041,7 +1041,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(47,99,12)
@@ -1064,7 +1064,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(49,99,21)
@@ -1087,7 +1087,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(2,24,21)
@@ -1110,7 +1110,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(44,2,21)
@@ -1133,7 +1133,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(49,99,22)
@@ -1147,7 +1147,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(99,45,23)
@@ -1226,7 +1226,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(99,50,33)
@@ -1240,7 +1240,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.rank=="Student")
-					usr<<"You need to be Genin to be able to leave the village"
+					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
 					M.loc = locate(99,42,22)
@@ -1280,27 +1280,27 @@ turf
 				var/mob/M = A
 
 				if(M.Village=="Sound")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Mist")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Leaf")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Grass")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rain")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Waterfall")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Sand")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rock")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Cloud")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Snow")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Akatsuki")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 					return
 				if(M.Village=="Sound Organization")
 					M.loc = locate(83,45,18)
@@ -1317,25 +1317,25 @@ turf
 				var/mob/M = A
 
 				if(M.Village=="Sound")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Mist")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Leaf")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Grass")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rain")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Waterfall")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Sand")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rock")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Cloud")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Snow")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 					return
 				if(M.Village=="Akatsuki")
 					M.loc = locate(89,78,10)
@@ -1356,25 +1356,25 @@ turf
 				var/mob/M = A
 
 				if(M.Village=="Sound")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Mist")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Leaf")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Grass")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rain")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Waterfall")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Sand")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rock")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Cloud")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Snow")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 					return
 				if(M.Village=="")
 					M.loc = locate(89,96,7)
@@ -1400,25 +1400,25 @@ turf
 				var/mob/M = A
 
 				if(M.Village=="Sound")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Mist")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Leaf")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Grass")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rain")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Waterfall")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Sand")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rock")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Cloud")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Snow")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 					return
 				if(M.Village=="Sound Organization")
 					M.loc = locate(14,36,18)
@@ -1447,25 +1447,25 @@ turf
 				var/mob/M = A
 
 				if(M.Village=="Sound")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Mist")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Leaf")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Grass")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rain")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Waterfall")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Sand")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rock")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Cloud")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Snow")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 					return
 				if(M.Village=="Sound Organization")
 					M.loc = locate(64,98,18)
@@ -1492,25 +1492,25 @@ turf
 				var/mob/M = A
 
 				if(M.Village=="Sound")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Mist")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Leaf")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Grass")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rain")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Waterfall")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Sand")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Rock")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Cloud")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 				if(M.Village=="Snow")
-					usr<<"You need to be part of this Organization to enter"
+					usr<<"Você não tem permissão para entrar aqui!"
 					return
 				if(M.Village=="Akatsuki")
 					M.loc = locate(88,96,7)
@@ -1543,13 +1543,13 @@ turf
 				var/mob/M = A
 
 				if(M.rank=="Student")
-					usr<<"You must be the feudal lord to enter this room"
+					usr<<"Você não é qualificado para entrar aqui."
 				if(M.rank=="Genin")
-					usr<<"You must be the feudal lord to enter this room"
+					usr<<"Você não é qualificado para entrar aqui."
 				if(M.rank=="Chuunin")
-					usr<<"You must be the feudal lord to enter this room"
+					usr<<"Você não é qualificado para entrar aqui."
 				if(M.rank=="Jounnin")
-					usr<<"You must be the feudal lord to enter this room"
+					usr<<"Você não é qualificado para entrar aqui"
 					return
 				if(M.rank=="Feudal Lord")
 					M.loc = locate()
@@ -1844,7 +1844,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -1859,7 +1859,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -1874,7 +1874,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -1889,7 +1889,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -1930,7 +1930,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -1956,7 +1956,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -1995,7 +1995,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -2010,7 +2010,7 @@ turf
 		Enter(A)
 			if(ismob(A))
 				if(usr.density==0)
-					usr<<"Not while flying."
+					usr<<"Não pode entrar voando."
 					return
 				var/mob/M = A
 				if(M.client)
@@ -2089,7 +2089,7 @@ area
 						M.bchuuninz = M.z
 						usr.loc=locate(25,45,28)
 					else
-						M<<"You aren't qualified (Need over 1250 Each stat and Genin to qualify."
+						M<<"Você não é qualificado para entrar aqui."
 						return
 			else
 				if(istype(A,/obj/)) del(A)
@@ -2177,7 +2177,7 @@ mob
 	cliff
 		verb
 			climbup()
-				set name="Climb Up"
+				set name="Escalar Acima"
 				set category = "Training"
 				var/obj/mountain2/C
 				if(usr.climbing)
@@ -2185,22 +2185,22 @@ mob
 				if(usr.firing)
 					return
 				if(usr.resting)
-					usr<<"You cannot rest and climb at the same time, Impossible"
+					usr<<"Você não pode escalar e descançar ao mesmo tempo."
 					return
 				if(usr.health<=5)
 					for(C in get_step(usr,SOUTH))
 						if(C)
-							usr << "<b>You are to tired, you slip and fall.</b>"
+							usr << "<b>[usr.name] atinge o limite!</b>"
 							usr.loc=locate(usr.x,usr.y-1,usr.z)
 							return
 					for(C in get_step(usr,NORTH))
 						if(C)
-							usr << "<b>You are to tired to climb up</b>"
+							usr << "<b>Você está muito cansado para continuar subindo!</b>"
 				else
 					for(C in get_step(usr,NORTH))
 						if(C)
 							if(prob(95))
-								usr << "<b>You climb up the cliff.</b>"
+								usr << "<b>Você escala a montanha.</b>"
 								usr.climbing=1
 								var/minus=pick(prob(70); 5,prob(30); rand(1,3))
 								minus=pick(prob(60); 5,prob(30); rand(1,50))
@@ -2219,47 +2219,47 @@ mob
 											if(usr.Weights)
 												if(usr.maxhealth<=5000000)
 													maxhealth+=rand(1,20)
-													usr<<"Your weights put a harder strain on you"
+													usr<<"Você sente sua força aumentar."
 													taiexp+=rand(1,3)
 													taiup()
 												else
-													usr<<"You have reached you Stam cap."
+													usr<<"Você já está muito forte."
 										if(3)
 											if(usr.maxhealth<=5000000)
 												maxhealth+=rand(1,20)
-												usr<<"Your Stamina increases"
+												usr<<"Você sente sua força aumentar."
 											else
-												usr<<"You have reached you Stam cap."
+												usr<<"Você já está muito forte."
 										if(4)
 											if(usr.maxhealth<=5000000)
 												maxhealth+=rand(1,15)
-												usr<<"Your Stamina increases"
+												usr<<"Você sente sua força aumentar."
 											else
-												usr<<"You have reached you Stam cap."
+												usr<<"Você já está muito forte."
 										if(5)
 											if(usr.maxhealth<=5000000)
 												taiexp+=rand(1,6)
 												taiup()
 											else
-												usr<<"You have reached you Stam cap."
+												usr<<"Você já está muito forte."
 								else
 									switch(rand(1,5))
 										if(1)
 											if(usr.maxhealth<=5000000)
 												maxhealth+=rand(1,5)
-												usr<<"Your Stamina increases"
+												usr<<"Você sente sua força aumentar."
 											else
-												usr<<"You have reached you Stam cap."
+												usr<<"Você já está muito forte."
 										if(2)
 											taiexp+=rand(1,3)
 											taiup()
 							else
 								if(prob(10))
 									usr.loc=locate(src.x,src.y-rand(1,2),src.z)
-									usr << "<b>You reach for the next ledge but slip</b>"
+									usr << "<b>Você escorregou!</b>"
 
 			climbdown()
-				set name="Climb Down"
+				set name="Escalar Abaixo"
 				set category = "Training"
 				var/obj/mountain2/C
 				if(usr.climbing)
@@ -2268,7 +2268,7 @@ mob
 					if(C)
 						usr.climbing=1
 						usr.loc=locate(src.x,src.y-1,src.z)
-						usr << "<b>You slide down the cliff.</b>"
+						usr << "<b>Você desce a montanha.</b>"
 						spawn(5) usr.climbing=0
 turf
 	stadium1
@@ -2485,9 +2485,9 @@ turf
 		Enter()
 			if(usr.rank == "Kage"||usr.rank=="Sannin"||usr.rank=="ANBU"||usr.rank=="ANBU-CAP")
 				return 1
-				usr << "You may pass."
+				usr << "Você pode passar."
 			else
-				usr << "You must be Kage, Sannin, or ANBU level to enter."
+				usr << "Você não tem permissão para entrar aqui."
 	leafmansionIN
 		icon = 'mansions.dmi'
 		icon_state = "28"
@@ -4343,7 +4343,7 @@ turf
 						del(H)
 					for(var/obj/earthscroll/S in M.contents)
 						del(S)
-					M<<"Congrats; Good luck on the last part! Make a line under the chuunin host and follow directions or YOU FORFIT!"
+					M<<"Parabéns! Você está na última etapa do exame chuunin! Faça uma fila abaixo do Kage e ouça as regras!!!"
 					M.deathforest=0
 					M.earthscroll=0
 					M.heavenscroll=0
@@ -4352,7 +4352,7 @@ turf
 					M<<'Go go go Naruto.mid'
 					return
 				else
-					usr<<"You dont have both scrolls."
+					usr<<"Você não tem os dois pergaminhos."
 
 			else
 				if(istype(A,/obj/)) del(A)
