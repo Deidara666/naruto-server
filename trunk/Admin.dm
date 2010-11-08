@@ -62,7 +62,7 @@ mob/Owner
 				if("Sim")
 					Bans:Remove(Key)
 					world<<"<TT><font color = red><b>[Key] foi desbanido por [usr].</font>"
-				if("Naõ")
+				if("Não")
 					return
 		Manual_Ban(mkey as text)
 			set category = "Staff"
@@ -273,8 +273,8 @@ mob/Owner
 			if(istype(M,/mob/npc))
 				usr<<"You cant jail NPCs"
 				return
-			usr << "You have Jailed [M]"
-			M << "You have been jailed by [usr]"
+			usr << "Você tem preso [M]"
+			M << "Você foi preso por [usr]"
 			M.loc = locate(19,94,29)
 			M.OOC = 0
 			M.jailed=1
@@ -312,13 +312,13 @@ mob/Owner
 			set category="Staff"
 			M.overlays=null
 			M.underlays=null
-			M<<"Use the Fix Me option and Don't let anyone catch you like this again"
+			M<<"Use a opção de corrigir-me e não deixe ninguém te pegar assim de novo"
 			M.SaveK()
 
 		FixIcon(mob/M in world)
 			set category="Staff"
 			M.icon='Base white.dmi'
-			M<<"Use the Fix Me option and Don't let anyone catch you like this again"
+			M<<"Use a opção de corrigir-me e não deixe ninguém te pegar assim de novo"
 			M.SaveK()
 
 
@@ -328,14 +328,14 @@ mob/Owner
 			if(M != src) // so they cant summon themself
 				M.loc = locate(usr.x,usr.y-1,usr.z)
 				src.dir = SOUTH // face them
-				M << "You have been summoned by [src.name]"
+				M << "Você foi convocado pelo [src.name]"
 
 		Teleport(obj/M as obj|mob in world)
 			set popup_menu = 0
 			set category = "Staff"
 			set desc = "Teleport to an obj or mob"
-			M << "[usr] teleports next to you"
-			usr << "You teleport next to [M]"
+			M << "[usr] teleporta próximo a você"
+			usr << "Você teleport ao lado [M]"
 			usr.loc = locate(M.x,M.y-1,M.z)
 
 		Restore(M as mob in world)
@@ -343,28 +343,28 @@ mob/Owner
 			set category = "Staff"
 			M:health = M:maxhealth
 			M:chakra = M:Mchakra
-			M << "<font color=red>You feel restored."
+			M << "<font color=red>Você se sente restaurado."
 
 		Create()
 			set name = "Create"
 			set category = "Staff"
 			var/varItem
-			var/varType = input("What do you want to create?","Create") in list("Object","Mob","Turf","Cancel")
+			var/varType = input("O que você quer criar?","Create") in list("Object","Mob","Turf","Cancel")
 			if(varType == "Cancel")
 				return
 			if(varType == "Object")
-				varItem = input("What do you want to make?","Create obj") in typesof(/obj) + list("Cancel")
+				varItem = input("O que você quer fazer?","Create obj") in typesof(/obj) + list("Cancel")
 			if(varType == "Mob")
-				varItem = input("What do you want to make?","Create mob") in typesof(/mob) + list("Cancel")
+				varItem = input("O que você quer fazer?","Create mob") in typesof(/mob) + list("Cancel")
 			if(varType == "Turf")
-				varItem = input("What do you want to make?","Create turf") in typesof(/turf) + list("Cancel")
+				varItem = input("O que você quer fazer?","Create turf") in typesof(/turf) + list("Cancel")
 			if(varItem == "Cancel")
 				return
 			new varItem(locate(src.x,src.y,src.z))
 
 		ChangeWorldStatus()
 			set category="Host"
-			world.status = input("What is the new world status?","Change World Status",world.status)
+			world.status = input("Qual é o status do novo mundo?","Change World Status",world.status)
 
 		Edit(var/O as obj|mob|turf in view(src))
 			set name = "Edit"
@@ -478,7 +478,7 @@ mob/Owner
 		GiveClanJutsu(mob/M in world)
 			set name = "Give Clan Jutsu"
 			set category = "Staff"
-			switch(input("What Jutsu do you wish to give them?", text) in list("Focus","Rasengan","Chidori","Ikazuchi No Kiba","TajuuKageBunshinNoJutsu","Homing Windmill","Homing Shuriken","Homing Kunai","Hunter","Missing","Zan No Jutsu","Suiton No Jutsu","Kaiten","Ice Armor","Jyuuken","Hakke Kuushou","Katon Ryuuka","Rai No Jutsu","Katon Karyuu Endan","Sensatsu Suishou","Mist","Mirriors","Nikudan","Nikudan Hari","Bubun Baika","Kage Shibari","Kage Kubi Shibaru","Bone Sword","Bone Whip","Yanagi","Tsubaki","Karamatsu","Teshi Sendan","Tessenka","Sawarabi","Konchuu","Explode Bug","Tame","Tsuuga","Gatsuuga","Soutourou","Konoha Renpuu","Konoha Senpuu","Omote Renge","Ura Renge","Konoha Genuriki Senpuu","Suna Shuirken","Suna Shushin","Sand Sphere","Sand Armor","Fire Armor","Sabaku Kyuu","Sabaku Sousou","Bee Sabaku Kyuu","Bee Sabaku Sousou","Shousen","Chakra No Mesu","Konchuu","Screw Nerves","Slice Tendons","Cancel"))
+			switch(input("Qual Jutsu você deseja dar a eles?", text) in list("Focus","Rasengan","Chidori","Ikazuchi No Kiba","TajuuKageBunshinNoJutsu","Homing Windmill","Homing Shuriken","Homing Kunai","Hunter","Missing","Zan No Jutsu","Suiton No Jutsu","Kaiten","Ice Armor","Jyuuken","Hakke Kuushou","Katon Ryuuka","Rai No Jutsu","Katon Karyuu Endan","Sensatsu Suishou","Mist","Mirriors","Nikudan","Nikudan Hari","Bubun Baika","Kage Shibari","Kage Kubi Shibaru","Bone Sword","Bone Whip","Yanagi","Tsubaki","Karamatsu","Teshi Sendan","Tessenka","Sawarabi","Konchuu","Explode Bug","Tame","Tsuuga","Gatsuuga","Soutourou","Konoha Renpuu","Konoha Senpuu","Omote Renge","Ura Renge","Konoha Genuriki Senpuu","Suna Shuirken","Suna Shushin","Sand Sphere","Sand Armor","Fire Armor","Sabaku Kyuu","Sabaku Sousou","Bee Sabaku Kyuu","Bee Sabaku Sousou","Shousen","Chakra No Mesu","Konchuu","Screw Nerves","Slice Tendons","Cancel"))
 				if("Focus")
 					M.verbs += new /mob/Tenten/verb/Focus()
 				if("Rasengan")
@@ -1199,7 +1199,7 @@ mob/Owner
 
 		MakeGenin(mob/M in world)
 			set category = "Staff"
-			world<<"[M] is now a genin"
+			world<<"[M] agora é um genin"
 			M.rank = "Genin"
 			M.cap = Gcap
 			M.verbs -= new /mob/Enforcer/verb/Jail()
@@ -1210,7 +1210,7 @@ mob/Owner
 
 		MakeStudent(mob/M in world)
 			set category = "Staff"
-			world<<"[M] is now a student"
+			world<<"[M] agora é um estudante"
 			M.rank = "Student"
 			M.cap = Gcap
 
@@ -1218,7 +1218,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Leaf")
 				M<<"You have been made Hokage!"
-				world<<"[M] is now Hokage!"
+				world<<"[M] agora é Hokage!"
 				M.rank = "Kage"
 				M.cap = Mcap
 				M.squads=1
@@ -1235,7 +1235,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Star")
 				M<<"You have been made Hoshikage!"
-				world<<"[M] is now Hoshikage!"
+				world<<"[M] agora é Hoshikage!"
 				M.rank = "Kage"
 				M.cap = Mcap
 				M.squads=1
@@ -1252,7 +1252,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Sand")
 				M<<"You have been made Kazekage!"
-				world<<"[M] is now Kazekage!"
+				world<<"[M] agora é Kazekage!"
 				M.rank = "Kage"
 				M.cap =  Mcap
 				M.squads=1
@@ -1269,7 +1269,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Cloud")
 				M<<"You have been made Raikage!"
-				world<<"[M] is now Raikage!"
+				world<<"[M] agora é Raikage!"
 				M.rank = "Kage"
 				M.cap =  Mcap
 				M.squads=1
@@ -1286,7 +1286,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Rock")
 				M<<"You have been made Tsuchikage!"
-				world<<"[M] is now Tsuchikage!"
+				world<<"[M] agora é Tsuchikage!"
 				M.rank = "Kage"
 				M.cap =  Mcap
 				M.squads=1
@@ -1303,7 +1303,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Mist")
 				M<<"You have been made Mizukage!"
-				world<<"[M] is now Mizukage!"
+				world<<"[M] agora é Mizukage!"
 				M.rank = "Kage"
 				M.cap =  Mcap
 				M.squads=1
@@ -1320,7 +1320,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Sound")
 				M<<"You have been made Otokage!"
-				world<<"[M] is now Otokage!"
+				world<<"[M] agora é Otokage!"
 				M.rank = "Kage"
 				M.cap =  Mcap
 				M.squads=1
@@ -1337,7 +1337,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Rain")
 				M<<"You have been made Amekage!"
-				world<<"[M] is now Amekage!"
+				world<<"[M] agora é Amekage!"
 				M.rank = "Kage"
 				M.squads=1
 				M.squad="Rain Sannin"
@@ -1354,7 +1354,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Waterfall")
 				M<<"You have been made Enukage!"
-				world<<"[M] is now Enukage!"
+				world<<"[M] agora é Enukage!"
 				M.rank = "Kage"
 				M.squads=1
 				M.squad="Waterfall Sannin"
@@ -1369,7 +1369,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Grass")
 				M<<"You have been made Fumakage!"
-				world<<"[M] is now Fumakage!"
+				world<<"[M] agora é Fumakage!"
 				M.rank = "Kage"
 				M.cap =  Mcap
 				M.squads=1
@@ -1384,7 +1384,7 @@ mob/Owner
 			set category = "Ranks"
 			if(M.Village == "Snow")
 				M<<"You have been made Sorukage!"
-				world<<"[M] is now Sorukage!"
+				world<<"[M] agora é Sorukage!"
 				M.rank = "Kage"
 				M.cap =  Mcap
 				M.squads=1
@@ -1604,7 +1604,7 @@ mob/Admin
 			del(M)
 		MakeChuunin(mob/M in world)
 			set category = "Staff"
-			world<<"[M] is now a Chuunin"
+			world<<"[M] agora é um Chuunin"
 			M.rank = "Chuunin"
 			M.cap = Ccap
 			M.verbs -= new /mob/Enforcer/verb/Jail()
@@ -1643,15 +1643,15 @@ mob/Admin
 			set name = "Create"
 			set category = "Staff"
 			var/varItem
-			var/varType = input("What do you want to create?","Create") in list("Object","Mob","Turf","Cancel")
+			var/varType = input("O que você deseja criar?","Create") in list("Object","Mob","Turf","Cancel")
 			if(varType == "Cancel")
 				return
 			if(varType == "Object")
-				varItem = input("What do you want to make?","Create obj") in typesof(/obj) + list("Cancel")
+				varItem = input("O que você deseja fazer?","Create obj") in typesof(/obj) + list("Cancel")
 			if(varType == "Mob")
-				varItem = input("What do you want to make?","Create mob") in typesof(/mob) + list("Cancel")
+				varItem = input("O que você deseja fazer?","Create mob") in typesof(/mob) + list("Cancel")
 			if(varType == "Turf")
-				varItem = input("What do you want to make?","Create turf") in typesof(/turf) + list("Cancel")
+				varItem = input("O que você deseja fazer?","Create turf") in typesof(/turf) + list("Cancel")
 			if(varItem == "Cancel")
 				return
 			new varItem(locate(src.x,src.y,src.z))
@@ -1751,14 +1751,14 @@ mob/Admin
 			set name = "Music Stop"
 			set category = "Host"
 			view(src) << sound(null)
-			view(src) << "[src.name] has stopped the music!"
+			view(src) << "[src.name] parou a música!"
 
 		Reboot()
 			set name = "Reboot"
 			set category = "Host"
-			world << "World Rebooting in 30 seconds. Save!"
+			world << "Mundo Reiniciando em 30 segundos. Salve!"
 			sleep(250)
-			world << "Reboot in 5"
+			world << "Reiniciando em 5"
 			sleep(10)
 			world << "4"
 			sleep(10)
@@ -2725,7 +2725,7 @@ mob/hokage
 
 		MakeGenin(mob/M in world)
 			set category = "Staff"
-			world<<"[M] is now a genin"
+			world<<"[M] agora é um genin"
 			M.rank = "Genin"
 			M.cap = Gcap
 			M.verbs -= new /mob/Enforcer/verb/Jail()
@@ -2897,8 +2897,8 @@ mob/hokage
 					if("Cancel")
 						return
 				usr<<"THEY PICKED THERE JUTSU."
-				M<<"You have been promoted to the rank of ANBU by the kage!"
-				world<<"[M] is now a ANBU"
+				M<<"Você foi promovido ao posto de AMBU pelo kage!"
+				world<<"[M] agora é um ANBU"
 				M.rank = "ANBU"
 				M.cap = Acap
 				var/obj/Suit1/S = new/obj/Suit1
@@ -3132,8 +3132,8 @@ mob/hokage
 					if("Cancel")
 						return
 				usr<<"THEY PICKED THERE JUTSU."
-				M<<"You have been promoted to the rank of ANBU-CAP by the kage!"
-				world<<"[M] is now a ANBU-CAP"
+				M<<"Você foi promovido ao posto de ANBU-CAP pelo kage!"
+				world<<"[M] agora é um ANBU-CAP"
 				M.rank = "ANBU-CAP"
 				M.cap = SDcap
 				var/obj/Suit1/S = new/obj/Suit1
@@ -3207,8 +3207,8 @@ mob/hokage
 
 		MakeChuunin(mob/M in world)
 			set category = "Kage"
-			M<<"You have been promoted to the rank of chuunin by the kage!"
-			world<<"[M] is now a Chuunin"
+			M<<"Você foi promovido ao posto de chuunin pelo kage!"
+			world<<"[M] agora é um Chuunin"
 			M.rank = "Chuunin"
 			M.cap = Ccap
 			M.verbs -= new /mob/Enforcer/verb/Jail()
@@ -3271,7 +3271,7 @@ mob/hokage
 				return
 			else
 				M.Yen += 10000
-				M<<"You receive 10k reward from [src]"
+				M<<"Você receberá recompensa de 10k [src]"
 				src<<"You give [M] 10k reward"
 
 
@@ -3519,8 +3519,8 @@ mob/hokage
 						return
 
 				usr<<"THEY PICKED THERE JUTSU."
-				M<<"You have been promoted to the rank of Sannin by the kage!"
-				world<<"[M] is now a Sannin"
+				M<<"Você foi promovido ao posto de Sannin pelo kage!"
+				world<<"[M] agora é um Sannin"
 				M.rank = "Sannin"
 				M.cap = SDcap
 				M.verbs -= new /mob/Enforcer/verb/Jail()
