@@ -1116,13 +1116,13 @@ mob
 			set name = "ARENA-Decline"
 			if(M.challenge == 1)
 				if(usr.challenged == 1)
-					world << "<b>Arena:</b>[usr] has declined [M]'s challenge!"
+					world << "<b>Arena:</b>[usr] recusou o desafio de [M]'s !"
 					usr.challenged = 0
 					M.challenge = 0
 				else
-					usr << "They have not challenged you!"
+					usr << "Eles não desafiaram você !"
 			else
-				usr << "They have not challenged you!"
+				usr << "Eles não desafiaram você !"
 
 mob
 	verb
@@ -1156,14 +1156,14 @@ mob
 mob
 	verb
 		Page_GM(mob/M in world,msg as text)
-			set category = "HELP"
-			set name = "Page GM"
+			set category = "Ajuda"
+			set name = "Chamar GM"
 			if(M.GM==1)
-				alert("DO NOT PAGE GMs UNLESS IT IS IMPORTANT OR RISK JAIL!")
+				alert("NÃO INCOMODE OS GM's, A NÃO SER QUE SEJA IMPORTANTE OU RISCO DE CADEIA !")
 				M<<"<font size = 3><b><u>[usr] is pageing for a GM!"
 				msg=cuttext(msg)
 				M<<"<font size=3><font color=red><b><i>[usr] PAGES-[msg]"
-				usr<<"<font size=3><font color=red><b><i>You PAGE to [M]-[msg]"
+				usr<<"<font size=3><font color=red><b><i>Você PAGE para [M]-[msg]"
 			else
-				usr<<"There not a GM"
+				usr<<"Não há um GM"
 				return

@@ -2584,7 +2584,36 @@ obj
 				usr<<"Você pegou um [src]"
 
 
-
+obj
+	Sandles
+		name = "Sandalha"
+		icon = 'Bsandels.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Usar()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'Bsandels.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'Bsandels.dmi'
+					usr << "Você equipou a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Isto é um Sandalha."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma Sandalha [src]"
 
 
 

@@ -12,6 +12,7 @@ var
 	SOwar=0
 	AKATwar=0
 	starwar=0
+
 mob
 	verb
 		VillageW()

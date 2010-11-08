@@ -8,13 +8,16 @@ mob/proc/menu()
 mob/proc/menu2()
 	if(!src.menus)
 		src.client.screen=null
+
 turf/Customization
 	density = 1
 	icon = 'naruto1.bmp'
+
 turf/Full
 	density = 1
 	layer = 999
 	icon = 'naruto_itachi.bmp'
+
 turf/START
 	density = 1
 	layer = 999
@@ -29,21 +32,25 @@ turf/START
 			return
 		usr.name="[html_encode(name)]"
 		usr.loc = locate(94,94,20)
+
 turf/Load
 	density = 1
 	layer = 999
 	Click()
 		usr.LoadPlayer()
+
 turf/Quit
 	density = 1
 	layer = 999
 	Click()
 		del(usr)
+
 client
 	Del()
 		..()
 		del(mob)
 		return ..()
+
 turf/Finished
 	density=1
 	Click()
@@ -334,20 +341,20 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Rock"
-			//if("Cloud")
-				//usr.leafS=0
-				//usr.mistS=0
-				//usr.soundS=0
-				//usr.earthS=0
-				//usr.sandS=0
-				//usr.rainS=0
-				//usr.waterfallS=0
-				//usr.grassS=0
-				//usr.lightningS=1
-				//usr.snowS=0
-				//usr.missingS=0
-				//usr.villageselected=1
-				//usr.Village="Cloud"
+			if("Cloud")
+				usr.leafS=0
+				usr.mistS=0
+				usr.soundS=0
+				usr.earthS=0
+				usr.sandS=0
+				usr.rainS=0
+				usr.waterfallS=0
+				usr.grassS=0
+				usr.lightningS=1
+				usr.snowS=0
+				usr.missingS=0
+				usr.villageselected=1
+				usr.Village="Cloud"
 			if("Névoa")
 				usr.leafS=0
 				usr.mistS=1

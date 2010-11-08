@@ -1,3 +1,28 @@
+
+mob/var/shirtI
+
+mob/var/tmp/drunk=0
+
+mob/var/goud=0
+
+mob/var/tmp/weaponthrow=0
+
+obj/var/tmp/tagset=0
+
+obj/var/tmp/counter=0
+
+obj/var/ammount=0
+
+obj/var/oname=""
+
+
+
+
+obj
+	hair
+		layer = FLOAT_LAYER - 2
+
+
 obj
 	var/num = 0       // This var is used later to help set the icon state
 	var/width = 15   // this is basically the number of icon states you have
@@ -12,6 +37,7 @@ obj
 	var
 		worn = 0
 		have = 0
+
 	Weights
 		name = "Pesos"
 		icon = 'Weights.dmi'//dont have a base icon so cant make weights icon!lol
@@ -47,28 +73,6 @@ obj
 				set src in oview(1)
 				src.loc = usr
 				usr<<"Você pegou [src]"
-
-
-
-
-
-
-mob/var/shirtI
-
-
-
-
-
-
-
-
-
-
-obj
-	hair
-		layer = FLOAT_LAYER - 2
-
-
 
 
 obj
@@ -233,7 +237,8 @@ obj
 				set src in oview(1)
 				src.loc = usr
 				usr<<"Você pegou uma [src]"
-mob/var/tmp/drunk=0
+
+
 obj
 	Sake
 		name = "Sake"
@@ -267,6 +272,8 @@ obj
 				set src in oview(1)
 				src.loc = usr
 				usr<<"Você pegou uma garrafa de [src]"
+
+
 obj
 	Soup
 		name = "Sopa de Legumes"
@@ -292,6 +299,8 @@ obj
 				set src in oview(1)
 				src.loc = usr
 				usr<<"Você pegou uma tigela de [src]"
+
+
 obj
 	pill
 		name = "Pilula Hyourougan"
@@ -315,9 +324,6 @@ obj
 				usr<<"Você pegou uma [src]"
 
 
-
-obj/var/tmp/tagset=0
-obj/var/tmp/counter=0
 obj
 	ExplodingTag
 		name = "Exploding Tag"
@@ -437,8 +443,6 @@ mob/tag
 			usr.verbs-= new /mob/tag/verb/Explodir
 
 
-
-obj/var/oname=""
 obj
 	Shuriken
 		name = "Shuriken"
@@ -576,8 +580,8 @@ obj
 					del(src)
 			if(istype(A,/obj/))
 				del(src)
-mob/var/tmp/weaponthrow=0
-obj/var/ammount=0
+
+
 obj
 	Kunai
 		name = "Kunai"
@@ -717,7 +721,6 @@ obj
 				del(src)
 
 
-
 obj
 	Sphere
 		icon = 'testingextreme.dmi'
@@ -757,7 +760,6 @@ obj
 			usr.SaveK()
 
 
-
 obj/Scroll_Fuuton1
 	icon='scroll.dmi'
 	icon_state="5"
@@ -773,6 +775,8 @@ obj/Scroll_Fuuton1
 		set src in oview(1)
 		src.loc = usr
 		usr<<"Você pegou um [src]"
+
+
 obj/Scroll_Fuuton2
 	icon='scroll.dmi'
 	icon_state="5"
@@ -788,6 +792,8 @@ obj/Scroll_Fuuton2
 		set src in oview(1)
 		src.loc = usr
 		usr<<"Você pegou um [src]"
+
+
 obj/Scroll_Fuuton3
 	icon='scroll.dmi'
 	icon_state="5"
@@ -802,6 +808,8 @@ obj/Scroll_Fuuton3
 		set src in oview(1)
 		src.loc = usr
 		usr<<"Você pegou um [src]"
+
+
 obj/Scroll_Doton1
 	icon='scroll.dmi'
 	icon_state="4"
@@ -816,6 +824,8 @@ obj/Scroll_Doton1
 		set src in oview(1)
 		src.loc = usr
 		usr<<"Você pegou um [src]"
+
+
 obj/Scroll_Doton2
 	icon='scroll.dmi'
 	icon_state="4"
@@ -831,6 +841,7 @@ obj/Scroll_Doton2
 		src.loc = usr
 		usr<<"Você pegou um [src]"
 
+
 obj/Scroll_Rai1
 	icon='scroll.dmi'
 	icon_state="2"
@@ -845,6 +856,8 @@ obj/Scroll_Rai1
 		set src in oview(1)
 		src.loc = usr
 		usr<<"Você pegou um [src]"
+
+
 obj/Scroll_Rai2
 	icon='scroll.dmi'
 	icon_state="2"
@@ -860,6 +873,8 @@ obj/Scroll_Rai2
 		set src in oview(1)
 		src.loc = usr
 		usr<<"Você pegou um [src]"
+
+
 obj/Scroll_Katon1
 	icon='scroll.dmi'
 	icon_state="6"
@@ -874,6 +889,8 @@ obj/Scroll_Katon1
 		set src in oview(1)
 		src.loc = usr
 		usr<<"Você pegou um [src]"
+
+
 obj/Scroll_Katon2
 	icon='scroll.dmi'
 	icon_state="6"
@@ -907,6 +924,8 @@ obj/TreeMarker
 				if("No")
 					usr<<"Ok then."
 
+
+
 mob/npc/Bugs
 	name = "Bug"
 	icon = 'invis.dmi'
@@ -923,6 +942,8 @@ mob/npc/Bugs
 						usr<<"They ran."
 				if("No")
 					usr<<"Too gross huh."
+
+
 obj/LeeWeights
 	name = "Lee's Weights"
 	icon = 'Weights.dmi'
@@ -941,6 +962,8 @@ obj/LeeWeights
 						usr<<"They seam to heavy for you to lift."
 				if("No")
 					usr<<"Good idea stealing is wrong."
+
+
 obj/SStars
 	name = "Shurikens"
 	icon = 'kageshuriken.dmi'
@@ -956,6 +979,8 @@ obj/SStars
 						usr<<"Thats not for you."
 				if("No")
 					usr<<"It's good not to steal."
+
+
 obj/JWolf
 	name="Shin"
 	icon ='wolf.dmi'
@@ -971,6 +996,8 @@ obj/JWolf
 						usr<<"It looks hurt."
 				if("No")
 					usr<<"CHICKEN!!!"
+
+
 obj/ZSword
 	name="Kubikiri Houcho"
 	icon= 'Zabuza sword.dmi'
@@ -986,24 +1013,6 @@ obj/ZSword
 						usr<<"Thats not yours."
 				if("No")
 					usr<<"Good morals = good karma."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1506,36 +1515,7 @@ obj
 				usr<<"Você pegou uma [src]"
 
 
-obj
-	Sandles
-		name = "Sandalha"
-		icon = 'Bsandels.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Usar()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'Bsandels.dmi'//temp icon
-					usr << "Você removeu a [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'Bsandels.dmi'
-					usr << "Você equipou a [src.name]."
-					src.suffix = "Equipped"
-			Olhar()
-				usr<<"Isto é um Sandalha."
-			Soltar()
-				if(src:worn == 1)
-					usr << "Não enquanto isto está sendo usado."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Pegar()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"Você pegou uma Sandalha [src]"
+
 obj
 	BoneSword
 		name = "Espada de Osso"
@@ -1567,6 +1547,8 @@ obj
 					usr.bonesword = 1
 			Olhar()
 				usr<<"Esta é uma espada feita a partir do osso do braço."
+
+
 obj
 	Spinewhip
 		name = "Coluna de Chicotes de Ossos"
@@ -1598,8 +1580,7 @@ obj
 					usr.swordD+=usr.tai*2
 			olhar()
 				usr<<"Este é um chicote feito a partir de uma coluna."
-mob/var
-	goud=0
+
 obj
 	Gourd
 		name = "Cabaça"
@@ -1644,13 +1625,6 @@ obj
 				set src in oview(1)
 				src.loc = usr
 				usr<<"Você pegou um [src]"
-
-
-
-
-
-
-
 
 
 obj
