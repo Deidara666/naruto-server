@@ -2030,9 +2030,9 @@ mob/Enforcer
 		Reboot()
 			set name = "Reboot"
 			set category = "Host"
-			world << "World Rebooting in 30 seconds. Save!"
+			world << "Mundo Reiniciando em 30 segundos. Salve!"
 			sleep(250)
-			world << "Reboot in 5"
+			world << "Reiniciando em 5"
 			sleep(10)
 			world << "4"
 			sleep(10)
