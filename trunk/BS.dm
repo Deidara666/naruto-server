@@ -2483,7 +2483,7 @@ turf
 					if(usr.mistS)
 						usr.loc=locate(16,3,28)
 					if(usr.waterfallS)
-						usr.loc=locate(74,19,29)
+						usr.loc=locate(39,06,29)
 					if(usr.snowS)
 						usr.loc=locate(28,40,28)
 					if(usr.akatS)

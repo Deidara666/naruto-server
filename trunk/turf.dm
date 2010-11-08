@@ -745,7 +745,7 @@ turf
 					return
 				var/mob/M = A
 				if(M.client)
-					M.loc = locate(74,19,29)
+					M.loc = locate(39,06,29)
 			else
 				if(istype(A,/obj/)) del(A)
 	RainTraining//usr.loc = locate(x,y,4)

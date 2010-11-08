@@ -256,7 +256,7 @@ turf/Villageselect
 		usr.missingS=0
 		usr.villageselected=0
 		alert("Lembre-se que cada aldeia tem seus próprios Jutsus exclusivos.")
-		switch(input("Gostaria de nascer em qual vilarejo?", text) in list ("Folha","Areia","Som","Grama","Chuva","Névoa","Pedra","Cachoeira","Neve"))
+		switch(input("Gostaria de nascer em qual vilarejo?", text) in list ("Folha","Areia","Som","Grama","Chuva","Névoa","Pedra","Nuvem","Cachoeira","Neve"))
 			if("Folha")
 				usr.leafS=1
 				usr.mistS=0
@@ -341,6 +341,20 @@ turf/Villageselect
 				usr.missingS=0
 				usr.villageselected=1
 				usr.Village="Rock"
+			if("Nuvem")
+				usr.leafS=0
+				usr.mistS=0
+				usr.soundS=0
+				usr.earthS=0
+				usr.sandS=0
+				usr.rainS=0
+				usr.waterfallS=0
+				usr.grassS=0
+				usr.lightningS=1
+				usr.snowS=0
+				usr.missingS=0
+				usr.villageselected=1
+				usr.Village="Cloud"
 			if("Cloud")
 				usr.leafS=0
 				usr.mistS=0
