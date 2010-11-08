@@ -2,24 +2,24 @@ mob
 	verb
 		Send_File(mob/m in view(usr),F as file)
 
-			switch(alert(m,"[usr] is trying to send you [F].  Do you accept the file?","**File Transfer**","Yes","No"))
-				if("Yes")
-					alert(usr,"[m] accepted the file","**File Accepted**")
+			switch(alert(m,"[usr] está tentando lhe enviar [F].  Você aceita o arquivo?","**Transferência de Arquivo**","Sim","Não"))
+				if("Sim")
+					alert(usr,"[m] aceitou o arquivo","**Arquivo Aceito**")
 					m<<ftp(F)
-				if("No")
-					alert(usr,"[m] declined the file","**File Declined**")
+				if("Não")
+					alert(usr,"[m] negou o arquivo","**Arquivo Negado**")
 
 mob/verb/whisper(mob/M in oview(),msg as text)
 
-	set name = "Whisper"
-	set desc = "Talk to someone on your screen(only the person you choose will hear you)."
+	set name = "Sussurrar"
+	set desc = "Fale com alguem da tela(somente a pessoa que você escolher irá ouvir)."
 	if(src.testing==1||src.muted == 1)
-		src<<"Not right now!"
+		src<<"Agora não!"
 		return
 	else
 		msg=cuttext(msg)
-		M<<"<font size=2><font color=purple><b><i>[usr] whispers-[msg]"
-		usr<<"<font size=2><font color=red><b><i>You whisper to [M]-[msg]"
+		M<<"<font size=2><font color=purple><b><i>[usr] sussurra-[msg]"
+		usr<<"<font size=2><font color=red><b><i>Você sussurra para [M]-[msg]"
 
 var
 	Bugs = null//The var for the logging
@@ -29,39 +29,39 @@ mob
 	verb
 		Villagewho()
 
-			usr<<"<font color=blue>Online [usr.Village] Village Members -"
+			usr<<"<font color=blue>Online [usr.Village] Membros da Vila -"
 			for(var/mob/M in world)
 				if(M.cansave==1&&M.Village == usr.Village){usr<<"<font color=green>{\icon[M][M.rank] ([M])"}
 
 mob/verb
 	Give_Cash(mob/M in oview(5))
 
-		var/give = input("How much Yen do you wish to give [M]?")as num
+		var/give = input("Quantos Yen você deseja doar para [M]?")as num
 		if(M==usr)
-			usr<<"You cannot do that"
+			usr<<"Você não pode doar para si mesmo!"
 			return
 		if(M.client)
 			if(give>usr.Yen)
-				usr<<"You don't have that much to give"
+				usr<<"Você não tem tanto dinheiro."
 				return
 			if(give<=0)
-				usr<<"You cannot do that."
+				usr<<"Você só pode doar 1-100000 Yen por vez"
 				return
 			if(give>=100000000)
-				usr<<"You can only give 100000000 at a time."
+				usr<<"Você só pode doar 1-100000 Yen por vez"
 				return
 			if(M.Yen>=100000)
-				usr<<"They already have as much Yen as they can carry."
+				usr<<"Ele já possui a quantia máxima de Yen."
 				return
 			if(usr.client.address == M.client.address)
-				usr<<"Nice try, Cannot give Yen to yourself."
-				M<<"Nice try, Cannot give Yen to yourself."
+				usr<<"Boa tentativa. Você não pode doar Yen para si mesmo!"
+				M<<"Boa tentativa. Você não pode doar Yen para si mesmo!"
 				return
 			if(give<usr.Yen)
 				usr.Yen-=give
 				M.Yen+=give
-				usr<<"Successful transaction"
-				M<<"[usr] gives you [give] Yen"
+				usr<<"Transação bem sucedida."
+				M<<"[usr] lhe doou [give] Yen"
 				give=0
 			M.SaveK()
 			usr.SaveK()
