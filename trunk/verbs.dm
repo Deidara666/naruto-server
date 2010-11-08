@@ -155,17 +155,7 @@ proc
 				msg = copytext(msg,1,400) + "...."
 		return msg
 
-mob
-	verb
-		Waterwalk()
-			set category="Treino"
-			set name = "Andar sobre a água"
-			if(usr.waterwalk==0||usr.waterwalk==null)
-				usr.waterwalk=1
-				usr<<"Agora você pode andar sobre a água."
-			else
-				usr.waterwalk=0
-				usr<<"Agora você não pode andar sobre a água."
+
 mob/verb/Help()
 
 	set name ="HELP"
