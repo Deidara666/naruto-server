@@ -4292,7 +4292,7 @@ turf
 						del(H)
 					for(var/obj/earthscroll/S in M.contents)
 						del(S)
-					M<<"Parabéns! Você está na última etapa do exame chuunin! Faça uma fila abaixo do Kage e ouça as regras!!!"
+					M<<"Parabéns! Você está na última etapa do exame chuunin! Faça uma fila abaixo do Kage e veja as regras."
 					M.deathforest=0
 					M.earthscroll=0
 					M.heavenscroll=0

@@ -158,11 +158,11 @@ proc
 
 mob/verb/Help()
 
-	set name ="HELP"
-	set category = "HELP"
-	switch(input("What do you need?","HELP",) in list("Credits","Training","Jutsus","NPCs","Fix Me!","Change Face Icon","Server Information","Huds","Screen Size","Cancel"))
-		if("Training")
-			switch(input("What do you need help on?","Help",) in list("Ninjutsu","Genjutsu","Taijutsu","Cancel"))
+	set name ="AJUDA"
+	set category = "AJUDA"
+	switch(input("O que você precisa?","Ajuda",) in list("Créditos","Treinamento","Jutsus","NPCs","Me Concerte <-----","Mudar o ícone da face","Info do server","Huds","Tamanho da tela","Cancelar"))
+		if("Treinamento")
+			switch(input("O que você quer saber?","Ajuda",) in list("Ninjutsu","Genjutsu","Taijutsu","Cancelar"))
 				if("Ninjutsu")
 					usr.Ninjutsu()
 				if("Genjutsu")
@@ -176,9 +176,9 @@ mob/verb/Help()
 		if("Credits")
 			usr.Credits()
 		if("Change Face Icon")
-			switch(input("What sex are you?", "Face Icon",text) in list("Male","Female"))
-				if("Male")
-					switch(input("What icon do you want to use?", "Icon Choose") in list ("Naruto","Sasuke","Lee","Neiji","Kakashi","Gaara","Zabuza","Haku","Shino","Choji","Kiba","Shikamaru","Jiraiya","Iruka","Orochimaru","Gai","Kubuto","Kimimaro","Akahosh","Obito","Asuma","Sasori","Sai","4th"))
+			switch(input("Qual seu sexo?", "Ícone de face",text) in list("Homem","Mulher"))
+				if("Homem")
+					switch(input("Qual ícone deseja usar?", "Escolha o ícone") in list ("Naruto","Sasuke","Lee","Neiji","Kakashi","Gaara","Zabuza","Haku","Shino","Choji","Kiba","Shikamaru","Jiraiya","Iruka","Orochimaru","Gai","Kubuto","Kimimaro","Akahosh","Obito","Asuma","Sasori","Sai","4th"))
 						if("Sasori")
 							usr.faceicon = 'sasoriF.bmp'
 						if("Asuma")
@@ -229,8 +229,8 @@ mob/verb/Help()
 							usr.faceicon = 'IrukaF.bmp'
 
 
-				if("Female")
-					switch(input("What icon do you want to use?", "Icon Choose") in list ("Sakura","Hinata","Ino","Tenten","Anko","Aoi","Tsunade","Temari","Tayuya"))
+				if("Mulher")
+					switch(input("Qual ícone deseja usar?", "Escolha o ícone") in list ("Sakura","Hinata","Ino","Tenten","Anko","Aoi","Tsunade","Temari","Tayuya"))
 						if("Tayuya")
 							usr.faceicon = 'tayuyaF.bmp'
 						if("Sakura")
@@ -249,26 +249,26 @@ mob/verb/Help()
 							usr.faceicon = 'tsunadeF.bmp'
 						if("Temari")
 							usr.faceicon = 'TemariF.bmp'
-		if("Fix Me!")
-			switch(input("What do you need to be Fixed?","Help",) in list("Black Screen!","Icon is Messed!","Cancel"))
-				if("Black Screen!")
+		if("Me Concerte <-----")
+			switch(input("O que precisa ser concertado?","Help",) in list("Tela preta!","ícone ta bugado!","Cancelar"))
+				if("Tela preta!")
 					if(usr.loc==null)
 						usr.loc=locate(6,29,2)
-						usr<<"Fixed"
+						usr<<"Concertado!"
 					else
-						usr<< "You don't have a Black Screen"
-				if("Icon is Messed!")
+						usr<< "Você não ta com a tela preta!"
+				if("ícone ta bugado!")
 					usr.overlays = null
 					usr.icon_state = ""
 					usr.underlays = null
-					switch(input("What genger are you?", text) in list ("Male","Female"))
-						if("Male")
-							switch(input("Choose a skin color", text) in list ("Pale","Tan","Vamp","Black","Red","Blue","Yellow"))
-								if("Pale")
+					switch(input("Qual seu sexo?", text) in list ("Homem","Mulher"))
+						if("Homem")
+							switch(input("Escolha a cor da pele", text) in list ("Branco","Moreno","Vamp","Preto","Vermelho","Azul","Amarelo"))
+								if("Branco")
 									usr.icon='Base white.dmi'
 									usr.Oicon='Base white.dmi'
 									usr.baseselected=1
-								if("Tan")
+								if("Moreno")
 									usr.icon='BaseT.dmi'
 									usr.Oicon='BaseT.dmi'
 									usr.baseselected=1
@@ -276,29 +276,29 @@ mob/verb/Help()
 									usr.icon='BaseVamp.dmi'
 									usr.Oicon='BaseVamp.dmi'
 									usr.baseselected=1
-								if("Black")
+								if("Negro")
 									usr.icon='BaseBlack.dmi'
 									usr.Oicon='BaseBlack.dmi'
 									usr.baseselected=1
-								if("Red")
+								if("Vermelho")
 									usr.icon='BaseRed.dmi'
 									usr.Oicon='BaseRed.dmi'
 									usr.baseselected=1
-								if("Blue")
+								if("Azul")
 									usr.icon='BaseBlue.dmi'
 									usr.Oicon='BaseBlue.dmi'
 									usr.baseselected=1
-								if("Yellow")
+								if("Amarelo")
 									usr.icon='BaseYellow.dmi'
 									usr.Oicon='BaseYellow.dmi'
 									usr.baseselected=1
-						if("Female")
-							switch(input("Choose a skin color", text) in list ("Pale","Tan","Vamp","Black","Red","Blue","Yellow"))
-								if("Pale")
+						if("Mulher")
+							switch(input("Escolha a cor da pele", text) in list ("Branca","Morena","Vamp","Negra","Vermelha","Azul","Amarela"))
+								if("Branca")
 									usr.icon='Female white.dmi'
 									usr.Oicon='Female white.dmi'
 									usr.baseselected=1
-								if("Tan")
+								if("Morena")
 									usr.icon='FemaleT.dmi'
 									usr.Oicon='FemaleT.dmi'
 									usr.baseselected=1
@@ -306,105 +306,105 @@ mob/verb/Help()
 									usr.icon='FemaleVamp.dmi'
 									usr.Oicon='FemaleVamp.dmi'
 									usr.baseselected=1
-								if("Black")
+								if("Preta")
 									usr.icon='FemaleBlack.dmi'
 									usr.Oicon='FemaleBlack.dmi'
 									usr.baseselected=1
-								if("Red")
+								if("Vermelha")
 									usr.icon='FemaleRed.dmi'
 									usr.Oicon='FemaleRed.dmi'
 									usr.baseselected=1
-								if("Blue")
+								if("Azul")
 									usr.icon='FemaleBlue.dmi'
 									usr.Oicon='FemaleBlue.dmi'
 									usr.baseselected=1
-								if("Yellow")
+								if("Amarela")
 									usr.icon='FemaleYellow.dmi'
 									usr.Oicon='FemaleYellow.dmi'
 									usr.baseselected=1
-		if("Server Information")
+		if("Informação do Server")
 			var/calcLag = abs(world.cpu - 100)
-			usr << "<strong>Server Hosted On: [world.system_type]</strong>"
-			usr << "<strong>Server Efficiency: [calcLag]%</strong>"
-			usr << "<strong>Server Port: [world.port]</strong>"
+			usr << "<strong>Server hosteado em: [world.system_type]</strong>"
+			usr << "<strong>Eficiência do server: [calcLag]%</strong>"
+			usr << "<strong>Porta do server: [world.port]</strong>"
 		if("Huds")
-			switch(input("Do you want to turn on/off the Menus in your game screen","Menus Options",) in list("ON","OFF"))
-				if("ON")
+			switch(input("Você quer que apareça os menus de jogo na tela?","Opções de Huds",) in list("Sim","Não"))
+				if("Sim")
 					if(usr.menus==1)
-						alert("Sorry it´s already on...")
+						alert("Hud já está ligado...")
 						return
 					usr.menus=1
 					usr.menu()
-				if("OFF")
+				if("Não")
 					if(usr.menus==0)
-						alert("Sorry it´s already off...")
+						alert("Hud já está desligado...")
 						return
 					usr.menus=0
 					usr.menu2()
-		if("Screen Size")
-			alert("Your current view is [client.view]. The default view is 5.")//**NOTE**:'5' is the closest to the default view as you can get, IF you don't want to get into fractions.
-			switch(input("What Screen size do you want?","Choose your screen size!",) in list("1","2","3","4","5","6","7","8","9","10","Cancel"))
+		if("Tamanho da Tela")
+			alert("O tamanho atual é [client.view]. The default view is 5.")//**NOTE**:'5' is the closest to the default view as you can get, IF you don't want to get into fractions.
+			switch(input("Para qual tamanho deseja mudar?","Escolha o tamanho da tela",) in list("1","2","3","4","5","6","7","8","9","10","Cancelar"))
 				if("1")
 					if(client.view == 1)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 1
 						usr.view=1
 				if("2")
 					if(client.view == 2)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 2
 						usr.view=2
 				if("3")
 					if(client.view == 3)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 3
 						usr.view=3
 				if("4")
 					if(client.view == 4)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 4
 						usr.view=4
 				if("5")
 					if(client.view == 5)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 5
 						usr.view=5
 				if("6")
 					if(client.view == 6)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 6
 						usr.view=6
 				if("7")
 					if(client.view == 7)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 7
 						usr.view=7
 				if("8")
 					if(client.view == 8)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 8
 						usr.view=8
 				if("9")
 					if(client.view == 9)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 9
 						usr.view=9
 				if("10")
 					if(client.view == 10)
-						usr << "You are on this size ([client.view]) already..."
+						usr << "Sua tela já está no tamanho ([client.view])..."
 					else
 						client.view = 10
 						usr.view=10
-				if("Cancel")
+				if("Cancelar")
 					return()
 
 //------------------------------------------------------------------------------------------------------------------
@@ -508,14 +508,13 @@ mob/proc/Taijutsu()
 		<html>
 		<STYLE>BODY {font-family: Verdana}</STYLE>
 		<head>
-		<title>Training</title>
+		<title>Treinamento</title>
 		</head>
 		<body bgcolor=#f5f5f5 text=#000000>
 		<center><h2>Taijutsu</h2></center><hr>
-		<p><strong>Logs:</strong> Logs are scattered about, You lose Stamina per log hit and gain Taijutsu randomly, New! - Shuriken and Kunai can be thrown at logs as a Taijutsu and Ninjutsu training method, Also to increase your Shuriken Skill or Kunai skill to learn a Jutsu for that weapon.<br>
-		<strong>Mountain Climbing:</strong> This is a form of Stamina and Taijutsu training.<br>
-		<strong>
-		:</strong> Trains All Stats a bit.<br>
+		<p><strong>Como Treinar:</strong> Quando estiver perto de um tronco vá na aba treinamento e selecione a opção Treinar no tronco. Você aos poucos vai ganhar taijutsu e perder um pouco de sua energia durante o treino.<br>
+		<strong>Escalar:</strong> Você pode treinar sua energia e taijutsu escalando na montanha de sua vila*, ao invés de usar o tronco <br><strong>*OBS:</strong> Nem todas as vilas tem montanhas!!! <br>
+		<strong>Upar:</strong> Treina um pouco de cada atributo.<br>
 
 		<p>
 		<br>
@@ -529,12 +528,12 @@ mob/proc/Genjutsu()
 		<html>
 		<STYLE>BODY {font-family: Verdana}</STYLE>
 		<head>
-		<title>Training</title>
+		<title>Treinamento</title>
 		</head>
 		<body bgcolor=#f5f5f5 text=#000000>
 		<center><h2>Genjutsu</h2></center><hr>
-		<strong>Gen</strong> Use Bunshin No Jutsu<br>
-		<strong>Level Up:</strong> Trains All Stats a bit.<br>
+		<strong>Como treinar:</strong> Vá na aba Treinamento e selecione a opção Concentrar. Você aos poucos vai ganhar genjutsu e perder um pouco de sua energia durante o treino.<br>
+		<strong>Upar:</strong> Treina um pouco de cada atributo.<br>
 		<p>
 		<br>
 		</body>
@@ -547,11 +546,12 @@ mob/proc/Ninjutsu()
 		<html>
 		<STYLE>BODY {font-family: Verdana}</STYLE>
 		<head>
-		<title>Training</title>
+		<title>Treinamento</title>
 		</head>
 		<body bgcolor=#f5f5f5 text=#000000>
 		<center><h2>Ninjutsu</h2></center><hr>
-		<strong>Nin</strong> Use Kage Bunshins No Jutsu<br>
+		<strong>Como treinar:</strong> Vá na aba Treinamento e selecione a opção Liberar Chakra. Você aos poucos vai ganhar ninjutsu e perder um pouco de sua energia durante o treino.<br>
+		<strong>Upar:</strong> Treina um pouco de cada atributo.<br>
 		<p>
 		<br>
 		</body>
