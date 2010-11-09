@@ -1382,14 +1382,6 @@ turf
 				if(istype(A,/obj/)) del(A)
 
 
-
-
-
-
-
-
-
-
 turf
 	rogu1
 		icon = 'rogin1.dmi'
@@ -1427,16 +1419,6 @@ turf
 
 
 
-
-
-
-
-
-
-
-
-
-
 turf
 	rogu
 		icon = 'rogin.dmi'
@@ -1471,13 +1453,6 @@ turf
 					M.loc = locate(64,98,18)
 			else
 				if(istype(A,/obj/)) del(A)
-
-
-
-
-
-
-
 
 
 
@@ -1520,19 +1495,6 @@ turf
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 turf
 	feudalman
 		icon = 'feudalman.dmi'
@@ -1555,19 +1517,6 @@ turf
 					M.loc = locate()
 			else
 				if(istype(A,/obj/)) del(A)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

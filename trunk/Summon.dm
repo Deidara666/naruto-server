@@ -31,9 +31,10 @@ obj/Big_Snake_Scroll//DO NOT USE : IT IS BAD!!(use . instead)
 				usr.Frozen=0
 				usr.kuchiyoseusing=0
 				del(B)
-mob/var
-	tmp/ride=0
+mob/var/tmp
+	ride=0
 	kuchiyoseusing=0
+
 obj/Slug_Summoning_Scroll
 	icon = 'scrolls.dmi'
 	icon_state = "slug"

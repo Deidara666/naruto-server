@@ -7,6 +7,7 @@ mob/npc/Banker//the new banker!
 		Depositar()
 			set src in oview(3)
 			set category = "Banco"
+			set name="***  Depositar  ***"
 			var/heh = input("Você tem [usr.Yen] Yen. Quanto você pretende depositar?","Depósito") as num
 			if (heh < 0)
 				alert("Não tente me enganar!","Guardar no banco")
@@ -23,6 +24,7 @@ mob/npc/Banker//the new banker!
 		Retirar()
 			set src in oview(3)
 			set category = "Banco"
+			set name="***  Retirar  ***"
 			var/heh = input("Você tem [usr.goldinbank] Yen no banco. Quanto você deseja retirar?","Pegar") as num
 			if (heh < 0)
 				alert("Você não pode retirar menos de 1 Yen!","Guardar no banco")
@@ -41,8 +43,10 @@ mob/npc/Banker//the new banker!
 		CheckBalance()
 			set src in oview(3)
 			set category = "Banco"
-			set name = "Checar conta"
+			set name = "***  Checar conta  ***"
 			usr << "Você tem [usr.goldinbank] Yen no banco."
+
+
 mob/npc/Vet
 	name = "Veterinário"
 	icon = 'Banker.dmi'
@@ -51,7 +55,8 @@ mob/npc/Vet
 	verb
 		Curar()
 			set src in oview(3)
-			set category = "Cachorro"
+			set category = "***  Cachorro  ***"
+			set name="Curar"
 			if(usr.Yen <= 1999)
 				usr << "você precisa de 2000 Yen para curar seu cachorro!"
 			else
@@ -67,7 +72,7 @@ mob/npc/Vet
 						return
 		CachorroFujiu()
 			set src in oview(3)
-			set name = "Cachorro fujiu"
+			set name = "***  Cachorro fujiu  ***"
 			set category = "Cachorro"
 			for(var/mob/pet/P in world)
 				if(P.owner==usr)
@@ -203,6 +208,7 @@ mob/npc
 		health = 9999999999999999999999999999999999999999999999
 		verb/Buy()
 			set src in oview(3)
+			set name="***  Comprar  ***"
 			switch(input("O que você gostaria de comprar hoje?")in list("Shuriken - 200","Hyourougan - 500","Kunai - 400","Exploding Tag - 1000","Windmill - 50000","Trikunai - 50000","Nada"))
 				if("Shuriken - 200")
 					var/give = input("Quantas Shurikens você deseja comprar?")as num
@@ -324,6 +330,7 @@ mob/npc
 		health = 9999999999999999999999999999999999999999999999
 		verb
 			Buy()
+				set name="***  Comprar  ***"
 				set src in oview(3)
 				switch(input("O que você gostaria de comprar hoje?")in list("Ramen - 350","Vegetable Soup - 320","Sake - 1500","Nada"))
 					if("Ramen - 350")
@@ -360,6 +367,7 @@ mob/npc
 		health = 9999999999999999999999999999999999999999999999
 		verb/Buy()
 			set src in oview(3)
+			set name="***  Comprar  ***"
 			switch(input("What would you like to buy today??")in list("Weights - 7000","Bandages - 5000","Big Hat - 5000","Shino Coat - 1000","Nara Shirt - 4500","Sasuke Suit - 4500","Kabuto Suit - 4500","Kankuoru Suit - 4500","Choji Suit - 4500","Kiba Sweater - 2000","Pants - 600","Shirt - 1000","Shoes - 150","Sandles - 150","Shades - 390","Sasuke Shirt - 4500","Naruto Suit - 4500","Neiji Suit - 4500","RockLee Suit - 4500","Zabuza Suit - 4500","Nothing"))
 				if("Big Hat - 5000")
 					if(usr.Yen >= 5000)
@@ -547,6 +555,7 @@ mob/npc
 		health = 9999999999999999999999999999999999999999999999
 		verb/Buy()
 			set src in oview(3)
+			set name="***  Comprar  ***"
 			switch(input("O que você deseja comprar hoje?")in list("Zabuza Sword - 100000","Mondai Sword - 100000","Kisame Sword - 100000","Nada"))
 				if("Zabuza Sword - 100000")
 					if(usr.Yen >= 100000)
@@ -585,6 +594,7 @@ mob/npc
 		verb
 			Talk()
 				set src in oview(2)
+				set name="***  Falar  ***"
 				set category ="Corte de cabelo"
 				switch(input("Would you like me to work magic to that ragged hair??", text) in list ("Sim","Não"))
 					if("Yes")
@@ -984,6 +994,7 @@ mob/StarSpawndude
    verb
       ChangeSpawnPoint()
          set src in oview(1)
+         set name="***  Trocar ponto de Spawn  ***"
          set category = "Spawn Point"
          usr << "<b> You will now respawn in The Hidden Village of Star!"
          usr.starS=1
@@ -1009,6 +1020,7 @@ mob/SnowSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Snow!"
          usr.akatS = 0
          usr.soS = 0
@@ -1033,6 +1045,7 @@ mob/AKATSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Akat base!"
          usr.akatS = 1
          usr.soS = 0
@@ -1057,6 +1070,7 @@ mob/SOSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The SO base!"
          usr.akatS = 0
          usr.soS = 1
@@ -1081,6 +1095,7 @@ mob/LeafSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Leaf!"
          usr.akatS = 0
          usr.soS = 0
@@ -1105,6 +1120,7 @@ mob/SoundSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Sound!"
          usr.akatS = 0
          usr.soS = 0
@@ -1129,6 +1145,7 @@ mob/WaterfallSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Waterfall!"
          usr.akatS = 0
          usr.soS = 0
@@ -1153,6 +1170,7 @@ mob/RainSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Rain!"
          usr.akatS = 0
          usr.soS = 0
@@ -1177,6 +1195,7 @@ mob/SandSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Sand!"
          usr.akatS = 0
          usr.soS = 0
@@ -1201,6 +1220,7 @@ mob/GrassSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Grass!"
          usr.akatS = 0
          usr.soS = 0
@@ -1225,6 +1245,7 @@ mob/EarthSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Earth!"
          usr.akatS = 0
          usr.soS = 0
@@ -1249,6 +1270,7 @@ mob/mistSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Mist!"
          usr.akatS = 0
          usr.soS = 0
@@ -1273,6 +1295,7 @@ mob/LightningSpawndude
       ChangeSpawnPoint()
          set src in oview(1)
          set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
          usr << "<b> You will now respawn in The Hidden Village of Earth!"
          usr.akatS = 0
          usr.soS = 0
@@ -1289,7 +1312,7 @@ mob/LightningSpawndude
          usr.mistS = 0
 mob
 	proc
-		ShuriThrow()
+		TacarShuriken()
 			src.firing = 1
 			var/obj/Shuriken/K = new /obj/Shuriken
 			K.loc = src.loc
@@ -1303,7 +1326,7 @@ mob
 			del(K)
 mob
 	proc
-		KunaiThrow()
+		TacarKunai()
 			src.firing = 1
 			var/obj/Kunai/K = new /obj/Kunai
 			K.loc = src.loc
@@ -1675,6 +1698,7 @@ mob/npc
 		verb
 			Buy()
 				set src in oview(3)
+				set name="***  Comprar  ***"
 				switch(input("Qual pergaminho você deseja comprar hoje?")in list("Snake Summon - 100k","Slug Summon - 100k","Frog Summon - 100k","Puppet Summon - 50k","Nada"))
 					if("Snake Summon - 100k")
 						if(usr.Yen >= 100000)
@@ -1715,6 +1739,7 @@ mob/npc
 		verb
 			Buy()
 				set src in oview(3)
+				set name="***  Comprar  ***"
 				switch(input("Qual pergaminho você deseja comprar hoje?")in list("Kaze Dangan No Jutsu - 50k","Kage Bunshin No Jutsu - 5k","Renkuudan No Jutsu - 60k","Daitoppa No Jutsu - 50k","Doton Doryo Dango - 40k","Doton Doryuuheki - 50k","Raikyuu No Jutsu - 40k","Rairyuu No Tatsumaki - 40k","Katon Goukakyuu - 40k","Katon Housenka no jutsu - 40k","Nada"))
 					if("Kaze Dangan No Jutsu - 50k")
 						if(usr.Yen >= 50000)
@@ -1800,6 +1825,7 @@ mob/npc/Naruto
 		Talk()
 			set src in oview(1)
 			set category ="Naruto"
+			set name="***  Falar  ***"
 			switch(input("Ei você vai me fazer um favor? Eu vou te mostrar o sinal Tiger é muito legal.") in list ("Sim","Não","Eu sou Uzumaki tambem!","Get Lost"))
 				if("Sim")
 					if(usr.tiger==2)
@@ -1863,6 +1889,7 @@ mob/npc/Sakura
 		Talk()
 			set src in oview(1)
 			set category = "Sakura"
+			set name="***  Falar  ***"
 			switch(input("Olá, como posso ajudá-lo?") in list ("Você pode me mostrar um sinal da mão agora?","Nevermind"))
 				if("Você pode me mostrar um sinal da mão agora?")
 					if(usr.dogs==2)
@@ -1886,6 +1913,7 @@ mob/npc/Sasuke
 		Talk()
 			set src in oview(1)
 			set category = "Sasuke"
+			set name="***  Falar  ***"
 			switch(input("O quê? Você não vê que estou ocupado treinando? Deixe-me adivinhar, você quer aprender um certo sinal de jutsu mão?",text) in list ("Sim","Não","Eu sou Uchiha tambem!","Esqueça"))
 				if("Sim")
 					if(usr.dragon == 2)
@@ -1923,6 +1951,7 @@ mob/npc/Haku
 		Talk()
 			set src in oview(1)
 			set category = "Haku"
+			set name="***  Falar  ***"
 			switch(input("Olá, você é do meu clan?",text) in list ("Sim","Esqueça"))
 				if("Sim")
 					if(usr.Haku == 1)
@@ -1968,6 +1997,7 @@ mob/npc/Choji
 		Talk()
 			set src in oview(1)
 			set category = "Choji"
+			set name="***  Falar  ***"
 			switch(input("Olá, essa é a casa Akimichi",text) in list ("Eu sou Akimichi tambem!","Esqueça"))
 				if("Eu sou Akimichi tambem!")
 					if(usr.Akimichi == 1)
@@ -2007,6 +2037,7 @@ mob/npc/Nara
 		Talk()
 			set src in oview(1)
 			set category = "Shikamaru"
+			set name="***  Falar  ***"
 			switch(input("Como isso é chato, essa é a casa dos Nara",text) in list ("Eu sou Nara tambem!","Esqueça"))
 				if("Eu sou Nara tambem!")
 					if(usr.Nara == 1)
@@ -2053,6 +2084,7 @@ mob/npc/Kamizuri
 		Talk()
 			set src in oview(1)
 			set category = "Bee Keeper"
+			set name="***  Falar  ***"
 			switch(input("What do you want I'm beezy.",text) in list ("I'm Kamizuri too!","Forget it"))
 				if("I'm Kamizuri too!")
 					if(usr.Kamizuri == 1)
@@ -2109,6 +2141,7 @@ mob/npc/Kabuto
 		Talk()
 			set src in oview(1)
 			set category = "Kabuto"
+			set name="***  Falar  ***"
 			switch(input("What do you want I'm working on my cards.",text) in list ("Can you heal me?","INFO Cards","I'm a Medic too!","Forget it"))
 				if("I'm a Medic too!")
 					if(usr.Medical == 1)
@@ -2174,6 +2207,7 @@ mob/npc/Kaguya
 		Talk()
 			set src in oview(1)
 			set category = "Kimimaro"
+			set name="***  Falar  ***"
 			switch(input("What, this is the Kaguya house",text) in list ("I'm Kaguya too!","Forget it"))
 				if("I'm Kaguya too!")
 					if(usr.Kaguya == 1)
@@ -2234,6 +2268,7 @@ mob/npc/Kiba
 		Talk()
 			set src in oview(1)
 			set category = "Kiba"
+			set name="***  Falar  ***"
 			switch(input("Ya, this is the Inuzuka house what do you want?",text) in list ("I'm Inuzuka too!","Forget it"))
 				if("I'm Inuzuka too!")
 					if(usr.Inuzuka == 1)
@@ -2283,6 +2318,7 @@ mob/npc/Lee
 		Talk()
 			set src in oview(1)
 			set category = "Lee"
+			set name="***  Falar  ***"
 			switch(input("Hello you enjoy climbing too I see. Hey would you do me a huge favor?",text) in list ("Yes","No"))
 				if("Yes")
 					if(usr.horse == 2)
@@ -2305,6 +2341,7 @@ mob/npc/Neiji
 		Talk()
 			set src in oview(1)
 			set category = "Neiji"
+			set name="***  Falar  ***"
 			switch(input("What is it?",text) in list ("Can you show me a hand sign?","I am weaker then you","Nothen","I'm hyuuga too!"))
 				if("Can you show me a hand sign?")
 					usr<<"Admit that you are weaker then me"
@@ -2349,6 +2386,7 @@ mob/npc/Kakashi
 		Talk()
 			set src in oview(1)
 			set category = "Kakashi"
+			set name="***  Falar  ***"
 			switch(input("Come to the great copy ninja to learn a hand sign have we?",text) in list ("Yes","No"))
 				if("Yes")
 					if(usr.ox == 2)
@@ -2371,6 +2409,7 @@ mob/npc/Jiraiya
 		Talk()
 			set src in oview(1)
 			set category = "Jiraiya"
+			set name="***  Falar  ***"
 			switch(input("Hey have you seen my wolf?",text) in list ("Yes","No","Got any Summon scrolls?","Redo my Seals"))
 				if("Yes")
 					if(usr.rat == 2)
@@ -2473,6 +2512,7 @@ mob/npc/Gaara
 		Talk()
 			set src in oview(1)
 			set category = "Gaara"
+			set name="***  Falar  ***"
 			switch(input("Help me awaken my demon shead your blood for me.",text) in list ("Yes","No","I'm Gaara too.","Unlock My Demon"))
 				if("Yes")
 					usr.maxhealth -= 1000
@@ -2550,6 +2590,7 @@ mob/npc/Gai
 		Talk()
 			set src in oview(1)
 			set category = "Gai"
+			set name="***  Falar  ***"
 			switch(input("Well hi there and welcome to the Lee house.",text) in list ("I'm Lee too.","Weirdo"))
 				if("I'm Lee too.")
 					if(usr.Clan=="Lee")
@@ -2599,6 +2640,7 @@ mob/npc/Tenten
 		Talk()
 			set src in oview(1)
 			set category = "Tenten"
+			set name="***  Falar  ***"
 			switch(input("Well hi there cutie welcome to the Tenten house.",text) in list ("I'm Tenten too.","Well hello yourself cutie."))
 				if("I'm Tenten too.")
 					if(usr.Clan=="Tenten")
@@ -2650,6 +2692,7 @@ mob/npc/Zabuza
 		Talk()
 			set src in oview(1)
 			set category = "Zabuza"
+			set name="***  Falar  ***"
 			switch(input("Argh I lost my sword have you seen it?",text) in list ("Yes","No"))
 				if("Yes")
 					if(usr.monkey == 2)
@@ -2673,6 +2716,7 @@ mob/npc/Shino
 		Talk()
 			set src in oview(1)
 			set category = "Shino"
+			set name="***  Falar  ***"
 			switch(input("You want to learn the Snake sign?",text) in list ("Yes","No","I'm Aburame too!"))
 				if("Yes")
 					if(usr.bugs >= 10)
@@ -2737,6 +2781,7 @@ mob/npc/Itachi
 		Talk()
 			set src in oview(1)
 			set category = "Itachi"
+			set name="***  Falar  ***"
 			if(usr.itachitalked==1)
 				usr<<"Get lost Loser."
 				return
@@ -2760,6 +2805,7 @@ mob/npc/Squads
 		Talk()
 			set src in oview(1)
 			set category="Squads"
+			set name="***  Falar  ***"
 			switch(input("Do you wish to form a squad of genin and train them to become chuunin?",text) in list ("Yes","No"))
 				if("Yes")
 					if(usr.squads==0)
@@ -2786,6 +2832,7 @@ mob/npc/Genin
 		Talk()
 			set src in oview(3)
 			set category="Iruka"
+			set name="***  Falar  ***"
 			switch(input("To become a Genin you must Pass the writen test and then henge me 10 times so I know that you can do it right, ok?",text) in list ("Ok","No"))
 				if("Ok")
 					if(usr.rank=="Student"&&usr.hengeN >= 10&&usr.tested>=1)
@@ -2808,6 +2855,7 @@ mob/npc/Anko
 		Talk()
 			set src in oview(3)
 			set category="Forest Exit"
+			set name="***  Falar  ***"
 			switch(input("Giveing up already are we?",text) in list ("Yes","No"))
 				if("Yes")
 					for(var/obj/heavenscroll/H in usr.contents)
@@ -2831,6 +2879,7 @@ mob/npc/Pawn
 	health = 9999999999999999999999999999999999999999999999
 	verb
 		Sell()
+			set name="***  Vender  ***"
 			var/varPackList = list()
 			if(locate(/obj) in usr:contents)
 				for(var/obj/O in usr:contents)

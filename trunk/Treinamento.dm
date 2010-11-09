@@ -1,3 +1,53 @@
+obj
+	Log
+		icon = 'trainlog.dmi'
+		density = 1
+		name="Tronco"
+		verb
+			Punch()
+				set name = "Treinar no Tronco"
+				set category = "Treino"
+				set src in oview(1)
+				if(usr.treinolog==1)
+					usr.treinolog=0
+					usr.Treinolog()
+				else
+					if(usr.treinolog==0)
+						usr.Frozen=0
+						usr<<"Você parou de bater no Tronco"
+						usr.treinolog=3
+					else
+						usr<<"Você tem que esperar para voltar a treinar"
+						spawn(120) usr.treinolog=1
+
+obj
+	Log2
+		icon = 'trainlog.dmi'
+		density = 1
+		name="Tronco Chunin +"
+		verb
+			Punch()
+				set name = "Treinar no Tronco"
+				set category = "Treino"
+				set src in oview(1)
+				if(usr.rank=="Student")
+					usr<<"Você precisa ser Chunin ou mais para treinar nesse Tronco."
+				else
+					if(usr.rank=="Guenin")
+						usr<<"Você precisa ser Chunin ou mais para treinar nesse Tronco."
+					else
+						if(usr.treinolog==1)
+							usr.treinolog=0
+							usr.Treinolog()
+						else
+							if(usr.treinolog==0)
+								usr.Frozen=0
+								usr<<"Você parou de bater no Tronco"
+								usr.treinolog=3
+							else
+								usr<<"Você tem que esperar para voltar a treinar"
+								spawn(120) usr.treinolog=1
+
 
 mob
 	verb
@@ -16,6 +66,7 @@ mob
 	verb
 		Meditate()
 			set category ="Treino"
+			set name="Treinar Genjutsu"
 			if(usr.firing)
 				return
 			if(usr.resting)
@@ -37,49 +88,24 @@ mob
 				return
 			if(usr.canmed)
 				return
-			if(usr.meditating)
-				usr.meditating=0
-
-				usr.icon_state=null
-				src.overlays -= 'electricity.dmi'
-				usr.canmed=1
-				usr << "You Stop Meditating."
-				spawn(100)
+			while(usr.meditating)
+				if(usr.meditating==0)
+					usr.meditating=1
+					usr.icon_state=null
+					src.overlays -= 'electricity.dmi'
+					usr.canmed=1
+					usr << "Você parou de treinar seu genjutsu."
+					spawn(100)
 					usr.canmed=0
-			else
-				usr.meditating=1
-
-				usr << "You Meditate."
-				src.overlays += 'electricity.dmi'
-				usr.icon_state="rest"
-				while(usr.meditating)
-					sleep(pick(100,120,110))
-					if(prob(80))
-						if(usr.chakra > 5)
-							usr.random=rand(1,3)
-							if(usr.random==1)
-								if(usr.Mchakra<=1000000)
-									usr<<"Your Chakra increases."
-									usr.chakra-=rand(50,100)
-									usr.Mchakra+=rand(100,500)
-								else
-									usr<<"You have reached you Chakra cap."
-							if(usr.random==2)
-								if(usr.maxhealth<=5000000)
-									usr<<"Your HP increases."
-									usr.chakra-=rand(50,100)
-									usr.maxhealth+=rand(100,500)
-								else
-									usr<<"You have reached your Stam cap."
-					if(usr.chakra <= 5)
-						usr<<"You Stop Meditating"
-						usr.meditating=0
-						usr.icon_state=null
-						usr.canmed=1
-						usr.move=1
-						spawn(100)
-							usr.canmed=0
-
+					return
+				else
+					usr.meditating=0
+					usr << "Você treina seu genjutsu."
+					src.overlays += 'electricity.dmi'
+					usr.icon_state="rest"
+					spawn(15) usr<<"Você treina seu genjutsu."
+					spawn(60) genup()
+					spawn(60) Meditate()
 
 
 mob
@@ -88,8 +114,8 @@ mob
 			rest
 			if(usr.resting)
 				if(usr.health < usr.maxhealth || usr.chakra < usr.Mchakra)
-					usr.health += usr.maxhealth/25
-					usr.chakra += usr.Mchakra/25
+					usr.health += 25
+					usr.chakra += 25
 					if(usr.health>usr.maxhealth)
 						usr.health=usr.maxhealth
 					if(usr.chakra>usr.Mchakra)
@@ -98,7 +124,7 @@ mob
 						usr.resting = 0
 						usr.Frozen = 0
 						usr.icon_state = ""
-						usr<<"You have finish resting..."
+						usr<<"Você terminou de descançar..."
 						return
 					usr.Frozen = 1
 					sleep(10)
@@ -108,7 +134,7 @@ mob
 					usr.resting = 0
 					usr.Frozen = 0
 					usr.icon_state = ""
-					usr<<"You have finish resting..."
+					usr<<"Você terminou de descançar..."
 					if(usr.health>usr.maxhealth)
 						usr.health=usr.maxhealth
 					if(usr.chakra>usr.Mchakra)
@@ -120,6 +146,7 @@ mob
 	verb
 		Rest()
 			set category="Treino"
+			set name="Descançar"
 			if(usr.Kaiten)
 				usr<<"You nuts? You're spinning deflecting attacks. How do you Rest? o_O"
 				return
@@ -166,16 +193,6 @@ mob
 				usr.rest()
 				overlays-='elec.dmi'
 				return
-
-
-
-
-
-
-
-
-
-
 
 
 obj

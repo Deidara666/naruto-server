@@ -12,55 +12,6 @@ world
 	view=6
 	loop_checks=0
 
-obj
-	Log
-		icon = 'trainlog.dmi'
-		density = 1
-		name="Tronco"
-		verb
-			Punch()
-				set name = "Treinar no Tronco"
-				set category = "Training"
-				set src in oview(1)
-				if(usr.treinolog==1)
-					usr.treinolog=0
-					usr.Treinolog()
-				else
-					if(usr.treinolog==0)
-						usr.Frozen=0
-						usr<<"Você parou de bater no Tronco"
-						usr.treinolog=3
-					else
-						usr<<"Você tem que esperar para voltar a treinar"
-						spawn(120) usr.treinolog=1
-
-obj
-	Log2
-		icon = 'trainlog.dmi'
-		density = 1
-		name="Tronco Chunin +"
-		verb
-			Punch()
-				set name = "Treinar no Tronco"
-				set category = "Training"
-				set src in oview(1)
-				if(usr.rank=="Student")
-					usr<<"Você precisa ser Chunin ou mais para treinar nesse Tronco."
-				else
-					if(usr.rank=="Guenin")
-						usr<<"Você precisa ser Chunin ou mais para treinar nesse Tronco."
-					else
-						if(usr.treinolog==1)
-							usr.treinolog=0
-							usr.Treinolog()
-						else
-							if(usr.treinolog==0)
-								usr.Frozen=0
-								usr<<"Você parou de bater no Tronco"
-								usr.treinolog=3
-							else
-								usr<<"Você tem que esperar para voltar a treinar"
-								spawn(120) usr.treinolog=1
 
 
 mob
