@@ -463,9 +463,9 @@ world
 				sleep(600)
 				world<<"<font size=2><font color=red>Haverá um exame Genin em 2 minutos!"
 				sleep(600)
-				world<<"<font size=2><font color=red>HAVERÁ UM EXAME GENIN EM 1 MINUTO !!!"
+				world<<"<font size=2><font color=red>HAVERÁ UM EXAME GENIN EM 1 MINUTO !"
 				sleep(600)
-				world<<"<font size=2><font color=red>O EXAME GENIN COMEÇOU, APERTE COM O BOTÃO DIREITO PARA FAZER O TESTE!!!"
+				world<<"<font size=2><font color=red>O EXAME GENIN COMEÇOU , VÁ PARA A ACADEMIA DE SUA VILA FAZER! "
 				Genintime=1
 				spawn(1000) Geninexam()
 mob
