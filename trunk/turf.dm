@@ -1,4 +1,64 @@
+
 turf
+	ATEXTURA
+		Terra
+			Terra
+				icon = 'ATerra.dmi'
+				icon_state = "terra"
+			BordaA
+				icon = 'ATerraBordaA.dmi'
+				icon_state = "terraboraa"
+			BordaB
+				icon = 'ATerraBordaB.dmi'
+				icon_state = "terrabordab"
+			BordaC
+				icon = 'ATerraBordaC.dmi'
+				icon_state = "terrabordac"
+			BordaD
+				icon = 'ATerraBordaD.dmi'
+				icon_state = "terrabordad"
+			BordaE
+				icon = 'ATerraBordaE.dmi'
+				icon_state = "terraborae"
+			BordaF
+				icon = 'ATerraBordaF.dmi'
+				icon_state = "terrabordaf"
+			BordaG
+				icon = 'ATerraBordaG.dmi'
+				icon_state = "terrabordag"
+			BordaH
+				icon = 'ATerraBordaH.dmi'
+				icon_state = "terrabordah"
+
+		Grama
+			Grama
+				icon = 'AGrama.dmi'
+				icon_state = "grama"
+			BordaA
+				icon = 'AGramaBordaA.dmi'
+				icon_state = "gramaboraa"
+			BordaB
+				icon = 'AGramaBordaB.dmi'
+				icon_state = "gramabordab"
+			BordaC
+				icon = 'AGramaBordaC.dmi'
+				icon_state = "gramabordac"
+			BordaD
+				icon = 'AGramaBordaD.dmi'
+				icon_state = "gramabordad"
+			BordaE
+				icon = 'AGramaBordaE.dmi'
+				icon_state = "gramaborae"
+			BordaF
+				icon = 'AGramaBordaF.dmi'
+				icon_state = "gramabordaf"
+			BordaG
+				icon = 'AGramaBordaG.dmi'
+				icon_state = "gramabordag"
+			BordaH
+				icon = 'AGramaBordaH.dmi'
+				icon_state = "gramabordah"
+
 	t1
 		icon = 'menus.dmi'
 		icon_state = "1"
