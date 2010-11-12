@@ -5,7 +5,7 @@ mob/Login()
 	src.loc = locate(7,7,20)
 	src<<'Naruto main theme.mid'
 	alert("Caralho César vai ficar foda o server")
-	src<<"<font size=5><font color = blue><b><u> Bem vindo ao Naruto Live in Brazil , Yuri tem um pau imenso mesmo.</font>"
+	src<<"<font size=5><font color = blue><b><u> Bem vindo ao Naruto Live in Brazil , Douglas tem uma piroquinha mesmo.</font>"
 	src.client.view=6
 	if(src.client.address == "")//Hydrocrush
 		src<<"<b><font size=3>For the last damn time, Terrorize your own game. Noob."
