@@ -740,64 +740,7 @@ mob/proc/Techniques()
 		"}
 	usr << browse(helptext)
 //--------------------------------------------------------------------------------------------------------
-mob
-	proc
-		WATER()
-			if(src.onwater)
-				var/tc = rand(1,4)
-				src.used=tc
-				if(src.ChakraC <= 99)
-					if(used >= 3)
-						if(src.chakra < src.used)
-							src.health -= src.used
-							var/random = rand(1,10)
-							if(random==3)
-								if(src.Mchakra<=1000000)
-									src<<"Your chakra raised!"
-									src.Mchakra += rand(2,5)
-							var/random2=rand(1,8)
-							if(random2==1||random2==3)
-								var/random3=rand(1,10)
-								if(random3==2)
-									src<<"<font size=1><font name=courier new><font color=green>You control your chakra better!"
-									src.ChakraC+=1
-								if(src.health<=0)
-									src.DeathCheck6(src)
-									src.onwater = 0
-									return
-						else
-							src.chakra -= src.used
-					if(src.used < 3)
-						if(src.chakra<src.used)
-							if(src.chakra<src.used)
-								src.health -= src.used
-								if(src.health<=0)
-									src.DeathCheck6(src)
-							else
-								src.chakra -= 1
-				if(src.ChakraC >= 50)
-					if(src.chakra >= 3)
-						src.chakra -= 3
-						var/random = rand(1,10)
-						if(random==3)
-							if(src.Mchakra<=1000000)
-								src<<"Your chakra raised!"
-								src.Mchakra += rand(2,5)
-								if(src.health <= 0)
-									src.DeathCheck6(src)
-									src.onwater = 0
-									return
-					else
-						src.health -= 3
-						var/random = rand(1,10)
-						if(random==3)
-							if(src.Mchakra<=1000000)
-								src<<"Your chakra raised!"
-								src.Mchakra += rand(2,5)
-								if(src.health<=0)
-									src.DeathCheck6(src)
-									src.onwater = 0
-									return
+
 
 var
 	worldC=1

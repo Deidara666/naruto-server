@@ -51,19 +51,6 @@ obj
 
 mob
 	verb
-		Waterwalk()
-			set category="Treino"
-			set name = "Andar sobre a água"
-			if(usr.waterwalk==0||usr.waterwalk==null)
-				usr.waterwalk=1
-				usr<<"Agora você pode andar sobre a água."
-			else
-				usr.waterwalk=0
-				usr<<"Agora você não pode andar sobre a água."
-
-
-mob
-	verb
 		Meditate()
 			set category ="Treino"
 			set name="Treinar Genjutsu"
@@ -194,31 +181,73 @@ mob
 				return
 
 
-obj
-	trest
-		icon='menus.dmi'
-		icon_state="Rest"
-		screen_loc="1,6"
-		Click()
-			if(usr.resting)
-				usr.resting=0
-				usr<<"Você parou de descansar..."
-				usr.Frozen = 0
-				usr.icon_state = ""
-				return
+mob
+	verb
+		Waterwalk()
+			set category="Treino"
+			set name = "Andar sobre a água"
+			if(usr.waterwalk==0||usr.waterwalk==null)
+				usr.waterwalk=1
+				usr<<"Agora você pode andar sobre a água."
 			else
-				if(usr.health == usr.maxhealth && usr.chakra == usr.Mchakra)
-					usr<<"Você não precisa descansar..."
-					return
-				if(usr.meditating||usr.onwater)
-					return
-				usr<<"Você começou a descansar..."
-				usr.resting=1
-				usr.Frozen = 1
-				usr.rest()
+				usr.waterwalk=0
+				usr<<"Agora você não pode andar sobre a água."
 
-
-obj
-	meditate
-		icon='meditate.dmi'
-		icon_state=""
+mob
+	proc
+		WATER()
+			if(src.onwater)
+				var/tc = rand(1,4)
+				src.used=tc
+				if(src.ChakraC <= 99)
+					if(used >= 3)
+						if(src.chakra < src.used)
+							src.health -= src.used
+							var/random = rand(1,10)
+							if(random==3)
+								if(src.Mchakra<=1000000)
+									src<<"Your chakra raised!"
+									src.Mchakra += rand(2,5)
+							var/random2=rand(1,8)
+							if(random2==1||random2==3)
+								var/random3=rand(1,10)
+								if(random3==2)
+									src<<"<font size=1><font name=courier new><font color=green>You control your chakra better!"
+									src.ChakraC+=1
+								if(src.health<=0)
+									src.DeathCheck6(src)
+									src.onwater = 0
+									return
+						else
+							src.chakra -= src.used
+					if(src.used < 3)
+						if(src.chakra<src.used)
+							if(src.chakra<src.used)
+								src.health -= src.used
+								if(src.health<=0)
+									src.DeathCheck6(src)
+							else
+								src.chakra -= 1
+				if(src.ChakraC >= 50)
+					if(src.chakra >= 3)
+						src.chakra -= 3
+						var/random = rand(1,10)
+						if(random==3)
+							if(src.Mchakra<=1000000)
+								src<<"Your chakra raised!"
+								src.Mchakra += rand(2,5)
+								if(src.health <= 0)
+									src.DeathCheck6(src)
+									src.onwater = 0
+									return
+					else
+						src.health -= 3
+						var/random = rand(1,10)
+						if(random==3)
+							if(src.Mchakra<=1000000)
+								src<<"Your chakra raised!"
+								src.Mchakra += rand(2,5)
+								if(src.health<=0)
+									src.DeathCheck6(src)
+									src.onwater = 0
+									return

@@ -74,7 +74,7 @@ mob
 			if(src.cansave)
 				src.SaveK()
 				spawn(600)
-					src.AutoSave()
+				src.AutoSave()
 mob
 	proc
 		SaveK()

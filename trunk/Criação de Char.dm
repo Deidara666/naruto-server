@@ -84,6 +84,7 @@ turf/Finished
 		if(usr.villageselected&&usr.baseselected)
 			usr.loc=locate(6,58,20)
 			usr.cansave=1
+			usr.AutoSave()
 			usr.OOC=1
 			usr.random=rand(1,2)
 			if(usr.Clan=="Gaara")
