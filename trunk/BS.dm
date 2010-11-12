@@ -567,9 +567,9 @@ mob
 		stat("Ninjutsu: [nin] ([nnexp]%)")
 		stat("Genjutsu: [gen] ([ggexp]%)")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
-		stat("Abilidade com Shuriken   : [shurikenskill]")
-		stat("Abilidade com Kunai        : [kunaiskill]")
-		stat("Abilidade com Armadilhas: [trapskill]")
+		stat("Habilidade com Shuriken   : [shurikenskill]")
+		stat("Habilidade com Kunai        : [kunaiskill]")
+		stat("Habilidade com Armadilhas: [trapskill]")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("Missoes:")
 		stat("D: [dmission]")
@@ -617,10 +617,10 @@ mob
 					usr<<"<font size=1>Seu ataque salta fora da areia!"
 					return
 				if(M.PK==0)
-					usr<<"ZONA NÃO PK!!!"
+					usr<<"ZONA NÃO PK!"
 					return
 				if(usr.PK==0)
-					usr<<"ZONA NÃO PK!!!"
+					usr<<"ZONA NÃO PK!"
 					return
 				if(M.Kaiten)
 					var/damage = round(usr.tai-M.tai/4)

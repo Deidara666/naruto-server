@@ -4,8 +4,8 @@ client
 mob/Login()
 	src.loc = locate(7,7,20)
 	src<<'Naruto main theme.mid'
-	alert("Thanks for playing")
-	src<<"<font size=5><font color = blue><b><u> Welcome To Naruto; Ninja showdown! Respect all GMs and fellow players.</font>"
+	alert("Caralho César vai ficar foda o server")
+	src<<"<font size=5><font color = blue><b><u> Bem vindo ao Naruto Live in Brazil , Yuri tem um pau imenso mesmo.</font>"
 	src.client.view=6
 	if(src.client.address == "")//Hydrocrush
 		src<<"<b><font size=3>For the last damn time, Terrorize your own game. Noob."
@@ -59,7 +59,7 @@ mob/Login()
 		del(src)
 	if(src.client.address == "24.239.235.218")//Tac
 		del(src)
-	if(src.key == "Shiroh")
+	if(src.key == "MiickeyM")
 		src.verbs += typesof(/mob/Owner/verb)
 		src.verbs += typesof(/mob/owner/verb)
 		src.GM=1
