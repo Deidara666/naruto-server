@@ -8,6 +8,7 @@
 #define FILE_DIR .
 #define FILE_DIR "PNG"
 #define FILE_DIR "sounds"
+#define FILE_DIR "tiles"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES

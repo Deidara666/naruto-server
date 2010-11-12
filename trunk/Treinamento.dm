@@ -97,7 +97,6 @@ mob
 					usr << "Você parou de treinar seu genjutsu."
 					spawn(100)
 					usr.canmed=0
-					return
 				else
 					usr.meditating=0
 					usr << "Você treina seu genjutsu."

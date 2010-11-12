@@ -2,12 +2,8 @@
 /*
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 479.1086
-<<<<<<< .mine
-FILE: map.dmp
-=======
-FILE: Criação de Char.dm
->>>>>>> .r78
-LAST_COMPILE_TIME: 1289514469
+FILE: Treinamento.dm
+LAST_COMPILE_TIME: 1289435594
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS
