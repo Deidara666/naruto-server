@@ -51,18 +51,39 @@ obj
 
 mob
 	verb
-		Meditate()
+		TreinarGenjutsu()
 			set category ="Treino"
 			set name="Treinar Genjutsu"
+			if(treinargenjutsu==1)
+				treinargenjutsu=0
+				usr.meditating=0
+				usr.treinogen()
+				usr.Frozen=1
+			else
+				if(treinargenjutsu==0)
+					usr.Frozen=0
+					usr.meditating=1
+					treinargenjutsu=3
+					usr.icon_state=null
+					src.overlays -= 'electricity.dmi'
+					usr.canmed=1
+					usr << "Você parou de treinar seu genjutsu."
+				else
+					usr<<"Você tem que esperar para voltar a treinar"
+					spawn(120) treinargenjutsu=1
+
+
+
+
+mob
+	proc
+		treinogen()
 			if(usr.firing)
 				return
 			if(usr.resting)
 				return
 			if(usr.froze)
-				usr<<"Your frozen"
-				return
-			if(usr.Frozen)
-				usr<<"Your frozen"
+				usr<<"Você está paralizado"
 				return
 			if(usr.caught)
 				usr<<"Your captured"
@@ -71,27 +92,36 @@ mob
 				usr<<"Your captured"
 				return
 			if(usr.resting)
-				usr<<"Not while resting"
+				usr<<"Não enquanto está Descansando"
 				return
 			if(usr.canmed)
 				return
-			while(usr.meditating)
-				if(usr.meditating==0)
-					usr.meditating=1
-					usr.icon_state=null
-					src.overlays -= 'electricity.dmi'
-					usr.canmed=1
-					usr << "Você parou de treinar seu genjutsu."
-					spawn(100)
-					usr.canmed=0
-				else
-					usr.meditating=0
-					usr << "Você treina seu genjutsu."
-					src.overlays += 'electricity.dmi'
-					usr.icon_state="rest"
-					spawn(15) usr<<"Você treina seu genjutsu."
-					spawn(60) genup()
-					spawn(60) Meditate()
+			if(treinargenjutsu==0)
+				src.overlays += 'electricity.dmi'
+				usr.icon_state="rest"
+				spawn(15) usr<<"Você treina seu genjutsu."
+				spawn(60) genup()
+				spawn(60) treinogen()
+
+
+
+			//while(usr.meditating)
+			//	if(usr.meditating==0)
+			//		usr.meditating=1
+			//		usr.icon_state=null
+			//		src.overlays -= 'electricity.dmi'
+			//		usr.canmed=1
+			//		usr << "Você parou de treinar seu genjutsu."
+			//		spawn(100)
+			//		usr.canmed=0
+			//	else
+			//		usr.meditating=0
+			//		usr << "Você treina seu genjutsu."
+			//		src.overlays += 'electricity.dmi'
+			//		usr.icon_state="rest"
+			//		spawn(15) usr<<"Você treina seu genjutsu."
+			//		spawn(60) genup()
+			//		spawn(60) Meditate()
 
 
 mob
