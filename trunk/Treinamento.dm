@@ -251,3 +251,102 @@ mob
 									src.DeathCheck6(src)
 									src.onwater = 0
 									return
+
+
+mob
+	cliff
+		verb
+			climbup()
+				set name="Escalar Acima"
+				set category = "Training"
+				var/obj/mountain2/C
+				if(usr.climbing)
+					return
+				if(usr.firing)
+					return
+				if(usr.resting)
+					usr<<"Você não pode escalar e descançar ao mesmo tempo."
+					return
+				if(usr.health<=5)
+					for(C in get_step(usr,SOUTH))
+						if(C)
+							usr << "<b>[usr.name] atinge o limite!</b>"
+							usr.loc=locate(usr.x,usr.y-1,usr.z)
+							return
+					for(C in get_step(usr,NORTH))
+						if(C)
+							usr << "<b>Você está muito cansado para continuar subindo!</b>"
+				else
+					for(C in get_step(usr,NORTH))
+						if(C)
+							if(prob(95))
+								usr << "<b>Você escala a montanha.</b>"
+								usr.climbing=1
+								var/minus=pick(prob(70); 5,prob(30); rand(1,3))
+								minus=pick(prob(60); 5,prob(30); rand(1,50))
+								usr.health-=minus
+								usr.y+=1
+								if(usr.health<=0)
+									Death(usr)
+								sleep(10)
+								usr.climbing=0
+								if(usr.maxhealth<100000)
+									switch(rand(1,5))
+										if(1)
+											taiexp+=rand(1,4)
+											taiup()
+										if(2)
+											if(usr.Weights)
+												if(usr.maxhealth<=5000000)
+													maxhealth+=rand(1,20)
+													usr<<"Você sente sua força aumentar."
+													taiexp+=rand(1,3)
+													taiup()
+												else
+													usr<<"Você já está muito forte."
+										if(3)
+											if(usr.maxhealth<=5000000)
+												maxhealth+=rand(1,20)
+												usr<<"Você sente sua força aumentar."
+											else
+												usr<<"Você já está muito forte."
+										if(4)
+											if(usr.maxhealth<=5000000)
+												maxhealth+=rand(1,15)
+												usr<<"Você sente sua força aumentar."
+											else
+												usr<<"Você já está muito forte."
+										if(5)
+											if(usr.maxhealth<=5000000)
+												taiexp+=rand(1,6)
+												taiup()
+											else
+												usr<<"Você já está muito forte."
+								else
+									switch(rand(1,5))
+										if(1)
+											if(usr.maxhealth<=5000000)
+												maxhealth+=rand(1,5)
+												usr<<"Você sente sua força aumentar."
+											else
+												usr<<"Você já está muito forte."
+										if(2)
+											taiexp+=rand(1,3)
+											taiup()
+							else
+								if(prob(10))
+									usr.loc=locate(src.x,src.y-rand(1,2),src.z)
+									usr << "<b>Você escorregou!</b>"
+
+			climbdown()
+				set name="Escalar Abaixo"
+				set category = "Training"
+				var/obj/mountain2/C
+				if(usr.climbing)
+					return
+				for(C in get_step(usr,SOUTH))
+					if(C)
+						usr.climbing=1
+						usr.loc=locate(src.x,src.y-1,src.z)
+						usr << "<b>Você desce a montanha.</b>"
+						spawn(5) usr.climbing=0
