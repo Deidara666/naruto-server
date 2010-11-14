@@ -6,31 +6,13 @@
 // END_INTERNALS
 // BEGIN_FILE_DIR
 #define FILE_DIR .
-#define FILE_DIR " naruto-server"
-#define FILE_DIR " naruto-server/.svn"
-#define FILE_DIR ".svn"
-#define FILE_DIR ".svn/prop-base"
-#define FILE_DIR ".svn/text-base"
-#define FILE_DIR ".svn/tmp"
-#define FILE_DIR ".svn/tmp/text-base"
-#define FILE_DIR "players"
-#define FILE_DIR "players/.svn"
-#define FILE_DIR "players/.svn/prop-base"
-#define FILE_DIR "players/.svn/text-base"
 #define FILE_DIR "PNG"
-#define FILE_DIR "PNG/.svn"
-#define FILE_DIR "PNG/.svn/prop-base"
-#define FILE_DIR "PNG/.svn/text-base"
 #define FILE_DIR "sounds"
-<<<<<<< .mine#define FILE_DIR "sounds/.svn"
-#define FILE_DIR "sounds/.svn/prop-base"
-#define FILE_DIR "sounds/.svn/text-base"
+#define FILE_DIR "Texturas"
+#define FILE_DIR "Texturas/Grama"
+#define FILE_DIR "Texturas/Terra"
 #define FILE_DIR "tiles"
-#define FILE_DIR "tiles/.svn"
-#define FILE_DIR "tiles/.svn/prop-base"
-#define FILE_DIR "tiles/.svn/text-base"
-=======#define FILE_DIR "tiles"
->>>>>>> .r85// END_FILE_DIR
+// END_FILE_DIR
 
 // BEGIN_PREFERENCES
 // END_PREFERENCES
