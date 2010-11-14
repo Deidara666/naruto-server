@@ -48,7 +48,6 @@ obj
 								usr<<"Você tem que esperar para voltar a treinar"
 								spawn(120) usr.treinolog=1
 
-
 mob
 	verb
 		TreinarGenjutsu()
@@ -91,8 +90,6 @@ mob
 					spawn(120) treinargenjutsu=1
 
 
-
-
 mob
 	proc
 		treinogen()
@@ -120,22 +117,11 @@ mob
 						usr.Frozen = 0
 						usr.icon_state = ""
 						usr<<"Você terminou de descançar..."
+						usr.parardescancar=3
 						return
 					usr.Frozen = 1
 					sleep(10)
 					goto rest
-				else
-					sleep(20)
-					usr.resting = 0
-					usr.Frozen = 0
-					usr.icon_state = ""
-					usr<<"Você terminou de descançar..."
-					if(usr.health>usr.maxhealth)
-						usr.health=usr.maxhealth
-					if(usr.chakra>usr.Mchakra)
-						usr.chakra=usr.Mchakra
-
-
 
 mob
 	verb
@@ -153,9 +139,6 @@ mob
 			if(usr.meditating)
 				usr<<"Not while meditating"
 				return
-			if(usr.Frozen)
-				usr<<"Your frozen"
-				return
 			if(usr.caught)
 				usr<<"Your captured"
 				return
@@ -166,29 +149,30 @@ mob
 				return
 			if(usr.hyoushou)
 				return
-			if(usr.resting)
-				sleep(500)
-				usr.resting=0
-				usr<<"You stop resting..."
-				usr.Frozen = 0
-				usr.icon_state = ""
-				overlays -= 'elec.dmi'
-				return
+			if(usr.parardescancar==1)
+				if(usr.health < usr.maxhealth || usr.chakra < usr.Mchakra)
+					usr.parardescancar=0
+					usr.Frozen=1
+					usr<<"Você começa a descançar..."
+					usr.resting=1
+					usr.icon_state = "rest"
+					overlays+='elec.dmi'
+					usr.rest()
+					overlays-='elec.dmi'
+				else
+					usr<<"Você não precisa descançar"
 			else
-				if(usr.health == usr.maxhealth && usr.chakra == usr.Mchakra)
-					usr<<"You don´t need to Rest..."
-					return
-				if(usr.meditating||usr.onwater)
-					return
-				usr<<"You begin to Rest..."
-				usr.resting=1
-				usr.Frozen = 1
-				usr.icon_state = "rest"
-				overlays+='elec.dmi'
-				usr.rest()
-				overlays-='elec.dmi'
-				return
-
+				if(usr.parardescancar==0)
+					usr.Frozen=0
+					usr.parardescancar=3
+					usr.resting=0
+					usr<<"Você parou de descançar..."
+					usr.Frozen = 0
+					usr.icon_state = ""
+					overlays -= 'elec.dmi'
+				else
+					usr<<"Você tem que esperar para voltar a descançar"
+					spawn(120) usr.parardescancar=1
 
 mob
 	verb
@@ -260,7 +244,6 @@ mob
 									src.DeathCheck6(src)
 									src.onwater = 0
 									return
-
 
 mob
 	cliff
