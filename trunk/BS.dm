@@ -96,7 +96,7 @@ mob
 			Levelup()
 			src.Mnin+=rand(6,10)
 			src.nin=src.Mnin
-			src<<"<font size = 2><b><font color = white>Seu Ninjutsu aumentou !"
+			src<<"<font size = 2><b><font color = green>Seu Ninjutsu aumentou !"
 
 		genup()
 			Skills()

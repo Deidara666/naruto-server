@@ -44,6 +44,10 @@ obj
 	meditate
 		icon='meditate.dmi'
 		icon_state=""
+obj
+	TreinarGen
+		icon='TreinarGen.dmi'
+		icon_state=""
 
 
 obj

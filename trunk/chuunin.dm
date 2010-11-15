@@ -400,26 +400,26 @@ obj/GT
 			set category = "Commands"
 			set name = "Genin Test"
 			if(usr.dir!=NORTH)
-				usr<<"Sorry you need to be turned to the test..."
+				usr<<"Desculpe, mas você precisa estar de frente para o teste ..."
 				return
 			if(!Genintime||Genintime==null)
-				usr<<"Sorry there´s no Genin exam going at the moment..."
+				usr<<"Desculpe não há nenhum exame Genin no momento ..."
 				return
 			if(usr.rank=="Genin"||usr.rank=="Chuunin"||usr.rank=="Jounin"||usr.rank=="Kage")
-				usr<<"Sorry you already have done the test and already passed..."
+				usr<<"Desculpe, mas você já ter fez o teste e já passou ..."
 				return
 			if(usr.Genintest)
-				usr<<"Sorry you are already doing the test..."
+				usr<<"Desculpe, mas você já está fazendo o teste ..."
 				return
 			if(usr.Geninmade)
-				usr<<"Sorry you just made the test you can´t do it until this one finishes and another start..."
+				usr<<"Desculpe, mas você só pode fazer o teste uma vez. Aguarde o proximo Exâme Genin e vá estudando até lá ..."
 				return
 			usr.Frozen=1
 			usr.Genintest=1
 			usr.score=1
 			if(usr.cantest&&usr.rank=="Student")
 				usr.cantest=0
-				switch(input("Qual e a classificação ninja mais baixa?","Rank Baixo",) in list("Academy Student","Genin","Chuunin","Jounin","Kage"))
+				switch(input("Qual e a classificação ninja mais baixa?","Rank Baixo",) in list("Estudante","Genin","Chuunin","Jounin","Kage"))
 					if("Genin")
 						usr.score += 1
 					else
@@ -429,7 +429,7 @@ obj/GT
 						usr.score += 1
 					else
 						usr.score += 0
-				switch(input("Quem Mato o 3 Hokage","Matou",) in list("Orochimaru","Uchiha Hades","Mortinho","Baiacu da Cintra"))
+				switch(input("Quem Mato o 3 Hokage","Matou",) in list("Orochimaru","Naruto","Uchiha Itachi","Kisame"))
 					if("Orochimaru")
 						usr.score += 1
 					else
@@ -444,7 +444,7 @@ obj/GT
 						usr.score += 1
 					else
 						usr.score += 0
-				switch(input("Qual Maior rank ?","rank",) in list("Japa Genin Forever","Genin","Chuunin","Jounin","Kage"))
+				switch(input("Qual Maior rank ?","rank",) in list("Estudante","Genin","Chuunin","Jounin","Kage"))
 					if("Kage")
 						usr.score += 1
 					else
@@ -454,7 +454,7 @@ obj/GT
 						usr.score += 1
 					else
 						usr.score += 0
-				switch(input("Qual nome do papai do kakashi","Hyuuga",) in list("Japa Genin","LordBart","Canino Branco","Canino Preto","Kakashi Senpai"))
+				switch(input("Qual nome do papai do kakashi","kakashi",) in list("Kakashi","Uchiha obito","Canino Branco","Canino Preto","Kakashi Senpai"))
 					if("Canino Branco")
 						usr.score += 1
 					else
@@ -473,13 +473,13 @@ obj/GT
 					if("Summon De Cachorro")
 						usr.score += 1
 						if(usr.score >= 9)
-							usr<<"Congratulations you have passed the genin exam see the teacher!"
+							usr<<"Parabéns, você passou no exame genin vá falar com seu professor!"
 							usr.testing=0
 							usr.Frozen=0
 							usr.tested=1
 							return
 						else
-							usr<<"You have failed the genin exam!Better luck next time."
+							usr<<"Você falhou no exame genin! Mais sorte da próxima!"
 							usr.testing=0
 							usr.cantest=1
 							usr.Frozen=0
@@ -488,19 +488,19 @@ obj/GT
 					else
 						usr.score += 0
 						if(usr.score >= 9)
-							usr<<"Congratulations you have passed the genin exam see the teacher!"
+							usr<<"Parabéns, você passou no exame genin vá falar com seu professor!"
 							usr.testing=0
 							usr.cantest=1
 							usr.Frozen=0
 							usr.tested=1
 							return
 						else
-							usr<<"You have failed the genin exam!Better luck next time."
+							usr<<"Você falhou no exame genin! Mais sorte da próxima!"
 							usr.testing=0
 							usr.cantest=1
 							usr.Frozen=0
 							usr.tested=0
 
 			else
-				usr<<"You must wait 15 minutes after takeing the test before you can take the genin exam again."
+				usr<<"Você deve esperar 15 minutos para fazer o exame genin novamente."
 				return

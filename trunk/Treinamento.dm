@@ -75,7 +75,8 @@ mob
 				treinargenjutsu=0
 				usr.meditating=0
 				usr.treinogen()
-				usr.Frozen=1
+				usr.Frozen=0
+				usr.icon_state="TreinarGen"
 			else
 				if(treinargenjutsu==0)
 					usr.Frozen=0
@@ -94,8 +95,7 @@ mob
 	proc
 		treinogen()
 			if(treinargenjutsu==0)
-				src.overlays += 'electricity.dmi'
-				usr.icon_state="rest"
+				src.overlays += 'TreinarGen.dmi'
 				spawn(15) usr<<"Você treina seu genjutsu."
 				spawn(60) genup()
 				spawn(60) treinogen()
