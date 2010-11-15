@@ -41,7 +41,6 @@
 #include "Summon.dm"
 #include "Texturas do Mapa.dm"
 #include "Treinamento.dm"
-#include "Variáveis do Jogador.dm"
 #include "verbs.dm"
 #include "war.dm"
 #include "map.dmp"
