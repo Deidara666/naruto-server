@@ -201,7 +201,7 @@ mob/owner
 				Chuunintime=1
 				usr.loc=locate(52,40,13)
 			else
-				world<<"A primeira parte do exame chunin acabou!"
+				world<<"A primeira parte do exame Chuunin acabou!"
 				Chuunintime=0
 mob/var/tmp
 	testing=0

@@ -14,24 +14,24 @@ mob/uchiha
 				usr<<"NON PK ZONE!"
 				return
 			if(usr.caught)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.Frozen)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.captured)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(M.froze)
 				return
 			if(usr.froze)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.resting)
 				usr<<"Not while resting"
 				return
 			if(usr.meditating)
-				usr<<"Not while meditating"
+				usr<<"Não enquanto medita"
 				return
 			else
 				usr.overlays+='Tsukiyomi.dmi'
@@ -79,7 +79,7 @@ mob/uchiha
 						sleep(20)
 						var/damage = round(usr.gen*3)
 						M.health -= damage
-						view(usr)<<"[M] has recieved [damage] damage from Tsukiyomi"
+						view(usr)<<"[M] recebeu [damage] de dano do Tsukiyomi"
 						if(M.health <=0)
 							M.Death(usr)
 						usr.froze = 0
@@ -95,27 +95,27 @@ mob/uchiha
 			if(usr.illuminating)
 				return
 			if(usr.froze)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.resting)
 				usr<<"Not while resting"
 				return
 			if(usr.caught)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.meditating)
-				usr<<"Not while meditating"
+				usr<<"Não enquanto medita"
 				return
 			if(usr.Frozen)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.captured)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			usr.illuminating=1
 			for(var/mob/npcs/Bunshin/B in world)
 				if(usr.Mnin <= 25&&usr.Mgen <= 15&&usr.Mtai <= 20)
-					usr << "Sorry not strong enough......"
+					usr << "Desculpa, não é forte o suficiente ..."
 					return
 				else
 					var/image/I = image('Bun.dmi',B,"googa")
@@ -123,7 +123,7 @@ mob/uchiha
 					usr.illu = 1
 			for(var/mob/npcs/KBunshin/K in world)
 				if(usr.Mnin <= 100&&usr.Mgen <= 111&&usr.Mtai <= 100)
-					usr << "no......"
+					usr << "não......"
 					return
 				else
 					var/image/I = image('Bun.dmi',K,"googa")
@@ -144,22 +144,22 @@ mob/uchiha
 mob/proc/stoptsuki()
 	hurt
 		if(usr.froze)
-			usr<<"Your frozen"
+			usr<<"Você está freezado"
 			return
 		if(usr.resting)
 			usr<<"Not while resting"
 			return
 		if(usr.meditating)
-			usr<<"Not while meditating"
+			usr<<"Não enquanto medita"
 			return
 		if(usr.Frozen)
-			usr<<"Your frozen"
+			usr<<"Você está freezado"
 			return
 		if(usr.caught)
-			usr<<"Your captured"
+			usr<<"Você foi capturado"
 			return
 		if(usr.captured)
-			usr<<"Your captured"
+			usr<<"Você foi capturado"
 			return
 		if(src.stop == 0)
 			src.health -= times
@@ -183,13 +183,13 @@ mob/uchiha
 			if(M.PK==0)
 				return
 			if(usr.Frozen)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.captured)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.caught)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.PK==0)
 				usr<<"NON PK ZONE!"
@@ -199,17 +199,17 @@ mob/uchiha
 					usr << "Their already froze.."
 					return
 			if(usr.froze)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.resting)
 				usr<<"Not while resting"
 				return
 			if(usr.meditating)
-				usr<<"Not while meditating"
+				usr<<"Não enquanto medita"
 				return
 			else // If the firing var isn't 1...
-				M<<"Your frozen by [usr]'s Sharingan."
-				usr<<"You froze [M] with your Sharingan"
+				M<<"Você foi freezado pelo [usr]'s Sharingan."
+				usr<<"Você freezo [M] com seu Sharingan"
 				var/Sleeptime = round(usr.gen/10)
 				if(Sleeptime <= 1)
 					Sleeptime = 55
@@ -218,8 +218,8 @@ mob/uchiha
 					sleep(Sleeptime)
 					if(M)
 						M.Frozen=0
-						M<<"You break out of [usr]'s Sharingan freeze."
-						usr<<"[M] is free from your Sharingan!"
+						M<<"Você saiu do [usr]'s Sharingan freeze."
+						usr<<"[M] está livre do seu Sharingan!"
 						M.froze = 0
 					sleep(8)
 				else
@@ -228,8 +228,8 @@ mob/uchiha
 					sleep(Sleeptime)
 					if(M)
 						M.Frozen=0
-						M<<"You break out of [usr]'s Sharingan freeze."
-						usr<<"[M] is free from your Sharingan!"
+						M<<"Você saiu do [usr]'s Sharingan freeze."
+						usr<<"[M] está livre do seu Sharingan!"
 						M.froze = 0
 					sleep(8)
 				sleep(100)
@@ -243,29 +243,29 @@ mob/uchiha
 			set category = "Doujutsu"
 			set name = "Sharingan"
 			if(usr.froze)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.resting)
 				usr<<"Not while resting"
 				return
 			if(usr.meditating)
-				usr<<"Not while meditating"
+				usr<<"Não enquanto medita"
 				return
 			if(usr.Frozen)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.captured)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.caught)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(!usr.shari&&usr.sharingan1&&!usr.ST) // If the mob's firing var is one...
 				usr.overlays+='sharinganthing.dmi'
 				usr.icon_state="1"
 				usr.overlays += 'sharingan.dmi'
 				view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#8b0000>S</FONT><FONT COLOR=#a0050f>h</FONT><FONT COLOR=#b40b1f>a</FONT><FONT COLOR=#c9102e>r</FONT><FONT COLOR=#dc143c>i</FONT><FONT COLOR=#ca1131>n</FONT><FONT COLOR=#b80d25>g</FONT><FONT COLOR=#a50818>a</FONT><FONT COLOR=#93040c>n</FONT><FONT COLOR=#800000>!</FONT>"
-				view()<<"[usr]'s pupils dialate to form Stage 1 Sharingan"
+				view()<<"[usr]'s suas pupilas dilatam para dar forma ao 1° stagio do Sharingan"
 				usr.shari=1
 				usr.ST=1
 				usr.Suses += 1
@@ -285,7 +285,7 @@ mob/uchiha
 				usr.overlays += 'sharingan.dmi'
 				usr.icon_state="2"
 				view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#8b0000>S</FONT><FONT COLOR=#a0050f>h</FONT><FONT COLOR=#b40b1f>a</FONT><FONT COLOR=#c9102e>r</FONT><FONT COLOR=#dc143c>i</FONT><FONT COLOR=#ca1131>n</FONT><FONT COLOR=#b80d25>g</FONT><FONT COLOR=#a50818>a</FONT><FONT COLOR=#93040c>n</FONT><FONT COLOR=#800000>!</FONT>"
-				view()<<"[usr]'s pupils dialate to form Stage 2 Sharingan"
+				view()<<"[usr]'s suas pupilas dilatam para dar forma ao 2° stagio do Sharingan"
 				usr.shari=1
 				usr.ST=1
 				usr.Suses += 1
@@ -306,7 +306,7 @@ mob/uchiha
 				usr.overlays += 'sharingan.dmi'
 				usr.icon_state="3"
 				view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#8b0000>S</FONT><FONT COLOR=#a0050f>h</FONT><FONT COLOR=#b40b1f>a</FONT><FONT COLOR=#c9102e>r</FONT><FONT COLOR=#dc143c>i</FONT><FONT COLOR=#ca1131>n</FONT><FONT COLOR=#b80d25>g</FONT><FONT COLOR=#a50818>a</FONT><FONT COLOR=#93040c>n</FONT><FONT COLOR=#800000>!</FONT>"
-				view()<<"[usr]'s pupils dialate to form Stage 3 Sharingan"
+				view()<<"[usr]'s suas pupilas dilatam para dar forma ao 3° stagio do Sharingan"
 				usr.Suses += 1
 				usr.shari=1
 				usr.ST=1
@@ -330,7 +330,7 @@ mob/uchiha
 				usr.overlays += 'sharingan.dmi'
 				usr.icon_state="mangekyou"
 				view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#696969>M</FONT><FONT COLOR=#766065>a</FONT><FONT COLOR=#835760>n</FONT><FONT COLOR=#904d5b>g</FONT><FONT COLOR=#9d4456>e</FONT><FONT COLOR=#a93a50>k</FONT><FONT COLOR=#b6314b>y</FONT><FONT COLOR=#c32746>o</FONT><FONT COLOR=#d01e41>u</FONT><FONT COLOR=#dc143c> </FONT><FONT COLOR=#d41337>S</FONT><FONT COLOR=#ca1131>h</FONT><FONT COLOR=#c10f2b>a</FONT><FONT COLOR=#b80d25>r</FONT><FONT COLOR=#af0b1f>i</FONT><FONT COLOR=#a50818>n</FONT><FONT COLOR=#9c0612>g</FONT><FONT COLOR=#93040c>a</FONT><FONT COLOR=#890206>n</FONT><FONT COLOR=#800000>!</FONT>"
-				view()<<"[usr]'s pupils dialate to form the Legendary Mangekyou Sharingan"
+				view()<<"[usr]'s suas pupilas dilatam para dar forma ao Legendary Mangekyou Sharingan"
 				usr.Suses += 1
 				usr.shari=1
 				usr.gen=usr.gen*1.2
@@ -377,22 +377,23 @@ mob/uchiha
 			if(usr.firing)
 				return
 			if(usr.froze)
-				usr<<"Your frozen"
+				usr<<"Você está freezado
+"
 				return
 			if(usr.resting)
 				usr<<"Not while resting"
 				return
 			if(usr.meditating)
-				usr<<"Not while meditating"
+				usr<<"Não enquanto medita"
 				return
 			if(usr.Frozen)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.caught)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.captured)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			usr.goingmange=1
 			usr.sharingan3=0
@@ -425,19 +426,19 @@ mob/hyuuga
 			set category = "Doujutsu"
 			set name = "Byakugan"
 			if(usr.froze)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.Frozen)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.caught)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.captured)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.resting)
-				usr<<"Not while resting"
+				usr<<"Não enquanto medita"
 				return
 			if(usr.meditating)
 				usr<<"Not while meditating"
@@ -449,7 +450,7 @@ mob/hyuuga
 				usr.overlays += 'byakugan.dmi'
 				flick("1",B)
 				view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#f5f5f5>B</FONT><FONT COLOR=#e4eff2>y</FONT><FONT COLOR=#d2e7ee>a</FONT><FONT COLOR=#bfe0ea>k</FONT><FONT COLOR=#add8e6>u</FONT><FONT COLOR=#b1d4df>g</FONT><FONT COLOR=#b5cfd7>a</FONT><FONT COLOR=#b9cad0>n</FONT><FONT COLOR=#bdc5c8>!</FONT><FONT COLOR=#c0c0c0>!</FONT>"
-				view()<<"[usr]'s eyes grow brighter"
+				view()<<"Os olhos de [usr] ficam mais brilhantes"
 				usr.tai = usr.tai*2
 				usr.bya=1
 				usr.byaU += 1
@@ -468,7 +469,7 @@ mob/hyuuga
 				usr.overlays += 'byakugan.dmi'
 				flick("1",B)
 				view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#f5f5f5>B</FONT><FONT COLOR=#e4eff2>y</FONT><FONT COLOR=#d2e7ee>a</FONT><FONT COLOR=#bfe0ea>k</FONT><FONT COLOR=#add8e6>u</FONT><FONT COLOR=#b1d4df>g</FONT><FONT COLOR=#b5cfd7>a</FONT><FONT COLOR=#b9cad0>n</FONT><FONT COLOR=#bdc5c8>!</FONT><FONT COLOR=#c0c0c0>!</FONT>"
-				view()<<"[usr]'s eyes grow brighter with more intensity"
+				view()<<"Os olhos de [usr] ficam mais brilhantes com grande intensidade"
 				usr.bya=1
 				usr.byaU += 1
 				usr.tai = usr.tai*2
@@ -495,13 +496,13 @@ mob/hyuuga
 			set name = "Search"
 			for(var/mob/M in world)
 				if(usr.froze)
-					usr<<"Your frozen"
+					usr<<"Você está freezado"
 					return
 				if(usr.resting)
 					usr<<"Not while resting"
 					return
 				if(usr.meditating)
-					usr<<"Not while meditating"
+					usr<<"Não enquanto medita"
 					return
 				if(M.client&&M.z==usr.z)
 					usr<<"{\icon[M][M.name],Rank - [M.rank], health - [M.health],Chakra - [M.chakra]"
