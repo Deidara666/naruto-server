@@ -263,8 +263,8 @@ obj/GT2
 						usr.points += 1
 					else
 						usr.points += 0
-				switch(input("Você está numa cela onde existem duas portas, cada uma vigiada por um guarda. Existe uma porta que dá para a liberdade, e outra para a morte. Você deve escolher uma porta. Poderá fazer uma pergunta a um dos dois guardas que vigiam as portas. Um dos guardas fala a verdade, e o outro mente e você não sabe quem é o mentiroso e quem fala a verdade. Que pergunta você faria?") in list("Segundo o outro guarda, Qual a porta que da para a liberdade? e saio pela outra porta.","Segundo o outro guarda, Qual a porta que da para a liberdade? e saio pela porta do guarda que respondeu.","Você é o mentiroso? independente da resposta saio pela outra porta"))
-					if("Segundo o outro guarda, Qual a porta que da para a liberdade? e saio pela outra porta.")
+				switch(input("Qual o cargo mais alto dentro de uma vila?") in list("Jounin","Sage","Taka lider","Sage","jinchuuriki","Kage"))
+					if("Kage")
 						usr.points+= 1
 					else
 						usr.points += 0
