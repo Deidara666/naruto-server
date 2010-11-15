@@ -108,7 +108,7 @@ mob
 				Read(F)
 				for(var/stuff in src.V)
 					src.verbs += stuff
-				world<<"<font size=1><font color=Yellow><B>Info: <font color=white>[src]([src.key]) has logged in..."
+				world<<"<font size=1><font color=Yellow><B>Info: <font color=white>[src]([src.key]) se logou..."
 				src.loc = locate(xco,yco,zco)
 				client.view=6
 				src.OOC = 1

@@ -29,22 +29,22 @@ mob
 			if(src.Kaiten||src.sphere||src.ingat)
 				return
 			if(src.froze)
-				src<<"Your frozen"
+				src<<"Você está freezado"
 				return
 			if(src.Frozen)
-				src<<"Your frozen"
+				src<<"Você está freezado"
 				return
 			if(src.captured)
-				src<<"Your captured"
+				src<<"Você foi capturado"
 				return
 			if(src.caught)
-				src<<"Your captured"
+				src<<"Você foi capturado"
 				return
 			if(src.resting)
-				src<<"Not while resting"
+				src<<"Não enquanto estiver descansando"
 				return
 			if(src.meditating)
-				src<<"Not while meditating"
+				src<<"Não enquanto estiver meditando"
 				return
 			if(src.firing)
 				return

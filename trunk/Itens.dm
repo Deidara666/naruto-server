@@ -140,12 +140,12 @@ obj
 		verb
 			Comer()
 				if(usr.health < usr.maxhealth)
-					usr<<"Você come alguns Ramen."
+					usr<<"Você come Ramen."
 					usr.health += 1000
 					usr.calories += 2000
 					del(src)
 				else
-					usr<<"Você come alguns Ramen."
+					usr<<"Você come Ramen."
 					usr.calories += 2500
 					del(src)
 			Olhar()
@@ -949,12 +949,12 @@ obj/TreeMarker
 			switch(input("Do you wish to mark the top of the tree?",text) in list ("Yes","No"))
 				if("Yes")
 					if(usr.ox==1)
-						usr<<"You mark the top of the tree"
+						usr<<"Você marca o topo da arvoré."
 						usr.ox=2
 					else
-						usr<<"Whats the point no ones watching."
+						usr<<"Qual é o ponto de não os ver."
 				if("No")
-					usr<<"Ok then."
+					usr<<"Ok então."
 
 
 
@@ -967,7 +967,7 @@ mob/npc/Bugs
 			switch(input("Do you wish to pick it up?",text) in list ("Yes","No"))
 				if("Yes")
 					if(usr.snake==1)
-						usr<<"You pick up a bug"
+						usr<<"Você pegou um bug"
 						usr.bugs+=1
 						del(src)
 					else

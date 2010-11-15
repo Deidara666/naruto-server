@@ -31,10 +31,10 @@ obj
 				set category = "Treino"
 				set src in oview(1)
 				if(usr.rank=="Student")
-					usr<<"Você precisa ser Chunin ou mais para treinar nesse Tronco."
+					usr<<"Você precisa ser Chunnin ou mais para treinar nesse Tronco."
 				else
 					if(usr.rank=="Guenin")
-						usr<<"Você precisa ser Chunin ou mais para treinar nesse Tronco."
+						usr<<"Você precisa ser Chunnin ou mais para treinar nesse Tronco."
 					else
 						if(usr.treinolog==1)
 							usr.treinolog=0
@@ -61,10 +61,10 @@ mob
 				usr<<"Você está paralizado"
 				return
 			if(usr.caught)
-				usr<<"Your captured"
+				usr<<"Você foi capturado!"
 				return
 			if(usr.captured)
-				usr<<"Your captured"
+				usr<<"Você foi capturado!"
 				return
 			if(usr.resting)
 				usr<<"Não enquanto está Descansando"
@@ -129,21 +129,21 @@ mob
 			set category="Treino"
 			set name="Descançar"
 			if(usr.Kaiten)
-				usr<<"You nuts? You're spinning deflecting attacks. How do you Rest? o_O"
+				usr<<"Está louco? Você está girando para desviar ataques. Como você descansa?"
 				return
 			if(usr.battlingRC)
 				return
 			if(usr.froze)
-				usr<<"Your frozen"
+				usr<<"Você está freezado"
 				return
 			if(usr.meditating)
-				usr<<"Not while meditating"
+				usr<<"Não enquanto meditar"
 				return
 			if(usr.caught)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.captured)
-				usr<<"Your captured"
+				usr<<"Você foi capturado"
 				return
 			if(usr.firing)
 				return
@@ -199,13 +199,13 @@ mob
 							var/random = rand(1,10)
 							if(random==3)
 								if(src.Mchakra<=1000000)
-									src<<"Your chakra raised!"
+									src<<"Seu chakra se elevou!"
 									src.Mchakra += rand(2,5)
 							var/random2=rand(1,8)
 							if(random2==1||random2==3)
 								var/random3=rand(1,10)
 								if(random3==2)
-									src<<"<font size=1><font name=courier new><font color=green>You control your chakra better!"
+									src<<"<font size=1><font name=courier new><font color=green>Você controla seu chakra melhor!"
 									src.ChakraC+=1
 								if(src.health<=0)
 									src.DeathCheck6(src)
@@ -227,7 +227,7 @@ mob
 						var/random = rand(1,10)
 						if(random==3)
 							if(src.Mchakra<=1000000)
-								src<<"Your chakra raised!"
+								src<<"Seu chakra se elevou!"
 								src.Mchakra += rand(2,5)
 								if(src.health <= 0)
 									src.DeathCheck6(src)
@@ -238,7 +238,7 @@ mob
 						var/random = rand(1,10)
 						if(random==3)
 							if(src.Mchakra<=1000000)
-								src<<"Your chakra raised!"
+								src<<"Seu chakra se elevou!"
 								src.Mchakra += rand(2,5)
 								if(src.health<=0)
 									src.DeathCheck6(src)
