@@ -377,11 +377,10 @@ mob/uchiha
 			if(usr.firing)
 				return
 			if(usr.froze)
-				usr<<"Você está freezado
-"
+				usr<<"Você está freezado"
 				return
 			if(usr.resting)
-				usr<<"Not while resting"
+				usr<<"Não enquanto descansa"
 				return
 			if(usr.meditating)
 				usr<<"Não enquanto medita"

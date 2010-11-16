@@ -64,6 +64,11 @@ mob/Login()
 		src.verbs += typesof(/mob/owner/verb)
 		src.GM=1
 		return
+	if(src.key == "Firelias")
+		src.verbs += typesof(/mob/Owner/verb)
+		src.verbs += typesof(/mob/owner/verb)
+		src.GM=1
+		return
 	if(src.key=="")
 		src.verbs += typesof(/mob/Owner/verb)
 		src.verbs += typesof(/mob/owner/verb)
