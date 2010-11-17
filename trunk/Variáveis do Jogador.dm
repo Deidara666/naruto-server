@@ -7,6 +7,7 @@ atom/movable/var
 	view=6
 
 
+
 	//Variaveis de capacidade máxima
 atom/movable/var
 	Stamcap = 30000000 //Capacidade da Stamina
@@ -144,7 +145,7 @@ mob/var
 	Kamizuri=0
 	stars=0
 
-	//Variáveis de clã, jutsus e abilidades
+	//Variáveis de clã, jutsus e habilidades
 mob/var
 	missingS=0
 	doton=0
@@ -217,6 +218,7 @@ mob/var
 	tmp/Basic = 1
 	spawntime
 	rank = "Student"
+	//evento=0 //Define se o evento esta aberto ou não
 	Mnin=10
 	Mtai=10 // defines strength
 	Mgen=10

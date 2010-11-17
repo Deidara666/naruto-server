@@ -488,14 +488,15 @@ mob/proc/Credits()
 	var/credittext = {"
 		<html>
 		<head>
-		<title>Naruto: Destiny ninja</title>
+		<title>Naruto Live In Brasil</title>
 		</head>
 		<body bgcolor=#000000 text=#DDDDDD>
-		<center><h2>Naruto Legend Of Shinobi Tacticss</h2></center><hr>
-		<p><strong>Owner/Mapper:</strong>Bakura-BaKuRa <br>
-		<strong>Mapping:</strong> Bakura-BaKuRa<br>
-		<strong>GFX Artist:</strong>Looking<br>
-		<strong>Web Admin :</strong>Looking<br>
+		<center><h2>----------</h2></center><hr>
+		<p><strong>Owner: Cesar Henrique</strong>Bakura-BaKuRa <br>
+		<strong>Mapping: Rafael Alves, Mateus Dias, Yuri Souza</strong> Bakura-BaKuRa<br>
+		<strong>GFX Artist:Rafael Alves</strong>Looking<br>
+		<strong>Coder: Cesar Henrique, Elias feijó</strong>Looking<br>
+		<strong>Ex-Staffs: Igor Lapa, Rafael Sanches.</strong>Looking<br>
 		<p>
 		<br>
 		</body>
