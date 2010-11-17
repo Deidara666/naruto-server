@@ -63,6 +63,7 @@ mob/var
 
 
 	treinargenjutsu = 1
+	treinarninjutsu = 1
 	parardescancar = 1
 
 

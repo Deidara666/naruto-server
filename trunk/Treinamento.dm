@@ -100,6 +100,52 @@ mob
 				spawn(60) genup()
 				spawn(60) treinogen()
 
+
+mob
+	proc
+		treinonin()
+			if(treinarninjutsu==0)
+				spawn(15) usr<<"Você treina seu ninjutsu."
+				spawn(60) ninup()
+				spawn(60) treinonin()
+
+
+mob
+	proc
+		TreinarNin()
+			set category ="Treino"
+			set name="Treinar Ninjutsu"
+			if(usr.firing)
+				return
+			if(usr.resting)
+				return
+			if(usr.froze)
+				usr<<"Você está paralizado"
+				return
+			if(usr.caught)
+				usr<<"Você foi capturado!"
+				return
+			if(usr.captured)
+				usr<<"Você foi capturado!"
+				return
+			if(usr.resting)
+				usr<<"Não enquanto está Descansando"
+				return
+			if(usr.canmed)
+				return
+			if(treinarninjutsu==1)
+				treinarninjutsu=0
+				usr.treinonin()
+			else
+				if(treinarninjutsu==0)
+					treinarninjutsu=3
+					usr << "Você parou de treinar seu ninjutsu."
+				else
+					usr<<"Você tem que esperar para voltar a treinar"
+					spawn(120) treinarninjutsu=1
+
+
+
 mob
 	proc
 		rest()
