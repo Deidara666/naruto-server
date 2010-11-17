@@ -6,6 +6,7 @@
 // END_INTERNALS
 // BEGIN_FILE_DIR
 #define FILE_DIR .
+#define FILE_DIR "backup"
 #define FILE_DIR "PNG"
 #define FILE_DIR "sounds"
 #define FILE_DIR "Texturas"
