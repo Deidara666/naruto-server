@@ -100,6 +100,18 @@ turf
 		icon = 'Throne.dmi'
 		icon_state = "throne"
 		density = 0
+	CadeiraGM
+		icon = 'CadeiraGM.dmi'
+		icon_state = "CadeiraGM"
+		density = 0
+	CadeiraADM
+		icon = 'CadeiraADM.dmi'
+		icon_state = "CadeiraADM"
+		density = 0
+	CadeiraOWNER
+		icon = 'CadeiraOWNER.dmi'
+		icon_state = "CadeiraOWNER"
+		density = 0
 	waterfall1
 		icon = 'waterfall.dmi'
 		icon_state = "1"
@@ -314,6 +326,17 @@ turf
 				var/mob/M = A
 				if(M.client)
 					M.loc = locate(1,1,36)
+	Goevento//usr.loc = locate(x,y,4)
+
+		icon = 'Goevento.dmi'
+
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(27,47,37)
 
 	StarTrainingRoomE//usr.loc = locate(x,y,4)
 		icon = 'StarTrainingRoom.dmi'
