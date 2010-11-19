@@ -73,29 +73,23 @@ mob
 				return
 			if(treinargenjutsu==1)
 				treinargenjutsu=0
-				usr.meditating=0
 				usr.treinogen()
-				usr.Frozen=0
-				usr.icon_state="TreinarGen"
+				src.overlays += 'TreinarGen.dmi'
 			else
-				if(treinargenjutsu==0)
-					usr.Frozen=0
-					usr.meditating=1
-					treinargenjutsu=3
-					usr.icon_state=null
-					src.overlays -= 'electricity.dmi'
-					usr.canmed=1
-					usr << "Você parou de treinar seu genjutsu."
-				else
+				if(treinargenjutsu==3)
 					usr<<"Você tem que esperar para voltar a treinar"
 					spawn(120) treinargenjutsu=1
+				if(treinargenjutsu==0)
+					treinargenjutsu=3
+					usr << "Você parou de treinar seu genjutsu."
+					src.overlays -= 'TreinarGen.dmi'
+					return
 
 
 mob
 	proc
 		treinogen()
 			if(treinargenjutsu==0)
-				src.overlays += 'TreinarGen.dmi'
 				spawn(15) usr<<"Você treina seu genjutsu."
 				spawn(60) genup()
 				spawn(60) treinogen()
@@ -111,7 +105,7 @@ mob
 
 
 mob
-	proc
+	verb
 		TreinarNin()
 			set category ="Treino"
 			set name="Treinar Ninjutsu"
