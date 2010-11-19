@@ -71,6 +71,8 @@ mob
 				return
 			if(usr.canmed)
 				return
+			if(usr.treinarninjutsu==0)
+				return
 			if(treinargenjutsu==1)
 				treinargenjutsu=0
 				usr.treinogen()
@@ -122,7 +124,7 @@ mob
 			if(usr.captured)
 				usr<<"Você foi capturado!"
 				return
-			if(usr.resting)
+			if(usr.treinargenjutsu==0)
 				usr<<"Não enquanto está Descansando"
 				return
 			if(usr.canmed)
