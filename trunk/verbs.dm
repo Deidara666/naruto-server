@@ -158,8 +158,8 @@ proc
 
 mob/verb/Help()
 
-	set name ="AJUDA"
-	set category = "AJUDA"
+	set name ="Ajuda"
+	set category = "Ajuda"
 	switch(input("O que você precisa?","Ajuda",) in list("Créditos","Treinamento","Jutsus","NPCs","Me Concerte <-----","Mudar o ícone da face","Info do server","Huds","Tamanho da tela","Cancelar"))
 		if("Treinamento")
 			switch(input("O que você quer saber?","Ajuda",) in list("Ninjutsu","Genjutsu","Taijutsu","Cancelar"))
