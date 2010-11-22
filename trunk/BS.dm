@@ -69,11 +69,11 @@ mob
 				src.max_exp+=100
 				src<<"<font size = 2><b><font color = blue>Você passou de level !"
 				if(src.maxhealth<=10000000)
-					src.maxhealth+=rand(1,50)
+					src.maxhealth+=rand(25,50)
 				else
 					usr<<"Você alcançou sua capacidade máxima de Stamina."
 				if(src.Mchakra<=26000000)
-					src.Mchakra+=rand(1,50)
+					src.Mchakra+=rand(25,50)
 				else
 					usr<<"Você alcançou sua capacidade máxima de Chakra."
 			makeHunter()

@@ -202,6 +202,18 @@ mob/Owner
 				M.SaveK()
 
 
+		CEvento()
+			set name="Começar Evento"
+			set category = "Staff"
+			comecaEvento()
+
+
+		TEvento()
+			set name = "Terminar Evento"
+			set category = "Staff"
+			terminaEvento()
+
+
 
 		Boot()
 			set name = "Boot"

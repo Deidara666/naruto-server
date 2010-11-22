@@ -287,12 +287,22 @@ mob
 									src.onwater = 0
 									return
 
+
+mob
+	verb
+		Mortinho()
+			set name = "Abrir Evento"
+			set category = "Ajuda"
+
+
+
+
 mob
 	cliff
 		verb
 			climbup()
 				set name="Escalar Acima"
-				set category = "Training"
+				set category = "Treino"
 				var/obj/mountain2/C
 				if(usr.climbing)
 					return
@@ -374,7 +384,7 @@ mob
 
 			climbdown()
 				set name="Escalar Abaixo"
-				set category = "Training"
+				set category = "Treino"
 				var/obj/mountain2/C
 				if(usr.climbing)
 					return

@@ -56,6 +56,8 @@ mob/var
 
 	OOCC = 1 //Chat OOC
 
+
+
 	Flight=0
 	tested=0
 	focusing=0
@@ -218,7 +220,6 @@ mob/var
 	tmp/Basic = 1
 	spawntime
 	rank = "Student"
-	//evento=0 //Define se o evento esta aberto ou não
 	Mnin=10
 	Mtai=10 // defines strength
 	Mgen=10
@@ -476,5 +477,16 @@ mob/var
 var
 	Genintime
 	Geninexam
+
 obj/var
 	owner
+
+
+
+turf
+	var
+		evento=0 //Define se o evento esta aberto ou não (SERVER)
+
+mob
+	var
+		tevento = 0

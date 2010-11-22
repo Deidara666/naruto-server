@@ -1111,3 +1111,18 @@ mob
 			else
 				usr<<"Não há um GM"
 				return
+
+mob
+	proc
+		comecaEvento()
+			if(tevento == 1)
+				src<<"Já tem um evento em andamento"
+			if(tevento==0)
+				evento = 1
+				world << "O Evento começou"
+		terminaEvento()
+			if(tevento == 0)
+				src<<"Não tem um evento em andamento"
+			if(tevento==1)
+				evento = 0
+				world << "O Evento Terminou"

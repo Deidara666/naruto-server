@@ -333,10 +333,14 @@ turf
 		icon_state = "openwall"
 		density = 0
 		Enter(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.client)
-					M.loc = locate(27,47,37)
+			if(evento == 0)
+				src << "Não tem nenhum evento no momento"
+				return
+			if(evento==1)
+				if(ismob(A))
+					var/mob/M = A
+					if(M.client)
+						M.loc = locate(27,47,37)
 
 	StarTrainingRoomE//usr.loc = locate(x,y,4)
 		icon = 'StarTrainingRoom.dmi'
