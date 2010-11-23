@@ -20,7 +20,7 @@ obj
 					usr << "Você vestiu o [src.name]."
 					src.suffix = "Equipped"
 			Olhar()
-				usr<<"Este é um chapéu oficial usado pelos Hoshikage."
+				usr<<"Este é um chapéu oficial usado pelo Hoshikage."
 			Soltar()
 				if(src:worn == 1)
 					usr << "Não enquanto isto está sendo usado."
@@ -2072,6 +2072,96 @@ obj
 					src.suffix = "Equipped"
 			Olhar()
 				usr<<"Esta é uma máscara ANBU da vila Névoa."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+
+obj
+	Anbumask1
+		name = "Máscara anbu"
+		icon = 'anbumask1.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'anbumask1.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'anbumask1.dmi'
+					usr << "Você vestiu a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Esta é uma máscara ANBU."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+
+obj
+	Anbumask2
+		name = "Máscara anbu"
+		icon = 'anbumask2.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'anbumask2.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'anbumask2.dmi'
+					usr << "Você vestiu a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Esta é uma máscara ANBU."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+
+obj
+	Anbumask3
+		name = "Máscara anbu"
+		icon = 'anbumask3.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'anbumask3.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'anbumask3.dmi'
+					usr << "Você vestiu a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Esta é uma máscara ANBU."
 			Soltar()
 				if(src:worn == 1)
 					usr << "Não enquanto isto está sendo usado."

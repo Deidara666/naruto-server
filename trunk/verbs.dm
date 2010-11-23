@@ -1074,7 +1074,7 @@ mob
 			set category = "NinJutsu"
 			set name = "Usar Força oculta"
 			if(usr.rank =="Student")
-				usr<<"Você precisa ser Guenin ou mais para usar este jutsu."
+				usr<<"Você precisa ser Genin ou mais para usar este jutsu."
 				return
 			if(usr.Kyuubi==1)
 				if(usr.Kyuubi==1)
@@ -1118,11 +1118,12 @@ mob
 			if(tevento == 1)
 				src<<"Já tem um evento em andamento"
 			if(tevento==0)
-				evento = 1
-				world << "O Evento começou"
+				usr.evento = 1
+				world << "<font size=3><font color=green><b><i>O Evento começou"
+
 		terminaEvento()
 			if(tevento == 0)
 				src<<"Não tem um evento em andamento"
 			if(tevento==1)
-				evento = 0
-				world << "O Evento Terminou"
+				usr.evento = 0
+				world << "<font size=3><font color=red><b><i>O Evento Terminou"

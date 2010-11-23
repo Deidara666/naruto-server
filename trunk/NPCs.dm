@@ -1664,6 +1664,30 @@ mob
 			gen = 4000
 			shurikenskill=5000
 			NPC=1
+		orochimaruFloresta
+			name= "Orochimaru"
+			icon = 'orochimaru.dmi'
+			orochimaru = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=5000
+			NPC=1
+		DosuFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
 		DosuKinuta
 			name= "Dosu Kinuta"
 			icon = 'Dosu Kinuta.dmi'
@@ -2308,6 +2332,36 @@ mob/npc/Kiba
 				if("Forget it")
 					usr<<"Forgoten"
 					return
+mob/npc/Orochimaru
+	name = "Orochimaru"
+	icon = 'orochimaru.dmi'
+	PK = 0
+	health = 9999999999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category = "Orochimaru"
+			set name="***  Falar  ***"
+			switch(input("Muashuahsuas... vejo que você tem muita coragem só de vir até mim;",text) in list ("Sair correndo","Rir de Orochimaru e tentar lutar","Desculpe não queria chamar sua atenção"))
+				if("Sair correndo","Rir de Orochimaru e tentar lutar")
+					if(usr.Uchiha == 1)
+						usr<<"... hum... Você tem algo que me interessa"
+						world<<"<B><font size = 3><font color = green> [usr] <B><font size = 2><font color = red> acaba de ser amaldiçoado por <B><font size = 3><font color = green> Orochimaru <B><font size = 2><font color = red> na floresta da morte."
+
+						switch(input("Eu tenho uma pergunta! Você mataria amigos, inimigos e aliados em busca de um desejo?",text) in list ("Sim","Não"))
+							if("Sim")
+
+								if(usr.Mnin >=2000&&usr.Clan=="Uchiha")
+									usr << "<B><font color = blue>Você foi amaldiçoado por Orochimaru Sama"
+									usr.verbs += new /mob/Uchiha/verb/SeloAmaldicoado()
+
+					else
+						usr<<"Pena que você é um méro ninja qualquer e morrera aqui mesmo."
+
+				if("Desculpe não queria chamar sua atenção")
+					usr<<"Você fica amedrontado e corre de Orochimaru"
+					return
+
 mob/npc/Lee
 	name = "Rock Lee"
 	icon = 'npcs.dmi'

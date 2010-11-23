@@ -56,6 +56,8 @@ mob/var
 
 	OOCC = 1 //Chat OOC
 
+	evento=1 //Define se o evento esta aberto ou não (SERVER)
+
 
 
 	Flight=0
@@ -120,6 +122,7 @@ mob/var
 	squad="" //Nome da Squad
 	squads=0 //Define se tem ou não Squad
 	aura=0
+	selo=0
 	soU = 0
 	canS=0
 
@@ -485,7 +488,7 @@ obj/var
 
 turf
 	var
-		evento=0 //Define se o evento esta aberto ou não (SERVER)
+		evento=0 //Define se o evento esta aberto ou não (SERVER)*
 
 mob
 	var

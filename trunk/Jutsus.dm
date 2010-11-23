@@ -421,7 +421,34 @@ mob/shurikenmove
 
 
 
-
+mob/Uchiha
+	verb
+		SeloAmaldicoado()
+			set category ="Jutsus"
+			set name ="Selo Amaldiçoado"
+			if(usr.selo==1)
+				view<<"<font color = blue>Você sente seu corpo ferver e uma enorme energia se expandindo dentro de você!"
+				src.chakra=src.Mchakra*3
+				src.tai = usr.Mtai*2
+				src.gen = usr.Mgen*2
+				src.nin = usr.Mnin*3
+				usr.shurikenskill = usr.shurikenskill*2
+				usr.kunaiskill = usr.kunaiskill*2
+				usr.trapskill = usr.trapskill*2
+				usr.selo=1
+				usr.overlays += 'staraura.dmi'
+				return
+			else
+				usr<<"Seu poder diminuiu."
+				usr.tai = usr.Mtai
+				usr.nin = usr.Mnin
+				usr.gen = usr.Mgen
+				usr.shurikenskill = usr.Mshurikenskill
+				usr.kunaiskill = usr.Mkunaiskill
+				usr.trapskill = usr.Mtrapskill
+				usr.selo=0
+				usr.overlays -= 'staraura.dmi'
+				return
 
 
 mob/Buyou

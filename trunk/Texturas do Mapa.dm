@@ -112,6 +112,14 @@ turf
 		icon = 'CadeiraOWNER.dmi'
 		icon_state = "CadeiraOWNER"
 		density = 0
+	Hospital
+		icon = 'Hospital.dmi'
+		icon_state = "Simbolo"
+		density = 1
+	MaquinaCoca
+		icon = 'Coca.dmi'
+		icon_state = "coca"
+		density = 0
 	waterfall1
 		icon = 'waterfall.dmi'
 		icon_state = "1"
@@ -333,10 +341,10 @@ turf
 		icon_state = "openwall"
 		density = 0
 		Enter(A)
-			if(evento == 0)
+			if(usr.evento == 0)
 				src << "Não tem nenhum evento no momento"
 				return
-			if(evento==1)
+			if(usr.evento==1)
 				if(ismob(A))
 					var/mob/M = A
 					if(M.client)
