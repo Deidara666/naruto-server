@@ -530,7 +530,10 @@ turf
 			else
 				if(istype(A,/obj/)) del(A)
 
-	MedicE//usr.loc = locate(x,y,4)
+
+
+
+	MedicEKonoha//usr.loc = locate(x,y,4)
 		icon = 'waller.dmi'
 		icon_state="fwall1"
 		density = 0
@@ -544,10 +547,226 @@ turf
 					M<<"Somente genins ou acima são bem-vindos aqui."
 					return
 				if(M.client)
-					M.loc = locate(40,2,2)
+					M.loc = locate(51,87,38)
 
 			else
 				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicESuna//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(10,87,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicEKiri//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(92,87,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicENeve//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(10,64,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicESom//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(51,64,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicEAme//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(92,64,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicEIwa//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(10,40,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicEGrama//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(51,40,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicECachoeira//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(92,41,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicEKumo//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(10,17,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicEStar//usr.loc = locate(x,y,4)
+		icon = 'waller.dmi'
+		icon_state="fwall1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				if(usr.density==0)
+					usr<<"Não pode entrar voando."
+					return
+				var/mob/M = A
+				if(M.rank=="Student")
+					M<<"Somente genins ou acima são bem-vindos aqui."
+					return
+				if(M.client)
+					M.loc = locate(51,17,38)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
 	MedicEXIT//usr.loc = locate(x,y,4)
 		icon = 'Landscapes.dmi'
 		icon_state = "openwall"
@@ -559,6 +778,175 @@ turf
 					M.loc = locate(70,44,1)
 			else
 				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicEXITKonoha//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(71,88,1)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicEXITSuna//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(22,66,5)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+
+
+	MedicEXITKiri//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(41,13,9)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicEXITNeve//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(56,20,27)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicEXITSom//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(51,37,6)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+	MedicEXITAme//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(84,66,4)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicEXITIwa//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(24,61,7)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicEXITGrama//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(16,62,3)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicEXITCachoeira//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(42,54,24)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicEXITKumo//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(24,48,8)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+	MedicEXITStar//usr.loc = locate(x,y,4)
+		icon = 'Landscapes.dmi'
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(30,83,31)
+			else
+				if(istype(A,/obj/)) del(A)
+
+
+
+
+
 
 	AkimichiE//usr.loc = locate(x,y,4)
 		icon = 'waller.dmi'
