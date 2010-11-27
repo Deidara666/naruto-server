@@ -1,6 +1,7 @@
 mob/npc/Banker//the new banker!
-	name = "Banqueiro"
+	name = "Banqueiro(NPC)"
 	icon = 'Banker.dmi'
+	icon_state = "Banco"
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999
 	verb
@@ -48,8 +49,9 @@ mob/npc/Banker//the new banker!
 
 
 mob/npc/Vet
-	name = "Veterinário"
+	name = "Veterinário(NPC)"
 	icon = 'Banker.dmi'
+	icon_state = "Banco"
 	PK = 0
 	health = 999999999999999999999999999999999999
 	verb
@@ -202,8 +204,9 @@ obj
 
 mob/npc
 	Merchant2
-		name = "Loja de armas ninja"
+		name = "Loja de armas ninja(NPC)"
 		icon = 'Banker.dmi'
+		icon_state = "Vendedor de Armas"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb/Buy()
@@ -324,8 +327,9 @@ mob/npc
 					return
 mob/npc
 	Food_Vender
-		name = "Chef de cozinha"
+		name = "Chef de cozinha(NPC)"
 		icon = 'Banker.dmi'
+		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
@@ -361,8 +365,9 @@ mob/npc
 						return
 mob/npc
 	Merchant
-		name = "(NPC)Sales person"
+		name = "Vendedor de roupas(NPC)"
 		icon = 'Banker.dmi'
+		icon_state = "Vendedor de roupas"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb/Buy()
@@ -550,7 +555,8 @@ mob/npc
 mob/npc
 	Merchant3
 		name = "Vendedor de espadas"
-		icon = 'salesmen.dmi'
+		icon = 'Banker.dmi'
+		icon_state = "Vendedor de Espadas"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb/Buy()
@@ -587,8 +593,9 @@ mob/npc
 
 mob/npc
 	tailor
-		//name = "Cabeleleiro"
-		icon = 'Haircuter.dmi'
+		name = "Cabeleleiro"
+		icon = 'Banker.dmi'
+		icon_state = "Barbeiro"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
@@ -1717,6 +1724,7 @@ mob/npc
 	Summon_Vender
 		name = "Vendedor de pergaminhos de summon"
 		icon = 'Banker.dmi'
+		icon_state = "Vendedor de pergaminhos"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
@@ -1758,6 +1766,7 @@ mob/npc
 	Scroll_Vender
 		name = "Vendedor de pergaminhos de jutsus"
 		icon = 'Banker.dmi'
+		icon_state = "Vendedor de jutsus"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
@@ -2351,7 +2360,7 @@ mob/npc/Orochimaru
 						switch(input("Eu tenho uma pergunta! Você mataria amigos, inimigos e aliados em busca de um desejo?",text) in list ("Sim","Não"))
 							if("Sim")
 
-								if(usr.Mnin >=2000&&usr.Clan=="Uchiha")
+								if(usr.Clan=="Uchiha")
 									usr << "<B><font color = blue>Você foi amaldiçoado por Orochimaru Sama"
 									usr.verbs += new /mob/Uchiha/verb/SeloAmaldicoado()
 
@@ -2853,6 +2862,7 @@ mob/npc/Itachi
 mob/npc/Squads
 	name="Jounin Squad assignments."
 	icon='Banker.dmi'
+	icon_state = "Banco"
 	PK = 0
 	health=999999999999999999999999999999999999999999999
 	verb
@@ -2929,6 +2939,7 @@ mob/npc/Anko
 mob/npc/Pawn
 	name = "Pawn Shop"
 	icon = 'Banker.dmi'
+	icon_state = "Banco"
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999
 	verb
