@@ -265,8 +265,8 @@ turf
 		icon_state = "fence2"
 		density = 1
 	HyuugaE//usr.loc = locate(x,y,4)
-		icon = 'Landscapes.dmi'
-		icon_state = "openwall"
+		icon = 'waller.dmi'
+		icon_state="fwall1"
 		density = 0
 		Enter(A)
 			if(ismob(A))
@@ -294,8 +294,8 @@ turf
 			else
 				if(istype(A,/obj/)) del(A)
 	UzumakiE//usr.loc = locate(x,y,4)
-		icon = 'house1.dmi'
-		icon_state="14"
+		icon = 'waller.dmi'
+		icon_state="fwall1"
 		density = 0
 		Enter(A)
 			if(ismob(A))
@@ -1127,8 +1127,8 @@ turf
 			else
 				if(istype(A,/obj/)) del(A)
 	LeeE//usr.loc = locate(x,y,4)
-		icon = 'house1.dmi'
-		icon_state="14"
+		icon = 'waller.dmi'
+		icon_state="fwall1"
 		density = 0
 		Enter(A)
 			if(ismob(A))
@@ -1157,8 +1157,8 @@ turf
 				if(istype(A,/obj/)) del(A)
 
 	TentenE//usr.loc = locate(x,y,4)
-		icon = 'house1.dmi'
-		icon_state="14"
+		icon = 'waller.dmi'
+		icon_state="fwall1"
 		density = 0
 		Enter(A)
 			if(ismob(A))
@@ -4660,5 +4660,11 @@ turf
 	akimichihouse
 		icon='clans.dmi'
 		icon_state="Akimichi"
+		density=0
+		layer=10
+turf
+	uzumakihouse
+		icon='kyuubi.dmi'
+		icon_state="feature"
 		density=0
 		layer=10
