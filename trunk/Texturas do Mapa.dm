@@ -123,7 +123,8 @@ turf
 	waterfall1
 		icon = 'waterfall.dmi'
 		icon_state = "1"
-		layer = MOB_LAYER+1
+		layer = 2
+		density = 1
 	waterfall2
 		icon = 'waterfall.dmi'
 		icon_state = "2"
