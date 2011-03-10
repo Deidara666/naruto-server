@@ -1454,7 +1454,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.client)
-					M.loc = locate(50,99,24)
+					M.loc = locate(50,2,24)
 			else
 				if(istype(A,/obj/)) del(A)
 	LEAVEWATERFALL
@@ -1466,7 +1466,7 @@ turf
 					usr<<"Tem que ser no mínimo genin para sair da vila!"
 					return
 				if(M.client)
-					M.loc = locate(33,2,23)
+					M.loc = locate(83,99,9)
 					(M) << sound(null)
 					M<<'I said Im Naruto.mid'
 			else
@@ -2147,7 +2147,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.client)
-					M.loc = locate(30,70,1)
+					M.loc = locate(9,88,1)
 			else
 				if(istype(A,/obj/)) del(A)
 	doorfromacadstar
@@ -2844,7 +2844,7 @@ turf
 			if(ismob(A))
 				var/mob/M = A
 				if(M.client)
-					M.loc=locate(41,4,1)
+					M.loc=locate(42,88,1)
 			else
 				if(istype(A,/obj/)) del(A)
 	snowmansionIN
