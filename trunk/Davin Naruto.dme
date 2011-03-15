@@ -7,10 +7,10 @@
 // BEGIN_FILE_DIR
 #define FILE_DIR .
 #define FILE_DIR " naruto-server"
-#define FILE_DIR "Clan"
 #define FILE_DIR "Imagens"
 #define FILE_DIR "Jogador"
 #define FILE_DIR "Jutsus"
+#define FILE_DIR "Jutsus/Clan"
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
 #define FILE_DIR "sounds"
@@ -20,10 +20,6 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "Clan\kaguya.dm"
-#include "Clan\Nara.dm"
-#include "Clan\Uchiha.dm"
-#include "Clan\Uzumaki.dm"
 #include "Imagens\Itens.dm"
 #include "Imagens\Texturas do Mapa.dm"
 #include "Jogador\Admin.dm"
@@ -47,6 +43,11 @@
 #include "Jutsus\Jutsus.dm"
 #include "Jutsus\Marionetes.dm"
 #include "Jutsus\Summon.dm"
+#include "Jutsus\Clan\Hyuuga.dm"
+#include "Jutsus\Clan\kaguya.dm"
+#include "Jutsus\Clan\Nara.dm"
+#include "Jutsus\Clan\Uchiha.dm"
+#include "Jutsus\Clan\Uzumaki.dm"
 #include "Lojas\NPCs.dm"
 #include "Lojas\Roupas.dm"
 #include "Mapa\Mapa.dm"
