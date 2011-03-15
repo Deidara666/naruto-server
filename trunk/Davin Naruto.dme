@@ -7,6 +7,7 @@
 // BEGIN_FILE_DIR
 #define FILE_DIR .
 #define FILE_DIR " naruto-server"
+#define FILE_DIR "Clan"
 #define FILE_DIR "Imagens"
 #define FILE_DIR "Jogador"
 #define FILE_DIR "Jutsus"
@@ -19,6 +20,10 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "Clan\kaguya.dm"
+#include "Clan\Nara.dm"
+#include "Clan\Uchiha.dm"
+#include "Clan\Uzumaki.dm"
 #include "Imagens\Itens.dm"
 #include "Imagens\Texturas do Mapa.dm"
 #include "Jogador\Admin.dm"
