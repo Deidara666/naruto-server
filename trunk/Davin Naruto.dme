@@ -8,17 +8,11 @@
 #define FILE_DIR .
 #define FILE_DIR " naruto-server"
 #define FILE_DIR "Imagens"
-#define FILE_DIR "Imagens/PNG"
-#define FILE_DIR "Imagens/Texturas"
-#define FILE_DIR "Imagens/Texturas/Terreno"
-#define FILE_DIR "Imagens/Texturas/Terreno/Grama"
-#define FILE_DIR "Imagens/Texturas/Terreno/Terra"
-#define FILE_DIR "Imagens/tiles"
 #define FILE_DIR "Jogador"
 #define FILE_DIR "Jutsus"
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
-#define FILE_DIR "Sons"
+#define FILE_DIR "sounds"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
@@ -27,7 +21,6 @@
 // BEGIN_INCLUDE
 #include "Imagens\Itens.dm"
 #include "Imagens\Texturas do Mapa.dm"
-#include "Imagens\Texturas\Roupas.dm"
 #include "Jogador\Admin.dm"
 #include "Jogador\BS.dm"
 #include "Jogador\chuunin.dm"
@@ -50,6 +43,7 @@
 #include "Jutsus\Marionetes.dm"
 #include "Jutsus\Summon.dm"
 #include "Lojas\NPCs.dm"
+#include "Lojas\Roupas.dm"
 #include "Mapa\Mapa.dm"
 #include "Mapa\map.dmp"
 // END_INCLUDE
