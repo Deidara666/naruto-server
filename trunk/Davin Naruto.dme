@@ -11,6 +11,7 @@
 #define FILE_DIR "Jogador"
 #define FILE_DIR "Jutsus"
 #define FILE_DIR "Jutsus/Clan"
+#define FILE_DIR "Jutsus/Elementais"
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
 // END_FILE_DIR
@@ -54,6 +55,8 @@
 #include "Jutsus\Clan\UsuarioDeMarionete.dm"
 #include "Jutsus\Clan\UsuarioDeTaijutsu.dm"
 #include "Jutsus\Clan\Uzumaki.dm"
+#include "Jutsus\Elementais\Katon.dm"
+#include "Jutsus\Elementais\Suiton.dm"
 #include "Lojas\NPCs.dm"
 #include "Lojas\Roupas.dm"
 #include "Mapa\Mapa.dm"
