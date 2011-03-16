@@ -2,9 +2,8 @@
 /*
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 480.1088
-UPDATE_OBJ_TREE: ON
-DIR: Jutsus Jutsus\Clan Lojas Mapa 
-FILE: Mapa\map.dmp
+DIR: Jutsus Jutsus\Elementais Lojas Mapa 
+FILE: Jutsus\Jutsus.dm
 LAST_COMPILE_TIME: 1300281122
 AUTO_FILE_DIR: ON
 */
