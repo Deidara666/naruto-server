@@ -13,7 +13,6 @@
 #define FILE_DIR "Jutsus/Clan"
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
-#define FILE_DIR "sounds"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
