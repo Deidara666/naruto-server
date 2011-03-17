@@ -35,6 +35,7 @@
 #define FILE_DIR "Jutsus/Elementais"
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
+#define FILE_DIR "skin"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
@@ -94,5 +95,6 @@
 #include "Lojas\Roupas.dm"
 #include "Mapa\Mapa.dm"
 #include "Mapa\map.dmp"
+#include "skin\skin.dmf"
 // END_INCLUDE
 
