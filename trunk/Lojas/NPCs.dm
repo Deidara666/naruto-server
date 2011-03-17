@@ -1671,6 +1671,21 @@ mob
 			gen = 4000
 			shurikenskill=5000
 			NPC=1
+		DosuKinuta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 15000
+			nin = 15000
+			gen = 15000
+			shurikenskill=15000
+			NPC=1
+
+
+  //  NPCs da floresta do CS
 		orochimaruFloresta
 			name= "Orochimaru"
 			icon = 'orochimaru.dmi'
@@ -1695,18 +1710,213 @@ mob
 			gen = 20000
 			shurikenskill=15000
 			NPC=1
-		DosuKinuta
+		ZakuFloresta
 			name= "Dosu Kinuta"
 			icon = 'Dosu Kinuta.dmi'
 			weaknin = 1
 			Tekken = 1
 			maxhealth=200000
 			health = 200000
-			tai = 15000
-			nin = 15000
-			gen = 15000
+			tai = 20000
+			nin = 20000
+			gen = 20000
 			shurikenskill=15000
 			NPC=1
+		KinFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		NarutoFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		SakuraFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		SasukeFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		RockLeeFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		TenTenFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		NejiFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		ShikamaruFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		InoFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		ChoujiFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		GaaraFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		TemariFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		KankuroFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		KibaFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		ShinoFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+		HinataFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 20000
+			nin = 20000
+			gen = 20000
+			shurikenskill=15000
+			NPC=1
+
+//-----------------------------------------------------
+
 
 mob/var
 	kyuubinpc=0
