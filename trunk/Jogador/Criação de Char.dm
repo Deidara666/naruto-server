@@ -107,64 +107,24 @@ turf/Skincolorselect
 		usr.baseselected=0
 		switch(input("Qual seu gênero?", text) in list ("Masculino","Feminino"))
 			if("Masculino")
-				switch(input("Escolha uma cor de skin", text) in list ("Pele","Bronzeada","Vampiro","Preta","Vermelha","Azul","Amarela"))
-					if("Pele")
+				switch(input("Escolha uma cor de skin", text) in list ("Branco","Negro"))
+					if("Branco")
 						usr.icon='Base white.dmi'
 						usr.Oicon='Base white.dmi'
 						usr.baseselected=1
-					if("Bronzeada")
-						usr.icon='BaseT.dmi'
-						usr.Oicon='BaseT.dmi'
-						usr.baseselected=1
-					if("Vampiro")
-						usr.icon='BaseVamp.dmi'
-						usr.Oicon='BaseVamp.dmi'
-						usr.baseselected=1
-					if("Preta")
+					if("Negro")
 						usr.icon='BaseBlack.dmi'
 						usr.Oicon='BaseBlack.dmi'
 						usr.baseselected=1
-					if("Vermelha")
-						usr.icon='BaseRed.dmi'
-						usr.Oicon='BaseRed.dmi'
-						usr.baseselected=1
-					if("Azul")
-						usr.icon='BaseBlue.dmi'
-						usr.Oicon='BaseBlue.dmi'
-						usr.baseselected=1
-					if("Amarela")
-						usr.icon='BaseYellow.dmi'
-						usr.Oicon='BaseYellow.dmi'
-						usr.baseselected=1
 			if("Feminino")
-				switch(input("Escolha um cor de skin", text) in list ("Pele","Bronzeada","Vampiro","Preta","Vermelha","Azul","Amarela"))
-					if("Pele")
-						usr.icon='Female white.dmi'
-						usr.Oicon='Female white.dmi'
+				switch(input("Escolha uma cor de skin", text) in list ("Branca","Negra"))
+					if("Branca")
+						usr.icon='Base white.dmi'
+						usr.Oicon='Base white.dmi'
 						usr.baseselected=1
-					if("Bronzeada")
-						usr.icon='FemaleT.dmi'
-						usr.Oicon='FemaleT.dmi'
-						usr.baseselected=1
-					if("Vampiro")
-						usr.icon='FemaleVamp.dmi'
-						usr.Oicon='FemaleVamp.dmi'
-						usr.baseselected=1
-					if("Preta")
-						usr.icon='FemaleBlack.dmi'
-						usr.Oicon='FemaleBlack.dmi'
-						usr.baseselected=1
-					if("Vermelha")
-						usr.icon='FemaleRed.dmi'
-						usr.Oicon='FemaleRed.dmi'
-						usr.baseselected=1
-					if("Azul")
-						usr.icon='FemaleBlue.dmi'
-						usr.Oicon='FemaleBlue.dmi'
-						usr.baseselected=1
-					if("Amarela")
-						usr.icon='FemaleYellow.dmi'
-						usr.Oicon='FemaleYellow.dmi'
+					if("Negra")
+						usr.icon='BaseBlack.dmi'
+						usr.Oicon='BaseBlack.dmi'
 						usr.baseselected=1
 turf/Delete
 	density = 1
@@ -386,6 +346,7 @@ turf/Hairselect
 						usr.hair = usr.Ohair
 						usr.overlays += usr.hair
 						usr.hairselected=1
+
 					if("Kabuto")
 						usr.hair = "Kabuto"
 						var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
