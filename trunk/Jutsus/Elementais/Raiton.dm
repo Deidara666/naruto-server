@@ -462,3 +462,124 @@ mob/rai
 				usr.Larmor =0
 				usr.nin = usr.Mnin
 				usr<<"You take down the Rai No Jutsu."
+
+mob/jutsu
+	verb
+		Chidori()
+			set category = "Jutsus"
+			set name = "Chidori"
+			usr.Handseals()
+			if (usr.ingat)
+				return
+			if(usr.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if (usr.intank)
+				return
+			if (usr.Kaiten)
+				return
+			if (usr.sphere)
+				return
+			if(usr.inso)
+				return
+			if (usr.firing)
+				return
+			if(usr.froze)
+				usr<<"Your frozen"
+				return
+			if(usr.Frozen)
+				usr<<"Your frozen"
+				return
+			if(usr.caught)
+				usr<<"Your captured"
+				return
+			if(usr.captured)
+				usr<<"Your captured"
+				return
+			if(usr.resting)
+				usr<<"Not while resting"
+				return
+			if(usr.meditating)
+				usr<<"Not while meditating"
+				return
+			if(Chidorion)
+				usr <<"Your already using Chidori!"
+				return
+			if(!usr.handseals)
+
+				return
+			else
+				var/damage = input("How much chakra would you like to put in?")as num
+				if(usr.ChidoriU >= 30)
+					if(damage <= 4999)
+						usr<<"You must put at least 5000 chakra into it!!"
+						return
+					if(damage >= usr.chakra)
+						usr<<"You put to much energy into the Chidori and lose control of it!"
+						return
+					else
+						view() << "<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#4682b4>C</FONT><FONT COLOR=#6f97b8>h</FONT><FONT COLOR=#98acbd>i</FONT><FONT COLOR=#c0c0c0>d</FONT><FONT COLOR=#a1abc9>o</FONT><FONT COLOR=#8195d1>r</FONT><FONT COLOR=#617fda>i</FONT><FONT COLOR=#4169e1>!</FONT>"
+						usr.ChidoriU += 1
+						usr.chakra -= damage
+						usr.ChidoriD = damage*1.4
+						usr.Chakragain()
+						usr.Chidorion = 1
+						usr.firing = 1
+						usr.overlays += 'Chidori.dmi'
+						usr.icon_state = "run"
+						RD
+							if(!usr.battlingRC)
+								ChidoriD -= rand(1000,2000)
+							if(usr.ChidoriD <= 1)
+								usr << "Your Chidori runs out of energy"
+								usr.ChidoriD = 0
+								usr.overlays -= 'Chidori.dmi'
+								usr.overlays -= 'Chidori.dmi'
+								usr.overlays -= 'Chidori.dmi'
+								usr.overlays -= 'Chidori.dmi'
+								usr.Chidorion = 0
+								usr.firing = 0
+								return
+							else
+								sleep(6)
+								goto RD
+				else
+					usr.random = rand (1,3)
+					if(usr.random == 1||usr.random == 2)
+						if(damage <= 4999)
+							usr<<"You must put at least 5000 chakra into it!!"
+							return
+						if(damage >= usr.chakra)
+							usr<<"You put to much energy into the chidori and lose control of it!"
+							return
+						else
+							view() << "<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#4682b4>C</FONT><FONT COLOR=#6f97b8>h</FONT><FONT COLOR=#98acbd>i</FONT><FONT COLOR=#c0c0c0>d</FONT><FONT COLOR=#a1abc9>o</FONT><FONT COLOR=#8195d1>r</FONT><FONT COLOR=#617fda>i</FONT><FONT COLOR=#4169e1>!</FONT>"
+							usr.Chidorion = 1
+							usr.ChidoriU += 1
+							usr.chakra -= damage
+							usr.Chakragain()
+							usr.ChidoriD = damage*1.5
+							usr.firing = 1
+							usr.overlays += 'Chidori.dmi'
+							usr.icon_state = "run"
+							RD
+								if(!usr.battlingRC)
+									ChidoriD -= rand(1000,2000)
+								if(usr.ChidoriD <= 1&&!usr.battlingRC)
+									usr << "Your Chidori runs out of energy"
+									usr.ChidoriD = 0
+									usr.Chidorion = 0
+									usr.overlays -= 'Chidori.dmi'
+									usr.overlays -= 'Chidori.dmi'
+									usr.overlays -= 'Chidori.dmi'
+									usr.overlays -= 'Chidori.dmi'
+									usr.overlays -= 'Chidori.dmi'
+									usr.firing = 0
+									return
+								else
+									sleep(6)
+									goto RD
+					else
+						usr<<"You fail to use Chidori!"
+						usr.chakra -= damage
+						return

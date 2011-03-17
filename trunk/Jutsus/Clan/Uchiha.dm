@@ -519,3 +519,26 @@ mob/uchiha
 							return
 					else
 						usr<<"You failed to use Amaterasu."
+
+mob/uchi
+	verb
+		Counter() // Verb used for firing the beam
+			set category = "Jutsus"
+			set name = "Sharingan Counter"
+			if(usr.firing)
+				return
+			if(usr.resting)
+				usr<<"Not while resting"
+				return
+			if(usr.meditating)
+				usr<<"Not while meditating"
+				return
+			if(usr.counter==0)
+				usr.counter=1
+				view()<<"<font color=silver><b><font face=verdana>[usr]: Counter!!"
+				usr.overlays += 'counter.dmi'
+				sleep(30)
+				usr.counter=0
+				usr.overlays -= 'counter.dmi'
+			else
+				usr<<"Counter is already active."
