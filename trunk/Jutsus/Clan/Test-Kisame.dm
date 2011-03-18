@@ -106,26 +106,45 @@ mob/Kisame
 				usr.nin = usr.Mnin
 				usr<<"You take down the Suiton No Jutsu."
 
+
+
 //Suiton: Bakusui Shouha
 //  -cria um mar
 
 //Suiton: Daibakufu no Jutsu
+// -rajada de agua na direção do oponente
+// - http://www.vbox7.com/play:62eb401a?r=google
+
 
 //Suiton: Goshokuzame
+// -um tubarao gigante que paraliza o oponente
+// -http://www.youtube.com/watch?v=o3ghMgEo3Sk
 
 //Suiton: Suishouha
+// -cria um ciclone que se desfaz perto do oponente
+// - http://www.youtube.com/watch?v=w_gc3bREk40
 
 //Suiton: Suisahan
+// -O ninja cria várias ondas grandes de água fazendo inundar o local.
 
 //Suiton: Goshokusame Hengo
+// -varios tubaroes sao lançados em direção a seu oponente causando uma explosão
+// -http://www.youtube.com/watch?v=o3ghMgEo3Sk
 
 //Suiton Ninpou - Same Henge no Jutsu
+// Sem Informações...
 
 //Suiton: Suirou Same Odori no Jutsu
+//Kisame após utilizar essa técnica cria uma grande explosão de água, persegue seu oponente e o segura, e solta ventosas de partes
+//de seu corpo que sugam o chakra do oponente até a última gota, após ser pegue pelo mesmo não é possível escapar.
 
 //Suiton: Suikoudan no Jutsu
+// -faz com que uma coluna de água a subir a partir da água e, em seguida, atacar seus alvos.
+// - http://www.youtube.com/watch?v=v2pEZDK2trA
 
 //Suiton: Suirou no Jutsu
+// -uma bolha de agua que prendeo oponente
+// - http://www.youtube.com/watch?v=t6uZmI4p6cs
 
 //Suiton: Suiryuudan no Jutsu
 

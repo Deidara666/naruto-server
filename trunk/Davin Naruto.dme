@@ -35,7 +35,6 @@
 #define FILE_DIR "Jutsus/Elementais"
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
-#define FILE_DIR "naruto-server"
 #define FILE_DIR "Skin"
 #define FILE_DIR "sounds"
 // END_FILE_DIR
@@ -52,8 +51,8 @@
 #include "Jogador\Criação de Char.dm"
 #include "Jogador\guild.dm"
 #include "Jogador\Login.dm"
+#include "Jogador\LogInOut.dm"
 #include "Jogador\Missões.dm"
-#include "Jogador\naruto way of the shinobi.dm"
 #include "Jogador\Naruto.dm"
 #include "Jogador\Spamguard.dm"
 #include "Jogador\Treinamento.dm"
