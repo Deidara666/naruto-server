@@ -36,7 +36,6 @@
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
 #define FILE_DIR "Skin"
-#define FILE_DIR "sounds"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
