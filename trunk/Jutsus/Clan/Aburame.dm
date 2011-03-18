@@ -61,6 +61,60 @@ mob/aburame
 						return
 				else
 					return
+
+/*mob/aburame
+	verb
+		porrada(mob/M in oview(10))
+			set category = "Jutsus"
+			set name = "porrada"
+			usr.Handseals()
+			if(!usr.handseals)
+				return
+			if(usr.firing)
+				return
+			if(usr.sphere)
+				return
+			if(usr.Kaiten)
+				return
+			if(usr.froze)
+				usr<<"Your frozen"
+				return
+			if(usr.Frozen)
+				usr<<"Your frozen"
+				return
+			if(usr.caught)
+				usr<<"Your captured"
+				return
+			if(usr.captured)
+				usr<<"Your captured"
+				return
+			if(usr.resting)
+				usr<<"Not while resting"
+				return
+			if(usr.meditating)
+				usr<<"Not while meditating"
+				return
+			if(usr.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(M.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(M.counter)
+				usr<<"They copy and reflect it back at you."
+				M<<"You copy and reflect it back at them."
+				usr.health -= M.Mnin/5
+				Death(usr)
+				return
+			if(usr.chakra<=10000)
+				usr<<"Not Enough Chakra"
+				return
+			if(M.Kaiten)
+				return
+			if(M.captured)
+				usr<<"He is already caught!"
+				return	*/
+
 mob/aburame
 	verb
 		KonchuuKyuu(mob/M in oview(10))

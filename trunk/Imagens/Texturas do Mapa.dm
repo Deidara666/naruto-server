@@ -352,6 +352,44 @@ turf
 				var/mob/M = A
 				if(M.client)
 					M.loc = locate(1,1,36)
+
+	SairEvento//usr.loc = locate(x,y,4)
+
+		icon = 'Gofloresta2.dmi'
+
+		icon_state = "openwall"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					if(usr.leafS)
+						usr.loc=locate(81,39,2)
+					if(usr.sandS)
+						usr.loc=locate(81,36,28)
+					if(usr.grassS)
+						usr.loc=locate(81,3,28)
+					if(usr.soundS)
+						usr.loc=locate(69,2,2)
+					if(usr.rainS)
+						usr.loc=locate(16,72,28)
+					if(usr.earthS)
+						usr.loc=locate(41,44,2)
+					if(usr.lightningS)
+						usr.loc=locate(8,97,2)
+					if(usr.mistS)
+						usr.loc=locate(16,3,28)
+					if(usr.waterfallS)
+						usr.loc=locate(39,06,29)
+					if(usr.snowS)
+						usr.loc=locate(28,40,28)
+					if(usr.akatS)
+						usr.loc=locate(62,94,10)
+					if(usr.soS)
+						usr.loc=locate(81,60,18)
+					if(usr.starS)
+						usr.loc=locate(21,47,29)
+
 	Goevento//usr.loc = locate(x,y,4)
 
 		icon = 'Goevento.dmi'
