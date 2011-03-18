@@ -7,58 +7,18 @@ mob/Login()
 	alert("AGRADECEMOS DESDE JÁ PELA SUA PREFERÊNCIA")
 	src<<"<font size=5><font color = blue><b><u> Bem vindo ao Naruto Live in Brazil ,Se divirta no melhor Server Brasileiro de Naruto.</font>"
 	src.client.view=6
-	if(src.client.address == "")//Hydrocrush
-		src<<"<b><font size=3>For the last damn time, Terrorize your own game. Noob."
-		world<<"Master matt tried logging in...ROFL Lets all point and laugh."
-		del(src)
 
-	if(src.client.address == "71.225.71.97")//Nejimon
-		del(src)
+	// COMO BANIR PLAYERS CHATOS \/
+	//if(src.client.address == "71.225.71.97")//Nejimon
+	//	del(src)
 
-	if(src.client.address == "24.239.235.218")//Tac
-		del(src)
-
-	if(src.client.address == "24.160.246.67")//Strawgate
-		del(src)
-
-	if(src.client.address == "69.113.71.131")//XDark_WizardX
+	if(src.client.address == "")
 		del(src)
 
 	if(src.key == "")
-		src<<"<b><font size=3>NO guest key Noob."
+		src<<"<b><font size=3>Entre na sua conta!."
 		del(src)
-	if(src.key == "")
-		src<<"Go play ur own game stop tring to rip mine."
-		del(src)
-	if(src.key == "")
-		src<<"Go play ur own game stop tring to rip mine."
-		del(src)
-	if(src.key == " ")
-		src<<"Go play ur own game stop tring to rip mine."
-		del(src)
-	if(src.key == "")
-		src<<"Go play ur own game stop tring to rip mine."
-		del(src)
-	if(src.key == "  ")
-		src<<"Go play ur own game stop tring to rip mine."
-		del(src)
-	if(src.key == "t   -")
-		src<<"Go play ur own game stop tring to rip mine."
-		del(src)
-	if(src.key == "")
-		src<<"Go play ur own game stop tring to rip mine."
-		del(src)
-	if(src.key == "")
-		src<<"Go play ur own game stop tring to rip mine."
-		del(src)
-	if(src.key == "")
-		src<<"YOU FAG."
-		del(src)
-	if(src.key=="'")
-		src<<"Fuck off fag"
-		del(src)
-	if(src.client.address == "24.239.235.218")//Tac
-		del(src)
+
 	if(src.key == "MiickeyM")
 		src.verbs += typesof(/mob/Owner/verb)
 		src.verbs += typesof(/mob/owner/verb)
