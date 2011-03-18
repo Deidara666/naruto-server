@@ -37,6 +37,7 @@
 #define FILE_DIR "Mapa"
 #define FILE_DIR "naruto-server"
 #define FILE_DIR "Skin"
+#define FILE_DIR "sounds"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
@@ -73,6 +74,7 @@
 #include "Jutsus\Clan\Nara.dm"
 #include "Jutsus\Clan\NinjaMédico.dm"
 #include "Jutsus\Clan\Sabaku.dm"
+#include "Jutsus\Clan\Test-Kisame.dm"
 #include "Jutsus\Clan\Uchiha.dm"
 #include "Jutsus\Clan\UsuarioDeArmas.dm"
 #include "Jutsus\Clan\UsuarioDeMarionete.dm"

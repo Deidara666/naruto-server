@@ -2200,7 +2200,24 @@ mob/npc/Sasuke
 							usr<<"Você precisa 1000 de todos stats e 150 mortes, juntamente com 100 Uses to activate Mangekyou."
 					else
 						usr<<"Mentiroso, saia da casa Uchiha AGORA!"
-
+mob/npc/Kisame
+	name = "Kisame"
+	icon = 'npcs.dmi'
+	icon_state = "Sasuke"
+	PK = 0
+	health = 9999999999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category = "Kisame"
+			set name="***  Falar  ***"
+			switch(input("O quê? Você não quer aqui?",text) in list ("Eu sou hoshigaki tambem!","Esqueça"))
+				if("Eu sou hoshigaki tambem!")
+					if(usr.Kisame == 1)
+						usr<<"Olá colega hoshigaki, bem-vindo à nossa casa."
+						usr.verbs += new /mob/Kisame/verb/ShushinNoJutsuKisame()
+					else
+						usr<<"Mentiroso, saia de perto de mim AGORA!"
 
 mob/npc/Haku
 	name = "Haku"

@@ -176,6 +176,7 @@ mob/var
 	hasdog = 0
 	dogmaxhealth=0
 	Uchiha=0
+	Kisame=0
 	Inuzuka=0
 	Akimichi=0
 	Puppet=0

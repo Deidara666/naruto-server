@@ -132,7 +132,7 @@ mob
 		var/nnexp=round(src.ninexp*100/src.mninexp)
 		var/ggexp=round(src.genexp*100/src.mgenexp)
 		stat("<font color = green>Taijutsu: [tai] ([ttexp]%)</font color>")
-		stat("<font color = black>Ninjutsu: [nin] ([nnexp]%)</font color>")
+		stat("Ninjutsu: [nin] ([nnexp]%)")
 		stat("<font color = white>Genjutsu: [gen] ([ggexp]%)</font color>")
 		stat("--- --- --- --- --- --- --- --- --- --- --- --- ---")
 		stat("Habilidade com Shuriken   : [shurikenskill]")
