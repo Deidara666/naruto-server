@@ -4311,6 +4311,20 @@ turf
 		icon_state = "Snow"
 		density = 0
 		layer = 10
+
+turf
+	Chuva
+		icon = 'chuva.dmi'
+		icon_state = "chuva"
+		density = 0
+		layer = 10
+
+turf
+	Poca
+		icon = 'chuva.dmi'
+		icon_state = "poça"
+		density = 0
+
 turf
 	Snow2
 		icon = 'Snow.dmi'
