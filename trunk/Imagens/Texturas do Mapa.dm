@@ -1,3 +1,20 @@
+turf
+	Verde1
+		icon = 'verde.dmi'
+		icon_state = "1,14"
+	Verde2
+		icon = 'verde.dmi'
+		icon_state = "1,0"
+	Verde3
+		icon = 'verde.dmi'
+		icon_state = "2,0"
+	Verde4
+		icon = 'verde.dmi'
+		icon_state = "3,0"
+	Verde5
+		icon = 'verde.dmi'
+		icon_state = "4,0"
+
 
 turf
 	Terra
