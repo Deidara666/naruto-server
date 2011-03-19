@@ -147,13 +147,24 @@ mob/Kisame
 // - http://www.youtube.com/watch?v=t6uZmI4p6cs
 
 //Suiton: Suiryuudan no Jutsu
+// -cria um dragao de agua que se choca contra o oponente
+// - http://www.youtube.com/watch?v=FmBr4lrWEe0
 
 //Suiton: Daikoudan
+// -poucas informações sobre o jutsu mas parece ser um jutsu de substituição
+// - http://br.answers.yahoo.com/question/index?qid=20091127125502AAfSBKm
 
 //Mizu Bunshin no Jutsu
+// -Técnica que cria vários clones feitos 100% de água, que possuem 10% do poder original, mas que não podem se distanciar muito do ninja original. Dentro da água, o poder do Mizu Bunshin aumenta consideravelmente.
+// - http://narutorpgplay.ativoforum.com/t53-jutsus-suiton
+
 
 //Mizu Shunshin no Jutsu
+// -Uma variação do Shunshin no Jutsu, na qual o usuário só se movimenta debaixo d'água.
+// - http://narutorpgplay.ativoforum.com/t53-jutsus-suiton
+
 
 //Doton no Jutsu
+// -lança uma pedra
 
 //Doton - Dochuu Senkou
