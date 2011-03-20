@@ -24,12 +24,10 @@
 #define FILE_DIR "Imagens/Objetos"
 #define FILE_DIR "Imagens/Pergaminhos"
 #define FILE_DIR "Imagens/Personagens e NPC's"
-#define FILE_DIR "Imagens/PNG"
 #define FILE_DIR "Imagens/Roupas"
 #define FILE_DIR "Imagens/Simbolos de mão"
 #define FILE_DIR "Imagens/Summon"
 #define FILE_DIR "Imagens/Taijutsu"
-#define FILE_DIR "Imagens/tiles"
 #define FILE_DIR "Imagens/Treino"
 #define FILE_DIR "Jogador"
 #define FILE_DIR "Jutsus"
@@ -38,7 +36,7 @@
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
 #define FILE_DIR "Skin"
-#define FILE_DIR "Sons"
+#define FILE_DIR "sounds"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
