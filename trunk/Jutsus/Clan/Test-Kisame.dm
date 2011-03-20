@@ -327,7 +327,7 @@ mob/Kisame
 					usr.chakra -= 5
 					sleep(1)
 					usr.move = 1
-					var/mob/L=new/mob/Klog
+					var/mob/L=new/mob/MizuKawa
 					L.name = usr.name
 					L.icon = usr.icon
 					L.dir=usr.dir
@@ -347,8 +347,8 @@ mob/Kisame
 					usr.overlays-='Bun.dmi'
 					usr.kawa = 0
 					L.overlays = L.overlays.Remove(L.overlays)
-					L.icon = 'Landscapes.dmi'
-					L.icon_state="Log"
+					L.icon = 'MizuKawa.dmi'
+					L.icon_state= "Kawa"
 					flick("smoke2",L)
 					sleep(30)
 					flick("smoke2",L)
@@ -357,7 +357,7 @@ mob/Kisame
 					usr.random = rand(1,20)
 					usr.ninup()
 					usr.Skills()
-					usr<<"<font color = blue>Your nin increased!"
+					usr<<"<font color = blue>Seu Ninjutsu aumentou!"
 				else
 					usr.random = rand (1,4)
 					if(usr.random == 1||usr.random == 4)
@@ -369,7 +369,7 @@ mob/Kisame
 						usr.chakra -= 5
 						sleep(1)
 						usr.move = 1
-						var/mob/L=new/mob/Klog
+						var/mob/L=new/mob/MizuKawa
 						L.name = usr.name
 						L.icon = usr.icon
 						L.overlays = usr.overlays
@@ -381,8 +381,8 @@ mob/Kisame
 						usr.overlays = O.Copy()
 						usr.SDaikoudan = 0
 						L.overlays = L.overlays.Remove(L.overlays)
-						L.icon= 'Landscapes.dmi'
-						L.icon_state = "Log"
+						L.icon = 'MizuKawa.dmi'
+						L.icon_state= "Kawa"
 						flick("smoke2",L)
 						sleep(30)
 						flick("smoke2",L)
@@ -391,7 +391,7 @@ mob/Kisame
 						usr.random = rand(1,20)
 						usr.ninup()
 						usr.Skills()
-						usr<<"<font color = blue>Your nin increased!"
+						usr<<"<font color = blue>Seu ninjutsu aumentou!"
 			sleep(30)
 			usr.firing =0
 			usr.SDaikoudan=0
@@ -399,10 +399,10 @@ mob/var/tmp
 	SDaikoudan = 0
 
 mob
-	Klog
+	MizuKawa
 		name = "Log"
-		icon = 'Landscapes.dmi'
-		icon_state= "Log"
+		icon = 'MizuKawa.dmi'
+		icon_state= "Kawa"
 
 
 //Mizu Bunshin no Jutsu
