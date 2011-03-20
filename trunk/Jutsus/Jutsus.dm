@@ -3826,7 +3826,7 @@ obj
 				var/damage = round(src.nin*2)
 				if(damage >= 1)
 					M.health -= damage
-					view(M) << "[M] was hit by Suiton Daibakufu for [damage] damage!!"
+					view(M) << "[M] foi atingido pelo Suiton Daibakufu com [damage] de dano!!"
 					var/mob/O = src.Gowner
 					M.Death(O)
 				del(src)
@@ -4514,6 +4514,34 @@ obj
 				if(damage >= 1)
 					M.health -= damage
 					view(M) << "[M] was hit by Suna Shuriken for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj
+	SuitonDaibakufuNoJutsu
+		icon = 'Suitons.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] foi atingido por Suiton: Daikufu No Jutsu com [damage] de dano!!"
 					var/mob/O = src.Gowner
 					M.Death(O)
 				del(src)

@@ -85,7 +85,7 @@ mob/Kisame
 				usr<<"Not while meditating"
 				return
 			if(!usr.Warmor&&!usr.firing)
-				view()<<"<font color = blue>[usr]: Suiton No Jutsu!"
+				view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green>Says: <font color=red>Suiton No Jutsu!"
 				usr.overlays += 'WaterStrom.dmi'
 				usr.Warmor =1
 				usr.nin = usr.nin*2
@@ -114,6 +114,136 @@ mob/Kisame
 //Suiton: Daibakufu no Jutsu
 // -rajada de agua na direção do oponente
 // - http://www.vbox7.com/play:62eb401a?r=google
+mob/Kisame
+	verb
+		SuitonDaibakufuNoJutsu()
+			set category = "Clan Jutsus"
+			set name = "Suiton: Daibakufu No Jutsu"
+			usr.Handseals()
+			if(!usr.handseals)
+				return
+			if(usr.PK==0)
+				usr<<"Zona Não PK!"
+				return
+			if(usr.Frozen)
+				usr<<"Você está congelado"
+				return
+			if(usr.caught)
+				usr<<"Você está capturado"
+				return
+			if(usr.captured)
+				usr<<"Você está capturado"
+				return
+			if(usr.froze)
+				usr<<"Você está congelado"
+				return
+			if(usr.resting)
+				usr<<"Não enquanto descança"
+				return
+			if(usr.meditating)
+				usr<<"Não enquanto medita"
+				return
+			if(usr.firing||usr.Kaiten||usr.sphere)
+				return
+			if(usr.chakra <= 15)
+				usr<<"Você não possui chakra suficiente!"
+				return
+			else // If the firing var isn't 1...
+				if(usr.SSU >= 25)
+					usr.chakra -= 15
+					usr.firing = 1
+					usr.SSU += 1
+					view()<<"[usr] Suiton: Daibakufu No Jutsu"
+					var/obj/SuitonDaibakufuNoJutsu/K = new /obj/SuitonDaibakufuNoJutsu
+					K.loc = usr.loc
+					K.nin=usr.nin
+					usr.Chakragain()
+					K.dir = usr.dir
+					K.name="[usr]"
+					K.Gowner=usr
+					walk(K,usr.dir)
+					if (target == null)
+						del(K)
+					if(usr.Mnin <= usr.cap)
+						usr.random = rand(1,6)
+						if(random == 5||random==1)
+							usr.ninexp += rand(1,10)
+							usr.ninup()
+							usr.Skills()
+							var/ccrandom=rand(1,15)
+							if(ccrandom==4||ccrandom==10)
+								var/ccgain=rand(1,3)
+								if(usr.ChakraC>=100)
+									usr.ChakraC=100
+									return
+								else
+									usr.ChakraC+=ccgain
+									usr<<"[usr] você ganhou [ccgain] controle de chakra..."
+					else
+						usr.random = rand(1,20)
+						if(random == 5||random==1)
+							var/ccrandom=rand(1,15)
+							if(ccrandom==4||ccrandom==10)
+								var/ccgain=rand(1,3)
+								if(usr.ChakraC>=100)
+									usr.ChakraC=100
+									return
+								else
+									usr.ChakraC+=ccgain
+									usr<<"[usr] você ganhou [ccgain] controle de chakra..."
+					sleep(10)
+					usr.firing = 0
+					sleep(45)
+					del(K)
+				else
+					usr.random = rand (1,4)
+					if(usr.random == 1||usr.random == 4)
+						usr.chakra -= 15
+						usr.firing = 1
+						usr.SSU += 1
+						view()<<"[usr] Suiton: Daibakufu No Jutsu"
+						var/obj/SuitonDaibakufuNoJutsu/K = new /obj/SuitonDaibakufuNoJutsu
+						K.loc = usr.loc
+						K.nin=usr.nin
+						K.dir = usr.dir
+						usr.Chakragain()
+						K.name="[usr]"
+						K.Gowner=usr
+						walk(K,usr.dir)
+						if (target == null)
+							del(K)
+						if(usr.Mnin <= usr.cap)
+							usr.random = rand(1,6)
+							if(random == 5||random==1)
+								usr.ninexp += rand(1,10)
+								usr.ninup()
+								usr.Skills()
+								var/ccrandom=rand(1,15)
+								if(ccrandom==4||ccrandom==10)
+									var/ccgain=rand(1,3)
+									if(usr.ChakraC>=100)
+										usr.ChakraC=100
+										return
+									else
+										usr.ChakraC+=ccgain
+										usr<<"[usr] você ganhou [ccgain] controle de chakra..."
+						else
+							usr.random = rand(1,20)
+							if(random == 5||random==1)
+								var/ccrandom=rand(1,15)
+								if(ccrandom==4||ccrandom==10)
+									var/ccgain=rand(1,3)
+									if(usr.ChakraC>=100)
+										usr.ChakraC=100
+										return
+									else
+										usr.ChakraC+=ccgain
+										usr<<"[usr] você ganhou [ccgain] controle de chakra..."
+						sleep(10)
+						usr.firing = 0
+						sleep(45)
+						del(K)
+
 
 
 //Suiton: Goshokuzame
@@ -153,10 +283,132 @@ mob/Kisame
 //Suiton: Daikoudan
 // -poucas informações sobre o jutsu mas parece ser um jutsu de substituição
 // - http://br.answers.yahoo.com/question/index?qid=20091127125502AAfSBKm
+mob/Kisame
+	verb
+		SuitonDaikoudan() // Verb used for firing the beam
+			set category = "Clan Jutsus"
+			set name = "Suiton: Daikoudan"
+			usr.Handseals()
+			if(usr.firing||usr.kawa||usr.Kaiten||usr.counter)
+				return
+			if(usr.inso)
+				usr<<"Not while in Soutourou!"
+				return
+			if(!usr.handseals)
+				return
+			if(usr.Frozen)
+				usr<<"Your frozen"
+				return
+			if(usr.caught)
+				usr<<"Your captured"
+				return
+			if(usr.captured)
+				usr<<"Your captured"
+				return
+			if(usr.chakra <= 5)
+				usr<<"Not enough chakra."
+				return
+			if(usr.froze)
+				usr<<"Your frozen"
+				return
+			if(usr.resting)
+				usr<<"Not while resting"
+				return
+			if(usr.meditating)
+				usr<<"Not while meditating"
+				return
+			else
+				if(usr.KawaN >= 12)
+					var/list/O = usr.overlays.Copy()
+					usr.firing = 1
+					usr.KawaN += 1
+					usr.move = 0
+					usr.SDaikoudan = 1
+					usr.chakra -= 5
+					sleep(1)
+					usr.move = 1
+					var/mob/L=new/mob/Klog
+					L.name = usr.name
+					L.icon = usr.icon
+					L.dir=usr.dir
+					L.health=99999999999
+					L.overlays = usr.overlays
+					L.loc=locate(usr.x,usr.y,usr.z)
+					usr.overlays = usr.overlays.Remove(usr.overlays)
+					usr.icon = 'invis.dmi'
+					usr.Chakragain()
+					sleep(52)
+					usr.icon = usr.Oicon
+					usr.overlays = O.Copy()
+					usr.overlays-='Bun.dmi'
+					usr.overlays-='Bun.dmi'
+					usr.overlays-='Bun.dmi'
+					usr.overlays-='Bun.dmi'
+					usr.overlays-='Bun.dmi'
+					usr.kawa = 0
+					L.overlays = L.overlays.Remove(L.overlays)
+					L.icon = 'Landscapes.dmi'
+					L.icon_state="Log"
+					flick("smoke2",L)
+					sleep(30)
+					flick("smoke2",L)
+					sleep(8)
+					del(L)
+					usr.random = rand(1,20)
+					usr.ninup()
+					usr.Skills()
+					usr<<"<font color = blue>Your nin increased!"
+				else
+					usr.random = rand (1,4)
+					if(usr.random == 1||usr.random == 4)
+						var/list/O = usr.overlays.Copy()
+						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam
+						usr.move = 0
+						usr.KawaN += 1
+						usr.SDaikoudan = 1 // Disables the mob's movement
+						usr.chakra -= 5
+						sleep(1)
+						usr.move = 1
+						var/mob/L=new/mob/Klog
+						L.name = usr.name
+						L.icon = usr.icon
+						L.overlays = usr.overlays
+						L.loc=locate(usr.x,usr.y,usr.z)
+						usr.icon = 'invis.dmi' // Sets the mob's icon_state
+						usr.overlays = usr.overlays.Remove(usr.overlays)
+						sleep(52)
+						usr.icon = usr.Oicon
+						usr.overlays = O.Copy()
+						usr.SDaikoudan = 0
+						L.overlays = L.overlays.Remove(L.overlays)
+						L.icon= 'Landscapes.dmi'
+						L.icon_state = "Log"
+						flick("smoke2",L)
+						sleep(30)
+						flick("smoke2",L)
+						sleep(8)
+						del(L)
+						usr.random = rand(1,20)
+						usr.ninup()
+						usr.Skills()
+						usr<<"<font color = blue>Your nin increased!"
+			sleep(30)
+			usr.firing =0
+			usr.SDaikoudan=0
+mob/var/tmp
+	SDaikoudan = 0
+
+mob
+	Klog
+		name = "Log"
+		icon = 'Landscapes.dmi'
+		icon_state= "Log"
+
 
 //Mizu Bunshin no Jutsu
 // -Técnica que cria vários clones feitos 100% de água, que possuem 10% do poder original, mas que não podem se distanciar muito do ninja original. Dentro da água, o poder do Mizu Bunshin aumenta consideravelmente.
 // - http://narutorpgplay.ativoforum.com/t53-jutsus-suiton
+
 
 
 //Mizu Shunshin no Jutsu

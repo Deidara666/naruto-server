@@ -2216,6 +2216,9 @@ mob/npc/Kisame
 					if(usr.Kisame == 1)
 						usr<<"Olá colega hoshigaki, bem-vindo à nossa casa."
 						usr.verbs += new /mob/Kisame/verb/ShushinNoJutsuKisame()
+						usr.verbs += new /mob/Kisame/verb/SuitonDaikoudan()
+						usr.verbs += new /mob/Kisame/verb/SuitonDaibakufuNoJutsu()
+						usr.verbs += new /mob/Kisame/verb/SuitonArmorKisame()
 					else
 						usr<<"Mentiroso, saia de perto de mim AGORA!"
 
