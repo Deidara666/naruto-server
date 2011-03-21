@@ -2322,16 +2322,19 @@ mob/npc/Nara
 				if("Eu sou Nara tambem!")
 					if(usr.Nara == 1)
 						usr<<"Olá, bem-vindo à nossa casa."
-						if(usr.Nara&&usr.Mgen >=500)
-							usr << "<B><font color = blue>Você aprendeu Kage Shibari No Jutsu!"
-							usr.verbs += new /mob/nara/verb/kageshibari()
-							usr.verbs += new /mob/nara/verb/ExtendShadow()
-							usr.verbs += new /mob/nara/verb/RetractShadow()
-						else
+						usr << "<B><font color = blue>Você aprendeu Kage Shibari No Jutsu!"
+						usr.verbs += new /mob/nara/verb/kageshibari()
+						usr.verbs += new /mob/nara/verb/ExtendShadow()
+						usr.verbs += new /mob/nara/verb/RetractShadow()
+						usr.verbs += new /mob/nara/verb/KageKubiShibaru()
+						usr.verbs += new /mob/nara/verb/kageblind()
+						usr.verbs += new /mob/nara/verb/kageteleport()
+						usr.verbs += new /mob/nara/verb/ShadowNoJutsu()
+						/*else
 							usr<<"Você precisa de 500 Gen para aprender Kage Shibari No Jutsu."
 						if(usr.Nara&&usr.Mgen >=500&&usr.Mnin>=500)
 							usr << "<B><font color = blue>Você aprendeu Kage Kubi Shibaru!"
-							usr.verbs += new /mob/nara/verb/KageKubiShibaru()
+
 						else
 							usr<<"Você precisa de 500 Nin & Gen para aprender Kage Kubi Shibaru."
 						if(usr.Nara&&usr.Mgen >=750&&usr.Mnin>=750)
@@ -2341,17 +2344,17 @@ mob/npc/Nara
 							usr<<"Você precisa de 750 Nin & Gen para aprender Kage Blinding No Jutsu."
 						if(usr.Nara&&usr.Mgen >=1000&&usr.Mnin>=1000)
 							usr<<"<b><font color=blue>Você aprendeu learned Teleport!"
-							usr.verbs += new /mob/nara/verb/kageteleport()
+
 						else
 							usr<<"Você precisa de 1000 Nin & Gen para aprender Teleport."
 						if(usr.Nara&&usr.Mnin>=5000)
 							usr<<"<b><font color=blue>Você aprendeu Shadow No Jutsu"
-							usr.verbs += new /mob/nara/verb/ShadowNoJutsu()
+
 						else
 							usr<<"Você precisa de 5000 Nin para aprender Shadow No Jutsu."
 					else
 						usr<<"Mentiroso, sai da casa Nara AGORA!"
-						return
+						return*/
 				if("Esqueça")
 					usr<<"Que arrasto"
 
