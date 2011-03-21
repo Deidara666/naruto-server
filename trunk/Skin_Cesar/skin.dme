@@ -1,0 +1,14 @@
+// DM environment file for Lemonde.revolucaobrasil: skin.dme
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+
+// BEGIN_INCLUDE
+// END_INCLUDE
+
+// BEGIN_PREFERENCES
+// END_PREFERENCES
