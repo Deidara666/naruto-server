@@ -323,6 +323,7 @@ mob/Kisame
 					K.target=M
 					usr.Frozen=1
 
+
 		Seguir()
 			set category = "Clan Jutsus"
 			set name = "Seguir"
@@ -360,6 +361,7 @@ mob/Kisame
 						if(T.owner == usr)
 							usr.Frozen=0
 							del(T)
+
 		Recuar()
 			set category = "Clan Jutsus"
 			set name = "Recuar"
