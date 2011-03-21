@@ -8,6 +8,7 @@
 // END_FILE_DIR
 
 // BEGIN_INCLUDE
+#include "skin.dmf"
 // END_INCLUDE
 
 // BEGIN_PREFERENCES
