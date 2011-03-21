@@ -431,9 +431,9 @@ mob/Kisame
 									M.overlays-='kagekubi.dmi'
 									M.overlays-='kagekubi.dmi'
 									M.overlays-='kagekubi.dmi'
-		KageKubiShibaru()
-			set category = "Jutsus"
-			set name="Kage Kubi Shibaru"
+		SuitonGoshokusameHengo()
+			set category = "Clan Jutsus"
+			set name="Suiton: Goshokusame Hengo"
 			if(usr.firing)
 				return
 			if(usr.PK==0)

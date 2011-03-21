@@ -2211,10 +2211,10 @@ mob/npc/Kisame
 			set src in oview(1)
 			set category = "Kisame"
 			set name="***  Falar  ***"
-			switch(input("O quê? Você não quer aqui?",text) in list ("Eu sou hoshigaki tambem!","Esqueça"))
+			switch(input("O que você quer aqui? Não me diga que tambem é um hoshigaki!",text) in list ("RsRssSrs.. sou hoshigaki tambem!","Esqueça"))
 				if("Eu sou hoshigaki tambem!")
 					if(usr.Kisame == 1)
-						usr<<"Olá colega hoshigaki, bem-vindo à nossa casa."
+						usr<<"Olá colega hoshigaki, ensinarei jutsus para você comforme você for evoluindo."
 						usr.verbs += new /mob/Kisame/verb/ShushinNoJutsuKisame()
 						usr.verbs += new /mob/Kisame/verb/SuitonDaikoudan()
 						usr.verbs += new /mob/Kisame/verb/SuitonDaibakufuNoJutsu()
@@ -2222,6 +2222,7 @@ mob/npc/Kisame
 						usr.verbs += new /mob/Kisame/verb/SuitonGoshokuzame()
 						usr.verbs += new /mob/Kisame/verb/Seguir()
 						usr.verbs += new /mob/Kisame/verb/Recuar()
+						usr.verbs += new /mob/Kisame/verb/SuitonGoshokusameHengo()
 					else
 						usr<<"Mentiroso, saia de perto de mim AGORA!"
 
