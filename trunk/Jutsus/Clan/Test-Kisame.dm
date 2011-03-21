@@ -249,9 +249,9 @@ mob/Kisame
 //Suiton: Goshokuzame
 // -um tubarao gigante que paraliza o oponente
 // -http://www.youtube.com/watch?v=o3ghMgEo3Sk
-/*mob/Kisame
+mob/Kisame
 	verb
-		Suiton: Goshokuzame(mob/M in oview(10))
+		SuitonGoshokuzame(mob/M in oview(10))
 			set category = "Clan Jutsus"
 			set name = "Suiton: Goshokusame"
 			usr.Handseals()
@@ -561,7 +561,7 @@ mob/Kisame
 										sleep(40)
 										goto ROFL
 
-*/
+
 //Suiton: Suishouha
 // -cria um ciclone que se desfaz perto do oponente
 // - http://www.youtube.com/watch?v=w_gc3bREk40
