@@ -2219,6 +2219,7 @@ mob/npc/Kisame
 						usr.verbs += new /mob/Kisame/verb/SuitonDaikoudan()
 						usr.verbs += new /mob/Kisame/verb/SuitonDaibakufuNoJutsu()
 						usr.verbs += new /mob/Kisame/verb/SuitonArmorKisame()
+						usr.verbs += new /mob/Kisame/verb/SuitonGoshokuzame()
 					else
 						usr<<"Mentiroso, saia de perto de mim AGORA!"
 
