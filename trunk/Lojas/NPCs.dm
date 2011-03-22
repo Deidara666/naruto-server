@@ -2212,7 +2212,7 @@ mob/npc/Kisame
 			set category = "Kisame"
 			set name="***  Falar  ***"
 			switch(input("O que você quer aqui? Não me diga que tambem é um hoshigaki!",text) in list ("RsRssSrs.. sou hoshigaki tambem!","Esqueça"))
-				if("Eu sou hoshigaki tambem!")
+				if("RsRssSrs.. sou hoshigaki tambem!")
 					if(usr.Kisame == 1)
 						usr<<"Olá colega hoshigaki, ensinarei jutsus para você comforme você for evoluindo."
 						usr.verbs += new /mob/Kisame/verb/ShushinNoJutsuKisame()

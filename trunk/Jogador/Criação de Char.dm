@@ -801,6 +801,35 @@ turf/UCHIHA
 			if("Não")
 				usr.clany = 0
 				return
+turf/KISAME
+	density = 1
+	Click()
+		if(usr.clany)
+			return
+		usr.clany = 1
+		switch(input("Tem certeza que você gostaria de ser Hoshigaki?", "Hoshigaki") in list ("Não","Sim"))
+			if("Sim")
+				usr<<"Você escolheu o clã Hoshigaki!"
+				usr.Kisame=1
+				usr.Realplayer = 1
+				usr.human = 1
+				usr.Clan = "Hoshigaki"
+				usr.Inuzuka=0
+				usr.chosen = 1
+				usr.Gaaraclan=0
+				usr.Kaguya=0
+				usr.Hyuuga=0
+				usr.Kamizuri=0
+				usr.Nara=0
+				usr.NonClan=0
+				usr.Aburame=0
+				usr.Akimichi = 0
+				usr.Tenten=0
+				usr.Uzumaki=0
+				usr.loc = locate(94,7,20)
+			if("Não")
+				usr.clany = 0
+				return
 turf/choosescreen
 	icon = 'Logingscreen.bmp'
 	density = 1
