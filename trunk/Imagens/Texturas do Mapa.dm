@@ -1,120 +1,220 @@
 turf
-	Gramado
-		icon = 'verde.dmi'
-		icon_state = "1,14"
+	Areia
+		Areia
+			icon = 'solo.dmi'
+			icon_state = "sAreia17"
+		Areia2
+			icon = 'solo.dmi'
+			icon_state = "sAreia16"
+		Areia3
+			icon = 'solo.dmi'
+			icon_state = "sAreia6"
+		Areia4
+			icon = 'solo.dmi'
+			icon_state = "sOssos1"
+		Borda1
+			icon = 'agua.dmi'
+			icon_state = "areia1a"
+		Borda2
+			icon = 'agua.dmi'
+			icon_state = "areia2a"
+		Borda3
+			icon = 'agua.dmi'
+			icon_state = "areia1b"
+		Borda4
+			icon = 'agua.dmi'
+			icon_state = "areia3a"
+		Borda5
+			icon = 'agua.dmi'
+			icon_state = "areia4a"
+		Borda6
+			icon = 'agua.dmi'
+			icon_state = "areia40b"
+		Borda7
+			icon = 'agua.dmi'
+			icon_state = "areia3c"
+		Borda8
+			icon = 'agua.dmi'
+			icon_state = "areia30a"
+		Borda9
+			icon = 'agua.dmi'
+			icon_state = "areia5a"
+	Gramas
+		Gramado
+			icon = 'verde.dmi'
+			icon_state = "1,14"
+		Borda1
+			icon = 'agua.dmi'
+			icon_state = "lago1a"
+		Borda2
+			icon = 'agua.dmi'
+			icon_state = "lago2a"
+		Borda3
+			icon = 'agua.dmi'
+			icon_state = "lago1b"
+		Borda4
+			icon = 'agua.dmi'
+			icon_state = "lago2b"
+		Borda5
+			icon = 'agua.dmi'
+			icon_state = "lago2c"
+		Borda6
+			icon = 'agua.dmi'
+			icon_state = "lago3a"
+		Borda7
+			icon = 'agua.dmi'
+			icon_state = "lago4a"
+		Borda8
+			icon = 'agua.dmi'
+			icon_state = "lago3b"
+		Borda9
+			icon = 'agua.dmi'
+			icon_state = "lago5c"
+
+	Agua
+		Borda1
+			icon = 'agua.dmi'
+			icon_state = "agua1a"
+		Borda2
+			icon = 'agua.dmi'
+			icon_state = "agua2a"
+		Borda3
+			icon = 'agua.dmi'
+			icon_state = "agua1b"
+		Borda4
+			icon = 'agua.dmi'
+			icon_state = "agua30a"
+		Borda5
+			icon = 'agua.dmi'
+			icon_state = "agua40a"
+		Borda6
+			icon = 'agua.dmi'
+			icon_state = "agua3a"
+		Borda7
+			icon = 'agua.dmi'
+			icon_state = "agua3b"
+		Borda8
+			icon = 'agua.dmi'
+			icon_state = "agua4b"
+		Borda9
+			icon = 'agua.dmi'
+			icon_state = "agua5a"
+
 	Arvore1
-		icon = 'verde.dmi'
-		icon_state = "0,8"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore2
-		icon = 'verde.dmi'
-		icon_state = "1,8"
-		density = 1
-	Arvore3
-		icon = 'verde.dmi'
-		icon_state = "2,8"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore4
-		icon = 'verde.dmi'
-		icon_state = "3,8"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore5
-		icon = 'verde.dmi'
-		icon_state = "0,9"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore6
-		icon = 'verde.dmi'
-		icon_state = "1,9"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore7
-		icon = 'verde.dmi'
-		icon_state = "2,9"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore8
-		icon = 'verde.dmi'
-		icon_state = "3,9"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore9
-		icon = 'verde.dmi'
-		icon_state = "0,10"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore10
-		icon = 'verde.dmi'
-		icon_state = "1,10"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore11
-		icon = 'verde.dmi'
-		icon_state = "2,10"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore12
-		icon = 'verde.dmi'
-		icon_state = "3,10"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore13
-		icon = 'verde.dmi'
-		icon_state = "0,11"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore14
-		icon = 'verde.dmi'
-		icon_state = "1,11"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore15
-		icon = 'verde.dmi'
-		icon_state = "2,11"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore16
-		icon = 'verde.dmi'
-		icon_state = "3,11"
-		density = 1
-		layer = MOB_LAYER+1
-	Arvore17
-		icon = 'verde.dmi'
-		icon_state = "0,12"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore18
-		icon = 'verde.dmi'
-		icon_state = "1,12"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore19
-		icon = 'verde.dmi'
-		icon_state = "2,12"
-		density = 0
-		layer = MOB_LAYER+1
-	Arvore20
-		icon = 'verde.dmi'
-		icon_state = "3,12"
-		density = 0
-		layer = MOB_LAYER+1
-	Objeto1
-		icon = 'verde.dmi'
-		icon_state = "1,16"
-	Objeto2
-		icon = 'verde.dmi'
-		icon_state = "4,16"
-		density = 1
-	Objeto3
-		icon = 'verde.dmi'
-		icon_state = "4,17"
-		density = 1
-	Objeto4
-		icon = 'verde.dmi'
-		icon_state = "4,15"
+		Arvore1
+			icon = 'verde.dmi'
+			icon_state = "0,8"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore2
+			icon = 'verde.dmi'
+			icon_state = "1,8"
+			density = 1
+		Arvore3
+			icon = 'verde.dmi'
+			icon_state = "2,8"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore4
+			icon = 'verde.dmi'
+			icon_state = "3,8"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore5
+			icon = 'verde.dmi'
+			icon_state = "0,9"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore6
+			icon = 'verde.dmi'
+			icon_state = "1,9"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore7
+			icon = 'verde.dmi'
+			icon_state = "2,9"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore8
+			icon = 'verde.dmi'
+			icon_state = "3,9"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore9
+			icon = 'verde.dmi'
+			icon_state = "0,10"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore10
+			icon = 'verde.dmi'
+			icon_state = "1,10"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore11
+			icon = 'verde.dmi'
+			icon_state = "2,10"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore12
+			icon = 'verde.dmi'
+			icon_state = "3,10"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore13
+			icon = 'verde.dmi'
+			icon_state = "0,11"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore14
+			icon = 'verde.dmi'
+			icon_state = "1,11"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore15
+			icon = 'verde.dmi'
+			icon_state = "2,11"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore16
+			icon = 'verde.dmi'
+			icon_state = "3,11"
+			density = 1
+			layer = MOB_LAYER+1
+		Arvore17
+			icon = 'verde.dmi'
+			icon_state = "0,12"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore18
+			icon = 'verde.dmi'
+			icon_state = "1,12"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore19
+			icon = 'verde.dmi'
+			icon_state = "2,12"
+			density = 0
+			layer = MOB_LAYER+1
+		Arvore20
+			icon = 'verde.dmi'
+			icon_state = "3,12"
+			density = 0
+			layer = MOB_LAYER+1
+	Objetos
+		Objeto1
+			icon = 'verde.dmi'
+			icon_state = "1,16"
+		Objeto2
+			icon = 'verde.dmi'
+			icon_state = "4,16"
+			density = 1
+		Objeto3
+			icon = 'verde.dmi'
+			icon_state = "4,17"
+			density = 1
+		Objeto4
+			icon = 'verde.dmi'
+			icon_state = "4,15"
 
 
 turf
