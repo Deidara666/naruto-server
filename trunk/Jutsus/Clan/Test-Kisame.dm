@@ -4,7 +4,7 @@
 // Ninjutsus----------
 //  Técnicas Básicas---
 
-//Shunshin no Jutsu
+//Shunshin no Jutsu  Rank: B
 
 mob/Kisame
 	verb
@@ -52,7 +52,7 @@ mob/Kisame
 
 //  Técnicas elementais--
 
-//Suiton no Jutsu
+//Suiton no Jutsu  Rank: D
 mob/Kisame
 	verb
 		SuitonArmorKisame()
@@ -108,7 +108,7 @@ mob/Kisame
 
 
 
-//Suiton: Bakusui Shouha
+//Suiton: Bakusui Shouha  Rank: A
 //  -cria um mar
 
 obj/var/tmp/SuitonBakushiShouha=0
@@ -505,7 +505,7 @@ mob/Kisame
 				sleep(30)
 				usr.firing=0
 
-//Suiton: Daibakufu no Jutsu
+//Suiton: Daibakufu no Jutsu  Rank: C
 // -rajada de agua na direção do oponente
 // - http://www.vbox7.com/play:62eb401a?r=google
 mob/Kisame
@@ -1012,14 +1012,6 @@ mob/Kisame
 				K.Gowner=usr
 				walk(K,usr.dir)
 				usr.chakra-=100
-				//usr.nin * 2 = damage
-				//view(usr)<<"[M] takes [damage] damage from Neck Bind"
-				//M.health-=damage
-				//if(M.health<=0)
-				//	M.Death(usr)
-				//	usr.Frozen=0
-
-
 
 //Suiton: Suisahan
 // -O ninja cria várias ondas grandes de água fazendo inundar o local.
