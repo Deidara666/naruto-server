@@ -4551,6 +4551,36 @@ obj
 					del(src)
 			if(istype(A,/obj/))
 				del(src)
+
+obj
+	SuitonSuishouha
+		icon = 'WaterStrom.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] foi atingido por Suiton: Daikufu No Jutsu com [damage] de dano!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
 obj
 	Ice1
 		icon='juvenile ice.dmi'

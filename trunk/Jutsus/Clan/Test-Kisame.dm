@@ -967,6 +967,60 @@ mob/Kisame
 // -cria um ciclone que se desfaz perto do oponente
 // - http://www.youtube.com/watch?v=w_gc3bREk40
 
+mob/Kisame
+	verb
+		SuitonSuishouha()
+			set category = "Clan Jutsus"
+			set name = "Suiton: Suishouha"
+			usr.Handseals()
+			if(!usr.handseals)
+				return
+			if(usr.PK==0)
+				usr<<"Zona Não PK!"
+				return
+			if(usr.Frozen)
+				usr<<"Você está congelado"
+				return
+			if(usr.caught)
+				usr<<"Você está capturado"
+				return
+			if(usr.captured)
+				usr<<"Você está capturado"
+				return
+			if(usr.froze)
+				usr<<"Você está congelado"
+				return
+			if(usr.resting)
+				usr<<"Não enquanto descança"
+				return
+			if(usr.meditating)
+				usr<<"Não enquanto medita"
+				return
+			if(usr.firing||usr.Kaiten||usr.sphere)
+				return
+			//if(usr.chakra <= 15)
+			//	usr<<"Você não possui chakra suficiente!"
+			//	return
+
+			else
+				view()<<"[usr] Jutsu Teste"
+				var/obj/SuitonSuishouha/K = new /obj/SuitonSuishouha
+				K.loc = usr.loc
+				usr.Chakragain()
+				K.dir = usr.dir
+				K.name="[usr]"
+				K.Gowner=usr
+				walk(K,usr.dir)
+				usr.chakra-=100
+				//usr.nin * 2 = damage
+				//view(usr)<<"[M] takes [damage] damage from Neck Bind"
+				//M.health-=damage
+				//if(M.health<=0)
+				//	M.Death(usr)
+				//	usr.Frozen=0
+
+
+
 //Suiton: Suisahan
 // -O ninja cria várias ondas grandes de água fazendo inundar o local.
 
@@ -1165,7 +1219,8 @@ mob
 
 
 //Mizu Bunshin no Jutsu
-// -Técnica que cria vários clones feitos 100% de água, que possuem 10% do poder original, mas que não podem se distanciar muito do ninja original. Dentro da água, o poder do Mizu Bunshin aumenta consideravelmente.
+// -Técnica que cria vários clones feitos 100% de água, que possuem 10% do poder original, mas que não podem se distanciar
+//muito do ninja original. Dentro da água, o poder do Mizu Bunshin aumenta consideravelmente.
 // - http://narutorpgplay.ativoforum.com/t53-jutsus-suiton
 
 

@@ -2,10 +2,9 @@
 /*
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 480.1088
-UPDATE_OBJ_TREE: ON
-DIR: Imagens Imagens\Jutsus Imagens\Mapa Jogador Jutsus Jutsus\Clan Lojas Mapa 
-FILE: Mapa\map.dmp
-LAST_COMPILE_TIME: 1300820368
+DIR: Jutsus Jutsus\Clan Lojas 
+FILE: Jutsus\Clan\Test-Kisame.dm
+LAST_COMPILE_TIME: 1300887106
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS
