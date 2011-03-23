@@ -114,7 +114,8 @@ mob/Kisame
 obj/var/tmp/SuitonBakushiShouha=0
 obj
 	Sawarabi
-		icon='sawarabi.dmi'
+		icon='Suiton.dmi'
+		icon_state="BakushiShouha"
 		layer = MOB_LAYER+1
 mob/Kisame
 	verb
@@ -446,9 +447,9 @@ mob/Kisame
 				flick("rise",AY)
 				flick("rise",AZ)
 				for(var/mob/M in oview(3,usr))
-					var/damage=round(usr.tai*5)
-					view()<<"[M] has taken [damage] damage from [usr]'s Sawarabi No Mai"
-					M.health-=damage
+					//var/damage=round(usr.tai*5)
+					view()<<"[M] está preso no mar de [usr]"
+					M.Move_Delay=50
 					if(M.health<=0)
 						M.Death(usr)
 				sleep(100)
@@ -501,7 +502,7 @@ mob/Kisame
 				del(AX)
 				del(AY)
 				del(AZ)
-				sleep(100)
+				sleep(30)
 				usr.firing=0
 
 //Suiton: Daibakufu no Jutsu
@@ -981,8 +982,58 @@ mob/Kisame
 // - http://www.youtube.com/watch?v=v2pEZDK2trA
 
 //Suiton: Suirou no Jutsu
-// -uma bolha de agua que prendeo oponente
+// -uma bolha de agua que prendendo o oponente
 // - http://www.youtube.com/watch?v=t6uZmI4p6cs
+obj/var/tmp/suirou=1
+
+mob/Kisame
+	verb
+		SuitonSuirouNoJutsu(mob/M in oview(10))
+			set category = "Clan Jutsus"
+			set name = "Suiton: Suirou no Jutsu"
+			usr.Handseals()
+			if(usr.resting)
+				return
+			if(usr.meditating)
+				return
+			if(usr.firing)
+				return
+			if(!usr.handseals)
+				return
+			if(usr.froze)
+				usr<<"Your frozen"
+				return
+			if(usr.Frozen)
+				usr<<"Your frozen"
+				return
+			if(usr.caught)
+				usr<<"Your captured"
+				return
+			if(usr.captured)
+				usr<<"Your captured"
+				return
+			if(usr.resting)
+				usr<<"Not while resting"
+				return
+			if(usr.meditating)
+				usr<<"Not while meditating"
+				return
+			if(usr.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(M.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(usr.chakra <= 1)
+				usr<<"Not enough Chakra!"
+				return
+			if(usr.suirou==1)
+				M.froze=1
+				M.Frozen=1
+				M.overlays += 'Warmor.dmi'
+				usr<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green>Says: <font color=red>Suiton: Suirou no Jutsu!"
+				M<<"Você esta preso no Suirou de [usr]"
+				return
 
 //Suiton: Suiryuudan no Jutsu
 // -cria um dragao de agua que se choca contra o oponente

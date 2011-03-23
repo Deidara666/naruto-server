@@ -152,6 +152,7 @@ mob/var
 
 	//Variáveis de clã, jutsus e habilidades
 mob/var
+	suirou=1
 	missingS=0
 	doton=0
 	SnakeH=0
