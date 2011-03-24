@@ -744,6 +744,7 @@ mob/Kisame
 				if(usr.meditating)
 					usr<<"Not while meditating"
 					return
+
 				if(K.owner == usr)
 					step_towards(K,K.target)
 				if(usr.chakra<=100)

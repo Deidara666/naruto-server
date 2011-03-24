@@ -1127,3 +1127,92 @@ mob
 			if(tevento==1)
 				usr.evento = 0
 				world << "<font size=3><font color=red><b><i>O Evento Terminou"
+/*
+mob
+	proc
+		vJutsus()
+			if(usr.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(usr.froze)
+				usr<<"Your frozen"
+				return
+			if(usr.resting)
+				usr<<"Not while resting"
+				return
+			if(usr.meditating)
+				usr<<"Not while meditating"
+				return
+			if(usr.Frozen)
+				usr<<"Your frozen"
+				return
+			if(usr.caught)
+				usr<<"Your captured"
+				return
+			if(usr.captured)
+				usr<<"Your captured"
+				return
+			if(usr.hyoushou)
+				return
+			if(!usr.handseals)
+				return
+			if(usr.firing||usr.kawa||usr.Kaiten||usr.counter||usr.sphere)
+				return
+			if(M.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(M.counter)
+				usr<<"They copy and reflect it back at you."
+				M<<"You copy and reflect it back at them."
+				return
+			if(usr.Konchuu <= 0)
+				usr<<"You dont have any konchuu bugs to place!"
+				return
+			if(usr.konchdelay)
+				return
+			if(usr.Henge)
+				return
+			if(usr.intank)
+				return
+			if(usr.kunai < 5)
+				usr<<"<font color=silver><b><font face=verdana>You must have atleast 5 kunais!"
+				if(usr.kunai<=0)
+					usr.kunai=0
+					return
+			if(!usr.inbaika)
+				usr<<"<font color=silver><b><font face=verdana>You must first use baika no jutsu!"
+				return
+			if (M.inspike)
+				usr<<"Your attack bounces off of [usr]!"
+				return
+			if (M.ingat == 1)
+				return
+			if(usr.Jujin == 0||usr.inso==1) // If the mob's firing var is one...
+				return
+			if(usr.canS==1)
+				usr<<"You have used soutourou to recently..."
+				return
+			if(M.drunk&&M.NonClan)
+				view()<<"[M] dodges [usr]'s attack"
+				return
+			if (!usr.spinesword)
+				usr<<"You must have a spinal whip equiped to use this!"
+				return
+			if (!usr.bonesword)
+				usr<<"You must have a sword bone equiped to use this!"
+				return
+			if(usr.Bees <= 0)
+				usr<<"You dont have any Bees to place!"
+				return
+			if(usr.SHarmor==1)
+				usr<<"Not now."
+				return
+			if(usr.weaponthrow)
+				return
+			if(usr.firing&&!usr.focusing)
+				usr<<"Not now."
+				return
+			if(usr.bakuretsuuse)
+				return
+
+				*/
