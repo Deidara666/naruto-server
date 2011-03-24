@@ -2354,6 +2354,14 @@ turf
 		icon = 'HellsRavine.dmi'
 		icon_state = "9"
 		density = 1
+	HellsRavine
+		icon = 'HellsRavine.dmi'
+		icon_state = "10"
+		density = 1
+	HellsRavine
+		icon = 'HellsRavine.dmi'
+		icon_state = "11"
+		density = 1
 	bridgeup
 		icon = 'Landscapes.dmi'
 		icon_state = "bridgeup"
