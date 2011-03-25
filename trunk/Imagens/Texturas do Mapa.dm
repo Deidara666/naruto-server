@@ -1,4 +1,37 @@
 turf
+	Cachoeira
+		Cacheira
+			icon = 'agua.dmi'
+			icon_state = "cachoeira5"
+		Cacheira2
+			icon = 'agua.dmi'
+			icon_state = "cachoeira11a"
+		Cacheira3
+			icon = 'agua.dmi'
+			icon_state = "cachoeira4c"
+
+	ASolos
+		Montanha
+			icon = 'solo.dmi'
+			icon_state = "sPedra15"
+			density = 1
+		Montanha2
+			icon = 'agua.dmi'
+			icon_state = "mont1"
+			density = 1
+		Montanha3
+			icon = 'agua.dmi'
+			icon_state = "mont2"
+			density = 1
+		Montanha4
+			icon = 'agua.dmi'
+			icon_state = "mont3"
+			density = 1
+		Montanha5
+			icon = 'agua.dmi'
+			icon_state = "mont4"
+			density = 1
+
 	ParedeETelha
 		PmadFerro1
 			icon = 'parede.dmi'
