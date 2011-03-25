@@ -37,6 +37,7 @@
 #define FILE_DIR "Mapa"
 #define FILE_DIR "Skin"
 #define FILE_DIR "Skin_Cesar"
+#define FILE_DIR "sounds"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
@@ -96,7 +97,6 @@
 #include "Lojas\NPCs.dm"
 #include "Lojas\Roupas.dm"
 #include "Mapa\Mapa.dm"
-#include "Mapa\Mapa_Ripardo.dmm"
 #include "Mapa\map.dmp"
 #include "Skin\skin.dmf"
 // END_INCLUDE

@@ -2989,6 +2989,36 @@ turf
 		density=0
 		icon='Mountain.dmi'
 		icon_state="mountain9"
+turf
+	sPedra10
+		name="Pedra10"
+		density=0
+		icon='solo.dmi'
+		icon_state="sPedra10"
+turf
+	sPedra5
+		name="Pedra5"
+		density=0
+		icon='solo.dmi'
+		icon_state="sPedra5"
+turf
+	sPedra26
+		name="Pedra26"
+		density=0
+		icon='solo.dmi'
+		icon_state="sPedra26"
+turf
+	sPedra3
+		name="Pedra3"
+		density=0
+		icon='solo.dmi'
+		icon_state="sPedra3"
+/*turf
+	Trilha
+		name="Trilha"
+		density=0
+		icon='tufsnone.dmi'
+		icon_state="Pavement"*/
 area
 	cliff
 		Entered(atom/M)
