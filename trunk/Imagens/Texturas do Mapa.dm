@@ -4161,6 +4161,10 @@ turf
 		opacity = 1
 		Enter()
 			usr.loc=locate(25,4,8)
+	lmansion29
+		icon = 'mansionlight.dmi'
+		icon_state = "29"
+		density = 1
 	emansion1
 		icon = 'mansioner.dmi'
 		icon_state = "1"
