@@ -4596,6 +4596,12 @@ turf
 		icon_state = "chuva"
 		density = 0
 		layer = 10
+turf
+	Nuvem
+		icon = 'Nuvem.dmi'
+		icon_state = "Nuvem"
+		density = 0
+		layer = 10
 
 turf
 	Poca
