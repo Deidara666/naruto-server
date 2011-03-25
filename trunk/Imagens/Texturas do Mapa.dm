@@ -1,4 +1,140 @@
 turf
+	ParedeETelha
+		PmadFerro1
+			icon = 'parede.dmi'
+			icon_state = "pMadFerro1"
+		PmadFerro2
+			icon = 'parede.dmi'
+			icon_state = "pMadFerro2"
+		PmadFerro3
+			icon = 'parede.dmi'
+			icon_state = "pMadFerro3"
+		PmadFerro4
+			icon = 'parede.dmi'
+			icon_state = "pMadFerro4"
+		PmadFerro5
+			icon = 'parede.dmi'
+			icon_state = "pMadFerro5"
+		PmadFerro6
+			icon = 'parede.dmi'
+			icon_state = "pMadFerro6"
+		PmadFerro7
+			icon = 'parede.dmi'
+			icon_state = "pMadFerro7"
+		PmadFerro8
+			icon = 'parede.dmi'
+			icon_state = "pMadFerro8"
+		PPedra1
+			icon = 'parede.dmi'
+			icon_state = "pPedra1"
+		PPedra2
+			icon = 'parede.dmi'
+			icon_state = "pPedra2"
+		PPedra3
+			icon = 'parede.dmi'
+			icon_state = "pPedra3"
+		PPedra4
+			icon = 'parede.dmi'
+			icon_state = "pPedra4"
+		PPedra5
+			icon = 'parede.dmi'
+			icon_state = "pPedra5"
+		PPedra6
+			icon = 'parede.dmi'
+			icon_state = "pPedra6"
+		PPedra7
+			icon = 'parede.dmi'
+			icon_state = "pPedra7"
+		PPedra8
+			icon = 'parede.dmi'
+			icon_state = "pPedra8"
+		PPedra9
+			icon = 'parede.dmi'
+			icon_state = "pPedra9"
+		PPedra10
+			icon = 'parede.dmi'
+			icon_state = "pPedra10"
+		PPedra11
+			icon = 'parede.dmi'
+			icon_state = "pPedra11"
+		PPedra12
+			icon = 'parede.dmi'
+			icon_state = "pPedra12"
+		PPedra13
+			icon = 'parede.dmi'
+			icon_state = "pPedra13"
+		PPedra14
+			icon = 'parede.dmi'
+			icon_state = "pPedra14"
+		PBranca1
+			icon = 'parede.dmi'
+			icon_state = "pBranca1"
+		PBranca2
+			icon = 'parede.dmi'
+			icon_state = "pBranca2"
+		PFerro
+			icon = 'parede.dmi'
+			icon_state = "pFerro"
+		PAmarela1
+			icon = 'parede.dmi'
+			icon_state = "pAmarela1"
+		PAmarela2A
+			icon = 'parede.dmi'
+			icon_state = "pAmarela2A"
+		PAmarela2B
+			icon = 'parede.dmi'
+			icon_state = "pAmarela2B"
+		PAmarela3
+			icon = 'parede.dmi'
+			icon_state = "pAmarela3"
+		PAmarela4A
+			icon = 'parede.dmi'
+			icon_state = "pAmarela4A"
+		PAmarela4B
+			icon = 'parede.dmi'
+			icon_state = "pAmarela4B"
+		PAmarela5
+			icon = 'parede.dmi'
+			icon_state = "pAmarela5"
+		PAmarela6
+			icon = 'parede.dmi'
+			icon_state = "pAmarela6"
+		PMadeira2
+			icon = 'parede.dmi'
+			icon_state = "pMadeira2"
+		TVerde1
+			icon = 'parede.dmi'
+			icon_state = "tVerde1"
+		TVerde2
+			icon = 'parede.dmi'
+			icon_state = "tVerde2"
+		TVermelha
+			icon = 'parede.dmi'
+			icon_state = "tVermelha"
+		TVermelha2
+			icon = 'parede.dmi'
+			icon_state = "tVermelha2"
+		TRosa
+			icon = 'parede.dmi'
+			icon_state = "tRosa"
+		TFerro
+			icon = 'parede.dmi'
+			icon_state = "tFerro"
+		TOutras1
+			icon = 'parede.dmi'
+			icon_state = "tOutras1"
+		TOutras2
+			icon = 'parede.dmi'
+			icon_state = "tOutras2"
+		TOutras3
+			icon = 'parede.dmi'
+			icon_state = "tOutras3"
+		TOutras4
+			icon = 'parede.dmi'
+			icon_state = "tOutras4"
+		TOutras5
+			icon = 'parede.dmi'
+			icon_state = "tOutras5"
 	Areia
 		Areia
 			icon = 'solo.dmi'
