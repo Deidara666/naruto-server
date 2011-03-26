@@ -75,7 +75,7 @@ turf
 	ASolos
 		Solo1
 			icon = 'solo.dmi'
-			icon_state = "sPedra11"
+			icon_state = "sPedra10"
 			density = 0
 		Solo2
 			icon = 'solo.dmi'
