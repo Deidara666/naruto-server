@@ -97,6 +97,7 @@
 #include "Lojas\NPCs.dm"
 #include "Lojas\Roupas.dm"
 #include "Mapa\Mapa.dm"
+#include "Mapa\Douglas.dmm"
 #include "Mapa\Mexicano.dmm"
 #include "Mapa\map.dmp"
 #include "Skin\skin.dmf"

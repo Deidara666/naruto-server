@@ -1948,6 +1948,32 @@ mob
 		else
 			return..()
 mob/npc
+	GuardiaoKumogakure
+		name = "Guardião"
+		icon = 'Banker.dmi'
+		icon_state = "Vendedor de pergaminhos"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set src in oview(3)
+				set name="***  Abra a passagem  ***"
+				switch(input("Essa passagem só é desbloquiada com a senha do Raikage! Quantos Bijus existiam na vila de Kumogakure?")in list("1","2","3","4"))
+					if("2")
+						usr<<"Você acertou"
+					else
+						usr.death
+						usr<<"Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] está morto agora!!!"
+						return
+				switch(input("Você acertou, mas quero que responda mais uma pergunta! Quantas caudas tinha esses bijus?")in list("8 caudas e 2 caudas","9 caudas e 5 caudas","2 caudas e 1 cauda","5 caudas e 8 caudas"))
+					if("8 caudas e 2 caudas")
+						usr<<"Vejo que você é um homem de confiança e muito inteligente!<font size = 3><font color = red> [usr] está liberado para passar"
+					else
+						usr.death
+						usr<<"Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] está morto agora!!!"
+						return
+
+mob/npc
 	Summon_Vender
 		name = "Vendedor de pergaminhos de summon"
 		icon = 'Banker.dmi'
