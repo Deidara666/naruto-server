@@ -2549,6 +2549,21 @@ turf
 		icon_state = "chu2"
 		density=1
 turf
+	casa9
+		icon = 'predios.dmi'
+		icon_state = "casa9"
+		density = 1
+turf
+	casa7
+		icon = 'predios.dmi'
+		icon_state = "casa7"
+		density = 1
+turf
+	casa10
+		icon = 'predios.dmi'
+		icon_state = "casa10"
+		density = 1
+turf
 	floor
 		icon = 'Landscapes.dmi'
 		icon_state = "floor"
