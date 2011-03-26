@@ -191,6 +191,7 @@
 #include "Lojas\Roupas.dm"
 #include "Mapa\Mapa.dm"
 #include "Mapa\Douglas.dmm"
+#include "Mapa\Mapa_Ripardo.dmm"
 #include "Mapa\Mexicano.dmm"
 #include "Mapa\Sanches.dmm"
 #include "Mapa\map.dmp"

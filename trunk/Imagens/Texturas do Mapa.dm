@@ -1,4 +1,43 @@
 turf
+	Ponte
+		Ponte1
+			icon = 'verde.dmi'
+			icon_state = "7,4"
+			density = 0
+		Ponte2
+			icon = 'verde.dmi'
+			icon_state = "7,5"
+			density = 0
+		Ponte3
+			icon = 'verde.dmi'
+			icon_state = "7,3"
+			density = 0
+		Ponte4
+			icon = 'verde.dmi'
+			icon_state = "5,3"
+			density = 1
+		Ponte5
+			icon = 'verde.dmi'
+			icon_state = "6,4"
+			density = 1
+		Ponte6
+			icon = 'verde.dmi'
+			icon_state = "6,2"
+			density = 1
+		Corrimao1
+			icon = 'verde.dmi'
+			icon_state = "3,6"
+			density = 1
+		Corrimao2
+			icon = 'verde.dmi'
+			icon_state = "3,7"
+			density = 1
+		Corrimao3
+			icon = 'verde.dmi'
+			icon_state = "3,5"
+			density = 1
+
+
 	Casas
 		Casa1
 			icon = 'predios.dmi'
