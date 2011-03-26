@@ -1,4 +1,66 @@
 turf
+	Casas
+		Casa1
+			icon = 'predios.dmi'
+			icon_state = "casa1"
+			density = 1
+		Casa2
+			icon = 'predios.dmi'
+			icon_state = "casa2"
+			density = 1
+		Casa3
+			icon = 'predios.dmi'
+			icon_state = "casa3"
+			density = 1
+		Casa4
+			icon = 'predios.dmi'
+			icon_state = "casa4"
+			density = 1
+		Casa5
+			icon = 'predios.dmi'
+			icon_state = "casa5"
+			density = 1
+		Casa6
+			icon = 'predios.dmi'
+			icon_state = "casa6"
+			density = 1
+		Casa7
+			icon = 'predios.dmi'
+			icon_state = "casa1"
+			density = 1
+		Casa1
+			icon = 'predios.dmi'
+			icon_state = "casa7"
+			density = 1
+		Casa8
+			icon = 'predios.dmi'
+			icon_state = "casa8"
+			density = 1
+		Casa9
+			icon = 'predios.dmi'
+			icon_state = "casa9"
+			density = 1
+		Casa10
+			icon = 'predios.dmi'
+			icon_state = "casa10"
+			density = 1
+		Casa11
+			icon = 'predios.dmi'
+			icon_state = "casa11"
+			density = 1
+		Muro1
+			icon = 'predios.dmi'
+			icon_state = "muro1"
+			density = 1
+		Muro2
+			icon = 'predios.dmi'
+			icon_state = "muro2"
+			density = 1
+		Muro3
+			icon = 'predios.dmi'
+			icon_state = "muro3"
+			density = 1
+
 	Cachoeira
 		Cacheira
 			icon = 'agua.dmi'
@@ -11,6 +73,18 @@ turf
 			icon_state = "cachoeira4c"
 
 	ASolos
+		Solo1
+			icon = 'solo.dmi'
+			icon_state = "sPedra11"
+			density = 0
+		Solo2
+			icon = 'solo.dmi'
+			icon_state = "sPedra26"
+			density = 0
+		Solo3
+			icon = 'solo.dmi'
+			icon_state = "sBuraco1"
+			density = 1
 		Montanha
 			icon = 'solo.dmi'
 			icon_state = "sPedra15"
