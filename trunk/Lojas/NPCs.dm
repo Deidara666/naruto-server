@@ -364,6 +364,28 @@ mob/npc
 					if("Nada")
 						return
 mob/npc
+	SabioDosMapas
+		name = "Sabio dos Mapas(NPC)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Parabéns por me achar! Você é merecedor de um PRÊMIO!!!")in list("Mapa do Laberinto(Completo)","Mapa do Mundo(Pedaço1)","Mapa do Mundo(Pedaço2)","Mapa do Mundo(Pedaço3)","Mapa do Mundo(Pedaço4)"))
+					if("Mapa do Laberinto(Completo)")
+						return
+					if("Mapa do Mundo(Pedaço1)")
+						return
+					if("Mapa do Mundo(Pedaço2)")
+						return
+					if("Mapa do Mundo(Pedaço3)")
+						return
+					if("Mapa do Mundo(Pedaço4)")
+						return
+mob/npc
 	Merchant
 		name = "Vendedor de roupas(NPC)"
 		icon = 'Banker.dmi'

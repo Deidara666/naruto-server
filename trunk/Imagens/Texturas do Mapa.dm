@@ -2423,7 +2423,40 @@ turf
 			else
 				if(istype(A,/obj/)) del(A)
 
+turf
+	BuracoKumo
+		icon = 'akat.dmi'
+		icon_state = "1"
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
 
+				if(M.Village=="Sound")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Mist")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Leaf")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Grass")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Rain")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Waterfall")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Sand")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Rock")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Cloud")
+					usr<<"Você não tem permissão para entrar aqui!"
+				if(M.Village=="Snow")
+					usr<<"Você não tem permissão para entrar aqui!"
+					return
+				if(M.Village=="")
+					M.loc = locate(89,96,7)
+			else
+				if(istype(A,/obj/)) del(A)
 turf
 	rogu1
 		icon = 'rogin1.dmi'
