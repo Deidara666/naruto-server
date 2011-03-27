@@ -37,7 +37,6 @@ turf
 			icon_state = "3,5"
 			density = 1
 
-
 	Casas
 		Casa1
 			icon = 'predios.dmi'
@@ -2009,9 +2008,6 @@ turf
 			else
 				if(istype(A,/obj/)) del(A)
 
-			else
-				if(istype(A,/obj/)) del(A)
-
 	TOWATERFALL
 		density = 0
 		Enter(A)
@@ -3064,11 +3060,17 @@ turf
 		icon_state="water2"
 		layer = 1
 		density=0
+
 		Enter(mob/M)
 			..()
 			if(ismob(M)&&M.waterwalk)
 				if(!M.onwater)
 					M.onwater = 1
+				spawn(3)
+				src.overlays += "waterwalk"
+				//icon = 'WaterWalk.dmi'
+				//icon_state="waterwalk"
+				//src.overlays += 'WaterWalk.dmi'
 				return 1
 			else if(isobj(M))
 				return 1
@@ -3077,10 +3079,19 @@ turf
 			..()
 			if(ismob(M)&&M.waterwalk)
 				M.onwater=0
+				spawn(10)
+				src.overlays -= "waterwalk"
+				//icon = 'WaterWalk.dmi'
+				//icon_state="waterwalk"
+				//src.overlays -= 'WaterWalk.dmi'
 				return 1
 			else if(isobj(M))
 				return 1
 			else ..()
+turf
+	waterwalk
+		icon = 'WaterWalk.dmi'
+		icon_state="waterwalk"
 
 
 obj
@@ -5310,3 +5321,6 @@ turf
 		icon_state="feature"
 		density=0
 		layer=10
+
+
+
