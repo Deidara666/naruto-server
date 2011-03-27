@@ -88,7 +88,8 @@ mob
 							M.verbs += /mob/guildcontrols/verb/Invite
 							M.verbs += /mob/guildcontrols/verb/Boot_Member
 							M.verbs += /mob/guildcontrols/verb/Guild_Say
-							M.verbs += /mob/guildcontrols/verb/Leave_Guild
+							M.verbs += /mob/guildcontrols/verb/
+							_Guild
 							usr << "Done."
 							M.guildtitle = "Leader"
 							M << "You're rank has been changed to Leader."

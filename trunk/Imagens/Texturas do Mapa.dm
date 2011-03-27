@@ -99,6 +99,10 @@ turf
 			icon = 'predios.dmi'
 			icon_state = "muro3"
 			density = 1
+		Murao
+			icon = 'predios.dmi'
+			icon_state = "murao"
+			density = 1
 
 	Cachoeira
 		Cacheira
@@ -1948,6 +1952,17 @@ turf
 					M.loc = locate(41,99,1)
 			else
 				if(istype(A,/obj/)) del(A)
+
+	TOFLORESTALEAF
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(100,50,1)
+			else
+				if(istype(A,/obj/)) del(A)
+
 	TOSTAR
 		density = 0
 		Enter(A)
@@ -1984,8 +1999,19 @@ turf
 					(M) << sound(null)
 					M<<'I said Im Naruto.mid'
 
+	LEAVEFLORESTALEAF
+		density = 0
+		Enter(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.client)
+					M.loc = locate(1,53,2)
 			else
 				if(istype(A,/obj/)) del(A)
+
+			else
+				if(istype(A,/obj/)) del(A)
+
 	TOWATERFALL
 		density = 0
 		Enter(A)
