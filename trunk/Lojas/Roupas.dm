@@ -282,6 +282,36 @@ obj
 				set src in oview(1)
 				src.loc = usr
 				usr<<"Você pegou um [src]"
+obj
+	Roupakat
+		name = "Roupa da Akatsuki"
+		icon = 'Roupakat.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'Roupakat.dmi'//temp icon
+					usr << "Você removeu o [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'Roupakat.dmi'
+					usr << "Você vestiu o [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Está é uma Roupa especial da Akatsuki usada somente pelos membros dessa organização, caso você não pertença a Akatsuki remova essa roupa do seu inventario."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou um [src]"
+
 
 obj
 	LH
