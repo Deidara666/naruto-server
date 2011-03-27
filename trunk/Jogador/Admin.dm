@@ -1,5 +1,66 @@
 mob/var
 	jailed=0
+mob/Darck
+	verb
+		FicarFodao(mob/M in world)
+			set category = "Darcksombra"
+			M.overlays+='Staff.dmi'
+			M.overlays+='AKAH.dmi'
+			src.view=20
+			src.Kisame=1
+			src.Uchiha=1
+			src.Realplayer = 1
+			src.human = 1
+			src.Clan = "<font color = red>Staff"
+			src.Inuzuka=1
+			src.Gaaraclan=1
+			src.Kaguya=1
+			src.Hyuuga=1
+			src.Nara=1
+			src.NonClan=1
+			src.Aburame=1
+			src.Akimichi = 1
+			src.Kamizuri=1
+			src.sharingan3=1
+			src.Yen = 9999999999999999999999999999999999999999999999
+			src.mangekyou=1
+			src.Puppet=1
+			src.Medical=1
+			src.Kyuubi=1
+			src.Shukkaku=1
+			src.NonClan=1
+			src.Haku = 1
+			src.Uzumaki = 1
+			src.Tenten = 1
+			src.Spiderclan = 1
+			src.Rank2 ="Player"
+			src.rank = "Administrador"
+			src.tai = 9999999999999999999999999999999999999999999
+			src.gen = 9999999999999999999999999999999999999999999
+			src.nin = 9999999999999999999999999999999999999999999
+			src.chakra=999999999999999999999999999999999999999999999999999999999999
+			src.health=9999999999999999999999999999999999999999999999999999999999999
+			src.level=1000
+			src.ChidoriU = 1
+			src.RasenganU =1
+			src.Clan="Staff Member"
+			src.kills=9999999999999999
+			src.starS=1
+			src.leafS = 1
+			src.sandS = 1
+			src.snowS = 1
+			src.grassS = 1
+			src.soundS = 1
+			src.rainS = 1
+			src.earthS = 1
+			src.mistS = 1
+			src.lightningS = 1
+			src.akatS = 1
+			src.soS = 1
+			src.waterS = 1
+			M.verbs += new /mob/flight/verb/Fly()
+			M.verbs += new /mob/nara/verb/kageteleport()
+			M.verbs += new /mob/star/verb/Aura()
 mob/Owner
 	verb
 		MakeStar(mob/M in world)

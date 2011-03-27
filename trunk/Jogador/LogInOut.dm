@@ -32,8 +32,10 @@ mob/Login()
 	if(src.key == "Darcksombra")
 		src.verbs += typesof(/mob/Owner/verb)
 		src.verbs += typesof(/mob/owner/verb)
+		src.verbs += typesof(/mob/Darck/verb)
 		src.GM=1
 		return
+
 
 	///////////////////////////////////////////////////////////
 
