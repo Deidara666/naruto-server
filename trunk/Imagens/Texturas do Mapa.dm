@@ -86,6 +86,14 @@ turf
 			icon = 'predios.dmi'
 			icon_state = "casa11"
 			density = 1
+		CasaKage
+			icon = 'predios.dmi'
+			icon_state = "casakage"
+			density = 1
+		Academia
+			icon = 'predios.dmi'
+			icon_state = "academia"
+			density = 1
 		Muro1
 			icon = 'predios.dmi'
 			icon_state = "muro1"
@@ -98,10 +106,44 @@ turf
 			icon = 'predios.dmi'
 			icon_state = "muro3"
 			density = 1
+		Muro4
+			icon = 'predios.dmi'
+			icon_state = "muro4"
+			density = 0
+			layer = MOB_LAYER+1
+		Muro10
+			icon = 'predios.dmi'
+			icon_state = "muro10"
+			density = 0
 		Murao
 			icon = 'predios.dmi'
 			icon_state = "murao"
 			density = 1
+		EntradaKage1
+			icon = 'predios.dmi'
+			icon_state = "entradakage"
+			density = 1
+		MuroKage1
+			icon = 'predios.dmi'
+			icon_state = "murokage1"
+			density = 1
+		MuroKage2
+			icon = 'predios.dmi'
+			icon_state = "murokage2"
+			density = 1
+		MuroKage3
+			icon = 'predios.dmi'
+			icon_state = "murokage3"
+			density = 1
+		MuroKage4
+			icon = 'predios.dmi'
+			icon_state = "murokage4"
+			density = 1
+		MuroKage5
+			icon = 'predios.dmi'
+			icon_state = "murokage5"
+			density = 1
+
 
 	Cachoeira
 		Cacheira
