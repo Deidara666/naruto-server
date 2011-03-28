@@ -1,4 +1,4 @@
-mob/npc/Banker//the new banker!
+mob/npc/Comuns/Banker//the new banker!
 	name = "Banqueiro(NPC)"
 	icon = 'Banker.dmi'
 	icon_state = "Banco"
@@ -48,7 +48,7 @@ mob/npc/Banker//the new banker!
 			usr << "Você tem [usr.goldinbank] Yen no banco."
 
 
-mob/npc/Vet
+mob/npc/Comuns/Vet
 	name = "Veterinário(NPC)"
 	icon = 'Banker.dmi'
 	icon_state = "Banco"
@@ -202,7 +202,7 @@ obj
 	var/tmp
 		price
 
-mob/npc
+mob/npc/Comuns/
 	Merchant2
 		name = "Loja de armas ninja(NPC)"
 		icon = 'Banker.dmi'
@@ -325,7 +325,7 @@ mob/npc
 				if("Nada")
 					usr<<"Volte sempre."
 					return
-mob/npc
+mob/npc/Comuns/
 	Food_Vender
 		name = "Chef de cozinha(NPC)"
 		icon = 'Banker.dmi'
@@ -363,7 +363,7 @@ mob/npc
 							usr<<"Você não tem dinheiro o suficiente!"
 					if("Nada")
 						return
-mob/npc
+mob/npc/Sabios
 	SabioDosMapas
 		name = "Sabio dos Mapas(NPC)"
 		icon = 'Banker.dmi'
@@ -385,7 +385,73 @@ mob/npc
 						return
 					if("Mapa do Mundo(Pedaço4)")
 						return
-mob/npc
+
+mob/npc/Sabios
+	SabioDeFuuton
+		name = "Sabio do Vento(Fuuton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Fuuton","Nada"))
+					if("Quero saber mais sobre o elemento Fuuton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeRaiton
+		name = "Sabio do Trovão(Raiton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Raiton","Nada"))
+					if("Quero saber mais sobre o elemento Raiton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeDoton
+		name = "Sabio da Terra(Doton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Doton","Nada"))
+					if("Quero saber mais sobre o elemento Doton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeSuiton
+		name = "Sabio da Água(Suiton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Suiton","Nada"))
+					if("Quero saber mais sobre o elemento Suiton")
+						return
+					if("Nada")
+						return
+
+mob/npc/Comuns/
 	Merchant
 		name = "Vendedor de roupas(NPC)"
 		icon = 'Banker.dmi'
@@ -574,7 +640,7 @@ mob/npc
 				if("Nada")
 					return
 
-mob/npc
+mob/npc/Comuns/
 	Merchant3
 		name = "Vendedor de espadas"
 		icon = 'Banker.dmi'
@@ -613,7 +679,7 @@ mob/npc
 					return
 
 
-mob/npc
+mob/npc/Comuns/
 	tailor
 		name = "Cabeleleiro"
 		icon = 'Banker.dmi'
@@ -1995,7 +2061,7 @@ mob/npc
 						usr<<"Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] está morto agora!!!"
 						return
 
-mob/npc
+mob/npc/Comuns/
 	Summon_Vender
 		name = "Vendedor de pergaminhos de summon"
 		icon = 'Banker.dmi'
@@ -2037,7 +2103,7 @@ mob/npc
 							usr<<"Você não tem dinheiro o suficiente!"
 					if("Nada")
 						return
-mob/npc
+mob/npc/Comuns/
 	Scroll_Vender
 		name = "Vendedor de pergaminhos de jutsus"
 		icon = 'Banker.dmi'
@@ -2123,7 +2189,7 @@ mob/npc
 						return
 mob/var/talkedto=0
 mob/var/itachitalked=0
-mob/npc/Naruto
+mob/npc/Clan/Naruto
 	name = "Naruto"
 	icon = 'npcs.dmi'
 	icon_state = "Naruto"
@@ -2187,7 +2253,7 @@ mob/npc/Naruto
 					else
 						usr<<"Mentiroso, saia da casa Uzumaki AGORA!"
 
-mob/npc/Sakura
+mob/npc/Clan/Sakura
 	name = "(NPC)Sakura"
 	icon = 'npcs.dmi'
 	icon_state = "Sakura"
@@ -2211,7 +2277,7 @@ mob/npc/Sakura
 						usr<<"Leve esta carta de volta para Naruto e diga-lhe para nunca mais sequer pensar em escrever outra e então eu vou mostrar o sinal Dog."
 						usr.dogs=1
 
-mob/npc/Sasuke
+mob/npc/Clan/Sasuke
 	name = "Sasuke"
 	icon = 'npcs.dmi'
 	icon_state = "Sasuke"
@@ -2248,7 +2314,7 @@ mob/npc/Sasuke
 							usr<<"Você precisa 1000 de todos stats e 150 mortes, juntamente com 100 Uses to activate Mangekyou."
 					else
 						usr<<"Mentiroso, saia da casa Uchiha AGORA!"
-mob/npc/Kisame
+mob/npc/Clan/Kisame
 	name = "Kisame"
 	icon = 'npcs.dmi'
 	icon_state = "Sasuke"
@@ -2277,7 +2343,7 @@ mob/npc/Kisame
 					else
 						usr<<"Mentiroso, saia de perto de mim AGORA!"
 
-mob/npc/Haku
+mob/npc/Clan/Haku
 	name = "Haku"
 	icon = 'haku.dmi'
 	PK = 0
@@ -2323,7 +2389,7 @@ mob/npc/Haku
 
 
 
-mob/npc/Choji
+mob/npc/Clan/Choji
 	name = "Choji"
 	icon = 'Choji.dmi'
 	PK = 0
@@ -2363,7 +2429,7 @@ mob/npc/Choji
 						return
 				if("Esqueça")
 					usr<<"Ohh ok, você tem alguma comida?"
-mob/npc/Nara
+mob/npc/Clan/Nara
 	name = "Shikamaru"
 	icon = 'Nara.dmi'
 	PK = 0
@@ -2413,7 +2479,7 @@ mob/npc/Nara
 				if("Esqueça")
 					usr<<"Que arrasto"
 
-mob/npc/Kamizuri
+mob/npc/Clan/Kamizuri
 	name = "Bee Keeper"
 	icon = 'BeeArmor.dmi'
 	PK = 0
@@ -2470,7 +2536,7 @@ mob/npc/Kamizuri
 				if("Forget it")
 					usr<<"Bee gone!"
 
-mob/npc/Kabuto
+mob/npc/Clan/Kabuto
 	name = "Kabuto"
 	icon = 'Kabuto.dmi'
 	PK = 0
@@ -2536,7 +2602,7 @@ mob/npc/Kabuto
 				if("Forget it")
 					usr<<"Ok then back to my cards."
 
-mob/npc/Kaguya
+mob/npc/Clan/Kaguya
 	name = "Kimimaro"
 	icon = 'Kaguya.dmi'
 	PK = 0
@@ -2597,7 +2663,7 @@ mob/npc/Kaguya
 					usr<<"Fine"
 					return
 
-mob/npc/Kiba
+mob/npc/Clan/Kiba
 	name = "Kiba"
 	icon = 'Kiba.dmi'
 	PK = 0
@@ -2646,7 +2712,7 @@ mob/npc/Kiba
 				if("Forget it")
 					usr<<"Forgoten"
 					return
-mob/npc/Orochimaru
+mob/npc/Comuns/Orochimaru
 	name = "Orochimaru"
 	icon = 'orochimaru.dmi'
 	PK = 0
@@ -2699,7 +2765,7 @@ mob/npc/Lee
 				if("No")
 					usr<<"Ok your loss"
 
-mob/npc/Neiji
+mob/npc/Clan/Neiji
 	name = "(NPC)Neiji"
 	icon = 'npcs.dmi'
 	icon_state = "Neiji"
@@ -2870,7 +2936,7 @@ mob/npc/Jiraiya
 
 					else
 						usr<<"You do not have Cursed Seal."
-mob/npc/Gaara
+mob/npc/Clan/Gaara
 	name = "Gaara"
 	icon = 'npcs.dmi'
 	icon_state = "Gaara"
@@ -2949,7 +3015,7 @@ mob/npc/Gaara
 				else
 					usr<<"Lair leave now before I kill you."
 
-mob/npc/Gai
+mob/npc/Clan/Gai
 	name = "Gai"
 	icon = 'Guy.dmi'
 	PK = 0
@@ -2999,7 +3065,7 @@ mob/npc/Gai
 					usr<<"Thats not nice ready for your punishment?"
 					usr.health-=1000
 
-mob/npc/Tenten
+mob/npc/Clan/Tenten
 	name = "Tenten"
 	icon = 'tenten.dmi'
 	PK = 0
@@ -3074,7 +3140,7 @@ mob/npc/Zabuza
 					usr<<"If you find it and bring it to me I'll show you the Monkey sign."
 					usr.monkey=1
 
-mob/npc/Shino
+mob/npc/Clan/Shino
 	name = "Shino"
 	icon = 'npcs.dmi'
 	icon_state = "Shino"
@@ -3164,7 +3230,7 @@ mob/npc/Itachi
 					usr.Obird=1
 					usr<<"You have learned the Bird sign."
 
-mob/npc/Squads
+mob/npc/Comuns/Squads
 	name="Jounin Squad assignments."
 	icon='Banker.dmi'
 	icon_state = "Banco"
@@ -3192,7 +3258,7 @@ mob/npc/Squads
 				else
 					usr<<"If you feel you are not ready it is best."
 
-mob/npc/Genin
+mob/npc/Comuns/Genin
 	name="Iruka"
 	icon='Iruka.dmi'
 	PK = 0
@@ -3215,7 +3281,7 @@ mob/npc/Genin
 				else
 					usr<<"Ok then."
 
-mob/npc/Anko
+mob/npc/Comuns/Anko
 	name="Anko"
 	icon='Anko.dmi'
 	PK = 0
@@ -3241,7 +3307,7 @@ mob/npc/Anko
 					usr<<"That's the spirit."
 
 
-mob/npc/Pawn
+mob/npc/Comuns/Pawn
 	name = "Pawn Shop"
 	icon = 'Banker.dmi'
 	icon_state = "Banco"
