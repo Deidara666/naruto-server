@@ -38,6 +38,36 @@ turf
 			density = 1
 
 	Casas
+		Hospital1
+			icon = 'predios.dmi'
+			icon_state = "banner"
+			density = 1
+		Hospital2
+			icon = 'predios.dmi'
+			icon_state = "hospital2"
+		Hospital3
+			icon = 'predios.dmi'
+			icon_state = "hospital3"
+			density = 1
+		Hospital4
+			icon = 'predios.dmi'
+			icon_state = "hospital4"
+		Hospital5
+			icon = 'predios.dmi'
+			icon_state = "hospital5"
+		Hospital6
+			icon = 'predios.dmi'
+			icon_state = "hospital6"
+		Hospital7
+			icon = 'predios.dmi'
+			icon_state = "hospital7"
+		Hospital8
+			icon = 'predios.dmi'
+			icon_state = "hospital8"
+		Hospital9
+			icon = 'predios.dmi'
+			icon_state = "hospital9"
+
 		Casa1
 			icon = 'predios.dmi'
 			icon_state = "casa1"
