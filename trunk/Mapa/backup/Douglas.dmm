@@ -294,7 +294,7 @@
 "fH" = (/turf/Gramas/Gramado,/mob/enemy/Rainvillageshinobi,/turf/Chuva,/area)
 "fI" = (/turf/fwall,/turf/Hospital,/turf/Chuva,/area)
 "fJ" = (/turf/water,/turf/Chuva,/area)
-"fK" = (/turf/Gramas/Gramado,/mob/npc/Comuns/Merchant3,/turf/Chuva,/area)
+"fK" = (/turf/Gramas/Gramado,/mob/npc/Merchant3,/turf/Chuva,/area)
 "fL" = (/turf/MedicEAme,/turf/Chuva,/area)
 "fM" = (/turf/Gramas/Gramado,/mob/enemy/Grassvillageshinobi,/turf/Chuva,/area)
 "fN" = (/turf/layerwall,/turf/Chuva,/area)
