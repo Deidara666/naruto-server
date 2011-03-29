@@ -36,7 +36,7 @@ mob/doton
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.DDD += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#f0e68c>D</FONT><FONT COLOR=#e8cf81>o</FONT><FONT COLOR=#deb874>t</FONT><FONT COLOR=#d5a068>o</FONT><FONT COLOR=#cb895c>n</FONT><FONT COLOR=#c2714f> </FONT><FONT COLOR=#b85943>D</FONT><FONT COLOR=#af4236>o</FONT><FONT COLOR=#a52a2a>r</FONT><FONT COLOR=#a23233>y</FONT><FONT COLOR=#9e3b3c>o</FONT><FONT COLOR=#994345> </FONT><FONT COLOR=#954b4e>D</FONT><FONT COLOR=#915458>a</FONT><FONT COLOR=#8d5c61>n</FONT><FONT COLOR=#88646a>g</FONT><FONT COLOR=#846d73>o</FONT><FONT COLOR=#80747b>!</FONT>"
-					var/obj/DotonDD/K = new /obj/DotonDD
+					var/obj/Jutsus/DotonDD/K = new /obj/Jutsus/DotonDD
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -65,7 +65,7 @@ mob/doton
 						usr.DDD += 1
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#f0e68c>D</FONT><FONT COLOR=#e8cf81>o</FONT><FONT COLOR=#deb874>t</FONT><FONT COLOR=#d5a068>o</FONT><FONT COLOR=#cb895c>n</FONT><FONT COLOR=#c2714f> </FONT><FONT COLOR=#b85943>D</FONT><FONT COLOR=#af4236>o</FONT><FONT COLOR=#a52a2a>r</FONT><FONT COLOR=#a23233>y</FONT><FONT COLOR=#9e3b3c>o</FONT><FONT COLOR=#994345> </FONT><FONT COLOR=#954b4e>D</FONT><FONT COLOR=#915458>a</FONT><FONT COLOR=#8d5c61>n</FONT><FONT COLOR=#88646a>g</FONT><FONT COLOR=#846d73>o</FONT><FONT COLOR=#80747b>!</FONT>"
-						var/obj/DotonDD/K = new /obj/DotonDD
+						var/obj/Jutsus/DotonDD/K = new /obj/Jutsus/DotonDD
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.dir = usr.dir

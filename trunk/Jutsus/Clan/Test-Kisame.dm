@@ -548,7 +548,7 @@ mob/Kisame
 					usr.firing = 1
 					usr.SSU += 1
 					view()<<"[usr] Suiton: Daibakufu No Jutsu"
-					var/obj/SuitonDaibakufuNoJutsu/K = new /obj/SuitonDaibakufuNoJutsu
+					var/obj/Jutsus/SuitonDaibakufuNoJutsu/K = new /obj/Jutsus/SuitonDaibakufuNoJutsu
 					K.loc = usr.loc
 					K.nin=usr.nin
 					usr.Chakragain()
@@ -596,7 +596,7 @@ mob/Kisame
 						usr.firing = 1
 						usr.SSU += 1
 						view()<<"[usr] Suiton: Daibakufu No Jutsu"
-						var/obj/SuitonDaibakufuNoJutsu/K = new /obj/SuitonDaibakufuNoJutsu
+						var/obj/Jutsus/SuitonDaibakufuNoJutsu/K = new /obj/Jutsus/SuitonDaibakufuNoJutsu
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.dir = usr.dir
@@ -685,7 +685,7 @@ mob/Kisame
 				usr<<"Not enough Chakra!"
 			else
 				if(usr.Kshibari)
-					for(var/obj/shibari/K in world)
+					for(var/obj/Jutsus/shibari/K in world)
 						if(K.owner==usr)
 							del(K)
 							usr.Kshibari=0
@@ -695,7 +695,7 @@ mob/Kisame
 							M.overlays-='kagekubi.dmi'
 							M.overlays-='kagekubi.dmi'
 							M.overlays-='kagekubi.dmi'
-					for(var/obj/shibaritrail/T in world)
+					for(var/obj/Jutsus/shibaritrail/T in world)
 						if(T.owner==usr)
 							del(T)
 							usr.Kshibari=0
@@ -707,7 +707,7 @@ mob/Kisame
 							M.overlays-='kagekubi.dmi'
 				else
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#708090>K</FONT><FONT COLOR=#707f8d>a</FONT><FONT COLOR=#6f7c89>g</FONT><FONT COLOR=#6f7a85>e</FONT><FONT COLOR=#6e7781> </FONT><FONT COLOR=#6d757d>S</FONT><FONT COLOR=#6c7379>h</FONT><FONT COLOR=#6b7075>i</FONT><FONT COLOR=#6b6e71>b</FONT><FONT COLOR=#6a6b6d>a</FONT><FONT COLOR=#696969>r</FONT><FONT COLOR=#777777>i</FONT><FONT COLOR=#848484> </FONT><FONT COLOR=#929292>N</FONT><FONT COLOR=#a0a0a0>o</FONT><FONT COLOR=#aeaeae> </FONT><FONT COLOR=#bbbbbb>J</FONT><FONT COLOR=#c9c9c9>u</FONT><FONT COLOR=#d7d7d7>t</FONT><FONT COLOR=#e5e5e5>s</FONT><FONT COLOR=#f2f2f2>u</FONT><FONT COLOR=#ffffff>!</FONT>"
-					var/obj/shibari/K = new /obj/shibari
+					var/obj/Jutsus/shibari/K = new /obj/Jutsus/shibari
 					K.loc = usr.loc
 					usr.Chakragain()
 					K.Move_Delay = 2
@@ -722,7 +722,7 @@ mob/Kisame
 			set category = "Clan Jutsus"
 			set name = "Seguir"
 			usr.chakra -= 100
-			for(var/obj/shibari/K in world)
+			for(var/obj/Jutsus/shibari/K in world)
 				if(usr.PK==0)
 					usr<<"NON PK ZONE!"
 					return
@@ -751,7 +751,7 @@ mob/Kisame
 					del(K)
 					usr.Kshibari=0
 					usr<<"You have hold has sliped"
-					for(var/obj/shibaritrail/T in world)
+					for(var/obj/Jutsus/shibaritrail/T in world)
 						usr.Frozen=0
 						if(T.owner == usr)
 							usr.Frozen=0
@@ -761,7 +761,7 @@ mob/Kisame
 			set category = "Clan Jutsus"
 			set name = "Recuar"
 			usr.chakra -= 500
-			for(var/obj/shibari/K in world)
+			for(var/obj/Jutsus/shibari/K in world)
 				if(usr.PK==0)
 					usr<<"NON PK ZONE!"
 					return
@@ -792,18 +792,18 @@ mob/Kisame
 								usr.Frozen=0
 								usr.Kshibari=0
 								M.Frozen=0
-								for(var/obj/shibaritrail/A in world)
+								for(var/obj/Jutsus/shibaritrail/A in world)
 									if(A.owner==usr)
 										del(A)
 								return
-					for(var/obj/shibaritrail/T in oview(1,K))
+					for(var/obj/Jutsus/shibaritrail/T in oview(1,K))
 						if(T.owner==usr)
 							K.loc = T.loc
 							K.dir=T.dir
 							del(T)
 						else
 							del(K)
-							for(var/obj/shibaritrail/L in world)
+							for(var/obj/Jutsus/shibaritrail/L in world)
 								if(L.owner==usr)
 									del(L)
 							usr.Frozen=0
@@ -857,7 +857,7 @@ mob/Kisame
 			if(usr.meditating)
 				usr<<"Not while meditating"
 				return
-			for(var/obj/shibari/K in world)
+			for(var/obj/Jutsus/shibari/K in world)
 				if(K.owner==usr)
 					for(var/mob/M in world)
 						if(M.caught&&!M.kubi)
@@ -879,7 +879,7 @@ mob/Kisame
 										M.overlays-='kagekubi.dmi'
 										M.overlays-='kagekubi.dmi'
 										M.overlays-='kagekubi.dmi'
-										for(var/obj/shibaritrail/T in world)
+										for(var/obj/Jutsus/shibaritrail/T in world)
 											if(T.owner==usr)
 												del(T)
 												usr.Frozen=0
@@ -899,7 +899,7 @@ mob/Kisame
 										M.overlays-='kagekubi.dmi'
 										M.overlays-='kagekubi.dmi'
 										M.overlays-='kagekubi.dmi'
-										for(var/obj/shibaritrail/T in world)
+										for(var/obj/Jutsus/shibaritrail/T in world)
 											if(T.owner==usr)
 												del(T)
 												usr.Frozen=0
@@ -919,7 +919,7 @@ mob/Kisame
 										M.overlays-='kagekubi.dmi'
 										M.overlays-='kagekubi.dmi'
 										M.overlays-='kagekubi.dmi'
-										for(var/obj/shibaritrail/T in world)
+										for(var/obj/Jutsus/shibaritrail/T in world)
 											if(T.owner==usr)
 												del(T)
 												usr.Frozen=0
@@ -938,7 +938,7 @@ mob/Kisame
 										M.overlays-='kagekubi.dmi'
 										M.overlays-='kagekubi.dmi'
 										M.overlays-='kagekubi.dmi'
-										for(var/obj/shibaritrail/T in world)
+										for(var/obj/Jutsus/shibaritrail/T in world)
 											if(T.owner==usr)
 												del(T)
 												usr.Frozen=0
@@ -1005,7 +1005,7 @@ mob/Kisame
 
 			else
 				view()<<"[usr] Jutsu Teste"
-				var/obj/SuitonSuishouha/K = new /obj/SuitonSuishouha
+				var/obj/Jutsus/SuitonSuishouha/K = new /obj/Jutsus/SuitonSuishouha
 				K.loc = usr.loc
 				usr.Chakragain()
 				K.dir = usr.dir

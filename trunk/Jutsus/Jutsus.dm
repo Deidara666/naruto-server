@@ -1,3 +1,1001 @@
+//Jutsus
+
+obj/Jutsus
+	shibari
+		icon = 'kagemane.dmi'
+		icon_state = "head"
+		density=1
+		Move()
+			..()
+			var/obj/Jutsus/shibaritrail/T = new /obj/Jutsus/shibaritrail
+			if(src.dir == NORTH)
+				T.loc = src.loc
+				T.y = src.y-1
+				T.dir = src.dir
+				T.owner=src.owner
+			if(src.dir == SOUTH)
+				T.loc = src.loc
+				T.y = src.y+1
+				T.dir = src.dir
+				T.owner=src.owner
+			if(src.dir == WEST)
+				T.loc = src.loc
+				T.x = src.x+1
+				T.dir = src.dir
+				T.owner=src.owner
+			if(src.dir == EAST)
+				T.loc = src.loc
+				T.x = src.x-1
+				T.dir = src.dir
+				T.owner=src.owner
+			if(src.dir == NORTHWEST)
+				T.loc = src.loc
+				T.y = src.y-1
+				T.x = src.x+1
+				T.dir = src.dir
+				T.owner=src.owner
+			if(src.dir == NORTHEAST)
+				T.loc = src.loc
+				T.y = src.y-1
+				T.x = src.x-1
+				T.dir = src.dir
+				T.owner=src.owner
+			if(src.dir == SOUTHWEST)
+				T.loc = src.loc
+				T.x = src.x+1
+				T.y = src.y+1
+				T.dir = src.dir
+				T.owner=src.owner
+			if(src.dir == SOUTHEAST)
+				T.loc = src.loc
+				T.x = src.x-1
+				T.y = src.y+1
+				T.dir = src.dir
+				T.owner=src.owner
+		Bump(A)
+			var/mob/O = src.owner
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					usr<<"They copy and reflect it back at you."
+					M<<"You copy and reflect it back at them."
+					usr.health -= M.Mnin/5
+					del(src)
+					return
+				if(M.PK==0)
+					usr<<"NON PK ZONE!"
+					return
+				src.loc=M.loc
+				for(var/mob/C in src.loc)
+					if(C == src.target)
+						src.move=0
+						C.Frozen=1
+						C.caught=1
+						LOL
+							if(O.chakra<=5&&O.Kshibari)
+								C.Frozen=0
+								O.Frozen=0
+								C.caught=0
+								C.overlays-='kagekubi.dmi'
+								C.overlays-='kagekubi.dmi'
+								C.overlays-='kagekubi.dmi'
+								C.kubi=0
+								for(var/obj/Jutsus/shibaritrail/T in world)
+									if(T.owner==O)
+										del(T)
+										O.Frozen=0
+										C.caught=0
+										C.overlays-='kagekubi.dmi'
+										C.overlays-='kagekubi.dmi'
+										C.overlays-='kagekubi.dmi'
+										C.kubi=0
+								del(src)
+							else
+								O.chakra-=170
+								sleep(10)
+								goto LOL
+			if(O.chakra<=5)
+				del(src)
+				O<<"You have run out of chakra"
+				for(var/obj/Jutsus/shibaritrail/T in world)
+					O.Frozen=0
+					if(T.owner == O)
+						O.Frozen=0
+						del(T)
+						return
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					for(var/obj/Jutsus/shibaritrail/B in world)
+						if(B.owner==src.owner)
+							del(B)
+					del(src)
+			if(istype(A,/obj/))
+				for(var/obj/Jutsus/shibaritrail/B in world)
+					if(B.owner==src.owner)
+						del(B)
+					del(src)
+				del(src)
+obj/Jutsus
+	shibaritrail
+		icon = 'kagemane.dmi'
+		icon_state="trail"
+
+obj/Jutsus
+	SuitonDaib
+		icon = 'suitons.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*2)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] foi atingido pelo Suiton Daibakufu com [damage] de dano!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	Suishouha
+		icon = 'WATERBLAST.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*5)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Suishouha for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	SSuishouha
+		icon = 'Warmor.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*2)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Suishouha for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	Ninpou
+		icon = 'ninpou.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*5)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Suishouha for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj/Jutsus
+	Suiryedan
+		icon = 'suiryedan.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*1.7)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Suiton Suiryuudan for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	SSuiryedan
+		icon = 'StarDragon.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*10)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Kujaku Myouhou Agouny for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj/Jutsus
+	MSuiryedan
+		icon = 'IceDragon.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*1.7)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Makyou Suiryuudan for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj/Jutsus
+	KRyuuka
+		icon = 'Ryuuka.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*2.3)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Katon Ryuuka for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	DemonMirror
+		icon='mirror.dmi'
+		icon_state=""
+		density=1
+obj/Jutsus
+	DenseThing
+		density=1
+
+obj/Jutsus
+	KaryHead
+		icon='karyhead.dmi'
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+
+	KaryTail
+		icon='karytail.dmi'
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+obj/Jutsus
+	GoukakyuuHead
+		icon='goukakyuuthing.dmi'
+		icon_state="head"
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+
+	GoukakyuuTail
+		icon='goukakyuuthing.dmi'
+		icon_state="tail"
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+	middle
+		icon='goukakyuuthing.dmi'
+		icon_state="1"
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+
+	topleft
+		icon='goukakyuuthing.dmi'
+		icon_state="2"
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+	topright
+		icon='goukakyuuthing.dmi'
+		icon_state="3"
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+
+	bottomleft
+		icon='goukakyuuthing.dmi'
+		icon_state="4"
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+	bottomright
+		icon='goukakyuuthing.dmi'
+		icon_state="5"
+		layer = MOB_LAYER+1
+		New()
+			..()
+			spawn(34)
+			del(src)
+
+obj/Jutsus
+	SuitonDaibakufuNoJutsu
+		icon = 'Suitons.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] foi atingido por Suiton: Daikufu No Jutsu com [damage] de dano!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	SuitonSuishouha
+		icon = 'WaterStrom.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] foi atingido por Suiton: Daikufu No Jutsu com [damage] de dano!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	Ice1
+		icon='juvenile ice.dmi'
+		icon_state="Ice2"
+		density=1
+
+obj/Jutsus
+	Ice2
+		icon='juvenile ice.dmi'
+		icon_state="Ice"
+		density=1
+
+
+obj/Jutsus
+	FutagozaNoJutsu
+		icon = 'juvenile ice.dmi'
+		icon_state = "Ice3"
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*5)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Futagoza No Jutsu for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	AMA
+		icon = 'ama.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*50)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Amaterasu for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	DotonDD
+		icon = 'dotons.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*1.5)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Doton Doryo Dango for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	TeshiSendan
+		icon = 'bonebullets.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.tai*3)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Bone Bullets for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	SuitonSuikoudan
+		icon = 'suiryedan.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*2.8)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Suiton Suikoudan for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	MakyouSuikoudan
+		icon = 'IceDragon.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*2.8)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Makyou Suikoudan for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	Zanyokukuuha
+		icon = 'daitoppa.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Zanyokukuuha for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj/Jutsus
+	Zankuuha
+		icon = 'daitoppa.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*1.5)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was by Zankuuha for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	Doryuudan5
+		icon = 'doryuumissle.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*3)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was by Doryuudan for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	FuutonRenkuudan
+		icon = 'fuuton.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*2)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Renkuudan for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	Fdaitoppa
+		icon = 'daitoppa.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Daitoppa for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj/Jutsus
+	Needle
+		icon = 'daitoppa.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*3)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Needles for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj/Jutsus
+	kazedangan
+		icon = 'kazedangan.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*5)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was by Kaze Dangan for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	Ikazuchi
+		icon = 'bolt.dmi'
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*3)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Ikazuchi No Kiba for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj/Jutsus
+	Raikyuu
+		icon = 'rai.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*1.5)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Raikyuu for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+obj/Jutsus
+	RairyuuTatsumaki
+		icon = 'rairyuu.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.nin*2)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Rairyuu No Tatsumaki for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
+obj/Jutsus
+	Sensatsu
+		icon = 'needles.dmi'
+		icon_state = ""
+		density = 1
+		Bump(A)
+			if(ismob(A))
+				var/mob/M = A
+				if(M.Kaiten||M.sphere)
+					return
+				if(M.counter)
+					del(src)
+					return
+				if(M.PK==0)
+					return
+				var/damage = round(src.tai/2)
+				if(damage >= 1)
+					M.health -= damage
+					view(M) << "[M] was hit by Sensatsu Suishou for [damage] damage!!"
+					var/mob/O = src.Gowner
+					M.Death(O)
+				del(src)
+			if(istype(A,/turf/))
+				var/turf/T = A
+				if(T.density)
+					del(src)
+			if(istype(A,/obj/))
+				del(src)
+
 obj/var/tmp
 	walk = 0
 	walkm = 7
@@ -2388,82 +3386,7 @@ mob/Bump(mob/src)
    usr.loc = locate(src.x,src.y,src.z)
    src.Death(usr)
 
-obj
-	KaryHead
-		icon='karyhead.dmi'
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
 
-	KaryTail
-		icon='karytail.dmi'
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
-obj
-	GoukakyuuHead
-		icon='goukakyuuthing.dmi'
-		icon_state="head"
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
-
-	GoukakyuuTail
-		icon='goukakyuuthing.dmi'
-		icon_state="tail"
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
-	middle
-		icon='goukakyuuthing.dmi'
-		icon_state="1"
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
-
-	topleft
-		icon='goukakyuuthing.dmi'
-		icon_state="2"
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
-	topright
-		icon='goukakyuuthing.dmi'
-		icon_state="3"
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
-
-	bottomleft
-		icon='goukakyuuthing.dmi'
-		icon_state="4"
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
-	bottomright
-		icon='goukakyuuthing.dmi'
-		icon_state="5"
-		layer = MOB_LAYER+1
-		New()
-			..()
-			spawn(34)
-			del(src)
 
 mob/jutsu
 	verb
@@ -2789,9 +3712,9 @@ mob/sound
 					usr.move = 0 // Disables the mob's movement
 					usr.chakra -= 20
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Zankyokukuuha!"
-					var/obj/Zanyokukuuha/D = new /obj/Zanyokukuuha
-					var/obj/Zanyokukuuha/S = new /obj/Zanyokukuuha
-					var/obj/Zanyokukuuha/K = new /obj/Zanyokukuuha
+					var/obj/Jutsus/Zanyokukuuha/D = new /obj/Jutsus/Zanyokukuuha
+					var/obj/Jutsus/Zanyokukuuha/S = new /obj/Jutsus/Zanyokukuuha
+					var/obj/Jutsus/Zanyokukuuha/K = new /obj/Jutsus/Zanyokukuuha
 					usr.target=m
 					K.loc = usr.loc
 					K.nin=usr.nin
@@ -2898,7 +3821,7 @@ mob/sound
 				usr.chakra -= 15
 				usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 				view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Zankuuha!"
-				var/obj/Zankuuha/K = new /obj/Zankuuha
+				var/obj/Jutsus/Zankuuha/K = new /obj/Jutsus/Zankuuha
 				K.loc = usr.loc
 				K.nin=usr.nin
 				K.dir = usr.dir
@@ -3113,9 +4036,9 @@ mob/needle
 					usr.Fuuton3N += 1
 					usr.chakra -= 20
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=grey> Says: Kage Needle No Jutsu!"
-					var/obj/Needle/D = new /obj/Needle
-					var/obj/Needle/S = new /obj/Needle
-					var/obj/Needle/K = new /obj/Needle
+					var/obj/Jutsus/Needle/D = new /obj/Jutsus/Needle
+					var/obj/Jutsus/Needle/S = new /obj/Jutsus/Needle
+					var/obj/Jutsus/Needle/K = new /obj/Jutsus/Needle
 					usr.target=m
 					K.loc = usr.loc
 					K.nin=usr.nin
@@ -3189,9 +4112,9 @@ mob/needle
 						usr.chakra -= 20
 						usr.Fuuton3N += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=grey> Says: Kage Needle No Jutsu!"
-						var/obj/Needle/D = new /obj/Needle
-						var/obj/Needle/S = new /obj/Needle
-						var/obj/Needle/K = new /obj/Needle
+						var/obj/Jutsus/Needle/D = new /obj/Jutsus/Needle
+						var/obj/Jutsus/Needle/S = new /obj/Jutsus/Needle
+						var/obj/Jutsus/Needle/K = new /obj/Jutsus/Needle
 						usr.target=m
 						K.loc = usr.loc
 						K.nin=usr.nin
@@ -3263,14 +4186,7 @@ mob/needle
 
 
 //RAIKYUU IS THE FIRST OF THE RAI JUTSUS
-obj
-	DemonMirror
-		icon='mirror.dmi'
-		icon_state=""
-		density=1
-obj
-	DenseThing
-		density=1
+
 mob/var/tmp/hyoushou=0
 
 mob/var
@@ -3645,128 +4561,6 @@ mob/jutsu
 
 
 
-obj
-	shibari
-		icon = 'kagemane.dmi'
-		icon_state = "head"
-		density=1
-		Move()
-			..()
-			var/obj/shibaritrail/T = new /obj/shibaritrail
-			if(src.dir == NORTH)
-				T.loc = src.loc
-				T.y = src.y-1
-				T.dir = src.dir
-				T.owner=src.owner
-			if(src.dir == SOUTH)
-				T.loc = src.loc
-				T.y = src.y+1
-				T.dir = src.dir
-				T.owner=src.owner
-			if(src.dir == WEST)
-				T.loc = src.loc
-				T.x = src.x+1
-				T.dir = src.dir
-				T.owner=src.owner
-			if(src.dir == EAST)
-				T.loc = src.loc
-				T.x = src.x-1
-				T.dir = src.dir
-				T.owner=src.owner
-			if(src.dir == NORTHWEST)
-				T.loc = src.loc
-				T.y = src.y-1
-				T.x = src.x+1
-				T.dir = src.dir
-				T.owner=src.owner
-			if(src.dir == NORTHEAST)
-				T.loc = src.loc
-				T.y = src.y-1
-				T.x = src.x-1
-				T.dir = src.dir
-				T.owner=src.owner
-			if(src.dir == SOUTHWEST)
-				T.loc = src.loc
-				T.x = src.x+1
-				T.y = src.y+1
-				T.dir = src.dir
-				T.owner=src.owner
-			if(src.dir == SOUTHEAST)
-				T.loc = src.loc
-				T.x = src.x-1
-				T.y = src.y+1
-				T.dir = src.dir
-				T.owner=src.owner
-		Bump(A)
-			var/mob/O = src.owner
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					usr<<"They copy and reflect it back at you."
-					M<<"You copy and reflect it back at them."
-					usr.health -= M.Mnin/5
-					del(src)
-					return
-				if(M.PK==0)
-					usr<<"NON PK ZONE!"
-					return
-				src.loc=M.loc
-				for(var/mob/C in src.loc)
-					if(C == src.target)
-						src.move=0
-						C.Frozen=1
-						C.caught=1
-						LOL
-							if(O.chakra<=5&&O.Kshibari)
-								C.Frozen=0
-								O.Frozen=0
-								C.caught=0
-								C.overlays-='kagekubi.dmi'
-								C.overlays-='kagekubi.dmi'
-								C.overlays-='kagekubi.dmi'
-								C.kubi=0
-								for(var/obj/shibaritrail/T in world)
-									if(T.owner==O)
-										del(T)
-										O.Frozen=0
-										C.caught=0
-										C.overlays-='kagekubi.dmi'
-										C.overlays-='kagekubi.dmi'
-										C.overlays-='kagekubi.dmi'
-										C.kubi=0
-								del(src)
-							else
-								O.chakra-=170
-								sleep(10)
-								goto LOL
-			if(O.chakra<=5)
-				del(src)
-				O<<"You have run out of chakra"
-				for(var/obj/shibaritrail/T in world)
-					O.Frozen=0
-					if(T.owner == O)
-						O.Frozen=0
-						del(T)
-						return
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					for(var/obj/shibaritrail/B in world)
-						if(B.owner==src.owner)
-							del(B)
-					del(src)
-			if(istype(A,/obj/))
-				for(var/obj/shibaritrail/B in world)
-					if(B.owner==src.owner)
-						del(B)
-					del(src)
-				del(src)
-obj
-	shibaritrail
-		icon = 'kagemane.dmi'
-		icon_state="trail"
 obj/var
 	delay = 0
 mob/var/tmp
@@ -3808,692 +4602,9 @@ obj
 			if(istype(A,/obj/))
 				del(src)
 
-obj
-	SuitonDaib
-		icon = 'suitons.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*2)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] foi atingido pelo Suiton Daibakufu com [damage] de dano!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
 
-obj
-	Suishouha
-		icon = 'WATERBLAST.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*5)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Suishouha for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
 
-obj
-	SSuishouha
-		icon = 'Warmor.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*2)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Suishouha for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
 
-obj
-	Ninpou
-		icon = 'ninpou.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*5)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Suishouha for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-obj
-	Suiryedan
-		icon = 'suiryedan.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*1.7)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Suiton Suiryuudan for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	SSuiryedan
-		icon = 'StarDragon.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*10)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Kujaku Myouhou Agouny for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-obj
-	MSuiryedan
-		icon = 'IceDragon.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*1.7)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Makyou Suiryuudan for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-obj
-	KRyuuka
-		icon = 'Ryuuka.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*2.3)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Katon Ryuuka for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	AMA
-		icon = 'ama.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*50)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Amaterasu for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	DotonDD
-		icon = 'dotons.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*1.5)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Doton Doryo Dango for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	TeshiSendan
-		icon = 'bonebullets.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.tai*3)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Bone Bullets for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	SuitonSuikoudan
-		icon = 'suiryedan.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*2.8)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Suiton Suikoudan for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	MakyouSuikoudan
-		icon = 'IceDragon.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*2.8)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Makyou Suikoudan for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	Zanyokukuuha
-		icon = 'daitoppa.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Zanyokukuuha for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-obj
-	Zankuuha
-		icon = 'daitoppa.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*1.5)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was by Zankuuha for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	Doryuudan5
-		icon = 'doryuumissle.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*3)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was by Doryuudan for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	FuutonRenkuudan
-		icon = 'fuuton.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*2)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Renkuudan for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	Fdaitoppa
-		icon = 'daitoppa.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Daitoppa for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-obj
-	Needle
-		icon = 'daitoppa.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*3)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Needles for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-obj
-	kazedangan
-		icon = 'kazedangan.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*5)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was by Kaze Dangan for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	Ikazuchi
-		icon = 'bolt.dmi'
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*3)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Ikazuchi No Kiba for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-obj
-	Raikyuu
-		icon = 'rai.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*1.5)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Raikyuu for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-obj
-	RairyuuTatsumaki
-		icon = 'rairyuu.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*2)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Rairyuu No Tatsumaki for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	Sensatsu
-		icon = 'needles.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.tai/2)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Sensatsu Suishou for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
 
 obj
 	Sshuriken
@@ -4523,105 +4634,7 @@ obj
 					del(src)
 			if(istype(A,/obj/))
 				del(src)
-obj
-	SuitonDaibakufuNoJutsu
-		icon = 'Suitons.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] foi atingido por Suiton: Daikufu No Jutsu com [damage] de dano!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
 
-obj
-	SuitonSuishouha
-		icon = 'WaterStrom.dmi'
-		icon_state = ""
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] foi atingido por Suiton: Daikufu No Jutsu com [damage] de dano!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
-
-obj
-	Ice1
-		icon='juvenile ice.dmi'
-		icon_state="Ice2"
-		density=1
-
-obj
-	Ice2
-		icon='juvenile ice.dmi'
-		icon_state="Ice"
-		density=1
-
-
-obj
-	FutagozaNoJutsu
-		icon = 'juvenile ice.dmi'
-		icon_state = "Ice3"
-		density = 1
-		Bump(A)
-			if(ismob(A))
-				var/mob/M = A
-				if(M.Kaiten||M.sphere)
-					return
-				if(M.counter)
-					del(src)
-					return
-				if(M.PK==0)
-					return
-				var/damage = round(src.nin*5)
-				if(damage >= 1)
-					M.health -= damage
-					view(M) << "[M] was hit by Futagoza No Jutsu for [damage] damage!!"
-					var/mob/O = src.Gowner
-					M.Death(O)
-				del(src)
-			if(istype(A,/turf/))
-				var/turf/T = A
-				if(T.density)
-					del(src)
-			if(istype(A,/obj/))
-				del(src)
 
 
 
@@ -5178,7 +5191,7 @@ mob/Makyou
 					usr.move = 0 // Disables the mob's movement
 					usr.SS += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#a1d7ee>Makyou Suiryuudan No Jutsu!</FONT>"
-					var/obj/MSuiryedan/K = new /obj/MSuiryedan
+					var/obj/Jutsus/MSuiryedan/K = new /obj/Jutsus/MSuiryedan
 					usr.target=M
 					usr.Chakragain()
 					K.loc = usr.loc
@@ -5234,7 +5247,7 @@ mob/Makyou
 						usr.move = 0 // Disables the mob's movement
 						usr.SS += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#a1d7ee>Makyou Suiryuudan No Jutsu!</FONT>"
-						var/obj/MSuiryedan/K = new /obj/MSuiryedan
+						var/obj/Jutsus/MSuiryedan/K = new /obj/Jutsus/MSuiryedan
 						usr.target=M
 						K.loc = usr.loc
 						K.nin=usr.nin
@@ -5329,7 +5342,7 @@ mob/Makyou
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam
 					usr.SS3 += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#a1d7ee>Makyou Suikoudan No Jutsu!</FONT>"
-					var/obj/MakyouSuikoudan/K = new /obj/MakyouSuikoudan
+					var/obj/Jutsus/MakyouSuikoudan/K = new /obj/Jutsus/MakyouSuikoudan
 					usr.target=m
 					K.loc = usr.loc
 					K.nin=usr.nin
@@ -5382,7 +5395,7 @@ mob/Makyou
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam
 						usr.SS3 += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#a1d7ee>Makyou Suikoudan No Jutsu!</FONT>"
-						var/obj/MakyouSuikoudan/K = new /obj/MakyouSuikoudan
+						var/obj/Jutsus/MakyouSuikoudan/K = new /obj/Jutsus/MakyouSuikoudan
 						usr.target=m
 						K.loc = usr.loc
 						K.nin=usr.nin
@@ -5575,7 +5588,7 @@ mob/star
 					usr.move = 0 // Disables the mob's movement
 					usr.SS += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>Kujaku Myouhou Agouny!</FONT>"
-					var/obj/SSuiryedan/K = new /obj/SSuiryedan
+					var/obj/Jutsus/SSuiryedan/K = new /obj/Jutsus/SSuiryedan
 					usr.target=M
 					usr.Chakragain()
 					K.loc = usr.loc
@@ -5631,7 +5644,7 @@ mob/star
 						usr.move = 0 // Disables the mob's movement
 						usr.SS += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>Kujaku Myouhou Agouny!</FONT>"
-						var/obj/SSuiryedan/K = new /obj/SSuiryedan
+						var/obj/Jutsus/SSuiryedan/K = new /obj/Jutsus/SSuiryedan
 						usr.target=M
 						K.loc = usr.loc
 						K.nin=usr.nin

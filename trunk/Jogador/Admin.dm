@@ -1296,9 +1296,9 @@ mob/Owner
 				M.cap = Mcap
 				M.squads=1
 				M.squad="Leaf Sannin"
-				var/obj/HokageHat/B = new/obj/HokageHat
+				var/obj/KageRoupas/HokageHat/B = new/obj/KageRoupas/HokageHat
 				B.loc = M
-				var/obj/HokageSuit/C = new/obj/HokageSuit
+				var/obj/KageRoupas/HokageSuit/C = new/obj/KageRoupas/HokageSuit
 				C.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1313,9 +1313,9 @@ mob/Owner
 				M.cap = Mcap
 				M.squads=1
 				M.squad="Star Sannin"
-				var/obj/HoshikageHat/B = new/obj/HoshikageHat
+				var/obj/KageRoupas/HoshikageHat/B = new/obj/KageRoupas/HoshikageHat
 				B.loc = M
-				var/obj/HoshikageSuit/C = new/obj/HoshikageSuit
+				var/obj/KageRoupas/HoshikageSuit/C = new/obj/KageRoupas/HoshikageSuit
 				C.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1330,9 +1330,9 @@ mob/Owner
 				M.cap =  Mcap
 				M.squads=1
 				M.squad="Sand Sannin"
-				var/obj/KazekageHat/B = new/obj/KazekageHat
+				var/obj/KageRoupas/KazekageHat/B = new/obj/KageRoupas/KazekageHat
 				B.loc = M
-				var/obj/KazekageSuit/C = new/obj/KazekageSuit
+				var/obj/KageRoupas/KazekageSuit/C = new/obj/KageRoupas/KazekageSuit
 				C.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1347,9 +1347,9 @@ mob/Owner
 				M.cap =  Mcap
 				M.squads=1
 				M.squad="Cloud Sannin"
-				var/obj/RaikageHat/B = new/obj/RaikageHat
+				var/obj/KageRoupas/RaikageHat/B = new/obj/KageRoupas/RaikageHat
 				B.loc = M
-				var/obj/RaikageSuit/C = new/obj/RaikageSuit
+				var/obj/KageRoupas/RaikageSuit/C = new/obj/KageRoupas/RaikageSuit
 				C.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1364,9 +1364,9 @@ mob/Owner
 				M.cap =  Mcap
 				M.squads=1
 				M.squad="Rock Sannin"
-				var/obj/TsuchikageHat/B = new/obj/TsuchikageHat
+				var/obj/KageRoupas/TsuchikageHat/B = new/obj/KageRoupas/TsuchikageHat
 				B.loc = M
-				var/obj/TsuchikageSuit/C = new/obj/TsuchikageSuit
+				var/obj/KageRoupas/TsuchikageSuit/C = new/obj/KageRoupas/TsuchikageSuit
 				C.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1381,9 +1381,9 @@ mob/Owner
 				M.cap =  Mcap
 				M.squads=1
 				M.squad="Mist Sannin"
-				var/obj/MizukageHat/B = new/obj/MizukageHat
+				var/obj/KageRoupas/MizukageHat/B = new/obj/KageRoupas/MizukageHat
 				B.loc = M
-				var/obj/MizukageSuit/C = new/obj/MizukageSuit
+				var/obj/KageRoupas/MizukageSuit/C = new/obj/KageRoupas/MizukageSuit
 				C.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1398,9 +1398,9 @@ mob/Owner
 				M.cap =  Mcap
 				M.squads=1
 				M.squad="Sound Sannin"
-				var/obj/OtokageHat/B = new/obj/OtokageHat
+				var/obj/KageRoupas/OtokageHat/B = new/obj/KageRoupas/OtokageHat
 				B.loc = M
-				var/obj/OtokageSuit/C = new/obj/OtokageSuit
+				var/obj/KageRoupas/OtokageSuit/C = new/obj/KageRoupas/OtokageSuit
 				C.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1415,15 +1415,15 @@ mob/Owner
 				M.squads=1
 				M.squad="Rain Sannin"
 				M.cap =  Mcap
-				var/obj/AmekageHat/B = new/obj/AmekageHat
+				var/obj/KageRoupas/AmekageHat/B = new/obj/KageRoupas/AmekageHat
 				B.loc = M
-				var/obj/AmekageSuit/C = new/obj/AmekageSuit
+				var/obj/KageRoupas/AmekageSuit/C = new/obj/KageRoupas/AmekageSuit
 				C.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
 				usr<<"Their not from the village of Rain."
 
-		MakeWaterkage(mob/M in world)
+		/*MakeWaterkage(mob/M in world)
 			set category = "Ranks"
 			if(M.Village == "Waterfall")
 				M<<"You have been made Enukage!"
@@ -1432,7 +1432,7 @@ mob/Owner
 				M.squads=1
 				M.squad="Waterfall Sannin"
 				M.cap =  Mcap
-				var/obj/WaterLSuit/B = new/obj/WaterLSuit
+				//var/obj/KageRoupas/WaterLSuit/B = new/obj/KageRoupas/WaterLSuit
 				B.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1447,7 +1447,7 @@ mob/Owner
 				M.cap =  Mcap
 				M.squads=1
 				M.squad="Grass Sannin"
-				var/obj/GrassLSuit/B = new/obj/GrassLSuit
+				//var/obj/KageRoupas/GrassLSuit/B = new/obj/KageRoupas/GrassLSuit
 				B.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
@@ -1462,11 +1462,11 @@ mob/Owner
 				M.cap =  Mcap
 				M.squads=1
 				M.squad="Snow Sannin"
-				var/obj/SnowLSuit/B = new/obj/SnowLSuit
+				//var/obj/KageRoupas/SnowLSuit/B = new/obj/KageRoupas/SnowLSuit
 				B.loc = M
 				M.verbs += typesof(/mob/hokage/verb)
 			else
-				usr<<"Their not from the village of Snow."
+				usr<<"Their not from the village of Snow."*/
 
 		Remove_Kage(mob/M in world)
 			set category = "Ranks"

@@ -433,32 +433,32 @@ mob
 			else if(src.health<=0&&src.GOTCS&&!src.incs)
 				src.random=rand(1,3)
 				if(src.random==3)
-					for(var/obj/shibari/K in world)
+					for(var/obj/Jutsus/shibari/K in world)
 						if(K.owner==M)
 							del(K)
-					for(var/obj/DemonMirror/S in world)
+					for(var/obj/Jutsus/DemonMirror/S in world)
 						if(S.owner==M)
 							src.hyoushou=0
 							M.hyoushou=0
 							del(S)
-					for(var/obj/DenseThing/U in world)
+					for(var/obj/Jutsus/DenseThing/U in world)
 						if(U.owner==M)
 							src.hyoushou=0
 							M.hyoushou=0
 							del(U)
-					for(var/obj/shibaritrail/T in world)
+					for(var/obj/Jutsus/shibaritrail/T in world)
 						if(T.owner==M)
 							del(T)
 					view(src)<<"[src] se enfurece e desbloqueia seu selo amaldiçoado!"
 					src.Cursed_Seal()
 					return
 				else if(src.health <= 0)
-					for(var/obj/shibari/K in world)
+					for(var/obj/Jutsus/shibari/K in world)
 						if(K.owner==src)
 							del(K)
 						if(K.owner==M)
 							del(K)
-					for(var/obj/DemonMirror/S in world)
+					for(var/obj/Jutsus/DemonMirror/S in world)
 						if(S.owner==src)
 							src.hyoushou=0
 							M.hyoushou=0
@@ -467,7 +467,7 @@ mob
 							src.hyoushou=0
 							M.hyoushou=0
 							del(S)
-					for(var/obj/DenseThing/U in world)
+					for(var/obj/Jutsus/DenseThing/U in world)
 						if(U.owner==src)
 							src.hyoushou=0
 							M.hyoushou=0
@@ -476,7 +476,7 @@ mob
 							src.hyoushou=0
 							M.hyoushou=0
 							del(U)
-					for(var/obj/shibaritrail/T in world)
+					for(var/obj/Jutsus/shibaritrail/T in world)
 						if(T.owner==src)
 							del(T)
 						if(T.owner==M)
@@ -859,20 +859,20 @@ mob
 			if(src.health<=0&&src.Kyuubi&&!src.inkyuubi)
 				src.random=rand(1,6)
 				if(src.random==4)
-					for(var/obj/shibari/K in world)
+					for(var/obj/Jutsus/shibari/K in world)
 						if(K.owner==M)
 							del(K)
-					for(var/obj/DemonMirror/S in world)
+					for(var/obj/Jutsus/DemonMirror/S in world)
 						if(S.owner==M)
 							src.hyoushou=0
 							M.hyoushou=0
 							del(S)
-					for(var/obj/DenseThing/U in world)
+					for(var/obj/Jutsus/DenseThing/U in world)
 						if(U.owner==M)
 							src.hyoushou=0
 							M.hyoushou=0
 							del(U)
-					for(var/obj/shibaritrail/T in world)
+					for(var/obj/Jutsus/shibaritrail/T in world)
 						if(T.owner==M)
 							del(T)
 					view(src)<<"[src] enfurece e desbloqueia a Raposa de Nove Caldas em seu interior!"
@@ -881,32 +881,32 @@ mob
 			if(src.health<=0&&src.Shukkaku&&!src.inkaku)
 				src.random=rand(1,6)
 				if(src.random==4)
-					for(var/obj/shibari/K in world)
+					for(var/obj/Jutsus/shibari/K in world)
 						if(K.owner==M)
 							del(K)
-					for(var/obj/DemonMirror/S in world)
+					for(var/obj/Jutsus/DemonMirror/S in world)
 						if(S.owner==M)
 							src.hyoushou=0
 							M.hyoushou=0
 							del(S)
-					for(var/obj/DenseThing/U in world)
+					for(var/obj/Jutsus/DenseThing/U in world)
 						if(U.owner==M)
 							src.hyoushou=0
 							M.hyoushou=0
 							del(U)
-					for(var/obj/shibaritrail/T in world)
+					for(var/obj/Jutsus/shibaritrail/T in world)
 						if(T.owner==M)
 							del(T)
 					view(src)<<"[src] enfurece e desbloqueia o Shukkaku em seu interior!"
 					src.Kaku()
 					return
 				else if(src.health <= 0)
-					for(var/obj/shibari/K in world)
+					for(var/obj/Jutsus/shibari/K in world)
 						if(K.owner==src)
 							del(K)
 						if(K.owner==M)
 							del(K)
-					for(var/obj/DemonMirror/S in world)
+					for(var/obj/Jutsus/DemonMirror/S in world)
 						if(S.owner==src)
 							src.hyoushou=0
 							M.hyoushou=0
@@ -915,7 +915,7 @@ mob
 							src.hyoushou=0
 							M.hyoushou=0
 							del(S)
-					for(var/obj/DenseThing/U in world)
+					for(var/obj/Jutsus/DenseThing/U in world)
 						if(U.owner==src)
 							src.hyoushou=0
 							M.hyoushou=0
@@ -924,7 +924,7 @@ mob
 							src.hyoushou=0
 							M.hyoushou=0
 							del(U)
-					for(var/obj/shibaritrail/T in world)
+					for(var/obj/Jutsus/shibaritrail/T in world)
 						if(T.owner==src)
 							del(T)
 						if(T.owner==M)
@@ -1317,12 +1317,12 @@ mob
 					sleep(80)
 					src.loc=locate(6,58,20)
 			else if(src.health <= 0)
-				for(var/obj/shibari/K in world)
+				for(var/obj/Jutsus/shibari/K in world)
 					if(src&&K.owner==src)
 						del(K)
 					if(M&&K.owner==M)
 						del(K)
-				for(var/obj/DemonMirror/S in world)
+				for(var/obj/Jutsus/DemonMirror/S in world)
 					if(S.owner==src)
 						src.hyoushou=0
 						M.hyoushou=0
@@ -1331,7 +1331,7 @@ mob
 						src.hyoushou=0
 						M.hyoushou=0
 						del(S)
-				for(var/obj/DenseThing/U in world)
+				for(var/obj/Jutsus/DenseThing/U in world)
 					if(U.owner==src)
 						src.hyoushou=0
 						M.hyoushou=0
@@ -1340,7 +1340,7 @@ mob
 						src.hyoushou=0
 						M.hyoushou=0
 						del(U)
-				for(var/obj/shibaritrail/T in world)
+				for(var/obj/Jutsus/shibaritrail/T in world)
 					if(T.owner==src)
 						del(T)
 					if(T.owner==M)

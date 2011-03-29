@@ -39,7 +39,7 @@ mob/fuuton
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.Fuuton2N += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Fuuton: Renkuudan No Jutsu!"
-					var/obj/FuutonRenkuudan/K = new /obj/FuutonRenkuudan
+					var/obj/Jutsus/FuutonRenkuudan/K = new /obj/Jutsus/FuutonRenkuudan
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -88,7 +88,7 @@ mob/fuuton
 						usr.Fuuton2N += 1
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Fuuton: Renkuudan No Jutsu!"
-						var/obj/FuutonRenkuudan/K = new /obj/FuutonRenkuudan
+						var/obj/Jutsus/FuutonRenkuudan/K = new /obj/Jutsus/FuutonRenkuudan
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.Move_Delay=2
@@ -179,9 +179,9 @@ mob/fuuton
 					usr.Fuuton3N += 1
 					usr.chakra -= 20
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Fuuton Daitoppa No Jutsu!"
-					var/obj/Fdaitoppa/D = new /obj/Fdaitoppa
-					var/obj/Fdaitoppa/S = new /obj/Fdaitoppa
-					var/obj/Fdaitoppa/K = new /obj/Fdaitoppa
+					var/obj/Jutsus/Fdaitoppa/D = new /obj/Jutsus/Fdaitoppa
+					var/obj/Jutsus/Fdaitoppa/S = new /obj/Jutsus/Fdaitoppa
+					var/obj/Jutsus/Fdaitoppa/K = new /obj/Jutsus/Fdaitoppa
 					usr.target=m
 					K.loc = usr.loc
 					K.nin=usr.nin
@@ -255,9 +255,9 @@ mob/fuuton
 						usr.chakra -= 20
 						usr.Fuuton3N += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Fuuton Daitoppa No Jutsu!"
-						var/obj/Fdaitoppa/D = new /obj/Fdaitoppa
-						var/obj/Fdaitoppa/S = new /obj/Fdaitoppa
-						var/obj/Fdaitoppa/K = new /obj/Fdaitoppa
+						var/obj/Jutsus/Fdaitoppa/D = new /obj/Jutsus/Fdaitoppa
+						var/obj/Jutsus/Fdaitoppa/S = new /obj/Jutsus/Fdaitoppa
+						var/obj/Jutsus/Fdaitoppa/K = new /obj/Jutsus/Fdaitoppa
 						usr.target=m
 						K.loc = usr.loc
 						K.nin=usr.nin
@@ -366,7 +366,7 @@ mob/fuuton
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.Fuuton1N += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Fuuton: Kaze Dangan No Jutsu!"
-					var/obj/kazedangan/K = new /obj/kazedangan
+					var/obj/Jutsus/kazedangan/K = new /obj/Jutsus/kazedangan
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -415,7 +415,7 @@ mob/fuuton
 						usr.Fuuton1N += 1
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Fuuton: Kaze Dangan No Jutsu!"
-						var/obj/kazedangan/K = new /obj/kazedangan
+						var/obj/Jutsus/kazedangan/K = new /obj/Jutsus/kazedangan
 						K.loc = usr.loc
 						K.nin=usr.nin
 						usr.Chakragain()
@@ -498,7 +498,7 @@ mob/fuuton
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.SN += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>Ninpou Kamaitachi!</FONT>"
-					var/obj/Ninpou/K = new /obj/Ninpou
+					var/obj/Jutsus/Ninpou/K = new /obj/Jutsus/Ninpou
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -545,7 +545,7 @@ mob/fuuton
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						usr.SN += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>Ninpou Kamaitachi!</FONT>"
-						var/obj/Ninpou/K = new /obj/Ninpou
+						var/obj/Jutsus/Ninpou/K = new /obj/Jutsus/Ninpou
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.dir = usr.dir

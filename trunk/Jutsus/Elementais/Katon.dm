@@ -480,7 +480,7 @@ mob/katon
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#dc143c>K</FONT><FONT COLOR=#d8163b>a</FONT><FONT COLOR=#d3183a>t</FONT><FONT COLOR=#ce1a38>o</FONT><FONT COLOR=#c91c36>n</FONT><FONT COLOR=#c41e34>:</FONT><FONT COLOR=#be2133> </FONT><FONT COLOR=#b92331>R</FONT><FONT COLOR=#b4252f>y</FONT><FONT COLOR=#af272d>u</FONT><FONT COLOR=#aa292c>u</FONT><FONT COLOR=#a52a2a>k</FONT><FONT COLOR=#a62a2a>a</FONT><FONT COLOR=#a82929> </FONT><FONT COLOR=#a92929>N</FONT><FONT COLOR=#aa2828>o</FONT><FONT COLOR=#ab2727> </FONT><FONT COLOR=#ad2626>J</FONT><FONT COLOR=#ae2525>u</FONT><FONT COLOR=#af2424>t</FONT><FONT COLOR=#b02424>s</FONT><FONT COLOR=#b22323>u</FONT><FONT COLOR=#b22222>!</FONT>"
 					usr.Katon4N += 1
-					var/obj/KRyuuka/K = new /obj/KRyuuka
+					var/obj/Jutsus/KRyuuka/K = new /obj/Jutsus/KRyuuka
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.Move_Delay=2
@@ -517,7 +517,7 @@ mob/katon
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						usr.Katon4N += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#dc143c>K</FONT><FONT COLOR=#d8163b>a</FONT><FONT COLOR=#d3183a>t</FONT><FONT COLOR=#ce1a38>o</FONT><FONT COLOR=#c91c36>n</FONT><FONT COLOR=#c41e34>:</FONT><FONT COLOR=#be2133> </FONT><FONT COLOR=#b92331>R</FONT><FONT COLOR=#b4252f>y</FONT><FONT COLOR=#af272d>u</FONT><FONT COLOR=#aa292c>u</FONT><FONT COLOR=#a52a2a>k</FONT><FONT COLOR=#a62a2a>a</FONT><FONT COLOR=#a82929> </FONT><FONT COLOR=#a92929>N</FONT><FONT COLOR=#aa2828>o</FONT><FONT COLOR=#ab2727> </FONT><FONT COLOR=#ad2626>J</FONT><FONT COLOR=#ae2525>u</FONT><FONT COLOR=#af2424>t</FONT><FONT COLOR=#b02424>s</FONT><FONT COLOR=#b22323>u</FONT><FONT COLOR=#b22222>!</FONT>"
-						var/obj/KRyuuka/K = new /obj/KRyuuka
+						var/obj/Jutsus/KRyuuka/K = new /obj/Jutsus/KRyuuka
 						K.loc = usr.loc
 						K.nin=usr.nin
 						usr.Chakragain()
@@ -590,16 +590,16 @@ mob/katon
 					usr.chakra -= 15
 					usr.Chakragain()
 					usr.firing = 1
-					var/obj/middle/K = new /obj/middle
-					var/obj/middle/L = new /obj/middle
-					var/obj/middle/M1 = new /obj/middle
-					var/obj/middle/N = new /obj/middle
-					var/obj/middle/O = new /obj/middle
-					var/obj/topright/TR = new /obj/topright
-					var/obj/bottomright/BR = new /obj/bottomright
-					var/obj/topleft/TL = new /obj/topleft
-					var/obj/bottomleft/BL = new /obj/bottomleft
-					var/obj/GoukakyuuTail/T = new /obj/GoukakyuuTail
+					var/obj/Jutsus/middle/K = new /obj/Jutsus/middle
+					var/obj/Jutsus/middle/L = new /obj/Jutsus/middle
+					var/obj/Jutsus/middle/M1 = new /obj/Jutsus/middle
+					var/obj/Jutsus/middle/N = new /obj/Jutsus/middle
+					var/obj/Jutsus/middle/O = new /obj/Jutsus/middle
+					var/obj/Jutsus/topright/TR = new /obj/Jutsus/topright
+					var/obj/Jutsus/bottomright/BR = new /obj/Jutsus/bottomright
+					var/obj/Jutsus/topleft/TL = new /obj/Jutsus/topleft
+					var/obj/Jutsus/bottomleft/BL = new /obj/Jutsus/bottomleft
+					var/obj/Jutsus/GoukakyuuTail/T = new /obj/Jutsus/GoukakyuuTail
 					usr.Katon1N += 1
 					usr.handseals=0
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#ffffff>K</FONT><FONT COLOR=#f6ebeb>a</FONT><FONT COLOR=#edd5d5>t</FONT><FONT COLOR=#e3c0c0>o</FONT><FONT COLOR=#d9abab>n</FONT><FONT COLOR=#cf9595>:</FONT><FONT COLOR=#c68080> </FONT><FONT COLOR=#bc6b6b>G</FONT><FONT COLOR=#b25555>o</FONT><FONT COLOR=#a84040>u</FONT><FONT COLOR=#9f2b2b>k</FONT><FONT COLOR=#951515>a</FONT><FONT COLOR=#8b0000>k</FONT><FONT COLOR=#910205>y</FONT><FONT COLOR=#980309>u</FONT><FONT COLOR=#9e050e>u</FONT><FONT COLOR=#a40613> </FONT><FONT COLOR=#ab0817>N</FONT><FONT COLOR=#b10a1c>o</FONT><FONT COLOR=#b70b21> </FONT><FONT COLOR=#bd0d26>J</FONT><FONT COLOR=#c40f2a>u</FONT><FONT COLOR=#ca102f>t</FONT><FONT COLOR=#d01234>s</FONT><FONT COLOR=#d71338>u</FONT><FONT COLOR=#dc143c>!</FONT></FONT>"
@@ -999,8 +999,8 @@ mob/katon
 					if(usr.random == 1||usr.random == 4)
 						usr.chakra -= 15
 						usr.firing = 1
-						var/obj/GoukakyuuHead/K = new /obj/GoukakyuuHead
-						var/obj/GoukakyuuTail/T = new /obj/GoukakyuuTail
+						var/obj/Jutsus/GoukakyuuHead/K = new /obj/Jutsus/GoukakyuuHead
+						var/obj/Jutsus/GoukakyuuTail/T = new /obj/Jutsus/GoukakyuuTail
 						usr.Katon1N += 1
 						usr.Frozen=1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#ffffff>K</FONT><FONT COLOR=#f6ebeb>a</FONT><FONT COLOR=#edd5d5>t</FONT><FONT COLOR=#e3c0c0>o</FONT><FONT COLOR=#d9abab>n</FONT><FONT COLOR=#cf9595>:</FONT><FONT COLOR=#c68080> </FONT><FONT COLOR=#bc6b6b>G</FONT><FONT COLOR=#b25555>o</FONT><FONT COLOR=#a84040>u</FONT><FONT COLOR=#9f2b2b>k</FONT><FONT COLOR=#951515>a</FONT><FONT COLOR=#8b0000>k</FONT><FONT COLOR=#910205>y</FONT><FONT COLOR=#980309>u</FONT><FONT COLOR=#9e050e>u</FONT><FONT COLOR=#a40613> </FONT><FONT COLOR=#ab0817>N</FONT><FONT COLOR=#b10a1c>o</FONT><FONT COLOR=#b70b21> </FONT><FONT COLOR=#bd0d26>J</FONT><FONT COLOR=#c40f2a>u</FONT><FONT COLOR=#ca102f>t</FONT><FONT COLOR=#d01234>s</FONT><FONT COLOR=#d71338>u</FONT><FONT COLOR=#dc143c>!</FONT></FONT>"
@@ -1201,8 +1201,8 @@ mob/katon
 				return
 			usr.chakra -= 15
 			usr.firing = 1
-			var/obj/KaryHead/K = new /obj/KaryHead
-			var/obj/KaryTail/T = new /obj/KaryTail
+			var/obj/Jutsus/KaryHead/K = new /obj/Jutsus/KaryHead
+			var/obj/Jutsus/KaryTail/T = new /obj/Jutsus/KaryTail
 			usr.Katon1N += 1
 			usr.Frozen=1
 			view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#ffffff>Karyuudan!</FONT></FONT>"

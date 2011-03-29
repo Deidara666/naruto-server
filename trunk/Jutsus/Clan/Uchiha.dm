@@ -446,7 +446,7 @@ mob/uchiha
 						usr.chakra = 0
 					AmaN += 1
 					usr.firing = 1
-					var/obj/AMA/K = new /obj/AMA
+					var/obj/Jutsus/AMA/K = new /obj/Jutsus/AMA
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -487,7 +487,7 @@ mob/uchiha
 							usr.chakra=0
 						AmaN += 1
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
-						var/obj/AMA/K = new /obj/AMA
+						var/obj/Jutsus/AMA/K = new /obj/Jutsus/AMA
 						K.loc = usr.loc
 						usr.Chakragain()
 						K.nin=usr.nin

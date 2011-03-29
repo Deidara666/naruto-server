@@ -396,6 +396,36 @@ turf
 		Borda9
 			icon = 'agua.dmi'
 			icon_state = "areia5a"
+			layer = 1
+			density=0
+
+			Enter(mob/M)
+				..()
+				if(ismob(M)&&M.waterwalk)
+					if(!M.onwater)
+						M.onwater = 1
+					spawn(3)
+					src.overlays += "waterwalk"
+					//icon = 'WaterWalk.dmi'
+					//icon_state="waterwalk"
+					//src.overlays += 'WaterWalk.dmi'
+					return 1
+				else if(isobj(M))
+					return 1
+				else ..()
+			Exit(mob/M)
+				..()
+				if(ismob(M)&&M.waterwalk)
+					M.onwater=0
+					spawn(10)
+					src.overlays -= "waterwalk"
+					//icon = 'WaterWalk.dmi'
+					//icon_state="waterwalk"
+					//src.overlays -= 'WaterWalk.dmi'
+					return 1
+				else if(isobj(M))
+					return 1
+				else ..()
 	Gramas
 		Gramado
 			icon = 'verde.dmi'
@@ -427,6 +457,36 @@ turf
 		Borda9
 			icon = 'agua.dmi'
 			icon_state = "lago5c"
+			layer = 1
+			density=0
+
+			Enter(mob/M)
+				..()
+				if(ismob(M)&&M.waterwalk)
+					if(!M.onwater)
+						M.onwater = 1
+					spawn(3)
+					src.overlays += "waterwalk"
+					//icon = 'WaterWalk.dmi'
+					//icon_state="waterwalk"
+					//src.overlays += 'WaterWalk.dmi'
+					return 1
+				else if(isobj(M))
+					return 1
+				else ..()
+			Exit(mob/M)
+				..()
+				if(ismob(M)&&M.waterwalk)
+					M.onwater=0
+					spawn(10)
+					src.overlays -= "waterwalk"
+					//icon = 'WaterWalk.dmi'
+					//icon_state="waterwalk"
+					//src.overlays -= 'WaterWalk.dmi'
+					return 1
+				else if(isobj(M))
+					return 1
+				else ..()
 
 	Agua
 		Borda1
@@ -456,6 +516,35 @@ turf
 		Borda9
 			icon = 'agua.dmi'
 			icon_state = "agua5a"
+			layer = 1
+			density=0
+			Enter(mob/M)
+				..()
+				if(ismob(M)&&M.waterwalk)
+					if(!M.onwater)
+						M.onwater = 1
+					spawn(3)
+					src.overlays += "waterwalk"
+					//icon = 'WaterWalk.dmi'
+					//icon_state="waterwalk"
+					//src.overlays += 'WaterWalk.dmi'
+					return 1
+				else if(isobj(M))
+					return 1
+				else ..()
+			Exit(mob/M)
+				..()
+				if(ismob(M)&&M.waterwalk)
+					M.onwater=0
+					spawn(10)
+					src.overlays -= "waterwalk"
+					//icon = 'WaterWalk.dmi'
+					//icon_state="waterwalk"
+					//src.overlays -= 'WaterWalk.dmi'
+					return 1
+				else if(isobj(M))
+					return 1
+				else ..()
 
 	Arvore1
 		Arvore1
@@ -4899,7 +4988,7 @@ turf
 		icon_state = "chuva"
 		density = 0
 		layer = 10
-turf
+obj
 	Nuvem
 		icon = 'Nuvem.dmi'
 		icon_state = "Nuvem"

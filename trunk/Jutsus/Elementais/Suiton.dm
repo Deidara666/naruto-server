@@ -91,7 +91,7 @@ mob/Suiton
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.SN += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>S</FONT><FONT COLOR=#90d1ec>u</FONT><FONT COLOR=#98d4ed>i</FONT><FONT COLOR=#a1d7ee>t</FONT><FONT COLOR=#a9daee>o</FONT><FONT COLOR=#b2ddef>n</FONT><FONT COLOR=#bae0f0>:</FONT><FONT COLOR=#c3e4f1> </FONT><FONT COLOR=#cbe7f2>D</FONT><FONT COLOR=#d4eaf3>a</FONT><FONT COLOR=#dcedf3>i</FONT><FONT COLOR=#e5f0f4>b</FONT><FONT COLOR=#edf3f5>a</FONT><FONT COLOR=#f5f5f5>k</FONT><FONT COLOR=#e3f6f6>u</FONT><FONT COLOR=#d0f7f7>f</FONT><FONT COLOR=#bdf8f8>u</FONT><FONT COLOR=#aaf8f8> </FONT><FONT COLOR=#97f9f9>N</FONT><FONT COLOR=#84fafa>o</FONT><FONT COLOR=#72fbfb> </FONT><FONT COLOR=#5ffcfc>J</FONT><FONT COLOR=#4cfdfd>u</FONT><FONT COLOR=#39fdfd>t</FONT><FONT COLOR=#26fefe>s</FONT><FONT COLOR=#13ffff>u</FONT><FONT COLOR=#00ffff>!</FONT>"
-					var/obj/SuitonDaib/K = new /obj/SuitonDaib
+					var/obj/Jutsus/SuitonDaib/K = new /obj/Jutsus/SuitonDaib
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -128,7 +128,7 @@ mob/Suiton
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						usr.SN += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>S</FONT><FONT COLOR=#90d1ec>u</FONT><FONT COLOR=#98d4ed>i</FONT><FONT COLOR=#a1d7ee>t</FONT><FONT COLOR=#a9daee>o</FONT><FONT COLOR=#b2ddef>n</FONT><FONT COLOR=#bae0f0>:</FONT><FONT COLOR=#c3e4f1> </FONT><FONT COLOR=#cbe7f2>D</FONT><FONT COLOR=#d4eaf3>a</FONT><FONT COLOR=#dcedf3>i</FONT><FONT COLOR=#e5f0f4>b</FONT><FONT COLOR=#edf3f5>a</FONT><FONT COLOR=#f5f5f5>k</FONT><FONT COLOR=#e3f6f6>u</FONT><FONT COLOR=#d0f7f7>f</FONT><FONT COLOR=#bdf8f8>u</FONT><FONT COLOR=#aaf8f8> </FONT><FONT COLOR=#97f9f9>N</FONT><FONT COLOR=#84fafa>o</FONT><FONT COLOR=#72fbfb> </FONT><FONT COLOR=#5ffcfc>J</FONT><FONT COLOR=#4cfdfd>u</FONT><FONT COLOR=#39fdfd>t</FONT><FONT COLOR=#26fefe>s</FONT><FONT COLOR=#13ffff>u</FONT><FONT COLOR=#00ffff>!</FONT>"
-						var/obj/SuitonDaib/K = new /obj/SuitonDaib
+						var/obj/Jutsus/SuitonDaib/K = new /obj/Jutsus/SuitonDaib
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.dir = usr.dir
@@ -205,7 +205,7 @@ mob/Suiton
 					usr.move = 0 // Disables the mob's movement
 					usr.SS += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>S</FONT><FONT COLOR=#90d1ec>u</FONT><FONT COLOR=#98d4ed>i</FONT><FONT COLOR=#a1d7ee>t</FONT><FONT COLOR=#a9daee>o</FONT><FONT COLOR=#b2ddef>n</FONT><FONT COLOR=#bae0f0>:</FONT><FONT COLOR=#c3e4f1> </FONT><FONT COLOR=#cbe7f2>Su</FONT><FONT COLOR=#d4eaf3>i</FONT><FONT COLOR=#dcedf3>r</FONT><FONT COLOR=#e5f0f4>y</FONT><FONT COLOR=#edf3f5>u</FONT><FONT COLOR=#f5f5f5>u</FONT><FONT COLOR=#e3f6f6>d</FONT><FONT COLOR=#d0f7f7>a</FONT><FONT COLOR=#bdf8f8>n</FONT><FONT COLOR=#aaf8f8> </FONT><FONT COLOR=#97f9f9>N</FONT><FONT COLOR=#84fafa>o</FONT><FONT COLOR=#72fbfb> </FONT><FONT COLOR=#5ffcfc>J</FONT><FONT COLOR=#4cfdfd>u</FONT><FONT COLOR=#39fdfd>t</FONT><FONT COLOR=#26fefe>s</FONT><FONT COLOR=#13ffff>u</FONT><FONT COLOR=#00ffff>!</FONT>"
-					var/obj/Suiryedan/K = new /obj/Suiryedan
+					var/obj/Jutsus/Suiryedan/K = new /obj/Jutsus/Suiryedan
 					usr.target=M
 					usr.Chakragain()
 					K.loc = usr.loc
@@ -246,7 +246,7 @@ mob/Suiton
 						usr.move = 0 // Disables the mob's movement
 						usr.SS += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>S</FONT><FONT COLOR=#90d1ec>u</FONT><FONT COLOR=#98d4ed>i</FONT><FONT COLOR=#a1d7ee>t</FONT><FONT COLOR=#a9daee>o</FONT><FONT COLOR=#b2ddef>n</FONT><FONT COLOR=#bae0f0>:</FONT><FONT COLOR=#c3e4f1> </FONT><FONT COLOR=#cbe7f2>Su</FONT><FONT COLOR=#d4eaf3>i</FONT><FONT COLOR=#dcedf3>r</FONT><FONT COLOR=#e5f0f4>y</FONT><FONT COLOR=#edf3f5>u</FONT><FONT COLOR=#f5f5f5>u</FONT><FONT COLOR=#e3f6f6>d</FONT><FONT COLOR=#d0f7f7>a</FONT><FONT COLOR=#bdf8f8>n</FONT><FONT COLOR=#aaf8f8> </FONT><FONT COLOR=#97f9f9>N</FONT><FONT COLOR=#84fafa>o</FONT><FONT COLOR=#72fbfb> </FONT><FONT COLOR=#5ffcfc>J</FONT><FONT COLOR=#4cfdfd>u</FONT><FONT COLOR=#39fdfd>t</FONT><FONT COLOR=#26fefe>s</FONT><FONT COLOR=#13ffff>u</FONT><FONT COLOR=#00ffff>!</FONT>"
-						var/obj/Suiryedan/K = new /obj/Suiryedan
+						var/obj/Jutsus/Suiryedan/K = new /obj/Jutsus/Suiryedan
 						usr.target=M
 						K.loc = usr.loc
 						K.nin=usr.nin
@@ -326,7 +326,7 @@ mob/Suiton
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam
 					usr.SS3 += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>S</FONT><FONT COLOR=#90d1ec>u</FONT><FONT COLOR=#98d4ed>i</FONT><FONT COLOR=#a1d7ee>t</FONT><FONT COLOR=#a9daee>o</FONT><FONT COLOR=#b2ddef>n</FONT><FONT COLOR=#bae0f0>:</FONT><FONT COLOR=#c3e4f1> </FONT><FONT COLOR=#cbe7f2>Su</FONT><FONT COLOR=#d4eaf3>i</FONT><FONT COLOR=#dcedf3>r</FONT><FONT COLOR=#e5f0f4>y</FONT><FONT COLOR=#edf3f5>u</FONT><FONT COLOR=#f5f5f5>u</FONT><FONT COLOR=#e3f6f6>d</FONT><FONT COLOR=#d0f7f7>a</FONT><FONT COLOR=#bdf8f8>n</FONT><FONT COLOR=#aaf8f8> </FONT><FONT COLOR=#97f9f9>N</FONT><FONT COLOR=#84fafa>o</FONT><FONT COLOR=#72fbfb> </FONT><FONT COLOR=#5ffcfc>J</FONT><FONT COLOR=#4cfdfd>u</FONT><FONT COLOR=#39fdfd>t</FONT><FONT COLOR=#26fefe>s</FONT><FONT COLOR=#13ffff>u</FONT><FONT COLOR=#00ffff>!</FONT>"
-					var/obj/SuitonSuikoudan/K = new /obj/SuitonSuikoudan
+					var/obj/Jutsus/SuitonSuikoudan/K = new /obj/Jutsus/SuitonSuikoudan
 					usr.target=m
 					K.loc = usr.loc
 					K.nin=usr.nin
@@ -379,7 +379,7 @@ mob/Suiton
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam
 						usr.SS3 += 1
 						view()<<view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: SUIKOUDAN"
-						var/obj/SuitonSuikoudan/K = new /obj/SuitonSuikoudan
+						var/obj/Jutsus/SuitonSuikoudan/K = new /obj/Jutsus/SuitonSuikoudan
 						usr.target=m
 						K.loc = usr.loc
 						K.nin=usr.nin
@@ -533,7 +533,7 @@ mob/suiton
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.SN += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>Suiton Suishouha!</FONT>"
-					var/obj/Suishouha/K = new /obj/Suishouha
+					var/obj/Jutsus/Suishouha/K = new /obj/Jutsus/Suishouha
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -580,7 +580,7 @@ mob/suiton
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						usr.SN += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>Suiton Suishouha!</FONT>"
-						var/obj/Suishouha/K = new /obj/Suishouha
+						var/obj/Jutsus/Suishouha/K = new /obj/Jutsus/Suishouha
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.dir = usr.dir
@@ -659,7 +659,7 @@ mob/suiton
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.SN += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>Suishouha!</FONT>"
-					var/obj/SSuishouha/K = new /obj/SSuishouha
+					var/obj/Jutsus/SSuishouha/K = new /obj/Jutsus/SSuishouha
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -706,7 +706,7 @@ mob/suiton
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						usr.SN += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#87ceeb>Suishouha!</FONT>"
-						var/obj/SSuishouha/K = new /obj/SSuishouha
+						var/obj/Jutsus/SSuishouha/K = new /obj/Jutsus/SSuishouha
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.dir = usr.dir

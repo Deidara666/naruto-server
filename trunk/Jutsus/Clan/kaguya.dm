@@ -794,7 +794,7 @@ mob/kaguyajutsu
 				usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 				usr.DDD += 1
 				view()<<"<font color = blue>[usr]:Teshi Sendan"
-				var/obj/TeshiSendan/K = new /obj/TeshiSendan
+				var/obj/Jutsus/TeshiSendan/K = new /obj/Jutsus/TeshiSendan
 				K.loc = usr.loc
 				K.tai=usr.tai
 				K.dir = usr.dir

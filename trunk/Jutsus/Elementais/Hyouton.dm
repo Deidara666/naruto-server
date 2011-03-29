@@ -89,9 +89,9 @@ mob/Juvenile_Ice
 					usr.chakra -= 1000
 					usr.firing = 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#0000ff>F</FONT><FONT COLOR=#0040ff>u</FONT><FONT COLOR=#0080ff>t</FONT><FONT COLOR=#00c0ff>a</FONT><FONT COLOR=#00ffff>g</FONT><FONT COLOR=#00c0ff>o</FONT><FONT COLOR=#0080ff>z</FONT><FONT COLOR=#0040ff>a</FONT><FONT COLOR=#0000ff> </FONT><FONT COLOR=#0033ff>N</FONT><FONT COLOR=#0066ff>o</FONT><FONT COLOR=#009aff> </FONT><FONT COLOR=#00cdff>J</FONT><FONT COLOR=#00ffff>u</FONT><FONT COLOR=#00c0ff>t</FONT><FONT COLOR=#0080ff>s</FONT><FONT COLOR=#0040ff>u</FONT><FONT COLOR=#0000ff>!</FONT></FONT>"
-					var/obj/FutagozaNoJutsu/K = new()
-					var/obj/Ice1/A = new()
-					var/obj/Ice2/B = new()
+					var/obj/Jutsus/FutagozaNoJutsu/K = new()
+					var/obj/Jutsus/Ice1/A = new()
+					var/obj/Jutsus/Ice2/B = new()
 					A.dir=usr.dir
 					B.dir=usr.dir
 					usr.Chakragain()
@@ -154,9 +154,9 @@ mob/Juvenile_Ice
 						usr.chakra -= 100
 						usr.firing = 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#0000ff>F</FONT><FONT COLOR=#0040ff>u</FONT><FONT COLOR=#0080ff>t</FONT><FONT COLOR=#00c0ff>a</FONT><FONT COLOR=#00ffff>g</FONT><FONT COLOR=#00c0ff>o</FONT><FONT COLOR=#0080ff>z</FONT><FONT COLOR=#0040ff>a</FONT><FONT COLOR=#0000ff> </FONT><FONT COLOR=#0033ff>N</FONT><FONT COLOR=#0066ff>o</FONT><FONT COLOR=#009aff> </FONT><FONT COLOR=#00cdff>J</FONT><FONT COLOR=#00ffff>u</FONT><FONT COLOR=#00c0ff>t</FONT><FONT COLOR=#0080ff>s</FONT><FONT COLOR=#0040ff>u</FONT><FONT COLOR=#0000ff>!</FONT></FONT>"
-						var/obj/FutagozaNoJutsu/K = new()
-						var/obj/Ice1/A = new()
-						var/obj/Ice2/B = new()
+						var/obj/Jutsus/FutagozaNoJutsu/K = new()
+						var/obj/Jutsus/Ice1/A = new()
+						var/obj/Jutsus/Ice2/B = new()
 						usr.Chakragain()
 						A.dir=usr.dir
 						B.dir=usr.dir

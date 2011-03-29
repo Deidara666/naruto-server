@@ -131,10 +131,10 @@ mob
 							P.maxhealth=src.dogmaxhealth
 							P.health=P.maxhealth
 							P.named=1
-			for(var/obj/shibari/K in world)
+			for(var/obj/Jutsus/shibari/K in world)
 				if(K.owner==src)
 					del(K)
-			for(var/obj/shibaritrail/T in world)
+			for(var/obj/Jutsus/shibaritrail/T in world)
 				if(T.owner==src)
 					del(T)
 			if(src.taiexp>=1000)

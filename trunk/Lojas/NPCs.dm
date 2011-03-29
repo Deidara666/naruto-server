@@ -363,6 +363,9 @@ mob/npc/Comuns/
 							usr<<"Você não tem dinheiro o suficiente!"
 					if("Nada")
 						return
+
+//                                      --- Sabios ---
+
 mob/npc/Sabios
 	SabioDosMapas
 		name = "Sabio dos Mapas(NPC)"
@@ -419,6 +422,23 @@ mob/npc/Sabios
 					if("Nada")
 						return
 mob/npc/Sabios
+	SabioDeKaton
+		name = "Sabio do Fogo(Katon)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Katon","Nada"))
+					if("Quero saber mais sobre o elemento Katon")
+						return
+					if("Nada")
+						return
+
+mob/npc/Sabios
 	SabioDeDoton
 		name = "Sabio da Terra(Doton)"
 		icon = 'Banker.dmi'
@@ -450,6 +470,152 @@ mob/npc/Sabios
 						return
 					if("Nada")
 						return
+mob/npc/Sabios
+	SabioDeBakuton
+		name = "Sabio das Explosões(Bakuton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Bakuton","Nada"))
+					if("Quero saber mais sobre o elemento Bakuton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeFutton
+		name = "Sabio de Futton(Ácido)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Futton","Nada"))
+					if("Quero saber mais sobre o elemento Futton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeHyouton
+		name = "Sabio de Hyouton(Gelo)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Hyouton","Nada"))
+					if("Quero saber mais sobre o elemento Hyouton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeJinton
+		name = "Sabio de Jinton(Poeira)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Jinton","Nada"))
+					if("Quero saber mais sobre o elemento Jinton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeMokuton
+		name = "Sabio de Mokuton(Madeira)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Mokuton","Nada"))
+					if("Quero saber mais sobre o elemento Mokuton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeRanton
+		name = "Sabio de Ranton(Tempestade)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Ranton","Nada"))
+					if("Quero saber mais sobre o elemento Ranton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeShakuton
+		name = "Sabio de Shakuton(Calor)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shakuton","Nada"))
+					if("Quero saber mais sobre o elemento Shakuton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeShouton
+		name = "Sabio de Shouton(Cristal)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shouton","Nada"))
+					if("Quero saber mais sobre o elemento Shouton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeYouton
+		name = "Sabio de Youton(Lava)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Youton","Nada"))
+					if("Quero saber mais sobre o elemento Youton")
+						return
+					if("Nada")
+						return
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
 
 mob/npc/Comuns/
 	Merchant

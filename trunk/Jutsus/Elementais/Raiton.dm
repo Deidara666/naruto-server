@@ -38,7 +38,7 @@ mob/rai
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.Rai1N += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Raikyuu!"
-					var/obj/Raikyuu/K = new /obj/Raikyuu
+					var/obj/Jutsus/Raikyuu/K = new /obj/Jutsus/Raikyuu
 					K.loc = usr.loc
 					K.nin=usr.nin
 					K.dir = usr.dir
@@ -87,7 +87,7 @@ mob/rai
 						usr.Rai1N += 1
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Raikyuu!"
-						var/obj/Raikyuu/K = new /obj/Raikyuu
+						var/obj/Jutsus/Raikyuu/K = new /obj/Jutsus/Raikyuu
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.dir = usr.dir
@@ -169,7 +169,7 @@ mob/rai
 					usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 					usr.Rai3N += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Ikazuchi No Kiba!"
-					var/obj/Ikazuchi/K = new /obj/Ikazuchi
+					var/obj/Jutsus/Ikazuchi/K = new /obj/Jutsus/Ikazuchi
 					K.loc = usr.loc
 					usr.Chakragain()
 					K.nin=usr.nin
@@ -217,7 +217,7 @@ mob/rai
 						usr.Rai3N += 1
 						usr.firing = 1 // Sets the firing var to 1, so he cant fire another beam // Disables the mob's movement
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Ikazuchi No Kiba!"
-						var/obj/Ikazuchi/K = new /obj/Ikazuchi
+						var/obj/Jutsus/Ikazuchi/K = new /obj/Jutsus/Ikazuchi
 						K.loc = usr.loc
 						K.nin=usr.nin
 						K.dir = usr.dir
@@ -309,7 +309,7 @@ mob/rai
 					usr.move = 0 // Disables the mob's movement
 					usr.Rai2N += 1
 					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Rairyuu No Tatsumaki!"
-					var/obj/RairyuuTatsumaki/R = new /obj/RairyuuTatsumaki
+					var/obj/Jutsus/RairyuuTatsumaki/R = new /obj/Jutsus/RairyuuTatsumaki
 					usr.target=m
 					R.loc = usr.loc
 					R.nin=usr.nin
@@ -364,7 +364,7 @@ mob/rai
 						usr.move = 0 // Disables the mob's movement
 						usr.Rai2N += 1
 						view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: Rairyuu No Tatsumaki!"
-						var/obj/RairyuuTatsumaki/R = new /obj/RairyuuTatsumaki
+						var/obj/Jutsus/RairyuuTatsumaki/R = new /obj/Jutsus/RairyuuTatsumaki
 						usr.target=m
 						R.loc = usr.loc
 						R.nin=usr.nin

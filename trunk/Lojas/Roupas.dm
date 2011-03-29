@@ -1,7 +1,256 @@
+//--- Kage Roupas ---
 
-//CHAPÉUS
+//Roupas de Kage
 
-obj
+obj/KageRoupas
+	AmekageSuit
+		name = "Amekage suit"
+		icon = 'AmekageSuit.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Wear()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'AmekageSuit.dmi'//temp icon
+					usr << "You remove the [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'AmekageSuit.dmi'
+					usr << "You wear the [src.name]."
+					src.suffix = "Equipped"
+			Look()
+				usr<<"This is a official suit given to the Amekage."
+			Drop()
+				if(src:worn == 1)
+					usr << "Not while its being worn."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Get()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"You picked up a [src]"
+
+obj/KageRoupas
+	HokageSuit
+		name = "Hokage suit"
+		icon = 'HokageSuit.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Wear()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'HokageSuit.dmi'//temp icon
+					usr << "You remove the [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'HokageSuit.dmi'
+					usr << "You wear the [src.name]."
+					src.suffix = "Equipped"
+			Look()
+				usr<<"This is a official suit given to the Hokage."
+			Drop()
+				if(src:worn == 1)
+					usr << "Not while its being worn."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Get()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"You picked up a [src]"
+
+obj/KageRoupas
+	HoshikageSuit
+		name = "Hoshikage suit"
+		icon = 'HoshikageSuit.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Wear()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'HoshikageSuit.dmi'//temp icon
+					usr << "You remove the [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'HoshikageSuit.dmi'
+					usr << "You wear the [src.name]."
+					src.suffix = "Equipped"
+			Look()
+				usr<<"This is a official suit given to the Hoshikage."
+			Drop()
+				if(src:worn == 1)
+					usr << "Not while its being worn."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Get()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"You picked up a [src]"
+
+obj/KageRoupas
+	KazekageSuit
+		name = "Roupa do Kazekage"
+		icon = 'KazekageSuit.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'KazekageSuit.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'KazekageSuit.dmi'
+					usr << "Você vestiu a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Esta é uma roupa oficial usada pelos Kazekage."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+
+obj/KageRoupas
+	MizukageSuit
+		name = "Roupa do Mizukage"
+		icon = 'MizukageSuit.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'MizukageSuit.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'MizukageSuit.dmi'
+					usr << "Você vestiu a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Esta é uma roupa oficial usada pelos Mizukage."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+
+obj/KageRoupas
+	OtokageSuit
+		name = "Roupa do Otokage"
+		icon = 'OtokageSuit.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'OtokageSuit.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'OtokageSuit.dmi'
+					usr << "Você vestiu a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Esta é uma roupa oficial usada pelos Otokage."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+
+obj/KageRoupas
+	RaikageSuit
+		name = "Roupa do Raikage"
+		icon = 'RaikageSuit.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'RaikageSuit.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'RaikageSuit.dmi'
+					usr << "Você vestiu a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Esta é uma roupa oficial usada pelos Raikage."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+obj/KageRoupas
+	TsuchikageSuit
+		name = "Roupa do Tsuchikage"
+		icon = 'TsuchikageSuit.dmi'//dont have a base icon so cant make weights icon!lol
+		worn = 0
+		price = 2000
+		verb
+			Vestir()
+				if(src.worn == 1)
+					src:worn = 0
+					usr.overlays -= 'TsuchikageSuit.dmi'//temp icon
+					usr << "Você removeu a [src.name]."
+					src.suffix = ""
+				else
+					src:worn = 1
+					usr.overlays += 'TsuchikageSuit.dmi'
+					usr << "Você vestiu a [src.name]."
+					src.suffix = "Equipped"
+			Olhar()
+				usr<<"Esta é uma roupa oficia usada pelos Tsuchikage."
+			Soltar()
+				if(src:worn == 1)
+					usr << "Não enquanto isto está sendo usado."
+				if(src:worn == 0)
+					src.loc=locate(usr.x,usr.y-1,usr.z)
+					usr.SaveK()
+			Pegar()
+				set src in oview(1)
+				src.loc = usr
+				usr<<"Você pegou uma [src]"
+
+//Chapéu Kages
+obj/KageRoupas
 	HoshikageHat
 		name = "Chapéu do Hoshikage"
 		icon = 'HoshikageHat.dmi'//dont have a base icon so cant make weights icon!lol
@@ -32,7 +281,7 @@ obj
 				src.loc = usr
 				usr<<"Você pegou um [src]"
 
-obj
+obj/KageRoupas
 	KazekageHat
 		name = "Chapéu do Kazekage"
 		icon = 'KazekageHat.dmi'//dont have a base icon so cant make weights icon!lol
@@ -63,7 +312,7 @@ obj
 				src.loc = usr
 				usr<<"Você pegou um [src]"
 
-obj
+obj/KageRoupas
 	MizukageHat
 		name = "Chapéu do Mizukage"
 		icon = 'MizukageHat.dmi'//dont have a base icon so cant make weights icon!lol
@@ -94,7 +343,7 @@ obj
 				src.loc = usr
 				usr<<"Você pegou o [src]"
 
-obj
+obj/KageRoupas
 	OtokageHat
 		name = "Chapéu do Otokage"
 		icon = 'OtokageHat.dmi'//dont have a base icon so cant make weights icon!lol
@@ -125,7 +374,7 @@ obj
 				src.loc = usr
 				usr<<"Você pegou uma [src]"
 
-obj
+obj/KageRoupas
 	RaikageHat
 		name = "Chapéu do Raikage"
 		icon = 'RaikageHat.dmi'//dont have a base icon so cant make weights icon!lol
@@ -157,7 +406,7 @@ obj
 				usr<<"Você pegou um [src]"
 
 
-obj
+obj/KageRoupas
 	TsuchikageHat
 		name = "Chapéu do Tsuchikage"
 		icon = 'TsuchikageHat.dmi'//dont have a base icon so cant make weights icon!lol
@@ -189,7 +438,7 @@ obj
 				usr<<"Você pegou um [src]"
 
 
-obj
+obj/KageRoupas
 	AmekageHat
 		name = "Amekage Hat"
 		icon = 'AmekageHat.dmi'//dont have a base icon so cant make weights icon!lol
@@ -221,7 +470,7 @@ obj
 				usr<<"You picked up a [src]"
 
 
-obj
+obj/KageRoupas
 	HokageHat
 		name = "Hokage Hat"
 		icon = 'HokageHat.dmi'//dont have a base icon so cant make weights icon!lol
@@ -251,6 +500,11 @@ obj
 				set src in oview(1)
 				src.loc = usr
 				usr<<"You picked up a [src]"
+
+
+//CHAPÉUS
+
+
 
 
 obj
@@ -1101,254 +1355,7 @@ obj
 
 
 
-//Roupas de Kage
 
-obj
-	AmekageSuit
-		name = "Amekage suit"
-		icon = 'AmekageSuit.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Wear()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'AmekageSuit.dmi'//temp icon
-					usr << "You remove the [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'AmekageSuit.dmi'
-					usr << "You wear the [src.name]."
-					src.suffix = "Equipped"
-			Look()
-				usr<<"This is a official suit given to the Amekage."
-			Drop()
-				if(src:worn == 1)
-					usr << "Not while its being worn."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Get()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"You picked up a [src]"
-
-obj
-	HokageSuit
-		name = "Hokage suit"
-		icon = 'HokageSuit.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Wear()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'HokageSuit.dmi'//temp icon
-					usr << "You remove the [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'HokageSuit.dmi'
-					usr << "You wear the [src.name]."
-					src.suffix = "Equipped"
-			Look()
-				usr<<"This is a official suit given to the Hokage."
-			Drop()
-				if(src:worn == 1)
-					usr << "Not while its being worn."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Get()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"You picked up a [src]"
-
-obj
-	HoshikageSuit
-		name = "Hoshikage suit"
-		icon = 'HoshikageSuit.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Wear()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'HoshikageSuit.dmi'//temp icon
-					usr << "You remove the [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'HoshikageSuit.dmi'
-					usr << "You wear the [src.name]."
-					src.suffix = "Equipped"
-			Look()
-				usr<<"This is a official suit given to the Hoshikage."
-			Drop()
-				if(src:worn == 1)
-					usr << "Not while its being worn."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Get()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"You picked up a [src]"
-
-obj
-	KazekageSuit
-		name = "Roupa do Kazekage"
-		icon = 'KazekageSuit.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Vestir()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'KazekageSuit.dmi'//temp icon
-					usr << "Você removeu a [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'KazekageSuit.dmi'
-					usr << "Você vestiu a [src.name]."
-					src.suffix = "Equipped"
-			Olhar()
-				usr<<"Esta é uma roupa oficial usada pelos Kazekage."
-			Soltar()
-				if(src:worn == 1)
-					usr << "Não enquanto isto está sendo usado."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Pegar()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"Você pegou uma [src]"
-
-obj
-	MizukageSuit
-		name = "Roupa do Mizukage"
-		icon = 'MizukageSuit.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Vestir()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'MizukageSuit.dmi'//temp icon
-					usr << "Você removeu a [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'MizukageSuit.dmi'
-					usr << "Você vestiu a [src.name]."
-					src.suffix = "Equipped"
-			Olhar()
-				usr<<"Esta é uma roupa oficial usada pelos Mizukage."
-			Soltar()
-				if(src:worn == 1)
-					usr << "Não enquanto isto está sendo usado."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Pegar()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"Você pegou uma [src]"
-
-obj
-	OtokageSuit
-		name = "Roupa do Otokage"
-		icon = 'OtokageSuit.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Vestir()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'OtokageSuit.dmi'//temp icon
-					usr << "Você removeu a [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'OtokageSuit.dmi'
-					usr << "Você vestiu a [src.name]."
-					src.suffix = "Equipped"
-			Olhar()
-				usr<<"Esta é uma roupa oficial usada pelos Otokage."
-			Soltar()
-				if(src:worn == 1)
-					usr << "Não enquanto isto está sendo usado."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Pegar()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"Você pegou uma [src]"
-
-obj
-	RaikageSuit
-		name = "Roupa do Raikage"
-		icon = 'RaikageSuit.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Vestir()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'RaikageSuit.dmi'//temp icon
-					usr << "Você removeu a [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'RaikageSuit.dmi'
-					usr << "Você vestiu a [src.name]."
-					src.suffix = "Equipped"
-			Olhar()
-				usr<<"Esta é uma roupa oficial usada pelos Raikage."
-			Soltar()
-				if(src:worn == 1)
-					usr << "Não enquanto isto está sendo usado."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Pegar()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"Você pegou uma [src]"
-obj
-	TsuchikageSuit
-		name = "Roupa do Tsuchikage"
-		icon = 'TsuchikageSuit.dmi'//dont have a base icon so cant make weights icon!lol
-		worn = 0
-		price = 2000
-		verb
-			Vestir()
-				if(src.worn == 1)
-					src:worn = 0
-					usr.overlays -= 'TsuchikageSuit.dmi'//temp icon
-					usr << "Você removeu a [src.name]."
-					src.suffix = ""
-				else
-					src:worn = 1
-					usr.overlays += 'TsuchikageSuit.dmi'
-					usr << "Você vestiu a [src.name]."
-					src.suffix = "Equipped"
-			Olhar()
-				usr<<"Esta é uma roupa oficia usada pelos Tsuchikage."
-			Soltar()
-				if(src:worn == 1)
-					usr << "Não enquanto isto está sendo usado."
-				if(src:worn == 0)
-					src.loc=locate(usr.x,usr.y-1,usr.z)
-					usr.SaveK()
-			Pegar()
-				set src in oview(1)
-				src.loc = usr
-				usr<<"Você pegou uma [src]"
 
 
 
