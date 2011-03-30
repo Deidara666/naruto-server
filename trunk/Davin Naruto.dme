@@ -38,6 +38,7 @@
 #define FILE_DIR "Mapa/backup"
 #define FILE_DIR "Skin"
 #define FILE_DIR "Skin_Cesar"
+#define FILE_DIR "sounds"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES

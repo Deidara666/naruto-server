@@ -38,6 +38,18 @@ turf
 			density = 1
 
 	Casas
+		SunaC1
+			icon = 'Suna.dmi'
+			icon_state = "1"
+			density = 1
+		SunaC2
+			icon = 'Suna.dmi'
+			icon_state = "2"
+			density = 1
+		SunaC3
+			icon = 'Suna.dmi'
+			icon_state = "3"
+			density = 1
 		Hospital1
 			icon = 'predios.dmi'
 			icon_state = "banner"
