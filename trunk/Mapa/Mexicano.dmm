@@ -239,7 +239,7 @@
 "eE" = (/turf/sPedra5,/turf/casa10{tag = "icon-casa10 7,0"; icon_state = "casa10 7,0"},/area)
 "eF" = (/turf/lmansion17,/turf/lmansionIN,/area)
 "eG" = (/obj/elec,/turf/sPedra5,/area)
-"eH" = (/obj/KageRoupas/RaikageHat,/obj/RaikageSuit,/turf/sPedra3,/area)
+"eH" = (/obj/KageRoupas/RaikageHat,/obj/KageRoupas/RaikageSuit,/turf/sPedra3,/area)
 "eI" = (/obj/elec,/turf/sPedra3,/area)
 "eJ" = (/turf/sPedra5,/obj/Weed,/turf/ASolos/Montanha3,/area)
 "eK" = (/turf/sPedra5,/turf/ASolos/Montanha3,/area)
@@ -259,14 +259,14 @@
 "eY" = (/turf/waterfall1,/turf/ASolos/Montanha2,/turf/ASolos/Montanha4,/area)
 "eZ" = (/turf/waterfall1,/turf/ASolos/Montanha4,/area)
 "fa" = (/turf/waterfall1,/turf/ASolos/Montanha3,/turf/ASolos/Montanha4,/area)
-"fb" = (/turf/ASolos/Montanha,/turf/lmansion29,/obj/Nuvem,/area)
+"fb" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/lmansion29,/area)
 "fc" = (/turf/dirt,/turf/ASolos/Montanha2,/area)
 "fd" = (/turf/dirt,/turf/ASolos/Montanha3,/area)
 "fe" = (/turf/waterfall1,/turf/ASolos/Montanha2,/area)
 "ff" = (/turf/waterfall1,/area)
 "fg" = (/turf/waterfall1,/turf/ASolos/Montanha3,/area)
-"fh" = (/turf/ASolos/Montanha,/obj/Nuvem,/area)
-"fi" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/area)
+"fh" = (/obj/Nuvem,/turf/ASolos/Montanha,/area)
+"fi" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Objetos/Objeto4,/area)
 "fj" = (/turf/dirt,/turf/ASolos/Montanha2,/mob/enemy/Rainvillageshinobi,/turf/ASolos/Montanha4,/area)
 "fk" = (/turf/dirt,/turf/ASolos/Montanha3,/mob/enemy/Rainvillageshinobi,/turf/ASolos/Montanha4,/area)
 "fl" = (/turf/dirt,/turf/ASolos/Montanha2,/turf/ASolos/Montanha4,/area)
@@ -276,435 +276,426 @@
 "fp" = (/turf/dirt,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
 "fq" = (/turf/dirt,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
 "fr" = (/turf/waterfall1,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
-"fs" = (/turf/waterfall1,/obj/Nuvem,/area)
+"fs" = (/obj/Nuvem,/turf/waterfall1,/area)
 "ft" = (/turf/waterfall1,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
 "fu" = (/turf/ASolos/Montanha,/turf/lmansion29,/area)
-"fv" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha2,/obj/Nuvem,/area)
-"fw" = (/turf/sPedra3,/obj/Nuvem,/area)
-"fx" = (/turf/sPedra3,/turf/ASolos/Montanha3,/obj/Nuvem,/area)
-"fy" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Objetos/Objeto4,/area)
-"fz" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/area)
-"fA" = (/turf/sPedra10,/turf/Agua/Borda4,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/ASolos/Montanha2,/area)
-"fB" = (/turf/Agua/Borda9,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
-"fC" = (/turf/Agua/Borda9,/obj/Nuvem,/area)
-"fD" = (/turf/sPedra10,/turf/Agua/Borda4,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
-"fE" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha2,/turf/ASolos/Montanha4,/area)
-"fF" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
-"fG" = (/turf/sPedra3,/turf/ASolos/Montanha3,/turf/ASolos/Montanha4,/obj/Nuvem,/area)
-"fH" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/area)
-"fI" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
-"fJ" = (/turf/sPedra3,/turf/ASolos/Montanha2,/obj/Nuvem,/area)
-"fK" = (/turf/Flash,/obj/Nuvem,/area)
-"fL" = (/turf/Flash,/turf/Objetos/Objeto1,/obj/Nuvem,/area)
-"fM" = (/turf/akat1,/turf/ASolos/Montanha2,/obj/tree3,/obj/tree3,/turf/ASolos/Montanha4,/area)
-"fN" = (/turf/dirt,/obj/tree2,/obj/tree3,/obj/tree3,/turf/ASolos/Montanha4,/area)
-"fO" = (/turf/dirt,/obj/tree2,/obj/tree3,/turf/ASolos/Montanha4,/area)
-"fP" = (/turf/dirt,/obj/tree3,/turf/ASolos/Montanha4,/area)
-"fQ" = (/turf/dirt,/turf/ASolos/Montanha3,/obj/tree2,/obj/tree3,/turf/ASolos/Montanha4,/area)
-"fR" = (/turf/Flash,/obj/Log,/obj/Nuvem,/area)
-"fS" = (/turf/Flash,/obj/Log2,/obj/Nuvem,/area)
-"fT" = (/turf/sPedra3,/turf/ASolos/Montanha2,/turf/ASolos/Montanha4,/obj/Nuvem,/area)
-"fU" = (/turf/dirt,/obj/tree3,/turf/ASolos/Montanha2,/area)
-"fV" = (/obj/tree2,/obj/tree3,/turf/dirt,/area)
-"fW" = (/obj/tree3,/obj/tree3,/turf/dirt,/area)
-"fX" = (/obj/tree3,/turf/dirt,/area)
-"fY" = (/turf/dirt,/obj/tree2,/obj/tree3,/turf/ASolos/Montanha3,/area)
-"fZ" = (/turf/Flash,/turf/Arvore1/Arvore18,/obj/Nuvem,/area)
-"ga" = (/turf/Flash,/turf/Arvore1/Arvore19,/obj/Nuvem,/area)
-"gb" = (/turf/Flash,/turf/Objetos/Objeto3,/obj/Nuvem,/area)
-"gc" = (/turf/Flash,/turf/Arvore1/Arvore13,/obj/Nuvem,/area)
-"gd" = (/turf/Flash,/turf/Arvore1/Arvore14,/obj/Nuvem,/area)
-"ge" = (/turf/Flash,/turf/Arvore1/Arvore15,/obj/Nuvem,/area)
-"gf" = (/turf/Flash,/turf/Arvore1/Arvore16,/obj/Nuvem,/area)
-"gg" = (/turf/Flash,/turf/Arvore1/Arvore9,/obj/Nuvem,/area)
-"gh" = (/turf/Arvore1/Arvore10,/obj/Nuvem,/area)
-"gi" = (/turf/Arvore1/Arvore11,/turf/Arvore1/Arvore18,/obj/Nuvem,/area)
-"gj" = (/turf/Flash,/turf/Arvore1/Arvore19,/turf/Arvore1/Arvore12,/turf/Arvore1/Arvore19,/obj/Nuvem,/area)
-"gk" = (/turf/Arvore1/Arvore11,/obj/Nuvem,/area)
-"gl" = (/turf/Flash,/turf/Arvore1/Arvore12,/obj/Nuvem,/area)
-"gm" = (/obj/tree3,/mob/npc/GuardiaoKumogakure,/turf/dirt,/area)
-"gn" = (/obj/tree2,/obj/tree3,/obj/tree3,/turf/dirt,/area)
-"go" = (/turf/Flash,/turf/Arvore1/Arvore5,/obj/Nuvem,/area)
-"gp" = (/turf/Flash,/turf/Arvore1/Arvore6,/turf/Arvore1/Arvore13,/obj/Nuvem,/area)
-"gq" = (/turf/Flash,/turf/Arvore1/Arvore16,/turf/Arvore1/Arvore5,/obj/Nuvem,/area)
-"gr" = (/turf/Flash,/turf/Arvore1/Arvore6,/obj/Nuvem,/area)
-"gs" = (/turf/Flash,/turf/Arvore1/Arvore18,/turf/Arvore1/Arvore7,/turf/Arvore1/Arvore18,/obj/Nuvem,/area)
-"gt" = (/turf/Flash,/turf/Arvore1/Arvore19,/turf/Arvore1/Arvore8,/turf/Arvore1/Arvore19,/obj/Nuvem,/area)
-"gu" = (/turf/Flash,/turf/Arvore1/Arvore1,/obj/Nuvem,/area)
-"gv" = (/turf/Flash,/turf/Arvore1/Arvore9,/turf/Arvore1/Arvore2,/obj/Nuvem,/area)
-"gw" = (/turf/Flash,/turf/Arvore1/Arvore12,/turf/Arvore1/Arvore1,/obj/Nuvem,/area)
-"gx" = (/turf/Flash,/turf/Arvore1/Arvore13,/turf/Arvore1/Arvore2,/obj/Nuvem,/area)
-"gy" = (/turf/Flash,/turf/Arvore1/Arvore7,/obj/Nuvem,/area)
-"gz" = (/turf/Flash,/turf/Arvore1/Arvore8,/obj/Nuvem,/area)
-"gA" = (/turf/sPedra10,/turf/Agua/Borda7,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
-"gB" = (/turf/sPedra10,/turf/Agua/Borda8,/obj/Nuvem,/area)
-"gC" = (/turf/sPedra10,/turf/Agua/Borda4,/turf/Agua/Borda8,/obj/Nuvem,/area)
-"gD" = (/turf/Flash,/turf/Arvore1/Arvore1,/turf/Objetos/Objeto1,/obj/Nuvem,/area)
-"gE" = (/turf/Flash,/turf/Arvore1/Arvore2,/obj/Nuvem,/area)
-"gF" = (/turf/Flash,/turf/Arvore1/Arvore3,/obj/Nuvem,/area)
-"gG" = (/turf/Flash,/turf/Arvore1/Arvore4,/obj/Nuvem,/area)
-"gH" = (/turf/Agua/Borda9,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
-"gI" = (/turf/dirt,/turf/ASolos/Montanha4,/area)
-"gJ" = (/turf/muddy,/turf/ASolos/Montanha2,/mob/npc/Comuns/Food_Vender,/turf/ASolos/Montanha4,/area)
-"gK" = (/turf/muddy,/mob/npc/Comuns/Food_Vender{name = "Chef's Assitant"},/turf/ASolos/Montanha4,/area)
-"gL" = (/turf/muddy,/turf/ASolos/Montanha4,/area)
-"gM" = (/turf/muddy,/mob/npc/Comuns/Merchant3,/turf/ASolos/Montanha4,/area)
-"gN" = (/turf/muddy,/mob/npc/Comuns/Merchant,/turf/ASolos/Montanha4,/area)
-"gO" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/ASolos/Montanha3,/area)
-"gP" = (/turf/S1,/turf/ASolos/Montanha2,/area)
-"gQ" = (/turf/S2,/area)
-"gR" = (/turf/S3,/area)
-"gS" = (/turf/muddy,/turf/LD,/area)
-"gT" = (/turf/muddy,/turf/RD,/area)
-"gU" = (/turf/muddy,/area)
-"gV" = (/turf/muddy,/turf/ASolos/Montanha3,/area)
-"gW" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
-"gX" = (/turf/muddy,/turf/ASolos/Montanha2,/area)
-"gY" = (/mob/enemy/Rainvillageshinobi,/turf/muddy,/area)
-"gZ" = (/turf/muddy,/mob/enemy/Rainvillageshinobi,/turf/ASolos/Montanha3,/area)
-"ha" = (/turf/dirt,/turf/ASolos/Montanha3,/turf/ASolos/Montanha2,/area)
-"hb" = (/turf/muddy,/obj/elec,/turf/Objetos/Objeto4,/area)
-"hc" = (/turf/muddy,/turf/Objetos/Objeto4,/turf/ASolos/Montanha3,/area)
-"hd" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha3,/obj/Nuvem,/area)
-"he" = (/obj/elec,/turf/muddy,/area)
-"hf" = (/turf/muddy,/turf/Objetos/Objeto4,/area)
-"hg" = (/turf/sPedra10,/turf/Agua/Borda4,/obj/Nuvem,/area)
-"hh" = (/turf/sPedra10,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
-"hi" = (/turf/sPedra10,/obj/Nuvem,/turf/ASolos/Montanha3,/turf/ASolos/Montanha4,/area)
-"hj" = (/turf/sPedra3,/turf/Casas/Casa10{tag = "icon-casa10 0,7"; icon_state = "casa10 0,7"},/obj/Nuvem,/area)
-"hk" = (/turf/sPedra3,/turf/Casas/Casa10{tag = "icon-casa10 1,7"; icon_state = "casa10 1,7"},/obj/Nuvem,/area)
-"hl" = (/turf/sPedra3,/turf/Casas/Casa10{tag = "icon-casa10 2,7"; icon_state = "casa10 2,7"},/obj/Nuvem,/area)
-"hm" = (/turf/sPedra3,/turf/Casas/Casa10{tag = "icon-casa10 3,7"; icon_state = "casa10 3,7"},/obj/Nuvem,/area)
-"hn" = (/turf/sPedra3,/turf/Casas/Casa10{tag = "icon-casa10 4,7"; icon_state = "casa10 4,7"},/obj/Nuvem,/area)
-"ho" = (/turf/sPedra3,/turf/Casas/Casa10{tag = "icon-casa10 5,7"; icon_state = "casa10 5,7"},/obj/Nuvem,/area)
-"hp" = (/turf/sPedra3,/turf/Casas/Casa10{tag = "icon-casa10 6,7"; icon_state = "casa10 6,7"},/obj/Nuvem,/area)
-"hq" = (/turf/sPedra3,/turf/Casas/Casa10{tag = "icon-casa10 7,7"; icon_state = "casa10 7,7"},/obj/Nuvem,/area)
-"hr" = (/turf/sPedra10,/turf/Agua/Borda1,/obj/Nuvem,/area)
-"hs" = (/turf/sPedra10,/turf/Agua/Borda3,/obj/Nuvem,/area)
-"ht" = (/turf/sPedra10,/turf/Agua/Borda3,/turf/Agua/Borda4,/obj/Nuvem,/area)
-"hu" = (/turf/sPedra10,/obj/Nuvem,/area)
-"hv" = (/turf/sPedra10,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
-"hw" = (/turf/ASolos/Montanha,/turf/Hospital,/area)
-"hx" = (/turf/sPedra3,/turf/ASolos/Montanha2,/turf/ASolos/Montanha3,/obj/Nuvem,/area)
-"hy" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 0,6"; icon_state = "casa10 0,6"},/area)
-"hz" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 1,6"; icon_state = "casa10 1,6"},/area)
-"hA" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 2,6"; icon_state = "casa10 2,6"},/area)
-"hB" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 3,6"; icon_state = "casa10 3,6"},/area)
-"hC" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 4,6"; icon_state = "casa10 4,6"},/area)
-"hD" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 5,6"; icon_state = "casa10 5,6"},/area)
-"hE" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 6,6"; icon_state = "casa10 6,6"},/area)
-"hF" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 7,6"; icon_state = "casa10 7,6"},/area)
-"hG" = (/turf/Grama,/obj/Nuvem,/area)
-"hH" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/ASolos/Montanha2,/area)
-"hI" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/leafmansion13{tag = "icon-11"; icon_state = "11"},/area)
-"hJ" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/leafmansion13{tag = "icon-2"; icon_state = "2"},/area)
-"hK" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/leafmansion13{tag = "icon-12"; icon_state = "12"},/area)
-"hL" = (/turf/dirt,/turf/ASolos/Montanha2,/obj/Nuvem,/area)
-"hM" = (/turf/dirt,/turf/ASolos/Montanha3,/turf/ASolos/Montanha4,/obj/Nuvem,/area)
-"hN" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 0,5"; icon_state = "casa10 0,5"},/turf/ASolos/Montanha4,/turf/ASolos/Montanha2,/turf/Casas/Casa10{tag = "icon-casa10 0,5"; icon_state = "casa10 0,5"},/turf/ASolos/Montanha2,/turf/Casas/Casa10{tag = "icon-casa10 0,5"; icon_state = "casa10 0,5"},/turf/ASolos/Montanha2,/area)
-"hO" = (/turf/Casas/Casa10{tag = "icon-casa10 1,5"; icon_state = "casa10 1,5"},/area)
-"hP" = (/turf/Casas/Casa10{tag = "icon-casa10 2,5"; icon_state = "casa10 2,5"},/area)
-"hQ" = (/turf/Casas/Casa10{tag = "icon-casa10 3,5"; icon_state = "casa10 3,5"},/area)
-"hR" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 4,5"; icon_state = "casa10 4,5"},/turf/ASolos/Montanha4,/turf/Casas/Casa10{tag = "icon-casa10 4,5"; icon_state = "casa10 4,5"},/area)
-"hS" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,5"; icon_state = "casa10 5,5"},/turf/ASolos/Montanha4,/turf/Casas/Casa10{tag = "icon-casa10 5,5"; icon_state = "casa10 5,5"},/area)
-"hT" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/Casas/Casa10{tag = "icon-casa10 6,5"; icon_state = "casa10 6,5"},/area)
-"hU" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/Casas/Casa10{tag = "icon-casa10 7,5"; icon_state = "casa10 7,5"},/area)
-"hV" = (/turf/muddy,/obj/elec,/turf/ASolos/Montanha4,/area)
-"hW" = (/turf/muddy,/turf/ASolos/Montanha4,/mob/npc/Comuns/Summon_Vender,/turf/ASolos/Montanha3,/area)
-"hX" = (/turf/muddy,/turf/fwall2,/area)
-"hY" = (/turf/muddy,/turf/fwall3,/area)
-"hZ" = (/turf/dirt,/turf/ASolos/Montanha3,/obj/Nuvem,/area)
-"ia" = (/turf/Casas/Casa10{tag = "icon-casa10 0,4"; icon_state = "casa10 0,4"},/turf/ASolos/Montanha2,/area)
-"ib" = (/turf/Casas/Casa10{tag = "icon-casa10 1,4"; icon_state = "casa10 1,4"},/area)
-"ic" = (/turf/Casas/Casa10{tag = "icon-casa10 2,4"; icon_state = "casa10 2,4"},/area)
-"id" = (/turf/Casas/Casa10{tag = "icon-casa10 3,4"; icon_state = "casa10 3,4"},/area)
-"ie" = (/turf/Casas/Casa10{tag = "icon-casa10 4,4"; icon_state = "casa10 4,4"},/area)
-"if" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,4"; icon_state = "casa10 5,4"},/turf/Casas/Casa10{tag = "icon-casa10 5,4"; icon_state = "casa10 5,4"},/area)
-"ig" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,4"; icon_state = "casa10 6,4"},/area)
-"ih" = (/turf/muddy,/turf/Objetos/Objeto2,/turf/Casas/Casa10{tag = "icon-casa10 7,4"; icon_state = "casa10 7,4"},/area)
-"ii" = (/turf/muddy,/turf/Objetos/Objeto2,/area)
-"ij" = (/turf/muddy,/turf/Objetos/Objeto2,/turf/ASolos/Montanha3,/area)
-"ik" = (/turf/dirt,/obj/elec,/turf/ASolos/Montanha2,/area)
-"il" = (/turf/muddy,/turf/fwall2,/turf/ASolos/Montanha2,/area)
-"im" = (/turf/Casas/Casa10{tag = "icon-casa10 0,3"; icon_state = "casa10 0,3"},/turf/ASolos/Montanha2,/area)
-"in" = (/turf/Casas/Casa10{tag = "icon-casa10 1,3"; icon_state = "casa10 1,3"},/area)
-"io" = (/turf/Casas/Casa10{tag = "icon-casa10 2,3"; icon_state = "casa10 2,3"},/area)
-"ip" = (/turf/Casas/Casa10{tag = "icon-casa10 3,3"; icon_state = "casa10 3,3"},/area)
-"iq" = (/turf/Casas/Casa10{tag = "icon-casa10 4,3"; icon_state = "casa10 4,3"},/area)
-"ir" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,3"; icon_state = "casa10 5,3"},/turf/Casas/Casa10{tag = "icon-casa10 5,3"; icon_state = "casa10 5,3"},/area)
-"is" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,3"; icon_state = "casa10 6,3"},/area)
-"it" = (/turf/muddy,/turf/Objetos/Objeto2,/obj/elec,/turf/Casas/Casa10{tag = "icon-casa10 7,3"; icon_state = "casa10 7,3"},/area)
-"iu" = (/mob/npc/Comuns/Merchant2,/turf/muddy,/area)
-"iv" = (/turf/dirt,/turf/ASolos/Montanha2,/turf/ASolos/Montanha3,/area)
-"iw" = (/turf/Casas/Casa10{tag = "icon-casa10 0,2"; icon_state = "casa10 0,2"},/turf/ASolos/Montanha2,/area)
-"ix" = (/turf/Casas/Casa10{tag = "icon-casa10 1,2"; icon_state = "casa10 1,2"},/area)
-"iy" = (/turf/Casas/Casa10{tag = "icon-casa10 2,2"; icon_state = "casa10 2,2"},/area)
-"iz" = (/turf/Casas/Casa10{tag = "icon-casa10 3,2"; icon_state = "casa10 3,2"},/area)
-"iA" = (/turf/Casas/Casa10{tag = "icon-casa10 4,2"; icon_state = "casa10 4,2"},/area)
-"iB" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,2"; icon_state = "casa10 5,2"},/turf/Casas/Casa10{tag = "icon-casa10 5,2"; icon_state = "casa10 5,2"},/area)
-"iC" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,2"; icon_state = "casa10 6,2"},/area)
-"iD" = (/turf/muddy,/turf/Objetos/Objeto2,/turf/Casas/Casa10{tag = "icon-casa10 7,2"; icon_state = "casa10 7,2"},/area)
-"iE" = (/turf/sPedra10,/obj/Nuvem,/turf/ASolos/Montanha3,/obj/Nuvem,/area)
-"iF" = (/turf/muddy,/obj/Log,/turf/ASolos/Montanha4,/area)
-"iG" = (/turf/muddy,/turf/BordaE,/obj/elec,/turf/ASolos/Montanha4,/area)
-"iH" = (/turf/BordaF,/mob/npc/Comuns/Banker,/turf/ASolos/Montanha4,/area)
-"iI" = (/turf/Casas/Casa10{tag = "icon-casa10 0,1"; icon_state = "casa10 0,1"},/area)
-"iJ" = (/turf/Casas/Casa10{tag = "icon-casa10 1,1"; icon_state = "casa10 1,1"},/area)
-"iK" = (/turf/Casas/Casa10{tag = "icon-casa10 2,1"; icon_state = "casa10 2,1"},/area)
-"iL" = (/turf/Casas/Casa10{tag = "icon-casa10 3,1"; icon_state = "casa10 3,1"},/area)
-"iM" = (/turf/Casas/Casa10{tag = "icon-casa10 4,1"; icon_state = "casa10 4,1"},/area)
-"iN" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,1"; icon_state = "casa10 5,1"},/turf/Casas/Casa10{tag = "icon-casa10 5,1"; icon_state = "casa10 5,1"},/area)
-"iO" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,1"; icon_state = "casa10 6,1"},/area)
-"iP" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 7,1"; icon_state = "casa10 7,1"},/area)
-"iQ" = (/turf/muddy,/turf/BordaA,/area)
-"iR" = (/turf/muddy,/turf/BordaF,/area)
-"iS" = (/turf/Casas/Casa10{tag = "icon-casa10 0,0"; icon_state = "casa10 0,0"},/area)
-"iT" = (/turf/Casas/Casa10{tag = "icon-casa10 1,0"; icon_state = "casa10 1,0"},/area)
-"iU" = (/turf/Casas/Casa10{tag = "icon-casa10 2,0"; icon_state = "casa10 2,0"},/area)
-"iV" = (/turf/Casas/Casa10{tag = "icon-casa10 3,0"; icon_state = "casa10 3,0"},/area)
-"iW" = (/turf/Casas/Casa10{tag = "icon-casa10 4,0"; icon_state = "casa10 4,0"},/area)
-"iX" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,0"; icon_state = "casa10 5,0"},/turf/Casas/Casa10{tag = "icon-casa10 5,0"; icon_state = "casa10 5,0"},/area)
-"iY" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,0"; icon_state = "casa10 6,0"},/area)
-"iZ" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 7,0"; icon_state = "casa10 7,0"},/area)
-"ja" = (/turf/fwall,/turf/ASolos/Montanha2,/area)
-"jb" = (/obj/bpart2,/obj/bpart3,/obj/mbee4,/obj/mbee5,/mob/Medium_Bee,/turf/muddy,/area)
-"jc" = (/turf/dirt,/turf/ASolos/Montanha2,/obj/elec,/obj/Nuvem,/area)
-"jd" = (/turf/Grama,/obj/elec,/obj/Nuvem,/area)
-"je" = (/turf/sPedra10,/turf/Agua/Borda1,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
-"jf" = (/turf/sPedra3,/turf/BordaC,/turf/ASolos/Montanha2,/turf/ASolos/Montanha4,/obj/Nuvem,/area)
-"jg" = (/turf/sPedra3,/turf/BordaD,/turf/ASolos/Montanha4,/obj/Nuvem,/area)
-"jh" = (/turf/sPedra3,/turf/BordaA,/turf/ASolos/Montanha2,/obj/Nuvem,/area)
-"ji" = (/turf/sPedra3,/turf/BordaB,/turf/ASolos/Montanha3,/obj/Nuvem,/area)
-"jj" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
-"jk" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
-"jl" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
-"jm" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
-"jn" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
-"jo" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
-"jp" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
-"jq" = (/turf/sPedra3,/turf/ASolos/Montanha3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
-"jr" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/ASolos/Montanha2,/obj/Nuvem,/area)
-"js" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/obj/Nuvem,/area)
-"jt" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
-"ju" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
-"jv" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
-"jw" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
-"jx" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
-"jy" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
-"jz" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
-"jA" = (/turf/sPedra3,/turf/ASolos/Montanha3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
-"jB" = (/turf/Areia/Areia,/obj/Nuvem,/area)
-"jC" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha3,/turf/ASolos/Montanha4,/area)
-"jD" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/obj/Nuvem,/area)
-"jE" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/obj/Nuvem,/area)
-"jF" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/obj/Nuvem,/area)
-"jG" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,5"; icon_state = "casa8 3,5"},/obj/Nuvem,/area)
-"jH" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,5"; icon_state = "casa8 4,5"},/obj/Nuvem,/area)
-"jI" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,5"; icon_state = "casa8 5,5"},/obj/Nuvem,/area)
-"jJ" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,5"; icon_state = "casa8 6,5"},/obj/Nuvem,/area)
-"jK" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/obj/Nuvem,/area)
-"jL" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
-"jM" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
-"jN" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
-"jO" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
-"jP" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
-"jQ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
-"jR" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
-"jS" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,4"; icon_state = "casa8 0,4"},/obj/Nuvem,/area)
-"jT" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,4"; icon_state = "casa8 1,4"},/obj/Nuvem,/area)
-"jU" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,4"; icon_state = "casa8 2,4"},/obj/Nuvem,/area)
-"jV" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,4"; icon_state = "casa8 3,4"},/obj/Nuvem,/area)
-"jW" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,4"; icon_state = "casa8 4,4"},/obj/Nuvem,/area)
-"jX" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,4"; icon_state = "casa8 5,4"},/obj/Nuvem,/area)
-"jY" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,4"; icon_state = "casa8 6,4"},/obj/Nuvem,/area)
-"jZ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/obj/Nuvem,/area)
-"ka" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/obj/Nuvem,/area)
-"kb" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/obj/Nuvem,/area)
-"kc" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/obj/Nuvem,/area)
-"kd" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/obj/Nuvem,/area)
-"ke" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/obj/Nuvem,/area)
-"kf" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/obj/Nuvem,/area)
-"kg" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/obj/Nuvem,/area)
-"kh" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/obj/Nuvem,/area)
-"ki" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,3"; icon_state = "casa8 0,3"},/obj/Nuvem,/area)
-"kj" = (/turf/Casas/Casa8{tag = "icon-casa8 1,3"; icon_state = "casa8 1,3"},/obj/Nuvem,/area)
-"kk" = (/turf/Casas/Casa8{tag = "icon-casa8 2,3"; icon_state = "casa8 2,3"},/obj/Nuvem,/area)
-"kl" = (/turf/Casas/Casa8{tag = "icon-casa8 3,3"; icon_state = "casa8 3,3"},/obj/Nuvem,/area)
-"km" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,3"; icon_state = "casa8 4,3"},/obj/Nuvem,/area)
-"kn" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,3"; icon_state = "casa8 5,3"},/obj/Nuvem,/area)
-"ko" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,3"; icon_state = "casa8 6,3"},/obj/Nuvem,/area)
-"kp" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,3"; icon_state = "casa8 7,3"},/obj/Nuvem,/area)
-"kq" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,5"; icon_state = "casa8 6,5"},/obj/Nuvem,/area)
-"kr" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,2"; icon_state = "casa8 0,2"},/obj/Nuvem,/area)
-"ks" = (/turf/Casas/Casa8{tag = "icon-casa8 1,2"; icon_state = "casa8 1,2"},/obj/Nuvem,/area)
-"kt" = (/turf/Casas/Casa8{tag = "icon-casa8 2,2"; icon_state = "casa8 2,2"},/obj/Nuvem,/area)
-"ku" = (/turf/Casas/Casa8{tag = "icon-casa8 3,2"; icon_state = "casa8 3,2"},/obj/Nuvem,/area)
-"kv" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,2"; icon_state = "casa8 4,2"},/obj/Nuvem,/area)
-"kw" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,2"; icon_state = "casa8 5,2"},/obj/Nuvem,/area)
-"kx" = (/turf/Areia/Areia4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,2"; icon_state = "casa8 6,2"},/obj/Nuvem,/area)
-"ky" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,2"; icon_state = "casa8 7,2"},/obj/Nuvem,/area)
-"kz" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/ASolos/Montanha3,/area)
-"kA" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
-"kB" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
-"kC" = (/turf/Casas/Casa8{tag = "icon-casa8 0,1"; icon_state = "casa8 0,1"},/obj/Nuvem,/area)
-"kD" = (/turf/Casas/Casa8{tag = "icon-casa8 1,1"; icon_state = "casa8 1,1"},/obj/Nuvem,/area)
-"kE" = (/turf/Casas/Casa8{tag = "icon-casa8 2,1"; icon_state = "casa8 2,1"},/obj/Nuvem,/area)
-"kF" = (/turf/Casas/Casa8{tag = "icon-casa8 3,1"; icon_state = "casa8 3,1"},/obj/Nuvem,/area)
-"kG" = (/turf/Casas/Casa8{tag = "icon-casa8 4,1"; icon_state = "casa8 4,1"},/obj/Nuvem,/area)
-"kH" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,1"; icon_state = "casa8 5,1"},/obj/Nuvem,/area)
-"kI" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,1"; icon_state = "casa8 6,1"},/obj/Nuvem,/area)
-"kJ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,1"; icon_state = "casa8 7,1"},/obj/Nuvem,/area)
-"kK" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
-"kL" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
-"kM" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
-"kN" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
-"kO" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
-"kP" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
-"kQ" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
-"kR" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
-"kS" = (/turf/sPedra3,/turf/ASolos/Montanha2,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
-"kT" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
-"kU" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
-"kV" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
-"kW" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
-"kX" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
-"kY" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
-"kZ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
-"la" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
-"lb" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
-"lc" = (/turf/Casas/Casa8{tag = "icon-casa8 0,0"; icon_state = "casa8 0,0"},/obj/Nuvem,/area)
-"ld" = (/turf/Casas/Casa8{tag = "icon-casa8 1,0"; icon_state = "casa8 1,0"},/obj/Nuvem,/area)
-"le" = (/turf/Casas/Casa8{tag = "icon-casa8 2,0"; icon_state = "casa8 2,0"},/obj/Nuvem,/area)
-"lf" = (/turf/Casas/Casa8{tag = "icon-casa8 3,0"; icon_state = "casa8 3,0"},/obj/Nuvem,/area)
-"lg" = (/turf/Casas/Casa8{tag = "icon-casa8 4,0"; icon_state = "casa8 4,0"},/obj/Nuvem,/area)
-"lh" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/turf/Casas/Casa8{tag = "icon-casa8 5,0"; icon_state = "casa8 5,0"},/obj/Nuvem,/area)
-"li" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/turf/Casas/Casa8{tag = "icon-casa8 6,0"; icon_state = "casa8 6,0"},/obj/Nuvem,/area)
-"lj" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/turf/Casas/Casa8{tag = "icon-casa8 7,0"; icon_state = "casa8 7,0"},/obj/Nuvem,/area)
-"lk" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/turf/Casas/Casa8{tag = "icon-casa8 0,2"; icon_state = "casa8 0,2"},/obj/Nuvem,/area)
-"ll" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,2"; icon_state = "casa8 6,2"},/obj/Nuvem,/area)
-"lm" = (/turf/Areia/Areia4,/obj/Nuvem,/area)
-"ln" = (/turf/Areia/Areia3,/obj/Nuvem,/area)
-"lo" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
-"lp" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
-"lq" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
-"lr" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
-"ls" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
-"lt" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
-"lu" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
-"lv" = (/turf/sPedra3,/turf/ASolos/Montanha2,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
-"lw" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
-"lx" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
-"ly" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
-"lz" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
-"lA" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
-"lB" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
-"lC" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
-"lD" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
-"lE" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
-"lF" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
-"lG" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
-"lH" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/area)
-"lI" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/area)
-"lJ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/area)
-"lK" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,5"; icon_state = "casa8 3,5"},/area)
-"lL" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,5"; icon_state = "casa8 4,5"},/area)
-"lM" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,5"; icon_state = "casa8 5,5"},/area)
-"lN" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,5"; icon_state = "casa8 6,5"},/area)
-"lO" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/area)
-"lP" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/turf/ASolos/Montanha3,/obj/Nuvem,/area)
-"lQ" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
-"lR" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
-"lS" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
-"lT" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
-"lU" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
-"lV" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
-"lW" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
-"lX" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
-"lY" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/obj/Nuvem,/area)
-"lZ" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/obj/Nuvem,/area)
-"ma" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/obj/Nuvem,/area)
-"mb" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,5"; icon_state = "casa8 3,5"},/obj/Nuvem,/area)
-"mc" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,5"; icon_state = "casa8 4,5"},/obj/Nuvem,/area)
-"md" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,5"; icon_state = "casa8 5,5"},/obj/Nuvem,/area)
-"me" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/obj/Nuvem,/area)
-"mf" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/obj/Nuvem,/area)
-"mg" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/obj/Nuvem,/area)
-"mh" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/obj/Nuvem,/area)
-"mi" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/obj/Nuvem,/area)
-"mj" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/obj/Nuvem,/area)
-"mk" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/obj/Nuvem,/area)
-"ml" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/obj/Nuvem,/area)
-"mm" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/area)
-"mn" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/area)
-"mo" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/area)
-"mp" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/area)
-"mq" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,0"; icon_state = "casa8 5,0"},/obj/Nuvem,/area)
-"mr" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,0"; icon_state = "casa8 6,0"},/obj/Nuvem,/area)
-"ms" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,0"; icon_state = "casa8 7,0"},/obj/Nuvem,/area)
-"mt" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/area)
-"mu" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/area)
-"mv" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/area)
-"mw" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,5"; icon_state = "casa8 3,5"},/area)
-"mx" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,5"; icon_state = "casa8 4,5"},/area)
-"my" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,5"; icon_state = "casa8 5,5"},/area)
-"mz" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,5"; icon_state = "casa8 6,5"},/area)
-"mA" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/area)
-"mB" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,4"; icon_state = "casa8 0,4"},/obj/Nuvem,/area)
-"mC" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,4"; icon_state = "casa8 1,4"},/obj/Nuvem,/area)
-"mD" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,4"; icon_state = "casa8 2,4"},/obj/Nuvem,/area)
-"mE" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,4"; icon_state = "casa8 3,4"},/obj/Nuvem,/area)
-"mF" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,4"; icon_state = "casa8 4,4"},/obj/Nuvem,/area)
-"mG" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,4"; icon_state = "casa8 5,4"},/obj/Nuvem,/area)
-"mH" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,4"; icon_state = "casa8 6,4"},/obj/Nuvem,/area)
-"mI" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/obj/Nuvem,/area)
-"mJ" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/obj/Nuvem,/area)
-"mK" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/obj/Nuvem,/area)
-"mL" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/obj/Nuvem,/area)
-"mM" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/obj/Nuvem,/area)
-"mN" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/obj/Nuvem,/area)
-"mO" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/obj/Nuvem,/area)
-"mP" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/obj/Nuvem,/area)
-"mQ" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
-"mR" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,3"; icon_state = "casa8 7,3"},/area)
-"mS" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/area)
-"mT" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,4"; icon_state = "casa8 0,4"},/obj/Nuvem,/area)
-"mU" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,4"; icon_state = "casa8 1,4"},/obj/Nuvem,/area)
-"mV" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,4"; icon_state = "casa8 2,4"},/obj/Nuvem,/area)
-"mW" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,4"; icon_state = "casa8 3,4"},/obj/Nuvem,/area)
-"mX" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,4"; icon_state = "casa8 4,4"},/obj/Nuvem,/area)
-"mY" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,4"; icon_state = "casa8 5,4"},/obj/Nuvem,/area)
-"mZ" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,4"; icon_state = "casa8 6,4"},/obj/Nuvem,/area)
-"na" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/obj/Nuvem,/area)
-"nb" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/area)
-"nc" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,2"; icon_state = "casa8 7,2"},/area)
-"nd" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/area)
-"ne" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,1"; icon_state = "casa8 7,1"},/area)
-"nf" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,0"; icon_state = "casa8 7,0"},/area)
-"ng" = (/turf/Areia/Areia,/turf/Agua/Borda7,/obj/Nuvem,/area)
-"nh" = (/turf/Areia/Areia,/turf/Agua/Borda8,/obj/Nuvem,/area)
-"ni" = (/turf/Areia/Areia,/turf/Agua/Borda6,/obj/Nuvem,/area)
-"nj" = (/turf/Areia/Areia3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,0"; icon_state = "casa8 5,0"},/obj/Nuvem,/area)
-"nk" = (/turf/Ponte/Ponte1,/turf/fence2,/turf/fence2{tag = "icon-fence3"; icon_state = "fence3"},/obj/Nuvem,/area)
-"nl" = (/turf/Ponte/Ponte1,/obj/Nuvem,/area)
-"nm" = (/turf/Areia/Areia3,/turf/Agua/Borda8,/obj/Nuvem,/area)
-"nn" = (/turf/Ponte/Ponte1,/turf/fence2,/obj/Nuvem,/area)
-"no" = (/turf/Ponte/Ponte1,/turf/Poca,/obj/Nuvem,/area)
-"np" = (/turf/Areia/Areia,/turf/Agua/Borda8,/turf/Agua/Borda4,/obj/Nuvem,/area)
-"nq" = (/turf/Areia/Areia,/turf/Agua/Borda8,/turf/Ponte/Ponte5,/obj/Nuvem,/area)
-"nr" = (/turf/Agua/Borda9,/obj/Nuvem,/turf/Ponte/Ponte5,/obj/Nuvem,/area)
-"ns" = (/obj/Roof,/turf/ASolos/Solo1,/area)
-"nt" = (/turf/ASolos/Solo1,/area)
-"nu" = (/obj/JWolf,/turf/ASolos/Solo1,/area)
-"nv" = (/turf/layerwall,/area)
-"nw" = (/obj/Roof,/turf/wall,/area)
-"nx" = (/obj/Mondaisword,/obj/Roof,/turf/ASolos/Solo1,/area)
-"ny" = (/obj/LH,/obj/Roof,/turf/ASolos/Solo1,/area)
-"nz" = (/obj/Pill,/obj/Roof,/turf/ASolos/Solo1,/area)
-"nA" = (/obj/Sake,/turf/ASolos/Solo1,/area)
-"nB" = (/obj/Zabuzasword,/obj/Roof,/turf/ASolos/Solo1,/area)
-"nC" = (/obj/Roof,/obj/Roof,/turf/ASolos/Solo1,/area)
-"nD" = (/obj/LeeWeights,/obj/Roof,/turf/ASolos/Solo1,/area)
-"nE" = (/obj/Gourd,/obj/Roof,/turf/ASolos/Solo1,/area)
+"fv" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"fw" = (/obj/Nuvem,/turf/sPedra3,/area)
+"fx" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"fy" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/area)
+"fz" = (/turf/sPedra10,/turf/Agua/Borda4,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"fA" = (/turf/Agua/Borda9,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"fB" = (/obj/Nuvem,/turf/Agua/Borda9,/area)
+"fC" = (/turf/sPedra10,/turf/Agua/Borda4,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"fD" = (/turf/sPedra3,/turf/ASolos/Montanha2,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"fE" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"fF" = (/turf/sPedra3,/turf/ASolos/Montanha3,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"fG" = (/turf/sPedra3,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"fH" = (/obj/Nuvem,/turf/Flash,/area)
+"fI" = (/turf/Flash,/obj/Nuvem,/turf/Objetos/Objeto1,/area)
+"fJ" = (/turf/BuracoKumo,/turf/ASolos/Montanha2,/obj/tree3,/obj/tree3,/turf/ASolos/Montanha4,/area)
+"fK" = (/turf/dirt,/obj/tree2,/obj/tree3,/obj/tree3,/turf/ASolos/Montanha4,/area)
+"fL" = (/turf/dirt,/obj/tree2,/obj/tree3,/turf/ASolos/Montanha4,/area)
+"fM" = (/turf/dirt,/obj/tree3,/turf/ASolos/Montanha4,/area)
+"fN" = (/turf/dirt,/turf/ASolos/Montanha3,/obj/tree2,/obj/tree3,/turf/ASolos/Montanha4,/area)
+"fO" = (/obj/Log,/obj/Nuvem,/turf/Flash,/area)
+"fP" = (/obj/Log2,/obj/Nuvem,/turf/Flash,/area)
+"fQ" = (/turf/dirt,/obj/tree3,/turf/ASolos/Montanha2,/area)
+"fR" = (/obj/tree2,/obj/tree3,/turf/dirt,/area)
+"fS" = (/obj/tree3,/obj/tree3,/turf/dirt,/area)
+"fT" = (/obj/tree3,/turf/dirt,/area)
+"fU" = (/turf/dirt,/obj/tree2,/obj/tree3,/turf/ASolos/Montanha3,/area)
+"fV" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore18,/area)
+"fW" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore19,/area)
+"fX" = (/turf/Flash,/obj/Nuvem,/turf/Objetos/Objeto3,/area)
+"fY" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore13,/area)
+"fZ" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore14,/area)
+"ga" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore15,/area)
+"gb" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore16,/area)
+"gc" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore9,/area)
+"gd" = (/obj/Nuvem,/turf/Arvore1/Arvore10,/area)
+"ge" = (/turf/Arvore1/Arvore11,/obj/Nuvem,/turf/Arvore1/Arvore18,/area)
+"gf" = (/turf/Flash,/turf/Arvore1/Arvore19,/turf/Arvore1/Arvore12,/obj/Nuvem,/turf/Arvore1/Arvore19,/area)
+"gg" = (/obj/Nuvem,/turf/Arvore1/Arvore11,/area)
+"gh" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore12,/area)
+"gi" = (/obj/tree3,/mob/npc/GuardiaoKumogakure,/turf/dirt,/area)
+"gj" = (/obj/tree2,/obj/tree3,/obj/tree3,/turf/dirt,/area)
+"gk" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore5,/area)
+"gl" = (/turf/Flash,/turf/Arvore1/Arvore6,/obj/Nuvem,/turf/Arvore1/Arvore13,/area)
+"gm" = (/turf/Flash,/turf/Arvore1/Arvore16,/obj/Nuvem,/turf/Arvore1/Arvore5,/area)
+"gn" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore6,/area)
+"go" = (/turf/Flash,/turf/Arvore1/Arvore18,/turf/Arvore1/Arvore7,/obj/Nuvem,/turf/Arvore1/Arvore18,/area)
+"gp" = (/turf/Flash,/turf/Arvore1/Arvore19,/turf/Arvore1/Arvore8,/obj/Nuvem,/turf/Arvore1/Arvore19,/area)
+"gq" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore1,/area)
+"gr" = (/turf/Flash,/turf/Arvore1/Arvore9,/obj/Nuvem,/turf/Arvore1/Arvore2,/area)
+"gs" = (/turf/Flash,/turf/Arvore1/Arvore12,/obj/Nuvem,/turf/Arvore1/Arvore1,/area)
+"gt" = (/turf/Flash,/turf/Arvore1/Arvore13,/obj/Nuvem,/turf/Arvore1/Arvore2,/area)
+"gu" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore7,/area)
+"gv" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore8,/area)
+"gw" = (/turf/sPedra10,/turf/Agua/Borda7,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"gx" = (/turf/sPedra10,/obj/Nuvem,/turf/Agua/Borda8,/area)
+"gy" = (/turf/sPedra10,/turf/Agua/Borda4,/obj/Nuvem,/turf/Agua/Borda8,/area)
+"gz" = (/turf/Flash,/turf/Arvore1/Arvore1,/obj/Nuvem,/turf/Objetos/Objeto1,/area)
+"gA" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore2,/area)
+"gB" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore3,/area)
+"gC" = (/turf/Flash,/obj/Nuvem,/turf/Arvore1/Arvore4,/area)
+"gD" = (/turf/Agua/Borda9,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"gE" = (/turf/dirt,/turf/ASolos/Montanha4,/area)
+"gF" = (/turf/muddy,/turf/ASolos/Montanha2,/mob/npc/Comuns/Food_Vender,/turf/ASolos/Montanha4,/area)
+"gG" = (/turf/muddy,/mob/npc/Comuns/Food_Vender{name = "Chef's Assitant"},/turf/ASolos/Montanha4,/area)
+"gH" = (/turf/muddy,/turf/ASolos/Montanha4,/area)
+"gI" = (/turf/muddy,/mob/npc/Comuns/Merchant3,/turf/ASolos/Montanha4,/area)
+"gJ" = (/turf/muddy,/mob/npc/Comuns/Merchant,/turf/ASolos/Montanha4,/area)
+"gK" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/ASolos/Montanha3,/area)
+"gL" = (/turf/S1,/turf/ASolos/Montanha2,/area)
+"gM" = (/turf/S2,/area)
+"gN" = (/turf/S3,/area)
+"gO" = (/turf/muddy,/turf/LD,/area)
+"gP" = (/turf/muddy,/turf/RD,/area)
+"gQ" = (/turf/muddy,/area)
+"gR" = (/turf/muddy,/turf/ASolos/Montanha3,/area)
+"gS" = (/turf/muddy,/turf/ASolos/Montanha2,/area)
+"gT" = (/mob/enemy/Rainvillageshinobi,/turf/muddy,/area)
+"gU" = (/turf/muddy,/mob/enemy/Rainvillageshinobi,/turf/ASolos/Montanha3,/area)
+"gV" = (/turf/dirt,/turf/ASolos/Montanha3,/turf/ASolos/Montanha2,/area)
+"gW" = (/turf/muddy,/obj/elec,/turf/Objetos/Objeto4,/area)
+"gX" = (/turf/muddy,/turf/Objetos/Objeto4,/turf/ASolos/Montanha3,/area)
+"gY" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"gZ" = (/obj/elec,/turf/muddy,/area)
+"ha" = (/turf/muddy,/turf/Objetos/Objeto4,/area)
+"hb" = (/turf/sPedra10,/obj/Nuvem,/turf/Agua/Borda4,/area)
+"hc" = (/turf/sPedra10,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"hd" = (/turf/sPedra10,/turf/ASolos/Montanha3,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"he" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa10{tag = "icon-casa10 0,7"; icon_state = "casa10 0,7"},/area)
+"hf" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa10{tag = "icon-casa10 1,7"; icon_state = "casa10 1,7"},/area)
+"hg" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa10{tag = "icon-casa10 2,7"; icon_state = "casa10 2,7"},/area)
+"hh" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa10{tag = "icon-casa10 3,7"; icon_state = "casa10 3,7"},/area)
+"hi" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa10{tag = "icon-casa10 4,7"; icon_state = "casa10 4,7"},/area)
+"hj" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa10{tag = "icon-casa10 5,7"; icon_state = "casa10 5,7"},/area)
+"hk" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa10{tag = "icon-casa10 6,7"; icon_state = "casa10 6,7"},/area)
+"hl" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa10{tag = "icon-casa10 7,7"; icon_state = "casa10 7,7"},/area)
+"hm" = (/turf/sPedra10,/obj/Nuvem,/turf/Agua/Borda1,/area)
+"hn" = (/turf/sPedra10,/obj/Nuvem,/turf/Agua/Borda3,/area)
+"ho" = (/turf/sPedra10,/turf/Agua/Borda3,/obj/Nuvem,/turf/Agua/Borda4,/area)
+"hp" = (/obj/Nuvem,/turf/sPedra10,/area)
+"hq" = (/turf/sPedra10,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"hr" = (/turf/ASolos/Montanha,/turf/Hospital,/area)
+"hs" = (/turf/sPedra3,/turf/ASolos/Montanha2,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"ht" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 0,6"; icon_state = "casa10 0,6"},/area)
+"hu" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 1,6"; icon_state = "casa10 1,6"},/area)
+"hv" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 2,6"; icon_state = "casa10 2,6"},/area)
+"hw" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 3,6"; icon_state = "casa10 3,6"},/area)
+"hx" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 4,6"; icon_state = "casa10 4,6"},/area)
+"hy" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 5,6"; icon_state = "casa10 5,6"},/area)
+"hz" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 6,6"; icon_state = "casa10 6,6"},/area)
+"hA" = (/turf/ASolos/Montanha,/turf/Casas/Casa10{tag = "icon-casa10 7,6"; icon_state = "casa10 7,6"},/area)
+"hB" = (/obj/Nuvem,/turf/Grama,/area)
+"hC" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/ASolos/Montanha2,/area)
+"hD" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/leafmansion13{tag = "icon-11"; icon_state = "11"},/area)
+"hE" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/leafmansion13{tag = "icon-2"; icon_state = "2"},/area)
+"hF" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/leafmansion13{tag = "icon-12"; icon_state = "12"},/area)
+"hG" = (/turf/dirt,/turf/ASolos/Montanha3,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"hH" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 0,5"; icon_state = "casa10 0,5"},/turf/ASolos/Montanha4,/turf/ASolos/Montanha2,/turf/Casas/Casa10{tag = "icon-casa10 0,5"; icon_state = "casa10 0,5"},/turf/ASolos/Montanha2,/turf/Casas/Casa10{tag = "icon-casa10 0,5"; icon_state = "casa10 0,5"},/turf/ASolos/Montanha2,/area)
+"hI" = (/turf/Casas/Casa10{tag = "icon-casa10 1,5"; icon_state = "casa10 1,5"},/area)
+"hJ" = (/turf/Casas/Casa10{tag = "icon-casa10 2,5"; icon_state = "casa10 2,5"},/area)
+"hK" = (/turf/Casas/Casa10{tag = "icon-casa10 3,5"; icon_state = "casa10 3,5"},/area)
+"hL" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 4,5"; icon_state = "casa10 4,5"},/turf/ASolos/Montanha4,/turf/Casas/Casa10{tag = "icon-casa10 4,5"; icon_state = "casa10 4,5"},/area)
+"hM" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,5"; icon_state = "casa10 5,5"},/turf/ASolos/Montanha4,/turf/Casas/Casa10{tag = "icon-casa10 5,5"; icon_state = "casa10 5,5"},/area)
+"hN" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/Casas/Casa10{tag = "icon-casa10 6,5"; icon_state = "casa10 6,5"},/area)
+"hO" = (/turf/muddy,/turf/ASolos/Montanha4,/turf/Casas/Casa10{tag = "icon-casa10 7,5"; icon_state = "casa10 7,5"},/area)
+"hP" = (/turf/muddy,/obj/elec,/turf/ASolos/Montanha4,/area)
+"hQ" = (/turf/muddy,/turf/ASolos/Montanha4,/mob/npc/Comuns/Summon_Vender,/turf/ASolos/Montanha3,/area)
+"hR" = (/turf/muddy,/turf/fwall2,/area)
+"hS" = (/turf/muddy,/turf/fwall3,/area)
+"hT" = (/turf/Casas/Casa10{tag = "icon-casa10 0,4"; icon_state = "casa10 0,4"},/turf/ASolos/Montanha2,/area)
+"hU" = (/turf/Casas/Casa10{tag = "icon-casa10 1,4"; icon_state = "casa10 1,4"},/area)
+"hV" = (/turf/Casas/Casa10{tag = "icon-casa10 2,4"; icon_state = "casa10 2,4"},/area)
+"hW" = (/turf/Casas/Casa10{tag = "icon-casa10 3,4"; icon_state = "casa10 3,4"},/area)
+"hX" = (/turf/Casas/Casa10{tag = "icon-casa10 4,4"; icon_state = "casa10 4,4"},/area)
+"hY" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,4"; icon_state = "casa10 5,4"},/turf/Casas/Casa10{tag = "icon-casa10 5,4"; icon_state = "casa10 5,4"},/area)
+"hZ" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,4"; icon_state = "casa10 6,4"},/area)
+"ia" = (/turf/muddy,/turf/Objetos/Objeto2,/turf/Casas/Casa10{tag = "icon-casa10 7,4"; icon_state = "casa10 7,4"},/area)
+"ib" = (/turf/muddy,/turf/Objetos/Objeto2,/area)
+"ic" = (/turf/muddy,/turf/Objetos/Objeto2,/turf/ASolos/Montanha3,/area)
+"id" = (/turf/dirt,/obj/elec,/turf/ASolos/Montanha2,/area)
+"ie" = (/turf/muddy,/turf/fwall2,/turf/ASolos/Montanha2,/area)
+"if" = (/turf/Casas/Casa10{tag = "icon-casa10 0,3"; icon_state = "casa10 0,3"},/turf/ASolos/Montanha2,/area)
+"ig" = (/turf/Casas/Casa10{tag = "icon-casa10 1,3"; icon_state = "casa10 1,3"},/area)
+"ih" = (/turf/Casas/Casa10{tag = "icon-casa10 2,3"; icon_state = "casa10 2,3"},/area)
+"ii" = (/turf/Casas/Casa10{tag = "icon-casa10 3,3"; icon_state = "casa10 3,3"},/area)
+"ij" = (/turf/Casas/Casa10{tag = "icon-casa10 4,3"; icon_state = "casa10 4,3"},/area)
+"ik" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,3"; icon_state = "casa10 5,3"},/turf/Casas/Casa10{tag = "icon-casa10 5,3"; icon_state = "casa10 5,3"},/area)
+"il" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,3"; icon_state = "casa10 6,3"},/area)
+"im" = (/turf/muddy,/turf/Objetos/Objeto2,/obj/elec,/turf/Casas/Casa10{tag = "icon-casa10 7,3"; icon_state = "casa10 7,3"},/area)
+"in" = (/mob/npc/Comuns/Merchant2,/turf/muddy,/area)
+"io" = (/turf/dirt,/turf/ASolos/Montanha2,/turf/ASolos/Montanha3,/area)
+"ip" = (/turf/Casas/Casa10{tag = "icon-casa10 0,2"; icon_state = "casa10 0,2"},/turf/ASolos/Montanha2,/area)
+"iq" = (/turf/Casas/Casa10{tag = "icon-casa10 1,2"; icon_state = "casa10 1,2"},/area)
+"ir" = (/turf/Casas/Casa10{tag = "icon-casa10 2,2"; icon_state = "casa10 2,2"},/area)
+"is" = (/turf/Casas/Casa10{tag = "icon-casa10 3,2"; icon_state = "casa10 3,2"},/area)
+"it" = (/turf/Casas/Casa10{tag = "icon-casa10 4,2"; icon_state = "casa10 4,2"},/area)
+"iu" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,2"; icon_state = "casa10 5,2"},/turf/Casas/Casa10{tag = "icon-casa10 5,2"; icon_state = "casa10 5,2"},/area)
+"iv" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,2"; icon_state = "casa10 6,2"},/area)
+"iw" = (/turf/muddy,/turf/Objetos/Objeto2,/turf/Casas/Casa10{tag = "icon-casa10 7,2"; icon_state = "casa10 7,2"},/area)
+"ix" = (/turf/sPedra10,/obj/Nuvem,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"iy" = (/turf/muddy,/obj/Log,/turf/ASolos/Montanha4,/area)
+"iz" = (/turf/muddy,/turf/BordaE,/obj/elec,/turf/ASolos/Montanha4,/area)
+"iA" = (/turf/BordaF,/mob/npc/Comuns/Banker,/turf/ASolos/Montanha4,/area)
+"iB" = (/turf/Casas/Casa10{tag = "icon-casa10 0,1"; icon_state = "casa10 0,1"},/area)
+"iC" = (/turf/Casas/Casa10{tag = "icon-casa10 1,1"; icon_state = "casa10 1,1"},/area)
+"iD" = (/turf/Casas/Casa10{tag = "icon-casa10 2,1"; icon_state = "casa10 2,1"},/area)
+"iE" = (/turf/Casas/Casa10{tag = "icon-casa10 3,1"; icon_state = "casa10 3,1"},/area)
+"iF" = (/turf/Casas/Casa10{tag = "icon-casa10 4,1"; icon_state = "casa10 4,1"},/area)
+"iG" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,1"; icon_state = "casa10 5,1"},/turf/Casas/Casa10{tag = "icon-casa10 5,1"; icon_state = "casa10 5,1"},/area)
+"iH" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,1"; icon_state = "casa10 6,1"},/area)
+"iI" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 7,1"; icon_state = "casa10 7,1"},/area)
+"iJ" = (/turf/muddy,/turf/BordaA,/area)
+"iK" = (/turf/muddy,/turf/BordaF,/area)
+"iL" = (/turf/Casas/Casa10{tag = "icon-casa10 0,0"; icon_state = "casa10 0,0"},/area)
+"iM" = (/turf/Casas/Casa10{tag = "icon-casa10 1,0"; icon_state = "casa10 1,0"},/area)
+"iN" = (/turf/Casas/Casa10{tag = "icon-casa10 2,0"; icon_state = "casa10 2,0"},/area)
+"iO" = (/turf/Casas/Casa10{tag = "icon-casa10 3,0"; icon_state = "casa10 3,0"},/area)
+"iP" = (/turf/Casas/Casa10{tag = "icon-casa10 4,0"; icon_state = "casa10 4,0"},/area)
+"iQ" = (/turf/muddy,/turf/casa10{tag = "icon-casa10 5,0"; icon_state = "casa10 5,0"},/turf/Casas/Casa10{tag = "icon-casa10 5,0"; icon_state = "casa10 5,0"},/area)
+"iR" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 6,0"; icon_state = "casa10 6,0"},/area)
+"iS" = (/turf/muddy,/turf/Casas/Casa10{tag = "icon-casa10 7,0"; icon_state = "casa10 7,0"},/area)
+"iT" = (/turf/fwall,/turf/ASolos/Montanha2,/area)
+"iU" = (/obj/bpart2,/obj/bpart3,/obj/mbee4,/obj/mbee5,/mob/Medium_Bee,/turf/muddy,/area)
+"iV" = (/turf/dirt,/obj/elec,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"iW" = (/obj/elec,/obj/Nuvem,/turf/Grama,/area)
+"iX" = (/turf/sPedra10,/turf/Agua/Borda1,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"iY" = (/turf/sPedra3,/turf/BordaC,/turf/ASolos/Montanha2,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"iZ" = (/turf/sPedra3,/turf/BordaD,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"ja" = (/turf/sPedra3,/turf/BordaA,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"jb" = (/turf/sPedra3,/turf/BordaB,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"jc" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
+"jd" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
+"je" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
+"jf" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
+"jg" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
+"jh" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
+"ji" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
+"jj" = (/turf/sPedra3,/turf/ASolos/Montanha3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
+"jk" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/ASolos/Montanha2,/area)
+"jl" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"jm" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
+"jn" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
+"jo" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
+"jp" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
+"jq" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
+"jr" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
+"js" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
+"jt" = (/turf/sPedra3,/turf/ASolos/Montanha3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
+"ju" = (/obj/Nuvem,/turf/Areia/Areia,/area)
+"jv" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/area)
+"jw" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/area)
+"jx" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/area)
+"jy" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,5"; icon_state = "casa8 3,5"},/area)
+"jz" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,5"; icon_state = "casa8 4,5"},/area)
+"jA" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,5"; icon_state = "casa8 5,5"},/area)
+"jB" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,5"; icon_state = "casa8 6,5"},/area)
+"jC" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/area)
+"jD" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
+"jE" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
+"jF" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
+"jG" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
+"jH" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
+"jI" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
+"jJ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
+"jK" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,4"; icon_state = "casa8 0,4"},/area)
+"jL" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,4"; icon_state = "casa8 1,4"},/area)
+"jM" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,4"; icon_state = "casa8 2,4"},/area)
+"jN" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,4"; icon_state = "casa8 3,4"},/area)
+"jO" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,4"; icon_state = "casa8 4,4"},/area)
+"jP" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,4"; icon_state = "casa8 5,4"},/area)
+"jQ" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,4"; icon_state = "casa8 6,4"},/area)
+"jR" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/area)
+"jS" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
+"jT" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
+"jU" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
+"jV" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
+"jW" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
+"jX" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
+"jY" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
+"jZ" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
+"ka" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,3"; icon_state = "casa8 0,3"},/area)
+"kb" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,3"; icon_state = "casa8 1,3"},/area)
+"kc" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,3"; icon_state = "casa8 2,3"},/area)
+"kd" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,3"; icon_state = "casa8 3,3"},/area)
+"ke" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,3"; icon_state = "casa8 4,3"},/area)
+"kf" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,3"; icon_state = "casa8 5,3"},/area)
+"kg" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,3"; icon_state = "casa8 6,3"},/area)
+"kh" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,3"; icon_state = "casa8 7,3"},/area)
+"ki" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,5"; icon_state = "casa8 6,5"},/area)
+"kj" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,2"; icon_state = "casa8 0,2"},/area)
+"kk" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,2"; icon_state = "casa8 1,2"},/area)
+"kl" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,2"; icon_state = "casa8 2,2"},/area)
+"km" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,2"; icon_state = "casa8 3,2"},/area)
+"kn" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,2"; icon_state = "casa8 4,2"},/area)
+"ko" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,2"; icon_state = "casa8 5,2"},/area)
+"kp" = (/turf/Areia/Areia4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,2"; icon_state = "casa8 6,2"},/area)
+"kq" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,2"; icon_state = "casa8 7,2"},/area)
+"kr" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"ks" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
+"kt" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
+"ku" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,1"; icon_state = "casa8 0,1"},/area)
+"kv" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,1"; icon_state = "casa8 1,1"},/area)
+"kw" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,1"; icon_state = "casa8 2,1"},/area)
+"kx" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,1"; icon_state = "casa8 3,1"},/area)
+"ky" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,1"; icon_state = "casa8 4,1"},/area)
+"kz" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,1"; icon_state = "casa8 5,1"},/area)
+"kA" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,1"; icon_state = "casa8 6,1"},/area)
+"kB" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,1"; icon_state = "casa8 7,1"},/area)
+"kC" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
+"kD" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
+"kE" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
+"kF" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
+"kG" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
+"kH" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
+"kI" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
+"kJ" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
+"kK" = (/turf/sPedra3,/turf/ASolos/Montanha2,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
+"kL" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
+"kM" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
+"kN" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
+"kO" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
+"kP" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
+"kQ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
+"kR" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
+"kS" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
+"kT" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
+"kU" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,0"; icon_state = "casa8 0,0"},/area)
+"kV" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,0"; icon_state = "casa8 1,0"},/area)
+"kW" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,0"; icon_state = "casa8 2,0"},/area)
+"kX" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,0"; icon_state = "casa8 3,0"},/area)
+"kY" = (/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,0"; icon_state = "casa8 4,0"},/area)
+"kZ" = (/turf/Areia/Areia,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,0"; icon_state = "casa8 5,0"},/area)
+"la" = (/turf/Areia/Areia,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,0"; icon_state = "casa8 6,0"},/area)
+"lb" = (/turf/Areia/Areia,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,0"; icon_state = "casa8 7,0"},/area)
+"lc" = (/turf/Areia/Areia,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,2"; icon_state = "casa8 0,2"},/area)
+"ld" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,2"; icon_state = "casa8 6,2"},/area)
+"le" = (/obj/Nuvem,/turf/Areia/Areia4,/area)
+"lf" = (/obj/Nuvem,/turf/Areia/Areia3,/area)
+"lg" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
+"lh" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
+"li" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
+"lj" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
+"lk" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
+"ll" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
+"lm" = (/turf/ASolos/Montanha,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
+"ln" = (/turf/sPedra3,/turf/ASolos/Montanha2,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,7"; icon_state = "casa8 7,7"},/area)
+"lo" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
+"lp" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
+"lq" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
+"lr" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
+"ls" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
+"lt" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
+"lu" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
+"lv" = (/turf/sPedra3,/turf/ASolos/Montanha4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
+"lw" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
+"lx" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
+"ly" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/area)
+"lz" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/area)
+"lA" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/area)
+"lB" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,5"; icon_state = "casa8 3,5"},/area)
+"lC" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,5"; icon_state = "casa8 4,5"},/area)
+"lD" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,5"; icon_state = "casa8 5,5"},/area)
+"lE" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,5"; icon_state = "casa8 6,5"},/area)
+"lF" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/area)
+"lG" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/ASolos/Montanha3,/area)
+"lH" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
+"lI" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
+"lJ" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
+"lK" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
+"lL" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
+"lM" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
+"lN" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
+"lO" = (/turf/ASolos/Montanha,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
+"lP" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/area)
+"lQ" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/area)
+"lR" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/area)
+"lS" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,5"; icon_state = "casa8 3,5"},/area)
+"lT" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,5"; icon_state = "casa8 4,5"},/area)
+"lU" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,5"; icon_state = "casa8 5,5"},/area)
+"lV" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/area)
+"lW" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,7"; icon_state = "casa8 0,7"},/area)
+"lX" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,7"; icon_state = "casa8 1,7"},/area)
+"lY" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,7"; icon_state = "casa8 2,7"},/area)
+"lZ" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,7"; icon_state = "casa8 3,7"},/area)
+"ma" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,7"; icon_state = "casa8 4,7"},/area)
+"mb" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,7"; icon_state = "casa8 5,7"},/area)
+"mc" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,7"; icon_state = "casa8 6,7"},/area)
+"md" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/area)
+"me" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/area)
+"mf" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/area)
+"mg" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/area)
+"mh" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,0"; icon_state = "casa8 5,0"},/area)
+"mi" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,0"; icon_state = "casa8 6,0"},/area)
+"mj" = (/turf/Areia/Areia,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,0"; icon_state = "casa8 7,0"},/area)
+"mk" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,5"; icon_state = "casa8 0,5"},/area)
+"ml" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,5"; icon_state = "casa8 1,5"},/area)
+"mm" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,5"; icon_state = "casa8 2,5"},/area)
+"mn" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,5"; icon_state = "casa8 3,5"},/area)
+"mo" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,5"; icon_state = "casa8 4,5"},/area)
+"mp" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,5"; icon_state = "casa8 5,5"},/area)
+"mq" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,5"; icon_state = "casa8 6,5"},/area)
+"mr" = (/turf/ASolos/Montanha,/turf/Objetos/Objeto4,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/area)
+"ms" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,4"; icon_state = "casa8 0,4"},/area)
+"mt" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,4"; icon_state = "casa8 1,4"},/area)
+"mu" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,4"; icon_state = "casa8 2,4"},/area)
+"mv" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,4"; icon_state = "casa8 3,4"},/area)
+"mw" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,4"; icon_state = "casa8 4,4"},/area)
+"mx" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,4"; icon_state = "casa8 5,4"},/area)
+"my" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,4"; icon_state = "casa8 6,4"},/area)
+"mz" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/area)
+"mA" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,6"; icon_state = "casa8 0,6"},/area)
+"mB" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,6"; icon_state = "casa8 1,6"},/area)
+"mC" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,6"; icon_state = "casa8 2,6"},/area)
+"mD" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,6"; icon_state = "casa8 3,6"},/area)
+"mE" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,6"; icon_state = "casa8 4,6"},/area)
+"mF" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,6"; icon_state = "casa8 5,6"},/area)
+"mG" = (/turf/sPedra3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,6"; icon_state = "casa8 6,6"},/area)
+"mH" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,6"; icon_state = "casa8 7,6"},/area)
+"mI" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,3"; icon_state = "casa8 7,3"},/area)
+"mJ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/ASolos/Montanha4,/area)
+"mK" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 0,4"; icon_state = "casa8 0,4"},/area)
+"mL" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 1,4"; icon_state = "casa8 1,4"},/area)
+"mM" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 2,4"; icon_state = "casa8 2,4"},/area)
+"mN" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 3,4"; icon_state = "casa8 3,4"},/area)
+"mO" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 4,4"; icon_state = "casa8 4,4"},/area)
+"mP" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,4"; icon_state = "casa8 5,4"},/area)
+"mQ" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 6,4"; icon_state = "casa8 6,4"},/area)
+"mR" = (/turf/Areia/Areia,/turf/ASolos/Montanha4,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/area)
+"mS" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,5"; icon_state = "casa8 7,5"},/area)
+"mT" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,2"; icon_state = "casa8 7,2"},/area)
+"mU" = (/turf/sPedra3,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,4"; icon_state = "casa8 7,4"},/area)
+"mV" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,1"; icon_state = "casa8 7,1"},/area)
+"mW" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 7,0"; icon_state = "casa8 7,0"},/area)
+"mX" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Agua/Borda7,/area)
+"mY" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Agua/Borda8,/area)
+"mZ" = (/turf/Areia/Areia,/obj/Nuvem,/turf/Agua/Borda6,/area)
+"na" = (/turf/Areia/Areia3,/obj/Nuvem,/obj/Nuvem,/turf/Casas/Casa8{tag = "icon-casa8 5,0"; icon_state = "casa8 5,0"},/area)
+"nb" = (/turf/Ponte/Ponte1,/turf/fence2,/obj/Nuvem,/turf/fence2{tag = "icon-fence3"; icon_state = "fence3"},/area)
+"nc" = (/obj/Nuvem,/turf/Ponte/Ponte1,/area)
+"nd" = (/turf/Areia/Areia3,/obj/Nuvem,/turf/Agua/Borda8,/area)
+"ne" = (/turf/Ponte/Ponte1,/obj/Nuvem,/turf/fence2,/area)
+"nf" = (/turf/Ponte/Ponte1,/obj/Nuvem,/turf/Poca,/area)
+"ng" = (/turf/Areia/Areia,/turf/Agua/Borda8,/obj/Nuvem,/turf/Agua/Borda4,/area)
+"nh" = (/turf/Areia/Areia,/turf/Agua/Borda8,/obj/Nuvem,/turf/Ponte/Ponte5,/area)
+"ni" = (/turf/Agua/Borda9,/obj/Nuvem,/obj/Nuvem,/turf/Ponte/Ponte5,/area)
+"nj" = (/obj/Roof,/turf/ASolos/Solo1,/area)
+"nk" = (/turf/ASolos/Solo1,/area)
+"nl" = (/obj/JWolf,/turf/ASolos/Solo1,/area)
+"nm" = (/turf/layerwall,/area)
+"nn" = (/obj/Roof,/turf/wall,/area)
+"no" = (/obj/Mondaisword,/obj/Roof,/turf/ASolos/Solo1,/area)
+"np" = (/obj/LH,/obj/Roof,/turf/ASolos/Solo1,/area)
+"nq" = (/obj/Pill,/obj/Roof,/turf/ASolos/Solo1,/area)
+"nr" = (/obj/Sake,/turf/ASolos/Solo1,/area)
+"ns" = (/obj/Zabuzasword,/obj/Roof,/turf/ASolos/Solo1,/area)
+"nt" = (/obj/Roof,/obj/Roof,/turf/ASolos/Solo1,/area)
+"nu" = (/obj/LeeWeights,/obj/Roof,/turf/ASolos/Solo1,/area)
+"nv" = (/obj/Gourd,/obj/Roof,/turf/ASolos/Solo1,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -845,71 +836,71 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcfdfibbbbfifcfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfefffffffffffffffffffffgbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcfnfififcfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfefffffffffffffffffffffgbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfofpfpfqbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfhfhfhfhfrfsfsfsfsfsfsfsfsfsfsftfhfhfhfh
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfufvfwfxfubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfifififififififrfsfsfsfsfsfsfsfsfsfsftfyfyfyfy
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfvfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfAfBfBfBfBfBfCfCfCfCfCfCfCfCfCfCfCfCfBfBfBfB
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfvfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfvfwfxfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fhfhfhfhfhfhfhfhfhfhfhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbfifififififififififififififififififififififififvfwfxfifhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fifififififififififififibbbbbbbbbbbbbbbbbbbbbbbbbbbbfEfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfwfwfwfGfififhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fHfHfHfHfHfHfHfHfHfHfHfGbbbbbbbbbbbbbbbbbbbbbbbbbbbbfIfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfHfGfififhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwfwfwfwfwfwfwfwfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbfhfJfwfwfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwfwfwfwfwfwfwfwfxfibbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwfKfKfLfKfKfLfKfKfKfwfxbbbbbbbbbbbbbbbbbbbbbbbbfhfifJfwfxbbfJfwfxbbfMfNfNfNfOfOfPfPfPfOfOfQbbfJfxbbbbbbfJfwfwfwfwfxfhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwfKfRfRfKfSfSfLfKfKfwfxbbbbbbbbbbbbbbbbbbbbbbfhfifTfwfxbbbbfJfwfxbbfUfVfVfWfWfWfWfVfXfXfXfYbbfJfxbbbbbbbbbbfJfwfwfxfififhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwfLfZgafLgbfZgafLfKfwfxbbbbbbbbbbbbbbbbbbfhfhfifTfwfxbbbbbbfJfwfxbbfUfVfVfWfWfWfWfVfXfXfXfYbbfJfxbbbbbbbbbbbbfJfwfwfHfGfififhbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwgcgdgegfgcgdgegffLfwfxbbbbbbbbbbbbbbfhfhfififTfwfwfxbbbbbbfJfwfxbbfUfVfVfWfWfWfWfVfXfXfXfYbbfJfxbbbbbbbbbbbbbbfJfwfwfwfHfGfifhfhbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwggghgigjggghgkglfKfwfxbbbbbbbbbbfhfhfififTfHfwfwfxbbbbbbbbfJfwfxbbfUfVfVfVfVfVgmgngngnfWfYbbfJfxbbbbbbbbbbbbbbbbbbfJfwfwfwfGfifibbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwgogpgdgegqgrgsgtfLfwfxbbbbbbfhfhfififTfHfwfwfxbbbbbbbbbbbbfJfwfxbbfUfXfXfXfXfXfXfVfVfXfXfYbbfJfxbbbbbbbbbbbbbbbbbbbbfJfwfwfwfHfGbbbbbbbbbbbbbbfhfhfhfhfhfifDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwgugvghgkgwgxgdgegffwfxbbbbfhfififTfHfwfwfwfxbbbbbbbbbbbbbbfJfwfxbbbbbbbbbbbbbbbbbbfufcfdfubbfJfxbbbbbbbbbbbbbbbbbbfhfifJfwfwfwfxbbbbbbbbbbbbbbfififififififDfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwfLgogrgygzggghgkglfwfxfhfhfifTfHfwfwfwfxbbbbbbbbbbbbbbbbbbfJfwfxbbbbbbbbbbbbbbbbbbbbfcadfmbbfJfxbbbbbbbbbbbbbbbbfhfifHfwfwfwfxbbbbbbbbbbbbbbbbfzgAgBgBgBgBgCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fwfwgDgEgFgGgogrgygzfwfxfififTfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbfJfwfxbbbbbbbbbbbbbbbbbbflfdbbbbbbfJfxbbbbbbbbbbbbbbfhfifTfwfwfwfxbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCgHbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbfJfwfKfLfLgugEgFgGfwfwfHfFfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwfxbbbbbbbbbbbbflgIgIfdbbbbbbbbfJfxbbbbbbbbbbbbfhfifJfwfwfwfxbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCgHbbgJgKgLgMgNgLgLgLgLgLgLgLgLgObb
-bbbbfJfwfwfwfwfwfwfwfwfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwfxbbbbbbbbbbfladfdbbbbbbbbbbbbfJfxbbbbbbbbbbfhfifTfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCgHbbgPgQgRgSgTgUgUgUgUgUgUgUgUgVbb
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwfxbbbbbbbbflfdbbbbbbbbbbbbbbbbfJfxbbbbbbbbfhfifTfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbfzfDfCfCfCfCfCfCfCfCfCgHbbgXgUgUgUgUgUgUgUgUgUgUgUgYgZbb
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwfxbbbbbbbbhabbbbbbbbbbbbbbbbbbfJfxbbbbbbbbfifTfwfwfwfxbbbbfhfhfhfhfhfhfhfhfhfhfhfifDfCfCfCfCfCfCfCfCfCgHbbgXgUgUgUgUgUgUgUgUgUgUgUhbhcbb
-fhfhbbbbbbbbbbbbbbbbbbfJfwhdfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfJfwfxbbbbbbbbfcfmbbbbbbbbbbbbbbbbfJfxbbbbbbbbfTfwfwfwfxbbbbfhfififififififififififififDfCfCfCfCfCfCfCfCfCgHbbgXgUgUgUgYhegUgYgUgUgUgUhfhcbb
-fifibbbbbbbbbbbbbbbbbbfJfwhdfififififififififififififififififJfwfxbbbbbbbbbbfcgIfmbbbbbbbbbbbbfJfxbbbbbbfhfJfwfxfhbbbbbbfififTfHfHfHfHfHfHfHfHfHfHhgfCfCfCfCfCfCfCfCfCgHbbbbbbbbbbbbgXgVbbbbbbbbbbbbbbbb
-hhhibbbbbbbbbbbbbbbbbbfJfwfwfHfHfHfHfHfHfHfHfHfHfHfHfHfHfHfHfwfwfxbbbbbbbbbbbbfcadgIfmbbbbbbbbfJfxbbfhfhfifJfwfxfibbbbbbfifTfwhjhkhlhmhnhohphqfwfwhrhshshshtfCfCfCfCfCgHbbbbbbbbbbfufcfdfubbbbbbbbbbbbbb
-huhvfhfhfhfhfhfhfhfhfhfJfwgWbbbbbbbbbbbbbbhwbbbbbbbbbbbbbbbbbbbbhxbbbbbbbbbbbbbbbbfcadfmbbbbbbfJfxfhfififTfwfwfwfGfhfhfifTfxbbhyhzhAhBhChDhEhFbbbbbbbbbbbbfDfCfCfCfCfCgHbbbbbbbbbbfladadfmbbbbbbbbbbbbbb
-hGhvfifififififififififJfwgWbbbbbbbbhHgLhIhJhKgLgLgLgLgLgLgLgObbhxfhfhfhfhfhfhfhfhfhfhhLhMfhfhfJfxfifTfHfwfwfwfxfififififJfxbbhNhOhPhQhRhShThUgLgLhVgLhWbbfDfCfCfCfCfCgHbbbbbbbbflfdbbbbfcfmbbbbbbbbbbbb
-hGhGfHfHfHfHfHfHfHfHfHfwfwgWbbbbbbbbgXhXaDaDaDhYgUgUgUgUgUgUgVbbhxfyfyfyfyfyfyfyfyfyfbhLhZfbfyfJfwfHfwfwfwfwfwfwfHfHfHfHfwfxbbiaibicidieifigihiiiiiiiiijbbfDfCfCfCfCfCgHbbbbbbflfdbbbbbbbbikfmbbbbbbbbbb
-hGhGhGfwfwfwfwfwfwfwfwfwfwgWbbbbbbbbilaDaDaDaDaDhYgUgUgUgUgUgVbbfJfHfHfHfHfHfHfHfHfHfHfwfwfHfHfwfwfwfwfwfwfwfwfwfwfwfwfwfwfxbbiminioipiqirisitiugUgUgUgVbbfDfCfCfCfCfCgHbbbbbbivbbbbbbbbbbbbivbbbbbbbbbb
-hGhGfwfwfwfwfwfwfwfwfwfwfwgWbbbbbbbbgXaFaFaGaFaFgUgUgUgUgUgUgVbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbiwixiyiziAiBiCiDiiiiiiiigVbbfDfCfCfCfCfCgHbbbbbbivbbbbbbbbbbbbivbbbbbbbbbb
-hGiEfifififififififififJfwgWbbbbbbbbgXaFaFaFaFaFgUgUgUgUgUgUgUgLgLgLgLgLgLgLgLiFiFiGiHbbfJfwfwfwfwfxbbhHgLgLgLgLgLgLgLgLgLgLgLiIiJiKiLiMiNiOiPgUgUiiiigVbbfDfCfCfCfCfCgHbbbbbbfcfmbbbbbbbbflfdbbbbbbbbbb
-huiEfhfhfhfhfhfhfhfhfhfJfwgWbbbbbbbbgXaGaFaHaFaGgUgUgUhegUgUgUgUgUgUgUgUgUgUgUgUgUiQiRbbfJfwfwfwfwfxbbgXgUgUgUgUgUgUgUgUgUgUgUiSiTiUiViWiXiYiZgUgUiigUgVbbfDfCfCfCfCfCgHfhfhfhfhhLfpfpfpfphZfhfhfhfhfhfh
-huhvbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbjaaFaGaFaFgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUbbbbbbbbbbbbbbbbgXgUgUgUgUgUgUgUgUjbgUgUgUgUgUgUgUgUgUgUgUgUiigVbbbbfDfCfCfCfCfCgHfyfyfyfyfbjchGjdhZfbfyfyfyfyfyfy
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbjaaFaJaFaFgUgUgUgUgUgUgUjbgUgUgUgUgUgUgUgUgUgUgUgLgLgLgLgLgLgLgLgUgUjbgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUiiiiiigVbbbbfDfCfCfCfCfCfCfBfBfBfBfBfChGhGfCfBfBfBfBfBfBfB
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbgXgUgUhegUgUgUgUgUgUgUgUgUgUgUgUgUgUjbgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUiiiiiigUgUgVbbbbfDfCfCfCfCfCfCfCfCfCfCfCfChGhGfCfCfCfCfCfCfCfC
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbgXgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUiiiiiigUgUgVbbbbbbbbfDfCfCfCfCfCfCfCfCfCfCfCfChGhGfCfCfCfCfCfCfCfC
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbgXgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUhegUgUgUgUgUgUgUgUhegUiigUgUgVbbbbbbbbbbbbfDfCfCfCfCfCfCfCfCfCfCfCfChGhGfCfCfCfCfCfCfCfC
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbgXgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgUgVbbbbbbbbbbbbbbbbfDfCfCfCfCfCfCfCfCfCfCfCfChGhGfCfCfCfCfCfCfCfC
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbgXgVbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbjehshshshshshshshshshshshshGhGhshshshshshshshs
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfufcfdfubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwfwfwfwfwfwfwfwfwfwhGhGhGhGhGhGfwfxbbbbfhfJ
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfcfdfzbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwhGhGhGhGfwfxbbbbfhfifJ
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzfladadfmfzbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfJfwhGhGfwfxbbbbfhfifTfw
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfzflfdbbbbfcfmfzbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfJfwfwfxbbbbbbfifTfxbb
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbflfdbbbbbbbbfcfmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififJfxbbbbbbjfjgfxbbbb
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcfdbbbbbbbbfcfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififTfHfHfwfxbbbbbbjhjifhfhfh
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbivbbbbbbbbhabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififTfHfHfwfwfwfwfxbbbbbbbbfhfififi
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbivfzbbbbfzhabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfifififTfHfHjjjkjljmjnjojpjqfhfhfhfhfijrjsjs
-bbbbbbbbbbbbbbbbbbbbbbfJfwgWfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcfmfzfzflfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifTfHfHfwfwfwjtjujvjwjxjyjzjAfifififijrjBjBjB
-bbbbbbbbbbbbbbbbbbbbbbfJfwfwjCfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcgIgIfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfifififTfwfwfwfwfwjBjDjEjFjGjHjIjJjKjLjMjNjOjPjojQjR
-bbbbbbbbbbbbbbbbbbbbbbbbfIfwfwjCfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbhLhZbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfhfifTfHfHfwfwfwfwjBjBjBjSjTjUjVjWjXjYjZkakbkckdkekfkgkh
-fhbbbbbbbbbbbbbbbbbbbbbbbbfJfwfwjCfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfufIgWfubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfififififTfwfwfwfwfwjBjBjBjBjBkikjkkklkmknkokpjDjEjFjGjHjIkqjK
-fifhbbbbbbbbbbbbbbbbbbbbbbbbfJfwfwjCfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfIgWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififTfHfHfHfwfwfwfwjBjBjBjBjBjBjBkrksktkukvkwkxkyjSjTjUjVjWjXjYjZ
-kzfifhbbbbbbbbbbbbbbbbbbbbbbbbfJfwfwjCfifhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfIgWfhbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififTfHfHfwfwfwfwjjjkkAkBjPjojQjRjBjBjBkCkDkEkFkGkHkIkJkikjkkklkmknkokp
-jBkzfifhbbbbbbbbbbbbbbbbbbbbbbbbfJfwfwjCfifikKkLkMkNkOkPkQkRfififififififififififififififififIgWfibbbbbbbbbbbbbbfhfhfhfhfifikKkSkTkUjnkVjpkWfwfwfwjtkXkYkZjxjylalbjBjBjBlcldlelflglhliljlkksktkukvkwllky
-lmlnkzfifhfhbbbbbbbblolplqlrlsltlulvfwfwfFfFlwlxlylzlAlBlClDfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfwfwfGbbbbbbbbbbfhfhfififififTfHlEjujvjwlFlGjzlbjBjBjBlHlIlJlKlLlMlNlOjBjBjBjBkakbkckdkekfkgkCkDkEkFkGkHkIkJ
-jBjBjBlPfififhfhfhfhlQlRlSlTlUlVlWlXfJfwfwfwlYlZmambmcmdjJmefwfwfwmfmgmhmimjmkmlkWfwfwfwfwfwfwfwfxfhfhfhfhfhfififTfHfHfHfwfwmmmnmolKlLlMlNlOjBjBjBjSjTjUjVjWjXjYmpjBjBjBjBjDjEjFjGjHjIkqlcldlelflgmqmrms
-jBjBjBjBjslPfifififimtmumvmwmxmymzmAfifJfwfwmBmCmDmEmFmGmHmIfwfwfwmJmKmLmMmNmOmPmQfwfwfwfwfwfwfwfxfifififififTfHfwfwfwfwfwfwjSjTjUjVjWjXjYmpjBjBjBkikjkkklkmknkomRjBjBjBjBjSjTjUjVjWjXjYjZjBjBjBjBjBjBjB
-jBjBjBjBjBjBjsjsjsmSmTmUmVmWmXmYmZnamSjBjBjBkikjkkklkmknkokpjBjBjBjDjEjFmbmcmdjJnbfwfwfwfwfwfwfwfwfHfHfHfHfHfwfwfwfwfwjBjBjBkikjkkklkmknkomRjBjBjBkrksktkukvkwllncjBjBjBjBkikjkkklkmknkokpjBjBjBjBjBjBjB
-jBjBjBjBjBjBjBjBjBjBkikjkkklkmknkokpjBjBjBjBkrksktkukvkwllkyjBjBjBjSjTjUjVmFmGmHndfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwjBjBjBjBjBkrksktkukvkwllncjBjBjBkCkDkEkFkGkHkInelnjBjBjBkrksktkukvkwllkyjBjBjBjBjBjBjB
-jBjBlnjBjBjBjBjBlmjBkrksktkukvkwllkyjBjBjBjBkCkDkEkFkGkHkIkJjBjBjBkikjkkklkmknkomRjBfwfwfwfwfwfwfwfwfwfwfwfwfwjBjBjBjBjBjBjBkCkDkEkFkGkHkInejBjBjBlcldlelflgmqmrnfjBjBjBjBkCkDkEkFkGkHkIkJlmjBjBjBjBjBjB
-jBjBjBjBjBjBjBjBjBjBkCkDkEkFkGkHkIkJjBjBjBjBlcldlelflgmqmrmsjBjBjBkrksktkukvkwllncjBjBfwfwfwfwfwfwfwfwjBjBjBjBjBjBjBjBjBjBjBlcldlelflgmqmrnfjBjBjBjBjBjBngnhnhnijBjBjBjBjBlcldlelflgmqmrmsjBjBjBjBjBngnh
-jBjBjBjBjBjBjBjBjBjBlcldlelflgnjmrmsjBjBjBjBjBjBjBjBjBjBjBjBjBjBjBkCkDkEkFkGkHkInejBjBnknlnlnlnlnlnlnkjBjBjBjBjBjBjBjBjBjBlnjBjBjBjBjBjBjBjBjBjBjBjBjBngfCfCfCfCnhnhnhnijBjBjBjBjBjBjBjBngnhnhnhnhnmfCfC
-jBjBjBlmjBjBjBjBjBjBjBjBjBjBjBjBjBlnjBjBjBlnjBjBjBjBjBjBjBjBjBjBjBlcldlelflgmqmrnfjBjBnnnlnonlnlnlnlnnjBjBjBjBjBjBjBjBjBjBjBjBjBjBjBjBjBjBjBjBlmjBngnhnpfCfCfCfCfCfCfCfCnhnhnijBjBjBngnhfCfCfCfCfCfCfCfC
-nhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnnnlnlnlnqnqnqnnnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnhnpfCfCfCfCfCfCfCfCfCfCfCfCfCnhnhnhfCfCfCfCfCfCfCfCfCfC
-fCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCnnnrnlnlnlnlnlnnfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
-fCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCnknlnlnlnonlnlnkfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfC
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfufvfwfxfubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfifififififififrfsfsfsfsfsfsfsfsfsfsftfifififi
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfvfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfzfAfAfAfAfAfBfBfBfBfBfBfBfBfBfBfBfBfAfAfAfA
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfvfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfvfwfxfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fhfhfhfhfhfhfhfhfhfhfhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbfifififififififififififififififififififififififvfwfxfifhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fifififififififififififibbbbbbbbbbbbbbbbbbbbbbbbbbbbfDfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfwfwfwfFfififhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fEfEfEfEfEfEfEfEfEfEfEfFbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfEfFfififhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwfwfwfwfwfwfwfwfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbfhfGfwfwfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfwfwfwfwfwfwfxfibbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwfHfHfIfHfHfIfHfHfHfwfxbbbbbbbbbbbbbbbbbbbbbbbbfhfifGfwfxbbfGfwfxbbfJfKfKfKfLfLfMfMfMfLfLfNbbfGfxbbbbbbfGfwfwfwfwfxfhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwfHfOfOfHfPfPfIfHfHfwfxbbbbbbbbbbbbbbbbbbbbbbfhfifDfwfxbbbbfGfwfxbbfQfRfRfSfSfSfSfRfTfTfTfUbbfGfxbbbbbbbbbbfGfwfwfxfififhfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwfIfVfWfIfXfVfWfIfHfwfxbbbbbbbbbbbbbbbbbbfhfhfifDfwfxbbbbbbfGfwfxbbfQfRfRfSfSfSfSfRfTfTfTfUbbfGfxbbbbbbbbbbbbfGfwfwfEfFfififhbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwfYfZgagbfYfZgagbfIfwfxbbbbbbbbbbbbbbfhfhfififDfwfwfxbbbbbbfGfwfxbbfQfRfRfSfSfSfSfRfTfTfTfUbbfGfxbbbbbbbbbbbbbbfGfwfwfwfEfFfifhfhbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwgcgdgegfgcgdggghfHfwfxbbbbbbbbbbfhfhfififDfEfwfwfxbbbbbbbbfGfwfxbbfQfRfRfRfRfRgigjgjgjfSfUbbfGfxbbbbbbbbbbbbbbbbbbfGfwfwfwfFfifibbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwgkglfZgagmgngogpfIfwfxbbbbbbfhfhfififDfEfwfwfxbbbbbbbbbbbbfGfwfxbbfQfTfTfTfTfTfTfRfRfTfTfUbbfGfxbbbbbbbbbbbbbbbbbbbbfGfwfwfwfEfFbbbbbbbbbbbbbbfhfhfhfhfhfifCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwgqgrgdgggsgtfZgagbfwfxbbbbfhfififDfEfwfwfwfxbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbfufcfdfubbfGfxbbbbbbbbbbbbbbbbbbfhfifGfwfwfwfxbbbbbbbbbbbbbbfififififififCfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwfIgkgngugvgcgdggghfwfxfhfhfifDfEfwfwfwfxbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbfcadfmbbfGfxbbbbbbbbbbbbbbbbfhfifEfwfwfwfxbbbbbbbbbbbbbbbbfygwgxgxgxgxgyfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fwfwgzgAgBgCgkgngugvfwfxfififDfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbflfdbbbbbbfGfxbbbbbbbbbbbbbbfhfifDfwfwfwfxbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBgDbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbfGfwfHfIfIgqgAgBgCfwfwfEfEfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbflgEgEfdbbbbbbbbfGfxbbbbbbbbbbbbfhfifGfwfwfwfxbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBgDbbgFgGgHgIgJgHgHgHgHgHgHgHgHgKbb
+bbbbfGfwfwfwfwfwfwfwfwfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbfladfdbbbbbbbbbbbbfGfxbbbbbbbbbbfhfifDfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBgDbbgLgMgNgOgPgQgQgQgQgQgQgQgQgRbb
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbflfdbbbbbbbbbbbbbbbbfGfxbbbbbbbbfhfifDfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbfyfCfBfBfBfBfBfBfBfBfBgDbbgSgQgQgQgQgQgQgQgQgQgQgQgTgUbb
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbgVbbbbbbbbbbbbbbbbbbfGfxbbbbbbbbfifDfwfwfwfxbbbbfhfhfhfhfhfhfhfhfhfhfhfifCfBfBfBfBfBfBfBfBfBgDbbgSgQgQgQgQgQgQgQgQgQgQgQgWgXbb
+fhfhbbbbbbbbbbbbbbbbbbfGfwgYfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfGfwfxbbbbbbbbfcfmbbbbbbbbbbbbbbbbfGfxbbbbbbbbfDfwfwfwfxbbbbfhfififififififififififififCfBfBfBfBfBfBfBfBfBgDbbgSgQgQgQgTgZgQgTgQgQgQgQhagXbb
+fifibbbbbbbbbbbbbbbbbbfGfwgYfififififififififififififififififGfwfxbbbbbbbbbbfcgEfmbbbbbbbbbbbbfGfxbbbbbbfhfGfwfxfhbbbbbbfififDfEfEfEfEfEfEfEfEfEfEhbfBfBfBfBfBfBfBfBfBgDbbbbbbbbbbbbgSgRbbbbbbbbbbbbbbbb
+hchdbbbbbbbbbbbbbbbbbbfGfwfwfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfwfwfxbbbbbbbbbbbbfcadgEfmbbbbbbbbfGfxbbfhfhfifGfwfxfibbbbbbfifDfwhehfhghhhihjhkhlfwfwhmhnhnhnhofBfBfBfBfBgDbbbbbbbbbbfufcfdfubbbbbbbbbbbbbb
+hphqfhfhfhfhfhfhfhfhfhfGfwfxbbbbbbbbbbbbbbhrbbbbbbbbbbbbbbbbbbbbhsbbbbbbbbbbbbbbbbfcadfmbbbbbbfGfxfhfififDfwfwfwfFfhfhfifDfxbbhthuhvhwhxhyhzhAbbbbbbbbbbbbfCfBfBfBfBfBgDbbbbbbbbbbfladadfmbbbbbbbbbbbbbb
+hBhqfifififififififififGfwfxbbbbbbbbhCgHhDhEhFgHgHgHgHgHgHgHgKbbhsfhfhfhfhfhfhfhfhfhfhfohGfhfhfGfxfifDfEfwfwfwfxfififififGfxbbhHhIhJhKhLhMhNhOgHgHhPgHhQbbfCfBfBfBfBfBgDbbbbbbbbflfdbbbbfcfmbbbbbbbbbbbb
+hBhBfEfEfEfEfEfEfEfEfEfwfwfxbbbbbbbbgShRaDaDaDhSgQgQgQgQgQgQgRbbhsfifififififififififbfofqfbfifGfwfEfwfwfwfwfwfwfEfEfEfEfwfxbbhThUhVhWhXhYhZiaibibibibicbbfCfBfBfBfBfBgDbbbbbbflfdbbbbbbbbidfmbbbbbbbbbb
+hBhBhBfwfwfwfwfwfwfwfwfwfwfxbbbbbbbbieaDaDaDaDaDhSgQgQgQgQgQgRbbfGfEfEfEfEfEfEfEfEfEfEfwfwfEfEfwfwfwfwfwfwfwfwfwfwfwfwfwfwfxbbifigihiiijikilimingQgQgQgRbbfCfBfBfBfBfBgDbbbbbbiobbbbbbbbbbbbiobbbbbbbbbb
+hBhBfwfwfwfwfwfwfwfwfwfwfwfxbbbbbbbbgSaFaFaGaFaFgQgQgQgQgQgQgRbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfwfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbipiqirisitiuiviwibibibibgRbbfCfBfBfBfBfBgDbbbbbbiobbbbbbbbbbbbiobbbbbbbbbb
+hBixfifififififififififGfwfxbbbbbbbbgSaFaFaFaFaFgQgQgQgQgQgQgQgHgHgHgHgHgHgHgHiyiyiziAbbfGfwfwfwfwfxbbhCgHgHgHgHgHgHgHgHgHgHgHiBiCiDiEiFiGiHiIgQgQibibgRbbfCfBfBfBfBfBgDbbbbbbfcfmbbbbbbbbflfdbbbbbbbbbb
+hpixfhfhfhfhfhfhfhfhfhfGfwfxbbbbbbbbgSaGaFaHaFaGgQgQgQgZgQgQgQgQgQgQgQgQgQgQgQgQgQiJiKbbfGfwfwfwfwfxbbgSgQgQgQgQgQgQgQgQgQgQgQiLiMiNiOiPiQiRiSgQgQibgQgRbbfCfBfBfBfBfBgDfhfhfhfhfofpfpfpfpfqfhfhfhfhfhfh
+hphqbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbiTaFaGaFaFgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQbbbbbbbbbbbbbbbbgSgQgQgQgQgQgQgQgQiUgQgQgQgQgQgQgQgQgQgQgQgQibgRbbbbfCfBfBfBfBfBgDfififififbiVhBiWfqfbfifififififi
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbiTaFaJaFaFgQgQgQgQgQgQgQiUgQgQgQgQgQgQgQgQgQgQgQgHgHgHgHgHgHgHgHgQgQiUgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQibibibgRbbbbfCfBfBfBfBfBfBfAfAfAfAfAfBhBhBfBfAfAfAfAfAfAfA
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbgSgQgQgZgQgQgQgQgQgQgQgQgQgQgQgQgQgQiUgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQibibibgQgQgRbbbbfCfBfBfBfBfBfBfBfBfBfBfBfBhBhBfBfBfBfBfBfBfBfB
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbgSgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQibibibgQgQgRbbbbbbbbfCfBfBfBfBfBfBfBfBfBfBfBfBhBhBfBfBfBfBfBfBfBfB
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbgSgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgZgQgQgQgQgQgQgQgQgZgQibgQgQgRbbbbbbbbbbbbfCfBfBfBfBfBfBfBfBfBfBfBfBhBhBfBfBfBfBfBfBfBfB
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbgSgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgQgRbbbbbbbbbbbbbbbbfCfBfBfBfBfBfBfBfBfBfBfBfBhBhBfBfBfBfBfBfBfBfB
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbgSgRbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbiXhnhnhnhnhnhnhnhnhnhnhnhnhBhBhnhnhnhnhnhnhnhn
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfufcfdfubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfwfwfwfwfwfwfwfwhBhBhBhBhBhBfwfxbbbbfhfG
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfcfdfybbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwhBhBhBhBfwfxbbbbfhfifG
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyfladadfmfybbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfwhBhBfwfxbbbbfhfifDfw
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfyflfdbbbbfcfmfybbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfGfwfwfxbbbbbbfifDfxbb
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbflfdbbbbbbbbfcfmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififGfxbbbbbbiYiZfxbbbb
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcfdbbbbbbbbfcfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififDfEfEfwfxbbbbbbjajbfhfhfh
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbiobbbbbbbbgVbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififDfEfEfwfwfwfwfxbbbbbbbbfhfififi
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxfhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbiofybbbbfygVbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfifififDfEfEjcjdjejfjgjhjijjfhfhfhfhfijkjljl
+bbbbbbbbbbbbbbbbbbbbbbfGfwfxfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcfmfyfyflfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifDfEfEfwfwfwjmjnjojpjqjrjsjtfifififijkjujuju
+bbbbbbbbbbbbbbbbbbbbbbfGfwfwfFfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcgEgEfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfifififDfwfwfwfwfwjujvjwjxjyjzjAjBjCjDjEjFjGjHjhjIjJ
+bbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfFfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfofqbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfhfifDfEfEfwfwfwfwjujujujKjLjMjNjOjPjQjRjSjTjUjVjWjXjYjZ
+fhbbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfFfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfufGfxfubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfififififDfwfwfwfwfwjujujujujukakbkckdkekfkgkhjvjwjxjyjzjAkijC
+fifhbbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfFfifhbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfGfxbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififDfEfEfEfwfwfwfwjujujujujujujukjkkklkmknkokpkqjKjLjMjNjOjPjQjR
+krfifhbbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfFfifhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfGfxfhbbbbbbbbbbbbbbbbbbbbbbfhfhfhfifififDfEfEfwfwfwfwjcjdksktjHjhjIjJjujujukukvkwkxkykzkAkBkakbkckdkekfkgkh
+jukrfifhbbbbbbbbbbbbbbbbbbbbbbbbfGfwfwfFfifikCkDkEkFkGkHkIkJfififififififififififififififififGfxfibbbbbbbbbbbbbbfhfhfhfhfifikCkKkLkMjgkNjikOfwfwfwjmkPkQkRjqjrkSkTjujujukUkVkWkXkYkZlalblckkklkmknkoldkq
+lelfkrfifhfhbbbbbbbblglhliljlklllmlnfwfwfEfElolplqlrlsltlulvfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfwfwfFbbbbbbbbbbfhfhfififififDfElojnjojplwlxjskTjujujulylzlAlBlClDlElFjujujujujSjTjUjVjWjXjYkukvkwkxkykzkAkB
+jujujulGfififhfhfhfhlHlIlJlKlLlMlNlOfGfwfwfwlPlQlRlSlTlUjBlVfwfwfwlWlXlYlZmambmckOfwfwfwfwfwfwfwfxfhfhfhfhfhfififDfEfEfEfwfwmdmemflBlClDlElFjujujujKjLjMjNjOjPjQmgjujujujujvjwjxjyjzjAkikUkVkWkXkYmhmimj
+jujujujujllGfifififimkmlmmmnmompmqmrfifGfwfwmsmtmumvmwmxmymzfwfwfwmAmBmCmDmEmFmGmHfwfwfwfwfwfwfwfxfifififififDfEfwfwfwfwfwfwjKjLjMjNjOjPjQmgjujujukakbkckdkekfkgmIjujujujujKjLjMjNjOjPjQjRjujujujujujuju
+jujujujujujujljljlmJmKmLmMmNmOmPmQmRmJjujujukakbkckdkekfkgkhjujujujvjwjxlSlTlUjBmSfwfwfwfwfwfwfwfwfEfEfEfEfEfwfwfwfwfwjujujukakbkckdkekfkgmIjujujukjkkklkmknkoldmTjujujujukakbkckdkekfkgkhjujujujujujuju
+jujujujujujujujujujukakbkckdkekfkgkhjujujujukjkkklkmknkoldkqjujujujKjLjMjNmwmxmymUfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwfwjujujujujukjkkklkmknkoldmTjujujukukvkwkxkykzkAmVlfjujujukjkkklkmknkoldkqjujujujujujuju
+jujulfjujujujujulejukjkkklkmknkoldkqjujujujukukvkwkxkykzkAkBjujujukakbkckdkekfkgmIjufwfwfwfwfwfwfwfwfwfwfwfwfwjujujujujujujukukvkwkxkykzkAmVjujujukUkVkWkXkYmhmimWjujujujukukvkwkxkykzkAkBlejujujujujuju
+jujujujujujujujujujukukvkwkxkykzkAkBjujujujukUkVkWkXkYmhmimjjujujukjkkklkmknkoldmTjujufwfwfwfwfwfwfwfwjujujujujujujujujujujukUkVkWkXkYmhmimWjujujujujujumXmYmYmZjujujujujukUkVkWkXkYmhmimjjujujujujumXmY
+jujujujujujujujujujukUkVkWkXkYnamimjjujujujujujujujujujujujujujujukukvkwkxkykzkAmVjujunbncncncncncncnbjujujujujujujujujujulfjujujujujujujujujujujujujumXfBfBfBfBmYmYmYmZjujujujujujujujumXmYmYmYmYndfBfB
+jujujulejujujujujujujujujujujujujulfjujujulfjujujujujujujujujujujukUkVkWkXkYmhmimWjujunencnfncncncncnejujujujujujujujujujujujujujujujujujujujulejumXmYngfBfBfBfBfBfBfBfBmYmYmZjujujumXmYfBfBfBfBfBfBfBfB
+mYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYnencncncnhnhnhnemYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYmYngfBfBfBfBfBfBfBfBfBfBfBfBfBmYmYmYfBfBfBfBfBfBfBfBfBfB
+fBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBnenincncncncncnefBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
+fBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBnbncncncnfncncnbfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfBfB
 "}
 
 (1,1,3) = {"
@@ -975,44 +966,44 @@ aXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaX
 aXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaX
 aNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaN
 aNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaN
-aNnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsaN
-aNnsnsaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnsaN
-aNnsnsaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnsaN
-aNnsaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnsaN
-aNaNnsaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnsaN
-aNnsaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnsaN
-ntntntntntntntntntntntntntntntaNntntntaNntntntaNntnuaNntntntntntntntntntntntntntntntntntntntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNns
-nsaNaNaNaNaNaNaNaNaNaNaNaNntntntntaNntntntaNntntntaNaNntntntntntntntntntntntntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNns
-nsaNaNntaNntaNntaNntaNntaNntnvnvnvnvnvnvnvnvnvnvnvnvaNntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntaNntaNnvnvnvnvnvnvnvnvnvnvnvntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNns
-nsaNaNntntaNntaNntaNntntaNntntntntntntntntntntntntntaNntntntntntntntntntntntntntntaNntntaNaNaNnwntaNntntntntntntntntntntnvntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntntaNns
-nsaNaNntaNntaNntaNntaNnsaNntntntntntntntntntntntntntaNntntaNntaNaNaNaNaNaNaNaNaNntaNntntntntntaNntaNntaNaNaNaNaNaNaNaNntnvntaNntntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntaNns
-nsaNnxntntaNntaNntaNntntaNaNaNaNaNaNaNaNaNaNaNaNntntaNntntaNnuaNntntntntntntnuaNntaNntntntntntaNntaNntaNnynsnsnsnsntaNntnvntaNntntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntaNns
-nsaNnzntaNntaNntaNntaNntntntntntntntntntntnAntaNntntaNntntaNaNaNntaNaNaNaNaNaNaNntaNntntntntntaNntaNntaNaNaNaNaNaNntaNntnvntaNntntaNaNaNaNaNaNntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntntaNns
-nsaNaNntntntntaNntaNntntaNaNaNaNaNaNaNaNaNaNaNaNntntaNntntnsnuaNntntntaNntntntntntaNntntaNntntaNntaNntntntntntntntntaNntnvntaNntntaNntntntntaNntntaNntntntntntntntntntntntntntntntntntntntntntntntntaNns
-nsaNaNntaNntaNntaNntaNnBaNntntntntntntntntntntntntntaNntntaNntaNntaNntaNntaNntaNaNaNntntaNntntaNntaNaNaNaNaNaNaNaNaNaNntnvntaNntntaNntaNaNntaNntntaNntntntntntntntntntntntntntntntntntntntntntntntntaNns
-nsaNaNntntaNntaNntaNntntaNntntnvnvnvnvnvnvnvnvnvnvnvaNntntaNntaNntaNntaNntaNntaNntntntntaNntntaNntntntntntntntntntntntntnvntaNntntaNntaNaNntaNntntaNntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNns
-aNaNaNaNaNaNaNaNaNaNaNaNaNntntntntntntntntntntntntntaNntntaNntaNntaNntaNntaNntaNntntntntaNntntaNntaNntaNaNaNaNaNaNaNaNaNaNntaNntntaNntnuaNntaNntntaNntntaNnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsns
-ntntnwntntntntntntntntntntntntntntntntntntntntntntntaNntntaNntaNntaNntaNntaNntaNntntaNaNaNntntaNntntntntntntntntntntntntntntaNntntaNaNaNaNntaNntntaNaNntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnsnsnsnsns
-aNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntaNntntaNntaNntaNnuaNntaNnuaNntntaNntntntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntntntntntntntntntaNntntaNntntntntaNntntntntntaNntntntntntntaNnsnsnsnsns
-ntntntntaNntntntaNntntntaNntntntaNntntntaNntntntntntaNntntaNntaNntaNaNaNntaNaNaNntntaNntntntntntntntntntntntntntntntnwntntntntntntntntntntntntntntaNntntntntaNntntntntntaNntntntntntaNntaNaNaNnsnsnsnsns
-ntntaNntntntaNntntntaNntntntaNntntntaNntntntaNntntntaNntntaNntntntntntntntntntnvntntaNntntaNaNaNaNntntntntntntntntntaNaNaNaNaNaNaNaNaNaNaNaNaNntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntaNaNaNnsnsnsnsns
-ntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntaNaNaNaNaNaNaNaNaNaNaNntntaNntntaNntntaNntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntntaNnsnsnsnsns
-ntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntaNntntaNntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNaNaNntaNnsnsnsnsns
-ntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntaNntntaNaNaNaNaNaNaNaNaNaNaNntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnwaNaNaNaNaNaNaNaNaNntntaNaNaNntaNnsnsnsnsns
-ntaNntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntaNntntaNntntaNntntaNntntaNntntntntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntntaNnsnsnsnsns
-ntaNaNntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntaNntntaNntntaNntntaNntntntntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntaNaNaNnsnsnsnsns
-ntaNntntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntaNntntaNntntaNntntaNntntaNaNaNaNaNaNaNaNntntaNntntnvnvnvnvnvnvnvnvaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntaNaNaNaNaNaNaNaN
-ntaNntaNaNntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntaNaNaNaNaNaNaNaNaNaNaNntntaNntntaNntntaNntntaNntntaNntntntntntntntntntaNntntnvntntntntntntntntntntntntntntntntntntaNntntntntntntntntntntntntntntntnt
-ntaNntntaNntntaNntntntntntntntntntntntntntntntaNntntaNntntntntntntntntntntntntaNntntaNntntaNntntaNntntaNntnsnsnsnsnsnsnCntaNntntnvntntntntntntntntntntntntntntntntntntntntntntaNntntntntntntaNntntntntnt
-ntaNaNntaNntntaNntntntntntntntntntntntntntntntaNntntnwntntaNntntntntntntntntntaNntntaNntntaNntntaNntntaNntnsntnsntntntnsntaNntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntaNaNaNaNaNaNaNaNntntntaNaNaNaNaNaN
-ntaNntntaNntntaNaNnwnwnwnwaNaNaNaNaNaNntntntntaNntntaNntntaNaNaNaNaNaNaNaNaNaNaNntntaNntntaNntntaNntntaNntnsntntntnsntnsntaNntntaNnsnDnDnDnsnsnsnsnsnsnsnsnsnsnsaNaNntaNntntntntntntaNntaNaNaNnsnsnsnsns
-ntaNntaNaNntntntntntntntntntntntntntaNntntntntaNntntaNntntaNntntntntntntntntntntntntaNntntaNntntaNntntaNntnsntnsnsnsnsnsntaNntntaNnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsaNntaNaNntntntntntntaNntntntaNnsnsnsnsns
-ntaNntntaNntntntntntntntntntntntntntaNntntntntaNntntaNntntaNntntntntntntntntntntntntaNntntaNntntaNntntaNntntntntntntntntntaNntntaNnsnsnsnsnsnsnsnsnsnsnsnsnsnsnsaNaNntaNntntntntntntaNaNaNntaNnsnsnsnsns
-ntaNaNntaNntntaNaNaNaNaNaNaNaNaNaNaNaNntntntntaNaNaNaNntntaNntntaNaNaNaNaNaNaNaNaNaNaNntntaNntntaNntntaNaNaNaNaNaNaNaNaNaNaNntntaNaNaNaNaNaNnsnsaNnwnwaNaNaNaNaNnvntntaNntntntntntntaNntntntaNnsnsnsnsns
-ntaNntntaNntntaNntntntntntntntntntntntntntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntntntntntaNntaNaNaNnsnsnsnsns
-ntaNnsnvaNntntaNntntntntntntntntntntntntntntntntntntntntntaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntntntntntaNntntntaNnsnsnsnsns
-ntaNnsnsaNntntaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNntntntntntntaNaNaNntaNnsnsnsnsns
-nuaNaNnEaNntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntntaNntntntaNnsnsnsnsns
+aNnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjaN
+aNnjnjaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnjaN
+aNnjnjaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnjaN
+aNnjaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnjaN
+aNaNnjaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnjaN
+aNnjaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnjaN
+nknknknknknknknknknknknknknknkaNnknknkaNnknknkaNnknlaNnknknknknknknknknknknknknknknknknknknknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnj
+njaNaNaNaNaNaNaNaNaNaNaNaNnknknknkaNnknknkaNnknknkaNaNnknknknknknknknknknknknknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnj
+njaNaNnkaNnkaNnkaNnkaNnkaNnknmnmnmnmnmnmnmnmnmnmnmnmaNnknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknkaNnkaNnmnmnmnmnmnmnmnmnmnmnmnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnj
+njaNaNnknkaNnkaNnkaNnknkaNnknknknknknknknknknknknknkaNnknknknknknknknknknknknknknkaNnknkaNaNaNnnnkaNnknknknknknknknknknknmnkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknknkaNnj
+njaNaNnkaNnkaNnkaNnkaNnjaNnknknknknknknknknknknknknkaNnknkaNnkaNaNaNaNaNaNaNaNaNnkaNnknknknknkaNnkaNnkaNaNaNaNaNaNaNaNnknmnkaNnknknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknkaNnj
+njaNnonknkaNnkaNnkaNnknkaNaNaNaNaNaNaNaNaNaNaNaNnknkaNnknkaNnlaNnknknknknknknlaNnkaNnknknknknkaNnkaNnkaNnpnjnjnjnjnkaNnknmnkaNnknknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknkaNnj
+njaNnqnkaNnkaNnkaNnkaNnknknknknknknknknknknrnkaNnknkaNnknkaNaNaNnkaNaNaNaNaNaNaNnkaNnknknknknkaNnkaNnkaNaNaNaNaNaNnkaNnknmnkaNnknkaNaNaNaNaNaNnknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknknkaNnj
+njaNaNnknknknkaNnkaNnknkaNaNaNaNaNaNaNaNaNaNaNaNnknkaNnknknjnlaNnknknkaNnknknknknkaNnknkaNnknkaNnkaNnknknknknknknknkaNnknmnkaNnknkaNnknknknkaNnknkaNnknknknknknknknknknknknknknknknknknknknknknknknkaNnj
+njaNaNnkaNnkaNnkaNnkaNnsaNnknknknknknknknknknknknknkaNnknkaNnkaNnkaNnkaNnkaNnkaNaNaNnknkaNnknkaNnkaNaNaNaNaNaNaNaNaNaNnknmnkaNnknkaNnkaNaNnkaNnknkaNnknknknknknknknknknknknknknknknknknknknknknknknkaNnj
+njaNaNnknkaNnkaNnkaNnknkaNnknknmnmnmnmnmnmnmnmnmnmnmaNnknkaNnkaNnkaNnkaNnkaNnkaNnknknknkaNnknkaNnknknknknknknknknknknknknmnkaNnknkaNnkaNaNnkaNnknkaNnkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnj
+aNaNaNaNaNaNaNaNaNaNaNaNaNnknknknknknknknknknknknknkaNnknkaNnkaNnkaNnkaNnkaNnkaNnknknknkaNnknkaNnkaNnkaNaNaNaNaNaNaNaNaNaNnkaNnknkaNnknlaNnkaNnknkaNnknkaNnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjnj
+nknknnnknknknknknknknknknknknknknknknknknknknknknknkaNnknkaNnkaNnkaNnkaNnkaNnkaNnknkaNaNaNnknkaNnknknknknknknknknknknknknknkaNnknkaNaNaNaNnkaNnknkaNaNnkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnjnjnjnjnj
+aNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknkaNnknkaNnkaNnkaNnlaNnkaNnlaNnknkaNnknknknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknknknknknknknknknkaNnknkaNnknknknkaNnknknknknkaNnknknknknknkaNnjnjnjnjnj
+nknknknkaNnknknkaNnknknkaNnknknkaNnknknkaNnknknknknkaNnknkaNnkaNnkaNaNaNnkaNaNaNnknkaNnknknknknknknknknknknknknknknknnnknknknknknknknknknknknknknkaNnknknknkaNnknknknknkaNnknknknknkaNnkaNaNaNnjnjnjnjnj
+nknkaNnknknkaNnknknkaNnknknkaNnknknkaNnknknkaNnknknkaNnknkaNnknknknknknknknknknmnknkaNnknkaNaNaNaNnknknknknknknknknkaNaNaNaNaNaNaNaNaNaNaNaNaNnknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnkaNaNaNnjnjnjnjnj
+nknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknkaNaNaNaNaNaNaNaNaNaNaNnknkaNnknkaNnknkaNnknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknknkaNnjnjnjnjnj
+nknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknkaNnknkaNnknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNaNaNnkaNnjnjnjnjnj
+nknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknkaNnknkaNaNaNaNaNaNaNaNaNaNaNnknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnnaNaNaNaNaNaNaNaNaNnknkaNaNaNnkaNnjnjnjnjnj
+nkaNnknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknkaNnknkaNnknkaNnknkaNnknkaNnknknknknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknknkaNnjnjnjnjnj
+nkaNaNnkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknkaNnknkaNnknkaNnknkaNnknknknknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnkaNaNaNnjnjnjnjnj
+nkaNnknkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknkaNnknkaNnknkaNnknkaNnknkaNaNaNaNaNaNaNaNnknkaNnknknmnmnmnmnmnmnmnmaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnkaNaNaNaNaNaNaNaN
+nkaNnkaNaNnknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknkaNaNaNaNaNaNaNaNaNaNaNnknkaNnknkaNnknkaNnknkaNnknkaNnknknknknknknknknkaNnknknmnknknknknknknknknknknknknknknknknknkaNnknknknknknknknknknknknknknknknk
+nkaNnknkaNnknkaNnknknknknknknknknknknknknknknkaNnknkaNnknknknknknknknknknknknkaNnknkaNnknkaNnknkaNnknkaNnknjnjnjnjnjnjntnkaNnknknmnknknknknknknknknknknknknknknknknknknknknknkaNnknknknknknkaNnknknknknk
+nkaNaNnkaNnknkaNnknknknknknknknknknknknknknknkaNnknknnnknkaNnknknknknknknknknkaNnknkaNnknkaNnknkaNnknkaNnknjnknjnknknknjnkaNnknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknkaNaNaNaNaNaNaNaNnknknkaNaNaNaNaNaN
+nkaNnknkaNnknkaNaNnnnnnnnnaNaNaNaNaNaNnknknknkaNnknkaNnknkaNaNaNaNaNaNaNaNaNaNaNnknkaNnknkaNnknkaNnknkaNnknjnknknknjnknjnkaNnknkaNnjnunununjnjnjnjnjnjnjnjnjnjnjaNaNnkaNnknknknknknkaNnkaNaNaNnjnjnjnjnj
+nkaNnkaNaNnknknknknknknknknknknknknkaNnknknknkaNnknkaNnknkaNnknknknknknknknknknknknkaNnknkaNnknkaNnknkaNnknjnknjnjnjnjnjnkaNnknkaNnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjaNnkaNaNnknknknknknkaNnknknkaNnjnjnjnjnj
+nkaNnknkaNnknknknknknknknknknknknknkaNnknknknkaNnknkaNnknkaNnknknknknknknknknknknknkaNnknkaNnknkaNnknkaNnknknknknknknknknkaNnknkaNnjnjnjnjnjnjnjnjnjnjnjnjnjnjnjaNaNnkaNnknknknknknkaNaNaNnkaNnjnjnjnjnj
+nkaNaNnkaNnknkaNaNaNaNaNaNaNaNaNaNaNaNnknknknkaNaNaNaNnknkaNnknkaNaNaNaNaNaNaNaNaNaNaNnknkaNnknkaNnknkaNaNaNaNaNaNaNaNaNaNaNnknkaNaNaNaNaNaNnjnjaNnnnnaNaNaNaNaNnmnknkaNnknknknknknkaNnknknkaNnjnjnjnjnj
+nkaNnknkaNnknkaNnknknknknknknknknknknknknknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknknknknknkaNnkaNaNaNnjnjnjnjnj
+nkaNnjnmaNnknkaNnknknknknknknknknknknknknknknknknknknknknkaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknknknknknkaNnknknkaNnjnjnjnjnj
+nkaNnjnjaNnknkaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNnknknknknknkaNaNaNnkaNnjnjnjnjnj
+nlaNaNnvaNnknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknknkaNnknknkaNnjnjnjnjnj
 "}
 
 (1,1,4) = {"

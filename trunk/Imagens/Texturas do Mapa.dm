@@ -2586,36 +2586,21 @@ turf
 
 turf
 	BuracoKumo
-		icon = 'akat.dmi'
-		icon_state = "1"
+		icon = 'PassagemSecreta.dmi'
+		icon_state = "BuracoKumo"
 		density = 0
 		Enter(A)
 			if(ismob(A))
 				var/mob/M = A
 
-				if(M.Village=="Sound")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Mist")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Leaf")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Grass")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Rain")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Waterfall")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Sand")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Rock")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Cloud")
-					usr<<"Você não tem permissão para entrar aqui!"
-				if(M.Village=="Snow")
-					usr<<"Você não tem permissão para entrar aqui!"
-					return
-				if(M.Village=="")
-					M.loc = locate(89,96,7)
+				if(M.rank=="Student")
+					usr<<"<font color=green><font size=2>Você precisa ser no mínimo um <font color=red><font size=3>Genin<font color=green><font size=2>. Esse local é perigoso para estudantes!"
+				else
+					if(M.Yen < 90000)
+						usr<<"<font color=red><font size=2>Você não tem dinheiro para entrar neste local !"
+					else
+						M.Yen -= 90000
+						M.loc = locate(89,96,7)	//Local Teste
 			else
 				if(istype(A,/obj/)) del(A)
 turf

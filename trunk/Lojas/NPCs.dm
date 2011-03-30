@@ -2203,29 +2203,49 @@ mob
 			return..()
 mob/npc
 	GuardiaoKumogakure
-		name = "Guardião"
+		name = "Guardião Da Passagem"
 		icon = 'Banker.dmi'
-		icon_state = "Vendedor de pergaminhos"
+		icon_state = "Banco"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		verb
 			Falar()
 				set src in oview(3)
 				set name="***  Abra a passagem  ***"
-				switch(input("Essa passagem só é desbloquiada com a senha do Raikage! Quantos Bijus existiam na vila de Kumogakure?")in list("1","2","3","4"))
-					if("2")
-						usr<<"Você acertou"
-					else
-						usr.death
-						usr<<"Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] está morto agora!!!"
-						return
-				switch(input("Você acertou, mas quero que responda mais uma pergunta! Quantas caudas tinha esses bijus?")in list("8 caudas e 2 caudas","9 caudas e 5 caudas","2 caudas e 1 cauda","5 caudas e 8 caudas"))
-					if("8 caudas e 2 caudas")
-						usr<<"Vejo que você é um homem de confiança e muito inteligente!<font size = 3><font color = red> [usr] está liberado para passar"
-					else
-						usr.death
-						usr<<"Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] está morto agora!!!"
-						return
+
+				usr<<"<font color=yellow><font size=2><b>Para descobrir como passar aqui você deve pagar <font color=red><font size=3><b>90000Yen."
+				switch(input("Você deseja pagar para descobrir?")in list("Sim","Não"))
+					if("Sim")
+						if(usr.Yen < 90000)
+							usr<<"<font color=red><font size=3><b>Você não tem dinheiro para pagar a taxa !"
+						else
+							usr.Yen -= 90000
+							usr<<"<font color=green><font size =3><b>[usr] *Pagou*"
+							switch(input("Essa passagem só é desbloquiada se você me responder há duas perguntas! Quantos Bijus existiam na vila de Kumogakure?")in list("1","2","3","4"))
+								if("2")
+									usr<<"<font color=yellow><font size=2><b>Você acertou!"
+								else
+									usr.health = 0
+									usr.Death(usr)
+									usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
+									if(usr)
+										usr.dead=1
+									return
+							switch(input("Você acertou, mas quero que responda mais uma pergunta! Quantas caudas tinha esses bijus?")in list("8 caudas e 2 caudas","9 caudas e 5 caudas","2 caudas e 1 cauda","5 caudas e 8 caudas"))
+								if("8 caudas e 2 caudas")
+									usr<<"<font color=yellow><font size=2><b>Vejo que você é um homem de confiança e muito inteligente!<font size = 3><font color = green><b> [usr] está liberado para passar."
+									density=0
+									sleep(80)
+									density=1
+								else
+									usr.health = 0
+									usr.Death(usr)
+									usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
+									if(usr)
+										usr.dead=1
+									return
+					if("Não")
+						usr<<"<font color=yellow><font size=2><b>Intão Volte de onde veio!"
 
 mob/npc/Comuns/
 	Summon_Vender
