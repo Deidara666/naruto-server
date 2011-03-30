@@ -36,7 +36,6 @@
 #define FILE_DIR "Lojas"
 #define FILE_DIR "Mapa"
 #define FILE_DIR "Mapa/backup"
-#define FILE_DIR "Mapa/backup/backup"
 #define FILE_DIR "Skin"
 #define FILE_DIR "Skin_Cesar"
 // END_FILE_DIR
