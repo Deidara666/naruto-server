@@ -101,6 +101,11 @@ turf
 			icon = 'Suna.dmi'
 			icon_state = "3"
 			density = 1
+		SunaC4
+			icon = 'Suna.dmi'
+			icon_state = "4"
+			density = 1
+
 		Hospital1
 			icon = 'predios.dmi'
 			icon_state = "banner"
