@@ -13,15 +13,15 @@ obj/KageRoupas
 				if(src.worn == 1)
 					src:worn = 0
 					usr.overlays -= 'AmekageSuit.dmi'//temp icon
-					usr << "You remove the [src.name]."
+					usr << "Você removeu a [src.name]."
 					src.suffix = ""
 				else
 					src:worn = 1
 					usr.overlays += 'AmekageSuit.dmi'
-					usr << "You wear the [src.name]."
+					usr << "Você está usando a [src.name]."
 					src.suffix = "Equipped"
 			Look()
-				usr<<"This is a official suit given to the Amekage."
+				usr<<"Essa é uma roupa oficial de Amekage."
 			Drop()
 				if(src:worn == 1)
 					usr << "Not while its being worn."
@@ -31,7 +31,7 @@ obj/KageRoupas
 			Get()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a [src]"
+				usr<<"Você pegou a [src]"
 
 obj/KageRoupas
 	HokageSuit
@@ -44,15 +44,15 @@ obj/KageRoupas
 				if(src.worn == 1)
 					src:worn = 0
 					usr.overlays -= 'HokageSuit.dmi'//temp icon
-					usr << "You remove the [src.name]."
+					usr << "Você removeu a[src.name]."
 					src.suffix = ""
 				else
 					src:worn = 1
 					usr.overlays += 'HokageSuit.dmi'
-					usr << "You wear the [src.name]."
+					usr << "Você está usando a [src.name]."
 					src.suffix = "Equipped"
 			Look()
-				usr<<"This is a official suit given to the Hokage."
+				usr<<"Essa é uma roupa oficial de Hokage."
 			Drop()
 				if(src:worn == 1)
 					usr << "Not while its being worn."
@@ -62,7 +62,7 @@ obj/KageRoupas
 			Get()
 				set src in oview(1)
 				src.loc = usr
-				usr<<"You picked up a [src]"
+				usr<<"Você pegou a [src]"
 
 obj/KageRoupas
 	HoshikageSuit
