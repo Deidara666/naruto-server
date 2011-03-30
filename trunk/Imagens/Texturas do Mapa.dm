@@ -1,4 +1,55 @@
 turf
+	Grama1
+		Grama1
+			icon = 'verde.dmi'
+			icon_state = "0,13"
+			density = 0
+		Grama2
+			icon = 'verde.dmi'
+			icon_state = "2,13"
+			density = 0
+		Grama3
+			icon = 'verde.dmi'
+			icon_state = "0,15"
+			density = 0
+		Grama4
+			icon = 'verde.dmi'
+			icon_state = "2,15"
+			density = 0
+		Grama5
+			icon = 'verde.dmi'
+			icon_state = "1,13"
+			density = 0
+		Grama6
+			icon = 'verde.dmi'
+			icon_state = "0,14"
+			density = 0
+		Grama7
+			icon = 'verde.dmi'
+			icon_state = "2,14"
+			density = 0
+		Grama8
+			icon = 'verde.dmi'
+			icon_state = "1,15"
+			density = 0
+		Grama9
+			icon = 'verde.dmi'
+			icon_state = "3,13"
+			density = 0
+		Grama10
+			icon = 'verde.dmi'
+			icon_state = "4,13"
+			density = 0
+		Grama11
+			icon = 'verde.dmi'
+			icon_state = "3,14"
+			density = 0
+		Grama12
+			icon = 'verde.dmi'
+			icon_state = "4,14"
+			density = 0
+
+turf
 	Ponte
 		Ponte1
 			icon = 'verde.dmi'
