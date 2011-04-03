@@ -1,3 +1,5 @@
+//            --- Comuns ---
+
 mob/npc/Comuns/Banker//the new banker!
 	name = "Banqueiro(NPC)"
 	icon = 'Banker.dmi'
@@ -81,126 +83,6 @@ mob/npc/Comuns/Vet
 					del(P)
 			usr.hasdog=0
 			usr << "Vai criar um novo animal de estimação."
-
-mob
-	var/tmp
-		NPC = 0
-		original
-		moving=0
-		getingready=0
-		bowner
-		hairPrefix
-		enemy
-		statePrefix
-		lowner
-		sowner
-		wowner
-mob
-	npcs
-		KBunshin
-			human = 1
-			NPC = 1
-
-			proc/Die()
-				flick("smoke2",src)
-				del(src)
-			Bump(atom/M)
-				if(istype(M,/mob/)) // If they run into the player
-					if(M == bowner||M == src.original||M.name==src.name)
-						return
-					else
-						if(src.firing)
-							return
-						var/mob/P = M
-						var/Damage = src.tai
-						src.firing=1
-						if(P.Kaiten)
-							del(src)
-						if(P.drunk&&P.NonClan)
-							view()<<"[M] atacou [src]'s atacou"
-							sleep(13)
-							src.firing=0
-							return
-						P.health -= Damage
-						view() << "O [src] atacou [M] e tirou [Damage]!"
-						P.Death(src)
-						sleep(10)
-						src.firing=0
-		KKBunshin
-			proc/Die()
-				flick("smoke2",src)
-				del(src)
-			Bump(atom/M)
-				if(istype(M,/mob/)) // If they run into the player
-					if(M == lowner||M == src.original||M.name==src.name)
-						return
-					else
-						if(!src.firing)
-							src.firing=1
-							var/mob/P = M
-							var/Damage = src.tai
-							if(P.Kaiten)
-								del(src)
-							if(P.drunk&&P.NonClan)
-								view()<<"[M] dodges [src]'s atacou"
-								sleep(13)
-								src.firing=0
-								return
-							P.health -= Damage // Takes the players health
-							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
-							P.Death(src)
-						sleep(5)
-						src.firing=0
-		SBunshin
-			human = 1
-			NPC = 1
-
-			proc/Die()
-				flick("smoke2",src)
-				del(src)
-			Bump(atom/M)
-				if(istype(M,/mob/)) // If they run into the player
-					if(M == sowner||M == src.original||M.name==src.name)
-						return
-					else
-						if(!src.firing)
-							src.firing=1
-							var/mob/P = M
-							var/Damage = src.tai
-							if(P.Kaiten)
-								del(src)
-							if(P.drunk&&P.NonClan)
-								view()<<"[M] dodges [src]'s atacou"
-								sleep(13)
-								src.firing=0
-								return
-							P.health -= Damage // Takes the players health
-							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
-							P.Death(src)
-						sleep(5)
-						src.firing=0
-		Bunshin
-			human = 1
-			NPC = 1
-
-			proc/Die()
-				flick("smoke2",src)
-				del(src)
-
-
-
-mob
-	proc/CheckAction()
-		return
-
-proc/Name2Mob(var/mName as text)
-	for(var/mob/i in world)
-		if("[lowertext(i.name)]" == "[lowertext(mName)]")
-			return i
-
-obj
-	var/tmp
-		price
 
 mob/npc/Comuns/
 	Merchant2
@@ -363,259 +245,6 @@ mob/npc/Comuns/
 							usr<<"Você não tem dinheiro o suficiente!"
 					if("Nada")
 						return
-
-//                                      --- Sabios ---
-
-mob/npc/Sabios
-	SabioDosMapas
-		name = "Sabio dos Mapas(NPC)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Parabéns por me achar! Você é merecedor de um PRÊMIO!!!")in list("Mapa do Laberinto(Completo)","Mapa do Mundo(Pedaço1)","Mapa do Mundo(Pedaço2)","Mapa do Mundo(Pedaço3)","Mapa do Mundo(Pedaço4)"))
-					if("Mapa do Laberinto(Completo)")
-						return
-					if("Mapa do Mundo(Pedaço1)")
-						return
-					if("Mapa do Mundo(Pedaço2)")
-						return
-					if("Mapa do Mundo(Pedaço3)")
-						return
-					if("Mapa do Mundo(Pedaço4)")
-						return
-
-mob/npc/Sabios
-	SabioDeFuuton
-		name = "Sabio do Vento(Fuuton)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Fuuton","Nada"))
-					if("Quero saber mais sobre o elemento Fuuton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeRaiton
-		name = "Sabio do Trovão(Raiton)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Raiton","Nada"))
-					if("Quero saber mais sobre o elemento Raiton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeKaton
-		name = "Sabio do Fogo(Katon)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Katon","Nada"))
-					if("Quero saber mais sobre o elemento Katon")
-						return
-					if("Nada")
-						return
-
-mob/npc/Sabios
-	SabioDeDoton
-		name = "Sabio da Terra(Doton)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Doton","Nada"))
-					if("Quero saber mais sobre o elemento Doton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeSuiton
-		name = "Sabio da Água(Suiton)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Suiton","Nada"))
-					if("Quero saber mais sobre o elemento Suiton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeBakuton
-		name = "Sabio das Explosões(Bakuton)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Bakuton","Nada"))
-					if("Quero saber mais sobre o elemento Bakuton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeFutton
-		name = "Sabio de Futton(Ácido)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Futton","Nada"))
-					if("Quero saber mais sobre o elemento Futton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeHyouton
-		name = "Sabio de Hyouton(Gelo)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Hyouton","Nada"))
-					if("Quero saber mais sobre o elemento Hyouton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeJinton
-		name = "Sabio de Jinton(Poeira)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Jinton","Nada"))
-					if("Quero saber mais sobre o elemento Jinton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeMokuton
-		name = "Sabio de Mokuton(Madeira)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Mokuton","Nada"))
-					if("Quero saber mais sobre o elemento Mokuton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeRanton
-		name = "Sabio de Ranton(Tempestade)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Ranton","Nada"))
-					if("Quero saber mais sobre o elemento Ranton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeShakuton
-		name = "Sabio de Shakuton(Calor)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shakuton","Nada"))
-					if("Quero saber mais sobre o elemento Shakuton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeShouton
-		name = "Sabio de Shouton(Cristal)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shouton","Nada"))
-					if("Quero saber mais sobre o elemento Shouton")
-						return
-					if("Nada")
-						return
-mob/npc/Sabios
-	SabioDeYouton
-		name = "Sabio de Youton(Lava)"
-		icon = 'Banker.dmi'
-		icon_state = "Chefe"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Youton","Nada"))
-					if("Quero saber mais sobre o elemento Youton")
-						return
-					if("Nada")
-						return
-
-//-----------------------------------------------------------------------------------------------------------------------------------------
 
 mob/npc/Comuns/
 	Merchant
@@ -1080,6 +709,383 @@ mob/npc/Comuns/
 										usr.overlays += usr.hair
 									if("Careca")
 										usr.hair = "Bald"
+
+mob
+	var/tmp
+		NPC = 0
+		original
+		moving=0
+		getingready=0
+		bowner
+		hairPrefix
+		enemy
+		statePrefix
+		lowner
+		sowner
+		wowner
+mob
+	npcs
+		KBunshin
+			human = 1
+			NPC = 1
+
+			proc/Die()
+				flick("smoke2",src)
+				del(src)
+			Bump(atom/M)
+				if(istype(M,/mob/)) // If they run into the player
+					if(M == bowner||M == src.original||M.name==src.name)
+						return
+					else
+						if(src.firing)
+							return
+						var/mob/P = M
+						var/Damage = src.tai
+						src.firing=1
+						if(P.Kaiten)
+							del(src)
+						if(P.drunk&&P.NonClan)
+							view()<<"[M] atacou [src]'s atacou"
+							sleep(13)
+							src.firing=0
+							return
+						P.health -= Damage
+						view() << "O [src] atacou [M] e tirou [Damage]!"
+						P.Death(src)
+						sleep(10)
+						src.firing=0
+		KKBunshin
+			proc/Die()
+				flick("smoke2",src)
+				del(src)
+			Bump(atom/M)
+				if(istype(M,/mob/)) // If they run into the player
+					if(M == lowner||M == src.original||M.name==src.name)
+						return
+					else
+						if(!src.firing)
+							src.firing=1
+							var/mob/P = M
+							var/Damage = src.tai
+							if(P.Kaiten)
+								del(src)
+							if(P.drunk&&P.NonClan)
+								view()<<"[M] dodges [src]'s atacou"
+								sleep(13)
+								src.firing=0
+								return
+							P.health -= Damage // Takes the players health
+							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
+							P.Death(src)
+						sleep(5)
+						src.firing=0
+		SBunshin
+			human = 1
+			NPC = 1
+
+			proc/Die()
+				flick("smoke2",src)
+				del(src)
+			Bump(atom/M)
+				if(istype(M,/mob/)) // If they run into the player
+					if(M == sowner||M == src.original||M.name==src.name)
+						return
+					else
+						if(!src.firing)
+							src.firing=1
+							var/mob/P = M
+							var/Damage = src.tai
+							if(P.Kaiten)
+								del(src)
+							if(P.drunk&&P.NonClan)
+								view()<<"[M] dodges [src]'s atacou"
+								sleep(13)
+								src.firing=0
+								return
+							P.health -= Damage // Takes the players health
+							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
+							P.Death(src)
+						sleep(5)
+						src.firing=0
+		Bunshin
+			human = 1
+			NPC = 1
+
+			proc/Die()
+				flick("smoke2",src)
+				del(src)
+
+
+
+mob
+	proc/CheckAction()
+		return
+
+proc/Name2Mob(var/mName as text)
+	for(var/mob/i in world)
+		if("[lowertext(i.name)]" == "[lowertext(mName)]")
+			return i
+
+obj
+	var/tmp
+		price
+
+
+
+//                                      --- Sabios ---
+
+mob/npc/Sabios
+	SabioDosMapas
+		name = "Sabio dos Mapas(NPC)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Parabéns por me achar! Você é merecedor de um PRÊMIO!!!")in list("Mapa do Laberinto(Completo)","Mapa do Mundo(Pedaço1)","Mapa do Mundo(Pedaço2)","Mapa do Mundo(Pedaço3)","Mapa do Mundo(Pedaço4)"))
+					if("Mapa do Laberinto(Completo)")
+						return
+					if("Mapa do Mundo(Pedaço1)")
+						return
+					if("Mapa do Mundo(Pedaço2)")
+						return
+					if("Mapa do Mundo(Pedaço3)")
+						return
+					if("Mapa do Mundo(Pedaço4)")
+						return
+
+mob/npc/Sabios
+	SabioDeFuuton
+		name = "Sabio do Vento(Fuuton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Fuuton","Nada"))
+					if("Quero saber mais sobre o elemento Fuuton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeRaiton
+		name = "Sabio do Trovão(Raiton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Raiton","Nada"))
+					if("Quero saber mais sobre o elemento Raiton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeKaton
+		name = "Sabio do Fogo(Katon)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Katon","Nada"))
+					if("Quero saber mais sobre o elemento Katon")
+						return
+					if("Nada")
+						return
+
+mob/npc/Sabios
+	SabioDeDoton
+		name = "Sabio da Terra(Doton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Doton","Nada"))
+					if("Quero saber mais sobre o elemento Doton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeSuiton
+		name = "Sabio da Água(Suiton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Suiton","Nada"))
+					if("Quero saber mais sobre o elemento Suiton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeBakuton
+		name = "Sabio das Explosões(Bakuton)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Bakuton","Nada"))
+					if("Quero saber mais sobre o elemento Bakuton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeFutton
+		name = "Sabio de Futton(Ácido)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Futton","Nada"))
+					if("Quero saber mais sobre o elemento Futton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeHyouton
+		name = "Sabio de Hyouton(Gelo)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Hyouton","Nada"))
+					if("Quero saber mais sobre o elemento Hyouton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeJinton
+		name = "Sabio de Jinton(Poeira)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Jinton","Nada"))
+					if("Quero saber mais sobre o elemento Jinton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeMokuton
+		name = "Sabio de Mokuton(Madeira)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Mokuton","Nada"))
+					if("Quero saber mais sobre o elemento Mokuton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeRanton
+		name = "Sabio de Ranton(Tempestade)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Ranton","Nada"))
+					if("Quero saber mais sobre o elemento Ranton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeShakuton
+		name = "Sabio de Shakuton(Calor)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shakuton","Nada"))
+					if("Quero saber mais sobre o elemento Shakuton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeShouton
+		name = "Sabio de Shouton(Cristal)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shouton","Nada"))
+					if("Quero saber mais sobre o elemento Shouton")
+						return
+					if("Nada")
+						return
+mob/npc/Sabios
+	SabioDeYouton
+		name = "Sabio de Youton(Lava)"
+		icon = 'Banker.dmi'
+		icon_state = "Chefe"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Youton","Nada"))
+					if("Quero saber mais sobre o elemento Youton")
+						return
+					if("Nada")
+						return
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+
 mob
 	proc
 		NPCAI() //name of proc
