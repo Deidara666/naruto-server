@@ -274,19 +274,23 @@ turf
 		Montanha2
 			icon = 'agua.dmi'
 			icon_state = "mont1"
-			density = 1
+			density = 0
+			layer = 10
 		Montanha3
 			icon = 'agua.dmi'
 			icon_state = "mont2"
-			density = 1
+			density = 0
+			layer = 10
 		Montanha4
 			icon = 'agua.dmi'
 			icon_state = "mont3"
-			density = 1
+			density = 0
+			layer = 10
 		Montanha5
 			icon = 'agua.dmi'
 			icon_state = "mont4"
-			density = 1
+			density = 0
+			layer = 10
 
 	ParedeETelha
 		PmadFerro1
@@ -729,7 +733,7 @@ turf
 		Objeto4
 			icon = 'verde.dmi'
 			icon_state = "4,15"
-
+			density = 1
 
 turf
 	Terra

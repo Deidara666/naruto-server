@@ -1135,7 +1135,7 @@
 "vQ" = (/turf/Gramas/Gramado,/turf/fence1,/turf/Chuva,/area)
 "vR" = (/turf/Gramas/Gramado,/turf/fence1,/turf/fence2,/turf/fence3,/turf/Chuva,/area)
 "vS" = (/turf/dirt,/turf/Chuva,/area)
-"vT" = (/turf/dirt,/mob/RainSpawndude,/turf/Chuva,/area)
+"vT" = (/turf/dirt,/mob/npc/Comuns/RainSpawndude,/turf/Chuva,/area)
 "vU" = (/turf/dirt,/turf/NONPK,/turf/Chuva,/area)
 "vV" = (/turf/wall3,/turf/Chuva,/area)
 "vW" = (/turf/mountain1,/turf/Chuva,/area)

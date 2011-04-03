@@ -1346,7 +1346,7 @@ mob/npc/Comuns/
 //------------------------------------------------------------------------------------------------------------------------------------------
 
 //                                      --- Sabios ---
-
+//--- Sabios Elementais---
 mob/npc/Sabios
 	SabioDosMapas
 		name = "Sabio dos Mapas(NPC)"
@@ -1593,6 +1593,33 @@ mob/npc/Sabios
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Youton","Nada"))
 					if("Quero saber mais sobre o elemento Youton")
 						return
+					if("Nada")
+						return
+
+//--- Sabios Vila ---
+
+mob/npc/Sabios
+	SabioDeKumo
+		name = "Sabio de Kumogakure"
+		icon = 'Sabios.dmi'
+		icon_state = "Kumo"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set name="***  Falar  ***"
+				set src in oview(3)
+				switch(input("Deseja aprender os segredos de Kumogakure? Lembre-se você precisa ser de Kumogakure e ter alguns STATUS para aprende-los.")in list("Quero aprender os seus segredos","Nada"))
+					if("Quero aprender os seus segredos")
+						if(usr.rainS == 1)
+							if(usr.level >= 200)
+								usr.verbs += new /mob/flight/verb/Cloud()
+								usr<<"<font color=green><font size=3><b>Você aprendeu Fly."
+							else
+								usr<<"<font color=red><font size=2><b>Você precisa ter no mínimo Level 200 para usar o Fly."
+						else
+							usr<<"<font color=red><font size=3><b>Não tente me enganar<font color=yellow><font size=2></b>, você não é de Kumogakure"
+							return
 					if("Nada")
 						return
 
