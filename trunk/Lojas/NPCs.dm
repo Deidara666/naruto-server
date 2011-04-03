@@ -1,4 +1,637 @@
 //            --- Comuns ---
+mob/npc/Comuns/Orochimaru
+	name = "Orochimaru"
+	icon = 'orochimaru.dmi'
+	PK = 0
+	health = 9999999999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category = "Orochimaru"
+			set name="***  Falar  ***"
+			switch(input("Muashuahsuas... vejo que você tem muita coragem só de vir até mim;",text) in list ("Sair correndo","Rir de Orochimaru e tentar lutar","Desculpe não queria chamar sua atenção"))
+				if("Sair correndo","Rir de Orochimaru e tentar lutar")
+					if(usr.Uchiha == 1)
+						usr<<"... hum... Você tem algo que me interessa"
+						world<<"<B><font size = 3><font color = green> [usr] <B><font size = 2><font color = red> acaba de ser amaldiçoado por <B><font size = 3><font color = green> Orochimaru <B><font size = 2><font color = red> na floresta da morte."
+
+						switch(input("Eu tenho uma pergunta! Você mataria amigos, inimigos e aliados em busca de um desejo?",text) in list ("Sim","Não"))
+							if("Sim")
+
+								if(usr.Clan=="Uchiha")
+									usr << "<B><font color = blue>Você foi amaldiçoado por Orochimaru Sama"
+									usr.verbs += new /mob/Uchiha/verb/SeloAmaldicoado()
+
+					else
+						usr<<"Pena que você é um méro ninja qualquer e morrera aqui mesmo."
+
+				if("Desculpe não queria chamar sua atenção")
+					usr<<"Você fica amedrontado e corre de Orochimaru"
+					return
+
+mob/npc/Comuns/Squads
+	name="Jounin Squad assignments."
+	icon='Banker.dmi'
+	icon_state = "Banco"
+	PK = 0
+	health=999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category="Squads"
+			set name="***  Falar  ***"
+			switch(input("Do you wish to form a squad of genin and train them to become chuunin?",text) in list ("Yes","No"))
+				if("Yes")
+					if(usr.squads==0)
+						if(usr.rank=="Student"||usr.rank=="Missing")
+							usr<<"Your not allowed a squad."
+							return
+						else
+							alert("IF you change the font size YOUR BANNED!& if u use HTML remember to use the </font> at the end!")
+							var/squad = input("","Squad") as text|null
+							usr.squads=1
+							usr.squad="[(squad)]"
+							usr.verbs += typesof(/mob/Squads/verb)
+					else
+						usr<<"Your already in a squad."
+				else
+					usr<<"If you feel you are not ready it is best."
+
+mob/npc/Comuns/Genin
+	name="Iruka"
+	icon='Iruka.dmi'
+	PK = 0
+	health=999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(3)
+			set category="Iruka"
+			set name="***  Falar  ***"
+			switch(input("To become a Genin you must Pass the writen test and then henge me 10 times so I know that you can do it right, ok?",text) in list ("Ok","No"))
+				if("Ok")
+					if(usr.rank=="Student"&&usr.hengeN >= 10&&usr.tested>=1)
+						world<<"[usr] is now a genin"
+						usr.rank = "Genin"
+						usr.cap = Gcap
+						var/obj/Headband/B = new/obj/Headband
+						B.loc = usr
+					else
+						usr<<"Your already Genin or higher or you don't have 10 Henge uses or haven't passed the writen exam."
+				else
+					usr<<"Ok then."
+
+mob/npc/Comuns/Anko
+	name="Anko"
+	icon='Anko.dmi'
+	PK = 0
+	health=999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(3)
+			set category="Forest Exit"
+			set name="***  Falar  ***"
+			switch(input("Giveing up already are we?",text) in list ("Yes","No"))
+				if("Yes")
+					for(var/obj/heavenscroll/H in usr.contents)
+						del(H)
+					for(var/obj/earthscroll/S in usr.contents)
+						del(S)
+					usr.deathforest=0
+					usr.earthscroll=0
+					usr.heavenscroll=0
+					usr.health = 0
+					usr.Death(usr)
+					usr<<"You quit the exam!"
+				else
+					usr<<"That's the spirit."
+
+
+mob/npc/Comuns/Pawn
+	name = "Pawn Shop"
+	icon = 'Banker.dmi'
+	icon_state = "Banco"
+	PK = 0
+	health = 9999999999999999999999999999999999999999999999
+	verb
+		Sell()
+			set name="***  Vender  ***"
+			var/varPackList = list()
+			if(locate(/obj) in usr:contents)
+				for(var/obj/O in usr:contents)
+					varPackList += O
+			else
+				usr << "[usr:name] has an empty pack!"
+				return
+			var/varPackItem = input("Pick an item from [usr:name]'s pack","Sell") in varPackList + list("Cancel")
+			if(varPackItem != "Cancel")
+				if(alert("Would you like to Sell [varPackItem:name]?","[varPackItem:name]","Yes","No") == "Yes")
+
+					del(varPackItem)
+
+mob/npc/Comuns/
+	GuardiaoKumogakure
+		name = "Guardião Da Passagem"
+		icon = 'Banker.dmi'
+		icon_state = "Banco"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Falar()
+				set src in oview(3)
+				set name="***  Abra a passagem  ***"
+
+				usr<<"<font color=yellow><font size=2><b>Para descobrir como passar aqui você deve pagar <font color=red><font size=3><b>90000Yen."
+				switch(input("Você deseja pagar para descobrir?")in list("Sim","Não"))
+					if("Sim")
+						if(usr.Yen < 90000)
+							usr<<"<font color=red><font size=3><b>Você não tem dinheiro para pagar a taxa !"
+						else
+							usr.Yen -= 90000
+							usr<<"<font color=green><font size =3><b>[usr] *Pagou*"
+							switch(input("Essa passagem só é desbloquiada se você me responder há duas perguntas! Quantos Bijus existiam na vila de Kumogakure?")in list("1","2","3","4"))
+								if("2")
+									usr<<"<font color=yellow><font size=2><b>Você acertou!"
+								else
+									usr.health = 0
+									usr.Death(usr)
+									usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
+									if(usr)
+										usr.dead=1
+									return
+							switch(input("Você acertou, mas quero que responda mais uma pergunta! Quantas caudas tinha esses bijus?")in list("8 caudas e 2 caudas","9 caudas e 5 caudas","2 caudas e 1 cauda","5 caudas e 8 caudas"))
+								if("8 caudas e 2 caudas")
+									usr<<"<font color=yellow><font size=2><b>Vejo que você é um homem de confiança e muito inteligente!<font size = 3><font color = green><b> [usr] está liberado para passar."
+									density=0
+									sleep(80)
+									density=1
+								else
+									usr.health = 0
+									usr.Death(usr)
+									usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
+									if(usr)
+										usr.dead=1
+									return
+					if("Não")
+						usr<<"<font color=yellow><font size=2><b>Intão Volte de onde veio!"
+
+mob/npc/Comuns/
+	Summon_Vender
+		name = "Vendedor de pergaminhos de summon"
+		icon = 'Banker.dmi'
+		icon_state = "Vendedor de pergaminhos"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Buy()
+				set src in oview(3)
+				set name="***  Comprar  ***"
+				switch(input("Qual pergaminho você deseja comprar hoje?")in list("Snake Summon - 100k","Slug Summon - 100k","Frog Summon - 100k","Puppet Summon - 50k","Nada"))
+					if("Snake Summon - 100k")
+						if(usr.Yen >= 100000)
+							usr.Yen -= 100000
+							usr.contents += new /obj/Big_Snake_Scroll
+							usr<<"Você comprou um pergaminho de Snake Summon"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Slug Summon - 100k")
+						if(usr.Yen >= 100000)
+							usr.Yen -= 100000
+							usr.contents += new /obj/Slug_Summoning_Scroll
+							usr<<"Você comprou um pergaminho de Slug Summon"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Frog Summon - 100k")
+						if(usr.Yen >= 100000)
+							usr.Yen -= 100000
+							usr.contents += new /obj/Frog_Summoning_Scroll
+							usr<<"Você comprou um pergaminho de Frog Summon"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Puppet Summon - 50k")
+						if(usr.Yen >= 50000)
+							usr.Yen -= 50000
+							usr.contents += new /obj/Doll_Summoning_Scroll
+							usr<<"Você comprou um pergaminho de Puppet Summon"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Nada")
+						return
+mob/npc/Comuns/
+	Scroll_Vender
+		name = "Vendedor de pergaminhos de jutsus"
+		icon = 'Banker.dmi'
+		icon_state = "Vendedor de jutsus"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		verb
+			Buy()
+				set src in oview(3)
+				set name="***  Comprar  ***"
+				switch(input("Qual pergaminho você deseja comprar hoje?")in list("Kaze Dangan No Jutsu - 50k","Kage Bunshin No Jutsu - 5k","Renkuudan No Jutsu - 60k","Daitoppa No Jutsu - 50k","Doton Doryo Dango - 40k","Doton Doryuuheki - 50k","Raikyuu No Jutsu - 40k","Rairyuu No Tatsumaki - 40k","Katon Goukakyuu - 40k","Katon Housenka no jutsu - 40k","Nada"))
+					if("Kaze Dangan No Jutsu - 50k")
+						if(usr.Yen >= 50000)
+							usr.Yen -= 50000
+							usr.contents += new /obj/Scroll_Fuuton1
+							usr<<"Você comprou um pergaminho de Kaze Dangan No Jutsu"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Renkuudan No Jutsu - 60k")
+						if(usr.Yen >= 60000)
+							usr.Yen -= 60000
+							usr.contents += new /obj/Scroll_Fuuton2
+							usr<<"Você comprou um pergaminho de Renkuudan No Jutsu"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Daitoppa No Jutsu - 50k")
+						if(usr.Yen >= 50000)
+							usr.Yen -= 50000
+							usr.contents += new /obj/Scroll_Fuuton3
+							usr<<"Você comprou um pergaminho de Daitoppa No Jutsu"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Doton Doryo Dango - 40k")
+						if(usr.Yen >= 40000)
+							usr.Yen -= 40000
+							usr.contents += new /obj/Scroll_Doton1
+							usr<<"Você comprou um pergaminho de Doton Doryo Dango"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Doton Doryuuheki - 50k")
+						if(usr.Yen >= 50000)
+							usr.Yen -= 50000
+							usr.contents += new /obj/Scroll_Doton2
+							usr<<"Você comprou um pergaminho de Doton Doryuuheki"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Raikyuu No Jutsu - 40k")
+						if(usr.Yen >= 40000)
+							usr.Yen -= 40000
+							usr.contents += new /obj/Scroll_Rai1
+							usr<<"Você comprou um pergaminho de Raikyuu No Jutsu"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Rairyuu No Tatsumaki - 40k")
+						if(usr.Yen >= 40000)
+							usr.Yen -= 40000
+							usr.contents += new /obj/Scroll_Rai2
+							usr<<"Você comprou um poergaminho de Rairyuu No Tatsumaki"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Katon Goukakyuu - 40k")
+						if(usr.Yen >= 40000)
+							usr.Yen -= 40000
+							usr.contents += new /obj/Scroll_Katon1
+							usr<<"Você comprou um pergaminho de Katon Goukakyuu"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Katon Housenka no jutsu - 40k")
+						if(usr.Yen >= 40000)
+							usr.Yen -= 40000
+							usr.contents += new /obj/Scroll_Katon2
+							usr<<"Você comprou um pergaminho de Katon Housenka no jutsu"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Kage Bunshin No Jutsu - 5k")
+						if(usr.Yen >= 5000)
+							usr.Yen -= 5000
+							usr.contents += new /obj/KagebunshinS
+							usr<<"Você comprou um pergaminho de Kage Bunshin No Jutsu"
+						else
+							usr<<"Você não tem dinheiro o suficiente!"
+					if("Nada")
+						return
+
+mob/npc/Comuns/PARTYdude
+   icon = 'Spawn.dmi'
+   name = "(NPC)PARTY"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+mob/npc/Comuns/StarSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Star Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set name="***  Trocar ponto de Spawn  ***"
+         set category = "Spawn Point"
+         usr << "<b> You will now respawn in The Hidden Village of Star!"
+         usr.starS=1
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.sandS = 0
+         usr.snowS = 0
+         usr.waterfallS=0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.earthS = 0
+         usr.lightningS = 0
+         usr.mistS = 0
+mob/npc/Comuns/SnowSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Snow Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Snow!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.starS=0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.sandS = 0
+         usr.snowS = 1
+         usr.waterfallS=0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.earthS = 0
+         usr.lightningS = 0
+         usr.mistS = 0
+mob/npc/Comuns/AKATSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)AKAT Spawn Helper"
+   PK = 0
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Akat base!"
+         usr.akatS = 1
+         usr.soS = 0
+         usr.starS=0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.sandS = 0
+         usr.snowS = 0
+         usr.waterfallS=0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.earthS = 0
+         usr.lightningS = 0
+         usr.mistS = 0
+mob/npc/Comuns/SOSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)SO Spawn Helper"
+   PK = 0
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The SO base!"
+         usr.akatS = 0
+         usr.soS = 1
+         usr.leafS = 0
+         usr.starS=0
+         usr.grassS = 0
+         usr.sandS = 0
+         usr.snowS = 0
+         usr.waterfallS=0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.earthS = 0
+         usr.lightningS = 0
+         usr.mistS = 0
+mob/npc/Comuns/LeafSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Leaf Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Leaf!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 1
+         usr.starS=0
+         usr.snowS = 0
+         usr.grassS = 0
+         usr.sandS = 0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.earthS = 0
+         usr.waterfallS=0
+         usr.mistS = 0
+         usr.lightningS = 0
+mob/npc/Comuns/SoundSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Sound Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Sound!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.sandS = 0
+         usr.starS=0
+         usr.snowS = 0
+         usr.soundS = 1
+         usr.rainS = 0
+         usr.waterfallS=0
+         usr.earthS = 0
+         usr.mistS = 0
+         usr.lightningS = 0
+mob/npc/Comuns/WaterfallSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Waterfall Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Waterfall!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.sandS = 0
+         usr.snowS = 0
+         usr.starS=0
+         usr.soundS = 0
+         usr.waterfallS=1
+         usr.rainS = 0
+         usr.earthS = 0
+         usr.mistS = 0
+         usr.lightningS = 0
+mob/npc/Comuns/RainSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Rain Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Rain!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.waterfallS=0
+         usr.sandS = 0
+         usr.snowS = 0
+         usr.starS=0
+         usr.soundS = 0
+         usr.rainS = 1
+         usr.earthS = 0
+         usr.mistS = 0
+         usr.lightningS = 0
+mob/npc/Comuns/SandSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Sand Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Sand!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.sandS = 1
+         usr.starS=0
+         usr.snowS = 0
+         usr.waterfallS=0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.earthS = 0
+         usr.lightningS = 0
+         usr.mistS = 0
+mob/npc/Comuns/GrassSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Grass Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Grass!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 0
+         usr.grassS = 1
+         usr.sandS = 0
+         usr.starS=0
+         usr.snowS = 0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.earthS = 0
+         usr.lightningS = 0
+         usr.waterfallS=0
+         usr.mistS = 0
+mob/npc/Comuns/EarthSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Rock Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Earth!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 0
+         usr.starS=0
+         usr.grassS = 0
+         usr.waterfallS=0
+         usr.sandS = 0
+         usr.snowS = 0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.earthS = 1
+         usr.lightningS = 0
+         usr.mistS = 0
+mob/npc/Comuns/mistSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Mist Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Mist!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.starS=0
+         usr.sandS = 0
+         usr.soundS = 0
+         usr.waterfallS=0
+         usr.rainS = 0
+         usr.snowS = 0
+         usr.earthS = 0
+         usr.lightningS = 0
+         usr.mistS = 1
+mob/npc/Comuns/LightningSpawndude
+   icon = 'Spawn.dmi'
+   name = "(NPC)Cloud Spawn Helper"
+   PK = 1
+   health = 9999999999999999999999999999999999999999999999
+   density = 1
+   verb
+      ChangeSpawnPoint()
+         set src in oview(1)
+         set category = "Spawn Point"
+         set name="***  Trocar ponto de Spawn  ***"
+         usr << "<b> You will now respawn in The Hidden Village of Earth!"
+         usr.akatS = 0
+         usr.soS = 0
+         usr.starS=0
+         usr.leafS = 0
+         usr.grassS = 0
+         usr.sandS = 0
+         usr.waterfallS=0
+         usr.soundS = 0
+         usr.rainS = 0
+         usr.snowS = 0
+         usr.earthS = 0
+         usr.lightningS = 1
+         usr.mistS = 0
 
 mob/npc/Comuns/Banker//the new banker!
 	name = "Banqueiro(NPC)"
@@ -710,127 +1343,7 @@ mob/npc/Comuns/
 									if("Careca")
 										usr.hair = "Bald"
 
-mob
-	var/tmp
-		NPC = 0
-		original
-		moving=0
-		getingready=0
-		bowner
-		hairPrefix
-		enemy
-		statePrefix
-		lowner
-		sowner
-		wowner
-mob
-	npcs
-		KBunshin
-			human = 1
-			NPC = 1
-
-			proc/Die()
-				flick("smoke2",src)
-				del(src)
-			Bump(atom/M)
-				if(istype(M,/mob/)) // If they run into the player
-					if(M == bowner||M == src.original||M.name==src.name)
-						return
-					else
-						if(src.firing)
-							return
-						var/mob/P = M
-						var/Damage = src.tai
-						src.firing=1
-						if(P.Kaiten)
-							del(src)
-						if(P.drunk&&P.NonClan)
-							view()<<"[M] atacou [src]'s atacou"
-							sleep(13)
-							src.firing=0
-							return
-						P.health -= Damage
-						view() << "O [src] atacou [M] e tirou [Damage]!"
-						P.Death(src)
-						sleep(10)
-						src.firing=0
-		KKBunshin
-			proc/Die()
-				flick("smoke2",src)
-				del(src)
-			Bump(atom/M)
-				if(istype(M,/mob/)) // If they run into the player
-					if(M == lowner||M == src.original||M.name==src.name)
-						return
-					else
-						if(!src.firing)
-							src.firing=1
-							var/mob/P = M
-							var/Damage = src.tai
-							if(P.Kaiten)
-								del(src)
-							if(P.drunk&&P.NonClan)
-								view()<<"[M] dodges [src]'s atacou"
-								sleep(13)
-								src.firing=0
-								return
-							P.health -= Damage // Takes the players health
-							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
-							P.Death(src)
-						sleep(5)
-						src.firing=0
-		SBunshin
-			human = 1
-			NPC = 1
-
-			proc/Die()
-				flick("smoke2",src)
-				del(src)
-			Bump(atom/M)
-				if(istype(M,/mob/)) // If they run into the player
-					if(M == sowner||M == src.original||M.name==src.name)
-						return
-					else
-						if(!src.firing)
-							src.firing=1
-							var/mob/P = M
-							var/Damage = src.tai
-							if(P.Kaiten)
-								del(src)
-							if(P.drunk&&P.NonClan)
-								view()<<"[M] dodges [src]'s atacou"
-								sleep(13)
-								src.firing=0
-								return
-							P.health -= Damage // Takes the players health
-							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
-							P.Death(src)
-						sleep(5)
-						src.firing=0
-		Bunshin
-			human = 1
-			NPC = 1
-
-			proc/Die()
-				flick("smoke2",src)
-				del(src)
-
-
-
-mob
-	proc/CheckAction()
-		return
-
-proc/Name2Mob(var/mName as text)
-	for(var/mob/i in world)
-		if("[lowertext(i.name)]" == "[lowertext(mName)]")
-			return i
-
-obj
-	var/tmp
-		price
-
-
+//------------------------------------------------------------------------------------------------------------------------------------------
 
 //                                      --- Sabios ---
 
@@ -1085,1302 +1598,253 @@ mob/npc/Sabios
 
 //-----------------------------------------------------------------------------------------------------------------------------------------
 
-
-mob
-	proc
-		NPCAI() //name of proc
-			var/mob/player/M //variable M has to be mob/usr
-			while(src) //while src is stil kickin
-				if(M in oview(5)) //if M is in oview(5)
-					if(M.name in src.killlist) //now if M.name is in src.killlist, this has it only attack if attacked!
-						walk_to(src,M,1,4) //src walks to M until 1 block away, moving 4/10ths of a second
-						if(M in oview(1)) //if M is in oview(1)
-							step_towards(src,M) //src steps toward M
-					else //if usr.name isnt in src.killlist
-						sleep(15)//pauses for 1 and 1/2 seconds
-						step_rand(src) //step randomly on the field
-						break //breaks out of the while loop
-				else //if M isnt in oview(5)
-					for(M in view(src)) //for all Ms in view(src)
-						break //breaks out of the while loop
-				sleep(5) //pauses 1/2 second before redoing loop
-			spawn(2) // pauses 2/10 of second before redoing proc
-				NPCAI()
-
-mob
-	proc
-		MONATTACK(mob/M in get_step(src,src.dir))
-			if(M.drunk&&M.NonClan)
-				view(M)<<"[M] dodges [src]'s atacou."
-				return
-			if(src.orochimaru&&src.canattack)
-				if(!M.bit)
-					var/damage = round(src.tai/1.6)
-					if(damage <= 1)
-						damage = 1
-						view() << "[src] atacou [M] e tirou [damage]!"
-						M.health -= damage
-						if(M.health <= 0)
-							src.killlist = ""
-							M.Death(src)
-						if(istype(M,/mob/enemy))
-							M.killlist += src.name
+// 																--- Clan ---
+mob/npc/Clan/Gaara
+	name = "Gaara"
+	icon = 'npcs.dmi'
+	icon_state = "Gaara"
+	PK = 0
+	health = 99999999999999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category = "Gaara"
+			set name="***  Falar  ***"
+			switch(input("Help me awaken my demon shead your blood for me.",text) in list ("Yes","No","I'm Gaara too.","Unlock My Demon"))
+				if("Yes")
+					usr.maxhealth -= 1000
+					usr<<"mmmmm That's it now watch closely and run before it's too late."
+					usr.Oboar=1
+					usr<<"You have learned the Boar sign."
+				if("No")
+					usr<<"Coward"
+				if("I'm Gaara too.")
+					if(usr.Gaaraclan)
+						usr<<"Really."
+						if(usr.Gaaraclan&&usr.Mnin >=100)
+							usr << "<B><font color = blue>Você aprendeu o Suna Shuriken No Jutsu!"
+							usr.verbs += new /mob/gaara/verb/SunaShuriken()
+						else
+							usr<<"Hit o Log"
+						if(usr.Gaaraclan&&usr.Mnin >=100&&usr.KawaN >= 30)
+							usr << "<B><font color = blue>Você aprendeu o Suna Shushin No Jutsu!!"
+							usr.verbs += new /mob/gaara/verb/SunaShushinNoJutsu()
+						else
+							usr<<"Você precisa de 100 Nin & 30 Kawa uses para aprender o Suna Shushin No Jutsu."
+						if(usr.Gaaraclan&&usr.Mnin >=300)
+							usr << "<B><font color = blue>Você aprendeu o Sand Sphere!"
+							usr.verbs += new /mob/gaara/verb/SandSphere()
+						else
+							usr<<"Você precisa de 300 Nin para aprender o Sand Sphere."
+						if(usr.Gaaraclan&&usr.Mnin >=200)
+							usr << "<B><font color = blue>Você aprendeu o Suna Bunshin No Jutsu!"
+							usr.verbs += new /obj/bunshins/SunaBunshinnojutsu/verb/SunaBunshinNoJutsu()
+						else
+							usr<<"Você precisa de 200 Nin para aprender o Suna Bunshin No Jutsu."
+						if(usr.Gaaraclan&&usr.Mnin >=750&&usr.Mchakra>=10000)
+							usr << "<B><font color = blue>You learned Sabaku Kyuu!"
+							usr.verbs += new /mob/gaara/verb/SabakuKyuu()
+						else
+							usr<<"Você precisa de 750 Nin & 10000 de Chakra para aprender o Sabaku Kyuu."
+						if(usr.Gaaraclan&&usr.Mnin >=1000&&usr.Mchakra>=11000)
+							usr << "<B><font color = blue>Você Aprendeu o Sabaku Kyuu!"
+							usr.verbs += new /mob/gaara/verb/SabakuSousou()
+						else
+							usr<<"Você precisa de 1000 Nin & 11000 de Chakra para aprender o Sabaku Kyuu Finish."
+						if(usr.Gaaraclan&&usr.Mgen>=500)
+							usr << "<B><font color = blue>You learned Sand Armor!"
+							usr.verbs += new /mob/gaara/verb/SandArmor()
+						else
+							usr<<"Você precisa de 500 Gen para aprender a Sand Armor."
+				if("Unlock My Demon")
+					if(usr.rank=="Student"||usr.rank=="Genin")
+						usr<<"You must be a Chuunin or higher."
+						return
+					if(usr.Shukkaku==1&&usr.kaku2<=0)
+						usr<<"You have ranked up some, your still a no body though."
+						usr.kaku2=1
+						sleep(30)
+						usr<<"There you go you should receive a bigger boost now."
+						return
+					if(usr.kaku2>=1&&usr.kills>=250)
+						usr<<"You have become the practiced killer but you are still nothing to me."
+						usr.kaku3=1
+						sleep(30)
+						usr<<"There you go you should receive a bigger boost now."
+						return
 					else
-						view() << "[src] atacou [M] e tirou [damage]!"
-						M.health -= damage
-						if(M.health <= 0)
-							src.killlist = ""
-							M.Death(src)
-						if(istype(M,/mob/enemy))
-							M.killlist += src.name
+						usr<<"You have not killed enough."
+						return
 				else
-					if(M.CS==1&&!src.GOTCS)
-						src.canattack=1
-						view(src)<<"Orochimaru: Você está interessado?."
-						sleep(10)
-						view(src)<<"Orochimaru: I will give you the gift the curse mark."
-						sleep(10)
-						view(M)<<"Orochimaru bites the neck of [M]."
-						M<<"You begin to feel an extreme powerfull!"
-						M.firing=1
-						M.GettingCurseSeal()
-						sleep(40)
-						view(M)<<"Orochimaru: Você deve me procurar quando for mais forte, Até mais [M]"
-						del(src)
-						sleep(40)
-						M.inmission=0
-						M.loc=locate(6,58,20)
-						M<<"You have been brought back to your village."
-						M.verbs -= new /mob/mission/verb/Escape()
-						M.verbs -= new /mob/mission/verb/Escape()
-						M.verbs -= new /mob/mission/verb/Escape()
-			else
-				if(M.ingat||M.intank||M.NPC)				.
-					return
-				if(M.Kaiten)
-					var/damage = round(usr.tai)
-					if(damage <= 1)
-						damage = 1
-						M <<"Você refletiu o ataque de [src]'s causing them to hurt themselfs."
-						src.health -= damage
-						if(src.health <= 0)
-							src.killlist = ""
-							src.Death(M)
-						return
+					usr<<"Lair leave now before I kill you."
+
+mob/npc/Clan/Gai
+	name = "Gai"
+	icon = 'Guy.dmi'
+	PK = 0
+	health = 99999999999999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category = "Gai"
+			set name="***  Falar  ***"
+			switch(input("Well hi there and welcome to the Lee house.",text) in list ("I'm Lee too.","Weirdo"))
+				if("I'm Lee too.")
+					if(usr.Clan=="Lee")
+						usr<<"Hello."
+						if(usr.NonClan&&usr.Mtai >=500&&usr.maxhealth >= 5000)
+							usr << "<B><font color = blue>You learned lotus!!"
+							usr.verbs += new /mob/Lee/verb/Lotus()
+						else
+							usr<<"You need 500 Tai and 5000 Stam to start your hidden Lotus training."
+						if(usr.NonClan&&usr.Mtai >=50)
+							usr << "<B><font color = blue>You learned Konoha Renpuu!!"
+							usr.verbs += new /mob/Lee/verb/KonohaReppu()
+						else
+							usr<<"Hit a log noob."
+						if(usr.NonClan&&usr.Mtai >=250)
+							usr << "<B><font color = blue>You learned Konoha Senpuu!!"
+							usr.verbs += new /mob/Lee/verb/KonohaSenpuu()
+						else
+							usr<<"You need 250 Tai to learn Konoha Senpuu."
+						if(usr.NonClan&&usr.Mtai >=500)
+							usr << "<B><font color = blue>You learned Omote Renge!!"
+							usr.verbs += new /mob/Lee/verb/OmoteRenge()
+						else
+							usr<<"You need 500 Tai to learn Omote Renge."
+						if(usr.NonClan&&usr.Mtai >=750)
+							usr << "<B><font color = blue>You learned Ura Renge!!"
+							usr.verbs += new /mob/Lee/verb/UraRenge()
+						else
+							usr<<"You need 750 Tai to learn Ura Renge."
+						if(usr.NonClan&&usr.Mtai>=1000)
+							usr << "<B><font color = blue>You learned Konoha Genkuriki Senpuu!"
+							usr.verbs += new /mob/Lee/verb/KonohaGenkurikiSenpuu()
+						else
+							usr<<"You need 1000 Tai to learn Konoha Genkuriki Senpuu."
 					else
-						M <<"Você refletiu o ataque de [src]'s attack causing them to hurt themselfs."
-						src.health -= damage
-						if(src.health <= 0)
-							src.killlist = ""
-							src.Death(M)
-						return
-				if (M.ingat == 1)
-					return
-				else					//otherwise...
-					if(src.Tekken&&src.canattack)
-						var/damage = round(src.tai)
-						if(damage <= 1)
-							damage = 1
-							view() << "[src] atacou [M] e tirou [damage]!"
-							M.health -= damage
-							if(M.health <= 0)
-								src.killlist = ""
-								M.Death(src)
-							if(istype(M,/mob/enemy))
-								M.killlist += src.name
+						usr<<"It's not nice to lie you know."
+				if("Weirdo")
+					usr<<"Thats not nice ready for your punishment?"
+					usr.health-=1000
+
+mob/npc/Clan/Tenten
+	name = "Tenten"
+	icon = 'tenten.dmi'
+	PK = 0
+	health = 99999999999999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category = "Tenten"
+			set name="***  Falar  ***"
+			switch(input("Well hi there cutie welcome to the Tenten house.",text) in list ("I'm Tenten too.","Well hello yourself cutie."))
+				if("I'm Tenten too.")
+					if(usr.Clan=="Tenten")
+						usr<<"Hello."
+						if(usr.Tenten&&usr.shurikenskill >=250)
+							usr << "<B><font color = blue>You learned Homing Shuriken!!"
+							usr.verbs += new /mob/Tenten/verb/HomingShuriken()
 						else
-							view() << "[src] atacou [M] e tirou [damage]!"
-							M.health -= damage
-							if(M.health <= 0)
-								src.killlist = ""
-								M.Death(src)
-							if(istype(M,/mob/enemy))
-								M.killlist += src.name
-					else if(src.Jyuken == 1&&src.canattack == 1)
-						if(src.chakra >= 2)
-							src.canattack =0
-							var/damage = round(src.tai)
-							if(damage <= 1)
-								damage = 1
-								view() << "[src] atacou [M] e tirou [damage]!"
-								M.health -= damage
-								src.chakra -= 2
-								if(M.health <= 0)
-									src.killlist = ""
-									M.Death(src)
-								if(istype(M,/mob/enemy))
-									M.killlist += src.name
-							else
-								view() << "[src] atacou [M] e tirou [damage]!"
-								M.health -= damage
-								src.chakra -= 2
-								if(M.health <= 0)
-									src.killlist = ""
-									M.Death(src)
-								if(istype(M,/mob/enemy))
-									M.killlist += src.name
+							usr<<"You need 250 Shuriken skill to learn Homing Shuriken."
+						if(usr.Tenten&&usr.kunaiskill >=250)
+							usr << "<B><font color = blue>You learned Homing Kunai!!"
+							usr.verbs += new /mob/Tenten/verb/HomingKunai()
 						else
-							src.Jyuken = 0
-							src.Tekken = 1
-							return
-
-mob/proc/GettingCurseSeal()
-	XD
-		if(src.CS)
-			src.health-=150
-			if(src.health<=0)
-				src.Death(src)
-			src.random=rand(1,40)
-			if(src.random==3)
-				src.GOTCS=1
-				src.firing=0
-				src<<"Your pain stops."
-				return
-			else
-				sleep(12)
-				goto XD
-		else
-			return
-mob/var/waterfallS=0
-mob/var
-	bit=0
-	CS=0
-	GOTCS=0
-mob/PARTYdude
-   icon = 'Spawn.dmi'
-   name = "(NPC)PARTY"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-mob/StarSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Star Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set name="***  Trocar ponto de Spawn  ***"
-         set category = "Spawn Point"
-         usr << "<b> You will now respawn in The Hidden Village of Star!"
-         usr.starS=1
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.sandS = 0
-         usr.snowS = 0
-         usr.waterfallS=0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.earthS = 0
-         usr.lightningS = 0
-         usr.mistS = 0
-mob/SnowSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Snow Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Snow!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.starS=0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.sandS = 0
-         usr.snowS = 1
-         usr.waterfallS=0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.earthS = 0
-         usr.lightningS = 0
-         usr.mistS = 0
-mob/AKATSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)AKAT Spawn Helper"
-   PK = 0
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Akat base!"
-         usr.akatS = 1
-         usr.soS = 0
-         usr.starS=0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.sandS = 0
-         usr.snowS = 0
-         usr.waterfallS=0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.earthS = 0
-         usr.lightningS = 0
-         usr.mistS = 0
-mob/SOSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)SO Spawn Helper"
-   PK = 0
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The SO base!"
-         usr.akatS = 0
-         usr.soS = 1
-         usr.leafS = 0
-         usr.starS=0
-         usr.grassS = 0
-         usr.sandS = 0
-         usr.snowS = 0
-         usr.waterfallS=0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.earthS = 0
-         usr.lightningS = 0
-         usr.mistS = 0
-mob/LeafSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Leaf Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Leaf!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 1
-         usr.starS=0
-         usr.snowS = 0
-         usr.grassS = 0
-         usr.sandS = 0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.earthS = 0
-         usr.waterfallS=0
-         usr.mistS = 0
-         usr.lightningS = 0
-mob/SoundSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Sound Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Sound!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.sandS = 0
-         usr.starS=0
-         usr.snowS = 0
-         usr.soundS = 1
-         usr.rainS = 0
-         usr.waterfallS=0
-         usr.earthS = 0
-         usr.mistS = 0
-         usr.lightningS = 0
-mob/WaterfallSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Waterfall Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Waterfall!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.sandS = 0
-         usr.snowS = 0
-         usr.starS=0
-         usr.soundS = 0
-         usr.waterfallS=1
-         usr.rainS = 0
-         usr.earthS = 0
-         usr.mistS = 0
-         usr.lightningS = 0
-mob/RainSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Rain Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Rain!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.waterfallS=0
-         usr.sandS = 0
-         usr.snowS = 0
-         usr.starS=0
-         usr.soundS = 0
-         usr.rainS = 1
-         usr.earthS = 0
-         usr.mistS = 0
-         usr.lightningS = 0
-mob/SandSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Sand Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Sand!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.sandS = 1
-         usr.starS=0
-         usr.snowS = 0
-         usr.waterfallS=0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.earthS = 0
-         usr.lightningS = 0
-         usr.mistS = 0
-mob/GrassSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Grass Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Grass!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 0
-         usr.grassS = 1
-         usr.sandS = 0
-         usr.starS=0
-         usr.snowS = 0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.earthS = 0
-         usr.lightningS = 0
-         usr.waterfallS=0
-         usr.mistS = 0
-mob/EarthSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Rock Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Earth!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 0
-         usr.starS=0
-         usr.grassS = 0
-         usr.waterfallS=0
-         usr.sandS = 0
-         usr.snowS = 0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.earthS = 1
-         usr.lightningS = 0
-         usr.mistS = 0
-mob/mistSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Mist Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Mist!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.starS=0
-         usr.sandS = 0
-         usr.soundS = 0
-         usr.waterfallS=0
-         usr.rainS = 0
-         usr.snowS = 0
-         usr.earthS = 0
-         usr.lightningS = 0
-         usr.mistS = 1
-mob/LightningSpawndude
-   icon = 'Spawn.dmi'
-   name = "(NPC)Cloud Spawn Helper"
-   PK = 1
-   health = 9999999999999999999999999999999999999999999999
-   density = 1
-   verb
-      ChangeSpawnPoint()
-         set src in oview(1)
-         set category = "Spawn Point"
-         set name="***  Trocar ponto de Spawn  ***"
-         usr << "<b> You will now respawn in The Hidden Village of Earth!"
-         usr.akatS = 0
-         usr.soS = 0
-         usr.starS=0
-         usr.leafS = 0
-         usr.grassS = 0
-         usr.sandS = 0
-         usr.waterfallS=0
-         usr.soundS = 0
-         usr.rainS = 0
-         usr.snowS = 0
-         usr.earthS = 0
-         usr.lightningS = 1
-         usr.mistS = 0
-mob
-	proc
-		TacarShuriken()
-			src.firing = 1
-			var/obj/Shuriken/K = new /obj/Shuriken
-			K.loc = src.loc
-			K.tai=src.tai
-			K.dir = src.dir
-			K.name="[src]"
-			K.Gowner=src
-			walk(K,usr.dir)
-			usr.firing = 0
-			sleep(45)
-			del(K)
-mob
-	proc
-		TacarKunai()
-			src.firing = 1
-			var/obj/Kunai/K = new /obj/Kunai
-			K.loc = src.loc
-			K.tai=src.tai
-			K.dir = src.dir
-			K.name="[src]"
-			K.Gowner=src
-			walk(K,usr.dir)
-			usr.firing = 0
-			sleep(45)
-			del(K)
-
-mob
-	proc//core procs for the system
-
-
-		ai_random_wander()//random wander if no mobs are in range to attack
-			if(src.key)//if the source is human
-				return//don't call the rest
-			if(!src.weaknin&&!src.orochimaru&&!src.kyuubinpc&&!src.guard)
-				return
-			else
-				walk_rand(src,10)//walk randomly with 5 lag
-				src.ai_run_away()
-				spawn(10)//delay for one tick
-					ai_random_wander()//wander some more
-
-		ai_run_away()//used for checking to see if it should run or attack
-			if(src.client)
-				return
-			else
-				for(var/mob/M in oview(7,src))//loops over all mobs within 5 tiles of the monster
-					if(M.client)//if the mob is human
-						if(get_dist(src,M) <= 5)//if the player is close
-							if(src.weaknin||M.NPC)
-								return
-							else
-								src:random = rand(1,5)
-								if(src:random == 5)
-									src.jutsu()
-									src.ai_walk_to()
-								else
-									src.ai_walk_to()
+							usr<<"You need 250 Kunai skill to learn Homing Kunai."
+						if(usr.Tenten&&usr.shurikenskill >=1000)
+							usr << "<B><font color = blue>You learned Homing Windmill!!"
+							usr.verbs += new /mob/Tenten/verb/HomingWindmill()
 						else
-							src.jutsu()//calls the walk_to (for attacking) proc
+							usr<<"You need 1000 Shuriken skill to learn Homing Windmill."
+						if(usr.Tenten&&usr.shurikenskill>=500)
+							usr<<"<b><font color=blue>You learned Kage Shuriken."
+							usr.verbs += new /mob/shurikenmove/verb/KageShuriken()
+						else
+							usr<<"You need 500 Shuriken skill to learn Kage Shuriken."
+						if(usr.Tenten&&usr.kunaiskill >=500)
+							usr << "<B><font color = blue>You Learned Kage Kunai!!"
+							usr.verbs += new /mob/shurikenmove/verb/KageKunai()
+						else
+							usr<<"You need 500 Kunai Skill to learn Kage Kunai."
+						if(usr.Tenten&&usr.shurikenskill >=1000&&usr.kunaiskill >=1000)
+							usr << "<B><font color = blue>You learned Focus!!"
+							usr.verbs += new /mob/Tenten/verb/Focus()
+						else
+							usr<<"You need 1000 Shuriken skill and Kunai skill to learn Focus."
+
 					else
-						return
+						usr<<"Don't lie to ME!"
+				if("Well hello yourself cutie.")
+					usr<<"Thank you wonderfull."
 
-		ai_walk_to()
-			if(src.client)
-				return 0
-			else
-				for(var/mob/M in oview(15,src))
-					if(M.client)
-						if(src.guard==1&&M.Village=="[src.Village]")//|| (src.isdog==1 && src.owner)
-							return
-						if(get_dist(src,M) <= 10)//within 10 tiles
-							walk_to(src,M,1,10)//walk to the player
-							ai_check_dist(src,M)//checks distance
-							break//stops the loop
-						else
-							continue
+
+mob/npc/Clan/Shino
+	name = "Shino"
+	icon = 'npcs.dmi'
+	icon_state = "Shino"
+	PK = 0
+	health = 9999999999999999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category = "Shino"
+			set name="***  Falar  ***"
+			switch(input("You want to learn the Snake sign?",text) in list ("Yes","No","I'm Aburame too!"))
+				if("Yes")
+					if(usr.bugs >= 10)
+						usr.Osnake=1
+						usr<<"Good job now pay attention."
+						usr<<"You have learned the Snake sign."
 					else
-						continue
-
-		ai_check_dist(mob/attacker,mob/defender)
-			for(var/mob/M in oview(15,src))
-				if(attacker.client)
-					return
-				else
-					if(src.guard==1&&M.Village=="[src.Village]"||M.rank=="Student"||M.rank=="Genin")
-						return
-					if(get_dist(attacker,defender) <= 1 && defender.NPC==0)//if the monster is one tile away from the player
-						attacker.MONATTACK(defender)//attack!
-					else
-						return
-
-		jutsu()
-			for(var/mob/M in oview(10,src))
-				if(src.weaknin&&get_dist(src,M) >= 10)
-					src.firing = 1
-					var/obj/Shuriken/K = new /obj/Shuriken
-					K.loc = src.loc
-					K.tai=src.tai
-					K.dir = src.dir
-					K.name="[src]"
-					K.Move_Delay=1.5
-					K.Gowner=src
-					walk_towards(K,M)
-					src.firing = 0
-					sleep(10)
-					del(K)
-				if(src.orochimaru&&get_dist(src,M) >= 10)
-					src.firing = 1
-					view(src)<<"Orochimaru: Katon Karyuu Endan!"
-					var/obj/katonEndan/K = new /obj/katonEndan
-					K.loc = src.loc
-					K.nin=src.nin
-					K.dir = src.dir
-					K.name="[src]"
-					K.Move_Delay=1.7
-					K.Gowner=src
-					walk_towards(K,M)
-					src.firing = 0
-					sleep(10)
-					del(K)
-				if(src.guard==1&&M.Village=="[src.Village]"||M.rank=="Student"||M.rank=="Genin")
-					return
-				if(src.guard)
-					src.firing = 1
-					var/obj/Windmill/K = new /obj/Windmill
-					K.loc = src.loc
-					K.nin=src.shurikenskill
-					K.dir = src.dir
-					K.name="[src]"
-					K.Move_Delay=1.5
-					K.Gowner=src
-					walk_towards(K,M)
-					src.firing = 0
-					sleep(10)
-					del(K)
-
-mob
-	enemy//..attack
-		Leafvillageshinobi
-			name= "Shinobi do Vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Leaf/Grass"
-			Village="Leaf"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Grassvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Leaf/Grass"
-			Village="Grass"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Mistvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Snow/Mist/Rain/Water"
-			Village="Mist"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Snowvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Snow/Mist/Rain/Water"
-			Village="Snow"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Rainvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Snow/Mist/Rain/Water"
-			Village="Rain"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Waterfallvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Snow/Mist/Rain/Water"
-			Village="Waterfall"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Cloudvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Rock/Sand/Cloud"
-			Village="Cloud"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Rockvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Rock/Sand/Cloud"
-			Village="Rock"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Sandvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Rock/Sand/Cloud"
-			Village="Sand"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Soundvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Sound/Star"
-			Village="Sound"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		Starvillageshinobi
-			name= "Shinobi do vilarejo"
-			icon = 'Guards.dmi'
-			icon_state="Guard Sound/Star"
-			Village="Star"
-			guard = 1
-			Tekken = 1
-			maxhealth=1000000
-			health = 1000000
-			tai = 10000
-			nin = 10000
-			gen = 10000
-			shurikenskill=10000
-			NPC=1
-		rogueshinobi
-			name= "(NPC)Rogue Shinobi(Jounin Rank)"
-			icon = 'sandnin.dmi'
-			weaknin = 1
-			Tekken = 1
-			maxhealth=18000
-			health = 18000
-			tai = 800
-			nin = 700
-			gen = 400
-			NPC=1
-		henchmen
-			name= "(NPC)Henchmen(Chuunin Rank)"
-			icon = 'soundnin.dmi'
-			weaknin = 1
-			Tekken = 1
-			maxhealth=4000
-			health = 4000
-			tai = 250
-			nin = 200
-			gen = 230
-			shurikenskill=1000
-			NPC=1
-		bodyguards
-			name= "(NPC)BodyGuard(Jounin Rank)"
-			icon = 'sandnin.dmi'
-			weaknin = 1
-			Tekken = 1
-			maxhealth=10000
-			health = 10000
-			tai = 450
-			nin = 400
-			gen = 530
-			shurikenskill=1000
-			NPC=1
-		leader
-			name= "(NPC)Leader(Missing-NiN)"
-			icon = 'waternin.dmi'
-			weaknin = 1
-			Tekken = 1
-			maxhealth=20000
-			health = 20000
-			tai = 700
-			nin = 800
-			gen = 900
-			shurikenskill=1000
-			NPC=1
-		orochimaru
-			name= "Orochimaru"
-			icon = 'orochimaru.dmi'
-			orochimaru = 1
-			Tekken = 1
-			maxhealth=180000
-			health = 180000
-			tai = 6200
-			nin = 7000
-			gen = 4000
-			shurikenskill=5000
-			NPC=1
-		DosuKinuta
-			name= "Dosu Kinuta"
-			icon = 'Dosu Kinuta.dmi'
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 15000
-			nin = 15000
-			gen = 15000
-			shurikenskill=15000
-			NPC=1
-
-
-  //  NPCs da floresta do CS
-		orochimaruFloresta
-			name= "Orochimaru"
-			icon = 'orochimaru.dmi'
-			orochimaru = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=5000
-			NPC=1
-		DosuFloresta
-			name= "Dosu Kinuta"
-			icon = 'Dosu Kinuta.dmi'
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		ZakuFloresta
-			name= "Zaku"
-			icon = 'npcs.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		KinFloresta
-			name= "Kin"
-			icon = 'npcs.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		NarutoFloresta
-			name= "Naruto"
-			icon = 'npcs.dmi'
-			icon_state = "Naruto"
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		SakuraFloresta
-			name= "Sakura"
-			icon = 'npcs.dmi'
-			icon_state = "Sakura"
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		SasukeFloresta
-			name= "Sasuke"
-			icon = 'npcs.dmi'
-			icon_state = "Sasuke"
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		RockLeeFloresta
-			name= "Rock Lee"
-			icon = 'npcs.dmi'
-			icon_state = "Lee"
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		TenTenFloresta
-			name= "TenTen"
-			icon = 'tenten.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		NejiFloresta
-			name= "Hyuuga Neji"
-			icon = 'npcs.dmi'
-			icon_state = "Neji"
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		ShikamaruFloresta
-			name= "Nara Shikamaru"
-			icon = 'Nara.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		InoFloresta
-			name= "Ino Yamanaka"
-			icon = 'npcs.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		ChoujiFloresta
-			name= "Chouji Akimichi"
-			icon = 'Choji.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		GaaraFloresta
-			name= "Sabaku Gaara"
-			icon = 'npcs.dmi'
-			icon_state = "Gaara"
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		TemariFloresta
-			name= "Temari"
-			icon = 'npcs.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		KankuroFloresta
-			name= "Kankuro"
-			icon = 'npcs.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		KibaFloresta
-			name= "Inuzuka Kiba"
-			icon = 'npcs.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		ShinoFloresta
-			name= "Shino Aburame"
-			icon = 'npcs.dmi'
-			icon_state = "Shino"
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-		HinataFloresta
-			name= "Hyuuga Hinata"
-			icon = 'npcs.dmi'
-			icon_state = ""
-			weaknin = 1
-			Tekken = 1
-			maxhealth=200000
-			health = 200000
-			tai = 2000
-			nin = 2000
-			gen = 2000
-			shurikenskill=15000
-			NPC=1
-
-//-----------------------------------------------------
-
-
-mob/var
-	kyuubinpc=0
-	orochimaru=0
-mob
-	New()//when a mob is created
-		..()
-		sleep(20)
-		if(isnull(src.client))//if it's not human
-			ai_random_wander()//wander
-			return..()//continue on with normal New() (create and whatnot)
-		else
-			return..()
-mob/npc
-	GuardiaoKumogakure
-		name = "Guardião Da Passagem"
-		icon = 'Banker.dmi'
-		icon_state = "Banco"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set src in oview(3)
-				set name="***  Abra a passagem  ***"
-
-				usr<<"<font color=yellow><font size=2><b>Para descobrir como passar aqui você deve pagar <font color=red><font size=3><b>90000Yen."
-				switch(input("Você deseja pagar para descobrir?")in list("Sim","Não"))
-					if("Sim")
-						if(usr.Yen < 90000)
-							usr<<"<font color=red><font size=3><b>Você não tem dinheiro para pagar a taxa !"
+						usr<<"Go outside and in the garden and catch me 10 bugs"
+						usr.snake=1
+				if("No")
+					usr<<"Verywell."
+				if("I'm Aburame too!")
+					if(usr.Aburame)
+						usr<<"Hello."
+						if(usr.Aburame&&usr.Mnin >=100)
+							usr << "<B><font color = blue>You learned Kekkai Konchuu Bunshin No Jutsu!"
+							usr.verbs += new /obj/bunshins/KekkaiKonchuuBunshinnoJutsu/verb/KekkaiKonchuuBunshinnoJutsu()
 						else
-							usr.Yen -= 90000
-							usr<<"<font color=green><font size =3><b>[usr] *Pagou*"
-							switch(input("Essa passagem só é desbloquiada se você me responder há duas perguntas! Quantos Bijus existiam na vila de Kumogakure?")in list("1","2","3","4"))
-								if("2")
-									usr<<"<font color=yellow><font size=2><b>Você acertou!"
-								else
-									usr.health = 0
-									usr.Death(usr)
-									usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
-									if(usr)
-										usr.dead=1
-									return
-							switch(input("Você acertou, mas quero que responda mais uma pergunta! Quantas caudas tinha esses bijus?")in list("8 caudas e 2 caudas","9 caudas e 5 caudas","2 caudas e 1 cauda","5 caudas e 8 caudas"))
-								if("8 caudas e 2 caudas")
-									usr<<"<font color=yellow><font size=2><b>Vejo que você é um homem de confiança e muito inteligente!<font size = 3><font color = green><b> [usr] está liberado para passar."
-									density=0
-									sleep(80)
-									density=1
-								else
-									usr.health = 0
-									usr.Death(usr)
-									usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
-									if(usr)
-										usr.dead=1
-									return
-					if("Não")
-						usr<<"<font color=yellow><font size=2><b>Intão Volte de onde veio!"
-
-mob/npc/Comuns/
-	Summon_Vender
-		name = "Vendedor de pergaminhos de summon"
-		icon = 'Banker.dmi'
-		icon_state = "Vendedor de pergaminhos"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Buy()
-				set src in oview(3)
-				set name="***  Comprar  ***"
-				switch(input("Qual pergaminho você deseja comprar hoje?")in list("Snake Summon - 100k","Slug Summon - 100k","Frog Summon - 100k","Puppet Summon - 50k","Nada"))
-					if("Snake Summon - 100k")
-						if(usr.Yen >= 100000)
-							usr.Yen -= 100000
-							usr.contents += new /obj/Big_Snake_Scroll
-							usr<<"Você comprou um pergaminho de Snake Summon"
+							usr<<"You need 100 Nin to learn Kekkai Konchuu Bunshin No Jutsu"
+						if(usr.Aburame&&usr.Mnin >=250)
+							usr << "<B><font color = blue>You learned your Konchuu options!"
+							usr.verbs += new /mob/aburame/verb/summonkonchuu()
+							usr.verbs += new /mob/aburame/verb/Placekonchuu()
+							usr.verbs += new /mob/aburame/verb/DestroyKonchuu()
 						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Slug Summon - 100k")
-						if(usr.Yen >= 100000)
-							usr.Yen -= 100000
+							usr<<"You need 250 Nin to learn how to use Konchuu."
+						if(usr.Aburame&&usr.Mnin >=300)
+							usr<<"<b><font color=blue>You learned Konchuu Armor."
+							usr.verbs += new /mob/aburame/verb/BugArmor()
+						else
+							usr<<"You need 300 Nin to learn Konchuu Armor."
+						if(usr.Aburame&&usr.Mnin >=500&&usr.Mgen>=200)
+							usr << "<B><font color = blue>You learned how to explode your Konchuu!"
+							usr.verbs += new /mob/aburame/verb/ExplodeKonchuu()
+						else
+							usr<<"You need 500 Nin to learn how to Explode Konchuus"
+						if(usr.Aburame&&usr.Mnin >=750)
+							usr<<"<b><font color=blue>You learn Konchuu Kyuu"
+							usr.verbs += new /mob/aburame/verb/KonchuuKyuu()
+						else
+							usr<<"You need 750 Nin to learn Konchuu Kyuu."
+						if(usr.Aburame&&usr.Mnin>=1000)
+							usr<<"<b><font color=blue>You learn Konchuu Sousou."
+							usr.verbs += new /mob/aburame/verb/KonchuuSousou()
+						else
+							usr<<"You need 1000 Nin to learn Konchuu Sousou"
+						if(usr.Aburame&&usr.Mnin>=5000&&usr.Mchakra>=10000)
+							usr<<"<b><font color=blue>You learned Slug Summons."
 							usr.contents += new /obj/Slug_Summoning_Scroll
-							usr<<"Você comprou um pergaminho de Slug Summon"
 						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Frog Summon - 100k")
-						if(usr.Yen >= 100000)
-							usr.Yen -= 100000
-							usr.contents += new /obj/Frog_Summoning_Scroll
-							usr<<"Você comprou um pergaminho de Frog Summon"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Puppet Summon - 50k")
-						if(usr.Yen >= 50000)
-							usr.Yen -= 50000
-							usr.contents += new /obj/Doll_Summoning_Scroll
-							usr<<"Você comprou um pergaminho de Puppet Summon"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Nada")
-						return
-mob/npc/Comuns/
-	Scroll_Vender
-		name = "Vendedor de pergaminhos de jutsus"
-		icon = 'Banker.dmi'
-		icon_state = "Vendedor de jutsus"
-		PK = 0
-		health = 9999999999999999999999999999999999999999999999
-		verb
-			Buy()
-				set src in oview(3)
-				set name="***  Comprar  ***"
-				switch(input("Qual pergaminho você deseja comprar hoje?")in list("Kaze Dangan No Jutsu - 50k","Kage Bunshin No Jutsu - 5k","Renkuudan No Jutsu - 60k","Daitoppa No Jutsu - 50k","Doton Doryo Dango - 40k","Doton Doryuuheki - 50k","Raikyuu No Jutsu - 40k","Rairyuu No Tatsumaki - 40k","Katon Goukakyuu - 40k","Katon Housenka no jutsu - 40k","Nada"))
-					if("Kaze Dangan No Jutsu - 50k")
-						if(usr.Yen >= 50000)
-							usr.Yen -= 50000
-							usr.contents += new /obj/Scroll_Fuuton1
-							usr<<"Você comprou um pergaminho de Kaze Dangan No Jutsu"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Renkuudan No Jutsu - 60k")
-						if(usr.Yen >= 60000)
-							usr.Yen -= 60000
-							usr.contents += new /obj/Scroll_Fuuton2
-							usr<<"Você comprou um pergaminho de Renkuudan No Jutsu"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Daitoppa No Jutsu - 50k")
-						if(usr.Yen >= 50000)
-							usr.Yen -= 50000
-							usr.contents += new /obj/Scroll_Fuuton3
-							usr<<"Você comprou um pergaminho de Daitoppa No Jutsu"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Doton Doryo Dango - 40k")
-						if(usr.Yen >= 40000)
-							usr.Yen -= 40000
-							usr.contents += new /obj/Scroll_Doton1
-							usr<<"Você comprou um pergaminho de Doton Doryo Dango"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Doton Doryuuheki - 50k")
-						if(usr.Yen >= 50000)
-							usr.Yen -= 50000
-							usr.contents += new /obj/Scroll_Doton2
-							usr<<"Você comprou um pergaminho de Doton Doryuuheki"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Raikyuu No Jutsu - 40k")
-						if(usr.Yen >= 40000)
-							usr.Yen -= 40000
-							usr.contents += new /obj/Scroll_Rai1
-							usr<<"Você comprou um pergaminho de Raikyuu No Jutsu"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Rairyuu No Tatsumaki - 40k")
-						if(usr.Yen >= 40000)
-							usr.Yen -= 40000
-							usr.contents += new /obj/Scroll_Rai2
-							usr<<"Você comprou um poergaminho de Rairyuu No Tatsumaki"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Katon Goukakyuu - 40k")
-						if(usr.Yen >= 40000)
-							usr.Yen -= 40000
-							usr.contents += new /obj/Scroll_Katon1
-							usr<<"Você comprou um pergaminho de Katon Goukakyuu"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Katon Housenka no jutsu - 40k")
-						if(usr.Yen >= 40000)
-							usr.Yen -= 40000
-							usr.contents += new /obj/Scroll_Katon2
-							usr<<"Você comprou um pergaminho de Katon Housenka no jutsu"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Kage Bunshin No Jutsu - 5k")
-						if(usr.Yen >= 5000)
-							usr.Yen -= 5000
-							usr.contents += new /obj/KagebunshinS
-							usr<<"Você comprou um pergaminho de Kage Bunshin No Jutsu"
-						else
-							usr<<"Você não tem dinheiro o suficiente!"
-					if("Nada")
-						return
-mob/var/talkedto=0
-mob/var/itachitalked=0
+							usr<<"You need 5000 Nin and 10000 Chakra to learn Slug Summons."
+					else
+						usr<<"Liar leave the Aburame house now!"
+
+
 mob/npc/Clan/Naruto
 	name = "Naruto"
 	icon = 'npcs.dmi'
@@ -2794,6 +2258,51 @@ mob/npc/Clan/Kabuto
 				if("Forget it")
 					usr<<"Ok then back to my cards."
 
+mob/npc/Clan/Neiji
+	name = "(NPC)Neiji"
+	icon = 'npcs.dmi'
+	icon_state = "Neiji"
+	PK = 0
+	health = 99999999999999999999999999999999999999999999999
+	verb
+		Talk()
+			set src in oview(1)
+			set category = "Neiji"
+			set name="***  Falar  ***"
+			switch(input("What is it?",text) in list ("Can you show me a hand sign?","I am weaker then you","Nothen","I'm hyuuga too!"))
+				if("Can you show me a hand sign?")
+					usr<<"Admit that you are weaker then me"
+					return
+				if("I am weaker then you")
+					usr<<"That's right and you can never change who you are. Now watch weak one."
+					usr.Oram=1
+					usr<<"You have learned the Ram sign"
+				if("I'm hyuuga too!")
+					if(usr.Hyuuga == 1)
+						usr<<"Hello fellow Hyuuga, welcome to our house."
+						if(usr.rank == "Student")
+							return
+						if(usr.knowK == 0&&usr.Mtai >=350)
+							usr<<"You have become very strong [usr]..I think it is time to teach you Hakkeshou Kaiten,the Hyuuga ultimate defense jutsu. Use it wisely."
+							usr.knowK = 1
+							usr.verbs += new /mob/hyuuga/verb/HakkeshouKaiten()
+						if(usr.knowJ == 0&&usr.Mtai >=200)
+							usr<<"It is time that you learn our clan's fighting style, Jyuuken."
+							usr.knowJ = 1
+							usr.verbs += new /mob/hyuuga/verb/Jyuken()
+						if(usr.knowKK == 0&&usr.Mtai >=500)
+							usr<<"I will now teach you Hakke Kuushou."
+							usr.knowJ = 1
+							usr.verbs += new /mob/hyuuga/verb/HakkeKuusho()
+						if(usr.Hyuuga&&usr.Mtai >=250&&usr.Mnin >= 250)
+							usr << "<B><font color = blue>Seu Byakugan foi ativado!!"
+							usr.verbs += new /mob/hyuuga/verb/Byakugan()
+						else
+							usr<<"Você precisa de 250 Nin&Tai para ativar seu Byakugan."
+					else
+						usr<<"Lier leave the Hyuuga house NOW!"
+						return
+
 mob/npc/Clan/Kaguya
 	name = "Kimimaro"
 	icon = 'Kaguya.dmi'
@@ -2904,35 +2413,528 @@ mob/npc/Clan/Kiba
 				if("Forget it")
 					usr<<"Forgoten"
 					return
-mob/npc/Comuns/Orochimaru
-	name = "Orochimaru"
-	icon = 'orochimaru.dmi'
-	PK = 0
-	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Orochimaru"
-			set name="***  Falar  ***"
-			switch(input("Muashuahsuas... vejo que você tem muita coragem só de vir até mim;",text) in list ("Sair correndo","Rir de Orochimaru e tentar lutar","Desculpe não queria chamar sua atenção"))
-				if("Sair correndo","Rir de Orochimaru e tentar lutar")
-					if(usr.Uchiha == 1)
-						usr<<"... hum... Você tem algo que me interessa"
-						world<<"<B><font size = 3><font color = green> [usr] <B><font size = 2><font color = red> acaba de ser amaldiçoado por <B><font size = 3><font color = green> Orochimaru <B><font size = 2><font color = red> na floresta da morte."
 
-						switch(input("Eu tenho uma pergunta! Você mataria amigos, inimigos e aliados em busca de um desejo?",text) in list ("Sim","Não"))
-							if("Sim")
+//------------------------------------------------------------------------------------------------------------------------------------------
 
-								if(usr.Clan=="Uchiha")
-									usr << "<B><font color = blue>Você foi amaldiçoado por Orochimaru Sama"
-									usr.verbs += new /mob/Uchiha/verb/SeloAmaldicoado()
+//                                                         --- Inimigos	---
 
-					else
-						usr<<"Pena que você é um méro ninja qualquer e morrera aqui mesmo."
+mob
+	enemy
+		Leafvillageshinobi
+			name= "Shinobi do Vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Leaf/Grass"
+			Village="Leaf"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Grassvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Leaf/Grass"
+			Village="Grass"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Mistvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Snow/Mist/Rain/Water"
+			Village="Mist"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Snowvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Snow/Mist/Rain/Water"
+			Village="Snow"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Rainvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Snow/Mist/Rain/Water"
+			Village="Rain"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Waterfallvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Snow/Mist/Rain/Water"
+			Village="Waterfall"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Cloudvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Rock/Sand/Cloud"
+			Village="Cloud"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Rockvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Rock/Sand/Cloud"
+			Village="Rock"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Sandvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Rock/Sand/Cloud"
+			Village="Sand"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Soundvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Sound/Star"
+			Village="Sound"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		Starvillageshinobi
+			name= "Shinobi do vilarejo"
+			icon = 'Guards.dmi'
+			icon_state="Guard Sound/Star"
+			Village="Star"
+			guard = 1
+			Tekken = 1
+			maxhealth=1000000
+			health = 1000000
+			tai = 10000
+			nin = 10000
+			gen = 10000
+			shurikenskill=10000
+			NPC=1
+		rogueshinobi
+			name= "(NPC)Rogue Shinobi(Jounin Rank)"
+			icon = 'sandnin.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=18000
+			health = 18000
+			tai = 800
+			nin = 700
+			gen = 400
+			NPC=1
+		henchmen
+			name= "(NPC)Henchmen(Chuunin Rank)"
+			icon = 'soundnin.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=4000
+			health = 4000
+			tai = 250
+			nin = 200
+			gen = 230
+			shurikenskill=1000
+			NPC=1
+		bodyguards
+			name= "(NPC)BodyGuard(Jounin Rank)"
+			icon = 'sandnin.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=10000
+			health = 10000
+			tai = 450
+			nin = 400
+			gen = 530
+			shurikenskill=1000
+			NPC=1
+		leader
+			name= "(NPC)Leader(Missing-NiN)"
+			icon = 'waternin.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=20000
+			health = 20000
+			tai = 700
+			nin = 800
+			gen = 900
+			shurikenskill=1000
+			NPC=1
+		orochimaru
+			name= "Orochimaru"
+			icon = 'orochimaru.dmi'
+			orochimaru = 1
+			Tekken = 1
+			maxhealth=180000
+			health = 180000
+			tai = 6200
+			nin = 7000
+			gen = 4000
+			shurikenskill=5000
+			NPC=1
+		DosuKinuta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 15000
+			nin = 15000
+			gen = 15000
+			shurikenskill=15000
+			NPC=1
 
-				if("Desculpe não queria chamar sua atenção")
-					usr<<"Você fica amedrontado e corre de Orochimaru"
-					return
+
+  //  NPCs da floresta do CS
+		orochimaruFloresta
+			name= "Orochimaru"
+			icon = 'orochimaru.dmi'
+			orochimaru = 1
+			guard = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=5000
+			NPC=1
+		DosuFloresta
+			name= "Dosu Kinuta"
+			icon = 'Dosu Kinuta.dmi'
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		ZakuFloresta
+			name= "Zaku"
+			icon = 'npcs.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		KinFloresta
+			name= "Kin"
+			icon = 'npcs.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		NarutoFloresta
+			name= "Naruto"
+			icon = 'npcs.dmi'
+			icon_state = "Naruto"
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		SakuraFloresta
+			name= "Sakura"
+			icon = 'npcs.dmi'
+			icon_state = "Sakura"
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		SasukeFloresta
+			name= "Sasuke"
+			icon = 'npcs.dmi'
+			icon_state = "Sasuke"
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		RockLeeFloresta
+			name= "Rock Lee"
+			icon = 'npcs.dmi'
+			icon_state = "Lee"
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		TenTenFloresta
+			name= "TenTen"
+			icon = 'tenten.dmi'
+			guard = 1
+			icon_state = ""
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		NejiFloresta
+			name= "Hyuuga Neji"
+			icon = 'npcs.dmi'
+			icon_state = "Neji"
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		ShikamaruFloresta
+			name= "Nara Shikamaru"
+			icon = 'Nara.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		InoFloresta
+			name= "Ino Yamanaka"
+			icon = 'npcs.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		ChoujiFloresta
+			name= "Chouji Akimichi"
+			icon = 'Choji.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		GaaraFloresta
+			name= "Sabaku Gaara"
+			icon = 'npcs.dmi'
+			icon_state = "Gaara"
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		TemariFloresta
+			name= "Temari"
+			icon = 'npcs.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		KankuroFloresta
+			name= "Kankuro"
+			icon = 'npcs.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		KibaFloresta
+			name= "Inuzuka Kiba"
+			icon = 'npcs.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		ShinoFloresta
+			name= "Shino Aburame"
+			icon = 'npcs.dmi'
+			icon_state = "Shino"
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+		HinataFloresta
+			name= "Hyuuga Hinata"
+			icon = 'npcs.dmi'
+			icon_state = ""
+			guard = 1
+			weaknin = 1
+			Tekken = 1
+			maxhealth=200000
+			health = 200000
+			tai = 2000
+			nin = 2000
+			gen = 2000
+			shurikenskill=15000
+			NPC=1
+
+//-----------------------------------------------------
+
+
+mob/var
+	kyuubinpc=0
+	orochimaru=0
+mob
+	New()//when a mob is created
+		..()
+		sleep(20)
+		if(isnull(src.client))//if it's not human
+			ai_random_wander()//wander
+			return..()//continue on with normal New() (create and whatnot)
+		else
+			return..()
+
+mob/var/talkedto=0
+mob/var/itachitalked=0
+
+
+
+// 											--- NPCs ----
 
 mob/npc/Lee
 	name = "Rock Lee"
@@ -2957,50 +2959,7 @@ mob/npc/Lee
 				if("No")
 					usr<<"Ok your loss"
 
-mob/npc/Clan/Neiji
-	name = "(NPC)Neiji"
-	icon = 'npcs.dmi'
-	icon_state = "Neiji"
-	PK = 0
-	health = 99999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Neiji"
-			set name="***  Falar  ***"
-			switch(input("What is it?",text) in list ("Can you show me a hand sign?","I am weaker then you","Nothen","I'm hyuuga too!"))
-				if("Can you show me a hand sign?")
-					usr<<"Admit that you are weaker then me"
-					return
-				if("I am weaker then you")
-					usr<<"That's right and you can never change who you are. Now watch weak one."
-					usr.Oram=1
-					usr<<"You have learned the Ram sign"
-				if("I'm hyuuga too!")
-					if(usr.Hyuuga == 1)
-						usr<<"Hello fellow Hyuuga, welcome to our house."
-						if(usr.rank == "Student")
-							return
-						if(usr.knowK == 0&&usr.Mtai >=350)
-							usr<<"You have become very strong [usr]..I think it is time to teach you Hakkeshou Kaiten,the Hyuuga ultimate defense jutsu. Use it wisely."
-							usr.knowK = 1
-							usr.verbs += new /mob/hyuuga/verb/HakkeshouKaiten()
-						if(usr.knowJ == 0&&usr.Mtai >=200)
-							usr<<"It is time that you learn our clan's fighting style, Jyuuken."
-							usr.knowJ = 1
-							usr.verbs += new /mob/hyuuga/verb/Jyuken()
-						if(usr.knowKK == 0&&usr.Mtai >=500)
-							usr<<"I will now teach you Hakke Kuushou."
-							usr.knowJ = 1
-							usr.verbs += new /mob/hyuuga/verb/HakkeKuusho()
-						if(usr.Hyuuga&&usr.Mtai >=250&&usr.Mnin >= 250)
-							usr << "<B><font color = blue>Seu Byakugan foi ativado!!"
-							usr.verbs += new /mob/hyuuga/verb/Byakugan()
-						else
-							usr<<"Você precisa de 250 Nin&Tai para ativar seu Byakugan."
-					else
-						usr<<"Lier leave the Hyuuga house NOW!"
-						return
+
 
 mob/npc/Kakashi
 	name = "Kakashi"
@@ -3128,184 +3087,6 @@ mob/npc/Jiraiya
 
 					else
 						usr<<"You do not have Cursed Seal."
-mob/npc/Clan/Gaara
-	name = "Gaara"
-	icon = 'npcs.dmi'
-	icon_state = "Gaara"
-	PK = 0
-	health = 99999999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Gaara"
-			set name="***  Falar  ***"
-			switch(input("Help me awaken my demon shead your blood for me.",text) in list ("Yes","No","I'm Gaara too.","Unlock My Demon"))
-				if("Yes")
-					usr.maxhealth -= 1000
-					usr<<"mmmmm That's it now watch closely and run before it's too late."
-					usr.Oboar=1
-					usr<<"You have learned the Boar sign."
-				if("No")
-					usr<<"Coward"
-				if("I'm Gaara too.")
-					if(usr.Gaaraclan)
-						usr<<"Really."
-						if(usr.Gaaraclan&&usr.Mnin >=100)
-							usr << "<B><font color = blue>Você aprendeu o Suna Shuriken No Jutsu!"
-							usr.verbs += new /mob/gaara/verb/SunaShuriken()
-						else
-							usr<<"Hit o Log"
-						if(usr.Gaaraclan&&usr.Mnin >=100&&usr.KawaN >= 30)
-							usr << "<B><font color = blue>Você aprendeu o Suna Shushin No Jutsu!!"
-							usr.verbs += new /mob/gaara/verb/SunaShushinNoJutsu()
-						else
-							usr<<"Você precisa de 100 Nin & 30 Kawa uses para aprender o Suna Shushin No Jutsu."
-						if(usr.Gaaraclan&&usr.Mnin >=300)
-							usr << "<B><font color = blue>Você aprendeu o Sand Sphere!"
-							usr.verbs += new /mob/gaara/verb/SandSphere()
-						else
-							usr<<"Você precisa de 300 Nin para aprender o Sand Sphere."
-						if(usr.Gaaraclan&&usr.Mnin >=200)
-							usr << "<B><font color = blue>Você aprendeu o Suna Bunshin No Jutsu!"
-							usr.verbs += new /obj/bunshins/SunaBunshinnojutsu/verb/SunaBunshinNoJutsu()
-						else
-							usr<<"Você precisa de 200 Nin para aprender o Suna Bunshin No Jutsu."
-						if(usr.Gaaraclan&&usr.Mnin >=750&&usr.Mchakra>=10000)
-							usr << "<B><font color = blue>You learned Sabaku Kyuu!"
-							usr.verbs += new /mob/gaara/verb/SabakuKyuu()
-						else
-							usr<<"Você precisa de 750 Nin & 10000 de Chakra para aprender o Sabaku Kyuu."
-						if(usr.Gaaraclan&&usr.Mnin >=1000&&usr.Mchakra>=11000)
-							usr << "<B><font color = blue>Você Aprendeu o Sabaku Kyuu!"
-							usr.verbs += new /mob/gaara/verb/SabakuSousou()
-						else
-							usr<<"Você precisa de 1000 Nin & 11000 de Chakra para aprender o Sabaku Kyuu Finish."
-						if(usr.Gaaraclan&&usr.Mgen>=500)
-							usr << "<B><font color = blue>You learned Sand Armor!"
-							usr.verbs += new /mob/gaara/verb/SandArmor()
-						else
-							usr<<"Você precisa de 500 Gen para aprender a Sand Armor."
-				if("Unlock My Demon")
-					if(usr.rank=="Student"||usr.rank=="Genin")
-						usr<<"You must be a Chuunin or higher."
-						return
-					if(usr.Shukkaku==1&&usr.kaku2<=0)
-						usr<<"You have ranked up some, your still a no body though."
-						usr.kaku2=1
-						sleep(30)
-						usr<<"There you go you should receive a bigger boost now."
-						return
-					if(usr.kaku2>=1&&usr.kills>=250)
-						usr<<"You have become the practiced killer but you are still nothing to me."
-						usr.kaku3=1
-						sleep(30)
-						usr<<"There you go you should receive a bigger boost now."
-						return
-					else
-						usr<<"You have not killed enough."
-						return
-				else
-					usr<<"Lair leave now before I kill you."
-
-mob/npc/Clan/Gai
-	name = "Gai"
-	icon = 'Guy.dmi'
-	PK = 0
-	health = 99999999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Gai"
-			set name="***  Falar  ***"
-			switch(input("Well hi there and welcome to the Lee house.",text) in list ("I'm Lee too.","Weirdo"))
-				if("I'm Lee too.")
-					if(usr.Clan=="Lee")
-						usr<<"Hello."
-						if(usr.NonClan&&usr.Mtai >=500&&usr.maxhealth >= 5000)
-							usr << "<B><font color = blue>You learned lotus!!"
-							usr.verbs += new /mob/Lee/verb/Lotus()
-						else
-							usr<<"You need 500 Tai and 5000 Stam to start your hidden Lotus training."
-						if(usr.NonClan&&usr.Mtai >=50)
-							usr << "<B><font color = blue>You learned Konoha Renpuu!!"
-							usr.verbs += new /mob/Lee/verb/KonohaReppu()
-						else
-							usr<<"Hit a log noob."
-						if(usr.NonClan&&usr.Mtai >=250)
-							usr << "<B><font color = blue>You learned Konoha Senpuu!!"
-							usr.verbs += new /mob/Lee/verb/KonohaSenpuu()
-						else
-							usr<<"You need 250 Tai to learn Konoha Senpuu."
-						if(usr.NonClan&&usr.Mtai >=500)
-							usr << "<B><font color = blue>You learned Omote Renge!!"
-							usr.verbs += new /mob/Lee/verb/OmoteRenge()
-						else
-							usr<<"You need 500 Tai to learn Omote Renge."
-						if(usr.NonClan&&usr.Mtai >=750)
-							usr << "<B><font color = blue>You learned Ura Renge!!"
-							usr.verbs += new /mob/Lee/verb/UraRenge()
-						else
-							usr<<"You need 750 Tai to learn Ura Renge."
-						if(usr.NonClan&&usr.Mtai>=1000)
-							usr << "<B><font color = blue>You learned Konoha Genkuriki Senpuu!"
-							usr.verbs += new /mob/Lee/verb/KonohaGenkurikiSenpuu()
-						else
-							usr<<"You need 1000 Tai to learn Konoha Genkuriki Senpuu."
-					else
-						usr<<"It's not nice to lie you know."
-				if("Weirdo")
-					usr<<"Thats not nice ready for your punishment?"
-					usr.health-=1000
-
-mob/npc/Clan/Tenten
-	name = "Tenten"
-	icon = 'tenten.dmi'
-	PK = 0
-	health = 99999999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Tenten"
-			set name="***  Falar  ***"
-			switch(input("Well hi there cutie welcome to the Tenten house.",text) in list ("I'm Tenten too.","Well hello yourself cutie."))
-				if("I'm Tenten too.")
-					if(usr.Clan=="Tenten")
-						usr<<"Hello."
-						if(usr.Tenten&&usr.shurikenskill >=250)
-							usr << "<B><font color = blue>You learned Homing Shuriken!!"
-							usr.verbs += new /mob/Tenten/verb/HomingShuriken()
-						else
-							usr<<"You need 250 Shuriken skill to learn Homing Shuriken."
-						if(usr.Tenten&&usr.kunaiskill >=250)
-							usr << "<B><font color = blue>You learned Homing Kunai!!"
-							usr.verbs += new /mob/Tenten/verb/HomingKunai()
-						else
-							usr<<"You need 250 Kunai skill to learn Homing Kunai."
-						if(usr.Tenten&&usr.shurikenskill >=1000)
-							usr << "<B><font color = blue>You learned Homing Windmill!!"
-							usr.verbs += new /mob/Tenten/verb/HomingWindmill()
-						else
-							usr<<"You need 1000 Shuriken skill to learn Homing Windmill."
-						if(usr.Tenten&&usr.shurikenskill>=500)
-							usr<<"<b><font color=blue>You learned Kage Shuriken."
-							usr.verbs += new /mob/shurikenmove/verb/KageShuriken()
-						else
-							usr<<"You need 500 Shuriken skill to learn Kage Shuriken."
-						if(usr.Tenten&&usr.kunaiskill >=500)
-							usr << "<B><font color = blue>You Learned Kage Kunai!!"
-							usr.verbs += new /mob/shurikenmove/verb/KageKunai()
-						else
-							usr<<"You need 500 Kunai Skill to learn Kage Kunai."
-						if(usr.Tenten&&usr.shurikenskill >=1000&&usr.kunaiskill >=1000)
-							usr << "<B><font color = blue>You learned Focus!!"
-							usr.verbs += new /mob/Tenten/verb/Focus()
-						else
-							usr<<"You need 1000 Shuriken skill and Kunai skill to learn Focus."
-
-					else
-						usr<<"Don't lie to ME!"
-				if("Well hello yourself cutie.")
-					usr<<"Thank you wonderfull."
 
 
 mob/npc/Zabuza
@@ -3332,70 +3113,6 @@ mob/npc/Zabuza
 					usr<<"If you find it and bring it to me I'll show you the Monkey sign."
 					usr.monkey=1
 
-mob/npc/Clan/Shino
-	name = "Shino"
-	icon = 'npcs.dmi'
-	icon_state = "Shino"
-	PK = 0
-	health = 9999999999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Shino"
-			set name="***  Falar  ***"
-			switch(input("You want to learn the Snake sign?",text) in list ("Yes","No","I'm Aburame too!"))
-				if("Yes")
-					if(usr.bugs >= 10)
-						usr.Osnake=1
-						usr<<"Good job now pay attention."
-						usr<<"You have learned the Snake sign."
-					else
-						usr<<"Go outside and in the garden and catch me 10 bugs"
-						usr.snake=1
-				if("No")
-					usr<<"Verywell."
-				if("I'm Aburame too!")
-					if(usr.Aburame)
-						usr<<"Hello."
-						if(usr.Aburame&&usr.Mnin >=100)
-							usr << "<B><font color = blue>You learned Kekkai Konchuu Bunshin No Jutsu!"
-							usr.verbs += new /obj/bunshins/KekkaiKonchuuBunshinnoJutsu/verb/KekkaiKonchuuBunshinnoJutsu()
-						else
-							usr<<"You need 100 Nin to learn Kekkai Konchuu Bunshin No Jutsu"
-						if(usr.Aburame&&usr.Mnin >=250)
-							usr << "<B><font color = blue>You learned your Konchuu options!"
-							usr.verbs += new /mob/aburame/verb/summonkonchuu()
-							usr.verbs += new /mob/aburame/verb/Placekonchuu()
-							usr.verbs += new /mob/aburame/verb/DestroyKonchuu()
-						else
-							usr<<"You need 250 Nin to learn how to use Konchuu."
-						if(usr.Aburame&&usr.Mnin >=300)
-							usr<<"<b><font color=blue>You learned Konchuu Armor."
-							usr.verbs += new /mob/aburame/verb/BugArmor()
-						else
-							usr<<"You need 300 Nin to learn Konchuu Armor."
-						if(usr.Aburame&&usr.Mnin >=500&&usr.Mgen>=200)
-							usr << "<B><font color = blue>You learned how to explode your Konchuu!"
-							usr.verbs += new /mob/aburame/verb/ExplodeKonchuu()
-						else
-							usr<<"You need 500 Nin to learn how to Explode Konchuus"
-						if(usr.Aburame&&usr.Mnin >=750)
-							usr<<"<b><font color=blue>You learn Konchuu Kyuu"
-							usr.verbs += new /mob/aburame/verb/KonchuuKyuu()
-						else
-							usr<<"You need 750 Nin to learn Konchuu Kyuu."
-						if(usr.Aburame&&usr.Mnin>=1000)
-							usr<<"<b><font color=blue>You learn Konchuu Sousou."
-							usr.verbs += new /mob/aburame/verb/KonchuuSousou()
-						else
-							usr<<"You need 1000 Nin to learn Konchuu Sousou"
-						if(usr.Aburame&&usr.Mnin>=5000&&usr.Mchakra>=10000)
-							usr<<"<b><font color=blue>You learned Slug Summons."
-							usr.contents += new /obj/Slug_Summoning_Scroll
-						else
-							usr<<"You need 5000 Nin and 10000 Chakra to learn Slug Summons."
-					else
-						usr<<"Liar leave the Aburame house now!"
 
 mob/npc/Itachi
 	name = "Itachi"
@@ -3422,107 +3139,437 @@ mob/npc/Itachi
 					usr.Obird=1
 					usr<<"You have learned the Bird sign."
 
-mob/npc/Comuns/Squads
-	name="Jounin Squad assignments."
-	icon='Banker.dmi'
-	icon_state = "Banco"
-	PK = 0
-	health=999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category="Squads"
-			set name="***  Falar  ***"
-			switch(input("Do you wish to form a squad of genin and train them to become chuunin?",text) in list ("Yes","No"))
-				if("Yes")
-					if(usr.squads==0)
-						if(usr.rank=="Student"||usr.rank=="Missing")
-							usr<<"Your not allowed a squad."
-							return
-						else
-							alert("IF you change the font size YOUR BANNED!& if u use HTML remember to use the </font> at the end!")
-							var/squad = input("","Squad") as text|null
-							usr.squads=1
-							usr.squad="[(squad)]"
-							usr.verbs += typesof(/mob/Squads/verb)
-					else
-						usr<<"Your already in a squad."
-				else
-					usr<<"If you feel you are not ready it is best."
 
-mob/npc/Comuns/Genin
-	name="Iruka"
-	icon='Iruka.dmi'
-	PK = 0
-	health=999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(3)
-			set category="Iruka"
-			set name="***  Falar  ***"
-			switch(input("To become a Genin you must Pass the writen test and then henge me 10 times so I know that you can do it right, ok?",text) in list ("Ok","No"))
-				if("Ok")
-					if(usr.rank=="Student"&&usr.hengeN >= 10&&usr.tested>=1)
-						world<<"[usr] is now a genin"
-						usr.rank = "Genin"
-						usr.cap = Gcap
-						var/obj/Headband/B = new/obj/Headband
-						B.loc = usr
-					else
-						usr<<"Your already Genin or higher or you don't have 10 Henge uses or haven't passed the writen exam."
-				else
-					usr<<"Ok then."
-
-mob/npc/Comuns/Anko
-	name="Anko"
-	icon='Anko.dmi'
-	PK = 0
-	health=999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(3)
-			set category="Forest Exit"
-			set name="***  Falar  ***"
-			switch(input("Giveing up already are we?",text) in list ("Yes","No"))
-				if("Yes")
-					for(var/obj/heavenscroll/H in usr.contents)
-						del(H)
-					for(var/obj/earthscroll/S in usr.contents)
-						del(S)
-					usr.deathforest=0
-					usr.earthscroll=0
-					usr.heavenscroll=0
-					usr.health = 0
-					usr.Death(usr)
-					usr<<"You quit the exam!"
-				else
-					usr<<"That's the spirit."
-
-
-mob/npc/Comuns/Pawn
-	name = "Pawn Shop"
-	icon = 'Banker.dmi'
-	icon_state = "Banco"
-	PK = 0
-	health = 9999999999999999999999999999999999999999999999
-	verb
-		Sell()
-			set name="***  Vender  ***"
-			var/varPackList = list()
-			if(locate(/obj) in usr:contents)
-				for(var/obj/O in usr:contents)
-					varPackList += O
-			else
-				usr << "[usr:name] has an empty pack!"
-				return
-			var/varPackItem = input("Pick an item from [usr:name]'s pack","Sell") in varPackList + list("Cancel")
-			if(varPackItem != "Cancel")
-				if(alert("Would you like to Sell [varPackItem:name]?","[varPackItem:name]","Yes","No") == "Yes")
-
-					del(varPackItem)
 mob/npc/Baby
 	name = "Baby"
 	icon = 'npcs.dmi'
 	icon_state = "Baby"
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
+//------------------------------------------------------------------------------------------------------------------------------------------
+
+//                                       --- Códigos ---
+mob
+	proc
+		NPCAI() //name of proc
+			var/mob/player/M //variable M has to be mob/usr
+			while(src) //while src is stil kickin
+				if(M in oview(5)) //if M is in oview(5)
+					if(M.name in src.killlist) //now if M.name is in src.killlist, this has it only attack if attacked!
+						walk_to(src,M,1,4) //src walks to M until 1 block away, moving 4/10ths of a second
+						if(M in oview(1)) //if M is in oview(1)
+							step_towards(src,M) //src steps toward M
+					else //if usr.name isnt in src.killlist
+						sleep(15)//pauses for 1 and 1/2 seconds
+						step_rand(src) //step randomly on the field
+						break //breaks out of the while loop
+				else //if M isnt in oview(5)
+					for(M in view(src)) //for all Ms in view(src)
+						break //breaks out of the while loop
+				sleep(5) //pauses 1/2 second before redoing loop
+			spawn(2) // pauses 2/10 of second before redoing proc
+				NPCAI()
+
+mob
+	proc
+		MONATTACK(mob/M in get_step(src,src.dir))
+			if(M.drunk&&M.NonClan)
+				view(M)<<"[M] dodges [src]'s atacou."
+				return
+			if(src.orochimaru&&src.canattack)
+				if(!M.bit)
+					var/damage = round(src.tai/1.6)
+					if(damage <= 1)
+						damage = 1
+						view() << "[src] atacou [M] e tirou [damage]!"
+						M.health -= damage
+						if(M.health <= 0)
+							src.killlist = ""
+							M.Death(src)
+						if(istype(M,/mob/enemy))
+							M.killlist += src.name
+					else
+						view() << "[src] atacou [M] e tirou [damage]!"
+						M.health -= damage
+						if(M.health <= 0)
+							src.killlist = ""
+							M.Death(src)
+						if(istype(M,/mob/enemy))
+							M.killlist += src.name
+				else
+					if(M.CS==1&&!src.GOTCS)
+						src.canattack=1
+						view(src)<<"Orochimaru: Você está interessado?."
+						sleep(10)
+						view(src)<<"Orochimaru: I will give you the gift the curse mark."
+						sleep(10)
+						view(M)<<"Orochimaru bites the neck of [M]."
+						M<<"You begin to feel an extreme powerfull!"
+						M.firing=1
+						M.GettingCurseSeal()
+						sleep(40)
+						view(M)<<"Orochimaru: Você deve me procurar quando for mais forte, Até mais [M]"
+						del(src)
+						sleep(40)
+						M.inmission=0
+						M.loc=locate(6,58,20)
+						M<<"You have been brought back to your village."
+						M.verbs -= new /mob/mission/verb/Escape()
+						M.verbs -= new /mob/mission/verb/Escape()
+						M.verbs -= new /mob/mission/verb/Escape()
+			else
+				if(M.ingat||M.intank||M.NPC)				.
+					return
+				if(M.Kaiten)
+					var/damage = round(usr.tai)
+					if(damage <= 1)
+						damage = 1
+						M <<"Você refletiu o ataque de [src]'s causing them to hurt themselfs."
+						src.health -= damage
+						if(src.health <= 0)
+							src.killlist = ""
+							src.Death(M)
+						return
+					else
+						M <<"Você refletiu o ataque de [src]'s attack causing them to hurt themselfs."
+						src.health -= damage
+						if(src.health <= 0)
+							src.killlist = ""
+							src.Death(M)
+						return
+				if (M.ingat == 1)
+					return
+				else					//otherwise...
+					if(src.Tekken&&src.canattack)
+						var/damage = round(src.tai)
+						if(damage <= 1)
+							damage = 1
+							view() << "[src] atacou [M] e tirou [damage]!"
+							M.health -= damage
+							if(M.health <= 0)
+								src.killlist = ""
+								M.Death(src)
+							if(istype(M,/mob/enemy))
+								M.killlist += src.name
+						else
+							view() << "[src] atacou [M] e tirou [damage]!"
+							M.health -= damage
+							if(M.health <= 0)
+								src.killlist = ""
+								M.Death(src)
+							if(istype(M,/mob/enemy))
+								M.killlist += src.name
+					else if(src.Jyuken == 1&&src.canattack == 1)
+						if(src.chakra >= 2)
+							src.canattack =0
+							var/damage = round(src.tai)
+							if(damage <= 1)
+								damage = 1
+								view() << "[src] atacou [M] e tirou [damage]!"
+								M.health -= damage
+								src.chakra -= 2
+								if(M.health <= 0)
+									src.killlist = ""
+									M.Death(src)
+								if(istype(M,/mob/enemy))
+									M.killlist += src.name
+							else
+								view() << "[src] atacou [M] e tirou [damage]!"
+								M.health -= damage
+								src.chakra -= 2
+								if(M.health <= 0)
+									src.killlist = ""
+									M.Death(src)
+								if(istype(M,/mob/enemy))
+									M.killlist += src.name
+						else
+							src.Jyuken = 0
+							src.Tekken = 1
+							return
+
+mob/proc/GettingCurseSeal()
+	XD
+		if(src.CS)
+			src.health-=150
+			if(src.health<=0)
+				src.Death(src)
+			src.random=rand(1,40)
+			if(src.random==3)
+				src.GOTCS=1
+				src.firing=0
+				src<<"Your pain stops."
+				return
+			else
+				sleep(12)
+				goto XD
+		else
+			return
+mob/var/waterfallS=0
+mob/var
+	bit=0
+	CS=0
+	GOTCS=0
+
+mob
+	proc
+		TacarShuriken()
+			src.firing = 1
+			var/obj/Shuriken/K = new /obj/Shuriken
+			K.loc = src.loc
+			K.tai=src.tai
+			K.dir = src.dir
+			K.name="[src]"
+			K.Gowner=src
+			walk(K,usr.dir)
+			usr.firing = 0
+			sleep(45)
+			del(K)
+mob
+	proc
+		TacarKunai()
+			src.firing = 1
+			var/obj/Kunai/K = new /obj/Kunai
+			K.loc = src.loc
+			K.tai=src.tai
+			K.dir = src.dir
+			K.name="[src]"
+			K.Gowner=src
+			walk(K,usr.dir)
+			usr.firing = 0
+			sleep(45)
+			del(K)
+
+mob
+	proc//core procs for the system
+
+
+		ai_random_wander()//random wander if no mobs are in range to attack
+			if(src.key)//if the source is human
+				return//don't call the rest
+			if(!src.weaknin&&!src.orochimaru&&!src.kyuubinpc&&!src.guard)
+				return
+			else
+				walk_rand(src,10)//walk randomly with 5 lag
+				src.ai_run_away()
+				spawn(10)//delay for one tick
+					ai_random_wander()//wander some more
+
+		ai_run_away()//used for checking to see if it should run or attack
+			if(src.client)
+				return
+			else
+				for(var/mob/M in oview(7,src))//loops over all mobs within 5 tiles of the monster
+					if(M.client)//if the mob is human
+						if(get_dist(src,M) <= 5)//if the player is close
+							if(src.weaknin||M.NPC)
+								return
+							else
+								src:random = rand(1,5)
+								if(src:random == 5)
+									src.jutsu()
+									src.ai_walk_to()
+								else
+									src.ai_walk_to()
+						else
+							src.jutsu()//calls the walk_to (for attacking) proc
+					else
+						return
+
+		ai_walk_to()
+			if(src.client)
+				return 0
+			else
+				for(var/mob/M in oview(15,src))
+					if(M.client)
+						if(src.guard==1&&M.Village=="[src.Village]")//|| (src.isdog==1 && src.owner)
+							return
+						if(get_dist(src,M) <= 10)//within 10 tiles
+							walk_to(src,M,1,10)//walk to the player
+							ai_check_dist(src,M)//checks distance
+							break//stops the loop
+						else
+							continue
+					else
+						continue
+
+		ai_check_dist(mob/attacker,mob/defender)
+			for(var/mob/M in oview(15,src))
+				if(attacker.client)
+					return
+				else
+					if(src.guard==1&&M.Village=="[src.Village]"||M.rank=="Student"||M.rank=="Genin")
+						return
+					if(get_dist(attacker,defender) <= 1 && defender.NPC==0)//if the monster is one tile away from the player
+						attacker.MONATTACK(defender)//attack!
+					else
+						return
+
+		jutsu()
+			for(var/mob/M in oview(10,src))
+				if(src.weaknin&&get_dist(src,M) >= 10)
+					src.firing = 1
+					var/obj/Shuriken/K = new /obj/Shuriken
+					K.loc = src.loc
+					K.tai=src.tai
+					K.dir = src.dir
+					K.name="[src]"
+					K.Move_Delay=1.5
+					K.Gowner=src
+					walk_towards(K,M)
+					src.firing = 0
+					sleep(10)
+					del(K)
+				if(src.orochimaru&&get_dist(src,M) >= 10)
+					src.firing = 1
+					view(src)<<"Orochimaru: Katon Karyuu Endan!"
+					var/obj/katonEndan/K = new /obj/katonEndan
+					K.loc = src.loc
+					K.nin=src.nin
+					K.dir = src.dir
+					K.name="[src]"
+					K.Move_Delay=1.7
+					K.Gowner=src
+					walk_towards(K,M)
+					src.firing = 0
+					sleep(10)
+					del(K)
+				if(src.guard==1&&M.Village=="[src.Village]"||M.rank=="Student"||M.rank=="Genin")
+					return
+				if(src.guard)
+					src.firing = 1
+					var/obj/Windmill/K = new /obj/Windmill
+					K.loc = src.loc
+					K.nin=src.shurikenskill
+					K.dir = src.dir
+					K.name="[src]"
+					K.Move_Delay=1.5
+					K.Gowner=src
+					walk_towards(K,M)
+					src.firing = 0
+					sleep(10)
+					del(K)
+
+mob
+	var/tmp
+		NPC = 0
+		original
+		moving=0
+		getingready=0
+		bowner
+		hairPrefix
+		enemy
+		statePrefix
+		lowner
+		sowner
+		wowner
+mob
+	npcs
+		KBunshin
+			human = 1
+			NPC = 1
+
+			proc/Die()
+				flick("smoke2",src)
+				del(src)
+			Bump(atom/M)
+				if(istype(M,/mob/)) // If they run into the player
+					if(M == bowner||M == src.original||M.name==src.name)
+						return
+					else
+						if(src.firing)
+							return
+						var/mob/P = M
+						var/Damage = src.tai
+						src.firing=1
+						if(P.Kaiten)
+							del(src)
+						if(P.drunk&&P.NonClan)
+							view()<<"[M] atacou [src]'s atacou"
+							sleep(13)
+							src.firing=0
+							return
+						P.health -= Damage
+						view() << "O [src] atacou [M] e tirou [Damage]!"
+						P.Death(src)
+						sleep(10)
+						src.firing=0
+		KKBunshin
+			proc/Die()
+				flick("smoke2",src)
+				del(src)
+			Bump(atom/M)
+				if(istype(M,/mob/)) // If they run into the player
+					if(M == lowner||M == src.original||M.name==src.name)
+						return
+					else
+						if(!src.firing)
+							src.firing=1
+							var/mob/P = M
+							var/Damage = src.tai
+							if(P.Kaiten)
+								del(src)
+							if(P.drunk&&P.NonClan)
+								view()<<"[M] dodges [src]'s atacou"
+								sleep(13)
+								src.firing=0
+								return
+							P.health -= Damage // Takes the players health
+							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
+							P.Death(src)
+						sleep(5)
+						src.firing=0
+		SBunshin
+			human = 1
+			NPC = 1
+
+			proc/Die()
+				flick("smoke2",src)
+				del(src)
+			Bump(atom/M)
+				if(istype(M,/mob/)) // If they run into the player
+					if(M == sowner||M == src.original||M.name==src.name)
+						return
+					else
+						if(!src.firing)
+							src.firing=1
+							var/mob/P = M
+							var/Damage = src.tai
+							if(P.Kaiten)
+								del(src)
+							if(P.drunk&&P.NonClan)
+								view()<<"[M] dodges [src]'s atacou"
+								sleep(13)
+								src.firing=0
+								return
+							P.health -= Damage // Takes the players health
+							view() << "<font size=1>O [src] atacou [M] e tirou [Damage]!"
+							P.Death(src)
+						sleep(5)
+						src.firing=0
+		Bunshin
+			human = 1
+			NPC = 1
+
+			proc/Die()
+				flick("smoke2",src)
+				del(src)
+
+
+
+mob
+	proc/CheckAction()
+		return
+
+proc/Name2Mob(var/mName as text)
+	for(var/mob/i in world)
+		if("[lowertext(i.name)]" == "[lowertext(mName)]")
+			return i
+
+obj
+	var/tmp
+		price
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
