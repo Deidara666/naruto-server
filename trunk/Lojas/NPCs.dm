@@ -4,11 +4,7 @@ mob/npc/Comuns/Orochimaru
 	icon = 'orochimaru.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Orochimaru"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Muashuahsuas... vejo que você tem muita coragem só de vir até mim;",text) in list ("Sair correndo","Rir de Orochimaru e tentar lutar","Desculpe não queria chamar sua atenção"))
 				if("Sair correndo","Rir de Orochimaru e tentar lutar")
 					if(usr.Uchiha == 1)
@@ -35,11 +31,7 @@ mob/npc/Comuns/Squads
 	icon_state = "Banco"
 	PK = 0
 	health=999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category="Squads"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Do you wish to form a squad of genin and train them to become chuunin?",text) in list ("Yes","No"))
 				if("Yes")
 					if(usr.squads==0)
@@ -62,11 +54,7 @@ mob/npc/Comuns/Genin
 	icon='Iruka.dmi'
 	PK = 0
 	health=999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(3)
-			set category="Iruka"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("To become a Genin you must Pass the writen test and then henge me 10 times so I know that you can do it right, ok?",text) in list ("Ok","No"))
 				if("Ok")
 					if(usr.rank=="Student"&&usr.hengeN >= 10&&usr.tested>=1)
@@ -85,11 +73,7 @@ mob/npc/Comuns/Anko
 	icon='Anko.dmi'
 	PK = 0
 	health=999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(3)
-			set category="Forest Exit"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Giveing up already are we?",text) in list ("Yes","No"))
 				if("Yes")
 					for(var/obj/heavenscroll/H in usr.contents)
@@ -135,11 +119,7 @@ mob/npc/Comuns/
 		icon_state = "Banco"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set src in oview(3)
-				set name="***  Abra a passagem  ***"
-
+		DblClick()
 				usr<<"<font color=yellow><font size=2><b>Para descobrir como passar aqui você deve pagar <font color=red><font size=3><b>90000Yen."
 				switch(input("Você deseja pagar para descobrir?")in list("Sim","Não"))
 					if("Sim")
@@ -1114,11 +1094,7 @@ mob/npc/Comuns/
 		icon_state = "Barbeiro"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Talk()
-				set src in oview(2)
-				set name="***  Falar  ***"
-				set category ="Corte de cabelo"
+		DblClick()
 				switch(input("Would you like me to work magic to that ragged hair??", text) in list ("Sim","Não"))
 					if("Yes")
 						usr.overlays-=usr.hair
@@ -1354,10 +1330,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Parabéns por me achar! Você é merecedor de um PRÊMIO!!!")in list("Mapa do Laberinto(Completo)","Mapa do Mundo(Pedaço1)","Mapa do Mundo(Pedaço2)","Mapa do Mundo(Pedaço3)","Mapa do Mundo(Pedaço4)"))
 					if("Mapa do Laberinto(Completo)")
 						return
@@ -1377,10 +1350,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Fuuton","Nada"))
 					if("Quero saber mais sobre o elemento Fuuton")
 						return
@@ -1393,10 +1363,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Raiton","Nada"))
 					if("Quero saber mais sobre o elemento Raiton")
 						return
@@ -1426,10 +1393,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Doton","Nada"))
 					if("Quero saber mais sobre o elemento Doton")
 						return
@@ -1442,10 +1406,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Suiton","Nada"))
 					if("Quero saber mais sobre o elemento Suiton")
 						return
@@ -1458,10 +1419,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Bakuton","Nada"))
 					if("Quero saber mais sobre o elemento Bakuton")
 						return
@@ -1474,10 +1432,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Futton","Nada"))
 					if("Quero saber mais sobre o elemento Futton")
 						return
@@ -1490,10 +1445,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Hyouton","Nada"))
 					if("Quero saber mais sobre o elemento Hyouton")
 						return
@@ -1506,10 +1458,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Jinton","Nada"))
 					if("Quero saber mais sobre o elemento Jinton")
 						return
@@ -1522,10 +1471,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Mokuton","Nada"))
 					if("Quero saber mais sobre o elemento Mokuton")
 						return
@@ -1538,10 +1484,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Ranton","Nada"))
 					if("Quero saber mais sobre o elemento Ranton")
 						return
@@ -1554,10 +1497,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shakuton","Nada"))
 					if("Quero saber mais sobre o elemento Shakuton")
 						return
@@ -1570,10 +1510,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shouton","Nada"))
 					if("Quero saber mais sobre o elemento Shouton")
 						return
@@ -1586,10 +1523,7 @@ mob/npc/Sabios
 		icon_state = "Chefe"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Youton","Nada"))
 					if("Quero saber mais sobre o elemento Youton")
 						return
@@ -1605,10 +1539,7 @@ mob/npc/Sabios
 		icon_state = "Kumo"
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
-		verb
-			Falar()
-				set name="***  Falar  ***"
-				set src in oview(3)
+		DblClick()
 				switch(input("Deseja aprender os segredos de Kumogakure? Lembre-se você precisa ser de Kumogakure e ter alguns STATUS para aprende-los.")in list("Quero aprender os seus segredos","Nada"))
 					if("Quero aprender os seus segredos")
 						if(usr.rainS == 1)
@@ -1623,6 +1554,34 @@ mob/npc/Sabios
 					if("Nada")
 						return
 
+
+mob/npc/Sabios
+	SabioDeClikeTeste
+		name = "Sabio de Kumogakure"
+		icon = 'Sabios.dmi'
+		icon_state = "Kumo"
+		PK = 0
+		health = 9999999999999999999999999999999999999999999999
+		DblClick()
+			//set src in oview(3)
+			switch(input("Deseja aprender os segredos de Kumogakure? Lembre-se você precisa ser de Kumogakure e ter alguns STATUS para aprende-los.")in list("Quero aprender os seus segredos","Nada"))
+				if("Quero aprender os seus segredos")
+					if(usr.rainS == 1)
+						if(usr.level >= 200)
+							usr.verbs += new /mob/flight/verb/Cloud()
+							usr<<"<font color=green><font size=3><b>Você aprendeu Fly."
+						else
+							usr<<"<font color=red><font size=2><b>Você precisa ter no mínimo Level 200 para usar o Fly."
+					else
+						usr<<"<font color=red><font size=3><b>Não tente me enganar<font color=yellow><font size=2></b>, você não é de Kumogakure"
+						return
+				if("Nada")
+					return
+			//sleep(20)
+
+
+
+
 //-----------------------------------------------------------------------------------------------------------------------------------------
 
 // 																--- Clan ---
@@ -1632,11 +1591,7 @@ mob/npc/Clan/Gaara
 	icon_state = "Gaara"
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Gaara"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Help me awaken my demon shead your blood for me.",text) in list ("Yes","No","I'm Gaara too.","Unlock My Demon"))
 				if("Yes")
 					usr.maxhealth -= 1000
@@ -1710,11 +1665,7 @@ mob/npc/Clan/Gai
 	icon = 'Guy.dmi'
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Gai"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Well hi there and welcome to the Lee house.",text) in list ("I'm Lee too.","Weirdo"))
 				if("I'm Lee too.")
 					if(usr.Clan=="Lee")
@@ -1760,11 +1711,7 @@ mob/npc/Clan/Tenten
 	icon = 'tenten.dmi'
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Tenten"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Well hi there cutie welcome to the Tenten house.",text) in list ("I'm Tenten too.","Well hello yourself cutie."))
 				if("I'm Tenten too.")
 					if(usr.Clan=="Tenten")
@@ -1812,11 +1759,7 @@ mob/npc/Clan/Shino
 	icon_state = "Shino"
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Shino"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("You want to learn the Snake sign?",text) in list ("Yes","No","I'm Aburame too!"))
 				if("Yes")
 					if(usr.bugs >= 10)
@@ -1878,11 +1821,7 @@ mob/npc/Clan/Naruto
 	icon_state = "Naruto"
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category ="Naruto"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Ei você vai me fazer um favor? Eu vou te mostrar o sinal Tiger é muito legal.") in list ("Sim","Não","Eu sou Uzumaki tambem!","Get Lost"))
 				if("Sim")
 					if(usr.tiger==2)
@@ -1942,11 +1881,7 @@ mob/npc/Clan/Sakura
 	icon_state = "Sakura"
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Sakura"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Olá, como posso ajudá-lo?") in list ("Você pode me mostrar um sinal da mão agora?","Nevermind"))
 				if("Você pode me mostrar um sinal da mão agora?")
 					if(usr.dogs==2)
@@ -1966,11 +1901,7 @@ mob/npc/Clan/Sasuke
 	icon_state = "Sasuke"
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Sasuke"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("O quê? Você não vê que estou ocupado treinando? Deixe-me adivinhar, você quer aprender um certo sinal de jutsu mão?",text) in list ("Sim","Não","Eu sou Uchiha tambem!","Esqueça"))
 				if("Sim")
 					if(usr.dragon == 2)
@@ -2003,11 +1934,7 @@ mob/npc/Clan/Kisame
 	icon_state = "Sasuke"
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Kisame"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("O que você quer aqui? Não me diga que tambem é um hoshigaki!",text) in list ("RsRssSrs.. sou hoshigaki tambem!","Esqueça"))
 				if("RsRssSrs.. sou hoshigaki tambem!")
 					if(usr.Kisame == 1)
@@ -2031,11 +1958,7 @@ mob/npc/Clan/Haku
 	icon = 'haku.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Haku"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Olá, você é do meu clan?",text) in list ("Sim","Esqueça"))
 				if("Sim")
 					if(usr.Haku == 1)
@@ -2077,11 +2000,7 @@ mob/npc/Clan/Choji
 	icon = 'Choji.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Choji"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Olá, essa é a casa Akimichi",text) in list ("Eu sou Akimichi tambem!","Esqueça"))
 				if("Eu sou Akimichi tambem!")
 					if(usr.Akimichi == 1)
@@ -2117,11 +2036,7 @@ mob/npc/Clan/Nara
 	icon = 'Nara.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Shikamaru"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Como isso é chato, essa é a casa dos Nara",text) in list ("Eu sou Nara tambem!","Esqueça"))
 				if("Eu sou Nara tambem!")
 					if(usr.Nara == 1)
@@ -2167,11 +2082,7 @@ mob/npc/Clan/Kamizuri
 	icon = 'BeeArmor.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Bee Keeper"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("What do you want I'm beezy.",text) in list ("I'm Kamizuri too!","Forget it"))
 				if("I'm Kamizuri too!")
 					if(usr.Kamizuri == 1)
@@ -2224,11 +2135,7 @@ mob/npc/Clan/Kabuto
 	icon = 'Kabuto.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Kabuto"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("What do you want I'm working on my cards.",text) in list ("Can you heal me?","INFO Cards","I'm a Medic too!","Forget it"))
 				if("I'm a Medic too!")
 					if(usr.Medical == 1)
@@ -2291,11 +2198,7 @@ mob/npc/Clan/Neiji
 	icon_state = "Neiji"
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Neiji"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("What is it?",text) in list ("Can you show me a hand sign?","I am weaker then you","Nothen","I'm hyuuga too!"))
 				if("Can you show me a hand sign?")
 					usr<<"Admit that you are weaker then me"
@@ -2335,11 +2238,7 @@ mob/npc/Clan/Kaguya
 	icon = 'Kaguya.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Kimimaro"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("What, this is the Kaguya house",text) in list ("I'm Kaguya too!","Forget it"))
 				if("I'm Kaguya too!")
 					if(usr.Kaguya == 1)
@@ -2396,11 +2295,7 @@ mob/npc/Clan/Kiba
 	icon = 'Kiba.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
-	verb
-		Talk()
-			set src in oview(1)
-			set category = "Kiba"
-			set name="***  Falar  ***"
+	DblClick()
 			switch(input("Ya, this is the Inuzuka house what do you want?",text) in list ("I'm Inuzuka too!","Forget it"))
 				if("I'm Inuzuka too!")
 					if(usr.Inuzuka == 1)
