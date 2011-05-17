@@ -164,12 +164,15 @@ mob/var
 	Mshurikenskill=1
 	Mkunaiskill=1
 	Mtrapskill=1
-	sharingan1=1
 	kunai=0
+//-------
+	Alcance=1
+	sharingan1=1
 	sharingan2=0
 	sharingan3=0
-	Yen = 50000
 	mangekyou=0
+//-------
+	Yen = 50000
 	Suses = 0
 	missingkills=0
 	dogname=""

@@ -1,5 +1,318 @@
 mob/uchiha
 	verb
+		SharinganSoufuushaSannotachi(mob/M in oview(4))
+			set category = "Doujutsu"
+			set name = "Sharingan Soufuusha Sannotachi"
+			usr.Handseals()
+			if(usr.resting)
+				return
+			if(usr.meditating)
+				return
+			if(usr.firing)
+				return
+			if(!usr.handseals)
+				return
+			if(usr.froze)
+				usr<<"Your frozen"
+				return
+			if(usr.Frozen)
+				usr<<"Your frozen"
+				return
+			if(usr.caught)
+				usr<<"Your captured"
+				return
+			if(usr.captured)
+				usr<<"Your captured"
+				return
+			if(usr.resting)
+				usr<<"Not while resting"
+				return
+			if(usr.meditating)
+				usr<<"Not while meditating"
+				return
+			if(usr.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(M.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(usr.chakra <= 1)
+				usr<<"Not enough Chakra!"
+			else
+				if(usr.Kshibari)
+					for(var/obj/Jutsus/shibari/K in world)
+						if(K.owner==usr)
+							del(K)
+							usr.Kshibari=0
+							usr.Frozen=0
+							M.Frozen=0
+							M.caught=0
+							M.overlays-='kagekubi.dmi'
+							M.overlays-='kagekubi.dmi'
+							M.overlays-='kagekubi.dmi'
+					for(var/obj/Jutsus/shibaritrail/T in world)
+						if(T.owner==usr)
+							del(T)
+							usr.Kshibari=0
+							usr.Frozen=0
+							M.Frozen=0
+							M.caught=0
+							M.overlays-='kagekubi.dmi'
+							M.overlays-='kagekubi.dmi'
+							M.overlays-='kagekubi.dmi'
+				else
+					view()<<"<font size=1><font face=verdana><b><font color=white>[usr]<font color=green> Says: <FONT COLOR=#708090>K</FONT><FONT COLOR=#707f8d>a</FONT><FONT COLOR=#6f7c89>g</FONT><FONT COLOR=#6f7a85>e</FONT><FONT COLOR=#6e7781> </FONT><FONT COLOR=#6d757d>S</FONT><FONT COLOR=#6c7379>h</FONT><FONT COLOR=#6b7075>i</FONT><FONT COLOR=#6b6e71>b</FONT><FONT COLOR=#6a6b6d>a</FONT><FONT COLOR=#696969>r</FONT><FONT COLOR=#777777>i</FONT><FONT COLOR=#848484> </FONT><FONT COLOR=#929292>N</FONT><FONT COLOR=#a0a0a0>o</FONT><FONT COLOR=#aeaeae> </FONT><FONT COLOR=#bbbbbb>J</FONT><FONT COLOR=#c9c9c9>u</FONT><FONT COLOR=#d7d7d7>t</FONT><FONT COLOR=#e5e5e5>s</FONT><FONT COLOR=#f2f2f2>u</FONT><FONT COLOR=#ffffff>!</FONT>"
+					var/obj/Jutsus/shibari/K = new /obj/Jutsus/shibari
+					K.loc = usr.loc
+					usr.Chakragain()
+					K.Move_Delay = 2
+					K.gen = usr.gen
+					usr.Kshibari=1
+					K.owner = usr
+					K.target=M
+					usr.Frozen=1
+
+		Lancar()
+			set category = "Doujutsu"
+			set name = "Lançar"
+			usr.chakra -= 100
+			for(var/obj/Jutsus/shibari/K in world)
+				if(usr.PK==0)
+					usr<<"NON PK ZONE!"
+					return
+				if(usr.froze)
+					usr<<"Your frozen"
+					return
+				if(usr.Frozen)
+					usr<<"Your frozen"
+					return
+				if(usr.caught)
+					usr<<"Your captured"
+					return
+				if(usr.captured)
+					usr<<"Your captured"
+					return
+				if(usr.resting)
+					usr<<"Not while resting"
+					return
+				if(usr.meditating)
+					usr<<"Not while meditating"
+					return
+				if(K.owner == usr)
+					step_towards(K,K.target)
+				if(usr.chakra<=100)
+					del(K)
+					usr.Kshibari=0
+					usr<<"You have hold has sliped"
+					for(var/obj/Jutsus/shibaritrail/T in world)
+						usr.Frozen=0
+						if(T.owner == usr)
+							usr.Frozen=0
+							del(T)
+		Recuar()
+			set category = "Doujutsu"
+			set name = "Recuar"
+			usr.chakra -= 500
+			for(var/obj/Jutsus/shibari/K in world)
+				if(usr.PK==0)
+					usr<<"NON PK ZONE!"
+					return
+				if(usr.froze)
+					usr<<"Your frozen"
+					return
+				if(usr.Frozen)
+					usr<<"Your frozen"
+					return
+				if(usr.caught)
+					usr<<"Your captured"
+					return
+				if(usr.captured)
+					usr<<"Your captured"
+					return
+				if(usr.resting)
+					usr<<"Not while resting"
+					return
+				if(usr.meditating)
+					usr<<"Not while meditating"
+					return
+				K.move=1
+				if(K.owner == usr)
+					for(var/mob/M in K.loc)
+						if(K.owner == M)
+							if(K.loc == M.loc)
+								del(K)
+								usr.Frozen=0
+								usr.Kshibari=0
+								M.Frozen=0
+								for(var/obj/Jutsus/shibaritrail/A in world)
+									if(A.owner==usr)
+										del(A)
+								return
+					for(var/obj/Jutsus/shibaritrail/T in oview(1,K))
+						if(T.owner==usr)
+							K.loc = T.loc
+							K.dir=T.dir
+							del(T)
+						else
+							del(K)
+							for(var/obj/Jutsus/shibaritrail/L in world)
+								if(L.owner==usr)
+									del(L)
+							usr.Frozen=0
+							usr.kubi=0
+							usr.Kshibari=0
+							usr.firing=0
+							del(K)
+
+							del(T)
+
+						for(var/mob/M in oview(11,K))
+							if(M==K.target)
+								if(K.loc==M.loc)
+									M.Frozen=1
+									M.caught=1
+								else
+									M.Frozen=0
+									M.caught=0
+									M.kubi=0
+									M.overlays-='kagekubi.dmi'
+									M.overlays-='kagekubi.dmi'
+									M.overlays-='kagekubi.dmi'
+		Apertar()
+			set category = "Doujutsu"
+			set name="Apertar Inimigo"
+			if(usr.firing)
+				return
+			if(usr.PK==0)
+				usr<<"NON PK ZONE!"
+				return
+			if(usr.froze)
+				usr<<"Your frozen"
+				return
+			if(usr.Frozen)
+				usr<<"Your frozen"
+				return
+			if(usr.caught)
+				usr<<"Your captured"
+				return
+			if(usr.captured)
+				usr<<"Your captured"
+				return
+			if(usr.resting)
+				usr<<"Not while resting"
+				return
+			if(usr.meditating)
+				usr<<"Not while meditating"
+				return
+			for(var/obj/Jutsus/shibari/K in world)
+				if(K.owner==usr)
+					for(var/mob/M in world)
+						if(M.caught&&!M.kubi)
+							M.kubi=1
+							usr.Chakragain()
+							usr.chakra-=100
+							M.overlays+='kagekubi.dmi'
+							var/damage=round(usr.gen*5)
+							if(damage<=5)
+								usr<<"Your neck bind is too weak, [M] breaks out!"
+								return
+							else
+								ROFL
+									if(usr.chakra<=5)
+										M.Frozen=0
+										usr.Frozen=0
+										M.caught=0
+										M.kubi=0
+										M.overlays-='kagekubi.dmi'
+										M.overlays-='kagekubi.dmi'
+										M.overlays-='kagekubi.dmi'
+										for(var/obj/Jutsus/shibaritrail/T in world)
+											if(T.owner==usr)
+												del(T)
+												usr.Frozen=0
+												M.caught=0
+												M.caught=0
+												M.Frozen=0
+												M.kubi=0
+												M.overlays-='kagekubi.dmi'
+												M.overlays-='kagekubi.dmi'
+												M.overlays-='kagekubi.dmi'
+												return
+									if(!M.caught)
+										M.Frozen=0
+										usr.Frozen=0
+										M.caught=0
+										M.kubi=0
+										M.overlays-='kagekubi.dmi'
+										M.overlays-='kagekubi.dmi'
+										M.overlays-='kagekubi.dmi'
+										for(var/obj/Jutsus/shibaritrail/T in world)
+											if(T.owner==usr)
+												del(T)
+												usr.Frozen=0
+												M.caught=0
+												M.caught=0
+												M.Frozen=0
+												M.kubi=0
+												M.overlays-='kagekubi.dmi'
+												M.overlays-='kagekubi.dmi'
+												M.overlays-='kagekubi.dmi'
+												return
+									if(!usr.Kshibari)
+										M.Frozen=0
+										usr.Frozen=0
+										M.caught=0
+										M.kubi=0
+										M.overlays-='kagekubi.dmi'
+										M.overlays-='kagekubi.dmi'
+										M.overlays-='kagekubi.dmi'
+										for(var/obj/Jutsus/shibaritrail/T in world)
+											if(T.owner==usr)
+												del(T)
+												usr.Frozen=0
+												M.caught=0
+												M.caught=0
+												M.Frozen=0
+												M.kubi=0
+												M.overlays-='kagekubi.dmi'
+												M.overlays-='kagekubi.dmi'
+												M.overlays-='kagekubi.dmi'
+									if(!M.kubi)
+										M.Frozen=0
+										usr.Frozen=0
+										M.caught=0
+										M.kubi=0
+										M.overlays-='kagekubi.dmi'
+										M.overlays-='kagekubi.dmi'
+										M.overlays-='kagekubi.dmi'
+										for(var/obj/Jutsus/shibaritrail/T in world)
+											if(T.owner==usr)
+												del(T)
+												usr.Frozen=0
+												M.caught=0
+												M.caught=0
+												M.Frozen=0
+												M.kubi=0
+												M.overlays-='kagekubi.dmi'
+												M.overlays-='kagekubi.dmi'
+												M.overlays-='kagekubi.dmi'
+												return
+									else
+										usr.chakra-=100
+										view(usr)<<"[M] takes [damage] damage from Neck Bind"
+										M.health-=damage
+										if(M.health<=0)
+											M.Death(usr)
+											usr.Frozen=0
+											usr.Kshibari=0
+											usr.kubi=0
+											return
+										sleep(40)
+										goto ROFL
+
+
+mob/uchiha
+	verb
 		Tsukiyomi(mob/M in oview(1)) // Verb used for firing the beam
 			set category = "Doujutsu"
 			set name = "Tsukiyomi"
@@ -206,8 +519,8 @@ mob/uchiha
 				usr<<"Não enquanto medita"
 				return
 			else // If the firing var isn't 1...
-				M<<"Você foi freezado pelo [usr]'s Sharingan."
-				usr<<"Você freezo [M] com seu Sharingan"
+				M<<"Você foi freezado pelo Sharingan de [usr]."
+				usr<<"Você freezou [M] com seu Sharingan"
 				var/Sleeptime = round(usr.gen/10)
 				if(Sleeptime <= 1)
 					Sleeptime = 55
@@ -216,7 +529,7 @@ mob/uchiha
 					sleep(Sleeptime)
 					if(M)
 						M.Frozen=0
-						M<<"Você saiu do [usr]'s Sharingan freeze."
+						M<<"Você saiu do freeze de [usr]."
 						usr<<"[M] está livre do seu Sharingan!"
 						M.froze = 0
 					sleep(8)
@@ -226,7 +539,7 @@ mob/uchiha
 					sleep(Sleeptime)
 					if(M)
 						M.Frozen=0
-						M<<"Você saiu do [usr]'s Sharingan freeze."
+						M<<"Você saiu do freeze de [usr]."
 						usr<<"[M] está livre do seu Sharingan!"
 						M.froze = 0
 					sleep(8)

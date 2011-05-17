@@ -5,25 +5,25 @@ mob/npc/Comuns/Orochimaru
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Muashuahsuas... vejo que você tem muita coragem só de vir até mim;",text) in list ("Sair correndo","Rir de Orochimaru e tentar lutar","Desculpe não queria chamar sua atenção"))
-				if("Sair correndo","Rir de Orochimaru e tentar lutar")
-					if(usr.Uchiha == 1)
-						usr<<"... hum... Você tem algo que me interessa"
-						world<<"<B><font size = 3><font color = green> [usr] <B><font size = 2><font color = red> acaba de ser amaldiçoado por <B><font size = 3><font color = green> Orochimaru <B><font size = 2><font color = red> na floresta da morte."
+		switch(input("Muashuahsuas... vejo que você tem muita coragem só de vir até mim;",text) in list ("Sair correndo","Rir de Orochimaru e tentar lutar","Desculpe não queria chamar sua atenção"))
+			if("Sair correndo","Rir de Orochimaru e tentar lutar")
+				if(usr.Uchiha == 1)
+					usr<<"... hum... Você tem algo que me interessa"
+					world<<"<B><font size = 3><font color = green> [usr] <B><font size = 2><font color = red> acaba de ser amaldiçoado por <B><font size = 3><font color = green> Orochimaru <B><font size = 2><font color = red> na floresta da morte."
 
-						switch(input("Eu tenho uma pergunta! Você mataria amigos, inimigos e aliados em busca de um desejo?",text) in list ("Sim","Não"))
-							if("Sim")
+					switch(input("Eu tenho uma pergunta! Você mataria amigos, inimigos e aliados em busca de um desejo?",text) in list ("Sim","Não"))
+						if("Sim")
 
-								if(usr.Clan=="Uchiha")
-									usr << "<B><font color = blue>Você foi amaldiçoado por Orochimaru Sama"
-									usr.verbs += new /mob/Uchiha/verb/SeloAmaldicoado()
+							if(usr.Clan=="Uchiha")
+								usr << "<B><font color = blue>Você foi amaldiçoado por Orochimaru Sama"
+								usr.verbs += new /mob/Uchiha/verb/SeloAmaldicoado()
 
-					else
-						usr<<"Pena que você é um méro ninja qualquer e morrera aqui mesmo."
+				else
+					usr<<"Pena que você é um méro ninja qualquer e morrera aqui mesmo."
 
-				if("Desculpe não queria chamar sua atenção")
-					usr<<"Você fica amedrontado e corre de Orochimaru"
-					return
+			if("Desculpe não queria chamar sua atenção")
+				usr<<"Você fica amedrontado e corre de Orochimaru"
+
 
 mob/npc/Comuns/Squads
 	name="Jounin Squad assignments."
@@ -32,22 +32,22 @@ mob/npc/Comuns/Squads
 	PK = 0
 	health=999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Do you wish to form a squad of genin and train them to become chuunin?",text) in list ("Yes","No"))
-				if("Yes")
-					if(usr.squads==0)
-						if(usr.rank=="Student"||usr.rank=="Missing")
-							usr<<"Your not allowed a squad."
-							return
-						else
-							alert("IF you change the font size YOUR BANNED!& if u use HTML remember to use the </font> at the end!")
-							var/squad = input("","Squad") as text|null
-							usr.squads=1
-							usr.squad="[(squad)]"
-							usr.verbs += typesof(/mob/Squads/verb)
+		switch(input("Do you wish to form a squad of genin and train them to become chuunin?",text) in list ("Yes","No"))
+			if("Yes")
+				if(usr.squads==0)
+					if(usr.rank=="Student"||usr.rank=="Missing")
+						usr<<"Your not allowed a squad."
+						return
 					else
-						usr<<"Your already in a squad."
+						alert("IF you change the font size YOUR BANNED!& if u use HTML remember to use the </font> at the end!")
+						var/squad = input("","Squad") as text|null
+						usr.squads=1
+						usr.squad="[(squad)]"
+						usr.verbs += typesof(/mob/Squads/verb)
 				else
-					usr<<"If you feel you are not ready it is best."
+					usr<<"Your already in a squad."
+			else
+				usr<<"If you feel you are not ready it is best."
 
 mob/npc/Comuns/Genin
 	name="Iruka"
@@ -55,18 +55,18 @@ mob/npc/Comuns/Genin
 	PK = 0
 	health=999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("To become a Genin you must Pass the writen test and then henge me 10 times so I know that you can do it right, ok?",text) in list ("Ok","No"))
-				if("Ok")
-					if(usr.rank=="Student"&&usr.hengeN >= 10&&usr.tested>=1)
-						world<<"[usr] is now a genin"
-						usr.rank = "Genin"
-						usr.cap = Gcap
-						var/obj/Headband/B = new/obj/Headband
-						B.loc = usr
-					else
-						usr<<"Your already Genin or higher or you don't have 10 Henge uses or haven't passed the writen exam."
+		switch(input("To become a Genin you must Pass the writen test and then henge me 10 times so I know that you can do it right, ok?",text) in list ("Ok","No"))
+			if("Ok")
+				if(usr.rank=="Student"&&usr.hengeN >= 10&&usr.tested>=1)
+					world<<"[usr] is now a genin"
+					usr.rank = "Genin"
+					usr.cap = Gcap
+					var/obj/Headband/B = new/obj/Headband
+					B.loc = usr
 				else
-					usr<<"Ok then."
+					usr<<"Your already Genin or higher or you don't have 10 Henge uses or haven't passed the writen exam."
+			else
+				usr<<"Ok then."
 
 mob/npc/Comuns/Anko
 	name="Anko"
@@ -74,20 +74,20 @@ mob/npc/Comuns/Anko
 	PK = 0
 	health=999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Giveing up already are we?",text) in list ("Yes","No"))
-				if("Yes")
-					for(var/obj/heavenscroll/H in usr.contents)
-						del(H)
-					for(var/obj/earthscroll/S in usr.contents)
-						del(S)
-					usr.deathforest=0
-					usr.earthscroll=0
-					usr.heavenscroll=0
-					usr.health = 0
-					usr.Death(usr)
-					usr<<"You quit the exam!"
-				else
-					usr<<"That's the spirit."
+		switch(input("Giveing up already are we?",text) in list ("Yes","No"))
+			if("Yes")
+				for(var/obj/heavenscroll/H in usr.contents)
+					del(H)
+				for(var/obj/earthscroll/S in usr.contents)
+					del(S)
+				usr.deathforest=0
+				usr.earthscroll=0
+				usr.heavenscroll=0
+				usr.health = 0
+				usr.Death(usr)
+				usr<<"You quit the exam!"
+			else
+				usr<<"That's the spirit."
 
 
 mob/npc/Comuns/Pawn
@@ -120,39 +120,39 @@ mob/npc/Comuns/
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				usr<<"<font color=yellow><font size=2><b>Para descobrir como passar aqui você deve pagar <font color=red><font size=3><b>90000Yen."
-				switch(input("Você deseja pagar para descobrir?")in list("Sim","Não"))
-					if("Sim")
-						if(usr.Yen < 90000)
-							usr<<"<font color=red><font size=3><b>Você não tem dinheiro para pagar a taxa !"
-						else
-							usr.Yen -= 90000
-							usr<<"<font color=green><font size =3><b>[usr] *Pagou*"
-							switch(input("Essa passagem só é desbloquiada se você me responder há duas perguntas! Quantos Bijus existiam na vila de Kumogakure?")in list("1","2","3","4"))
-								if("2")
-									usr<<"<font color=yellow><font size=2><b>Você acertou!"
-								else
-									usr.health = 0
-									usr.Death(usr)
-									usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
-									if(usr)
-										usr.dead=1
-									return
-							switch(input("Você acertou, mas quero que responda mais uma pergunta! Quantas caudas tinha esses bijus?")in list("8 caudas e 2 caudas","9 caudas e 5 caudas","2 caudas e 1 cauda","5 caudas e 8 caudas"))
-								if("8 caudas e 2 caudas")
-									usr<<"<font color=yellow><font size=2><b>Vejo que você é um homem de confiança e muito inteligente!<font size = 3><font color = green><b> [usr] está liberado para passar."
-									density=0
-									sleep(80)
-									density=1
-								else
-									usr.health = 0
-									usr.Death(usr)
-									usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
-									if(usr)
-										usr.dead=1
-									return
-					if("Não")
-						usr<<"<font color=yellow><font size=2><b>Intão Volte de onde veio!"
+			usr<<"<font color=yellow><font size=2><b>Para descobrir como passar aqui você deve pagar <font color=red><font size=3><b>90000Yen."
+			switch(input("Você deseja pagar para descobrir?")in list("Sim","Não"))
+				if("Sim")
+					if(usr.Yen < 90000)
+						usr<<"<font color=red><font size=3><b>Você não tem dinheiro para pagar a taxa !"
+					else
+						usr.Yen -= 90000
+						usr<<"<font color=green><font size =3><b>[usr] *Pagou*"
+						switch(input("Essa passagem só é desbloquiada se você me responder há duas perguntas! Quantos Bijus existiam na vila de Kumogakure?")in list("1","2","3","4"))
+							if("2")
+								usr<<"<font color=yellow><font size=2><b>Você acertou!"
+							else
+								usr.health = 0
+								usr.Death(usr)
+								usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
+								if(usr)
+									usr.dead=1
+								return
+						switch(input("Você acertou, mas quero que responda mais uma pergunta! Quantas caudas tinha esses bijus?")in list("8 caudas e 2 caudas","9 caudas e 5 caudas","2 caudas e 1 cauda","5 caudas e 8 caudas"))
+							if("8 caudas e 2 caudas")
+								usr<<"<font color=yellow><font size=2><b>Vejo que você é um homem de confiança e muito inteligente!<font size = 3><font color = green><b> [usr] está liberado para passar."
+								density=0
+								sleep(80)
+								density=1
+							else
+								usr.health = 0
+								usr.Death(usr)
+								usr<<"<font color=yellow><font size=2>Você é um invasor e merece morrer! <font size = 3><font color = red>[usr] <font color=yellow><font size=2>está morto agora!!!"
+								if(usr)
+									usr.dead=1
+								return
+				if("Não")
+					usr<<"<font color=yellow><font size=2><b>Intão Volte de onde veio!"
 
 mob/npc/Comuns/
 	Summon_Vender
@@ -1095,229 +1095,229 @@ mob/npc/Comuns/
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Would you like me to work magic to that ragged hair??", text) in list ("Sim","Não"))
-					if("Yes")
-						usr.overlays-=usr.hair
-						switch(input("Masculino ou Feminino?", text)in list ("Masculino","Feminino"))
-							if("Masculino")
-								switch(input("Qual estilo de cabolo você mais gosta?", text) in list ("Naruto","Sasuke","Gaara","Shikamaru","Kakashi","Kabuto","Rock Lee","Itachi","Neiji","Kimimaro","Yondaime","Orochimaru","Jiraiya","Bald"))
-									if("Jiraiya")
-										usr.hair = "Jiraiya"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'jiraiyaH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Kabuto")
-										usr.hair = "Kabuto"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'KabutoH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Orochimaru")
-										usr.hair = "Orochimaru"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'OrochimaruH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Kimimaro")
-										usr.hair = "Kimimaro"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'KimimaroH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Yondaime")
-										usr.hair = "Yondaime"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'YondaimeH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Bald")
-										usr.hair = "Bald"
-									if("Naruto")
-										usr.hair = "Naruto"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'narutoH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Neiji")
-										usr.hair = "Neiji"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'neijih.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Itachi")
-										usr.hair = "Itachi"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'itachiH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Gaara")
-										usr.hair = "Gaara"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'gaaraH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Kakashi")
-										usr.hair = "Kakashi"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'KakashiH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Sasuke")
-										usr.hair = "Sasuke Hair"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'SasukeH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Rock Lee")
-										usr.hair = "Lee Hair"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'leeH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
+			switch(input("Would you like me to work magic to that ragged hair??", text) in list ("Sim","Não"))
+				if("Yes")
+					usr.overlays-=usr.hair
+					switch(input("Masculino ou Feminino?", text)in list ("Masculino","Feminino"))
+						if("Masculino")
+							switch(input("Qual estilo de cabolo você mais gosta?", text) in list ("Naruto","Sasuke","Gaara","Shikamaru","Kakashi","Kabuto","Rock Lee","Itachi","Neiji","Kimimaro","Yondaime","Orochimaru","Jiraiya","Bald"))
+								if("Jiraiya")
+									usr.hair = "Jiraiya"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'jiraiyaH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Kabuto")
+									usr.hair = "Kabuto"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'KabutoH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Orochimaru")
+									usr.hair = "Orochimaru"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'OrochimaruH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Kimimaro")
+									usr.hair = "Kimimaro"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'KimimaroH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Yondaime")
+									usr.hair = "Yondaime"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'YondaimeH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Bald")
+									usr.hair = "Bald"
+								if("Naruto")
+									usr.hair = "Naruto"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'narutoH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Neiji")
+									usr.hair = "Neiji"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'neijih.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Itachi")
+									usr.hair = "Itachi"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'itachiH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Gaara")
+									usr.hair = "Gaara"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'gaaraH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Kakashi")
+									usr.hair = "Kakashi"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'KakashiH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Sasuke")
+									usr.hair = "Sasuke Hair"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'SasukeH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Rock Lee")
+									usr.hair = "Lee Hair"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'leeH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
 
 
 
-							if("Feminino")
-								switch(input("Which hair style would you like?", text) in list ("Sakura","Hinata","Ino","Temari","Careca"))
-									if("Temari")
-										usr.hair = "Temari Hair"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'temariH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Sakura")
-										usr.hair = "Sakura Hair"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'SakuraH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Ino")
-										usr.hair = "Ino"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'inoH.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Hinata")
-										usr.hair = "Hinata"
-										var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
-										var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
-										var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
-										var/hairover = 'Hinata Hair.dmi'
-										hairover += rgb(hairred,hairgreen,hairblue)
-										usr.rhair = hairred
-										usr.ghair = hairgreen
-										usr.bhair = hairblue
-										usr.Ohair = hairover
-										usr.hair = usr.Ohair
-										usr.overlays += usr.hair
-									if("Careca")
-										usr.hair = "Bald"
+						if("Feminino")
+							switch(input("Which hair style would you like?", text) in list ("Sakura","Hinata","Ino","Temari","Careca"))
+								if("Temari")
+									usr.hair = "Temari Hair"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'temariH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Sakura")
+									usr.hair = "Sakura Hair"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'SakuraH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Ino")
+									usr.hair = "Ino"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'inoH.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Hinata")
+									usr.hair = "Hinata"
+									var/hairred = input("Quanto de vermelho você deseja no seu cabelo?") as num
+									var/hairblue = input("Quanto de azul você deseja no seu cabelo?") as num
+									var/hairgreen = input("Quanto de verde você deseja no seu cabelo?") as num
+									var/hairover = 'Hinata Hair.dmi'
+									hairover += rgb(hairred,hairgreen,hairblue)
+									usr.rhair = hairred
+									usr.ghair = hairgreen
+									usr.bhair = hairblue
+									usr.Ohair = hairover
+									usr.hair = usr.Ohair
+									usr.overlays += usr.hair
+								if("Careca")
+									usr.hair = "Bald"
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1331,17 +1331,17 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Parabéns por me achar! Você é merecedor de um PRÊMIO!!!")in list("Mapa do Laberinto(Completo)","Mapa do Mundo(Pedaço1)","Mapa do Mundo(Pedaço2)","Mapa do Mundo(Pedaço3)","Mapa do Mundo(Pedaço4)"))
-					if("Mapa do Laberinto(Completo)")
-						return
-					if("Mapa do Mundo(Pedaço1)")
-						return
-					if("Mapa do Mundo(Pedaço2)")
-						return
-					if("Mapa do Mundo(Pedaço3)")
-						return
-					if("Mapa do Mundo(Pedaço4)")
-						return
+			switch(input("Parabéns por me achar! Você é merecedor de um PRÊMIO!!!")in list("Mapa do Laberinto(Completo)","Mapa do Mundo(Pedaço1)","Mapa do Mundo(Pedaço2)","Mapa do Mundo(Pedaço3)","Mapa do Mundo(Pedaço4)"))
+				if("Mapa do Laberinto(Completo)")
+					return
+				if("Mapa do Mundo(Pedaço1)")
+					return
+				if("Mapa do Mundo(Pedaço2)")
+					return
+				if("Mapa do Mundo(Pedaço3)")
+					return
+				if("Mapa do Mundo(Pedaço4)")
+					return
 
 mob/npc/Sabios
 	SabioDeFuuton
@@ -1351,11 +1351,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Fuuton","Nada"))
-					if("Quero saber mais sobre o elemento Fuuton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Fuuton","Nada"))
+				if("Quero saber mais sobre o elemento Fuuton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeRaiton
 		name = "Sabio do Trovão(Raiton)"
@@ -1364,11 +1364,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Raiton","Nada"))
-					if("Quero saber mais sobre o elemento Raiton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Raiton","Nada"))
+				if("Quero saber mais sobre o elemento Raiton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeKaton
 		name = "Sabio do Fogo(Katon)"
@@ -1394,11 +1394,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Doton","Nada"))
-					if("Quero saber mais sobre o elemento Doton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Doton","Nada"))
+				if("Quero saber mais sobre o elemento Doton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeSuiton
 		name = "Sabio da Água(Suiton)"
@@ -1407,11 +1407,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Suiton","Nada"))
-					if("Quero saber mais sobre o elemento Suiton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Suiton","Nada"))
+				if("Quero saber mais sobre o elemento Suiton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeBakuton
 		name = "Sabio das Explosões(Bakuton)"
@@ -1420,11 +1420,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Bakuton","Nada"))
-					if("Quero saber mais sobre o elemento Bakuton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Bakuton","Nada"))
+				if("Quero saber mais sobre o elemento Bakuton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeFutton
 		name = "Sabio de Futton(Ácido)"
@@ -1433,11 +1433,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Futton","Nada"))
-					if("Quero saber mais sobre o elemento Futton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Futton","Nada"))
+				if("Quero saber mais sobre o elemento Futton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeHyouton
 		name = "Sabio de Hyouton(Gelo)"
@@ -1446,11 +1446,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Hyouton","Nada"))
-					if("Quero saber mais sobre o elemento Hyouton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Hyouton","Nada"))
+				if("Quero saber mais sobre o elemento Hyouton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeJinton
 		name = "Sabio de Jinton(Poeira)"
@@ -1459,11 +1459,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Jinton","Nada"))
-					if("Quero saber mais sobre o elemento Jinton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Jinton","Nada"))
+				if("Quero saber mais sobre o elemento Jinton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeMokuton
 		name = "Sabio de Mokuton(Madeira)"
@@ -1472,11 +1472,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Mokuton","Nada"))
-					if("Quero saber mais sobre o elemento Mokuton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Mokuton","Nada"))
+				if("Quero saber mais sobre o elemento Mokuton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeRanton
 		name = "Sabio de Ranton(Tempestade)"
@@ -1485,11 +1485,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Ranton","Nada"))
-					if("Quero saber mais sobre o elemento Ranton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Ranton","Nada"))
+				if("Quero saber mais sobre o elemento Ranton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeShakuton
 		name = "Sabio de Shakuton(Calor)"
@@ -1498,11 +1498,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shakuton","Nada"))
-					if("Quero saber mais sobre o elemento Shakuton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shakuton","Nada"))
+				if("Quero saber mais sobre o elemento Shakuton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeShouton
 		name = "Sabio de Shouton(Cristal)"
@@ -1511,11 +1511,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shouton","Nada"))
-					if("Quero saber mais sobre o elemento Shouton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Shouton","Nada"))
+				if("Quero saber mais sobre o elemento Shouton")
+					return
+				if("Nada")
+					return
 mob/npc/Sabios
 	SabioDeYouton
 		name = "Sabio de Youton(Lava)"
@@ -1524,11 +1524,11 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Youton","Nada"))
-					if("Quero saber mais sobre o elemento Youton")
-						return
-					if("Nada")
-						return
+			switch(input("Olá o que você quer comigo?")in list("Quero saber mais sobre o elemento Youton","Nada"))
+				if("Quero saber mais sobre o elemento Youton")
+					return
+				if("Nada")
+					return
 
 //--- Sabios Vila ---
 
@@ -1540,20 +1540,19 @@ mob/npc/Sabios
 		PK = 0
 		health = 9999999999999999999999999999999999999999999999
 		DblClick()
-				switch(input("Deseja aprender os segredos de Kumogakure? Lembre-se você precisa ser de Kumogakure e ter alguns STATUS para aprende-los.")in list("Quero aprender os seus segredos","Nada"))
-					if("Quero aprender os seus segredos")
-						if(usr.rainS == 1)
-							if(usr.level >= 200)
-								usr.verbs += new /mob/flight/verb/Cloud()
-								usr<<"<font color=green><font size=3><b>Você aprendeu Fly."
-							else
-								usr<<"<font color=red><font size=2><b>Você precisa ter no mínimo Level 200 para usar o Fly."
+			switch(input("Deseja aprender os segredos de Kumogakure? Lembre-se você precisa ser de Kumogakure e ter alguns STATUS para aprende-los.")in list("Quero aprender os seus segredos","Nada"))
+				if("Quero aprender os seus segredos")
+					if(usr.rainS == 1)
+						if(usr.level >= 200)
+							usr.verbs += new /mob/flight/verb/Cloud()
+							usr<<"<font color=green><font size=3><b>Você aprendeu Fly."
 						else
-							usr<<"<font color=red><font size=3><b>Não tente me enganar<font color=yellow><font size=2></b>, você não é de Kumogakure"
-							return
-					if("Nada")
+							usr<<"<font color=red><font size=2><b>Você precisa ter no mínimo Level 200 para usar o Fly."
+					else
+						usr<<"<font color=red><font size=3><b>Não tente me enganar<font color=yellow><font size=2></b>, você não é de Kumogakure"
 						return
-
+				if("Nada")
+					return
 
 mob/npc/Sabios
 	SabioDeClikeTeste
@@ -1592,73 +1591,73 @@ mob/npc/Clan/Gaara
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Help me awaken my demon shead your blood for me.",text) in list ("Yes","No","I'm Gaara too.","Unlock My Demon"))
-				if("Yes")
-					usr.maxhealth -= 1000
-					usr<<"mmmmm That's it now watch closely and run before it's too late."
-					usr.Oboar=1
-					usr<<"You have learned the Boar sign."
-				if("No")
-					usr<<"Coward"
-				if("I'm Gaara too.")
-					if(usr.Gaaraclan)
-						usr<<"Really."
-						if(usr.Gaaraclan&&usr.Mnin >=100)
-							usr << "<B><font color = blue>Você aprendeu o Suna Shuriken No Jutsu!"
-							usr.verbs += new /mob/gaara/verb/SunaShuriken()
-						else
-							usr<<"Hit o Log"
-						if(usr.Gaaraclan&&usr.Mnin >=100&&usr.KawaN >= 30)
-							usr << "<B><font color = blue>Você aprendeu o Suna Shushin No Jutsu!!"
-							usr.verbs += new /mob/gaara/verb/SunaShushinNoJutsu()
-						else
-							usr<<"Você precisa de 100 Nin & 30 Kawa uses para aprender o Suna Shushin No Jutsu."
-						if(usr.Gaaraclan&&usr.Mnin >=300)
-							usr << "<B><font color = blue>Você aprendeu o Sand Sphere!"
-							usr.verbs += new /mob/gaara/verb/SandSphere()
-						else
-							usr<<"Você precisa de 300 Nin para aprender o Sand Sphere."
-						if(usr.Gaaraclan&&usr.Mnin >=200)
-							usr << "<B><font color = blue>Você aprendeu o Suna Bunshin No Jutsu!"
-							usr.verbs += new /obj/bunshins/SunaBunshinnojutsu/verb/SunaBunshinNoJutsu()
-						else
-							usr<<"Você precisa de 200 Nin para aprender o Suna Bunshin No Jutsu."
-						if(usr.Gaaraclan&&usr.Mnin >=750&&usr.Mchakra>=10000)
-							usr << "<B><font color = blue>You learned Sabaku Kyuu!"
-							usr.verbs += new /mob/gaara/verb/SabakuKyuu()
-						else
-							usr<<"Você precisa de 750 Nin & 10000 de Chakra para aprender o Sabaku Kyuu."
-						if(usr.Gaaraclan&&usr.Mnin >=1000&&usr.Mchakra>=11000)
-							usr << "<B><font color = blue>Você Aprendeu o Sabaku Kyuu!"
-							usr.verbs += new /mob/gaara/verb/SabakuSousou()
-						else
-							usr<<"Você precisa de 1000 Nin & 11000 de Chakra para aprender o Sabaku Kyuu Finish."
-						if(usr.Gaaraclan&&usr.Mgen>=500)
-							usr << "<B><font color = blue>You learned Sand Armor!"
-							usr.verbs += new /mob/gaara/verb/SandArmor()
-						else
-							usr<<"Você precisa de 500 Gen para aprender a Sand Armor."
-				if("Unlock My Demon")
-					if(usr.rank=="Student"||usr.rank=="Genin")
-						usr<<"You must be a Chuunin or higher."
-						return
-					if(usr.Shukkaku==1&&usr.kaku2<=0)
-						usr<<"You have ranked up some, your still a no body though."
-						usr.kaku2=1
-						sleep(30)
-						usr<<"There you go you should receive a bigger boost now."
-						return
-					if(usr.kaku2>=1&&usr.kills>=250)
-						usr<<"You have become the practiced killer but you are still nothing to me."
-						usr.kaku3=1
-						sleep(30)
-						usr<<"There you go you should receive a bigger boost now."
-						return
+		switch(input("Help me awaken my demon shead your blood for me.",text) in list ("Yes","No","I'm Gaara too.","Unlock My Demon"))
+			if("Yes")
+				usr.maxhealth -= 1000
+				usr<<"mmmmm That's it now watch closely and run before it's too late."
+				usr.Oboar=1
+				usr<<"You have learned the Boar sign."
+			if("No")
+				usr<<"Coward"
+			if("I'm Gaara too.")
+				if(usr.Gaaraclan)
+					usr<<"Really."
+					if(usr.Gaaraclan&&usr.Mnin >=100)
+						usr << "<B><font color = blue>Você aprendeu o Suna Shuriken No Jutsu!"
+						usr.verbs += new /mob/gaara/verb/SunaShuriken()
 					else
-						usr<<"You have not killed enough."
-						return
+						usr<<"Hit o Log"
+					if(usr.Gaaraclan&&usr.Mnin >=100&&usr.KawaN >= 30)
+						usr << "<B><font color = blue>Você aprendeu o Suna Shushin No Jutsu!!"
+						usr.verbs += new /mob/gaara/verb/SunaShushinNoJutsu()
+					else
+						usr<<"Você precisa de 100 Nin & 30 Kawa uses para aprender o Suna Shushin No Jutsu."
+					if(usr.Gaaraclan&&usr.Mnin >=300)
+						usr << "<B><font color = blue>Você aprendeu o Sand Sphere!"
+						usr.verbs += new /mob/gaara/verb/SandSphere()
+					else
+						usr<<"Você precisa de 300 Nin para aprender o Sand Sphere."
+					if(usr.Gaaraclan&&usr.Mnin >=200)
+						usr << "<B><font color = blue>Você aprendeu o Suna Bunshin No Jutsu!"
+						usr.verbs += new /obj/bunshins/SunaBunshinnojutsu/verb/SunaBunshinNoJutsu()
+					else
+						usr<<"Você precisa de 200 Nin para aprender o Suna Bunshin No Jutsu."
+					if(usr.Gaaraclan&&usr.Mnin >=750&&usr.Mchakra>=10000)
+						usr << "<B><font color = blue>You learned Sabaku Kyuu!"
+						usr.verbs += new /mob/gaara/verb/SabakuKyuu()
+					else
+						usr<<"Você precisa de 750 Nin & 10000 de Chakra para aprender o Sabaku Kyuu."
+					if(usr.Gaaraclan&&usr.Mnin >=1000&&usr.Mchakra>=11000)
+						usr << "<B><font color = blue>Você Aprendeu o Sabaku Kyuu!"
+						usr.verbs += new /mob/gaara/verb/SabakuSousou()
+					else
+						usr<<"Você precisa de 1000 Nin & 11000 de Chakra para aprender o Sabaku Kyuu Finish."
+					if(usr.Gaaraclan&&usr.Mgen>=500)
+						usr << "<B><font color = blue>You learned Sand Armor!"
+						usr.verbs += new /mob/gaara/verb/SandArmor()
+					else
+						usr<<"Você precisa de 500 Gen para aprender a Sand Armor."
+			if("Unlock My Demon")
+				if(usr.rank=="Student"||usr.rank=="Genin")
+					usr<<"You must be a Chuunin or higher."
+					return
+				if(usr.Shukkaku==1&&usr.kaku2<=0)
+					usr<<"You have ranked up some, your still a no body though."
+					usr.kaku2=1
+					sleep(30)
+					usr<<"There you go you should receive a bigger boost now."
+					return
+				if(usr.kaku2>=1&&usr.kills>=250)
+					usr<<"You have become the practiced killer but you are still nothing to me."
+					usr.kaku3=1
+					sleep(30)
+					usr<<"There you go you should receive a bigger boost now."
+					return
 				else
-					usr<<"Lair leave now before I kill you."
+					usr<<"You have not killed enough."
+					return
+			else
+				usr<<"Lair leave now before I kill you."
 
 mob/npc/Clan/Gai
 	name = "Gai"
@@ -1666,45 +1665,45 @@ mob/npc/Clan/Gai
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Well hi there and welcome to the Lee house.",text) in list ("I'm Lee too.","Weirdo"))
-				if("I'm Lee too.")
-					if(usr.Clan=="Lee")
-						usr<<"Hello."
-						if(usr.NonClan&&usr.Mtai >=500&&usr.maxhealth >= 5000)
-							usr << "<B><font color = blue>You learned lotus!!"
-							usr.verbs += new /mob/Lee/verb/Lotus()
-						else
-							usr<<"You need 500 Tai and 5000 Stam to start your hidden Lotus training."
-						if(usr.NonClan&&usr.Mtai >=50)
-							usr << "<B><font color = blue>You learned Konoha Renpuu!!"
-							usr.verbs += new /mob/Lee/verb/KonohaReppu()
-						else
-							usr<<"Hit a log noob."
-						if(usr.NonClan&&usr.Mtai >=250)
-							usr << "<B><font color = blue>You learned Konoha Senpuu!!"
-							usr.verbs += new /mob/Lee/verb/KonohaSenpuu()
-						else
-							usr<<"You need 250 Tai to learn Konoha Senpuu."
-						if(usr.NonClan&&usr.Mtai >=500)
-							usr << "<B><font color = blue>You learned Omote Renge!!"
-							usr.verbs += new /mob/Lee/verb/OmoteRenge()
-						else
-							usr<<"You need 500 Tai to learn Omote Renge."
-						if(usr.NonClan&&usr.Mtai >=750)
-							usr << "<B><font color = blue>You learned Ura Renge!!"
-							usr.verbs += new /mob/Lee/verb/UraRenge()
-						else
-							usr<<"You need 750 Tai to learn Ura Renge."
-						if(usr.NonClan&&usr.Mtai>=1000)
-							usr << "<B><font color = blue>You learned Konoha Genkuriki Senpuu!"
-							usr.verbs += new /mob/Lee/verb/KonohaGenkurikiSenpuu()
-						else
-							usr<<"You need 1000 Tai to learn Konoha Genkuriki Senpuu."
+		switch(input("Well hi there and welcome to the Lee house.",text) in list ("I'm Lee too.","Weirdo"))
+			if("I'm Lee too.")
+				if(usr.Clan=="Lee")
+					usr<<"Hello."
+					if(usr.NonClan&&usr.Mtai >=500&&usr.maxhealth >= 5000)
+						usr << "<B><font color = blue>You learned lotus!!"
+						usr.verbs += new /mob/Lee/verb/Lotus()
 					else
-						usr<<"It's not nice to lie you know."
-				if("Weirdo")
-					usr<<"Thats not nice ready for your punishment?"
-					usr.health-=1000
+						usr<<"You need 500 Tai and 5000 Stam to start your hidden Lotus training."
+					if(usr.NonClan&&usr.Mtai >=50)
+						usr << "<B><font color = blue>You learned Konoha Renpuu!!"
+						usr.verbs += new /mob/Lee/verb/KonohaReppu()
+					else
+						usr<<"Hit a log noob."
+					if(usr.NonClan&&usr.Mtai >=250)
+						usr << "<B><font color = blue>You learned Konoha Senpuu!!"
+						usr.verbs += new /mob/Lee/verb/KonohaSenpuu()
+					else
+						usr<<"You need 250 Tai to learn Konoha Senpuu."
+					if(usr.NonClan&&usr.Mtai >=500)
+						usr << "<B><font color = blue>You learned Omote Renge!!"
+						usr.verbs += new /mob/Lee/verb/OmoteRenge()
+					else
+						usr<<"You need 500 Tai to learn Omote Renge."
+					if(usr.NonClan&&usr.Mtai >=750)
+						usr << "<B><font color = blue>You learned Ura Renge!!"
+						usr.verbs += new /mob/Lee/verb/UraRenge()
+					else
+						usr<<"You need 750 Tai to learn Ura Renge."
+					if(usr.NonClan&&usr.Mtai>=1000)
+						usr << "<B><font color = blue>You learned Konoha Genkuriki Senpuu!"
+						usr.verbs += new /mob/Lee/verb/KonohaGenkurikiSenpuu()
+					else
+						usr<<"You need 1000 Tai to learn Konoha Genkuriki Senpuu."
+				else
+					usr<<"It's not nice to lie you know."
+			if("Weirdo")
+				usr<<"Thats not nice ready for your punishment?"
+				usr.health-=1000
 
 mob/npc/Clan/Tenten
 	name = "Tenten"
@@ -1712,45 +1711,45 @@ mob/npc/Clan/Tenten
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Well hi there cutie welcome to the Tenten house.",text) in list ("I'm Tenten too.","Well hello yourself cutie."))
-				if("I'm Tenten too.")
-					if(usr.Clan=="Tenten")
-						usr<<"Hello."
-						if(usr.Tenten&&usr.shurikenskill >=250)
-							usr << "<B><font color = blue>You learned Homing Shuriken!!"
-							usr.verbs += new /mob/Tenten/verb/HomingShuriken()
-						else
-							usr<<"You need 250 Shuriken skill to learn Homing Shuriken."
-						if(usr.Tenten&&usr.kunaiskill >=250)
-							usr << "<B><font color = blue>You learned Homing Kunai!!"
-							usr.verbs += new /mob/Tenten/verb/HomingKunai()
-						else
-							usr<<"You need 250 Kunai skill to learn Homing Kunai."
-						if(usr.Tenten&&usr.shurikenskill >=1000)
-							usr << "<B><font color = blue>You learned Homing Windmill!!"
-							usr.verbs += new /mob/Tenten/verb/HomingWindmill()
-						else
-							usr<<"You need 1000 Shuriken skill to learn Homing Windmill."
-						if(usr.Tenten&&usr.shurikenskill>=500)
-							usr<<"<b><font color=blue>You learned Kage Shuriken."
-							usr.verbs += new /mob/shurikenmove/verb/KageShuriken()
-						else
-							usr<<"You need 500 Shuriken skill to learn Kage Shuriken."
-						if(usr.Tenten&&usr.kunaiskill >=500)
-							usr << "<B><font color = blue>You Learned Kage Kunai!!"
-							usr.verbs += new /mob/shurikenmove/verb/KageKunai()
-						else
-							usr<<"You need 500 Kunai Skill to learn Kage Kunai."
-						if(usr.Tenten&&usr.shurikenskill >=1000&&usr.kunaiskill >=1000)
-							usr << "<B><font color = blue>You learned Focus!!"
-							usr.verbs += new /mob/Tenten/verb/Focus()
-						else
-							usr<<"You need 1000 Shuriken skill and Kunai skill to learn Focus."
-
+		switch(input("Well hi there cutie welcome to the Tenten house.",text) in list ("I'm Tenten too.","Well hello yourself cutie."))
+			if("I'm Tenten too.")
+				if(usr.Clan=="Tenten")
+					usr<<"Hello."
+					if(usr.Tenten&&usr.shurikenskill >=250)
+						usr << "<B><font color = blue>You learned Homing Shuriken!!"
+						usr.verbs += new /mob/Tenten/verb/HomingShuriken()
 					else
-						usr<<"Don't lie to ME!"
-				if("Well hello yourself cutie.")
-					usr<<"Thank you wonderfull."
+						usr<<"You need 250 Shuriken skill to learn Homing Shuriken."
+					if(usr.Tenten&&usr.kunaiskill >=250)
+						usr << "<B><font color = blue>You learned Homing Kunai!!"
+						usr.verbs += new /mob/Tenten/verb/HomingKunai()
+					else
+						usr<<"You need 250 Kunai skill to learn Homing Kunai."
+					if(usr.Tenten&&usr.shurikenskill >=1000)
+						usr << "<B><font color = blue>You learned Homing Windmill!!"
+						usr.verbs += new /mob/Tenten/verb/HomingWindmill()
+					else
+						usr<<"You need 1000 Shuriken skill to learn Homing Windmill."
+					if(usr.Tenten&&usr.shurikenskill>=500)
+						usr<<"<b><font color=blue>You learned Kage Shuriken."
+						usr.verbs += new /mob/shurikenmove/verb/KageShuriken()
+					else
+						usr<<"You need 500 Shuriken skill to learn Kage Shuriken."
+					if(usr.Tenten&&usr.kunaiskill >=500)
+						usr << "<B><font color = blue>You Learned Kage Kunai!!"
+						usr.verbs += new /mob/shurikenmove/verb/KageKunai()
+					else
+						usr<<"You need 500 Kunai Skill to learn Kage Kunai."
+					if(usr.Tenten&&usr.shurikenskill >=1000&&usr.kunaiskill >=1000)
+						usr << "<B><font color = blue>You learned Focus!!"
+						usr.verbs += new /mob/Tenten/verb/Focus()
+					else
+						usr<<"You need 1000 Shuriken skill and Kunai skill to learn Focus."
+
+				else
+					usr<<"Don't lie to ME!"
+			if("Well hello yourself cutie.")
+				usr<<"Thank you wonderfull."
 
 
 mob/npc/Clan/Shino
@@ -1760,59 +1759,59 @@ mob/npc/Clan/Shino
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("You want to learn the Snake sign?",text) in list ("Yes","No","I'm Aburame too!"))
-				if("Yes")
-					if(usr.bugs >= 10)
-						usr.Osnake=1
-						usr<<"Good job now pay attention."
-						usr<<"You have learned the Snake sign."
+		switch(input("You want to learn the Snake sign?",text) in list ("Yes","No","I'm Aburame too!"))
+			if("Yes")
+				if(usr.bugs >= 10)
+					usr.Osnake=1
+					usr<<"Good job now pay attention."
+					usr<<"You have learned the Snake sign."
+				else
+					usr<<"Go outside and in the garden and catch me 10 bugs"
+					usr.snake=1
+			if("No")
+				usr<<"Verywell."
+			if("I'm Aburame too!")
+				if(usr.Aburame)
+					usr<<"Hello."
+					if(usr.Aburame&&usr.Mnin >=100)
+						usr << "<B><font color = blue>You learned Kekkai Konchuu Bunshin No Jutsu!"
+						usr.verbs += new /obj/bunshins/KekkaiKonchuuBunshinnoJutsu/verb/KekkaiKonchuuBunshinnoJutsu()
 					else
-						usr<<"Go outside and in the garden and catch me 10 bugs"
-						usr.snake=1
-				if("No")
-					usr<<"Verywell."
-				if("I'm Aburame too!")
-					if(usr.Aburame)
-						usr<<"Hello."
-						if(usr.Aburame&&usr.Mnin >=100)
-							usr << "<B><font color = blue>You learned Kekkai Konchuu Bunshin No Jutsu!"
-							usr.verbs += new /obj/bunshins/KekkaiKonchuuBunshinnoJutsu/verb/KekkaiKonchuuBunshinnoJutsu()
-						else
-							usr<<"You need 100 Nin to learn Kekkai Konchuu Bunshin No Jutsu"
-						if(usr.Aburame&&usr.Mnin >=250)
-							usr << "<B><font color = blue>You learned your Konchuu options!"
-							usr.verbs += new /mob/aburame/verb/summonkonchuu()
-							usr.verbs += new /mob/aburame/verb/Placekonchuu()
-							usr.verbs += new /mob/aburame/verb/DestroyKonchuu()
-						else
-							usr<<"You need 250 Nin to learn how to use Konchuu."
-						if(usr.Aburame&&usr.Mnin >=300)
-							usr<<"<b><font color=blue>You learned Konchuu Armor."
-							usr.verbs += new /mob/aburame/verb/BugArmor()
-						else
-							usr<<"You need 300 Nin to learn Konchuu Armor."
-						if(usr.Aburame&&usr.Mnin >=500&&usr.Mgen>=200)
-							usr << "<B><font color = blue>You learned how to explode your Konchuu!"
-							usr.verbs += new /mob/aburame/verb/ExplodeKonchuu()
-						else
-							usr<<"You need 500 Nin to learn how to Explode Konchuus"
-						if(usr.Aburame&&usr.Mnin >=750)
-							usr<<"<b><font color=blue>You learn Konchuu Kyuu"
-							usr.verbs += new /mob/aburame/verb/KonchuuKyuu()
-						else
-							usr<<"You need 750 Nin to learn Konchuu Kyuu."
-						if(usr.Aburame&&usr.Mnin>=1000)
-							usr<<"<b><font color=blue>You learn Konchuu Sousou."
-							usr.verbs += new /mob/aburame/verb/KonchuuSousou()
-						else
-							usr<<"You need 1000 Nin to learn Konchuu Sousou"
-						if(usr.Aburame&&usr.Mnin>=5000&&usr.Mchakra>=10000)
-							usr<<"<b><font color=blue>You learned Slug Summons."
-							usr.contents += new /obj/Slug_Summoning_Scroll
-						else
-							usr<<"You need 5000 Nin and 10000 Chakra to learn Slug Summons."
+						usr<<"You need 100 Nin to learn Kekkai Konchuu Bunshin No Jutsu"
+					if(usr.Aburame&&usr.Mnin >=250)
+						usr << "<B><font color = blue>You learned your Konchuu options!"
+						usr.verbs += new /mob/aburame/verb/summonkonchuu()
+						usr.verbs += new /mob/aburame/verb/Placekonchuu()
+						usr.verbs += new /mob/aburame/verb/DestroyKonchuu()
 					else
-						usr<<"Liar leave the Aburame house now!"
+						usr<<"You need 250 Nin to learn how to use Konchuu."
+					if(usr.Aburame&&usr.Mnin >=300)
+						usr<<"<b><font color=blue>You learned Konchuu Armor."
+						usr.verbs += new /mob/aburame/verb/BugArmor()
+					else
+						usr<<"You need 300 Nin to learn Konchuu Armor."
+					if(usr.Aburame&&usr.Mnin >=500&&usr.Mgen>=200)
+						usr << "<B><font color = blue>You learned how to explode your Konchuu!"
+						usr.verbs += new /mob/aburame/verb/ExplodeKonchuu()
+					else
+						usr<<"You need 500 Nin to learn how to Explode Konchuus"
+					if(usr.Aburame&&usr.Mnin >=750)
+						usr<<"<b><font color=blue>You learn Konchuu Kyuu"
+						usr.verbs += new /mob/aburame/verb/KonchuuKyuu()
+					else
+						usr<<"You need 750 Nin to learn Konchuu Kyuu."
+					if(usr.Aburame&&usr.Mnin>=1000)
+						usr<<"<b><font color=blue>You learn Konchuu Sousou."
+						usr.verbs += new /mob/aburame/verb/KonchuuSousou()
+					else
+						usr<<"You need 1000 Nin to learn Konchuu Sousou"
+					if(usr.Aburame&&usr.Mnin>=5000&&usr.Mchakra>=10000)
+						usr<<"<b><font color=blue>You learned Slug Summons."
+						usr.contents += new /obj/Slug_Summoning_Scroll
+					else
+						usr<<"You need 5000 Nin and 10000 Chakra to learn Slug Summons."
+				else
+					usr<<"Liar leave the Aburame house now!"
 
 
 mob/npc/Clan/Naruto
@@ -1822,58 +1821,58 @@ mob/npc/Clan/Naruto
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Ei você vai me fazer um favor? Eu vou te mostrar o sinal Tiger é muito legal.") in list ("Sim","Não","Eu sou Uzumaki tambem!","Get Lost"))
-				if("Sim")
-					if(usr.tiger==2)
-						usr<<"Uau você realmente fez isso? Thanks watch closely now."
-						usr<<"Você aprendeu como fazer o sinal Tiger"
-						usr.Otiger=1
-					if(usr.dogs==1)
-						usr<<"O que realmente? Como dizer. Fine tell her I won't write another one but don't think it's because she sent you see if I show you any more hand signs."
-						usr.dogs=2
+		switch(input("Ei você vai me fazer um favor? Eu vou te mostrar o sinal Tiger é muito legal.") in list ("Sim","Não","Eu sou Uzumaki tambem!","Get Lost"))
+			if("Sim")
+				if(usr.tiger==2)
+					usr<<"Uau você realmente fez isso? Thanks watch closely now."
+					usr<<"Você aprendeu como fazer o sinal Tiger"
+					usr.Otiger=1
+				if(usr.dogs==1)
+					usr<<"O que realmente? Como dizer. Fine tell her I won't write another one but don't think it's because she sent you see if I show you any more hand signs."
+					usr.dogs=2
+				else
+					usr<<"Muito Obrigado!  Tome esta nota para Sakura para mim. Vou mostrar-lhe um sinal da mão quando você voltar."
+					usr.tiger=1
+			if("Não")
+				usr<<"Bem, então eu realmente não preciso de sua ajuda todas as maneiras"
+			if("Eu sou Uzumaki tambem!")
+				if(usr.Uzumaki == 1)
+					usr<<"Olá colega Uzumaki, bem-vindo à nossa casa."
+					if(usr.rank == "Student")
+						return
+					if(usr.Uzumaki&&usr.Mgen >=250)
+						usr << "<B><font color = blue>Você aprendeu Oiroke No Jutsu!!"
+						usr.verbs += new /mob/jutsu/verb/Sexy()
 					else
-						usr<<"Muito Obrigado!  Tome esta nota para Sakura para mim. Vou mostrar-lhe um sinal da mão quando você voltar."
-						usr.tiger=1
-				if("Não")
-					usr<<"Bem, então eu realmente não preciso de sua ajuda todas as maneiras"
-				if("Eu sou Uzumaki tambem!")
-					if(usr.Uzumaki == 1)
-						usr<<"Olá colega Uzumaki, bem-vindo à nossa casa."
-						if(usr.rank == "Student")
-							return
-						if(usr.Uzumaki&&usr.Mgen >=250)
-							usr << "<B><font color = blue>Você aprendeu Oiroke No Jutsu!!"
-							usr.verbs += new /mob/jutsu/verb/Sexy()
-						else
-							usr<<"Você precisa de 250 Gen para aprender Oiroke No Jutsu."
-						if(usr.Uzumaki&&usr.shurikenskill >=250)
-							usr << "<B><font color = blue>Você aprendeu Kage Shuriken!!"
-							usr.verbs += new /mob/shurikenmove/verb/KageShuriken()
-						else
-							usr<<"Você precisa de 250 Shuriken Skill para aprender Kage Shuriken."
-						if(usr.Uzumaki&&usr.kunaiskill >=250)
-							usr << "<B><font color = blue>Você aprendeu Kage Kunai!!"
-							usr.verbs += new /mob/shurikenmove/verb/KageKunai()
-						else
-							usr<<"Você precisa de 250 Kunai Skill para aprender Kage Kunai."
-						if(usr.Uzumaki&&usr.Mnin >=500)
-							usr << "<B><font color = blue>Você aprendeu Tajuu Kage Bunshin No Jutsu!!"
-							usr.verbs += new /obj/bunshins/TajuuKageBunshinNoJutsu/verb/TajuuKageBunshinNoJutsu()
-						else
-							usr<<"Você precisa de 500 Nin para aprender Tajuu Kage Bunshin No Jutsu."
-						if(usr.Uzumaki&&usr.Mnin>=1000)
-							usr << "<B><font color = blue>Você aprendeu Nisen Rendan!!"
-							usr.verbs += new /mob/jutsu/verb/NisenRendan()
-						else
-							usr<<"Você precisa de 1000 Nin para aprender Nisen Rendan."
-						if(usr.Uzumaki&&usr.Mnin>=5000)
-							usr << "<B><font color = blue>Você aprendeu Frog Summons!!"
-							usr.contents += new /obj/Frog_Summoning_Scroll
-						else
-							usr<<"Você precisa de 5000 Nin para aprender Frog Summons."
+						usr<<"Você precisa de 250 Gen para aprender Oiroke No Jutsu."
+					if(usr.Uzumaki&&usr.shurikenskill >=250)
+						usr << "<B><font color = blue>Você aprendeu Kage Shuriken!!"
+						usr.verbs += new /mob/shurikenmove/verb/KageShuriken()
+					else
+						usr<<"Você precisa de 250 Shuriken Skill para aprender Kage Shuriken."
+					if(usr.Uzumaki&&usr.kunaiskill >=250)
+						usr << "<B><font color = blue>Você aprendeu Kage Kunai!!"
+						usr.verbs += new /mob/shurikenmove/verb/KageKunai()
+					else
+						usr<<"Você precisa de 250 Kunai Skill para aprender Kage Kunai."
+					if(usr.Uzumaki&&usr.Mnin >=500)
+						usr << "<B><font color = blue>Você aprendeu Tajuu Kage Bunshin No Jutsu!!"
+						usr.verbs += new /obj/bunshins/TajuuKageBunshinNoJutsu/verb/TajuuKageBunshinNoJutsu()
+					else
+						usr<<"Você precisa de 500 Nin para aprender Tajuu Kage Bunshin No Jutsu."
+					if(usr.Uzumaki&&usr.Mnin>=1000)
+						usr << "<B><font color = blue>Você aprendeu Nisen Rendan!!"
+						usr.verbs += new /mob/jutsu/verb/NisenRendan()
+					else
+						usr<<"Você precisa de 1000 Nin para aprender Nisen Rendan."
+					if(usr.Uzumaki&&usr.Mnin>=5000)
+						usr << "<B><font color = blue>Você aprendeu Frog Summons!!"
+						usr.contents += new /obj/Frog_Summoning_Scroll
+					else
+						usr<<"Você precisa de 5000 Nin para aprender Frog Summons."
 
-					else
-						usr<<"Mentiroso, saia da casa Uzumaki AGORA!"
+				else
+					usr<<"Mentiroso, saia da casa Uzumaki AGORA!"
 
 mob/npc/Clan/Sakura
 	name = "(NPC)Sakura"
@@ -1882,18 +1881,18 @@ mob/npc/Clan/Sakura
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Olá, como posso ajudá-lo?") in list ("Você pode me mostrar um sinal da mão agora?","Nevermind"))
-				if("Você pode me mostrar um sinal da mão agora?")
-					if(usr.dogs==2)
-						usr<<"Obrigado, espero que desta vez ele escute. Sasuke é o único para mim, embora você seja bonitinho também. Ok, preste atenção."
-						usr<<"Você aprendeu como fazer o sinal Dog"
-						usr.Odog=1
-					if(usr.tiger==1)
-						usr<<"Você tem uma carta para mim? Obrigada."
-						usr.tiger=2
-					else
-						usr<<"Leve esta carta de volta para Naruto e diga-lhe para nunca mais sequer pensar em escrever outra e então eu vou mostrar o sinal Dog."
-						usr.dogs=1
+		switch(input("Olá, como posso ajudá-lo?") in list ("Você pode me mostrar um sinal da mão agora?","Nevermind"))
+			if("Você pode me mostrar um sinal da mão agora?")
+				if(usr.dogs==2)
+					usr<<"Obrigado, espero que desta vez ele escute. Sasuke é o único para mim, embora você seja bonitinho também. Ok, preste atenção."
+					usr<<"Você aprendeu como fazer o sinal Dog"
+					usr.Odog=1
+				if(usr.tiger==1)
+					usr<<"Você tem uma carta para mim? Obrigada."
+					usr.tiger=2
+				else
+					usr<<"Leve esta carta de volta para Naruto e diga-lhe para nunca mais sequer pensar em escrever outra e então eu vou mostrar o sinal Dog."
+					usr.dogs=1
 
 mob/npc/Clan/Sasuke
 	name = "Sasuke"
@@ -1902,32 +1901,35 @@ mob/npc/Clan/Sasuke
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("O quê? Você não vê que estou ocupado treinando? Deixe-me adivinhar, você quer aprender um certo sinal de jutsu mão?",text) in list ("Sim","Não","Eu sou Uchiha tambem!","Esqueça"))
-				if("Sim")
-					if(usr.dragon == 2)
-						usr<<"Está na hora, eu estava quase no fim. Agora veja, eu não tenho tempo a perder mostrando isso duas vezes."
-						usr<<"Você aprendeu como fazer o sinal Dragon"
-						usr.Odragon=1
+		switch(input("O quê? Você não vê que estou ocupado treinando? Deixe-me adivinhar, você quer aprender um certo sinal de jutsu mão?",text) in list ("Sim","Não","Eu sou Uchiha tambem!","Esqueça"))
+			if("Sim")
+				if(usr.dragon == 2)
+					usr<<"Está na hora, eu estava quase no fim. Agora veja, eu não tenho tempo a perder mostrando isso duas vezes."
+					usr<<"Você aprendeu como fazer o sinal Dragon"
+					usr.Odragon=1
+				else
+					usr<<"Eu pensei assim. Estou com pouca shurikens e deixei algumas na loja. Basta pega-las para mim e trazê-las para mim e eu vou lhe mostrar o signal Dragon."
+					usr.dragon=1
+			if("Não")
+				usr<<"Então pare de me incomodar, você está interrompendo meu treinamento"
+			if("Eu sou Uchiha tambem!")
+				if(usr.Uchiha == 1)
+					usr<<"Olá colega Uchiha, bem-vindo à nossa casa."
+					usr.verbs += new /mob/uchiha/verb/Sharingan()
+					usr.verbs += new /mob/uchiha/verb/MangekyouPrep()
+					usr.verbs += new /mob/uchiha/verb/SharinganSoufuushaSannotachi()
+					if(usr.Uchiha&&usr.Mnin >=200&&usr.Mgen >= 100)
+						usr << "<B><font color = blue>Seu sharingan foi ativado!!"
+						usr.verbs += new /mob/uchiha/verb/Sharingan()
 					else
-						usr<<"Eu pensei assim. Estou com pouca shurikens e deixei algumas na loja. Basta pega-las para mim e trazê-las para mim e eu vou lhe mostrar o signal Dragon."
-						usr.dragon=1
-				if("Não")
-					usr<<"Então pare de me incomodar, você está interrompendo meu treinamento"
-				if("Eu sou Uchiha tambem!")
-					if(usr.Uchiha == 1)
-						usr<<"Olá colega Uchiha, bem-vindo à nossa casa."
-						if(usr.Uchiha&&usr.Mnin >=200&&usr.Mgen >= 100)
-							usr << "<B><font color = blue>Seu sharingan foi ativado!!"
-							usr.verbs += new /mob/uchiha/verb/Sharingan()
-						else
-							usr<<"Você precisa de 200 Nin&Gen to activate Sharingan."
-						if(usr.Uchiha&&usr.Mnin >=1000&&usr.Mgen>=700&&usr.kills>=150&&usr.Suses>=100)
-							usr << "<B><font color = blue>You learned Mangekyou Sharingan!"
-							usr.verbs += new /mob/uchiha/verb/MangekyouPrep()
-						else
-							usr<<"Você precisa 1000 de todos stats e 150 mortes, juntamente com 100 Uses to activate Mangekyou."
+						usr<<"Você precisa de 200 Nin&Gen to activate Sharingan."
+					if(usr.Uchiha&&usr.Mnin >=1000&&usr.Mgen>=700&&usr.kills>=150&&usr.Suses>=100)
+						usr << "<B><font color = blue>You learned Mangekyou Sharingan!"
+						usr.verbs += new /mob/uchiha/verb/MangekyouPrep()
 					else
-						usr<<"Mentiroso, saia da casa Uchiha AGORA!"
+						usr<<"Você precisa 1000 de todos stats e 150 mortes, juntamente com 100 Uses to activate Mangekyou."
+				else
+					usr<<"Mentiroso, saia da casa Uchiha AGORA!"
 mob/npc/Clan/Kisame
 	name = "Kisame"
 	icon = 'npcs.dmi'
@@ -1935,23 +1937,23 @@ mob/npc/Clan/Kisame
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("O que você quer aqui? Não me diga que tambem é um hoshigaki!",text) in list ("RsRssSrs.. sou hoshigaki tambem!","Esqueça"))
-				if("RsRssSrs.. sou hoshigaki tambem!")
-					if(usr.Kisame == 1)
-						usr<<"Olá colega hoshigaki, ensinarei jutsus para você comforme você for evoluindo."
-						usr.verbs += new /mob/Kisame/verb/ShushinNoJutsuKisame()
-						usr.verbs += new /mob/Kisame/verb/SuitonDaikoudan()
-						usr.verbs += new /mob/Kisame/verb/SuitonDaibakufuNoJutsu()
-						usr.verbs += new /mob/Kisame/verb/SuitonArmorKisame()
-						usr.verbs += new /mob/Kisame/verb/SuitonGoshokuzame()
-						usr.verbs += new /mob/Kisame/verb/Seguir()
-						usr.verbs += new /mob/Kisame/verb/Recuar()
-						usr.verbs += new /mob/Kisame/verb/SuitonGoshokusameHengo()
-						usr.verbs += new /mob/Kisame/verb/SuitonBakushiShouha()
-						usr.verbs += new /mob/Kisame/verb/SuitonSuirouNoJutsu()
-						usr.verbs += new /mob/Kisame/verb/SuitonSuishouha()
-					else
-						usr<<"Mentiroso, saia de perto de mim AGORA!"
+		switch(input("O que você quer aqui? Não me diga que tambem é um hoshigaki!",text) in list ("RsRssSrs.. sou hoshigaki tambem!","Esqueça"))
+			if("RsRssSrs.. sou hoshigaki tambem!")
+				if(usr.Kisame == 1)
+					usr<<"Olá colega hoshigaki, ensinarei jutsus para você comforme você for evoluindo."
+					usr.verbs += new /mob/Kisame/verb/ShushinNoJutsuKisame()
+					usr.verbs += new /mob/Kisame/verb/SuitonDaikoudan()
+					usr.verbs += new /mob/Kisame/verb/SuitonDaibakufuNoJutsu()
+					usr.verbs += new /mob/Kisame/verb/SuitonArmorKisame()
+					usr.verbs += new /mob/Kisame/verb/SuitonGoshokuzame()
+					usr.verbs += new /mob/Kisame/verb/Seguir()
+					usr.verbs += new /mob/Kisame/verb/Recuar()
+					usr.verbs += new /mob/Kisame/verb/SuitonGoshokusameHengo()
+					usr.verbs += new /mob/Kisame/verb/SuitonBakushiShouha()
+					usr.verbs += new /mob/Kisame/verb/SuitonSuirouNoJutsu()
+					usr.verbs += new /mob/Kisame/verb/SuitonSuishouha()
+				else
+					usr<<"Mentiroso, saia de perto de mim AGORA!"
 
 mob/npc/Clan/Haku
 	name = "Haku"
@@ -1959,39 +1961,39 @@ mob/npc/Clan/Haku
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Olá, você é do meu clan?",text) in list ("Sim","Esqueça"))
-				if("Sim")
-					if(usr.Haku == 1)
-						usr<<"Olá colega membro do clan, bem-vindo à nossa casa."
-						if(usr.Haku&&usr.Mnin >=250&&usr.Mtai>=250)
-							usr << "<B><font color = blue>Você aprendeu Sensatsu Suishou!"
-							usr.verbs += new /mob/haku/verb/SensatsuSuishou()
-						else
-							usr<<"Você precisa de 250 Nin & Tai para aprender Sensatsu Suishou."
-						if(usr.Haku&&usr.Mnin >=500)
-							usr<<"<b><font color=blue> Você aprendeu Kage Needle No Jutsu!"
-							usr.verbs += new /mob/needle/verb/Needle_Jutsu()
-						else
-							usr<<"Você precisa de 500 Nin para aprender Kage Needle No Jutsu."
-						if(usr.Haku&&usr.Mnin >=750)
-							usr << "<B><font color = blue>Você aprendeu Makyou Hyoushou!"
-							usr.verbs += new /mob/haku/verb/MakyouHyoushou()
-						else
-							usr<<"Você precisa de 750 Nin para aprender Mirrors."
-						if(usr.Haku&&usr.Mnin>=500)
-							usr<<"<b><font color=blue> Você aprendeu Ice Armor!"
-							usr.verbs += new /mob/ice/verb/IceArmor()
-						else
-							usr<<"Você precisa de 500 Nin tpara aprender Ice Armor."
-						if(usr.Haku&&usr.Mgen >=1000&&usr.Mnin>=1000)
-							usr<<"<b><font color=blue>Você aprendeu Teleport!"
-							usr.verbs += new /mob/nara/verb/kageteleport()
-						else
-							usr<<"Você precisa de  1000 Nin & Gen para aprender Teleport."
+		switch(input("Olá, você é do meu clan?",text) in list ("Sim","Esqueça"))
+			if("Sim")
+				if(usr.Haku == 1)
+					usr<<"Olá colega membro do clan, bem-vindo à nossa casa."
+					if(usr.Haku&&usr.Mnin >=250&&usr.Mtai>=250)
+						usr << "<B><font color = blue>Você aprendeu Sensatsu Suishou!"
+						usr.verbs += new /mob/haku/verb/SensatsuSuishou()
 					else
-						usr<<"Mentiroso, sai sa minha casa AGORA!"
-				if("Esqueça")
-					usr<<"Ohh ok, você tem um sonho?"
+						usr<<"Você precisa de 250 Nin & Tai para aprender Sensatsu Suishou."
+					if(usr.Haku&&usr.Mnin >=500)
+						usr<<"<b><font color=blue> Você aprendeu Kage Needle No Jutsu!"
+						usr.verbs += new /mob/needle/verb/Needle_Jutsu()
+					else
+						usr<<"Você precisa de 500 Nin para aprender Kage Needle No Jutsu."
+					if(usr.Haku&&usr.Mnin >=750)
+						usr << "<B><font color = blue>Você aprendeu Makyou Hyoushou!"
+						usr.verbs += new /mob/haku/verb/MakyouHyoushou()
+					else
+						usr<<"Você precisa de 750 Nin para aprender Mirrors."
+					if(usr.Haku&&usr.Mnin>=500)
+						usr<<"<b><font color=blue> Você aprendeu Ice Armor!"
+						usr.verbs += new /mob/ice/verb/IceArmor()
+					else
+						usr<<"Você precisa de 500 Nin tpara aprender Ice Armor."
+					if(usr.Haku&&usr.Mgen >=1000&&usr.Mnin>=1000)
+						usr<<"<b><font color=blue>Você aprendeu Teleport!"
+						usr.verbs += new /mob/nara/verb/kageteleport()
+					else
+						usr<<"Você precisa de  1000 Nin & Gen para aprender Teleport."
+				else
+					usr<<"Mentiroso, sai sa minha casa AGORA!"
+			if("Esqueça")
+				usr<<"Ohh ok, você tem um sonho?"
 
 
 
@@ -2001,81 +2003,81 @@ mob/npc/Clan/Choji
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Olá, essa é a casa Akimichi",text) in list ("Eu sou Akimichi tambem!","Esqueça"))
-				if("Eu sou Akimichi tambem!")
-					if(usr.Akimichi == 1)
-						usr<<"Olá, bem-vindo à nossa casa."
-						if(usr.Akimichi&&usr.Mtai >=250)
-							usr << "<B><font color = blue>Você aprendeu Nikudan Sensha!!"
-							usr.verbs += new /mob/Akimichi/verb/NikudanSensha()
-						else
-							usr<<"Você precisa de 250 Tai para aprender Nikudan Sensha."
-						if(usr.Akimichi&&usr.Mnin >=500)
-							usr << "<B><font color = blue>Você aprendeu Baika No Jutsu!"
-							usr.verbs += new /mob/Akimichi/verb/BaikaNoJutsu()
-						else
-							usr<<"Você precisa de 500 Nin para aprender Baika No Jutsu."
-						if(usr.Akimichi&&usr.Mtai >=1000)
-							usr << "<B><font color = blue>Você aprendeu Nikudan Hari Sensha!"
-							usr.verbs += new /mob/Akimichi/verb/NikudanHariSensha()
-						else
-							usr<<"Você precisa de 1000 Tai para aprender Nikudan Hari Sensha."
-						if(usr.Akimichi&&usr.Mnin >=750&&usr.calories>=750&&usr.Mtai>=750)
-							usr << "<B><font color = blue>Você aprendeu Babun Baika No Jutsu!"
-							usr.verbs += new /mob/Akimichi/verb/BabunBaikaNoJutsu()
-						else
-							usr<<"Você precisa de 750 Tai, Nin & Calories para aprender Babun Baika No Jutsu."
-
+		switch(input("Olá, essa é a casa Akimichi",text) in list ("Eu sou Akimichi tambem!","Esqueça"))
+			if("Eu sou Akimichi tambem!")
+				if(usr.Akimichi == 1)
+					usr<<"Olá, bem-vindo à nossa casa."
+					if(usr.Akimichi&&usr.Mtai >=250)
+						usr << "<B><font color = blue>Você aprendeu Nikudan Sensha!!"
+						usr.verbs += new /mob/Akimichi/verb/NikudanSensha()
 					else
-						usr<<"Mentiroso, saia da casa Akimichi AGORA!"
-						return
-				if("Esqueça")
-					usr<<"Ohh ok, você tem alguma comida?"
+						usr<<"Você precisa de 250 Tai para aprender Nikudan Sensha."
+					if(usr.Akimichi&&usr.Mnin >=500)
+						usr << "<B><font color = blue>Você aprendeu Baika No Jutsu!"
+						usr.verbs += new /mob/Akimichi/verb/BaikaNoJutsu()
+					else
+						usr<<"Você precisa de 500 Nin para aprender Baika No Jutsu."
+					if(usr.Akimichi&&usr.Mtai >=1000)
+						usr << "<B><font color = blue>Você aprendeu Nikudan Hari Sensha!"
+						usr.verbs += new /mob/Akimichi/verb/NikudanHariSensha()
+					else
+						usr<<"Você precisa de 1000 Tai para aprender Nikudan Hari Sensha."
+					if(usr.Akimichi&&usr.Mnin >=750&&usr.calories>=750&&usr.Mtai>=750)
+						usr << "<B><font color = blue>Você aprendeu Babun Baika No Jutsu!"
+						usr.verbs += new /mob/Akimichi/verb/BabunBaikaNoJutsu()
+					else
+						usr<<"Você precisa de 750 Tai, Nin & Calories para aprender Babun Baika No Jutsu."
+
+				else
+					usr<<"Mentiroso, saia da casa Akimichi AGORA!"
+					return
+			if("Esqueça")
+				usr<<"Ohh ok, você tem alguma comida?"
 mob/npc/Clan/Nara
 	name = "Shikamaru"
 	icon = 'Nara.dmi'
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Como isso é chato, essa é a casa dos Nara",text) in list ("Eu sou Nara tambem!","Esqueça"))
-				if("Eu sou Nara tambem!")
-					if(usr.Nara == 1)
-						usr<<"Olá, bem-vindo à nossa casa."
-						usr << "<B><font color = blue>Você aprendeu Kage Shibari No Jutsu!"
-						usr.verbs += new /mob/nara/verb/kageshibari()
-						usr.verbs += new /mob/nara/verb/ExtendShadow()
-						usr.verbs += new /mob/nara/verb/RetractShadow()
-						usr.verbs += new /mob/nara/verb/KageKubiShibaru()
-						usr.verbs += new /mob/nara/verb/kageblind()
-						usr.verbs += new /mob/nara/verb/kageteleport()
-						usr.verbs += new /mob/nara/verb/ShadowNoJutsu()
-						/*else
-							usr<<"Você precisa de 500 Gen para aprender Kage Shibari No Jutsu."
-						if(usr.Nara&&usr.Mgen >=500&&usr.Mnin>=500)
-							usr << "<B><font color = blue>Você aprendeu Kage Kubi Shibaru!"
+		switch(input("Como isso é chato, essa é a casa dos Nara",text) in list ("Eu sou Nara tambem!","Esqueça"))
+			if("Eu sou Nara tambem!")
+				if(usr.Nara == 1)
+					usr<<"Olá, bem-vindo à nossa casa."
+					usr << "<B><font color = blue>Você aprendeu Kage Shibari No Jutsu!"
+					usr.verbs += new /mob/nara/verb/kageshibari()
+					usr.verbs += new /mob/nara/verb/ExtendShadow()
+					usr.verbs += new /mob/nara/verb/RetractShadow()
+					usr.verbs += new /mob/nara/verb/KageKubiShibaru()
+					usr.verbs += new /mob/nara/verb/kageblind()
+					usr.verbs += new /mob/nara/verb/kageteleport()
+					usr.verbs += new /mob/nara/verb/ShadowNoJutsu()
+					/*else
+						usr<<"Você precisa de 500 Gen para aprender Kage Shibari No Jutsu."
+					if(usr.Nara&&usr.Mgen >=500&&usr.Mnin>=500)
+						usr << "<B><font color = blue>Você aprendeu Kage Kubi Shibaru!"
 
-						else
-							usr<<"Você precisa de 500 Nin & Gen para aprender Kage Kubi Shibaru."
-						if(usr.Nara&&usr.Mgen >=750&&usr.Mnin>=750)
-							usr<<"<b><font color=blue>Você aprendeu learned Kage Blinding No Jutsu!"
-							usr.verbs += new /mob/nara/verb/kageblind()
-						else
-							usr<<"Você precisa de 750 Nin & Gen para aprender Kage Blinding No Jutsu."
-						if(usr.Nara&&usr.Mgen >=1000&&usr.Mnin>=1000)
-							usr<<"<b><font color=blue>Você aprendeu learned Teleport!"
-
-						else
-							usr<<"Você precisa de 1000 Nin & Gen para aprender Teleport."
-						if(usr.Nara&&usr.Mnin>=5000)
-							usr<<"<b><font color=blue>Você aprendeu Shadow No Jutsu"
-
-						else
-							usr<<"Você precisa de 5000 Nin para aprender Shadow No Jutsu."
 					else
-						usr<<"Mentiroso, sai da casa Nara AGORA!"
-						return*/
-				if("Esqueça")
-					usr<<"Que arrasto"
+						usr<<"Você precisa de 500 Nin & Gen para aprender Kage Kubi Shibaru."
+					if(usr.Nara&&usr.Mgen >=750&&usr.Mnin>=750)
+						usr<<"<b><font color=blue>Você aprendeu learned Kage Blinding No Jutsu!"
+						usr.verbs += new /mob/nara/verb/kageblind()
+					else
+						usr<<"Você precisa de 750 Nin & Gen para aprender Kage Blinding No Jutsu."
+					if(usr.Nara&&usr.Mgen >=1000&&usr.Mnin>=1000)
+						usr<<"<b><font color=blue>Você aprendeu learned Teleport!"
+
+					else
+						usr<<"Você precisa de 1000 Nin & Gen para aprender Teleport."
+					if(usr.Nara&&usr.Mnin>=5000)
+						usr<<"<b><font color=blue>Você aprendeu Shadow No Jutsu"
+
+					else
+						usr<<"Você precisa de 5000 Nin para aprender Shadow No Jutsu."
+				else
+					usr<<"Mentiroso, sai da casa Nara AGORA!"
+					return*/
+			if("Esqueça")
+				usr<<"Que arrasto"
 
 mob/npc/Clan/Kamizuri
 	name = "Bee Keeper"
@@ -2083,52 +2085,52 @@ mob/npc/Clan/Kamizuri
 	PK = 0
 	health = 9999999999999999999999999999999
 	DblClick()
-			switch(input("What do you want I'm beezy.",text) in list ("I'm Kamizuri too!","Forget it"))
-				if("I'm Kamizuri too!")
-					if(usr.Kamizuri == 1)
-						usr<<"Hello, welcome to our house."
-						if(usr.Kamizuri&&usr.Mnin >=250)
-							usr << "<B><font color = blue>You learned your Bee options!"
-							usr.verbs += new /mob/Kamizuri/verb/summonbees()
-							usr.verbs += new /mob/Kamizuri/verb/Placebee()
-							usr.verbs += new /mob/Kamizuri/verb/Destroybee()
-						else
-							usr<<"You need 250 Nin to learn how to use Bees."
-						if(usr.Kamizuri&&usr.Mnin >=500&&usr.Mgen>=200)
-							usr << "<B><font color = blue>You learned how to explode your Bees!"
-							usr.verbs += new /mob/Kamizuri/verb/ExplodeBee()
-						else
-							usr<<"You need 500 Nin to learn how to Explode Bees"
-						if(usr.Kamizuri&&usr.Mnin >=300)
-							usr << "<B><font color = blue>You learned Bee Armor!"
-							usr.verbs += new /mob/Kamizuri/verb/BeeArmor()
-						else
-							usr<<"You need 300 Nin to learn Bee Armor."
-						if(usr.Kamizuri&&usr.Mnin >=750&&usr.Mchakra>=10000)
-							usr << "<B><font color = blue>You learned Bee Kyuu!"
-							usr.verbs += new /mob/Kamizuri/verb/BeeSabakuKyuu()
-						else
-							usr<<"You need 750 Nin & 10000 Chakra to learn Bee Kyuu."
-						if(usr.Kamizuri&&usr.Mnin >=1000&&usr.Mchakra>=11000)
-							usr << "<B><font color = blue>You learned Bee Sousou!"
-							usr.verbs += new /mob/Kamizuri/verb/BeeSabakuSousou()
-						else
-							usr<<"You need 1000 Nin & 11000 Chakra to learn Bee Sousou."
-						if(usr.Kamizuri&&usr.Mnin >= 2500)
-							usr<<"<b><font color=blue>You learned Bee Wings."
-							usr.verbs += new /mob/Beeflight/verb/Fly()
-						else
-							usr<<"You need 2500 Nin to learn Bee Wings."
-						if(usr.Kamizuri&&usr.Mnin >=5000&&usr.Mchakra>=10000)
-							usr << "<B><font color = blue>You learned Bee summons!"
-							usr.contents += new /obj/Bee_Summoning_Scroll
-						else
-							usr<<"You need 5000 Nin & 10000 Chakra to learn Bee summons."
+		switch(input("What do you want I'm beezy.",text) in list ("I'm Kamizuri too!","Forget it"))
+			if("I'm Kamizuri too!")
+				if(usr.Kamizuri == 1)
+					usr<<"Hello, welcome to our house."
+					if(usr.Kamizuri&&usr.Mnin >=250)
+						usr << "<B><font color = blue>You learned your Bee options!"
+						usr.verbs += new /mob/Kamizuri/verb/summonbees()
+						usr.verbs += new /mob/Kamizuri/verb/Placebee()
+						usr.verbs += new /mob/Kamizuri/verb/Destroybee()
 					else
-						usr<<"Lier leave the Kamizuri house NOW!"
-						return
-				if("Forget it")
-					usr<<"Bee gone!"
+						usr<<"You need 250 Nin to learn how to use Bees."
+					if(usr.Kamizuri&&usr.Mnin >=500&&usr.Mgen>=200)
+						usr << "<B><font color = blue>You learned how to explode your Bees!"
+						usr.verbs += new /mob/Kamizuri/verb/ExplodeBee()
+					else
+						usr<<"You need 500 Nin to learn how to Explode Bees"
+					if(usr.Kamizuri&&usr.Mnin >=300)
+						usr << "<B><font color = blue>You learned Bee Armor!"
+						usr.verbs += new /mob/Kamizuri/verb/BeeArmor()
+					else
+						usr<<"You need 300 Nin to learn Bee Armor."
+					if(usr.Kamizuri&&usr.Mnin >=750&&usr.Mchakra>=10000)
+						usr << "<B><font color = blue>You learned Bee Kyuu!"
+						usr.verbs += new /mob/Kamizuri/verb/BeeSabakuKyuu()
+					else
+						usr<<"You need 750 Nin & 10000 Chakra to learn Bee Kyuu."
+					if(usr.Kamizuri&&usr.Mnin >=1000&&usr.Mchakra>=11000)
+						usr << "<B><font color = blue>You learned Bee Sousou!"
+						usr.verbs += new /mob/Kamizuri/verb/BeeSabakuSousou()
+					else
+						usr<<"You need 1000 Nin & 11000 Chakra to learn Bee Sousou."
+					if(usr.Kamizuri&&usr.Mnin >= 2500)
+						usr<<"<b><font color=blue>You learned Bee Wings."
+						usr.verbs += new /mob/Beeflight/verb/Fly()
+					else
+						usr<<"You need 2500 Nin to learn Bee Wings."
+					if(usr.Kamizuri&&usr.Mnin >=5000&&usr.Mchakra>=10000)
+						usr << "<B><font color = blue>You learned Bee summons!"
+						usr.contents += new /obj/Bee_Summoning_Scroll
+					else
+						usr<<"You need 5000 Nin & 10000 Chakra to learn Bee summons."
+				else
+					usr<<"Lier leave the Kamizuri house NOW!"
+					return
+			if("Forget it")
+				usr<<"Bee gone!"
 
 mob/npc/Clan/Kabuto
 	name = "Kabuto"
@@ -2136,61 +2138,61 @@ mob/npc/Clan/Kabuto
 	PK = 0
 	health = 9999999999999999999999999999999
 	DblClick()
-			switch(input("What do you want I'm working on my cards.",text) in list ("Can you heal me?","INFO Cards","I'm a Medic too!","Forget it"))
-				if("I'm a Medic too!")
-					if(usr.Medical == 1)
-						usr<<"Hello, welcome to our house."
-						if(usr.Medical&&usr.Mgen >=500)
-							usr << "<B><font color = blue>You have acquired Shousen Jutsu!!"
-							usr.verbs += new /mob/medical/verb/Shousen_Jutsu()
-						else
-							usr<<"You need 500 Gen to learn Shousen Jutsu."
-						if(usr.Medical&&usr.Mnin >=1000&&usr.Mgen >= 1000)
-							usr << "<B><font color = blue>You have acquired Chakra No Mesu!!"
-							usr.verbs += new /mob/medical/verb/ChakraNoMesu()
-						else
-							usr<<"You need 1000 Nin&Gen to learn Chakra No Mesu."
-						if(usr.Medical&&usr.Mnin >=750&&usr.Mtai >= 750)
-							usr.verbs += new /mob/medical/verb/SliceTendons()
-							usr<<"You have learned Slice Tendons."
-						else
-							usr<<"You need 750 Nin&Tai to learn Slice Tendons."
-						if(usr.Medical&&usr.Mnin >=500&&usr.Mtai >= 500)
-							usr.verbs += new /mob/medical/verb/ScrewNerves()
-							usr<<"You have learned Screw Nerves."
-						else
-							usr<<"You need 500 Nin&Tai to learn Screw Nerves."
-						if(usr.Medical&&usr.Mgen >= 100)
-							usr.verbs += /mob/medical/verb/InfoCards
-							usr<<"You have learned Info Cards."
-						else
-							usr<<"Hit a log noob."
-						if(usr.Medical&&usr.Mgen >= 1000)
-							usr << "<B><font color = blue>You have acquired Restore!!"
-							usr.verbs += new /mob/medical/verb/Restore_Jutsu()
-						else
-							usr<<"You need 1000 Gen to learn Restore."
-						if(usr.Medical&&usr.Mnin >= 5000)
-							usr << "<B><font color = blue>You have acquired Chakra Absorb!!"
-							usr.verbs += new /mob/medical/verb/ChakraAbsorb()
-						else
-							usr<<"You need 5000 Nin to learn Chakra Absorb."
+		switch(input("What do you want I'm working on my cards.",text) in list ("Can you heal me?","INFO Cards","I'm a Medic too!","Forget it"))
+			if("I'm a Medic too!")
+				if(usr.Medical == 1)
+					usr<<"Hello, welcome to our house."
+					if(usr.Medical&&usr.Mgen >=500)
+						usr << "<B><font color = blue>You have acquired Shousen Jutsu!!"
+						usr.verbs += new /mob/medical/verb/Shousen_Jutsu()
 					else
-						usr<<"Lier leave the Medic house NOW!"
-						return
-				if("Can you heal me?")
-					usr<<"Ok then."
-					usr.health=usr.maxhealth
-					usr.chakra=usr.Mchakra
-					usr<<"There you go good as new."
-				if("INFO Cards")
-					for(var/mob/M in world)
-						if(M.client&&M.z==usr.z)
-							usr<<"{\icon[M][M.name],Rank - [M.rank], health - [M.health],Chakra - [M.chakra]"
-							usr<<"Tai - [M.tai],Nin - [M.nin],Gen - [M.gen]"
-							usr<<"Location; [M.x],[M.y]"
-				if("Forget it")
-					usr<<"Ok then back to my cards."
+						usr<<"You need 500 Gen to learn Shousen Jutsu."
+					if(usr.Medical&&usr.Mnin >=1000&&usr.Mgen >= 1000)
+						usr << "<B><font color = blue>You have acquired Chakra No Mesu!!"
+						usr.verbs += new /mob/medical/verb/ChakraNoMesu()
+					else
+						usr<<"You need 1000 Nin&Gen to learn Chakra No Mesu."
+					if(usr.Medical&&usr.Mnin >=750&&usr.Mtai >= 750)
+						usr.verbs += new /mob/medical/verb/SliceTendons()
+						usr<<"You have learned Slice Tendons."
+					else
+						usr<<"You need 750 Nin&Tai to learn Slice Tendons."
+					if(usr.Medical&&usr.Mnin >=500&&usr.Mtai >= 500)
+						usr.verbs += new /mob/medical/verb/ScrewNerves()
+						usr<<"You have learned Screw Nerves."
+					else
+						usr<<"You need 500 Nin&Tai to learn Screw Nerves."
+					if(usr.Medical&&usr.Mgen >= 100)
+						usr.verbs += /mob/medical/verb/InfoCards
+						usr<<"You have learned Info Cards."
+					else
+						usr<<"Hit a log noob."
+					if(usr.Medical&&usr.Mgen >= 1000)
+						usr << "<B><font color = blue>You have acquired Restore!!"
+						usr.verbs += new /mob/medical/verb/Restore_Jutsu()
+					else
+						usr<<"You need 1000 Gen to learn Restore."
+					if(usr.Medical&&usr.Mnin >= 5000)
+						usr << "<B><font color = blue>You have acquired Chakra Absorb!!"
+						usr.verbs += new /mob/medical/verb/ChakraAbsorb()
+					else
+						usr<<"You need 5000 Nin to learn Chakra Absorb."
+				else
+					usr<<"Lier leave the Medic house NOW!"
+					return
+			if("Can you heal me?")
+				usr<<"Ok then."
+				usr.health=usr.maxhealth
+				usr.chakra=usr.Mchakra
+				usr<<"There you go good as new."
+			if("INFO Cards")
+				for(var/mob/M in world)
+					if(M.client&&M.z==usr.z)
+						usr<<"{\icon[M][M.name],Rank - [M.rank], health - [M.health],Chakra - [M.chakra]"
+						usr<<"Tai - [M.tai],Nin - [M.nin],Gen - [M.gen]"
+						usr<<"Location; [M.x],[M.y]"
+			if("Forget it")
+				usr<<"Ok then back to my cards."
 
 mob/npc/Clan/Neiji
 	name = "(NPC)Neiji"
@@ -2199,39 +2201,39 @@ mob/npc/Clan/Neiji
 	PK = 0
 	health = 99999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("What is it?",text) in list ("Can you show me a hand sign?","I am weaker then you","Nothen","I'm hyuuga too!"))
-				if("Can you show me a hand sign?")
-					usr<<"Admit that you are weaker then me"
-					return
-				if("I am weaker then you")
-					usr<<"That's right and you can never change who you are. Now watch weak one."
-					usr.Oram=1
-					usr<<"You have learned the Ram sign"
-				if("I'm hyuuga too!")
-					if(usr.Hyuuga == 1)
-						usr<<"Hello fellow Hyuuga, welcome to our house."
-						if(usr.rank == "Student")
-							return
-						if(usr.knowK == 0&&usr.Mtai >=350)
-							usr<<"You have become very strong [usr]..I think it is time to teach you Hakkeshou Kaiten,the Hyuuga ultimate defense jutsu. Use it wisely."
-							usr.knowK = 1
-							usr.verbs += new /mob/hyuuga/verb/HakkeshouKaiten()
-						if(usr.knowJ == 0&&usr.Mtai >=200)
-							usr<<"It is time that you learn our clan's fighting style, Jyuuken."
-							usr.knowJ = 1
-							usr.verbs += new /mob/hyuuga/verb/Jyuken()
-						if(usr.knowKK == 0&&usr.Mtai >=500)
-							usr<<"I will now teach you Hakke Kuushou."
-							usr.knowJ = 1
-							usr.verbs += new /mob/hyuuga/verb/HakkeKuusho()
-						if(usr.Hyuuga&&usr.Mtai >=250&&usr.Mnin >= 250)
-							usr << "<B><font color = blue>Seu Byakugan foi ativado!!"
-							usr.verbs += new /mob/hyuuga/verb/Byakugan()
-						else
-							usr<<"Você precisa de 250 Nin&Tai para ativar seu Byakugan."
-					else
-						usr<<"Lier leave the Hyuuga house NOW!"
+		switch(input("What is it?",text) in list ("Can you show me a hand sign?","I am weaker then you","Nothen","I'm hyuuga too!"))
+			if("Can you show me a hand sign?")
+				usr<<"Admit that you are weaker then me"
+				return
+			if("I am weaker then you")
+				usr<<"That's right and you can never change who you are. Now watch weak one."
+				usr.Oram=1
+				usr<<"You have learned the Ram sign"
+			if("I'm hyuuga too!")
+				if(usr.Hyuuga == 1)
+					usr<<"Hello fellow Hyuuga, welcome to our house."
+					if(usr.rank == "Student")
 						return
+					if(usr.knowK == 0&&usr.Mtai >=350)
+						usr<<"You have become very strong [usr]..I think it is time to teach you Hakkeshou Kaiten,the Hyuuga ultimate defense jutsu. Use it wisely."
+						usr.knowK = 1
+						usr.verbs += new /mob/hyuuga/verb/HakkeshouKaiten()
+					if(usr.knowJ == 0&&usr.Mtai >=200)
+						usr<<"It is time that you learn our clan's fighting style, Jyuuken."
+						usr.knowJ = 1
+						usr.verbs += new /mob/hyuuga/verb/Jyuken()
+					if(usr.knowKK == 0&&usr.Mtai >=500)
+						usr<<"I will now teach you Hakke Kuushou."
+						usr.knowJ = 1
+						usr.verbs += new /mob/hyuuga/verb/HakkeKuusho()
+					if(usr.Hyuuga&&usr.Mtai >=250&&usr.Mnin >= 250)
+						usr << "<B><font color = blue>Seu Byakugan foi ativado!!"
+						usr.verbs += new /mob/hyuuga/verb/Byakugan()
+					else
+						usr<<"Você precisa de 250 Nin&Tai para ativar seu Byakugan."
+				else
+					usr<<"Lier leave the Hyuuga house NOW!"
+					return
 
 mob/npc/Clan/Kaguya
 	name = "Kimimaro"
@@ -2239,56 +2241,56 @@ mob/npc/Clan/Kaguya
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("What, this is the Kaguya house",text) in list ("I'm Kaguya too!","Forget it"))
-				if("I'm Kaguya too!")
-					if(usr.Kaguya == 1)
-						usr<<"Hello."
-						if(usr.Kaguya&&src.Mtai >=100)
-							usr << "<B><font color = blue>You learned how to develop a sword out of your arm bone!"
-							usr.verbs += new /mob/kaguyajutsu/verb/CreateBoneSword()
-						else
-							usr<<"You need 100 Tai to learn Bone Sword No Jutsu."
-						if(usr.Kaguya&&usr.Mtai >=500)
-							usr << "<B><font color = blue>You learned how to develop a whip out of your spinal column!"
-							usr.verbs += new /mob/kaguyajutsu/verb/CreateSpineWhip()
-						else
-							usr<<"You need 500 Tai to learn Spine Wipe."
-						if(usr.Kaguya&&usr.Mtai >=100)
-							usr << "<B><font color = blue>You learned Yanagi No Mai!"
-							usr.verbs += new /mob/kaguyajutsu/verb/YanagiNoMai()
-						else
-							usr<<"You need 100 Tai to learn Yanagi No Mai."
-						if(usr.Kaguya&&usr.Mtai >=250)
-							usr << "<B><font color = blue>You learned Tsubaki No Mai!"
-							usr.verbs += new /mob/kaguyajutsu/verb/TsubakiNoMai()
-						else
-							usr<<"You need 250 Tai to learn Tsubaki No Mai."
-						if(usr.Kaguya&&usr.Mtai >=300)
-							usr << "<B><font color = blue>You learned Karamatsu No Mai!"
-							usr.verbs += new /mob/kaguyajutsu/verb/KaramatsuNoMai()
-						else
-							usr<<"You need 300 Tai to learn Karamatsu No Mai."
-						if(usr.Kaguya&&usr.Mtai >=750)
-							usr << "<B><font color = blue>You learned Tessenka No Mai!"
-							usr.verbs += new /mob/kaguyajutsu/verb/TessenkaNoMai()
-						else
-							usr<<"You need 750 Tai to learn Tessenka No Mai."
-						if(usr.Kaguya&&usr.Mtai >=180&&usr.Mnin>=100)
-							usr << "<B><font color = blue>You learned Teshi Sendan!"
-							usr.verbs += new /mob/kaguyajutsu/verb/TeshiSendan()
-						else
-							usr<<"You need 200 Tai&Nin to learn Teshi Sendan."
-						if(usr.Kaguya&&usr.Mtai >=1000&&usr.Mchakra>=10000)
-							usr << "<B><font color = blue>You learned Sawarabi No Mai!"
-							usr.verbs += new /mob/kaguyajutsu/verb/Sawarabi()
-						else
-							usr<<"You need 1000 Tai & 10000 Chakra to learn Sawarabi No Mai."
+		switch(input("What, this is the Kaguya house",text) in list ("I'm Kaguya too!","Forget it"))
+			if("I'm Kaguya too!")
+				if(usr.Kaguya == 1)
+					usr<<"Hello."
+					if(usr.Kaguya&&src.Mtai >=100)
+						usr << "<B><font color = blue>You learned how to develop a sword out of your arm bone!"
+						usr.verbs += new /mob/kaguyajutsu/verb/CreateBoneSword()
 					else
-						usr<<"Lier leave the Kaguya house NOW!"
-						return
-				if("Forget it")
-					usr<<"Fine"
+						usr<<"You need 100 Tai to learn Bone Sword No Jutsu."
+					if(usr.Kaguya&&usr.Mtai >=500)
+						usr << "<B><font color = blue>You learned how to develop a whip out of your spinal column!"
+						usr.verbs += new /mob/kaguyajutsu/verb/CreateSpineWhip()
+					else
+						usr<<"You need 500 Tai to learn Spine Wipe."
+					if(usr.Kaguya&&usr.Mtai >=100)
+						usr << "<B><font color = blue>You learned Yanagi No Mai!"
+						usr.verbs += new /mob/kaguyajutsu/verb/YanagiNoMai()
+					else
+						usr<<"You need 100 Tai to learn Yanagi No Mai."
+					if(usr.Kaguya&&usr.Mtai >=250)
+						usr << "<B><font color = blue>You learned Tsubaki No Mai!"
+						usr.verbs += new /mob/kaguyajutsu/verb/TsubakiNoMai()
+					else
+						usr<<"You need 250 Tai to learn Tsubaki No Mai."
+					if(usr.Kaguya&&usr.Mtai >=300)
+						usr << "<B><font color = blue>You learned Karamatsu No Mai!"
+						usr.verbs += new /mob/kaguyajutsu/verb/KaramatsuNoMai()
+					else
+						usr<<"You need 300 Tai to learn Karamatsu No Mai."
+					if(usr.Kaguya&&usr.Mtai >=750)
+						usr << "<B><font color = blue>You learned Tessenka No Mai!"
+						usr.verbs += new /mob/kaguyajutsu/verb/TessenkaNoMai()
+					else
+						usr<<"You need 750 Tai to learn Tessenka No Mai."
+					if(usr.Kaguya&&usr.Mtai >=180&&usr.Mnin>=100)
+						usr << "<B><font color = blue>You learned Teshi Sendan!"
+						usr.verbs += new /mob/kaguyajutsu/verb/TeshiSendan()
+					else
+						usr<<"You need 200 Tai&Nin to learn Teshi Sendan."
+					if(usr.Kaguya&&usr.Mtai >=1000&&usr.Mchakra>=10000)
+						usr << "<B><font color = blue>You learned Sawarabi No Mai!"
+						usr.verbs += new /mob/kaguyajutsu/verb/Sawarabi()
+					else
+						usr<<"You need 1000 Tai & 10000 Chakra to learn Sawarabi No Mai."
+				else
+					usr<<"Lier leave the Kaguya house NOW!"
 					return
+			if("Forget it")
+				usr<<"Fine"
+				return
 
 mob/npc/Clan/Kiba
 	name = "Kiba"
@@ -2296,45 +2298,45 @@ mob/npc/Clan/Kiba
 	PK = 0
 	health = 9999999999999999999999999999999999999999999999999999
 	DblClick()
-			switch(input("Ya, this is the Inuzuka house what do you want?",text) in list ("I'm Inuzuka too!","Forget it"))
-				if("I'm Inuzuka too!")
-					if(usr.Inuzuka == 1)
-						usr<<"Hello."
-						if(usr.Mtai >=50&&usr.Clan=="Inuzuka")
-							usr << "<B><font color = blue>Você aprendeu como se usa o Tame Dogs!"
-							usr.verbs += new /mob/inuzuka/verb/Tame()
-						else
-							usr<<"Hit o Log."
-						if(usr.Inuzuka&&usr.Mtai >=500)
-							usr << "<B><font color = blue>Você aprendeu o Tsuuga!!"
-							usr.verbs += new /mob/Inuzuka/verb/Gatsuuga()
-						else
-							usr<<"Você precisa de 500 Tai para aprender o Tsuuga."
-						if(usr.Inuzuka&&usr.Mnin >=250)
-							usr << "<B><font color = blue>Você aprendeu o Juujin Bunshin!!"
-							usr.verbs += new /mob/Inuzuka/verb/JuujinBunshin()
-						else
-							usr<<"Você precisa de 250 Tai para aprender o Juujin Bunshin."
-						if(usr.Inuzuka&&usr.Mtai >=1000&&usr.Mnin >= 1000)
-							usr << "<B><font color = blue>Você aprendeu o Soutourou!!"
-							usr.verbs += new /mob/Inuzuka/verb/Soutourou()
-						else
-							usr<<"Você precisa de 1000 Nin&Tai para aprender o Soutourou."
-						if(usr.Inuzuka&&usr.Mtai >=750&&usr.Mnin >= 750)
-							usr << "<B><font color = blue>Você aprendeu o Garouga!!"
-							usr.verbs += new /mob/Inuzuka/verb/Garouga()
-						else
-							usr<<"Você precisa de 750 Nin&Tai para aprender o Garouga."
-						if(usr.Inuzuka&&usr.Mtai >=800)
-							usr << "<B><font color = blue>Você aprendeu o Gatsuuga!"
-							usr.verbs += new /mob/Inuzuka/verb/Gatsuuga1()
-						else
-							usr<<"Você precisa de 800 Tai para aprender o Gatsuuga."
+		switch(input("Ya, this is the Inuzuka house what do you want?",text) in list ("I'm Inuzuka too!","Forget it"))
+			if("I'm Inuzuka too!")
+				if(usr.Inuzuka == 1)
+					usr<<"Hello."
+					if(usr.Mtai >=50&&usr.Clan=="Inuzuka")
+						usr << "<B><font color = blue>Você aprendeu como se usa o Tame Dogs!"
+						usr.verbs += new /mob/inuzuka/verb/Tame()
 					else
-						usr<<"Lier leave the Inuzuka house NOW!"
-				if("Forget it")
-					usr<<"Forgoten"
-					return
+						usr<<"Hit o Log."
+					if(usr.Inuzuka&&usr.Mtai >=500)
+						usr << "<B><font color = blue>Você aprendeu o Tsuuga!!"
+						usr.verbs += new /mob/Inuzuka/verb/Gatsuuga()
+					else
+						usr<<"Você precisa de 500 Tai para aprender o Tsuuga."
+					if(usr.Inuzuka&&usr.Mnin >=250)
+						usr << "<B><font color = blue>Você aprendeu o Juujin Bunshin!!"
+						usr.verbs += new /mob/Inuzuka/verb/JuujinBunshin()
+					else
+						usr<<"Você precisa de 250 Tai para aprender o Juujin Bunshin."
+					if(usr.Inuzuka&&usr.Mtai >=1000&&usr.Mnin >= 1000)
+						usr << "<B><font color = blue>Você aprendeu o Soutourou!!"
+						usr.verbs += new /mob/Inuzuka/verb/Soutourou()
+					else
+						usr<<"Você precisa de 1000 Nin&Tai para aprender o Soutourou."
+					if(usr.Inuzuka&&usr.Mtai >=750&&usr.Mnin >= 750)
+						usr << "<B><font color = blue>Você aprendeu o Garouga!!"
+						usr.verbs += new /mob/Inuzuka/verb/Garouga()
+					else
+						usr<<"Você precisa de 750 Nin&Tai para aprender o Garouga."
+					if(usr.Inuzuka&&usr.Mtai >=800)
+						usr << "<B><font color = blue>Você aprendeu o Gatsuuga!"
+						usr.verbs += new /mob/Inuzuka/verb/Gatsuuga1()
+					else
+						usr<<"Você precisa de 800 Tai para aprender o Gatsuuga."
+				else
+					usr<<"Lier leave the Inuzuka house NOW!"
+			if("Forget it")
+				usr<<"Forgoten"
+				return
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 
