@@ -1,0 +1,7 @@
+Estatisticas a cada 10 Minutos de up
+
+
+ level   = 7
+  HP     = 125
+ Chakra  = 606
+Taijutsu = 819
