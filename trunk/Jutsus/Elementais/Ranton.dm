@@ -1,1 +1,0 @@
-//---  Ranton (Tempestade) - Trovão + Água  ---
