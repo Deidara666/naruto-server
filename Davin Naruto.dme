@@ -55,6 +55,7 @@
 #include "Jogador\Treinamento.dm"
 #include "Jogador\Variáveis do Jogador.dm"
 #include "Jogador\verbs.dm"
+#include "Jogador\Vip.dm"
 #include "Jogador\war.dm"
 #include "Jutsus\Bunshinsystem.dm"
 #include "Jutsus\Handsigns.dm"
