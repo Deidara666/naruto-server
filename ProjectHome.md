@@ -1,0 +1,1 @@
+Server de Naruto visando alcançar o topo do Brasil de server's BR .. e ainda queremos muito mais!
